@@ -105,9 +105,11 @@ end class &lt;window&gt;;
 <code class="cv Cv.Code">define class &lt;person&gt; (&lt;being&gt;)
   constant slot birthplace, required-init-keyword: birthplace:;
 end class &lt;person&gt;;</code>
+
 <code class="cv Cv.Code">define class &lt;astronaut&gt; (&lt;person&gt;)
   constant class slot employer = #&quot;NASA&quot;;
 end class &lt;astronaut&gt;;</code>
+
 <code class="cv Cv.Code">define class &lt;hair-trigger&gt; (&lt;object&gt;)
   constant slot error-if-touched;
 end class &lt;hair-trigger&gt;;<a name="MARKER-2-642"></a></code>
@@ -124,10 +126,12 @@ end class &lt;hair-trigger&gt;;<a name="MARKER-2-642"></a></code>
    define class &lt;person&gt; (&lt;object&gt;)
      slot friends :: &lt;simple-object-vector&gt;, init-value: #[];
    end class;
+
    define method friends-setter (f :: &lt;sequence&gt;, p :: &lt;person&gt;)
      p.friends := as(&lt;simple-object-vector&gt;, f);
      f;             // return new-value argument
    end method
+
    tom.friends := list(dick, harry);
 </pre>
 <p class="T1.Text1">The assignment expression invokes the method with the new-value parameter specialized on <code class="Code T1.Text1">&lt;sequence&gt;</code>, which reinvokes the function with a new-value argument that is a <code class="Code T1.Text1">&lt;simple-object-vector&gt;</code>, which invokes the slot setter method.<a name="MARKER-2-649"></a></p>
@@ -142,13 +146,16 @@ end class &lt;hair-trigger&gt;;<a name="MARKER-2-642"></a></code>
 define class &lt;view&gt; (&lt;object&gt;)
   instance slot position;
 end class;
+
 define class &lt;displaced-view&gt; (&lt;view&gt;)
 end class;
+
 define method position (v :: &lt;displaced-view&gt;)
   // call the  inherited method (the raw slot getter)
   // and transform the result
   displace-transform (next-method (v));
 end method;
+
 define method position-setter (new-position,
                                v :: &lt;displaced-view&gt;)
   // call the inherited method (the raw slot setter)
@@ -165,10 +172,12 @@ define class &lt;shape&gt; (&lt;view&gt;)
   instance slot cached-image, init-value: #f;
   ...
 end class;
+
 define method image (shape :: &lt;shape&gt;)
   cached-image (shape)
     | (cached-image (shape) := compute-image (shape));
 end method;
+
 define method image-setter (new-image, shape :: &lt;shape&gt;)
   cached-image (shape) := new-image;
 end method;<a name="MARKER-2-654"></a><a name="MARKER-2-655"></a>
