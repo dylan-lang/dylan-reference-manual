@@ -170,6 +170,33 @@ table tr p { display: inline }
 
 
 /*
+  Figures and class hierarchy graphs
+*/
+
+p[class~="Fg.Figure"] :first-child {
+	   border-bottom: 1px solid;
+	   padding-bottom: 3px;
+	   padding-left: 10px; margin-left: -10px;
+	   }
+
+p[class~="Fg.Figure"] :first-child + * {
+	   margin-right: 2em;
+	   }
+
+div.figure {
+	   min-width: 38pc;
+	   border: 1px solid; border-bottom: 3px solid; border-right: 3px solid;
+	   padding: 1em;
+	   font-family: sans-serif
+	   }
+
+table.class-attributes-legend		     { margin-top: 1em; border-collapse: collapse }
+table.class-attributes-legend td    	     { padding: 0 3px 0 0 }
+table.class-attributes-legend td.description { border-right: 2em solid transparent }
+
+
+
+/*
   Code Formatting
 
   Italicized text inside of CODE is not literal code and should be
