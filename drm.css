@@ -61,14 +61,14 @@ img#book-cover {
    everywhere. Feel free to do it someday and use #id selectors instead.
 */
 
-#navigation                                    { height: 25px; line-height: 0 }
+#navigation                                    { height: 30px; line-height: 0 }
 #navigation img                                { border: none }
 #navigation > :first-child + * + *             { position: absolute; top: 10px; left:  10px }
-#navigation > :first-child                     { position: absolute; top: 10px; left:  67px }
-#navigation > :first-child + *                 { position: absolute; top: 10px; left: 124px }
-#navigation > :first-child + * + * + *         { position: absolute; top: 27px; left:  10px }
-#navigation > :first-child + * + * + * + *     { position: absolute; top: 27px; left:  67px }
-#navigation > :first-child + * + * + * + * + * { position: absolute; top: 27px; left: 124px }
+#navigation > :first-child                     { position: absolute; top: 10px; left:  66px }
+#navigation > :first-child + *                 { position: absolute; top: 10px; left: 122px }
+#navigation > :first-child + * + * + *         { position: absolute; top: 26px; left:  10px }
+#navigation > :first-child + * + * + * + *     { position: absolute; top: 26px; left:  66px }
+#navigation > :first-child + * + * + * + * + * { position: absolute; top: 26px; left: 122px }
 
 /* Name of section this page belongs to. */
 
