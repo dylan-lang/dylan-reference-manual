@@ -1,31 +1,30 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN"><html><head><!--This file created 5/5/99 4:50 PM by Claris Home Page version 3.0-->
-<!-- base href="http://www2.shore.net/~alms/dylan/drm_errata.html" --><title>DRM Errata</title>
-
-   
-   <meta name="GENERATOR" content="Claris Home Page 3.0">
-   <x-claris-window top="47" bottom="533" left="37" right="705"></x-claris-window>
-   <x-claris-tagview mode="minimal"></x-claris-tagview>
-<meta name="Author" content="Andrew Shalit"><meta name="Description" content="Assorted prose, poetry, activities, and other random links, composed by someone you may or may not know."></head>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>DRM Errata</title>
+	<meta name="Author" content="Andrew Shalit" />
+	<meta name="Description" content="Assorted prose, poetry, activities, and other random links, composed by someone you may or may not know." />
+</head>
 
 <body>
-
-<blockquote>This page contains a listing of typos and other errors in
+<h1>DRM Errata</h1>
+<blockquote>
+	<p>This page contains a listing of typos and other errors in
    the Dylan Reference Manual. If you find additional errors,
    <a href="mailto:alms@folly.org">please let me know</a>. Questions
    about Dylan, suggestions for improvements to the language, and
    general discussion should be directed to the <a href="mailto:info-dylan-request@harlequin.com">Dylan
    mailing list</a>, or to <a href="http://web.archive.org/web/20030201195817/http://x2.dejanews.com/%5BST_rn=if%5D/topics_if.xp?search=topic&amp;group=comp.lang.dylan&amp;GRPP=925325112.1664614435&amp;title=Related&amp;query=comp.lang.dylan">the
    Dylan newsgroup</a>.
-   
+   </p>
    <p>Thanks go to <a href="mailto:tree@tiac.net">Tom Emerson</a>,
    for suggesting that I put together this page, and for supplying me
    with an initial list of typos.</p>
-   
-   <h3>
-   
-   <hr>
-   
-   Semantically Significant Errors</h3></blockquote>
+</blockquote>   
+   <hr />
+   <h2>Semantically Significant Errors</h2>
 
 <ul>
    <li>p. 37 should include a horizontal rule immediately above the
@@ -42,14 +41,14 @@
    the initial classes and the generic function, as follows
    
    <ul>
-      <li><tt>define open generic m ( x ) ;<br>
+      <li><tt>define open generic m ( x ) ;<br />
       define open class &lt;t&gt; ( &lt;object&gt;) end class
-      &lt;t&gt;;<br>
+      &lt;t&gt;;<br />
       define open class &lt;s&gt; ( &lt;object&gt;) end class
-      &lt;s&gt;;<br>
-      define method m ( s :: &lt;s&gt; ) end method m ;<br>
-      define sealed domain m ( &lt;t&gt; );<br>
-      &nbsp;<br>
+      &lt;s&gt;;<br />
+      define method m ( s :: &lt;s&gt; ) end method m ;<br />
+      define sealed domain m ( &lt;t&gt; );<br />
+      &nbsp;<br />
       define class &lt;c&gt; ( &lt;s&gt; , &lt;t&gt; ) end;
       </tt></li>
    </ul>
@@ -64,16 +63,16 @@
    the following possible scenario:</p>
    
    <ul>
-      <li>Library L1<br>
-      <tt>define open class &lt;t&gt; ( .. ) ... end;<br>
+      <li>Library L1<br />
+      <tt>define open class &lt;t&gt; ( .. ) ... end;<br />
       define open class &lt;s&gt; ( .. ) ... end;</tt>
       
-      <p>L2 (uses L1)<br>
+      <p>L2 (uses L1)<br />
       <tt>define class &lt;c&gt; (&lt;s&gt;, &lt;t&gt;) end;</tt></p>
       
-      <p>L3 (uses L1)<br>
-      <tt>define generic m (x);<br>
-      define method m (s :: &lt;s&gt;) ... end;<br>
+      <p>L3 (uses L1)<br />
+      <tt>define generic m (x);<br />
+      define method m (s :: &lt;s&gt;) ... end;<br />
       define sealed domain m (&lt;t&gt;);</tt></p></li>
    </ul>
    
@@ -145,11 +144,8 @@
    "recognize" as given on page 94, in the description of parameter
    list congruency.</p>
    
-   <h3>
-   
-   <hr>
-   
-   Simple Typos</h3></li>
+   <hr />
+   <h2>Simple Typos</h2></li>
    
    <li>p. 44, the sentence describing execution order of operator
    calls reads
