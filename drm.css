@@ -12,9 +12,10 @@ body { margin: 20px }
 
   Add some whitespace above headings and a rule below to make them
   stand out more from preceding text, and, for definition sections,
-  float the "[Open Abstract Foo]" tag on the right, so it doesn't
-  run together with the definition name (and besides, it matches
-  the printed DRM.)
+  float the "[Open Abstract Foo]" tag on the right, so it doesn't run
+  together with the definition name (and besides, it matches the
+  printed DRM.)
+
 */
 
 h1[class~="H1.Heading1"], h2, h3 { margin-top: 1em; padding-bottom: 3px; border-bottom: 1px solid }
@@ -33,6 +34,7 @@ span.attributes-summary        { position: absolute; right: 20px; margin-right: 
   To match the printed DRM, left-align bullets near/at the left margin
   instead of indenting, use larger vertical margins than the default
   (which is about zero), and use squares for the first level bullets.
+
 */
 
 ul		    { padding-left: 1.25em }
@@ -64,11 +66,12 @@ li.footer 	      	      { margin-top: 0 }
 /*
   Definitions
 
-  Some experimental declarations to try to format things more like
-  the printed DRM, with labels to the left instead of on separate
-  lines. I suspect the final answer will be to changet the HTML
-  tags to use something other than dt/dd, as the following attempts
-  aren't producing the desired results.
+  Some experimental declarations to try to format things more like the
+  printed DRM, with labels to the left instead of on separate lines. I
+  suspect the final answer will be to changet the HTML tags to use
+  something other than dt/dd, as the following attempts aren't
+  producing the desired results.
+
 */
 
 /*
@@ -106,11 +109,10 @@ table.numbered caption	{ padding-bottom: 3px }	  /* don't let caption descenders
 
 /*
   For tables with thead/tbody groups, put lines between groups. This
-  is primarily for the DRM Operators table (4-1). We only do this
-  for tables specifically designed for this and marked with the
-  "grouped" class, because other tables have an implicit tbody group
-  around the entire table and display undesired lines on some
-  browsers.
+  is primarily for the DRM Operators table (4-1). We only do this for
+  tables specifically designed for this and marked with the "grouped"
+  class, because other tables have an implicit tbody group around the
+  entire table and display undesired lines on some browsers.
 */
 
 table.grouped thead	{ border-bottom: hidden } /* no line below the header */
@@ -151,13 +153,14 @@ table tr p { display: inline }
 
   Italicized text inside of CODE is not literal code and should be
   rendered in a body font instead of the code font. Additionally,
-  references in documentation to any of those non-literals should
-  be rendered using the same font (i class="Parameter").
+  references in documentation to any of those non-literals should be
+  rendered using the same font (i class="Parameter").
 
-  NOTE: Unfortunately, I do not currently see a way to specify
-  "body font" in CSS, so I've opted for "serif". This means that
-  if the UA's body font is sans-serif, it won't be a match, but
-  this still looks better than italicized monospaced code font.
+  NOTE: Unfortunately, I do not currently see a way to specify "body
+  font" in CSS, so I've opted for "serif". This means that if the UA's
+  body font is sans-serif, it won't be a match, but this still looks
+  better than italicized monospaced code font.
+
 */
 
 i.Parameter, code i { font-family: serif }
@@ -179,8 +182,9 @@ i.Parameter, code i { font-family: serif }
   
   Literal code in the BNF is set in bold.
 
-  The phrase "one of" has some extra padding to visually separate
-  it from what follows.
+  The phrase "one of" has some extra padding to visually separate it
+  from what follows.
+
 */
 
 .BNFCaps             { font-variant: small-caps; font-style: normal }
@@ -192,6 +196,20 @@ div.BNF code sub     { font-weight: normal }  /* don't make subscripted suffixes
 div.BNF .BNFCaps sub { font-variant: normal } /* don't make subscripted suffixes small-caps */
 div.BNF .one-of      { padding-right: 1em }
 div.BNF dd p>*       { margin-right: 0.25em } /* a little extra space between tokens */
+
+
+
+/*
+  Index Formatting
+
+  The index is a series of nested lists. There are no bullets, and the
+  items are compactly spaced vertically.
+
+*/
+
+div.wm-div-index ul { list-style-type: none }
+div.wm-div-index li { margin: 0 }
+
 
 
 /*
