@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -33,8 +33,8 @@
 <li class="B1.Bullet1">Optionally, the default <code class="Code B1.Bullet1">make</code> method may be shadowed by a user-supplied method specialized with a singleton specializer. This enables the user method to get at all the arguments to <code class="Code B1.Bullet1">make</code>, and to provide actual instantiation and initializations based on them. For example, a singleton method on an <a name="MARKER-2-661"></a>abstract class can reinvoke <code class="cv B1.Bullet1">make</code> on a concrete subclass of the abstract class, passing along the same or augmented initialization arguments.</li>
 <li class="B1.Bullet1">The default <code class="Code B1.Bullet1">make</code> method examines its keyword arguments, which are known as the <b class="bold B1.Bullet1"><a name="MARKER-2-662"></a> supplied initialization arguments</b>. It then produces a set of <b class="bold B1.Bullet1"><a name="MARKER-2-663"></a>defaulted initialization arguments</b> by augmenting the supplied initialization arguments  with any additional initialization arguments for which default values are defined by the class  or any of its superclasses.<br />If the supplied initialization arguments contains duplicate keywords, <code class="Code B1.Bullet1">make</code> will use the leftmost occurrence. This is consistent with keyword argument conventions used in function calls.</li>
 <li class="B1.Bullet1">The default <code class="Code B1.Bullet1">make</code> method signals an error if any required init-keyword is absent from the defaulted initialization arguments, or if any of the defaulted initialization arguments are not valid for initialization of that class. An <a name="MARKER-2-664"></a>initialization argument is valid if it is specified as an init-keyword in a slot specification or initialization argument specification, or if it is permitted by one or more of the <code class="Code B1.Bullet1">initialize</code> methods applicable to an instance of the class.</li>
-<li class="B1.Bullet1">The default <code class="Code B1.Bullet1">make</code> method allocates an instance and initializes all the slots for which it can provide values, as follows:</li>
-<li><ul class="B2.Bullet2">
+<li class="B1.Bullet1">The default <code class="Code B1.Bullet1">make</code> method allocates an instance and initializes all the slots for which it can provide values, as follows:
+<ul class="B2.Bullet2">
 <li class="B2.Bullet2">If the slot is keyword initializable and its keyword is present in the defaulted initialization arguments, then the slot is initialized from the defaulted initialization arguments.</li>
 <li class="B2.Bullet2">If the slot is not initialized by a keyword but has an init specification, it is initialized from the init specification.</li>
 <li class="B2.Bullet2">In either case, an error of type <code class="Code B2.Bullet2">&lt;type-error&gt;</code> is signaled if the value is not of the type declared for the slot.</li>
