@@ -47,55 +47,61 @@
 <p class="T1.Text1">Implementations can add additional characters but programs using them will not be portable.<a name="MARKER-2-291"></a></p>
 <p class="T1.Text1">A <strong class="Bold T1.Text1"><a name="MARKER-2-292"></a>#-word</strong> is one of <code class="Code T1.Text1">#t</code>, <code class="Code T1.Text1">#f</code>, <code class="Code T1.Text1">#next</code>, <code class="Code T1.Text1">#rest</code>, <code class="Code T1.Text1">#key</code>, or <code class="Code T1.Text1">#all-keys</code>. The first two are literal constants, the others are used in parameter lists. Implementations can add additional implementation-defined #-words, but programmers cannot add their own #-words.</p>
 <p class="T1.Text1">An <strong class="Bold T1.Text1"><a name="MARKER-2-293"></a>operator</strong> is one of the following:</p>
-<p class="T1.Text1"><code class="Code T1.Text1">+</code> addition</p>
-<p class="T1.Text1"><code class="Code T1.Text1">-</code> subtraction and negation</p>
-<p class="T1.Text1"><code class="Code T1.Text1">*</code> multiplication</p>
-<p class="T1.Text1"><code class="Code T1.Text1">/</code> division</p>
-<p class="T1.Text1"><code class="Code T1.Text1">^</code> exponentiation</p>
-<p class="T1.Text1"><code class="Code T1.Text1">=</code> equality</p>
-<p class="T1.Text1"><code class="Code T1.Text1">==</code> identity</p>
-<p class="T1.Text1"><code class="Code T1.Text1">&lt;</code> less than</p>
-<p class="T1.Text1"><code class="Code T1.Text1">&gt;</code> greater than</p>
-<p class="T1.Text1"><code class="Code T1.Text1">&lt;=</code> less than or equal</p>
-<p class="T1.Text1"><code class="Code T1.Text1">&gt;=</code> greater than or equal</p>
-<p class="T1.Text1"><code class="Code T1.Text1">~=</code> not equal</p>
-<p class="T1.Text1"><code class="Code T1.Text1">~==</code> not identical</p>
-<p class="T1.Text1"><code class="Code T1.Text1">&amp;</code> logical and</p>
-<p class="T1.Text1"><code class="Code T1.Text1">|</code> logical or</p>
-<p class="T1.Text1"><code class="Code T1.Text1">:=</code> assignment</p>
-<p class="T1.Text1"><code class="Code T1.Text1">~</code> logical negation</p>
+<table>
+  <tr><td><code class="Code T1.Text1">+</code></td><td>addition</td></tr>
+  <tr><td><code class="Code T1.Text1">-</code></td><td>subtraction and negation</td></tr>
+  <tr><td><code class="Code T1.Text1">*</code></td><td>multiplication</td></tr>
+  <tr><td><code class="Code T1.Text1">/</code></td><td>division</td></tr>
+  <tr><td><code class="Code T1.Text1">^</code></td><td>exponentiation</td></tr>
+  <tr><td><code class="Code T1.Text1">=</code></td><td>equality</td></tr>
+  <tr><td><code class="Code T1.Text1">==</code></td><td>identity</td></tr>
+  <tr><td><code class="Code T1.Text1">&lt;</code></td><td>less than</td></tr>
+  <tr><td><code class="Code T1.Text1">&gt;</code></td><td>greater than</td></tr>
+  <tr><td><code class="Code T1.Text1">&lt;=</code></td><td>less than or equal</td></tr>
+  <tr><td><code class="Code T1.Text1">&gt;=</code></td><td>greater than or equal</td></tr>
+  <tr><td><code class="Code T1.Text1">~=</code></td><td>not equal</td></tr>
+  <tr><td><code class="Code T1.Text1">~==</code></td><td>not identical</td></tr>
+  <tr><td><code class="Code T1.Text1">&amp;</code></td><td>logical and</td></tr>
+  <tr><td><code class="Code T1.Text1">|</code></td><td>logical or</td></tr>
+  <tr><td><code class="Code T1.Text1">:=</code></td><td>assignment</td></tr>
+  <tr><td><code class="Code T1.Text1">~</code></td><td>logical negation</td></tr>
+</table>
 <p class="T1.Text1">Programmers cannot add their own operators.</p>
 <p class="T1.Text1">A <strong class="Bold T1.Text1"><a name="MARKER-2-294"></a>number</strong> is a decimal integer with an optional leading sign, a binary integer, an octal integer, a hexadecimal integer, a ratio of two decimal integers with an optional leading sign, or a floating-point number. The complete syntax of numbers is given in <a href="drm_117.html#MARKER-9-2105" class="T1.Text1">"Numbers" on page 418</a>. Note that the ratios are not included in the Dylan language. The ratio syntax is reserved for future expansion and for implementation-specific extensions.</p>
 <p class="T1.Text1">A <strong class="Bold T1.Text1"><a name="MARKER-2-295"></a>character literal</strong> is a printing character (including space, but not <code class="cv T1.Text1">'</code> or <code class="cv T1.Text1">\</code>) or a backslash escape sequence enclosed in a pair of single-quote characters '.</p>
 <p class="T1.Text1">A <strong class="Bold T1.Text1"><a name="MARKER-2-296"></a>string literal</strong> is a sequence of printing characters (including space, but not <code class="cv T1.Text1">&quot;</code> or <code class="cv T1.Text1">\</code>) and backslash escape sequences enclosed in a pair of double-quote characters &quot;.</p>
 <p class="T1.Text1">A <strong class="bold T1.Text1"><a name="MARKER-2-297"></a>backslash escape sequence</strong> is a backslash followed by a character or character code. A backslash escape sequence in character and string literals allows quoting of the special characters ', &quot;, and \, provides names for control characters, and allows Unicode characters to be specified by their hexadecimal codes.</p>
 <p class="T1.Text1">The <a name="MARKER-2-298"></a>control characters are:</p>
-<p class="T1.Text1"><code class="Code T1.Text1">a</code> alarm</p>
-<p class="T1.Text1"><code class="Code T1.Text1">b</code> backspace</p>
-<p class="T1.Text1"><code class="Code T1.Text1">e</code> escape</p>
-<p class="T1.Text1"><code class="Code T1.Text1">f</code> form feed</p>
-<p class="T1.Text1"><code class="Code T1.Text1">n</code> newline</p>
-<p class="T1.Text1"><code class="Code T1.Text1">r</code> carriage return</p>
-<p class="T1.Text1"><code class="Code T1.Text1">t</code> tab</p>
-<p class="T1.Text1"><code class="Code T1.Text1">0</code> null</p>
+<table>
+  <tr><td><code class="Code T1.Text1">a</code></td><td>alarm</td></tr>
+  <tr><td><code class="Code T1.Text1">b</code></td><td>backspace</td></tr>
+  <tr><td><code class="Code T1.Text1">e</code></td><td>escape</td></tr>
+  <tr><td><code class="Code T1.Text1">f</code></td><td>form feed</td></tr>
+  <tr><td><code class="Code T1.Text1">n</code></td><td>newline</td></tr>
+  <tr><td><code class="Code T1.Text1">r</code></td><td>carriage return</td></tr>
+  <tr><td><code class="Code T1.Text1">t</code></td><td>tab</td></tr>
+  <tr><td><code class="Code T1.Text1">0</code></td><td>null</td></tr>
+</table>
 <p class="T1.Text1"><a name="MARKER-2-299"></a>Unicode characters are represented by a series of hexadecimal digits enclosed in angle brackets. If Unicode does not explicitly define the character represented by the hexadecimal digits, the meaning in Dylan is undefined. If an implementation is not able to represent the entire Unicode character set, and the number specifies a character that is not representable in the implementation, an error must be signaled.</p>
 <p class="T1.Text1">For example:   <code class="cv T1.Text1">&quot;\&lt;44&gt;\&lt;79&gt;\&lt;6c&gt;\&lt;61&gt;\&lt;6e&gt;&quot; = &quot;Dylan&quot;</code></p>
 <p class="T1.Text1">A <strong class="Bold T1.Text1"><a name="MARKER-2-300"></a>symbol literal</strong> is a keyword or a unique string. A <strong class="Bold T1.Text1"><a name="MARKER-2-301"></a>keyword</strong> is a name followed immediately by a colon character ":". A <strong class="Bold T1.Text1"><a name="MARKER-2-302"></a>unique string</strong> is a sharp sign "#" followed immediately by a string literal.</p>
 <p class="T1.Text1"><strong class="Bold T1.Text1"><a name="MARKER-2-303"></a>Punctuation</strong> is one of the following:</p>
-<p class="T1.Text1"><code class="Code T1.Text1">(</code> <code class="Code T1.Text1">)</code>  parentheses</p>
-<p class="T1.Text1"><code class="Code T1.Text1">[</code> <code class="Code T1.Text1">]</code> square brackets</p>
-<p class="T1.Text1"><code class="Code T1.Text1">{</code> <code class="Code T1.Text1">}</code>  curly brackets</p>
-<p class="T1.Text1"><code class="Code T1.Text1">,</code>  comma</p>
-<p class="T1.Text1"><code class="Code T1.Text1">.</code>  period</p>
-<p class="T1.Text1"><code class="Code T1.Text1">;</code>  semicolon</p>
-<p class="T1.Text1"><code class="Code T1.Text1">=</code>  defaulting/initialization</p>
-<p class="T1.Text1"><code class="Code T1.Text1">::</code>  type specialization</p>
-<p class="T1.Text1"><code class="Code T1.Text1">==</code>  singleton specialization</p>
-<p class="T1.Text1"><code class="Code T1.Text1">=&gt;</code>  arrow</p>
-<p class="T1.Text1"><code class="Code T1.Text1">#(</code>  list/pair literal</p>
-<p class="T1.Text1"><code class="Code T1.Text1">#[</code>  vector literal</p>
-<p class="T1.Text1"><code class="Code T1.Text1">?</code>, <code class="Code T1.Text1">??</code>  macro pattern variables</p>
-<p class="T1.Text1"><code class="Code T1.Text1">...</code>  macro ellipsis</p>
+<table>
+<tr><td><code class="Code T1.Text1">(</code> <code class="Code T1.Text1">)</code></td><td> parentheses</p>
+<tr><td><code class="Code T1.Text1">[</code> <code class="Code T1.Text1">]</code></td><td>square brackets</p>
+<tr><td><code class="Code T1.Text1">{</code> <code class="Code T1.Text1">}</code></td><td> curly brackets</p>
+<tr><td><code class="Code T1.Text1">,</code></td><td> comma</p>
+<tr><td><code class="Code T1.Text1">.</code></td><td> period</p>
+<tr><td><code class="Code T1.Text1">;</code></td><td> semicolon</p>
+<tr><td><code class="Code T1.Text1">=</code></td><td> defaulting/initialization</p>
+<tr><td><code class="Code T1.Text1">::</code></td><td> type specialization</p>
+<tr><td><code class="Code T1.Text1">==</code></td><td> singleton specialization</p>
+<tr><td><code class="Code T1.Text1">=&gt;</code></td><td> arrow</p>
+<tr><td><code class="Code T1.Text1">#(</code></td><td> list/pair literal</p>
+<tr><td><code class="Code T1.Text1">#[</code></td><td> vector literal</p>
+<tr><td><code class="Code T1.Text1">?</code>, <code class="Code T1.Text1">??</code></td><td> macro pattern variables</p>
+<tr><td><code class="Code T1.Text1">...</code></td><td> macro ellipsis</p>
+</table>
 <p class="T1.Text1">Note that some tokens are both punctuation and operators. This ambiguity is resolved by grammatical context.</p>
 <p class="T1.Text1"><a name="MARKER-2-304"></a>Note also that some punctuation tokens (for example, period and equal sign) are capable of blending into some other tokens. Where this can occur, whitespace must be inserted to delimit the token boundary.<a name="MARKER-2-305"></a></p>
 
