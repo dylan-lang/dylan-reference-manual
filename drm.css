@@ -333,7 +333,10 @@ ul.index li        { margin-top: 0 }
                    }
 .wm-div-toc.pages ol.page-toc
                    { padding-left: 1em }
-.wm-div-toc.pages ul.page-toc.errata
+/* these rules apply to the ""mini-TOC"" and the interior nav. links on, e.g., the Contents page */
+ol.page-toc.appendices
+                   { list-style-type: upper-latin }
+ul.page-toc.errata
                    { list-style-type: circle }
 
 
