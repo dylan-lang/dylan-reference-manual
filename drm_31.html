@@ -31,103 +31,139 @@
 <p class="T1.Text1"><a name="MARKER-2-446"></a>The operands of a binary operator call that is shorthand for a function call are executed in left to right order. The operands of a binary operator call which is shorthand for a function macro call are passed to the macro. Their order of execution depends on the definition of the macro. The built-in function macros are described in <a href="drm_115.html#MARKER-9-2068" class="T1.Text1">"Function Macros" on page 409</a>.</p>
 <p class="T1.Text1"><a name="MARKER-2-447"></a><a name="MARKER-2-448"></a>The operators are listed in <a href="#MARKER-9-427" class="T1.Text1">Table 4-1</a> in descending order of precedence. Operators within a group share the same precedence. When a function call using slot reference syntax appears as an operand, it has greater precedence than any of the binary operators.</p>
 <p class="T0.Text0"><a name="MARKER-2-449"></a><a name="MARKER-2-450"></a></p>
-<table class="numbered"><caption><strong>Table 4-1</strong>  <a name="MARKER-9-427"></a>Operators</caption>
-<tr><th><p class="TbH.TblHd"> Operator</p>
-</th><th><p class="TbH.TblHd"> </p>
-</th><th><p class="TbH.TblHd"> Unary/Binary</p>
-</th><th><p class="TbH.TblHd"> Description</p>
-</th><th><p class="TbH.TblHd"> Name</p>
-</th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">-</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> unary</p>
-</td><td><p class="TbT.TblText"> arithmetic negation</p>
-</td><td><p class="TbT.TblText"> <code class="TbT.TblText">negative</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">~</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> unary</p>
-</td><td><p class="TbT.TblText"> logical negation</p>
-</td><td><p class="TbT.TblText"> <code class="TbT.TblText">~</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">^</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> binary</p>
-</td><td><p class="TbT.TblText"> exponentiation</p>
-</td><td><p class="TbT.TblText"> <code class="TbT.TblText">^</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">*</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> binary</p>
-</td><td><p class="TbT.TblText"> multiplication</p>
-</td><td><p class="TbT.TblText"> <code class="TbT.TblText">*</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">/</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> binary</p>
-</td><td><p class="TbT.TblText"> division</p>
-</td><td><p class="TbT.TblText"> <code class="TbT.TblText">/</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">+</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> binary</p>
-</td><td><p class="TbT.TblText"> addition</p>
-</td><td><p class="TbT.TblText"> <code class="TbT.TblText">+</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">-</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> binary</p>
-</td><td><p class="TbT.TblText"> subtraction</p>
-</td><td><p class="TbT.TblText"> <code class="TbT.TblText">-</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">=</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> binary</p>
-</td><td><p class="TbT.TblText"> equality</p>
-</td><td><p class="TbT.TblText"> <code class="TbT.TblText">=</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">==</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> binary</p>
-</td><td><p class="TbT.TblText"> identity</p>
-</td><td><p class="TbT.TblText"> <code class="TbT.TblText">==</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">~=</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> binary</p>
-</td><td><p class="TbT.TblText"> non-equality</p>
-</td><td><p class="TbT.TblText"> <code class="TbT.TblText">~=</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">~==</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> binary</p>
-</td><td><p class="TbT.TblText"> non-identity</p>
-</td><td><p class="TbT.TblText"> <code class="TbT.TblText">~==</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">&lt;</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> binary</p>
-</td><td><p class="TbT.TblText"> less than</p>
-</td><td><p class="TbT.TblText"> <code class="TbT.TblText">&lt;</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">&gt;</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> binary</p>
-</td><td><p class="TbT.TblText"> greater than</p>
-</td><td><p class="TbT.TblText"> <code class="TbT.TblText">&gt;</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">&lt;=</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> binary</p>
-</td><td><p class="TbT.TblText"> less than or equals</p>
-</td><td><p class="TbT.TblText"> <code class="TbT.TblText">&lt;=</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">&gt;=</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> binary</p>
-</td><td><p class="TbT.TblText"> greater than or equals</p>
-</td><td><p class="TbT.TblText"> <code class="TbT.TblText">&gt;=</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">&amp;</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> binary</p>
-</td><td><p class="TbT.TblText"> logical and</p>
-</td><td><p class="TbT.TblText"> <code class="cv TbT.TblText">&amp;</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">|</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> binary</p>
-</td><td><p class="TbT.TblText"> logical or</p>
-</td><td><p class="TbT.TblText"> <code class="cv TbT.TblText">|</code></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">:=</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> binary</p>
-</td><td><p class="TbT.TblText"> assignment</p>
-</td><td><p class="TbT.TblText"> <code class="cv TbT.TblText">:=</code></p>
-</td></tr></table>
+<table class="numbered grouped">
+  <caption><strong>Table 4-1</strong>  <a name="MARKER-9-427"></a>Operators</caption>
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th>Unary/Binary</th>
+      <th>Description</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="TbT.TblText">-</code></td>
+      <td>unary</td>
+      <td>arithmetic negation</td>
+      <td><code class="TbT.TblText">negative</code></td>
+    </tr>
+    <tr>
+      <td><code class="TbT.TblText">~</code></td>
+      <td>unary</td>
+      <td>logical negation</td>
+      <td><code class="TbT.TblText">~</code></td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><code class="TbT.TblText">^</code></td>
+      <td>binary</td>
+      <td>exponentiation</td>
+      <td><code class="TbT.TblText">^</code></td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><code class="TbT.TblText">*</code></td>
+      <td>binary</td>
+      <td>multiplication</td>
+      <td><code class="TbT.TblText">*</code></td>
+    </tr>
+    <tr>
+      <td><code class="TbT.TblText">/</code></td>
+      <td>binary</td>
+      <td>division</td>
+      <td><code class="TbT.TblText">/</code></td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><code class="TbT.TblText">+</code></td>
+      <td>binary</td>
+      <td>addition</td>
+      <td><code class="TbT.TblText">+</code></td>
+    </tr>
+    <tr>
+      <td><code class="TbT.TblText">-</code></td>
+      <td>binary</td>
+      <td>subtraction</td>
+      <td><code class="TbT.TblText">-</code></td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><code class="TbT.TblText">=</code></td>
+      <td>binary</td>
+      <td>equality</td>
+      <td><code class="TbT.TblText">=</code></td>
+    </tr>
+    <tr>
+      <td><code class="TbT.TblText">==</code></td>
+      <td>binary</td>
+      <td>identity</td>
+      <td><code class="TbT.TblText">==</code></td>
+    </tr>
+    <tr>
+      <td><code class="TbT.TblText">~=</code></td>
+      <td>binary</td>
+      <td>non-equality</td>
+      <td><code class="TbT.TblText">~=</code></td>
+    </tr>
+    <tr>
+      <td><code class="TbT.TblText">~==</code></td>
+      <td>binary</td>
+      <td>non-identity</td>
+      <td><code class="TbT.TblText">~==</code></td>
+    </tr>
+    <tr>
+      <td><code class="TbT.TblText">&lt;</code></td>
+      <td>binary</td>
+      <td>less than</td>
+      <td><code class="TbT.TblText">&lt;</code></td>
+    </tr>
+    <tr>
+      <td><code class="TbT.TblText">&gt;</code></td>
+      <td>binary</td>
+      <td>greater than</td>
+      <td><code class="TbT.TblText">&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code class="TbT.TblText">&lt;=</code></td>
+      <td>binary</td>
+      <td>less than or equals</td>
+      <td><code class="TbT.TblText">&lt;=</code></td>
+    </tr>
+    <tr>
+      <td><code class="TbT.TblText">&gt;=</code></td>
+      <td>binary</td>
+      <td>greater than or equals</td>
+      <td><code class="TbT.TblText">&gt;=</code></td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><code class="TbT.TblText">&amp;</code></td>
+      <td>binary</td>
+      <td>logical and</td>
+      <td><code class="cv TbT.TblText">&amp;</code></td>
+    </tr>
+    <tr>
+      <td><code class="TbT.TblText">|</code></td>
+      <td>binary</td>
+      <td>logical or</td>
+      <td><code class="cv TbT.TblText">|</code></td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><code class="TbT.TblText">:=</code></td>
+      <td>binary</td>
+      <td>assignment</td>
+      <td><code class="cv TbT.TblText">:=</code></td>
+    </tr>
+  </tbody>
+</table>
 </div>
 
 <div class="wm-div-footers">
