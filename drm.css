@@ -1,10 +1,11 @@
 body {
-	margin-left: 20px;
-	margin-right: 20px;
+	margin: 20px;
 
 	background-color: white;
 	color: black;
 }
+
+/*
 
 img { border-width: 0px; }
 ul { list-style-type: square }
@@ -46,3 +47,6 @@ div.wm-div-toc {
 	padding: 10px;
 	background-color: white;
 }
+
+
+*/
