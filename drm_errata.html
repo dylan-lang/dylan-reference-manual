@@ -11,236 +11,250 @@
 <body>
 <h1>DRM Errata</h1>
 <blockquote>
-	<p>This page contains a listing of typos and other errors in
-   the Dylan Reference Manual. If you find additional errors,
-   <a href="mailto:gd-hackers@gwydiondylan.org">please let us know</a>. Questions
-   about Dylan, suggestions for improvements to the language, and
-   general discussion should be directed to the <a href="mailto:info-dylan-request@ai.mit.edu">Dylan
-   mailing list</a>, or to <a href="news:comp.lang.dylan">the Dylan newsgroup</a>.
-   </p>
-   <p>Thanks go to <a href="mailto:tree@tiac.net">Tom Emerson</a>,
-   for suggesting that I put together this page, and for supplying me
-   with an initial list of typos.</p>
+  <p>This page contains a listing of typos and other errors in
+    the Dylan Reference Manual. If you find additional errors,
+    <a href="mailto:gd-hackers@gwydiondylan.org">please let us know</a>. Questions
+    about Dylan, suggestions for improvements to the language, and
+    general discussion should be directed to the <a href="mailto:info-dylan-request@ai.mit.edu">Dylan
+      mailing list</a>, or to <a href="news:comp.lang.dylan">the Dylan newsgroup</a>.</p>
+  <p>Thanks go to <a href="mailto:tree@tiac.net">Tom Emerson</a>,
+    for suggesting that I put together this page, and for supplying me
+    with an initial list of typos.</p>
 </blockquote>   
-   <hr />
-   <h2>Semantically Significant Errors</h2>
+<hr />
+<h2>Semantically Significant Errors</h2>
 
 <ul>
-   <li>p. 37 should include a horizontal rule immediately above the
-   entry for <tt>:=</tt>. In other words, the precedence of
-   <tt>:=</tt> is lower than that of <tt>|</tt> and
-   <tt>&amp;</tt>.</li>
-   
-   <li>p. 83, "Closures". The second paragraph in this section talks
-   about the <tt>score</tt> parameter, while the code actually uses a
-   parameter called <tt>points</tt>.</li>
-   
-   <li>p. 136, the illustration of the third constraint implied by
-   <tt>define sealed domain</tt> should include open declarations for
-   the initial classes and the generic function, as follows
-   
+  <li>p. 37 should include a horizontal rule immediately above the
+    entry for <tt>:=</tt>. In other words, the precedence of
+    <tt>:=</tt> is lower than that of <tt>|</tt> and
+    <tt>&amp;</tt>.</li>
+  
+  <li>p. 83, "Closures". The second paragraph in this section talks
+    about the <tt>score</tt> parameter, while the code actually uses a
+    parameter called <tt>points</tt>.</li>
+  
+  <li>p. 136, the illustration of the third constraint implied by
+    <tt>define sealed domain</tt> should include open declarations for
+    the initial classes and the generic function, as follows
+    
    <ul>
-      <li><tt>define open generic m ( x ) ;<br />
-      define open class &lt;t&gt; ( &lt;object&gt;) end class
-      &lt;t&gt;;<br />
-      define open class &lt;s&gt; ( &lt;object&gt;) end class
-      &lt;s&gt;;<br />
-      define method m ( s :: &lt;s&gt; ) end method m ;<br />
-      define sealed domain m ( &lt;t&gt; );<br />
-      &nbsp;<br />
-      define class &lt;c&gt; ( &lt;s&gt; , &lt;t&gt; ) end;
-      </tt></li>
+     <li><tt>define open generic m ( x ) ;<br />
+	 define open class &lt;t&gt; ( &lt;object&gt;) end class
+	 &lt;t&gt;;<br />
+	 define open class &lt;s&gt; ( &lt;object&gt;) end class
+	 &lt;s&gt;;<br />
+	 define method m ( s :: &lt;s&gt; ) end method m ;<br />
+	 define sealed domain m ( &lt;t&gt; );<br />
+	 &nbsp;<br />
+	 define class &lt;c&gt; ( &lt;s&gt; , &lt;t&gt; ) end;
+     </tt></li>
    </ul>
    
-   <p>In addition, the phrase, "The definition of <tt>&lt;c&gt;</tt>
-   would be valid if it appeared in the same library as the preceding
-   definitions or in a library used by them..." is not meant to imply
-   that <tt>&lt;c&gt;</tt> could be defined in a library used by the
-   library in which <tt>&lt;t&gt;</tt> and <tt>&lt;s&gt;</tt> are
-   defined. This is clearly impossible because of the prohibition
-   against circular library use paths. Rather, this phrase refers to
-   the following possible scenario:</p>
-   
-   <ul>
+    <p>In addition, the phrase, "The definition of <tt>&lt;c&gt;</tt>
+      would be valid if it appeared in the same library as the preceding
+      definitions or in a library used by them..." is not meant to imply
+      that <tt>&lt;c&gt;</tt> could be defined in a library used by the
+      library in which <tt>&lt;t&gt;</tt> and <tt>&lt;s&gt;</tt> are
+      defined. This is clearly impossible because of the prohibition
+      against circular library use paths. Rather, this phrase refers to
+      the following possible scenario:</p>
+    
+    <ul>
       <li>Library L1<br />
-      <tt>define open class &lt;t&gt; ( .. ) ... end;<br />
-      define open class &lt;s&gt; ( .. ) ... end;</tt>
-      
-      <p>L2 (uses L1)<br />
-      <tt>define class &lt;c&gt; (&lt;s&gt;, &lt;t&gt;) end;</tt></p>
-      
-      <p>L3 (uses L1)<br />
-      <tt>define generic m (x);<br />
-      define method m (s :: &lt;s&gt;) ... end;<br />
-      define sealed domain m (&lt;t&gt;);</tt></p></li>
-   </ul>
-   
-   <p>These libraries can only be used together if L3 also uses
-   (directly or indirectly) L2, and therefore has access to the class
-   <tt>&lt;c&gt;</tt> before the domain is sealed.</p></li>
-   
-   <li>p. 140, The classes and generic function should be declared
-   <tt>open</tt>, and the final method should be defined on
-   <tt>&lt;c1&gt;</tt>, not on <tt>&lt;c&gt;</tt>.</li>
-   
-   <li>p. 198, the number classes diagram shows a
-   <tt>&lt;complex-number&gt;</tt> class. This class is actually
-   named <tt>&lt;complex&gt;</tt>.</li>
-   
-   <li>p. 207, the collection classes diagram has an arrow leading to
-   various vector &amp; string classes from
-   <tt>&lt;empty-list&gt;</tt>. It should actually lead from
-   <tt>&lt;vector&gt;</tt>.</li>
-   
-   <li>p. 263, the default value for the <i>by</i> argument to
-   <tt>make</tt> of <tt>&lt;range&gt;</tt> should be <tt>1</tt>, not
-   <tt>0</tt>.</li>
-   
-   <li>p. 309, in the example for tail-setter, the final value of
-   <tt>x</tt> should be <tt>#(4&nbsp;.&nbsp;"dot")</tt>, not
-   <tt>#(4,&nbsp;9,&nbsp;8, . "dot")</tt>.</li>
-   
-   <li>p. 325, in the description of <tt>replace-subsequence!</tt>,
-   the parameter <i>target-sequence</i> is erroneously refered to as
-   <i>source-sequence</i> in the last paragraph.</li>
-   
-   <li>p. 329, in the example for <tt>map-as</tt>, the return value
-   should be <tt>#[101, 102, 203, 204]</tt> rather than
-   <tt>#(101, 102, 203, 204)</tt>.</li>
-   
-   <li>p. 351, the second use of <tt>apply</tt> reads
-   
-   <ul>
+	<tt>define open class &lt;t&gt; ( .. ) ... end;<br />
+	  define open class &lt;s&gt; ( .. ) ... end;</tt>
+	
+	<p>L2 (uses L1)<br />
+	  <tt>define class &lt;c&gt; (&lt;s&gt;, &lt;t&gt;) end;</tt></p>
+	
+	<p>L3 (uses L1)<br />
+	  <tt>define generic m (x);<br />
+	    define method m (s :: &lt;s&gt;) ... end;<br />
+	    define sealed domain m (&lt;t&gt;);</tt></p></li>
+    </ul>
+    
+    <p>These libraries can only be used together if L3 also uses
+      (directly or indirectly) L2, and therefore has access to the class
+      <tt>&lt;c&gt;</tt> before the domain is sealed.</p></li>
+  
+  <li>p. 140, The classes and generic function should be declared
+    <tt>open</tt>, and the final method should be defined on
+    <tt>&lt;c1&gt;</tt>, not on <tt>&lt;c&gt;</tt>.</li>
+  
+  <li>p. 198, the number classes diagram shows a
+    <tt>&lt;complex-number&gt;</tt> class. This class is actually
+    named <tt>&lt;complex&gt;</tt>.</li>
+  
+  <li>p. 207, the collection classes diagram has an arrow leading to
+    various vector &amp; string classes from
+    <tt>&lt;empty-list&gt;</tt>. It should actually lead from
+    <tt>&lt;vector&gt;</tt>.</li>
+  
+  <li>p. 263, the default value for the <i>by</i> argument to
+    <tt>make</tt> of <tt>&lt;range&gt;</tt> should be <tt>1</tt>, not
+    <tt>0</tt>.</li>
+  
+  <li>p. 309, in the example for tail-setter, the final value of
+    <tt>x</tt> should be <tt>#(4&nbsp;.&nbsp;"dot")</tt>, not
+    <tt>#(4,&nbsp;9,&nbsp;8, . "dot")</tt>.</li>
+  
+  <li>p. 325, in the description of <tt>replace-subsequence!</tt>,
+    the parameter <i>target-sequence</i> is erroneously refered to as
+    <i>source-sequence</i> in the last paragraph.</li>
+  
+  <li>p. 329, in the example for <tt>map-as</tt>, the return value
+    should be <tt>#[101, 102, 203, 204]</tt> rather than
+    <tt>#(101, 102, 203, 204)</tt>.</li>
+  
+  <li>p. 351, the second use of <tt>apply</tt> reads
+    
+    <ul>
       <li><tt>apply(min 5, 7 list(3, 1, 4))</tt></li>
-   </ul>
-   
-   <p>it should read</p>
-   
-   <ul>
+    </ul>
+    
+    <p>it should read</p>
+    
+    <ul>
       <li><tt>apply(min, 5, 7, list(3, 1, 4))</tt></li>
-   </ul>
-   
-   <p>(Note the additional comma after the number <tt>7</tt> in the
-   correct version.)</p></li>
-   
-   <li>p. 354, in the description of the third value returned by
-   <tt>function-arguments</tt>, the obsolete binding name
-   <tt>&lt;keyword&gt;</tt> is used. The name <tt>&lt;symbol&gt;</tt>
-   should be substituted for the name <tt>&lt;keyword&gt;</tt>.</li>
-   
-   <li>p. 377, the use of the word "permit" in the last sentence
-   describing the final example is incorrect. The word "recognize"
-   should be used instead, yielding
-   
-   <ul>
+    </ul>
+    
+    <p>(Note the additional comma after the number <tt>7</tt> in the
+      correct version.)</p></li>
+  
+  <li>p. 354, in the description of the third value returned by
+    <tt>function-arguments</tt>, the obsolete binding name
+    <tt>&lt;keyword&gt;</tt> is used. The name <tt>&lt;symbol&gt;</tt>
+    should be substituted for the name <tt>&lt;keyword&gt;</tt>.</li>
+  
+  <li>p. 377, the use of the word "permit" in the last sentence
+    describing the final example is incorrect. The word "recognize"
+    should be used instead, yielding
+    
+    <ul>
       <li>Methods added to the generic function must have one
-      required parameter, they must accept keyword arguments, and
-      they must recognize the keyword argument
-      <tt>strength:</tt>.</li>
-   </ul>
-   
-   <p>This change follows the definitions of the terms "permit" and
-   "recognize" as given on page 94, in the description of parameter
-   list congruency.</p>
-   
-   <hr />
-   <h2>Simple Typos</h2></li>
-   
-   <li>p. 44, the sentence describing execution order of operator
-   calls reads
-   
-   <ul>
+	required parameter, they must accept keyword arguments, and
+	they must recognize the keyword argument
+	<tt>strength:</tt>.</li>
+    </ul>
+    
+    <p>This change follows the definitions of the terms "permit" and
+      "recognize" as given on page 94, in the description of parameter
+      list congruency.</p>
+  </li>
+</ul>
+
+<hr />
+<h2>Simple Typos</h2>
+
+<ul>
+  <li>p. 44, the sentence describing execution order of operator
+    calls reads
+    
+    <ul>
       <li>The time of the binding specified by the operand (e.g.
-      <tt>+</tt> or <tt>*</tt>) is unspecified.</li>
-   </ul>
-   
-   <p>it should read</p>
-   
-   <ul>
+	<tt>+</tt> or <tt>*</tt>) is unspecified.</li>
+    </ul>
+    
+    <p>it should read</p>
+    
+    <ul>
       <li>The time of the binding specified by the operator (e.g.
-      <tt>+</tt> or <tt>*</tt>) is unspecified.</li>
-   </ul>
-   </li>
-   
-   <li>p. 88, the sentence before the enumerated list reads
-   
-   <ul>
+	<tt>+</tt> or <tt>*</tt>) is unspecified.</li>
+    </ul>
+  </li>
+  
+  <li>p. 88, the sentence before the enumerated list reads
+    
+    <ul>
       <li>Specialization is useful in three way:</li>
-   </ul>
-   
-   <p>it should read</p>
-   
-   <ul>
+    </ul>
+    
+    <p>it should read</p>
+    
+    <ul>
       <li>Specialization is useful in three ways:</li>
-   </ul>
-   </li>
-   
-   <li>p. 165, line two includes a superfluous right
-   parenthesis.</li>
-   
-   <li>p. 203, the description of <tt>&lt;extended-float&gt;</tt>
-   reads
-   
-   <ul>
+    </ul>
+  </li>
+  
+  <li>p. 165, line two includes a superfluous right
+    parenthesis.</li>
+  
+  <li>p. 203, the description of <tt>&lt;extended-float&gt;</tt>
+    reads
+    
+    <ul>
       <li>This class is intended but not required to provide more
-      precision that <tt>&lt;double-float&gt;</tt>.</li>
-   </ul>
-   
-   <p>It should read</p>
-   
-   <ul>
+	precision that <tt>&lt;double-float&gt;</tt>.</li>
+    </ul>
+    
+    <p>It should read</p>
+    
+    <ul>
       <li>This class is intended but not required to provide more
-      precision than <tt>&lt;double-float&gt;</tt>.</li>
-   </ul>
-   </li>
-   
-   <li> p335, in the description of the <tt>member?</tt> method at
-   the top of the page, the `I' of`If' is in Courier, and not the
-   standard body font.</li>
-   
-   <li>p. 344, the summary of <tt>all-superclasses</tt> reads
-   
-   <ul>
+	precision than <tt>&lt;double-float&gt;</tt>.</li>
+    </ul>
+  </li>
+  
+  <li>p. 335, in the description of the <tt>member?</tt> method at
+    the top of the page, the `I' of`If' is in Courier, and not the
+    standard body font.</li>
+  
+  <li>p. 344, the summary of <tt>all-superclasses</tt> reads
+    
+    <ul>
       <li>Returns the class precedence list a class</li>
-   </ul>
-   
-   <p>it should read</p>
-   
-   <ul>
+    </ul>
+    
+    <p>it should read</p>
+    
+    <ul>
       <li>Returns the class precedence list of a class</li>
-   </ul>
-   </li>
-   
-   <li>p. 389, the sentence fragment reading
-   
-   <ul>
+    </ul>
+  </li>
+  
+  <li>p. 389, the sentence fragment reading
+    
+    <ul>
       <li>so it cannot being excluded</li>
-   </ul>
-   
-   <p>should read</p>
-   
-   <ul>
+    </ul>
+    
+    <p>should read</p>
+    
+    <ul>
       <li>so it cannot be excluded</li>
-   </ul>
-   </li>
-   
-   <li>p. 393, the second paragraph begins
-   
-   <ul>
+    </ul>
+  </li>
+  
+  <li>p. 393, the second paragraph begins
+    
+    <ul>
       <li>The <i>handler</i> is function</li>
-   </ul>
-   
-   <p>it should read</p>
-   
-   <ul>
+    </ul>
+    
+    <p>it should read</p>
+    
+    <ul>
       <li>The <i>handler</i> is a function</li>
-   </ul>
-   </li>
-   
-   <li>p. 456, the index entry for <tt>define inert domain</tt> is
-   actually an index entry for <tt>define sealed domain</tt>.
-   
-   <p>&nbsp;</p></li>
+    </ul>
+  </li>
+
+  <li>p. 400, the text <q><tt>(</tt> <i>test</i> <tt>)</tt></q> should not be in the <tt>until</tt>
+    heading.
+  </li>
+  
+  <li>p. 456, the index entry for <tt>define inert domain</tt> is
+    actually an index entry for <tt>define sealed domain</tt>.
+    
+    <p>&nbsp;</p></li>
+</ul>
+
+<hr />
+<h2>Type-Setting and Layout Errors</h2>
+
+<ul>
+  <li>p. 376, the <tt>define generic</tt> heading should be set in monospaced font.</li>
+  <li>p. 389, the <tt>define macro</tt> heading should be set in monospaced font.</li>
 </ul>
 
 </body></html>
