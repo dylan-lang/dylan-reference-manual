@@ -22,7 +22,7 @@ body {
 /* Leave room for navigation UI and margins inside a window. */
 
 body {
-       margin-left: 200px; margin-right: 20px
+       margin-left: 205px; margin-right: 20px
      }
 
 img#book-cover { 
@@ -36,7 +36,7 @@ img#book-cover {
 .wm-div-headers {
                   overflow: auto;
                   position: fixed; top: 0; left: 0; bottom: 0;
-                  width: 170px;
+                  width: 175px;
                   padding-left: 20px;
                   background-color: #eee;
 /*
