@@ -166,23 +166,33 @@ i.Parameter, code i { font-family: serif }
 
 /*
   BNF Formatting
+  
+  Some words are set in all-caps, others in italics. (I have yet to
+  figure out the meaning of one vs. the other, so, unfortunately, I
+  haven't been able to give these classes very meaningful names.)
+  These appear both within the BNF chapters and elsewhere.
+  
+  Set paragraphs close together vertically.
 
-  Non-terminals are all-caps. This is unfinished. Doing this right
-  will require cleaning up the HTML tag spans.
- */
+  Specify a serif font for italics, to match the printed DRM, and
+  because I think it looks better.
+  
+  Literal code in the BNF is set in bold.
 
-
-/*
-.BNF	   { font-variant: small-caps }
-code.BNF   { font-family: serif }
-i code.BNF { font-style: normal }
-em.BNF 	   { font-size: larger; font-style: italic }
+  The phrase "one of" has some extra padding to visually separate
+  it from what follows.
 */
 
+.BNFCaps        { font-variant: small-caps; font-style: normal }
+div.BNF dd p    { margin: 0.25em 0 0 0 }
+div.BNF dt      { margin-top: 1em }
+div.BNF i       { font-family: serif }
+div.BNF code    { font-weight: bolder }
+div.BNF .one-of { padding-right: 1em }
+
 
 
 /*
-
 img { border-width: 0px; }
 ul { list-style-type: square }
 li > ul { list-style-type: disc; }

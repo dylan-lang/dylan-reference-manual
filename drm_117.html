@@ -59,77 +59,297 @@
 <p class="header">A BNF</p>
 
 </div>
+<div class="BNF">
 <a name="HEADING117-0"></a>
 <a name="UID-BNF_Appendix-327"></a>
 <h1 class="H1.Heading1"><a name="MARKER-9-2096"></a><a name="MARKER-2-2097"></a>Lexical Grammar</h1>
 <a name="HEADING117-1"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2098"></a>Comments</h2>
-<p class="T1.Text1"><i class="italics T1.Text1">comment:<br /><code class="italics T1.Text1"> //</code></i>  &hellip;the rest of the line<br /><code class="T1.Text1"> /*</code>  &hellip;everything even across lines, including nested comments&hellip;  <code class="T1.Text1">*/</code></p>
+<dl>
+  <dt><i class="T1.Text1">comment:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">//</code> &hellip;the rest of the line</p>
+    <p><code class="T1.Text1">/*</code> &hellip;everything even across lines, including nested comments&hellip; <code class="T1.Text1">*/</code></p>
+  </dd>
+</dl>
 <a name="HEADING117-3"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2099"></a>Tokens</h2>
-<p class="T1.Text1"><em class="T1.Text1">token<i class="italics T1.Text1">:<br /></i></em> <em class="T1.Text1">name<br /> symbol<br /> number<br /> character-literal<br /> string<br /> unary-operator<br /> binary-operator<br /></em> <i class="italics T1.Text1">punctuation<br /></i> <i class="italics T1.Text1">#-word</i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">punctuation:<br /> one of <code class="italics T1.Text1">  ( ) , . ; [ ] { } :: - = == =&gt;<br /> one of   #( #[ ## ? ?? ?= ...</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">#-word:<br /> one of  <code class="italics T1.Text1">#t #f #next #rest #key #all-keys #include</code></i></p>
+<dl>
+  <dt><em class="BNFCaps T1.Text1">token:</em></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">name</em></p>
+    <p><em class="BNFCaps T1.Text1">symbol</em></p>
+    <p><em class="BNFCaps T1.Text1">number</em></p>
+    <p><em class="BNFCaps T1.Text1">character-literal</em></p>
+    <p><em class="BNFCaps T1.Text1">string</em></p>
+    <p><em class="BNFCaps T1.Text1">unary-operator</em></p>
+    <p><em class="BNFCaps T1.Text1">binary-operator</em></p>
+    <p><i class="T1.Text1">punctuation</i></p>
+    <p><i class="T1.Text1">#-word</i></p>
+  </dd>
+  <dt><i class="T1.Text1">punctuation:</i></dt>
+  <dd>
+    <p><span class="one-of">one of</span> <code class="T1.Text1">( ) , . ; [ ] { } :: - = == =&gt;</code></p>
+    <p><span class="one-of">one of</span> <code class="T1.Text1">#( #[ ## ? ?? ?= ...</code></p>
+  </dd>
+  <dt><i class="T1.Text1">#-word:</i></dt>
+  <dd><span class="one-of">one of</span> <code class="T1.Text1">#t #f #next #rest #key #all-keys #include</code></dd>
+</dl>
 <a name="HEADING117-7"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2100"></a>Reserved Words</h2>
-<p class="T1.Text1"><i class="italics T1.Text1">reserved-word:<br /></i> <i class="italics T1.Text1">core-word<br /></i> <em class="T1.Text1">begin-word<br /></em> <em class="T1.Text1">function-word<br /></em> <em class="T1.Text1">define-body-word<br /></em> <em class="T1.Text1">define-list-word</em></p>
-<p class="T1.Text1"><i class="italics T1.Text1">core-word:<br /> one of   <code class="italics T1.Text1">define end handler let local macro otherwise</code></i></p>
+<dl>
+  <dt><i class="T1.Text1">reserved-word:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">core-word</i></p>
+    <p><em class="BNFCaps T1.Text1">begin-word</em></p>
+    <p><em class="BNFCaps T1.Text1">function-word</em></p>
+    <p><em class="BNFCaps T1.Text1">define-body-word</em></p>
+    <p><em class="BNFCaps T1.Text1">define-list-word</em></p>
+  </dd>
+  <dt><i class="T1.Text1">core-word:</i></dt>
+  <dd><span class="one-of">one of</span> <code class="T1.Text1">define end handler let local macro otherwise</code></dd>
+</dl>
 <p class="T1.Text1">The following reserved words are exported by the Dylan module:</p>
-<p class="T1.Text1"><em class="T1.Text1">begin-word</em>:<br /> one of<i class="T1.Text1">  <code class="T1.Text1">begin block case for if method<br /> one of  select unless until while</code></i></p>
-<p class="T1.Text1"><em class="T1.Text1">function-word</em>:<br /> (none)</p>
-<p class="T1.Text1"><em class="T1.Text1">define-body-word</em>:<br /> one of <i class="T1.Text1"> <code class="T1.Text1">class library method module</code></i></p>
-<p class="T1.Text1"><em class="T1.Text1">define-list-word</em>:<br /> one of<i class="T1.Text1">  <code class="T1.Text1">constant variable domain</code></i></p>
+<dl>
+  <dt><em class="BNFCaps T1.Text1">begin-word:</em></dt>
+  <dd>
+    <p><span class="one-of">one of</span> <code class="T1.Text1">begin block case for if method</code></p>
+    <p><span class="one-of">one of</span> <code class="T1.Text1">select unless until while</code></p>
+  </dd>
+  <dt><em class="BNFCaps T1.Text1">function-word:</em></dt>
+  <dd>(none)</dd>
+  <dt><em class="BNFCaps T1.Text1">define-body-word:</em></dt>
+  <dd><span class="one-of">one of</span> <code class="T1.Text1">class library method module</code></dd>
+  <dt><em class="BNFCaps T1.Text1">define-list-word:</em></dt>
+  <dd><span class="one-of">one of</span> <code class="T1.Text1">constant variable domain</code></dd>
+</dl>
 <a name="HEADING117-15"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2101"></a>Names, Symbols and Keywords</h2>
-<p class="T1.Text1"><em class="T1.Text1">name</em>:<br /><i class="T1.Text1"> word</i> <br /><i class="T1.Text1"> <code class="T1.Text1">\ word</code></i> <br /><i class="T1.Text1"> operator-name</i></p>
-<p class="T1.Text1"><em class="T1.Text1">unreserved-name</em>:<br /> any <i class="T1.Text1">word </i> that is not also a <i class="T1.Text1">reserved-word<br /> <code class="T1.Text1">\ word</code></i> <br /> <i class="italics T1.Text1">operator-name</i></p>
-<p class="T1.Text1"><em class="T1.Text1">ordinary-name</em>:<br /> <em class="T1.Text1">unreserved-name<br /></em> <em class="T1.Text1">define-body-word<br /></em> <em class="T1.Text1">define-list-word</em></p>
-<p class="T1.Text1"><em class="T1.Text1">constrained-name</em>:<br /> <em class="T1.Text1">name</em> <code class="T1.Text1"> : <i class="T1.Text1">word</i></code> <br /> <em class="T1.Text1">name</em> <code class="T1.Text1"> : <em class="T1.Text1">binary-operator</em></code> <br /><code class="T1.Text1"> : <i class="T1.Text1">word</i></code> </p>
-<p class="T1.Text1"><i class="T1.Text1">operator-name:<br /></i> <code class="cv T1.Text1">\</code> <em class="T1.Text1">unary-operator<br /></em> <code class="cv T1.Text1">\</code> <em class="T1.Text1">binary-operator</em></p>
-<p class="T1.Text1"><em class="T1.Text1">macro-name:<br /> ordinary-name<br /> begin-word<br /> function-word</em></p>
-<p class="T1.Text1"><em class="T1.Text1">name-not-end:<br /> macro-name<br /></em> one of  <em class="T1.Text1">define handler let local macro otherwise</em></p>
-<p class="T1.Text1"><em class="T1.Text1">symbol</em>:<br /><i class="T1.Text1"> word<code class="T1.Text1">:<br /> # <em class="T1.Text1">string</em></code></i></p>
-<p class="T1.Text1"><i class="T1.Text1">word:<br /> leading-alphabetic<br /> leading-numeric  alphabetic-character  leading-alphabetic<br /> leading-graphic  leading-alphabetic</i></p>
-<p class="T1.Text1"><i class="T1.Text1">leading-alphabetic:<br /> alphabetic-character<br /> leading-alphabetic  any-character</i></p>
-<p class="T1.Text1"><i class="T1.Text1">leading-numeric:<br /> numeric-character<br /> leading-numeric word-character-not-double-alphabetic</i></p>
-<p class="T1.Text1"><i class="T1.Text1">leading-graphic:<br /> graphic-character<br /> leading-graphic word-character-not-alphabetic</i></p>
-<p class="T1.Text1"><i class="T1.Text1">word-character-not-alphabetic:<br /> numeric-character<br /> graphic-character<br /> special-character</i></p>
-<p class="T1.Text1"><i class="T1.Text1">word-character-not-double-alphabetic:<br /> alphabetic-character  word-character-not-alphabetic<br /> numeric-character<br /> graphic-character<br /> special-character</i></p>
-<p class="T1.Text1"><i class="T1.Text1">any-character:<br /> alphabetic-character<br /> numeric-character<br /> graphic-character<br /> special-character</i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">alphabetic-character:<br /> one of  <em class="italics T1.Text1">a b c d e f g h i j k l m n o p q r s t u v w x y z</em></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">numeric-character:<br /> one of  <code class="italics T1.Text1">0 1 2 3 4 5 6 7 8 9</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">graphic-character:<br /> one of  <code class="italics T1.Text1">! &amp; * &lt; &gt; | ^ $ % @ _</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">special-character:<br /> one of </i> <code class="T1.Text1">- + ~ ? / =</code></p>
+<dl>
+  <dt><em class="BNFCaps T1.Text1">name:</em></dt>
+  <dd>
+    <p><i class="T1.Text1">word</i></p>
+    <p><i class="T1.Text1"><code class="T1.Text1">\</code> word</i></p>
+    <p><i class="T1.Text1">operator-name</i></p>
+  </dd>
+  <dt><em class="BNFCaps T1.Text1">unreserved-name:</em></dt>
+  <dd>
+    <p>any <i class="T1.Text1">word</i> that is not also a <i class="T1.Text1">reserved-word</i></p>
+    <p><code class="T1.Text1">\</code> <i class="T1.Text1">word</i></p>
+    <p><i class="T1.Text1">operator-name</i></p>
+  </dd>
+  <dt><em class="BNFCaps T1.Text1">ordinary-name:</em></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">unreserved-name</em></p>
+    <p><em class="BNFCaps T1.Text1">define-body-word</em></p>
+    <p><em class="BNFCaps T1.Text1">define-list-word</em></p>
+  </dd>
+  <dt><em class="BNFCaps T1.Text1">constrained-name:</em></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">name</em> <code class="T1.Text1">:</code> <i class="T1.Text1">word</i></p>
+    <p><em class="BNFCaps T1.Text1">name</em> <code class="T1.Text1">:</code> <em class="BNFCaps T1.Text1">binary-operator</em></p>
+    <p><code class="T1.Text1">:</code> <i class="T1.Text1">word</i></p>
+  </dd>
+  <dt><i class="T1.Text1">operator-name:</i></dt>
+  <dd>
+    <p><code class="cv T1.Text1">\</code> <em class="BNFCaps T1.Text1">unary-operator</em></p>
+    <p><code class="cv T1.Text1">\</code> <em class="BNFCaps T1.Text1">binary-operator</em></p>
+  </dd>
+  <dt><em class="BNFCaps T1.Text1">macro-name:</em></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">ordinary-name</em></p>
+    <p><em class="BNFCaps T1.Text1">begin-word</em></p>
+    <p><em class="BNFCaps T1.Text1">function-word</em></p>
+  </dd>
+  <dt><em class="BNFCaps T1.Text1">name-not-end:</em></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">macro-name</em></p>
+    <p><span class="one-of">one of</span> <code class="T1.Text1">define handler let local macro otherwise</code></p>
+  </dd>
+  <dt><em class="BNFCaps T1.Text1">symbol:</em></dt>
+  <dd>
+    <p><i class="T1.Text1">word</i> <code class="T1.Text1">:</code></p>
+    <p><code class="T1.Text1">#</code> <em class="BNFCaps T1.Text1">string</em></p>
+  </dd>
+  <dt><i class="T1.Text1">word:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">leading-alphabetic</i></p>
+    <p><i class="T1.Text1">leading-numeric  alphabetic-character  leading-alphabetic</i></p>
+    <p><i class="T1.Text1">leading-graphic  leading-alphabetic</i></p>
+  </dd>
+  <dt><i class="T1.Text1">leading-alphabetic:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">alphabetic-character</i></p>
+    <p><i class="T1.Text1">leading-alphabetic  any-character</i></p>
+  </dd>
+  <dt><i class="T1.Text1">leading-numeric:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">numeric-character</i></p>
+    <p><i class="T1.Text1">leading-numeric word-character-not-double-alphabetic</i></p>
+  </dd>
+  <dt><i class="T1.Text1">leading-graphic:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">graphic-character</i></p>
+    <p><i class="T1.Text1">leading-graphic word-character-not-alphabetic</i></p>
+  </dd>
+  <dt><i class="T1.Text1">word-character-not-alphabetic:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">numeric-character</i></p>
+    <p><i class="T1.Text1">graphic-character</i></p>
+    <p><i class="T1.Text1">special-character</i></p>
+  </dd>
+  <dt><i class="T1.Text1">word-character-not-double-alphabetic:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">alphabetic-character  word-character-not-alphabetic</i></p>
+    <p><i class="T1.Text1">numeric-character</i></p>
+    <p><i class="T1.Text1">graphic-character</i></p>
+    <p><i class="T1.Text1">special-character</i></p>
+  </dd>
+  <dt><i class="T1.Text1">any-character:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">alphabetic-character</i></p>
+    <p><i class="T1.Text1">numeric-character</i></p>
+    <p><i class="T1.Text1">graphic-character</i></p>
+    <p><i class="T1.Text1">special-character</i></p>
+  </dd>
+  <dt><i class="T1.Text1">alphabetic-character:</i></dt>
+  <dd>
+    <p><span class="one-of">one of</span>  <code class="T1.Text1">a b c d e f g h i j k l m n o p q r s t u v w x y z</code></p>
+  </dd>
+  <dt><i class="T1.Text1">numeric-character:</i></dt>
+  <dd>
+    <p><span class="one-of">one of</span>  <code class="T1.Text1">0 1 2 3 4 5 6 7 8 9</code></p>
+  </dd>
+  <dt><i class="T1.Text1">graphic-character:</i></dt>
+  <dd>
+    <p><span class="one-of">one of</span>  <code class="T1.Text1">! &amp; * &lt; &gt; | ^ $ % @ _</code></p>
+  </dd>
+  <dt><i class="T1.Text1">special-character:</i></dt>
+  <dd>
+    <p><span class="one-of">one of</span>  <code class="T1.Text1">- + ~ ? / =</code></p>
+  </dd>
+</dl>
 <a name="HEADING117-35"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2102"></a>Operators</h2>
-<p class="T1.Text1"><em class="T1.Text1">unary-operator</em>:<br /> one of<i class="T1.Text1">  <code class="T1.Text1">- ~</code></i></p>
-<p class="T1.Text1"><i class="T1.Text1"><em class="T1.Text1">binary-operator:<br /> one of  <code class="T1.Text1">+ - * / ^ = == ~= ~== &lt; &lt;= &gt; &gt;= &amp; | :=</code></em></i></p>
+<dl>
+  <dt><em class="BNFCaps T1.Text1">unary-operator:</em></dt>
+  <dd>
+    <p><span class="one-of">one of</span>  <code class="T1.Text1">- ~</code></p>
+  </dd>
+  <dt><em class="BNFCaps T1.Text1">binary-operator:</em></dt>
+  <dd>
+    <p><span class="one-of">one of</span>  <code class="T1.Text1">+ - * / ^ = == ~= ~== &lt; &lt;= &gt; &gt;= &amp; | :=</code></p>
+  </dd>
+</dl>
 <a name="HEADING117-38"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2103"></a>Character and String Literals</h2>
-<p class="T1.Text1"><em class="T1.Text1">character-literal</em>:<br /><code class="T1.Text1"> '<i class="T1.Text1">  character  '</i></code></p>
-<p class="T1.Text1"><i class="T1.Text1">character:<br /> any printing character (including space) except for  <code class="T1.Text1">'  or  \<br /> \</code></i> escape-character</p>
-<p class="T1.Text1"><em class="T1.Text1">string<i class="T1.Text1">:<br /><code class="T1.Text1"> &quot;  more-string</code></i></em></p>
-<p class="T1.Text1"><i class="italics T1.Text1">more-string:<br /> string-character  more-string<br /></i> <code class="T1.Text1">&quot;</code></p>
-<p class="T1.Text1"><i class="italics T1.Text1">string-character:<br /> any printing character (including space) except for</i>  <code class="T1.Text1">&quot;</code>  or  <code class="T1.Text1">\<br /> \<i class="T1.Text1">  escape-character</i></code></p>
-<p class="T1.Text1"><i class="italics T1.Text1">escape-character:<br /> one of  <code class="italics T1.Text1">\ ' &quot; a b e f n r t 0<br /><strong class="italics T1.Text1"> &lt;  hex-digits   &gt;</strong></code></i></p>
+<dl>
+  <dt><em class="BNFCaps T1.Text1">character-literal:</em></dt>
+  <dd>
+    <p><code class="T1.Text1">'</code> <i class="T1.Text1">character</i> <code class="T1.Text1">'</code></p>
+  </dd>
+  <dt><i class="T1.Text1">character:</i></dt>
+  <dd>
+    <p>any printing character (including space) except for <code class="T1.Text1">'</code> or <code class="T1.Text1">\</code></p>
+    <p><code class="T1.Text1">\</code> <i class="T1.Text1">escape-character</i></p>
+  </dd>
+  <dt><em class="BNFCaps T1.Text1">string:</em></dt>
+  <dd>
+    <p><code class="T1.Text1">&quot;</code> <i class="T1.Text1">more-string</i></p>
+  </dd>
+  <dt><i class="T1.Text1">more-string:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">string-character  more-string</i></p>
+    <p><code class="T1.Text1">&quot;</code></p>
+  </dd>
+  <dt><i class="T1.Text1">string-character:</i></dt>
+  <dd>
+    <p>any printing character (including space) except for <code class="T1.Text1">&quot;</code> or <code class="T1.Text1">\</code></p>
+    <p><code class="T1.Text1">\</code> <i class="T1.Text1">escape-character</i></p>
+  </dd>
+  <dt><i class="T1.Text1">escape-character:</i></dt>
+  <dd>
+    <p><span class="one-of">one of</span>  <code class="T1.Text1">\ ' &quot; a b e f n r t 0</code></p>
+    <p><code class="T1.Text1">&lt;</code> <i class="T1.Text1">hex-digits</i> <code class="T1.Text1">&gt;</code></p>
+  </dd>
+</dl>
 <a name="HEADING117-45"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2104"></a><a name="MARKER-9-2105"></a>Numbers</h2>
-<p class="T1.Text1"><em class="T1.Text1">number</em>:<br /> <i class="italics T1.Text1">integer<br /> ratio<br /> floating-point</i></p>
-<p class="T1.Text1"><i class="T1.Text1">integer:<br /> binary-integer<br /> octal-integer<br /> sign<em class="Subscript T1.Text1"><sub>opt</sub>  decimal-integer<br /> hex-integer</em></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">binary-integer:<br /><code class="italics T1.Text1"> #b  binary-digit<br /></code></i> <i class="italics T1.Text1">binary-integer  binary-digit</i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">octal-integer:<br /><code class="italics T1.Text1"> #o  octal-digit<br /></code></i> <i class="italics T1.Text1">octal-integer  octal-digit</i></p>
-<p class="T1.Text1"><i class="T1.Text1">decimal-integer:<br /> decimal-digit<br /> decimal-integer  decimal-digit</i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">hex-integer:<br /><code class="italics T1.Text1"> #x  hex-digit<br /></code></i> <i class="italics T1.Text1">hex-integer  hex-digit</i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">hex-digits:<br /> hex-digit</i>  &hellip;</p>
-<p class="T1.Text1"><i class="italics T1.Text1">binary-digit:<br /> one of</i>  <code class="T1.Text1">0 1</code></p>
-<p class="T1.Text1"><i class="italics T1.Text1">octal-digit:<br /> one of  <code class="italics T1.Text1">0 1 2 3 4 5 6 7</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">decimal-digit:<br /> one of  <code class="italics T1.Text1">0 1 2 3 4 5 6 7 8 9</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">hex-digit:<br /> one of  <code class="italics T1.Text1">0 1 2 3 4 5 6 7 8 9 A B C D E F</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">ratio:<br /> sign<em class="Subscript italics T1.Text1"><sub>opt</sub>  decimal-integer  <code class="Subscript italics T1.Text1">/</code></em></i> <i class="T1.Text1"> decimal-integer</i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">floating-point:<br /> sign<em class="Subscript italics T1.Text1"><sub>opt</sub>  decimal-integer<sub>opt</sub>  <code class="Subscript italics T1.Text1">.  decimal-integer  exponent<sub>opt</sub><br /> sign<sub>opt</sub>  decimal-integer  .  decimal-integer<sub>opt</sub>  exponent<sub>opt</sub><br /> sign<sub>opt</sub>  decimal-integer  exponent</code></em></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">exponent:<br /><code class="italics T1.Text1"> E  sign<em class="Subscript italics T1.Text1"><sub>opt</sub>  decimal-integer</em></code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">sign:<br /> one of </i> <code class="T1.Text1">+ -<a name="MARKER-2-2106"></a></code></p>
+<dl>
+  <dt><em class="BNFCaps T1.Text1">number:</em></dt>
+  <dd>
+    <p><i class="T1.Text1">integer</i></p>
+    <p><i class="T1.Text1">ratio</i></p>
+    <p><i class="T1.Text1">floating-point</i></p>
+  </dd>
+  <dt><i class="T1.Text1">integer:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">binary-integer</i></p>
+    <p><i class="T1.Text1">octal-integer</i></p>
+    <p><i class="T1.Text1">sign<em class="Subscript T1.Text1"><sub>opt</sub></em></i> <i class="T1.Text1">decimal-integer</i></p>
+    <p><i class="T1.Text1">hex-integer</i></p>
+  </dd>
+  <dt><i class="T1.Text1">binary-integer:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">#b</code> <i class="T1.Text1">binary-digit</i></p>
+    <p><i class="T1.Text1">binary-integer</i> <i class="T1.Text1">binary-digit</i></p>
+  </dd>
+  <dt><i class="T1.Text1">octal-integer:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">#o</code> <i class="T1.Text1">octal-digit</i></p>
+    <p><i class="T1.Text1">octal-integer</i> <i class="T1.Text1">octal-digit</i></p>
+  </dd>
+  <dt><i class="T1.Text1">decimal-integer:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">decimal-digit</i></p>
+    <p><i class="T1.Text1">decimal-integer</i> <i class="T1.Text1">decimal-digit</i></p>
+  </dd>
+  <dt><i class="T1.Text1">hex-integer:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">#x</code> <i class="T1.Text1">hex-digit</i></p>
+    <p><i class="T1.Text1">hex-integer</i> <i class="T1.Text1">hex-digit</i></p>
+  </dd>
+  <dt><i class="T1.Text1">hex-digits:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">hex-digit</i> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">binary-digit:</i></dt>
+  <dd>
+    <p><span class="one-of">one of</span>  <code class="T1.Text1">0 1</code></p>
+  </dd>
+  <dt><i class="T1.Text1">octal-digit:</i></dt>
+  <dd>
+    <p><span class="one-of">one of</span>  <code class="T1.Text1">0 1 2 3 4 5 6 7</code></p>
+  </dd>
+  <dt><i class="T1.Text1">decimal-digit:</i></dt>
+  <dd>
+    <p><span class="one-of">one of</span>  <code class="T1.Text1">0 1 2 3 4 5 6 7 8 9</code></p>
+  </dd>
+  <dt><i class="T1.Text1">hex-digit:</i></dt>
+  <dd>
+    <p><span class="one-of">one of</span>  <code class="T1.Text1">0 1 2 3 4 5 6 7 8 9 A B C D E F</code></p>
+  </dd>
+  <dt><i class="T1.Text1">ratio:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">sign<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <i class="T1.Text1">decimal-integer</i> <code class="Subscript T1.Text1">/</code> <i class="T1.Text1">decimal-integer</i></p>
+  </dd>
+  <dt><i class="T1.Text1">floating-point:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">sign<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <i class="T1.Text1">decimal-integer<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">.</code> <i class="T1.Text1">decimal-integer</i> <i class="T1.Text1">exponent<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></p>
+    <p><i class="T1.Text1">sign<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <i class="T1.Text1">decimal-integer</i> <code class="T1.Text1">.</code> <i class="T1.Text1">decimal-integer<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <i class="T1.Text1">exponent<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></p>
+    <p><i class="T1.Text1">sign<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <i class="T1.Text1">decimal-integer</i> <i class="T1.Text1">exponent</i></p>
+  </dd>
+  <dt><i class="T1.Text1">exponent:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">E</code> <i class="T1.Text1">sign<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <i class="T1.Text1">decimal-integer</i></p>
+  </dd>
+  <dt><i class="T1.Text1">sign:</i></dt>
+  <dd>
+    <p><span class="one-of">one of</span>  <code class="T1.Text1">+ -<a name="MARKER-2-2106"></a></code></p>
+  </dd>
+</dl>
 
+</div>
 </div>
 
 <div class="wm-div-footers">
