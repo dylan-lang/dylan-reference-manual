@@ -16,7 +16,7 @@ h1[class~="H1.Heading1"], h2, h3 { padding-top: 0.5em; padding-bottom: 3px; bord
 
 h3[class~="H4.Heading4"] { padding-top: 1.5em; padding-bottom: 0px; border-bottom: none }
 h3[class~="H4.Heading4"] code { font-size: larger }
-span.attributes-summary { float: right; margin-right: 1em }
+span.attributes-summary { position: absolute; right: 20px; margin-right: 1em }
 
 
 /*
