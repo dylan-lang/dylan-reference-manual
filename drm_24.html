@@ -62,7 +62,7 @@
 <a name="HEADING24-0"></a>
 <a name="UID-Syntax-1171"></a>
 <h1 class="H1.Heading1"><a name="MARKER-2-330"></a>Naming Conventions</h1>
-<p class="T1.Text1">Several conventions for naming module bindings help programmers identify the purposes of bindings. In general, the names of <a name="MARKER-2-331"></a>bindings do not affect the semantics of a program, but are simply used to improve <a name="MARKER-2-332"></a>readability. (The exceptions to this rule are the "<code class="Code T1.Text1">-definer</code>" suffix used by definition macros, and the "<code class="Code T1.Text1">-setter</code>" suffix, described later in this section.)</p>
+<p class="T1.Text1">Several conventions for naming module bindings help programmers identify the purposes of bindings. In general, the names of <a name="MARKER-2-331"></a>bindings do not affect the semantics of a program, but are simply used to improve <a name="MARKER-2-332"></a>readability. (The exceptions to this rule are the "<code>-definer</code>" suffix used by definition macros, and the "<code>-setter</code>" suffix, described later in this section.)</p>
 <ul class="B1.Bullet1">
 <li class="B1.Bullet1">Module bindings used to hold <a name="MARKER-2-333"></a>types begin and end with <a name="MARKER-2-334"></a>angle brackets.</li>
 </ul>
@@ -99,14 +99,14 @@ even?
 instance?	
 </pre>
 <ul class="B1.Bullet1">
-<li class="B1.Bullet1"><a name="MARKER-2-341"></a><a name="MARKER-9-342"></a>Operations that return a value similar to one of their arguments and that also destructively modify the argument end in a <code class="cv B1.Bullet1"><a name="MARKER-2-343"></a>!</code>. (It will often also be the case that destructive and non-destructive variations of the function exist.) <code class="cv B1.Bullet1">!</code> isn't a universal warning that an operation is destructive. Destructive functions that return other values (like <code class="cv B1.Bullet1">-setter</code> functions and <code class="cv B1.Bullet1">pop</code>) don't need to use the <code class="cv B1.Bullet1">!</code> convention.</li>
+<li class="B1.Bullet1"><a name="MARKER-2-341"></a><a name="MARKER-9-342"></a>Operations that return a value similar to one of their arguments and that also destructively modify the argument end in a <code><a name="MARKER-2-343"></a>!</code>. (It will often also be the case that destructive and non-destructive variations of the function exist.) <code>!</code> isn't a universal warning that an operation is destructive. Destructive functions that return other values (like <code>-setter</code> functions and <code>pop</code>) don't need to use the <code>!</code> convention.</li>
 </ul>
 <pre class="Cv.Code">
 reverse!
 sort!
 </pre>
 <ul class="B1.Bullet1">
-<li class="B1.Bullet1"><a name="MARKER-2-344"></a><a name="MARKER-2-345"></a>Operations that retrieve a value from a location are called <strong class="B1.Bullet1"><a name="MARKER-2-346"></a>getters</strong>. Operations that store into a location are called <strong class="B1.Bullet1"><a name="MARKER-2-347"></a>setters</strong>. In general, getters and setters come in pairs. Setter binding names are derived by appending "<code class="B1.Bullet1">-setter</code>" to the corresponding getter binding name. This convention is used to generate setter names automatically, and it is used by <code class="Code B1.Bullet1">:=</code>, the assignment operator, to find the setter that corresponds to a given getter.</li>
+<li class="B1.Bullet1"><a name="MARKER-2-344"></a><a name="MARKER-2-345"></a>Operations that retrieve a value from a location are called <strong class="B1.Bullet1"><a name="MARKER-2-346"></a>getters</strong>. Operations that store into a location are called <strong class="B1.Bullet1"><a name="MARKER-2-347"></a>setters</strong>. In general, getters and setters come in pairs. Setter binding names are derived by appending "<code>-setter</code>" to the corresponding getter binding name. This convention is used to generate setter names automatically, and it is used by <code>:=</code>, the assignment operator, to find the setter that corresponds to a given getter.</li>
 </ul>
 <pre class="Cv.Code">
 element      element-setter

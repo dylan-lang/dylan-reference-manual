@@ -83,6 +83,15 @@ ul.footer ul.footer ul.footer { list-style-type: square }
 li.footer 	      	      { margin-top: 0 }
 
 
+/*
+  Definitions
+
+  Definition labels (e.g., "Signature:") are bold.
+
+*/
+
+dl.Cliche > dt { font-weight: bold }
+
 
 /*
   Definitions
@@ -202,16 +211,33 @@ table.class-attributes-legend td.description { padding-right: 2em }
   Italicized text inside of CODE is not literal code and should be
   rendered in a body font instead of the code font. Additionally,
   references in documentation to any of those non-literals should be
-  rendered using the same font (class="Parameter").
+  rendered using the same font (class="parameter" or VAR).
 
-  NOTE: Unfortunately, I do not currently see a way to specify "body
-  font" in CSS, so I've opted for "serif". This means that if the UA's
-  body font is sans-serif, it won't be a match, but this still looks
-  better than italicized monospaced code font.
-
+  NOTE: The HTML originally used I and class="parameter" to identify
+  variables, parameters, and arguments, but we're slowly migrating
+  them to use VAR. Eventually, we should be able to remove the
+  patterns for them and just use VAR.
 */
 
-code i, i.Parameter { font-family: serif }
+code i, i.parameter, var { font-family: serif }
+
+/* Italic text in bold code (predefined method signatures) is sans-serif. */
+
+h4 > code var { font-family: sans-serif }
+
+
+
+/*
+  Regular Expression Formatting
+
+  Regular expression syntax is used to define some parts of the grammar
+  outside of the formal BNF grammar. Regular expression markers like
+  {, and }* should be in a heavy font, and a little larger to add even
+  more weight (because typically just making it bold doesn't provide
+  enough contrast).
+*/
+
+strong.re { font-size: larger }
 
 
 

@@ -63,7 +63,7 @@
 <a name="UID-Macros-6935"></a>
 <h1 class="H1.Heading1">Rewrite Rule Examples</h1>
 <p class="T1.Text1"><a name="MARKER-2-1281"></a>The following definitions of all of the built-in macros are provided as examples. This section is not intended to be a tutorial on how to write macros, just a collection of demonstrations of some of the tricks.</p>
-<p class="T1.Text1">The built-in macros cannot really be implemented this way; for example <code class="cv T1.Text1">if</code> and <code class="cv T1.Text1">case</code> cannot really both be implemented by expanding to the other. Certain built-in macros cannot be implemented with rewrite rules or necessarily rewrite into implementation-dependent code; in these cases the right-hand sides are shown as <i class="Parameter T1.Text1">id</i>.</p>
+<p class="T1.Text1">The built-in macros cannot really be implemented this way; for example <code>if</code> and <code>case</code> cannot really both be implemented by expanding to the other. Certain built-in macros cannot be implemented with rewrite rules or necessarily rewrite into implementation-dependent code; in these cases the right-hand sides are shown as <var>id</var>.</p>
 <a name="HEADING86-3"></a>
 <a name="UID-Macros-6941"></a>
 <h2 class="H2.Heading2">Statement Macros</h2>
@@ -267,12 +267,12 @@ end;
 <h3 class="H3.Heading3"><a name="MARKER-2-1287"></a>Method</h3>
 <pre class="Cv.Code">
 define macro method
-  { method (?parameters:*) =&gt; (?results:*) ; ?:body end }     =&gt;  <i class="Parameter Cv.Code">id
-</i>  { method (?parameters:*) =&gt; (?results:*) ?:body end }       =&gt;  <i class="Parameter Cv.Code">id
-</i>  { method (?parameters:*) =&gt; ?result:variable ; ?:body end } =&gt;  <i class="Parameter Cv.Code">id
-</i>  { method (?parameters:*) ; ?:body end }                     =&gt;  <i class="Parameter Cv.Code">id
-</i>  { method (?parameters:*) ?:body end }                       =&gt;  <i class="Parameter Cv.Code">id
-</i>end;
+  { method (?parameters:*) =&gt; (?results:*) ; ?:body end }     =&gt;  <var>id
+</var>  { method (?parameters:*) =&gt; (?results:*) ?:body end }       =&gt;  <var>id
+</var>  { method (?parameters:*) =&gt; ?result:variable ; ?:body end } =&gt;  <var>id
+</var>  { method (?parameters:*) ; ?:body end }                     =&gt;  <var>id
+</var>  { method (?parameters:*) ?:body end }                       =&gt;  <var>id
+</var>end;
 </pre>
 <a name="HEADING86-34"></a>
 <h3 class="H3.Heading3"><a name="MARKER-2-1288"></a>Select</h3>
@@ -343,46 +343,46 @@ end;
 <h3 class="H3.Heading3"><a name="MARKER-2-1292"></a>Define Class</h3>
 <pre class="Cv.Code">
 define macro class-definer
-  { define ?mods:* class ?:name (?supers) ?slots end }  =&gt;  <i class="Parameter Cv.Code">id</i>
+  { define ?mods:* class ?:name (?supers) ?slots end }  =&gt;  <var>id</var>
  supers:
-  { }                                                   =&gt;  <i class="Parameter Cv.Code">id
-</i>  { ?super:expression, ... }                            =&gt;  <i class="Parameter Cv.Code">id</i>
+  { }                                                   =&gt;  <var>id
+</var>  { ?super:expression, ... }                            =&gt;  <var>id</var>
  slots:
-  { }                                                   =&gt;  <i class="Parameter Cv.Code">id
-</i>  { inherited slot ?:name, #rest ?options:*; ... }      =&gt;  <i class="Parameter Cv.Code">id
-</i>  { inherited slot ?:name = ?init:expression,
-    #rest ?options:*; ... }                             =&gt;  <i class="Parameter Cv.Code">id
-</i>  { ?mods:* slot ?:name, #rest ?options:*; ... }        =&gt;  <i class="Parameter Cv.Code">id
-</i>  { ?mods:* slot ?:name = ?init:expression,
-    #rest ?options:*; ... }                             =&gt;  <i class="Parameter Cv.Code">id
-</i>  { ?mods:* slot ?:name :: ?type:expression,
-    #rest ?options:*; ... }                             =&gt;  <i class="Parameter Cv.Code">id
-</i>  { ?mods:* slot ?:name :: ?type:expression = ?init:expression,
-    #rest ?options:*; ... }                             =&gt;  <i class="Parameter Cv.Code">id
-</i>  { required keyword ?key:expression,
-    #rest ?options:*; ... }                             =&gt;  <i class="Parameter Cv.Code">id
-</i>  { required keyword ?key:expression ?equals:token ?init:expression,
-    #rest ?options:*; ... }                             =&gt;  <i class="Parameter Cv.Code">id
-</i>  { keyword ?key:expression, #rest ?options:*; ... }    =&gt;  <i class="Parameter Cv.Code">id
-</i>  { keyword ?key:expression ?equals:token ?init:expression,
-    #rest ?options:*; ... }                             =&gt;  <i class="Parameter Cv.Code">id
-</i>end;
+  { }                                                   =&gt;  <var>id
+</var>  { inherited slot ?:name, #rest ?options:*; ... }      =&gt;  <var>id
+</var>  { inherited slot ?:name = ?init:expression,
+    #rest ?options:*; ... }                             =&gt;  <var>id
+</var>  { ?mods:* slot ?:name, #rest ?options:*; ... }        =&gt;  <var>id
+</var>  { ?mods:* slot ?:name = ?init:expression,
+    #rest ?options:*; ... }                             =&gt;  <var>id
+</var>  { ?mods:* slot ?:name :: ?type:expression,
+    #rest ?options:*; ... }                             =&gt;  <var>id
+</var>  { ?mods:* slot ?:name :: ?type:expression = ?init:expression,
+    #rest ?options:*; ... }                             =&gt;  <var>id
+</var>  { required keyword ?key:expression,
+    #rest ?options:*; ... }                             =&gt;  <var>id
+</var>  { required keyword ?key:expression ?equals:token ?init:expression,
+    #rest ?options:*; ... }                             =&gt;  <var>id
+</var>  { keyword ?key:expression, #rest ?options:*; ... }    =&gt;  <var>id
+</var>  { keyword ?key:expression ?equals:token ?init:expression,
+    #rest ?options:*; ... }                             =&gt;  <var>id
+</var>end;
 </pre>
 <a name="HEADING86-51"></a>
 <h3 class="H3.Heading3"><a name="MARKER-2-1293"></a>Define Constant</h3>
 <pre class="Cv.Code">
 define macro constant-definer
   { define ?modifiers:* constant
-    ?:name :: ?type:expression = ?init:expression }     =&gt;  <i class="Parameter Cv.Code">id
-</i>  { define ?modifiers:* constant
-    (?variables:*) ?equals:token ?init:expression }     =&gt;  <i class="Parameter Cv.Code">id
-</i>end;
+    ?:name :: ?type:expression = ?init:expression }     =&gt;  <var>id
+</var>  { define ?modifiers:* constant
+    (?variables:*) ?equals:token ?init:expression }     =&gt;  <var>id
+</var>end;
 </pre>
 <a name="HEADING86-53"></a>
 <h3 class="H3.Heading3"><a name="MARKER-2-1294"></a>Define Domain</h3>
 <pre class="Cv.Code">
 define macro domain-definer
-  { define sealed domain ?:name ( ?types ) }            =&gt;  <i class="Parameter Cv.Code">id</i>
+  { define sealed domain ?:name ( ?types ) }            =&gt;  <var>id</var>
  types:
   { } =&gt; { }
   { ?type:expression, ... } =&gt; { ?type, ... }
@@ -392,64 +392,64 @@ end;
 <h3 class="H3.Heading3"><a name="MARKER-2-1295"></a>Define Generic</h3>
 <pre class="Cv.Code">
 define macro generic-definer
-  { define ?mods:* generic ?:name ?rest:* }             =&gt;  <i class="Parameter Cv.Code">id</i>
+  { define ?mods:* generic ?:name ?rest:* }             =&gt;  <var>id</var>
  rest:
-  { ( ?parameters:* ), #key }                           =&gt;  <i class="Parameter Cv.Code">id
-</i>  { ( ?parameters:* ) =&gt; ?:variable, #key }             =&gt;  <i class="Parameter Cv.Code">id
-</i>  { ( ?parameters:* ) =&gt; (?variables:*), #key }         =&gt;  <i class="Parameter Cv.Code">id
-</i>end;
+  { ( ?parameters:* ), #key }                           =&gt;  <var>id
+</var>  { ( ?parameters:* ) =&gt; ?:variable, #key }             =&gt;  <var>id
+</var>  { ( ?parameters:* ) =&gt; (?variables:*), #key }         =&gt;  <var>id
+</var>end;
 </pre>
 <a name="HEADING86-59"></a>
 <h3 class="H3.Heading3"><a name="MARKER-2-1296"></a>Define Library</h3>
 <pre class="Cv.Code">
 define macro library-definer
-  { define library ?:name ?items end }                  =&gt;  <i class="Parameter Cv.Code">id</i>
+  { define library ?:name ?items end }                  =&gt;  <var>id</var>
  items:
-  { }                                                   =&gt;  <i class="Parameter Cv.Code">id
-</i>  { use ?:name, #rest ?options:*; ... }                 =&gt;  <i class="Parameter Cv.Code">id
-</i>  { export ?names; ... }                                =&gt;  <i class="Parameter Cv.Code">id</i>
+  { }                                                   =&gt;  <var>id
+</var>  { use ?:name, #rest ?options:*; ... }                 =&gt;  <var>id
+</var>  { export ?names; ... }                                =&gt;  <var>id</var>
  names:
-  { ?:name }                                            =&gt;  <i class="Parameter Cv.Code">id
-</i>  { ?:name, ... }                                       =&gt;  <i class="Parameter Cv.Code">id
-</i>end;
+  { ?:name }                                            =&gt;  <var>id
+</var>  { ?:name, ... }                                       =&gt;  <var>id
+</var>end;
 </pre>
 <a name="HEADING86-63"></a>
 <h3 class="H3.Heading3"><a name="MARKER-2-1297"></a>Define Method</h3>
 <pre class="Cv.Code">
 define macro method-definer
-  { define ?mods:* method ?:name ?rest end }            =&gt;  <i class="Parameter Cv.Code">id
-</i> rest:
-  { (?parameters:*) =&gt; (?results:*) ; ?:body }          =&gt;  <i class="Parameter Cv.Code">id
-</i>  { (?parameters:*) =&gt; (?results:*) ?:body }            =&gt;  <i class="Parameter Cv.Code">id
-</i>  { (?parameters:*) =&gt; ?result:variable ; ?:body }      =&gt;  <i class="Parameter Cv.Code">id
-</i>  { (?parameters:*) ; ?:body }                          =&gt;  <i class="Parameter Cv.Code">id
-</i>  { (?parameters:*) ?:body }                            =&gt;  <i class="Parameter Cv.Code">id
-</i>end;
+  { define ?mods:* method ?:name ?rest end }            =&gt;  <var>id
+</var> rest:
+  { (?parameters:*) =&gt; (?results:*) ; ?:body }          =&gt;  <var>id
+</var>  { (?parameters:*) =&gt; (?results:*) ?:body }            =&gt;  <var>id
+</var>  { (?parameters:*) =&gt; ?result:variable ; ?:body }      =&gt;  <var>id
+</var>  { (?parameters:*) ; ?:body }                          =&gt;  <var>id
+</var>  { (?parameters:*) ?:body }                            =&gt;  <var>id
+</var>end;
 </pre>
 <a name="HEADING86-65"></a>
 <h3 class="H3.Heading3"><a name="MARKER-2-1298"></a>Define Module</h3>
 <pre class="Cv.Code">
 define macro module-definer
-  { define module ?:name ?items end }                   =&gt;  <i class="Parameter Cv.Code">id</i>
+  { define module ?:name ?items end }                   =&gt;  <var>id</var>
  items:
-  { }                                                   =&gt;  <i class="Parameter Cv.Code">id
-</i>  { use ?:name, #rest ?options:*; ... }                 =&gt;  <i class="Parameter Cv.Code">id
-</i>  { export ?names; ... }                                =&gt;  <i class="Parameter Cv.Code">id
-</i>  { create ?names; ... }                                =&gt;  <i class="Parameter Cv.Code">id</i>
+  { }                                                   =&gt;  <var>id
+</var>  { use ?:name, #rest ?options:*; ... }                 =&gt;  <var>id
+</var>  { export ?names; ... }                                =&gt;  <var>id
+</var>  { create ?names; ... }                                =&gt;  <var>id</var>
  names:
-  { ?:name }                                            =&gt;  <i class="Parameter Cv.Code">id
-</i>  { ?:name, ... }                                       =&gt;  <i class="Parameter Cv.Code">id
-</i>end;
+  { ?:name }                                            =&gt;  <var>id
+</var>  { ?:name, ... }                                       =&gt;  <var>id
+</var>end;
 </pre>
 <a name="HEADING86-69"></a>
 <h3 class="H3.Heading3"><a name="MARKER-2-1299"></a>Define Variable</h3>
 <pre class="Cv.Code">
 define macro variable-definer
   { define ?modifiers:* variable
-    ?:name :: ?type:expression = ?init:expression }     =&gt;  <i class="Parameter Cv.Code">id
-</i>  { define ?modifiers:* variable
-    (?variables:*) ?equals:token ?init:expression }     =&gt;  <i class="Parameter Cv.Code">id
-</i>end;
+    ?:name :: ?type:expression = ?init:expression }     =&gt;  <var>id
+</var>  { define ?modifiers:* variable
+    (?variables:*) ?equals:token ?init:expression }     =&gt;  <var>id
+</var>end;
 </pre>
 <a name="HEADING86-71"></a>
 <a name="UID-Macros-7337"></a>
@@ -475,9 +475,9 @@ end;
 <h3 class="H3.Heading3"><a name="MARKER-2-1302"></a>:=</h3>
 <pre class="Cv.Code">
 define macro \:=
-  { \:=(?place:macro, ?value:expression) }              =&gt;  <i class="Parameter Cv.Code">id
-</i>  { \:=(?place:expression, ?value:expression) }         =&gt;  <i class="Parameter Cv.Code">id
-</i>end;<a name="MARKER-2-1303"></a>
+  { \:=(?place:macro, ?value:expression) }              =&gt;  <var>id
+</var>  { \:=(?place:expression, ?value:expression) }         =&gt;  <var>id
+</var>end;<a name="MARKER-2-1303"></a>
 </pre>
 <a name="HEADING86-78"></a>
 <a name="UID-Macros-7361"></a>

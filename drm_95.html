@@ -88,37 +88,37 @@
       <a name="HEADING95-4"></a>
       <h2 class="H2.Heading2">General Conditions</h2>
       <a name="HEADING95-5"></a>
-      <h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-1475"></a>&lt;condition&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></h3>
+      <h3 class="H4.Heading4"><code><a name="MARKER-2-1475"></a>&lt;condition&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></h3>
       <hr class="H4.Heading4" />
       <p class="T1.Text1">The class of objects used by the condition system to connect a signaler with an appropriate handler.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;object&gt;</code></p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
+	<dt class="Cliche">Superclasses:</dt>
+	<dd class="Cliche"><p class="Cliche"> <code>&lt;object&gt;</code></p></dd>
+	<dt class="Cliche">Init-keywords:</dt>
 	<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+	<dt class="Cliche">Description:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class of condition objects. A complete description of conditions is given in <a href="drm_51.html#MARKER-9-869" class="Cliche">Chapter 7, "Conditions."</a></p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;condition&gt;</code> provides the following operations:</p>
+	<dt class="Cliche">Operations:</dt>
+	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;condition&gt;</code> provides the following operations:</p>
 	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-68</strong>  Functions on &lt;condition&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
 	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
-	    </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">signal</code></p>
+	    </th></tr><tr><td><p class="TbT.TblText"> <code>signal</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1919" class="TbT.TblText">Signals a condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1919" class="TbT.TblText">357</a></p>
-	    </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">error</code></p>
+	    </td></tr><tr><td><p class="TbT.TblText"> <code>error</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1921" class="TbT.TblText">Signals a nonrecoverable error.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1921" class="TbT.TblText">358</a></p>
-	    </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">cerror</code></p>
+	    </td></tr><tr><td><p class="TbT.TblText"> <code>cerror</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1923" class="TbT.TblText">Signals a correctable error.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1923" class="TbT.TblText">359</a></p>
-	    </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">break</code></p>
+	    </td></tr><tr><td><p class="TbT.TblText"> <code>break</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1925" class="TbT.TblText">Invokes the debugger.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1925" class="TbT.TblText">359</a></p>
@@ -128,19 +128,19 @@
 	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
-	    </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">default-handler</code></p>
+	    </th></tr><tr><td><p class="TbT.TblText"> <code>default-handler</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">Called if no dynamic handler handles a condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">361</a></p>
-	    </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">return-query</code></p>
+	    </td></tr><tr><td><p class="TbT.TblText"> <code>return-query</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1933" class="TbT.TblText">Queries the user for values to return.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1933" class="TbT.TblText">362</a></p>
-	    </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">return-allowed?</code></p>
+	    </td></tr><tr><td><p class="TbT.TblText"> <code>return-allowed?</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1939" class="TbT.TblText">Returns true if a condition's recovery protocol allows returning values.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1939" class="TbT.TblText">363</a></p>
-	    </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">return-description</code></p>
+	    </td></tr><tr><td><p class="TbT.TblText"> <code>return-description</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1941" class="TbT.TblText">Returns a description of a condition's returned values.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1941" class="TbT.TblText">363</a></p>
@@ -150,7 +150,7 @@
 	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
-	    </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">default-handler</code></p>
+	    </th></tr><tr><td><p class="TbT.TblText"> <code>default-handler</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">Called if no dynamic handler handles a condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">361</a></p>
@@ -161,25 +161,25 @@
       <a name="UID-Built-In_Classes-7643"></a>
       <h2 class="H2.Heading2">Serious Conditions</h2>
       <a name="HEADING95-198"></a>
-      <h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-1476"></a>&lt;serious-condition&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></h3>
+      <h3 class="H4.Heading4"><code><a name="MARKER-2-1476"></a>&lt;serious-condition&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></h3>
       <hr class="H4.Heading4" />
-      <p class="T1.Text1">The class of conditions that cannot safely be ignored. </p>
+      <p class="T1.Text1">The class of conditions that cannot safely be ignored.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;condition&gt;</code></p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
+	<dt class="Cliche">Superclasses:</dt>
+	<dd class="Cliche"><p class="Cliche"> <code>&lt;condition&gt;</code></p></dd>
+	<dt class="Cliche">Init-keywords:</dt>
 	<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> The class of conditions that cannot safely be ignored. </p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> The following operation is defined on <code class="cv Cliche">&lt;serious-condition&gt;</code>:</p>
+	<dt class="Cliche">Description:</dt>
+	<dd class="Cliche"><p class="Cliche"> The class of conditions that cannot safely be ignored.</p></dd>
+	<dt class="Cliche">Operations:</dt>
+	<dd class="Cliche"><p class="Cliche"> The following operation is defined on <code>&lt;serious-condition&gt;</code>:</p>
 	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-71</strong>  Methods on &lt;serious-condition&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
 	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
-	    </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">default-handler</code></p>
+	    </th></tr><tr><td><p class="TbT.TblText"> <code>default-handler</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">Called if no dynamic handler handles a condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">361</a></p>
@@ -190,35 +190,35 @@
       <a name="UID-Built-In_Classes-12698"></a>
       <h2 class="H2.Heading2">Errors</h2>
       <a name="HEADING95-239"></a>
-      <h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-1477"></a>&lt;error&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></h3>
+      <h3 class="H4.Heading4"><code><a name="MARKER-2-1477"></a>&lt;error&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></h3>
       <hr class="H4.Heading4" />
-      <p class="T1.Text1">The class of conditions that represent something invalid about the program. </p>
+      <p class="T1.Text1">The class of conditions that represent something invalid about the program.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;serious-condition&gt;</code></p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
+	<dt class="Cliche">Superclasses:</dt>
+	<dd class="Cliche"><p class="Cliche"> <code>&lt;serious-condition&gt;</code></p></dd>
+	<dt class="Cliche">Init-keywords:</dt>
 	<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+	<dt class="Cliche">Description:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class of serious conditions that represent program errors.</p>
-	  <p class="T1.Text1"><code class="T1.Text1">&lt;error&gt;</code> is distinct from <code class="T1.Text1">&lt;serious-condition&gt;</code> so one can establish a handler for errors that does not also trap unpredictable environmental exceptions such as network problems.</p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
+	  <p class="T1.Text1"><code>&lt;error&gt;</code> is distinct from <code>&lt;serious-condition&gt;</code> so one can establish a handler for errors that does not also trap unpredictable environmental exceptions such as network problems.</p></dd>
+	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> None.</p></dd>
       </dl>
       <a name="HEADING95-246"></a>
-      <h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-1478"></a>&lt;simple-error&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></h3>
+      <h3 class="H4.Heading4"><code><a name="MARKER-2-1478"></a>&lt;simple-error&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></h3>
       <hr class="H4.Heading4" />
       <p class="T1.Text1">The class of error conditions that consist of just an error message constructed from a format string and arguments.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;error&gt;</code></p></dd>
-	<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Init-keywords:</strong></dt>
-	<dd class="Cliche2"><p class="Cliche2"> <code class="Cliche2">format-string:</code> <br />An instance of <code class="cv Cliche2">&lt;string&gt;</code>. A format string describing the error.</p></dd>
-	<dt class="Cliche2"><code class="Cliche2"></code></dt>
-	<dd class="Cliche2"><p class="Cliche2"> format-arguments:<br />An instance of <code class="cv Cliche2">&lt;sequence&gt;</code>. Format arguments to splice into the format string to describe the error.</p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+	<dt class="Cliche">Superclasses:</dt>
+	<dd class="Cliche"><p class="Cliche"> <code>&lt;error&gt;</code></p></dd>
+	<dt class="Cliche2">Init-keywords:</dt>
+	<dd class="Cliche2"><p class="Cliche2"> <code>format-string:</code> <br />An instance of <code>&lt;string&gt;</code>. A format string describing the error.</p></dd>
+	<dt class="Cliche2"><code></code></dt>
+	<dd class="Cliche2"><p class="Cliche2"> format-arguments:<br />An instance of <code>&lt;sequence&gt;</code>. Format arguments to splice into the format string to describe the error.</p></dd>
+	<dt class="Cliche">Description:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class of error conditions that consist of just an error message constructed from a format string and arguments.</p>
-	  <p class="T1.Text1">The recovery protocol of <code class="cv T1.Text1">&lt;simple-error&gt;</code> is empty.</p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
+	  <p class="T1.Text1">The recovery protocol of <code>&lt;simple-error&gt;</code> is empty.</p></dd>
+	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class &lt;simple-error&gt; provides the following operations:</p>
 	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-72</strong>  Functions on &lt;simple-error&gt;</caption>
@@ -226,11 +226,11 @@
 	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
-	    </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">condition-format-string</code></p>
+	    </th></tr><tr><td><p class="TbT.TblText"> <code>condition-format-string</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-2-1681" class="TbT.TblText">Returns the format string of a simple condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-2-1681" class="TbT.TblText">364</a></p>
-	    </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">condition-format-arguments</code></p>
+	    </td></tr><tr><td><p class="TbT.TblText"> <code>condition-format-arguments</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1945" class="TbT.TblText">Returns the format arguments of a simple condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1945" class="TbT.TblText">364</a></p>
@@ -238,34 +238,34 @@
 	</dd>
       </dl>
       <a name="HEADING95-302"></a>
-      <h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-1479"></a>&lt;type-error&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></h3>
+      <h3 class="H4.Heading4"><code><a name="MARKER-2-1479"></a>&lt;type-error&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></h3>
       <hr class="H4.Heading4" />
-      <p class="T1.Text1">The class of error conditions generated by type checks. </p>
+      <p class="T1.Text1">The class of error conditions generated by type checks.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;error&gt;</code></p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> <code class="Cliche">value:</code>  An instance of <code class="cv Cliche">&lt;object&gt;</code>. The object whose type was checked.</p></dd>
+	<dt class="Cliche">Superclasses:</dt>
+	<dd class="Cliche"><p class="Cliche"> <code>&lt;error&gt;</code></p></dd>
+	<dt class="Cliche">Init-keywords:</dt>
+	<dd class="Cliche"><p class="Cliche"> <code>value:</code>  An instance of <code>&lt;object&gt;</code>. The object whose type was checked.</p></dd>
 	<dd><dl class="RP.RoutineParam">
-	    <dt class="RP.RoutineParam"><code class="RP.RoutineParam">type:</code></dt>
-	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;type&gt;</code>. The type that was expected. The error was signaled because the object was not of this type.</p></dd>
+	    <dt class="RP.RoutineParam"><code>type:</code></dt>
+	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;type&gt;</code>. The type that was expected. The error was signaled because the object was not of this type.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+	<dt class="Cliche">Description:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class of errors indicating that an object was not of the expected type.</p>
 	  <p class="T1.Text1">The recovery protocol is empty.</p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> The class <code class="cv Cliche">&lt;type-error&gt;</code> provides the following operations:</p>
+	<dt class="Cliche">Operations:</dt>
+	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;type-error&gt;</code> provides the following operations:</p>
 	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-73</strong>  Functions on &lt;type-error&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
 	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
-	    </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">type-error-value</code></p>
+	    </th></tr><tr><td><p class="TbT.TblText"> <code>type-error-value</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1947" class="TbT.TblText">Returns the value that was not of the expected type.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1947" class="TbT.TblText">365</a></p>
-	    </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">type-error-expected-type</code></p>
+	    </td></tr><tr><td><p class="TbT.TblText"> <code>type-error-expected-type</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1949" class="TbT.TblText">Returns the expected type of the type check that led to the type error.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1949" class="TbT.TblText">365</a></p>
@@ -273,40 +273,40 @@
 	</dd>
       </dl>
       <a name="HEADING95-358"></a>
-      <h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-1480"></a>&lt;sealed-object-error&gt;</code> <span class="attributes-summary">[Sealed Class]</span></h3>
+      <h3 class="H4.Heading4"><code><a name="MARKER-2-1480"></a>&lt;sealed-object-error&gt;</code> <span class="attributes-summary">[Sealed Class]</span></h3>
       <hr class="H4.Heading4" />
       <p class="T1.Text1">The class of errors that are generated by sealing violations.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;error&gt;</code></p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
+	<dt class="Cliche">Superclasses:</dt>
+	<dd class="Cliche"><p class="Cliche"> <code>&lt;error&gt;</code></p></dd>
+	<dt class="Cliche">Init-keywords:</dt>
 	<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+	<dt class="Cliche">Description:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class of errors that indicate the violation of a sealing restriction.</p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
+	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> None.</p></dd>
       </dl>
       <a name="HEADING95-364"></a>
       <a name="UID-Built-In_Classes-445"></a>
       <h2 class="H2.Heading2">Warnings</h2>
       <a name="HEADING95-365"></a>
-      <h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-1481"></a>&lt;warning&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></h3>
+      <h3 class="H4.Heading4"><code><a name="MARKER-2-1481"></a>&lt;warning&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></h3>
       <hr class="H4.Heading4" />
       <p class="T1.Text1">The class of conditions that are interesting to users but can safely be ignored.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;condition&gt;</code></p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
+	<dt class="Cliche">Superclasses:</dt>
+	<dd class="Cliche"><p class="Cliche"> <code>&lt;condition&gt;</code></p></dd>
+	<dt class="Cliche">Init-keywords:</dt>
 	<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> The following operation is defined on <code class="cv Cliche">&lt;warning&gt;</code>:</p>
+	<dt class="Cliche">Operations:</dt>
+	<dd class="Cliche"><p class="Cliche"> The following operation is defined on <code>&lt;warning&gt;</code>:</p>
 	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-74</strong>  Methods on &lt;warning&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
 	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
-	    </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">default-handler</code></p>
+	    </th></tr><tr><td><p class="TbT.TblText"> <code>default-handler</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">Called if no dynamic handler handles a condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">361</a></p>
@@ -314,27 +314,27 @@
 	</dd>
       </dl>
       <dl class="Cliche">
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+	<dt class="Cliche">Description:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class of conditions that can be safely ignored.</p>
-	  <p class="T1.Text1">There is a default handler for <code class="T1.Text1">&lt;warning&gt;</code> that displays the warning in a user-interface dependent way and then returns <code class="T1.Text1">#f</code>. The recovery protocol is that any value can be returned and will be ignored.</p></dd>
+	  <p class="T1.Text1">There is a default handler for <code>&lt;warning&gt;</code> that displays the warning in a user-interface dependent way and then returns <code>#f</code>. The recovery protocol is that any value can be returned and will be ignored.</p></dd>
       </dl>
       <a name="HEADING95-406"></a>
-      <h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-1482"></a>&lt;simple-warning&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></h3>
+      <h3 class="H4.Heading4"><code><a name="MARKER-2-1482"></a>&lt;simple-warning&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></h3>
       <hr class="H4.Heading4" />
       <p class="T1.Text1">A default class of warnings that are described by a warning string.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;warning&gt;</code></p></dd>
-	<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Init-keywords:</strong></dt>
-	<dd class="Cliche2"><p class="Cliche2"> <code class="Cliche2">format-string:</code> <br />An instance of <code class="cv Cliche2">&lt;string&gt;</code>. A format string describing the warning.</p></dd>
+	<dt class="Cliche">Superclasses:</dt>
+	<dd class="Cliche"><p class="Cliche"> <code>&lt;warning&gt;</code></p></dd>
+	<dt class="Cliche2">Init-keywords:</dt>
+	<dd class="Cliche2"><p class="Cliche2"> <code>format-string:</code> <br />An instance of <code>&lt;string&gt;</code>. A format string describing the warning.</p></dd>
 	<dd><dl class="RP.RoutineParam">
-	    <dt class="RP.RoutineParam"><code class="RP.RoutineParam">format-arguments:<br /></code>An instance of <code class="cv RP.RoutineParam">&lt;sequence&gt;</code>. Format arguments to splice into the format string to describe the warning.</dt>
+	    <dt class="RP.RoutineParam"><code>format-arguments:<br /></code>An instance of <code>&lt;sequence&gt;</code>. Format arguments to splice into the format string to describe the warning.</dt>
 	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"></p></dd>
 	</dl></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+	<dt class="Cliche">Description:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class of warnings described by a format string and arguments.</p>
 	  <p class="T1.Text1">The recovery protocol is that any value can be returned and will be ignored.</p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
+	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class &lt;simple-warning&gt; provides the following operations:</p>
 	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-75</strong>  Functions on &lt;simple-warning&gt;</caption>
@@ -342,11 +342,11 @@
 	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
-	    </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">condition-format-string</code></p>
+	    </th></tr><tr><td><p class="TbT.TblText"> <code>condition-format-string</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-2-1681" class="TbT.TblText">Returns the format string of a simple condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-2-1681" class="TbT.TblText">364</a></p>
-	    </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">condition-format-arguments</code></p>
+	    </td></tr><tr><td><p class="TbT.TblText"> <code>condition-format-arguments</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1945" class="TbT.TblText">Returns the format arguments of a simple condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1945" class="TbT.TblText">364</a></p>
@@ -357,26 +357,26 @@
       <a name="UID-Built-In_Classes-446"></a>
       <h2 class="H2.Heading2">Restarts</h2>
       <a name="HEADING95-463"></a>
-      <h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-1483"></a>&lt;restart&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></h3>
+      <h3 class="H4.Heading4"><code><a name="MARKER-2-1483"></a>&lt;restart&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></h3>
       <hr class="H4.Heading4" />
       <p class="T1.Text1">The class of conditions used for restarting a computation.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;condition&gt;</code></p></dd>
-	<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Init-keywords:</strong></dt>
-	<dd class="Cliche2"><p class="Cliche2"> <code class="Cliche2">condition:</code>  <code class="cv Cliche2">#f</code> or an instance of <code class="cv Cliche2">&lt;condition&gt;</code>. This argument is accepted and ignored by <code class="Cliche2">&lt;restart&gt;</code>; some subclasses save the value of this initialization argument and use it to associate a restart with a particular condition from which the restart can recover. No such subclasses are defined as part of the language. Other restarts do not care; they can recover from any condition.</p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+	<dt class="Cliche">Superclasses:</dt>
+	<dd class="Cliche"><p class="Cliche"> <code>&lt;condition&gt;</code></p></dd>
+	<dt class="Cliche2">Init-keywords:</dt>
+	<dd class="Cliche2"><p class="Cliche2"> <code>condition:</code>  <code>#f</code> or an instance of <code>&lt;condition&gt;</code>. This argument is accepted and ignored by <code>&lt;restart&gt;</code>; some subclasses save the value of this initialization argument and use it to associate a restart with a particular condition from which the restart can recover. No such subclasses are defined as part of the language. Other restarts do not care; they can recover from any condition.</p></dd>
+	<dt class="Cliche">Description:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class of conditions used to correct an unusual situation.</p>
-	  <p class="T1.Text1">There is a default handler for <code class="T1.Text1">&lt;restart&gt;</code> that signals an error reporting an attempt to use a restart for which no restart handler was established. The recovery protocol concept is not applicable to restarts.</p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;restart&gt;</code> provides the following operations:</p>
+	  <p class="T1.Text1">There is a default handler for <code>&lt;restart&gt;</code> that signals an error reporting an attempt to use a restart for which no restart handler was established. The recovery protocol concept is not applicable to restarts.</p></dd>
+	<dt class="Cliche">Operations:</dt>
+	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;restart&gt;</code> provides the following operations:</p>
 	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-76</strong>  Generic functions on &lt;restart&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
 	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
-	    </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">restart-query</code></p>
+	    </th></tr><tr><td><p class="TbT.TblText"> <code>restart-query</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1637" class="TbT.TblText">Called to query the user and restart.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1637" class="TbT.TblText">361</a></p>
@@ -386,7 +386,7 @@
 	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
-	    </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">default-handler</code></p>
+	    </th></tr><tr><td><p class="TbT.TblText"> <code>default-handler</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">Called if no dynamic handler handles a condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">361</a></p>
@@ -394,22 +394,22 @@
 	</dd>
       </dl>
       <a name="HEADING95-538"></a>
-      <h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-1484"></a>&lt;simple-restart&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></h3>
+      <h3 class="H4.Heading4"><code><a name="MARKER-2-1484"></a>&lt;simple-restart&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></h3>
       <hr class="H4.Heading4" />
       <p class="T1.Text1">A default class of restarts.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;restart&gt;</code></p></dd>
-	<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Init-keywords:</strong></dt>
-	<dd class="Cliche2"><p class="Cliche2"> <code class="Cliche2">format-string:</code> <br />An instance of <code class="cv Cliche2">&lt;string&gt;</code>. A format string describing the restart.</p></dd>
+	<dt class="Cliche">Superclasses:</dt>
+	<dd class="Cliche"><p class="Cliche"> <code>&lt;restart&gt;</code></p></dd>
+	<dt class="Cliche2">Init-keywords:</dt>
+	<dd class="Cliche2"><p class="Cliche2"> <code>format-string:</code> <br />An instance of <code>&lt;string&gt;</code>. A format string describing the restart.</p></dd>
 	<dd><dl class="RP.RoutineParam">
-	    <dt class="RP.RoutineParam"><code class="RP.RoutineParam">format-arguments:<br /></code>An instance of <code class="cv RP.RoutineParam">&lt;sequence&gt;</code>. Format arguments to splice into the format string to describe the restart.</dt>
+	    <dt class="RP.RoutineParam"><code>format-arguments:<br /></code>An instance of <code>&lt;sequence&gt;</code>. Format arguments to splice into the format string to describe the restart.</dt>
 	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"></p></dd>
 	</dl></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+	<dt class="Cliche">Description:</dt>
 	<dd class="Cliche"><p class="Cliche"> A default class of restarts.</p>
 	  <p class="T1.Text1">Typical implementations will use the format string and format arguments to produce a description of the restart.</p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
+	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class &lt;simple-restart&gt; provides the following operations:</p>
 	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-78</strong>  Functions on &lt;simple-restart&gt;</caption>
@@ -417,11 +417,11 @@
 	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
-	    </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">condition-format-string</code></p>
+	    </th></tr><tr><td><p class="TbT.TblText"> <code>condition-format-string</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-2-1681" class="TbT.TblText">Returns the format string of a simple condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-2-1681" class="TbT.TblText">364</a></p>
-	    </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">condition-format-arguments</code></p>
+	    </td></tr><tr><td><p class="TbT.TblText"> <code>condition-format-arguments</code></p>
 	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1945" class="TbT.TblText">Returns the format arguments of a simple condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1945" class="TbT.TblText">364</a></p>
@@ -431,18 +431,18 @@
       <a name="UID-Built-In_Classes-447"></a>
       <h2 class="H2.Heading2">Aborts</h2>
       <a name="HEADING95-595"></a>
-      <h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-1485"></a>&lt;abort&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></h3>
+      <h3 class="H4.Heading4"><code><a name="MARKER-2-1485"></a>&lt;abort&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></h3>
       <hr class="H4.Heading4" />
-      <p class="T1.Text1">The class of conditions used to terminate a computation. </p>
+      <p class="T1.Text1">The class of conditions used to terminate a computation.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-	<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;restart&gt;</code></p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
+	<dt class="Cliche">Superclasses:</dt>
+	<dd class="Cliche"><p class="Cliche"> <code>&lt;restart&gt;</code></p></dd>
+	<dt class="Cliche">Init-keywords:</dt>
 	<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+	<dt class="Cliche">Description:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class of conditions used to terminate a computation.</p>
-	  <p class="T1.Text1">Handlers are expected to terminate execution of the current application command, or similar unit of execution, and return control to something like an application command loop. This is comparable to command-period on the Macintosh. The exact details of this feature depend on the particular environment, of course, but signaling an instance of <code class="T1.Text1">&lt;abort&gt;</code> is a uniform way to "get out."</p></dd>
-	<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
+	  <p class="T1.Text1">Handlers are expected to terminate execution of the current application command, or similar unit of execution, and return control to something like an application command loop. This is comparable to command-period on the Macintosh. The exact details of this feature depend on the particular environment, of course, but signaling an instance of <code>&lt;abort&gt;</code> is a uniform way to "get out."</p></dd>
+	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> None.<a name="MARKER-2-1486"></a><a name="MARKER-2-1487"></a></p>
 	  <a name="LINK-Built-In_Classes-lastpage"></a><a name="LINK-Built-In_FunctionsTOC-firstpage"></a></dd>
       </dl>

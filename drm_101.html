@@ -64,35 +64,73 @@
 <h1 class="H1.Heading1"><a name="MARKER-2-1674"></a>Coercing and Copying Objects</h1>
 <p class="T0.Text0">The following functions are used to coerce, copy, or simply return objects.</p>
 <a name="HEADING101-2"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1675"></a>identity</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1675"></a>identity</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><code class="SD.ShortDescription"><a name="MARKER-9-1676"></a></code>Returns its argument.</p>
+<p class="SD.ShortDescription"><code><a name="MARKER-9-1676"></a></code>Returns its argument.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">identity <i class="Parameter cv Cliche">object<strong class="Parameter cv Cliche">   &rArr;  object</strong></i></code></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche2"><strong class="IMPORTANT Cliche2">Values:</strong></dt>
-  <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">object</i> An instance of <code class="cv Cliche2">&lt;object&gt;</code>; the same object that was passed in as an argument.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns <i class="Cliche">object</i> unaltered.</p></dd>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>identity <var>object</var> </code>
+      &rArr;<code> <var>object</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche2">Values:</dt>
+  <dd class="Cliche2">
+    <dl>
+      <dt><var>object</var></dt>
+      <dd>
+        <p class="Cliche2">An instance of <code>&lt;object&gt;</code>; the same object that was passed in as an argument.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
+  <dd class="Cliche"><p class="Cliche"> Returns <var>object</var> unaltered.</p></dd>
 </dl>
 <a name="HEADING101-8"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1677"></a>values</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1677"></a>values</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-2-1678"></a>Returns its arguments as multiple values.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">values #rest <i class="Parameter cv Cliche">the-values <em class="Symbol Parameter cv Cliche">&rArr;  #rest the-values</em></i></code></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">the-values</i> Zero or more instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche2"><strong class="IMPORTANT Cliche2">Values:</strong></dt>
-  <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">the-values</i> Zero or more instances of <code class="cv Cliche2">&lt;object&gt;</code>; the objects that were passed as arguments.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns <i class="Cliche">the-values</i> as multiple values.</p>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>values #rest <var>the-values</var> </code>
+      &rArr;<code> #rest <var>the-values</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>the-values</var></dt>
+      <dd>
+        <p class="Cliche">Zero or more instances of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche2">Values:</dt>
+  <dd class="Cliche2">
+    <dl>
+      <dt><var>the-values</var></dt>
+      <dd>
+        <p class="Cliche2">Zero or more instances of <code>&lt;object&gt;</code>; the objects that were passed as arguments.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
+  <dd class="Cliche"><p class="Cliche"> Returns <var>the-values</var> as multiple values.</p>
     <pre class="Cv.Code">
 values(1, 2, 3);
-<code class="cv Cv.Code"> &rArr; 1    </code>// first value returned
+<code> &rArr; 1    </code>// first value returned
     2    // second value returned
     3    // third value returned</pre>
   </dd>
@@ -101,192 +139,325 @@ values(1, 2, 3);
 <a name="UID-Built-In_Functions-25384"></a>
 <h2 class="H2.Heading2">General Coercion Function</h2>
 <a name="HEADING101-16"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1679"></a>as</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1679"></a>as</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><code class="SD.ShortDescription"><a name="MARKER-9-1680"></a></code>Coerces an object to a type.</p>
+<p class="SD.ShortDescription"><code><a name="MARKER-9-1680"></a></code>Coerces an object to a type.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">as <i class="Parameter cv Cliche">type object<strong class="Parameter cv Cliche">   &rArr;  instance</strong></i></code></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">type</i> An instance of <code class="cv Cliche">&lt;type&gt;</code>.</p></dd>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>as <var>type object</var> </code>
+      &rArr;<code> <var>instance</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>type</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;type&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
   <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">object</i></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code>.</p></dd>
+      <dt class="RP.RoutineParam"><var>object</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">instance</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>. It must be an instance of <i class="Parameter Cliche">type</i>. </p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> Coerces <i class="Cliche">object</i> to <i class="Cliche">type</i>. That is, it returns an instance of <i class="Cliche">type</i> that has the same contents as <i class="Cliche">object</i>. If <i class="Cliche">object</i> is already an instance of <i class="Cliche">type</i>, it is returned unchanged. In general, the value returned may or may not be freshly allocated.</p>
+  <dt class="Cliche">Values:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>instance</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>. It must be an instance of <var>type</var>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
+  <dd class="Cliche"><p class="Cliche"> Coerces <var>object</var> to <var>type</var>. That is, it returns an instance of <var>type</var> that has the same contents as <var>object</var>. If <var>object</var> is already an instance of <var>type</var>, it is returned unchanged. In general, the value returned may or may not be freshly allocated.</p>
     <p class="T1.Text1">Predefined methods allow coercion between integers and characters, between strings and symbols, and between collection types. No methods are predefined for other classes. Programs may define additional methods.</p>
     <a name="HEADING101-24"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">as</code>  collection-type collection   &rArr;  instance-of-collection-type <span class="attributes-summary">[G.F. Method]</span></h4>
-    <p class="T1.Text1">When converting between collection types, the return value will have the same number of elements as <i class="Parameter T1.Text1">collection</i>. If the <i class="Parameter T1.Text1">collection</i> is an instance of <code class="T1.Text1">&lt;sequence&gt;</code> and the <i class="Parameter T1.Text1">collection-type</i> is a subtype of <code class="cv T1.Text1">&lt;sequence&gt;</code>, the elements will be in the same order. The individual elements may also undergo some conversion. The specific collection types for which <code class="cv T1.Text1">as</code> is defined is implementation defined.</p>
+    <h4 class="H5.Heading5"><code>as</code>  collection-type collection   &rArr;  instance-of-collection-type <span class="attributes-summary">[G.F. Method]</span></h4>
+    <p class="T1.Text1">When converting between collection types, the return value will have the same number of elements as <var>collection</var>. If the <var>collection</var> is an instance of <code>&lt;sequence&gt;</code> and the <var>collection-type</var> is a subtype of <code>&lt;sequence&gt;</code>, the elements will be in the same order. The individual elements may also undergo some conversion. The specific collection types for which <code>as</code> is defined is implementation defined.</p>
     <a name="HEADING101-26"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">as</code>   <code class="Code H5.Heading5">(singleton (&lt;integer&gt;)) character</code>   &rArr;  integer <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
-    <p class="T1.Text1">This method on <code class="T1.Text1">as</code> returns a numeric equivalent for <i class="T1.Text1">character</i>. The integer returned is implementation dependent.</p>
+    <h4 class="H5.Heading5"><code>as</code>   <code>(singleton (&lt;integer&gt;)) character</code>   &rArr;  integer <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <p class="T1.Text1">This method on <code>as</code> returns a numeric equivalent for <var>character</var>. The integer returned is implementation dependent.</p>
     <a name="HEADING101-28"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">as</code>   <code class="Code H5.Heading5">(singleton (&lt;character&gt;)) integer</code>   &rArr;  character <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
-    <p class="T1.Text1">This method on <code class="T1.Text1">as</code> returns the character equivalent to <i class="T1.Text1">integer</i>. The meaning of <i class="T1.Text1">integer</i> is implementation dependent.</p>
+    <h4 class="H5.Heading5"><code>as</code>   <code>(singleton (&lt;character&gt;)) integer</code>   &rArr;  character <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <p class="T1.Text1">This method on <code>as</code> returns the character equivalent to <var>integer</var>. The meaning of <var>integer</var> is implementation dependent.</p>
     <a name="HEADING101-30"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">as</code>   <code class="Code H5.Heading5">(singleton (&lt;symbol&gt;)) string</code>   &rArr;  symbol <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
-    <p class="T1.Text1">This method on <code class="T1.Text1">as</code> returns the symbol that has the name <i class="T1.Text1">string</i>. If the symbol does not yet exist, it is created. This method on <code class="cv T1.Text1">as</code> will always return the same symbol for strings of the same characters, without regard to alphabetic case.</p>
+    <h4 class="H5.Heading5"><code>as</code>   <code>(singleton (&lt;symbol&gt;)) string</code>   &rArr;  symbol <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <p class="T1.Text1">This method on <code>as</code> returns the symbol that has the name <var>string</var>. If the symbol does not yet exist, it is created. This method on <code>as</code> will always return the same symbol for strings of the same characters, without regard to alphabetic case.</p>
     <pre class="Cv.Code">
 as (&lt;symbol&gt;, &quot;foo&quot;)
-<code class="cv Cv.Code"> &rArr;</code>  #&quot;foo&quot;
+<code> &rArr;</code>  #&quot;foo&quot;
 #&quot;FOO&quot; == as (&lt;symbol&gt;, &quot;foo&quot;)
-<code class="cv Cv.Code"> &rArr;</code>  #t
+<code> &rArr;</code>  #t
 #&quot;Foo&quot;
-<code class="cv Cv.Code"> &rArr;</code>  #&quot;foo&quot;</pre>
+<code> &rArr;</code>  #&quot;foo&quot;</pre>
     <a name="HEADING101-33"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">as</code>   <code class="Code H5.Heading5">(singleton (&lt;string&gt;)) symbol</code>   &rArr;  string <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
-    <p class="T1.Text1">This method on <code class="cv T1.Text1">as</code> returns the name of the symbol, which will be a string.</p>
+    <h4 class="H5.Heading5"><code>as</code>   <code>(singleton (&lt;string&gt;)) symbol</code>   &rArr;  string <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <p class="T1.Text1">This method on <code>as</code> returns the name of the symbol, which will be a string.</p>
     <pre class="Cv.Code">
 as (&lt;string&gt;, #&quot;Foo&quot;)
-<code class="cv Cv.Code"> &rArr;</code>  &quot;Foo&quot;</pre>
+<code> &rArr;</code>  &quot;Foo&quot;</pre>
   </dd>
 </dl>
 <a name="HEADING101-36"></a>
 <a name="UID-Built-In_Functions-2983"></a>
 <h2 class="H2.Heading2">Coercing Case</h2>
 <a name="HEADING101-37"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1681"></a><a name="MARKER-2-1682"></a>as-uppercase</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1681"></a><a name="MARKER-2-1682"></a>as-uppercase</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1683"></a>Coerces an object to uppercase.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">as-uppercase <i class="Parameter cv Cliche">object1<strong class="Parameter cv Cliche">   &rArr; object2</strong></i></code></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object2</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>as-uppercase <var>object1</var> </code>
+      &rArr;<code> <var>object2</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object1</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Values:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object2</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Coerces an object to uppercase and returns the resulting new object.</p>
-    <p class="T1.Text1"><i class="Parameter T1.Text1">object1</i> is not modified by this operation.</p>
+    <p class="T1.Text1"><var>object1</var> is not modified by this operation.</p>
     <a name="HEADING101-44"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">as-uppercase</code>   character   &rArr;  uppercase-character <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
-    <p class="T1.Text1">This method returns the uppercase equivalent for <i class="T1.Text1">character</i>. If <i class="T1.Text1">character</i> already is uppercase or does not exist in two cases, it is returned unchanged.</p>
+    <h4 class="H5.Heading5"><code>as-uppercase</code>   character   &rArr;  uppercase-character <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <p class="T1.Text1">This method returns the uppercase equivalent for <var>character</var>. If <var>character</var> already is uppercase or does not exist in two cases, it is returned unchanged.</p>
     <a name="HEADING101-46"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">as-uppercase   string &rArr;</code>  new-string <span class="attributes-summary">[G.F. Method]</span></h4>
-    <p class="T1.Text1">This method is equivalent to <code class="T1.Text1">map</code> (<code class="T1.Text1">as-uppercase,</code> <i class="T1.Text1">string<code class="T1.Text1">)</code></i>.</p>
+    <h4 class="H5.Heading5"><code>as-uppercase   string &rArr;</code>  new-string <span class="attributes-summary">[G.F. Method]</span></h4>
+    <p class="T1.Text1">This method is equivalent to <code>map(as-uppercase, <var>string</var>)</code>.</p>
   </dd>
 </dl>
 <a name="HEADING101-48"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1684"></a>as-uppercase!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1684"></a>as-uppercase!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1685"></a>Coerces an object to uppercase in place.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">as-uppercase! <i class="Parameter cv Cliche">object<strong class="Parameter cv Cliche">  &rArr; object</strong></i></code></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche2"><strong class="IMPORTANT Cliche2">Values:</strong></dt>
-  <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">object</i> An instance of <code class="cv Cliche2">&lt;object&gt;</code>; the same object that was passed in as an argument.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>as-uppercase! <var>object</var> </code>
+      &rArr;<code> <var>object</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche2">Values:</dt>
+  <dd class="Cliche2">
+    <dl>
+      <dt><var>object</var></dt>
+      <dd>
+        <p class="Cliche2">An instance of <code>&lt;object&gt;</code>; the same object that was passed in as an argument.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Coerces an object to uppercase in place and returns the modified object.</p>
-    <p class="T1.Text1"><i class="Parameter T1.Text1">object</i> may be modified by this operation, and the result will be <code class="cv T1.Text1">==</code> to the <i class="Parameter T1.Text1">object</i>.</p>
+    <p class="T1.Text1"><var>object</var> may be modified by this operation, and the result will be <code>==</code> to the <var>object</var>.</p>
     <a name="HEADING101-55"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">as-uppercase!   string &rArr;</code>  string <span class="attributes-summary">[G.F. Method]</span></h4>
-    <p class="T1.Text1">This method is equivalent to <code class="T1.Text1">map-into(<i class="T1.Text1">string</i>, as-uppercase, <i class="T1.Text1">string</i>)</code>.</p>
+    <h4 class="H5.Heading5"><code>as-uppercase!   string &rArr;</code>  string <span class="attributes-summary">[G.F. Method]</span></h4>
+    <p class="T1.Text1">This method is equivalent to <code>map-into(<var>string</var>, as-uppercase, <var>string</var>)</code>.</p>
   </dd>
 </dl>
 <a name="HEADING101-57"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1686"></a>as-lowercase</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1686"></a>as-lowercase</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1687"></a>Coerces an object to lowercase.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">as-lowercase <i class="Parameter cv Cliche">object1<strong class="Parameter cv Cliche">   &rArr;  object2</strong></i></code></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object2</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>as-lowercase <var>object1</var> </code>
+      &rArr;<code> <var>object2</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object1</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Values:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object2</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Coerces an object to lowercase and returns the resulting new object.</p>
-    <p class="T1.Text1"><i class="Parameter T1.Text1">object1</i> will not be modified by this operation.</p>
+    <p class="T1.Text1"><var>object1</var> will not be modified by this operation.</p>
     <a name="HEADING101-64"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">as-lowercase</code>   character   &rArr;  lowercase-character <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
-    <p class="T1.Text1">The <code class="T1.Text1">&lt;character&gt;</code> method on <code class="T1.Text1">as-lowercase</code> returns the lowercase equivalent for <i class="T1.Text1">character</i>. If <i class="T1.Text1">character</i> already is lowercase or does not exist in two cases, it is returned unchanged.</p>
+    <h4 class="H5.Heading5"><code>as-lowercase</code>   character   &rArr;  lowercase-character <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <p class="T1.Text1">The <code>&lt;character&gt;</code> method on <code>as-lowercase</code> returns the lowercase equivalent for <var>character</var>. If <var>character</var> already is lowercase or does not exist in two cases, it is returned unchanged.</p>
     <a name="HEADING101-66"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">as-lowercase   string &rArr;</code>  new-string <span class="attributes-summary">[G.F. Method]</span></h4>
-    <p class="T1.Text1">This method is equivalent to <code class="T1.Text1">map(as-lowercase, </code> <i class="T1.Text1">string<code class="T1.Text1">)</code></i>.</p>
+    <h4 class="H5.Heading5"><code>as-lowercase   string &rArr;</code>  new-string <span class="attributes-summary">[G.F. Method]</span></h4>
+    <p class="T1.Text1">This method is equivalent to <code>map(as-lowercase, <var>string</var>)</code>.</p>
   </dd>
 </dl>
 <a name="HEADING101-68"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1688"></a>as-lowercase!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1688"></a>as-lowercase!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-2-1671"></a>Coerces an object to lowercase in place.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">as-lowercase! <i class="Parameter cv Cliche">object<strong class="Parameter cv Cliche">   &rArr; object</strong></i></code></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche2"><strong class="IMPORTANT Cliche2">Values:</strong></dt>
-  <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">object</i> An instance of <code class="cv Cliche2">&lt;object&gt;</code>; the same object that was passed in as an argument.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>as-lowercase! <var>object</var> </code>
+      &rArr;<code> <var>object</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche2">Values:</dt>
+  <dd class="Cliche2">
+    <dl>
+      <dt><var>object</var></dt>
+      <dd>
+        <p class="Cliche2">An instance of <code>&lt;object&gt;</code>; the same object that was passed in as an argument.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Coerces an object to lowercase in place and returns the modified object.</p>
-    <p class="T1.Text1"><i class="Parameter T1.Text1">object</i> may be modified by this operation, and the result will be <code class="cv T1.Text1">==</code> to the <i class="Parameter T1.Text1">object</i>.</p>
+    <p class="T1.Text1"><var>object</var> may be modified by this operation, and the result will be <code>==</code> to the <var>object</var>.</p>
     <a name="HEADING101-75"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">as-lowercase!   string &rArr;</code>  string <span class="attributes-summary">[G.F. Method]</span></h4>
-    <p class="T1.Text1">This method is equivalent to <code class="T1.Text1">map-into(<i class="T1.Text1">string</i></code> <code class="T1.Text1">, as-lowercase, </code> <i class="T1.Text1">string<code class="T1.Text1">)</code></i>.<a name="MARKER-2-1690"></a></p>
+    <h4 class="H5.Heading5"><code>as-lowercase!   string &rArr;</code>  string <span class="attributes-summary">[G.F. Method]</span></h4>
+    <p class="T1.Text1">This method is equivalent to <code>map-into(<var>string</var>, as-lowercase, <var>string</var>)</code>.<a name="MARKER-2-1690"></a></p>
   </dd>
 </dl>
 <a name="HEADING101-77"></a>
 <a name="UID-Built-In_Functions-2996"></a>
 <h2 class="H2.Heading2">Copying Objects</h2>
 <a name="HEADING101-78"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1691"></a>shallow-copy</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1691"></a>shallow-copy</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><code class="SD.ShortDescription"><a name="MARKER-9-1692"></a></code>Returns a copy of its argument.</p>
+<p class="SD.ShortDescription"><code><a name="MARKER-9-1692"></a></code>Returns a copy of its argument.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">shallow-copy <i class="Parameter cv Cliche">object1<strong class="Parameter cv Cliche">   &rArr;  #rest objects</strong></i></code></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">objects</i> Instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns a new object that has the same contents as  <i class="Cliche">object1</i>. The contents are not copied but are the same objects contained in <i class="Cliche">object1</i>.</p>
-    <p class="T1.Text1">There is a predefined method for instances of <code class="cv T1.Text1">&lt;collection&gt;</code>. For other classes, the programmer must provide a method.</p>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>shallow-copy <var>object1</var> </code>
+      &rArr;<code> #rest <var>objects</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object1</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Values:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>objects</var></dt>
+      <dd>
+        <p class="Cliche">Instances of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
+  <dd class="Cliche"><p class="Cliche"> Returns a new object that has the same contents as  <var>object1</var>. The contents are not copied but are the same objects contained in <var>object1</var>.</p>
+    <p class="T1.Text1">There is a predefined method for instances of <code>&lt;collection&gt;</code>. For other classes, the programmer must provide a method.</p>
     <a name="HEADING101-85"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">shallow-copy   collection  &rArr;</code>  new-collection <span class="attributes-summary">[G.F. Method]</span></h4>
-    <p class="T1.Text1">The method for <code class="T1.Text1">&lt;collection&gt;</code> creates a new object by calling <code class="T1.Text1">make</code> on the <code class="T1.Text1">type-for-copy</code> of  <i class="T1.Text1">collection</i> and filling it with the same elements as <i class="Parameter T1.Text1">collection</i>.</p>
+    <h4 class="H5.Heading5"><code>shallow-copy   collection  &rArr;</code>  new-collection <span class="attributes-summary">[G.F. Method]</span></h4>
+    <p class="T1.Text1">The method for <code>&lt;collection&gt;</code> creates a new object by calling <code>make</code> on the <code>type-for-copy</code> of  <var>collection</var> and filling it with the same elements as <var>collection</var>.</p>
   </dd>
 </dl>
 <a name="HEADING101-87"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1693"></a>type-for-copy</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1693"></a>type-for-copy</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><code class="SD.ShortDescription"><a name="MARKER-9-1694"></a></code>Returns an appropriate type for creating mutable copies of its argument.</p>
+<p class="SD.ShortDescription"><code><a name="MARKER-9-1694"></a></code>Returns an appropriate type for creating mutable copies of its argument.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">type-for-copy <i class="Parameter cv Cliche">object<strong class="Parameter cv Cliche">   &rArr;  type</strong></i></code></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche2"><strong class="IMPORTANT Cliche2">Values:</strong></dt>
-  <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">type</i> An instance of <code class="cv Cliche2">&lt;type&gt;.</code></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns an appropriate type for creating mutable copies of <i class="Parameter Cliche">object</i>. </p>
-    <p class="T1.Text1">The <code class="cv T1.Text1">type-for-copy</code> value of a collection must be an instantiable subtype of <code class="cv T1.Text1">&lt;mutable-collection&gt;</code>. For collections that are themselves mutable, the collection's actual class is generally the most appropriate (assuming it is instantiable). The <code class="cv T1.Text1">type-for-copy</code> value for a sequence should be a subtype of <code class="cv T1.Text1">&lt;sequence&gt;</code>, and the <code class="cv T1.Text1">type-for-copy</code> value of an explicit-key-collection should be a subtype of <code class="cv T1.Text1">&lt;explicit-key-collection&gt;</code>.</p>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>type-for-copy <var>object</var> </code>
+      &rArr;<code> <var>type</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche2">Values:</dt>
+  <dd class="Cliche2">
+    <dl>
+      <dt><var>type</var></dt>
+      <dd>
+        <p class="Cliche2">An instance of <code>&lt;type&gt;.</code></p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
+  <dd class="Cliche"><p class="Cliche"> Returns an appropriate type for creating mutable copies of <var>object</var>.</p>
+    <p class="T1.Text1">The <code>type-for-copy</code> value of a collection must be an instantiable subtype of <code>&lt;mutable-collection&gt;</code>. For collections that are themselves mutable, the collection's actual class is generally the most appropriate (assuming it is instantiable). The <code>type-for-copy</code> value for a sequence should be a subtype of <code>&lt;sequence&gt;</code>, and the <code>type-for-copy</code> value of an explicit-key-collection should be a subtype of <code>&lt;explicit-key-collection&gt;</code>.</p>
     <a name="HEADING101-94"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">type-for-copy</code>   object &rArr;  type <span class="attributes-summary">[G.F. Method]</span></h4>
-    <p class="T1.Text1">The method on <code class="cv T1.Text1">&lt;object&gt;</code> returns the result of calling <code class="cv T1.Text1">object-class</code> on the <i class="Parameter T1.Text1">object</i>.</p>
+    <h4 class="H5.Heading5"><code>type-for-copy</code>   object &rArr;  type <span class="attributes-summary">[G.F. Method]</span></h4>
+    <p class="T1.Text1">The method on <code>&lt;object&gt;</code> returns the result of calling <code>object-class</code> on the <var>object</var>.</p>
     <a name="HEADING101-96"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">type-for-copy</code>   mutable-collection &rArr;  type <span class="attributes-summary">[G.F. Method]</span></h4>
-    <p class="T1.Text1">The method on <code class="cv T1.Text1">&lt;mutable-collection&gt;</code> returns the result of calling <code class="cv T1.Text1">object-class</code> on the <i class="Parameter T1.Text1">mutable-collection</i>.</p>
+    <h4 class="H5.Heading5"><code>type-for-copy</code>   mutable-collection &rArr;  type <span class="attributes-summary">[G.F. Method]</span></h4>
+    <p class="T1.Text1">The method on <code>&lt;mutable-collection&gt;</code> returns the result of calling <code>object-class</code> on the <var>mutable-collection</var>.</p>
     <a name="HEADING101-98"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">type-for-copy</code>   limited-collection &rArr;  type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
-    <p class="T1.Text1">For a type <i class="Parameter T1.Text1">L<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> created by  <code class="cv T1.Text1">limited(<i class="Parameter cv T1.Text1">C</i>, of: <i>T</i>, size: <i>S</i>)</code> where <i class="Parameter T1.Text1">C</i> is not <code class="cv T1.Text1">&lt;range&gt;</code>, <code class="cv T1.Text1">type-for-copy</code> of an object made by instantiating <i class="Parameter T1.Text1">L<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i>  returns a type <i class="Parameter T1.Text1">L<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i> that satisfies each of the following:</p>
+    <h4 class="H5.Heading5"><code>type-for-copy</code>   limited-collection &rArr;  type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <p class="T1.Text1">For a type <var>L<em class="Subscript Parameter"><sub>1</sub></em></var> created by <code>limited(<var>C</var>, of: <var>T</var>, size: <var>S</var>)</code> where <var>C</var> is not <code>&lt;range&gt;</code>, <code>type-for-copy</code> of an object made by instantiating <var>L<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></var> returns a type <var>L<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></var> that satisfies each of the following:</p>
     <ul class="B1.Bullet1">
-      <li class="B1.Bullet1"><i class="Parameter B1.Bullet1">L<em class="Subscript Parameter B1.Bullet1"><sub>2</sub></em></i> is either a class or a limited collection type.</li>
-      <li class="B1.Bullet1"><i class="Parameter B1.Bullet1">L<em class="Subscript Parameter B1.Bullet1"><sub>2</sub></em></i> is a subtype of <i class="Parameter B1.Bullet1">C</i>.</li>
-      <li class="B1.Bullet1"><i class="Parameter B1.Bullet1">L<em class="Subscript Parameter B1.Bullet1"><sub>2</sub></em></i>'s element type is equivalent to <i class="Parameter B1.Bullet1">T</i>.</li>
-      <li class="B1.Bullet1">If <i class="Parameter B1.Bullet1">L<em class="Subscript Parameter B1.Bullet1"><sub>2</sub></em></i> is a limited collection type, its size attribute is <code class="cv B1.Bullet1">#f</code>.</li>
+      <li class="B1.Bullet1"><var>L<em class="Subscript Parameter B1.Bullet1"><sub>2</sub></em></var> is either a class or a limited collection type.</li>
+      <li class="B1.Bullet1"><var>L<em class="Subscript Parameter B1.Bullet1"><sub>2</sub></em></var> is a subtype of <var>C</var>.</li>
+      <li class="B1.Bullet1"><var>L<em class="Subscript Parameter B1.Bullet1"><sub>2</sub></em></var>'s element type is equivalent to <var>T</var>.</li>
+      <li class="B1.Bullet1">If <var>L<em class="Subscript Parameter B1.Bullet1"><sub>2</sub></em></var> is a limited collection type, its size attribute is <code>#f</code>.</li>
     </ul>
     <a name="HEADING101-104"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">type-for-copy</code>   range &rArr;  <code class="H5.Heading5">&lt;list&gt;</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
-    <p class="T1.Text1">The method on <code class="cv T1.Text1">&lt;range&gt;</code> returns <code class="cv T1.Text1">&lt;list&gt;</code>.</p>
+    <h4 class="H5.Heading5"><code>type-for-copy</code>   range &rArr;  <code>&lt;list&gt;</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <p class="T1.Text1">The method on <code>&lt;range&gt;</code> returns <code>&lt;list&gt;</code>.</p>
     <a name="HEADING101-106"></a>
-    <h4 class="H5.Heading5"><code class="H5.Heading5">type-for-copy</code>   limited-range &rArr;  <code class="H5.Heading5">&lt;list&gt;</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
-    <p class="T1.Text1">The method on instances of <code class="cv T1.Text1">limited(singleton(&lt;range&gt;)</code>&hellip;<code class="cv T1.Text1">)</code>  returns <code class="cv T1.Text1">&lt;list&gt;</code>, the same as for any instance of <code class="cv T1.Text1">&lt;range&gt;</code>.<a name="MARKER-2-1695"></a></p>
+    <h4 class="H5.Heading5"><code>type-for-copy</code>   limited-range &rArr;  <code>&lt;list&gt;</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <p class="T1.Text1">The method on instances of <code>limited(singleton(&lt;range&gt;)</code>&hellip;<code>)</code>  returns <code>&lt;list&gt;</code>, the same as for any instance of <code>&lt;range&gt;</code>.<a name="MARKER-2-1695"></a></p>
   </dd>
 </dl>
 

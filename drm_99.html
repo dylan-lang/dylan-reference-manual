@@ -61,268 +61,477 @@
 <a name="HEADING99-0"></a>
 <a name="UID-Built-In_Functions-2295"></a>
 <h1 class="H1.Heading1">Equality and Comparison</h1>
-<p class="T1.Text1"><a name="MARKER-2-1570"></a>Dylan provides an identity function, as well as a group of equality and magnitude comparison functions that can be extended for user classes. The functions <code class="T1.Text1">~</code>=, ~==, <code class="T1.Text1">&gt;</code>, <code class="T1.Text1">&lt;</code>=, <code class="T1.Text1">&gt;</code>=, <code class="cv T1.Text1">min</code> and <code class="cv T1.Text1">max</code> are defined in terms of <code class="T1.Text1">==</code> or <code class="T1.Text1">=</code> and <code class="T1.Text1">&lt;</code>. By extending the behavior of <code class="T1.Text1">=</code> and <code class="T1.Text1">&lt;</code>, programs can extend the behavior of the other functions.</p>
-<p class="T1.Text1">For the protocol to work, user-defined methods on <code class="T1.Text1">=</code> and <code class="T1.Text1">&lt;</code> must preserve the following properties:</p>
+<p class="T1.Text1"><a name="MARKER-2-1570"></a>Dylan provides an identity function, as well as a group of equality and magnitude comparison functions that can be extended for user classes. The functions <code>~=</code>, <code>~==</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>min</code> and <code>max</code> are defined in terms of <code>==</code> or <code>=</code> and <code>&lt;</code>. By extending the behavior of <code>=</code> and <code>&lt;</code>, programs can extend the behavior of the other functions.</p>
+<p class="T1.Text1">For the protocol to work, user-defined methods on <code>=</code> and <code>&lt;</code> must preserve the following properties:</p>
 <dl class="RP.RoutineParam">
   <dt class="RP.RoutineParam"><a name="MARKER-2-1571"></a>Identity:</dt>
-  <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> If (a <code class="RP.RoutineParam">=</code> b), then (b <code class="RP.RoutineParam">=</code> a).</p></dd>
+  <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> If (a <code>=</code> b), then (b <code>=</code> a).</p></dd>
   <dt class="RP.RoutineParam"><a name="MARKER-2-1572"></a>Transitivity: </dt>
-  <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> If (a <code class="RP.RoutineParam">&lt;</code>  b) and (b <code class="RP.RoutineParam">&lt;</code> c), then (a <code class="RP.RoutineParam">&lt;</code>  c).</p></dd>
+  <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> If (a <code>&lt;</code>  b) and (b <code>&lt;</code> c), then (a <code>&lt;</code>  c).</p></dd>
   <dt class="RP.RoutineParam"></dt>
-  <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> If (a <code class="RP.RoutineParam">=</code>  b) and (b <code class="RP.RoutineParam">=</code>  c), then (a <code class="RP.RoutineParam">=</code> c).</p></dd>
+  <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> If (a <code>=</code>  b) and (b <code>=</code>  c), then (a <code>=</code> c).</p></dd>
   <dt class="RP.RoutineParam"><a name="MARKER-2-1573"></a>Trichotomy: </dt>
-  <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Exactly one of: (a <code class="RP.RoutineParam">&lt;</code>  b), (a <code class="RP.RoutineParam">=</code> b), (b <code class="RP.RoutineParam">&lt;</code>  a) always holds (on the assumption that these two operations are defined for the objects in question).</p>
-    <p class="T1.Text1">In the general case, the behavior of comparison operators when applied to instances of <code class="cv T1.Text1">&lt;complex&gt;</code> is implementation defined. This is to allow implementations to support <a name="MARKER-2-1574"></a>IEEE floating point when comparing NaNs. However, when instances of <code class="cv T1.Text1">&lt;rational&gt;</code> and instances of <code class="cv T1.Text1">&lt;float&gt;</code> are compared, it is defined that  the instance of <code class="cv T1.Text1">&lt;float&gt;</code> is first converted to a rational and then an exact comparison is performed.</p></dd>
+  <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Exactly one of: (a <code>&lt;</code>  b), (a <code>=</code> b), (b <code>&lt;</code>  a) always holds (on the assumption that these two operations are defined for the objects in question).</p>
+    <p class="T1.Text1">In the general case, the behavior of comparison operators when applied to instances of <code>&lt;complex&gt;</code> is implementation defined. This is to allow implementations to support <a name="MARKER-2-1574"></a>IEEE floating point when comparing NaNs. However, when instances of <code>&lt;rational&gt;</code> and instances of <code>&lt;float&gt;</code> are compared, it is defined that  the instance of <code>&lt;float&gt;</code> is first converted to a rational and then an exact comparison is performed.</p></dd>
 </dl>
 <a name="HEADING99-8"></a>
 <a name="UID-Built-In_Functions-2809"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-1575"></a>Logical Negation</h2>
 <a name="HEADING99-9"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4">~</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code>~</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1576"></a>Returns true if its argument is false; otherwise returns false.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">~ <i class="Parameter Code Cliche">thing &rArr; boolean</i></code></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">thing</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">boolean</i> An instance of <code class="cv Cliche">&lt;boolean&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns <code class="cv Cliche">#t</code> if <i class="Parameter Cliche">thing</i> is false. Returns <code class="cv Cliche">#f</code> if <i class="Parameter Cliche">thing</i> is true.</p></dd>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>~ <var>thing</var> </code>
+      &rArr;<code> <var>boolean</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>thing</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Values:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>boolean</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;boolean&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
+  <dd class="Cliche"><p class="Cliche"> Returns <code>#t</code> if <var>thing</var> is false. Returns <code>#f</code> if <var>thing</var> is true.</p></dd>
 </dl>
 <a name="HEADING99-15"></a>
 <a name="UID-Built-In_Functions-2806"></a>
 <h2 class="H2.Heading2">Equality Comparisons</h2>
 <a name="HEADING99-16"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1577"></a>==</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1577"></a>==</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1578"></a>Compares two objects for identity.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1<code class="cv Parameter Cliche"> == object2 &rArr; boolean</code></i></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code><var>object1</var> == <var>object2</var> </code>
+      &rArr;<code> <var>boolean</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object1</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
   <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">object2</i></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code>.</p></dd>
+      <dt class="RP.RoutineParam"><var>object2</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">boolean</i> An instance of <code class="cv Cliche">&lt;boolean&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns true if <i class="Cliche">object1</i> and<i class="Cliche"> object2</i>  are identical. Otherwise, it returns false.</p>
+  <dt class="Cliche">Values:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>boolean</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;boolean&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
+  <dd class="Cliche"><p class="Cliche"> Returns true if <var>object1</var> and <var>object2</var>  are identical. Otherwise, it returns false.</p>
     <p class="T1.Text1"><a name="MARKER-2-1579"></a><a name="MARKER-2-1580"></a>Objects are considered identical if they are computationally equivalent. That is, there is no way for any possible Dylan program to distinguish them.</p>
     <p class="T1.Text1">At an implementation level, this will usually mean that the objects are pointers to the same storage or are the same immediate value. An extension is made for built-in number classes and characters. Because these objects are not mutable (i.e., cannot be changed), two of the same class with the same value will always be the same (and will thus be indistinguishable to programs).</p></dd>
 </dl>
 <a name="HEADING99-25"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1581"></a>~==</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1581"></a>~==</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1582"></a>Compares two objects for nonidentity.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1<code class="cv Parameter Cliche"> ~== object2 &rArr; boolean</code></i></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code><var>object1</var> ~== <var>object2</var></code>
+      &rArr;<code> <var>boolean</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object1</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
   <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">object2</i></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code>.</p></dd>
+      <dt class="RP.RoutineParam"><var>object2</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">boolean</i> An instance of <code class="cv Cliche">&lt;boolean&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns true if <i class="Cliche">object1</i> and<i class="Cliche"> object2</i>  are not identical. It returns false if they are identical.</p>
-    <p class="T1.Text1">If both arguments are instances of <code class="cv T1.Text1">&lt;complex&gt;</code> then the result is computed in an implementation-defined way. Otherwise, the result is computed by <code class="cv T1.Text1">~(object1 == object2)</code>.</p></dd>
+  <dt class="Cliche">Values:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>boolean</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;boolean&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
+  <dd class="Cliche"><p class="Cliche"> Returns true if <var>object1</var> and <var>object2</var>  are not identical. It returns false if they are identical.</p>
+    <p class="T1.Text1">If both arguments are instances of <code>&lt;complex&gt;</code> then the result is computed in an implementation-defined way. Otherwise, the result is computed by <code>~(<var>object1</var> == <var>object2</var>)</code>.</p></dd>
 </dl>
 <a name="HEADING99-33"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1583"></a>=</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1583"></a>=</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1584"></a>Compares two objects for <a name="MARKER-2-1585"></a>equality.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1<code class="Code Parameter Cliche"> = object2 &rArr; boolean</code></i></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code><var>object1</var> = <var>object2</var> </code>
+      &rArr;<code> <var>boolean</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object1</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
   <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">object2</i></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code>.</p></dd>
+      <dt class="RP.RoutineParam"><var>object2</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">boolean</i> An instance of <code class="cv Cliche">&lt;boolean&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns true if <i class="Cliche">object1</i> and<i class="Cliche"> object2</i>  are equal. Otherwise, it returns false.</p>
-    <p class="T1.Text1">Programmers may define methods for <code class="T1.Text1">=</code> specialized on classes they define. A programmer may be required to provide an <code class="T1.Text1">=</code> method when defining subclasses of some predefined classes in order to fullfill the protocol of the class, as described below. For objects that do not have a more specific = method, =  returns the same as ==.</p>
+  <dt class="Cliche">Values:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>boolean</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;boolean&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
+  <dd class="Cliche"><p class="Cliche"> Returns true if <var>object1</var> and <var>object2</var> are equal. Otherwise, it returns false.</p>
+    <p class="T1.Text1">Programmers may define methods for <code>=</code> specialized on classes they define. A programmer may be required to provide an <code>=</code> method when defining subclasses of some predefined classes in order to fullfill the protocol of the class, as described below. For objects that do not have a more specific = method, =  returns the same as ==.</p>
     <p class="T1.Text1">= is not guaranteed to return. For example, it may not return when called on circular structures or otherwise unbounded structures.</p>
-    <p class="T1.Text1">In addition to the sealed domains specified by the methods below, <code class="cv T1.Text1">=</code> is sealed over the following domains:</p>
-    <p class="T1.Text1"><code class="T1.Text1">     &lt;object&gt;, &lt;symbol&gt;<br />     &lt;symbol&gt;, &lt;object&gt;<br />     &lt;object&gt;, &lt;character&gt;<br />     &lt;character&gt;, &lt;object&gt;<br />     &lt;object&gt;, &lt;boolean&gt;<br />     &lt;boolean&gt;, &lt;object&gt;</code></p>
+    <p class="T1.Text1">In addition to the sealed domains specified by the methods below, <code>=</code> is sealed over the following domains:</p>
+    <p class="T1.Text1"><code>     &lt;object&gt;, &lt;symbol&gt;<br />     &lt;symbol&gt;, &lt;object&gt;<br />     &lt;object&gt;, &lt;character&gt;<br />     &lt;character&gt;, &lt;object&gt;<br />     &lt;object&gt;, &lt;boolean&gt;<br />     &lt;boolean&gt;, &lt;object&gt;</code></p>
     <a name="HEADING99-44"></a>
-    <h4 class="H5.Heading5">object1 <code class="H5.Heading5">= object2 </code> &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
-    <p class="T1.Text1">The default method on <code class="cv T1.Text1">=</code> calls <code class="cv T1.Text1">==</code> and returns the result returned by <code class="cv T1.Text1">==</code>.</p>
+    <h4 class="H5.Heading5">object1 <code>= object2 </code> &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
+    <p class="T1.Text1">The default method on <code>=</code> calls <code>==</code> and returns the result returned by <code>==</code>.</p>
     <a name="HEADING99-46"></a>
-    <h4 class="H5.Heading5">complex1 <code class="H5.Heading5">= complex2 </code> &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5">complex1 <code>= complex2 </code> &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">Complex numbers are equal if they have the same mathematical value.</p>
     <a name="HEADING99-48"></a>
-    <h4 class="H5.Heading5">collection1 <code class="H5.Heading5">= collection2 </code> &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
-    <p class="T1.Text1">Two collections are equal if they have identical <code class="T1.Text1">key-test</code> functions, they have the same keys (as determined by their <code class="T1.Text1">key-test</code> functions), the elements at corresponding keys are =,  and neither collection is a dotted list.</p>
+    <h4 class="H5.Heading5">collection1 <code>= collection2 </code> &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
+    <p class="T1.Text1">Two collections are equal if they have identical <code>key-test</code> functions, they have the same keys (as determined by their <code>key-test</code> functions), the elements at corresponding keys are =,  and neither collection is a dotted list.</p>
     <a name="HEADING99-50"></a>
-    <h4 class="H5.Heading5">sequence1  <code class="H5.Heading5">= sequence2 </code> &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
-    <p class="T1.Text1">For sequences, <code class="T1.Text1">=</code>  returns true if <i class="T1.Text1">sequence1</i> and <i class="T1.Text1">sequence2</i> have the same size and elements with = keys are =, and returns false otherwise.</p>
+    <h4 class="H5.Heading5">sequence1  <code>= sequence2 </code> &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
+    <p class="T1.Text1">For sequences, <code>=</code>  returns true if <var>sequence1</var> and <var>sequence2</var> have the same size and elements with = keys are =, and returns false otherwise.</p>
     <a name="HEADING99-52"></a>
-    <h4 class="H5.Heading5">list1 <code class="H5.Heading5">=</code> list2 &rArr;  boolean  <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
-    <p class="T1.Text1">For lists, <code class="T1.Text1">=</code>  returns true if the two lists are the same size, corresponding elements of <i class="T1.Text1">list1</i> and <i class="T1.Text1">list2</i> are <code class="T1.Text1">=</code> and the final tails are <code class="T1.Text1">=</code>. It returns false otherwise.</p>
+    <h4 class="H5.Heading5">list1 <code>=</code> list2 &rArr;  boolean  <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <p class="T1.Text1">For lists, <code>=</code>  returns true if the two lists are the same size, corresponding elements of <var>list1</var> and <var>list2</var> are <code>=</code> and the final tails are <code>=</code>. It returns false otherwise.</p>
     <a name="HEADING99-54"></a>
-    <h4 class="H5.Heading5">list  <code class="H5.Heading5">=</code> sequence  &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span><br />sequence  <code class="H5.Heading5">=</code>  list  &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
-    <p class="T1.Text1">For mixed lists and sequences, <code class="T1.Text1">=</code> returns true if the <i class="T1.Text1">list</i> is not a dotted list, both have the same size, and elements with <code class="T1.Text1">=</code> keys are <code class="T1.Text1">=</code>. It returns false otherwise.</p>
+    <h4 class="H5.Heading5">list  <code>=</code> sequence  &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span><br />sequence  <code>=</code>  list  &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
+    <p class="T1.Text1">For mixed lists and sequences, <code>=</code> returns true if the <var>list</var> is not a dotted list, both have the same size, and elements with <code>=</code> keys are <code>=</code>. It returns false otherwise.</p>
     <a name="HEADING99-56"></a>
-    <h4 class="H5.Heading5">range1 <code class="H5.Heading5">= range2 &rArr;</code>  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
-    <p class="T1.Text1">When called with two ranges, <code class="T1.Text1">=</code> always terminates, even if one or both ranges are unbounded in size.</p>
+    <h4 class="H5.Heading5">range1 <code>= range2 &rArr;</code>  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <p class="T1.Text1">When called with two ranges, <code>=</code> always terminates, even if one or both ranges are unbounded in size.</p>
   </dd>
 </dl>
 <a name="HEADING99-58"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1586"></a>~=</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1586"></a>~=</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Compares two objects for <a name="MARKER-2-1587"></a>inequality.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1<code class="Code Parameter Cliche"> ~= object2 &rArr; boolean</code></i></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code><var>object1</var> ~= <var>object2</var> </code>
+      &rArr;<code> <var>boolean</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object1</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
   <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">object2</i></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code>.</p></dd>
+      <dt class="RP.RoutineParam"><var>object2</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">boolean</i> An instance of <code class="cv Cliche">&lt;boolean&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns true if <i class="Cliche">object1</i> and<i class="Cliche"> object2</i>  are not equal. It returns false if they are equal.</p>
-    <p class="T1.Text1">If both arguments are instances of <code class="cv T1.Text1">&lt;complex&gt;</code> then the result is computed in an implementation-defined way. Otherwise, the result is computed by the expression <code class="cv T1.Text1">~(<i class="Parameter cv T1.Text1">object1 = object2)</i></code>.</p></dd>
+  <dt class="Cliche">Values:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>boolean</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;boolean&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
+  <dd class="Cliche"><p class="Cliche"> Returns true if <var>object1</var> and <var>object2</var>  are not equal. It returns false if they are equal.</p>
+    <p class="T1.Text1">If both arguments are instances of <code>&lt;complex&gt;</code> then the result is computed in an implementation-defined way. Otherwise, the result is computed by the expression <code>~(<var>object1</var> = <var>object2</var>)</code>.</p></dd>
 </dl>
 <a name="HEADING99-66"></a>
 <a name="UID-Built-In_Functions-1309"></a>
 <h2 class="H2.Heading2">Magnitude Comparisons</h2>
 <a name="HEADING99-67"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1588"></a>&lt;</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1588"></a>&lt;</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1589"></a>Returns true if its first operand is <a name="MARKER-2-1590"></a>less than its second operand.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1  <code class="cv Parameter Cliche">&lt;   object2 <strong class="cv Parameter Cliche">  &rArr;  boolean</strong></code></i></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code><var>object1</var> &lt; <var>object2</var> </code>
+      &rArr;<code> <var>boolean</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object1</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
   <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">object2</i></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code>.</p></dd>
+      <dt class="RP.RoutineParam"><var>object2</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">boolean</i> An instance of <code class="cv Cliche">&lt;boolean&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns true if <i class="Parameter Cliche">object1</i> is less than <i class="Parameter Cliche">object2</i>.</p>
-    <p class="T1.Text1">The generic function <code class="cv T1.Text1">&lt;</code> is sealed over the domain <code class="cv T1.Text1">(&lt;complex&gt;, &lt;complex&gt;)</code>.</p>
+  <dt class="Cliche">Values:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>boolean</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;boolean&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
+  <dd class="Cliche"><p class="Cliche"> Returns true if <var>object1</var> is less than <var>object2</var>.</p>
+    <p class="T1.Text1">The generic function <code>&lt;</code> is sealed over the domain <code>(&lt;complex&gt;, &lt;complex&gt;)</code>.</p>
     <a name="HEADING99-75"></a>
-    <h4 class="H5.Heading5">real1  <code class="H5.Heading5">&lt;</code> real2  &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5">real1  <code>&lt;</code> real2  &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">Built-in real numbers are compared by mathematical value.</p>
     <a name="HEADING99-77"></a>
-    <h4 class="H5.Heading5">character1  <code class="H5.Heading5">&lt;</code> character2  &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5">character1  <code>&lt;</code> character2  &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">Characters are compared by the ordinal value of the underlying character set. Character case is significant.</p>
     <a name="HEADING99-79"></a>
-    <h4 class="H5.Heading5">string1<code class="cv H5.Heading5"> <strong class="cv H5.Heading5">&lt; string2  &rArr;</strong></code>  <i class="Parameter H5.Heading5">boolean</i> <span class="attributes-summary">[G.F. Method]</span></h4>
-    <p class="T1.Text1">When both arguments are strings, <code class="T1.Text1">&lt;</code> compares strings by comparing elements from left to right, using <code class="T1.Text1">&lt;</code> and <code class="cv T1.Text1">=</code> on corresponding elements, and stopping when the elements are not <code class="cv T1.Text1">=</code>. If one string is a strict prefix of the other, the shorter string is considered the "smaller" one. </p>
+    <h4 class="H5.Heading5">string1<code> <strong class="cv H5.Heading5">&lt; string2  &rArr;</strong></code>  <var>boolean</var> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <p class="T1.Text1">When both arguments are strings, <code>&lt;</code> compares strings by comparing elements from left to right, using <code>&lt;</code> and <code>=</code> on corresponding elements, and stopping when the elements are not <code>=</code>. If one string is a strict prefix of the other, the shorter string is considered the "smaller" one.</p>
     <p class="T1.Text1">For variations on string comparison (such as comparisons that ignore case), different comparison operators must be used.</p>
   </dd>
 </dl>
 <a name="HEADING99-82"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1591"></a>&gt;</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1591"></a>&gt;</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Returns true if its first operand is <a name="MARKER-2-1592"></a>greater than its second operand.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1<strong class="Parameter Cliche">  <code class="Code Parameter Cliche">&gt; object2   &rArr;  boolean</code></strong></i></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code><var>object1</var> &gt; <var>object2</var> </code>
+      &rArr;<code> <var>boolean</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object1</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
   <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">object2</i></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code>.</p></dd>
+      <dt class="RP.RoutineParam"><var>object2</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">boolean</i> An instance of <code class="cv Cliche">&lt;boolean&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns true if <i class="Parameter Cliche">object1</i> is greater than <i class="Parameter Cliche">object2</i>.</p>
-    <p class="T1.Text1">If both arguments are instances of <code class="cv T1.Text1">&lt;complex&gt;</code> then the result is computed in an implementation-defined way. Otherwise, the result is computed by the expression <code class="cv T1.Text1">(<i class="Parameter cv T1.Text1">object2 &lt; object1)</i></code>.</p></dd>
+  <dt class="Cliche">Values:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>boolean</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;boolean&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
+  <dd class="Cliche"><p class="Cliche"> Returns true if <var>object1</var> is greater than <var>object2</var>.</p>
+    <p class="T1.Text1">If both arguments are instances of <code>&lt;complex&gt;</code> then the result is computed in an implementation-defined way. Otherwise, the result is computed by the expression <code>(<var>object2 &lt; object1)</var></code>.</p></dd>
 </dl>
 <a name="HEADING99-90"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1593"></a>&lt;=</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1593"></a>&lt;=</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Returns true if its first operand is <a name="MARKER-2-1594"></a>less than or equal to its second operand.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1 <strong class="Parameter Cliche"> <code class="Code Parameter Cliche">&lt;=   object2   &rArr;  boolean</code></strong></i></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code><var>object1</var> &lt;= <var>object2</var> </code>
+      &rArr;<code> <var>boolean</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object1</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
   <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">object2</i></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code>.</p></dd>
+      <dt class="RP.RoutineParam"><var>object2</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">boolean</i> An instance of <code class="cv Cliche">&lt;boolean&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns true if <i class="Parameter Cliche">object1</i> is less than or equal to <i class="Parameter Cliche">object2</i>.</p>
-    <p class="T1.Text1">If both arguments are instances of <code class="cv T1.Text1">&lt;complex&gt;</code> then the result is computed in an implementation-defined way. Otherwise, the result is computed by the expression <code class="cv T1.Text1">~(<i class="Parameter cv T1.Text1">object2 &lt; object1)</i></code>.</p></dd>
+  <dt class="Cliche">Values:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>boolean</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;boolean&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
+  <dd class="Cliche"><p class="Cliche"> Returns true if <var>object1</var> is less than or equal to <var>object2</var>.</p>
+    <p class="T1.Text1">If both arguments are instances of <code>&lt;complex&gt;</code> then the result is computed in an implementation-defined way. Otherwise, the result is computed by the expression <code>~(<var>object2 &lt; object1)</var></code>.</p></dd>
 </dl>
 <a name="HEADING99-98"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1595"></a>&gt;=</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1595"></a>&gt;=</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Returns true if its first operand is <a name="MARKER-2-1596"></a>greater than or equal to its second operand.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1 <strong class="Parameter Cliche">  <code class="Code Parameter Cliche">&gt;=   object2   &rArr;  boolean</code></strong></i></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code><var>object1</var> &gt;= <var>object2</var> </code>
+      &rArr;<code> <var>boolean</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object1</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
   <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">object2</i></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code>.</p></dd>
+      <dt class="RP.RoutineParam"><var>object2</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">boolean</i> An instance of <code class="cv Cliche">&lt;boolean&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns true if <i class="Parameter Cliche">object1</i> is greater than or equal to <i class="Parameter Cliche">object2</i>.</p>
-    <p class="T1.Text1">If both arguments are instances of <code class="cv T1.Text1">&lt;complex&gt;</code> then the result is computed in an implementation-defined way. Otherwise, the result is computed by the expression <code class="cv T1.Text1">~(<i class="Parameter cv T1.Text1">object1 &lt; object2)</i></code>.</p></dd>
+  <dt class="Cliche">Values:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>boolean</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;boolean&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
+  <dd class="Cliche"><p class="Cliche"> Returns true if <var>object1</var> is greater than or equal to <var>object2</var>.</p>
+    <p class="T1.Text1">If both arguments are instances of <code>&lt;complex&gt;</code> then the result is computed in an implementation-defined way. Otherwise, the result is computed by the expression <code>~(<var>object1</var> &lt; <var>object2</var>)</code>.</p></dd>
 </dl>
 <a name="HEADING99-106"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1597"></a>min</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1597"></a>min</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1598"></a>Returns the least of its arguments.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">min <i class="Parameter cv Cliche">object1<strong class="Parameter cv Cliche"> #rest objects  &rArr;  object2</strong></i></code></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>min <var>object1</var> #rest <var>objects</var> </code>
+      &rArr;<code> <var>object2</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object1</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
   <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">objects</i></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Zero or more instances of <code class="cv RP.RoutineParam">&lt;object&gt;</code>.</p></dd>
+      <dt class="RP.RoutineParam"><var>objects</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object2</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dt class="Cliche">Values:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object2</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Returns the least of its arguments.</p>
-    <p class="T1.Text1"><code class="cv T1.Text1">min</code> operates by calling <code class="cv T1.Text1">&lt;</code>, and therefore is applicable to any objects for which <code class="cv T1.Text1">&lt;</code> is defined.</p></dd>
+    <p class="T1.Text1"><code>min</code> operates by calling <code>&lt;</code>, and therefore is applicable to any objects for which <code>&lt;</code> is defined.</p></dd>
 </dl>
 <a name="HEADING99-114"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1599"></a>max</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1599"></a>max</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1600"></a>Returns the greatest of its arguments.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">max <i class="Parameter cv Cliche">object1<strong class="Parameter cv Cliche"> #rest objects  &rArr;  object2</strong></i></code></p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
+  <dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>max <var>object1</var> #rest <var>objects</var> </code>
+      &rArr;<code> <var>object2</var></code>
+    </p>
+  </dd>
+  <dt class="Cliche">Arguments:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object1</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
   <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">objects</i></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Zero or more instances of <code class="cv RP.RoutineParam">&lt;object&gt;</code>.</p></dd>
+      <dt class="RP.RoutineParam"><var>objects</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object2</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dt class="Cliche">Values:</dt>
+  <dd class="Cliche">
+    <dl>
+      <dt><var>object2</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+  <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Returns the greatest of its arguments.</p>
-    <p class="T1.Text1"><code class="cv T1.Text1">max</code> operates by calling <code class="cv T1.Text1">&lt;</code>, and therefore is applicable to any objects for which <code class="cv T1.Text1">&lt;</code> is defined.<a name="MARKER-2-1601"></a></p></dd>
+    <p class="T1.Text1"><code>max</code> operates by calling <code>&lt;</code>, and therefore is applicable to any objects for which <code>&lt;</code> is defined.<a name="MARKER-2-1601"></a></p></dd>
 </dl>
 
 </div>

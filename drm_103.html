@@ -64,99 +64,213 @@
 <h1 class="H1.Heading1"><a name="MARKER-9-1858"></a>Reflective Operations on Types</h1>
 <p class="T0.Text0">The following functions return information on types and test type membership. They provide part of the implementation of the type protocol, as described in <a href="drm_40.html#MARKER-9-536" class="T0.Text0">"The Type Protocol" beginning on page 49</a>.</p>
 <a name="HEADING103-2"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1859"></a><a name="MARKER-2-1860"></a>instance?</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1859"></a><a name="MARKER-2-1860"></a>instance?</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1861"></a>Tests whether an object is an instance of a type.</p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">instance? <i class="Parameter cv Cliche">object type<strong class="Parameter cv Cliche">   &rArr;  boolean</strong></i></code></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
+<dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>instance? <var>object type</var> </code>
+      &rArr;<code> <var>boolean</var></code>
+    </p>
+  </dd>
+<dt class="Cliche">Arguments:</dt>
+<dd class="Cliche">
+    <dl>
+      <dt><var>object</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
 <dd><dl class="RP.RoutineParam">
-<dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">type</i></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;type&gt;</code>.</p></dd>
+<dt class="RP.RoutineParam"><var>type</var></dt>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;type&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">boolean</i> An instance of <code class="cv Cliche">&lt;boolean&gt;</code>.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> Returns true if <i class="Cliche">object</i> is a general instance of <i class="Cliche">type</i>.</p></dd>
+<dt class="Cliche">Values:</dt>
+<dd class="Cliche">
+    <dl>
+      <dt><var>boolean</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;boolean&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+<dt class="Cliche">Description:</dt>
+<dd class="Cliche"><p class="Cliche"> Returns true if <var>object</var> is a general instance of <var>type</var>.</p></dd>
 </dl>
 <a name="HEADING103-9"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1862"></a>subtype?</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1862"></a>subtype?</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1863"></a>Tests whether a type is a subtype of another type.</p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">subtype? <i class="Parameter cv Cliche">type1 type2<strong class="Parameter cv Cliche">   &rArr;  boolean</strong></i></code></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">type1</i> An instance of <code class="cv Cliche">&lt;type&gt;</code>.</p></dd>
+<dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>subtype? <var>type1 type2</var> </code>
+      &rArr;<code> <var>boolean</var></code>
+    </p>
+  </dd>
+<dt class="Cliche">Arguments:</dt>
+<dd class="Cliche">
+    <dl>
+      <dt><var>type1</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;type&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
 <dd><dl class="RP.RoutineParam">
-<dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">type2</i></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;type&gt;</code>.</p></dd>
+<dt class="RP.RoutineParam"><var>type2</var></dt>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;type&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">boolean</i> An instance of <code class="cv Cliche">&lt;boolean&gt;</code>.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> Returns true if <i class="Cliche">type1 </i> is a subtype of <i class="Cliche">type2</i>. Subtype rules are given in <a href="drm_40.html#MARKER-9-536" class="Cliche">"The Type Protocol" on page 49</a>.</p></dd>
+<dt class="Cliche">Values:</dt>
+<dd class="Cliche">
+    <dl>
+      <dt><var>boolean</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;boolean&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+<dt class="Cliche">Description:</dt>
+<dd class="Cliche"><p class="Cliche"> Returns true if <var>type1 </var> is a subtype of <var>type2</var>. Subtype rules are given in <a href="drm_40.html#MARKER-9-536" class="Cliche">"The Type Protocol" on page 49</a>.</p></dd>
 </dl>
 <a name="HEADING103-16"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1864"></a>object-class</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1864"></a>object-class</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1865"></a>Returns the class of an object.</p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">object-class <i class="Parameter cv Cliche">object<strong class="Parameter cv Cliche">   &rArr;  class</strong></i></code></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">class</i> An instance of <code class="cv Cliche">&lt;class&gt;</code>.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> Returns the class of which <i class="Cliche">object</i>  is a direct instance.</p></dd>
+<dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>object-class <var>object</var> </code>
+      &rArr;<code> <var>class</var></code>
+    </p>
+  </dd>
+<dt class="Cliche">Arguments:</dt>
+<dd class="Cliche">
+    <dl>
+      <dt><var>object</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+<dt class="Cliche">Values:</dt>
+<dd class="Cliche">
+    <dl>
+      <dt><var>class</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;class&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+<dt class="Cliche">Description:</dt>
+<dd class="Cliche"><p class="Cliche"> Returns the class of which <var>object</var>  is a direct instance.</p></dd>
 </dl>
 <a name="HEADING103-22"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1866"></a>all-superclasses</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1866"></a>all-superclasses</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1867"></a>Returns the class precedence list a class.</p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">all-superclasses <i class="Parameter cv Cliche">class<strong class="Parameter cv Cliche">   &rArr;  sequence</strong></i></code></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">class</i> An instance of <code class="cv Cliche">&lt;class&gt;</code>.</p></dd>
-<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Values:</strong></dt>
-<dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">sequence</i> An instance of <code class="cv Cliche2">&lt;sequence&gt;</code>. Each element in the sequence is an instance of <code class="cv Cliche2">&lt;class&gt;</code>.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> Returns the class precedence list of <i class="Cliche">class</i>. This is an ordered sequence of<i class="Parameter Cliche"> class</i> and all its superclasses, as described in <a href="drm_41.html#MARKER-9-590" class="Cliche">"Computing the Class Precedence List" on page 54</a>.</p>
-<p class="T1.Text1">The result <i class="Parameter T1.Text1">sequence</i> should never be destructively modified. Doing so may cause unpredictable behavior. If <i class="T1.Text1">class</i> is sealed, an implementation may choose to signal an error of type <code class="T1.Text1">&lt;sealed-object-error&gt;</code> rather than returning the sequence of all superclasses.</p></dd>
+<dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>all-superclasses <var>class</var> </code>
+      &rArr;<code> <var>sequence</var></code>
+    </p>
+  </dd>
+<dt class="Cliche">Arguments:</dt>
+<dd class="Cliche">
+    <dl>
+      <dt><var>class</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;class&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+<dt class="Cliche2">Values:</dt>
+<dd class="Cliche2">
+    <dl>
+      <dt><var>sequence</var></dt>
+      <dd>
+        <p class="Cliche2">An instance of <code>&lt;sequence&gt;</code>. Each element in the sequence is an instance of <code>&lt;class&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+<dt class="Cliche">Description:</dt>
+<dd class="Cliche"><p class="Cliche"> Returns the class precedence list of <var>class</var>. This is an ordered sequence of<var>class</var> and all its superclasses, as described in <a href="drm_41.html#MARKER-9-590" class="Cliche">"Computing the Class Precedence List" on page 54</a>.</p>
+<p class="T1.Text1">The result <var>sequence</var> should never be destructively modified. Doing so may cause unpredictable behavior. If <var>class</var> is sealed, an implementation may choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than returning the sequence of all superclasses.</p></dd>
 </dl>
 <a name="HEADING103-29"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1868"></a>direct-superclasses</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1868"></a>direct-superclasses</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1869"></a>Returns the direct superclasses of a class.</p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">direct-superclasses <i class="Parameter cv Cliche">class<strong class="Parameter cv Cliche">   &rArr;  sequence</strong></i></code></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">class</i> An instance of <code class="cv Cliche">&lt;class&gt;</code>.</p></dd>
-<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Values:</strong></dt>
-<dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">sequence</i> An instance of <code class="cv Cliche2">&lt;sequence&gt;</code>. Each element in the sequence is an instance of <code class="cv Cliche2">&lt;class&gt;</code>.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> Returns the direct superclasses of <i class="Cliche">class</i>  in a sequence. These are the classes that were passed as arguments to <code class="Cliche">make</code> or <code class="Cliche">define class</code> when the <i class="Cliche">class</i> was created. The order of the classes in the sequence is the same as the order in which they were passed to <code class="Cliche">define class</code> or <code class="Cliche">make</code> when <i class="Cliche">class</i> was created.</p>
-<p class="T1.Text1">The result <i class="Parameter T1.Text1">sequence</i> should never be destructively modified. Doing so may cause unpredictable behavior. If <i class="T1.Text1">class</i> is sealed, an implementation may choose to signal an error of type <code class="T1.Text1">&lt;sealed-object-error&gt;</code> rather than returning the direct superclasses.</p></dd>
+<dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>direct-superclasses <var>class</var> </code>
+      &rArr;<code> <var>sequence</var></code>
+    </p>
+  </dd>
+<dt class="Cliche">Arguments:</dt>
+<dd class="Cliche">
+    <dl>
+      <dt><var>class</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;class&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+<dt class="Cliche2">Values:</dt>
+<dd class="Cliche2">
+    <dl>
+      <dt><var>sequence</var></dt>
+      <dd>
+        <p class="Cliche2">An instance of <code>&lt;sequence&gt;</code>. Each element in the sequence is an instance of <code>&lt;class&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+<dt class="Cliche">Description:</dt>
+<dd class="Cliche"><p class="Cliche"> Returns the direct superclasses of <var>class</var>  in a sequence. These are the classes that were passed as arguments to <code>make</code> or <code>define class</code> when the <var>class</var> was created. The order of the classes in the sequence is the same as the order in which they were passed to <code>define class</code> or <code>make</code> when <var>class</var> was created.</p>
+<p class="T1.Text1">The result <var>sequence</var> should never be destructively modified. Doing so may cause unpredictable behavior. If <var>class</var> is sealed, an implementation may choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than returning the direct superclasses.</p></dd>
 </dl>
 <a name="HEADING103-36"></a>
-<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1870"></a>direct-subclasses</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-1870"></a>direct-subclasses</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1871"></a>Returns the direct subclasses of a class.</p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">direct-subclasses <i class="Parameter cv Cliche">class<strong class="Parameter cv Cliche">   &rArr;  sequence</strong></i></code></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">class</i> An instance of <code class="cv Cliche">&lt;class&gt;</code>.</p></dd>
-<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Values:</strong></dt>
-<dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">sequence</i> An instance of <code class="cv Cliche2">&lt;sequence&gt;</code>. Each element in the sequence is an instance of <code class="cv Cliche2">&lt;class&gt;</code>.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> Returns the direct subclasses of  <i class="Cliche">class</i>  in a sequence. These are the classes that have <i class="Cliche">class</i> as a direct superclass. The order of the classes in the sequence is not significant.</p>
-<p class="T1.Text1">The result <i class="Parameter T1.Text1">sequence</i> should never be destructively modified. Doing so may cause unpredictable behavior. If <i class="T1.Text1">class</i> is sealed, an implementation may choose to signal an error of type <code class="T1.Text1">&lt;sealed-object-error&gt;</code> rather than returning the direct subclasses.<a name="MARKER-2-1872"></a></p></dd>
+<dt class="Cliche">Signature:</dt>
+  <dd class="Cliche">
+    <p class="signature">
+      <code>direct-subclasses <var>class</var> </code>
+      &rArr;<code> <var>sequence</var></code>
+    </p>
+  </dd>
+<dt class="Cliche">Arguments:</dt>
+<dd class="Cliche">
+    <dl>
+      <dt><var>class</var></dt>
+      <dd>
+        <p class="Cliche">An instance of <code>&lt;class&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+<dt class="Cliche2">Values:</dt>
+<dd class="Cliche2">
+    <dl>
+      <dt><var>sequence</var></dt>
+      <dd>
+        <p class="Cliche2">An instance of <code>&lt;sequence&gt;</code>. Each element in the sequence is an instance of <code>&lt;class&gt;</code>.</p>
+      </dd>
+    </dl>
+  </dd>
+<dt class="Cliche">Description:</dt>
+<dd class="Cliche"><p class="Cliche"> Returns the direct subclasses of  <var>class</var>  in a sequence. These are the classes that have <var>class</var> as a direct superclass. The order of the classes in the sequence is not significant.</p>
+<p class="T1.Text1">The result <var>sequence</var> should never be destructively modified. Doing so may cause unpredictable behavior. If <var>class</var> is sealed, an implementation may choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than returning the direct subclasses.<a name="MARKER-2-1872"></a></p></dd>
 </dl>
 
 </div>

@@ -62,58 +62,58 @@
 <a name="HEADING82-0"></a>
 <a name="UID-Macros-6305"></a>
 <h1 class="H1.Heading1"><a name="MARKER-9-1256"></a>Pattern Variable Constraints</h1>
-<p class="T1.Text1"><a name="MARKER-2-1257"></a>Each <i class="Parameter T1.Text1">pattern-variable</i>  in the left-hand side of a rule in a macro definition has a constraint associated with it. This prevents the pattern from matching unless the fragment matched to the pattern-variable satisfies the constraint. In most cases it also controls how the matching fragment is parsed.</p>
-<p class="T1.Text1">You specify a constraint in a <i class="Parameter T1.Text1">pattern-variable</i>  by suffixing a colon and the constraint name to the pattern variable name. Intervening whitespace is not allowed. As an abbreviation, if a pattern variable has the same name as its constraint, the <i class="Parameter T1.Text1">pattern-variable</i>  can be written <code class="cv T1.Text1">?:<i class="Parameter cv T1.Text1">the-name</i></code>  instead of <code class="cv T1.Text1">?<i class="Parameter cv T1.Text1">the-name</i>:<i class="Parameter cv T1.Text1">the-name</i></code>.</p>
+<p class="T1.Text1"><a name="MARKER-2-1257"></a>Each <var>pattern-variable</var>  in the left-hand side of a rule in a macro definition has a constraint associated with it. This prevents the pattern from matching unless the fragment matched to the pattern-variable satisfies the constraint. In most cases it also controls how the matching fragment is parsed.</p>
+<p class="T1.Text1">You specify a constraint in a <var>pattern-variable</var>  by suffixing a colon and the constraint name to the pattern variable name. Intervening whitespace is not allowed. As an abbreviation, if a pattern variable has the same name as its constraint, the <var>pattern-variable</var>  can be written <code>?:<var>the-name</var></code>  instead of <code>?<var>the-name</var>:<var>the-name</var></code>.</p>
 <p class="T1.Text1">The available constraints are listed in <a href="#MARKER-9-1173" class="T1.Text1">Table 10-1</a>.</p>
 <table class="numbered"><caption class="Tb.Table"><strong>Table 10-1</strong>  <a name="MARKER-9-1173"></a>Available constraints</caption>
 <tr><th><p class="TbH.TblHd"> Constraint name</p>
 </th><th><p class="TbH.TblHd"> Grammar accepted</p>
 </th><th><p class="TbH.TblHd"> Binds pattern variable to</p>
-</th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">expression</code></p>
-</td><td><p class="TbT.TblText"> <span class="BNF"><i class="TbT.TblText">expression</i></span></p>
+</th></tr><tr><td><p class="TbT.TblText"> <code>expression</code></p>
+</td><td><p class="TbT.TblText"> <span class="BNF"><var>expression</var></span></p>
 </td><td><p class="TbT.TblText"> parsed expression fragment(1)</p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">variable</code></p>
-</td><td><p class="TbT.TblText"> <span class="BNF"><i class="TbT.TblText">variable</i></span></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code>variable</code></p>
+</td><td><p class="TbT.TblText"> <span class="BNF"><var>variable</var></span></p>
 </td><td><p class="TbT.TblText"> fragment(2)</p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">name</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code>name</code></p>
 </td><td><p class="TbT.TblText"> <span class="BNF"><em class="BNFCaps TbT.TblText">name</em></span></p>
 </td><td><p class="TbT.TblText"> one-token fragment</p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">token</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code>token</code></p>
 </td><td><p class="TbT.TblText"> <span class="BNF"><em class="BNFCaps TbT.TblText">token</em></span></p>
 </td><td><p class="TbT.TblText"> one-token fragment</p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">body</code></p>
-</td><td><p class="TbT.TblText"> <span class="BNF"><i class="Parameter TbT.TblText">body<em class="Subscript Parameter TbT.TblText"><sub>opt</sub></em></i></span> (3)</p>
+</td></tr><tr><td><p class="TbT.TblText"> <code>body</code></p>
+</td><td><p class="TbT.TblText"> <span class="BNF"><i class="parameter TbT.TblText">body<em class="Subscript Parameter TbT.TblText"><sub>opt</sub></em></i></span> (3)</p>
 </td><td><p class="TbT.TblText"> parsed expression fragment (4)</p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">case-body</code></p>
-</td><td><p class="TbT.TblText"> <span class="BNF"><i class="Parameter TbT.TblText">case-body<em class="Subscript Parameter TbT.TblText"><sub>opt</sub></em></i></span> (3)</p>
+</td></tr><tr><td><p class="TbT.TblText"> <code>case-body</code></p>
+</td><td><p class="TbT.TblText"> <span class="BNF"><i class="parameter TbT.TblText">case-body<em class="Subscript Parameter TbT.TblText"><sub>opt</sub></em></i></span> (3)</p>
 </td><td><p class="TbT.TblText"> fragment(2)</p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">macro</code></p>
-</td><td><p class="TbT.TblText"> <span class="BNF"><i class="TbT.TblText">macro</i></span></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code>macro</code></p>
+</td><td><p class="TbT.TblText"> <span class="BNF"><var>macro</var></span></p>
 </td><td><p class="TbT.TblText"> fragment(5)</p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">*</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code>*</code></p>
 </td><td><p class="TbT.TblText"> (wildcard)</p>
 </td><td><p class="TbT.TblText"> fragment</p>
 </td></tr></table><p class="T1.Text1">Notes:</p>
 <ol>
   <li>Parsed expression fragments are described on <a href="drm_77.html#MARKER-9-1199" class="N/.NList=1">page 146</a>.</li>
-  <li>Where <i class="Parameter N.NList">expression, operand,</i> <i class="Parameter N.NList">constituents</i> or <i class="Parameter N.NList">body</i>  appears in the grammar that this constraint accepts, the bound fragment contains a parsed expression fragment, not the original elementary fragments.</li>
+  <li>Where <var>expression, operand,</var> <var>constituents</var> or <var>body</var>  appears in the grammar that this constraint accepts, the bound fragment contains a parsed expression fragment, not the original elementary fragments.</li>
   <li>Parsing stops at an intermediate word.</li>
-  <li>The body is wrapped in <code class="cv N.NList">begin &hellip; end</code> to make it an expression, using the standard binding of <code class="cv N.NList">begin</code> in the Dylan module. An empty body defaults to <code class="cv N.NList">#f</code>.</li>
-  <li>A pattern-variable with a <code class="cv N.NList">macro</code> constraint accepts exactly one elementary fragment, which must be a macro call fragment. It binds the pattern variable to the expansion of the macro.</li>
+  <li>The body is wrapped in <code>begin &hellip; end</code> to make it an expression, using the standard binding of <code>begin</code> in the Dylan module. An empty body defaults to <code>#f</code>.</li>
+  <li>A pattern-variable with a <code>macro</code> constraint accepts exactly one elementary fragment, which must be a macro call fragment. It binds the pattern variable to the expansion of the macro.</li>
 </ol>
 <p class="T1.Text1">Some implementations and a future version of the Dylan language specification might add more constraint choices to this table.</p>
-<p class="T1.Text1">When a pattern variable has the same name as an auxiliary rule-set, its constraint defaults to <a name="MARKER-2-1258"></a>wildcard and can be omitted. Otherwise a constraint must be specified in every <i class="Parameter T1.Text1">pattern-variable</i> and <i class="Parameter T1.Text1">pattern-keyword</i>.</p>
-<p class="T1.Text1">A constraint applies only to the specific pattern variable occurrence to which it is attached. It does not constrain other pattern variable occurrences with the same name. </p>
+<p class="T1.Text1">When a pattern variable has the same name as an auxiliary rule-set, its constraint defaults to <a name="MARKER-2-1258"></a>wildcard and can be omitted. Otherwise a constraint must be specified in every <var>pattern-variable</var> and <var>pattern-keyword</var>.</p>
+<p class="T1.Text1">A constraint applies only to the specific pattern variable occurrence to which it is attached. It does not constrain other pattern variable occurrences with the same name.</p>
 <a name="HEADING82-144"></a>
 <a name="UID-Macros-5860"></a>
 <h2 class="H2.Heading2">Intermediate Words</h2>
-<p class="T1.Text1"><a name="MARKER-2-1259"></a>When a <i class="Parameter T1.Text1">pattern-variable </i> has a constraint of <code class="cv T1.Text1">body</code> or <code class="cv T1.Text1">case-body</code>, its parsing of the fragment stops before any token that is an intermediate word. This allows intermediate words to delimit clauses that have separate bodies, like <code class="cv T1.Text1">else</code> and <code class="cv T1.Text1">elseif</code> in an <code class="cv T1.Text1">if</code> statement. The intermediate words of a macro are identified as follows:</p>
+<p class="T1.Text1"><a name="MARKER-2-1259"></a>When a <var>pattern-variable </var> has a constraint of <code>body</code> or <code>case-body</code>, its parsing of the fragment stops before any token that is an intermediate word. This allows intermediate words to delimit clauses that have separate bodies, like <code>else</code> and <code>elseif</code> in an <code>if</code> statement. The intermediate words of a macro are identified as follows:</p>
 <ul class="B1.Bullet1">
-<li class="B1.Bullet1">Define a body-variable to be a pattern variable that either has a constraint of <code class="cv B1.Bullet1">body</code> or <code class="cv B1.Bullet1">case-body</code>, or  names an auxiliary rule-set where some left-hand side in that rule-set ends in a body-variable. This is a least fixed point<i class="B1.Bullet1">, </i> so a recursive auxiliary rule-set does not automatically make its name into a body-variable.  Note that an ellipsis that stands for a pattern variable is a body-variable when that pattern variable is one.
+<li class="B1.Bullet1">Define a body-variable to be a pattern variable that either has a constraint of <code>body</code> or <code>case-body</code>, or  names an auxiliary rule-set where some left-hand side in that rule-set ends in a body-variable. This is a least fixed point<var>, </var> so a recursive auxiliary rule-set does not automatically make its name into a body-variable.  Note that an ellipsis that stands for a pattern variable is a body-variable when that pattern variable is one.
 </li>
 <li class="B1.Bullet1">Define an intermediate-variable to be a pattern variable that either immediately follows a body-variable in a left-hand side, or appears at the beginning of a left-hand side in an auxiliary rule-set named by an intermediate-variable. 
 </li>
-<li class="B1.Bullet1">An intermediate word is a <em class="BNFCaps B1.Bullet1">name</em> that either immediately follows a body-variable in a left-hand side, or occurs at the beginning of a left-hand side in an auxiliary rule-set named by an intermediate-variable. Intermediate words are not reserved, they are just used as delimiters during the parsing for a <i class="Parameter B1.Bullet1">pattern-variable</i>  with a <code class="cv B1.Bullet1">body</code> or <code class="cv B1.Bullet1">case-body</code> constraint.<a name="MARKER-2-1260"></a><a name="MARKER-2-1261"></a>
+<li class="B1.Bullet1">An intermediate word is a <em class="BNFCaps B1.Bullet1">name</em> that either immediately follows a body-variable in a left-hand side, or occurs at the beginning of a left-hand side in an auxiliary rule-set named by an intermediate-variable. Intermediate words are not reserved, they are just used as delimiters during the parsing for a <var>pattern-variable</var>  with a <code>body</code> or <code>case-body</code> constraint.<a name="MARKER-2-1260"></a><a name="MARKER-2-1261"></a>
 </li>
 </ul>
 

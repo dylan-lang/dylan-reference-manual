@@ -63,10 +63,10 @@
 <a name="UID-Program_Control-1279"></a>
 <h1 class="H1.Heading1"><a name="MARKER-2-438"></a>Operators</h1>
 <p class="T1.Text1">Dylan provides a small number of unary and binary operators. These are syntactic shorthand for function calls or function-macro calls.</p>
-<p class="T1.Text1">Because of the possibility of <a name="MARKER-2-439"></a>token blending, operators and their operands must often be separated by <a name="MARKER-2-440"></a>whitespace. For example, <code class="cv T1.Text1">foo+bar</code> is a single named value reference, not an invocation of the addition operator. The complete rules of tokenization are given in the lexical syntax in <a href="drm_116.html#MARKER-9-2090" class="T1.Text1">Appendix A, "BNF."</a></p>
-<p class="T1.Text1">All binary operators are <a name="MARKER-2-441"></a>left-associative, except for the assignment operator, <code class="cv T1.Text1">:=</code>, and the exponentiation operator, <code class="cv T1.Text1">^</code>, which are <a name="MARKER-2-442"></a>right-associative.</p>
+<p class="T1.Text1">Because of the possibility of <a name="MARKER-2-439"></a>token blending, operators and their operands must often be separated by <a name="MARKER-2-440"></a>whitespace. For example, <code>foo+bar</code> is a single named value reference, not an invocation of the addition operator. The complete rules of tokenization are given in the lexical syntax in <a href="drm_116.html#MARKER-9-2090" class="T1.Text1">Appendix A, "BNF."</a></p>
+<p class="T1.Text1">All binary operators are <a name="MARKER-2-441"></a>left-associative, except for the assignment operator, <code>:=</code>, and the exponentiation operator, <code>^</code>, which are <a name="MARKER-2-442"></a>right-associative.</p>
 <p class="T1.Text1"><a name="MARKER-2-443"></a>Each operator corresponds to a binding name, given in the table below. When an operator is called, the corresponding name is looked up in the environment of the call. (It is not looked up in the <a name="MARKER-2-444"></a>Dylan module, and will only refer to a binding in the Dylan module if that binding has been imported in the current module and has not been shadowed by a lexical binding.)</p>
-<p class="T1.Text1">If the name given in the table has the same spelling as the operator, it must be escaped with <a name="MARKER-2-445"></a>\ to be used as a named value reference. For example, to add a method to <code class="cv T1.Text1">+</code> with <code class="cv T1.Text1">define method</code>, you use <code class="cv T1.Text1">\+</code>. To use <code class="cv T1.Text1">&lt;</code> as an argument to <code class="cv T1.Text1">sort</code>, you write <code class="cv T1.Text1">\&lt;</code>.</p>
+<p class="T1.Text1">If the name given in the table has the same spelling as the operator, it must be escaped with <a name="MARKER-2-445"></a>\ to be used as a named value reference. For example, to add a method to <code>+</code> with <code>define method</code>, you use <code>\+</code>. To use <code>&lt;</code> as an argument to <code>sort</code>, you write <code>\&lt;</code>.</p>
 <p class="T1.Text1"><a name="MARKER-2-446"></a>The operands of a binary operator call that is shorthand for a function call are executed in left to right order. The operands of a binary operator call which is shorthand for a function macro call are passed to the macro. Their order of execution depends on the definition of the macro. The built-in function macros are described in <a href="drm_115.html#MARKER-9-2068" class="T1.Text1">"Function Macros" on page 409</a>.</p>
 <p class="T1.Text1"><a name="MARKER-2-447"></a><a name="MARKER-2-448"></a>The operators are listed in <a href="#MARKER-9-427" class="T1.Text1">Table 4-1</a> in descending order of precedence. Operators within a group share the same precedence. When a function call using slot reference syntax appears as an operand, it has greater precedence than any of the binary operators.</p>
 <p class="T0.Text0"><a name="MARKER-2-449"></a><a name="MARKER-2-450"></a></p>
@@ -82,124 +82,124 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="TbT.TblText">-</code></td>
+      <td><code>-</code></td>
       <td>unary</td>
       <td>arithmetic negation</td>
-      <td><code class="TbT.TblText">negative</code></td>
+      <td><code>negative</code></td>
     </tr>
     <tr>
-      <td><code class="TbT.TblText">~</code></td>
+      <td><code>~</code></td>
       <td>unary</td>
       <td>logical negation</td>
-      <td><code class="TbT.TblText">~</code></td>
+      <td><code>~</code></td>
     </tr>
   </tbody>
   <tbody>
     <tr>
-      <td><code class="TbT.TblText">^</code></td>
+      <td><code>^</code></td>
       <td>binary</td>
       <td>exponentiation</td>
-      <td><code class="TbT.TblText">^</code></td>
+      <td><code>^</code></td>
     </tr>
   </tbody>
   <tbody>
     <tr>
-      <td><code class="TbT.TblText">*</code></td>
+      <td><code>*</code></td>
       <td>binary</td>
       <td>multiplication</td>
-      <td><code class="TbT.TblText">*</code></td>
+      <td><code>*</code></td>
     </tr>
     <tr>
-      <td><code class="TbT.TblText">/</code></td>
+      <td><code>/</code></td>
       <td>binary</td>
       <td>division</td>
-      <td><code class="TbT.TblText">/</code></td>
+      <td><code>/</code></td>
     </tr>
   </tbody>
   <tbody>
     <tr>
-      <td><code class="TbT.TblText">+</code></td>
+      <td><code>+</code></td>
       <td>binary</td>
       <td>addition</td>
-      <td><code class="TbT.TblText">+</code></td>
+      <td><code>+</code></td>
     </tr>
     <tr>
-      <td><code class="TbT.TblText">-</code></td>
+      <td><code>-</code></td>
       <td>binary</td>
       <td>subtraction</td>
-      <td><code class="TbT.TblText">-</code></td>
+      <td><code>-</code></td>
     </tr>
   </tbody>
   <tbody>
     <tr>
-      <td><code class="TbT.TblText">=</code></td>
+      <td><code>=</code></td>
       <td>binary</td>
       <td>equality</td>
-      <td><code class="TbT.TblText">=</code></td>
+      <td><code>=</code></td>
     </tr>
     <tr>
-      <td><code class="TbT.TblText">==</code></td>
+      <td><code>==</code></td>
       <td>binary</td>
       <td>identity</td>
-      <td><code class="TbT.TblText">==</code></td>
+      <td><code>==</code></td>
     </tr>
     <tr>
-      <td><code class="TbT.TblText">~=</code></td>
+      <td><code>~=</code></td>
       <td>binary</td>
       <td>non-equality</td>
-      <td><code class="TbT.TblText">~=</code></td>
+      <td><code>~=</code></td>
     </tr>
     <tr>
-      <td><code class="TbT.TblText">~==</code></td>
+      <td><code>~==</code></td>
       <td>binary</td>
       <td>non-identity</td>
-      <td><code class="TbT.TblText">~==</code></td>
+      <td><code>~==</code></td>
     </tr>
     <tr>
-      <td><code class="TbT.TblText">&lt;</code></td>
+      <td><code>&lt;</code></td>
       <td>binary</td>
       <td>less than</td>
-      <td><code class="TbT.TblText">&lt;</code></td>
+      <td><code>&lt;</code></td>
     </tr>
     <tr>
-      <td><code class="TbT.TblText">&gt;</code></td>
+      <td><code>&gt;</code></td>
       <td>binary</td>
       <td>greater than</td>
-      <td><code class="TbT.TblText">&gt;</code></td>
+      <td><code>&gt;</code></td>
     </tr>
     <tr>
-      <td><code class="TbT.TblText">&lt;=</code></td>
+      <td><code>&lt;=</code></td>
       <td>binary</td>
       <td>less than or equals</td>
-      <td><code class="TbT.TblText">&lt;=</code></td>
+      <td><code>&lt;=</code></td>
     </tr>
     <tr>
-      <td><code class="TbT.TblText">&gt;=</code></td>
+      <td><code>&gt;=</code></td>
       <td>binary</td>
       <td>greater than or equals</td>
-      <td><code class="TbT.TblText">&gt;=</code></td>
+      <td><code>&gt;=</code></td>
     </tr>
   </tbody>
   <tbody>
     <tr>
-      <td><code class="TbT.TblText">&amp;</code></td>
+      <td><code>&amp;</code></td>
       <td>binary</td>
       <td>logical and</td>
-      <td><code class="cv TbT.TblText">&amp;</code></td>
+      <td><code>&amp;</code></td>
     </tr>
     <tr>
-      <td><code class="TbT.TblText">|</code></td>
+      <td><code>|</code></td>
       <td>binary</td>
       <td>logical or</td>
-      <td><code class="cv TbT.TblText">|</code></td>
+      <td><code>|</code></td>
     </tr>
   </tbody>
   <tbody>
     <tr>
-      <td><code class="TbT.TblText">:=</code></td>
+      <td><code>:=</code></td>
       <td>binary</td>
       <td>assignment</td>
-      <td><code class="cv TbT.TblText">:=</code></td>
+      <td><code>:=</code></td>
     </tr>
   </tbody>
 </table>
