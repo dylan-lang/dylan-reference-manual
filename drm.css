@@ -10,8 +10,9 @@ body {
 
   Add some whitespace above headings and a rule below to make them
   stand out more from preceding text, and, for definition sections,
-  set the "[Foo]" tag apart from the identifier so they don't run
-  together.
+  float the "[Open Abstract Foo]" tag on the right, so it doesn't
+  run together with the definition name (and besides, it matches
+  the printed DRM.)
 */
 
 h1[class~="H1.Heading1"], h2, h3 { padding-top: 0.5em; padding-bottom: 3px; border-bottom: 1px solid }
@@ -19,7 +20,8 @@ h1[class~="H1.Heading1"], h2, h3 { padding-top: 0.5em; padding-bottom: 3px; bord
 /* definition section headings */
 
 h3[class~="H4.Heading4"] { padding-top: 1.5em; padding-bottom: 0px; border-bottom: none }
-h3[class~="H4.Heading4"] code:first-child { font-size: 120%; padding-right: 10em }
+h3[class~="H4.Heading4"] code { font-size: larger }
+span.attributes-summary { float: right; margin-right: 1em }
 
 
 /*
@@ -59,8 +61,7 @@ table.grouped tbody		{ border-top: 1px solid } /* put a line between row groups 
 caption, th			{ text-align: left }
 
 th, td 	      	  	     	{ padding-top: 0.5em; padding-bottom: 0.5em }	/* space rows about a line height */
-th, td 	      	  	     	{ padding-left: 2em; vertical-align: baseline }
-th:first-child, td:first-child	{ padding-left: 0em }
+th + th, td + td 	      	{ padding-left: 2em; vertical-align: baseline }
 
 th.primary			{ min-width: 10em } /* the "primary" column should avoid wrapping */
 
