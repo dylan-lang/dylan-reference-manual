@@ -35,8 +35,17 @@
 <h2 class="H2.Heading2"> <a name="MARKER-9-710"></a>Limited Integer Types</h2>
 <p class="T1.Text1"><a name="MARKER-2-711"></a>Limited integer types are subtypes of <code class="Code T1.Text1"><a name="MARKER-2-712"></a>&lt;integer&gt;</code> containing integers that fall within a specifed range. The range is specified by <code class="Code T1.Text1">min:</code> and <code class="Code T1.Text1">max:</code> keyword arguments to <code class="Code T1.Text1">limited</code>.</p>
 <p class="T1.Text1">For example:</p>
-<p class="T1.Text1"><code class="T1.Text1">// accepts integers between -1000 and 1000 inclusive.<br />define method f (x :: limited(&lt;integer&gt;, min: -1000,<br />                                         max: 1000))<br />  ...<br /></code>  end method f;</p>
-<p class="T1.Text1"><code class="T1.Text1">//accepts all strictly positive integers.<br />define method f (x :: limited(&lt;integer&gt;, min: 1))<br /></code>  ...<br />  end method f;</p>
+<pre>
+// accepts integers between -1000 and 1000 inclusive.
+define method f (x :: limited(&lt;integer&gt;, min: -1000,
+                                         max: 1000))
+  &hellip;
+  end method f;
+
+//accepts all strictly positive integers.
+define method f (x :: limited(&lt;integer&gt;, min: 1))
+  &hellip;
+  end method f;</pre>
 <a name="HEADING46-11"></a>
 <h3 class="H3.Heading3"> Limited Integer Type Protocol</h3>
 <p class="T1.Text1"><a name="MARKER-2-713"></a>If <i class="Parameter T1.Text1">w</i>, <i class="Parameter T1.Text1">x</i>, <i class="Parameter T1.Text1">y</i>, and <i class="Parameter T1.Text1">z</i> are integers, the following equivalences hold:</p>
@@ -45,8 +54,8 @@
 <li class="B1.Bullet1"><code class="Code B1.Bullet1">instance?(<i class="Parameter Code B1.Bullet1">x</i>, limited(&lt;integer&gt;, min: <i class="Parameter Code B1.Bullet1">y</i>))</code> will be true if and only if <code class="Code B1.Bullet1">instance?(<i class="Parameter Code B1.Bullet1">x</i>, &lt;integer&gt;)</code> and <code class="Code B1.Bullet1">(<i class="Parameter Code B1.Bullet1">y</i> &lt;= <i class="Parameter Code B1.Bullet1">x</i>)</code> are both true.</li>
 <li class="B1.Bullet1"><code class="Code B1.Bullet1">instance?(<i class="Parameter Code B1.Bullet1">x</i>, limited(&lt;integer&gt;, max: <i class="Parameter Code B1.Bullet1">z</i>))</code> will be true if and only if <code class="Code B1.Bullet1">instance?(<i class="Parameter Code B1.Bullet1">x</i>, &lt;integer&gt;)</code> and <code class="Code B1.Bullet1">(<i class="Parameter Code B1.Bullet1">x</i> &lt;= <i class="Parameter Code B1.Bullet1">z</i>)</code> are both true.</li>
 <li class="B1.Bullet1"><code class="Code B1.Bullet1">subtype?(limited(&lt;integer&gt;, min: <i class="Parameter Code B1.Bullet1">w</i>, max: <i class="Parameter Code B1.Bullet1">x</i>),<br />         limited(&lt;integer&gt;, min: <i class="Parameter Code B1.Bullet1">y</i>, max: <i class="Parameter Code B1.Bullet1">z</i>))</code> will be true if and only if <code class="Code B1.Bullet1">(<i class="Parameter Code B1.Bullet1">w</i> &gt;= <i class="Parameter Code B1.Bullet1">y</i>)</code> and <code class="Code B1.Bullet1">(<i class="Parameter Code B1.Bullet1">x</i> &lt;= <i class="Parameter Code B1.Bullet1">z</i>)</code> are both true.</li>
-<li class="B1.Bullet1"><code class="Code B1.Bullet1">subtype?(limited(&lt;integer&gt;, min: <i class="Parameter Code B1.Bullet1">w</i><i> ...</i>),<br />         limited(&lt;integer&gt;, min: <i class="Parameter Code B1.Bullet1">y</i><i> ...</i>))</code> will be true if and only if <code class="Code B1.Bullet1">(<i class="Parameter Code B1.Bullet1">w</i> &gt;= <i class="Parameter Code B1.Bullet1">y</i>)</code> is true.</li>
-<li class="B1.Bullet1"><code class="Code B1.Bullet1">subtype?(limited(&lt;integer&gt;,<i> ...</i> max: <i class="Parameter Code B1.Bullet1">x</i>),<br />         limited(&lt;integer&gt;,<i> ...</i> max: <i class="Parameter Code B1.Bullet1">z</i>))</code> will be true if and only if <code class="Code B1.Bullet1">(<i class="Parameter Code B1.Bullet1">x</i> &lt;= <i class="Parameter Code B1.Bullet1">z</i>)</code> is true.<a name="MARKER-2-714"></a><a name="MARKER-2-715"></a></li>
+<li class="B1.Bullet1"><code class="Code B1.Bullet1">subtype?(limited(&lt;integer&gt;, min: <i class="Parameter Code B1.Bullet1">w</i><i> &hellip;</i>),<br />         limited(&lt;integer&gt;, min: <i class="Parameter Code B1.Bullet1">y</i><i> &hellip;</i>))</code> will be true if and only if <code class="Code B1.Bullet1">(<i class="Parameter Code B1.Bullet1">w</i> &gt;= <i class="Parameter Code B1.Bullet1">y</i>)</code> is true.</li>
+<li class="B1.Bullet1"><code class="Code B1.Bullet1">subtype?(limited(&lt;integer&gt;,<i> &hellip;</i> max: <i class="Parameter Code B1.Bullet1">x</i>),<br />         limited(&lt;integer&gt;,<i> &hellip;</i> max: <i class="Parameter Code B1.Bullet1">z</i>))</code> will be true if and only if <code class="Code B1.Bullet1">(<i class="Parameter Code B1.Bullet1">x</i> &lt;= <i class="Parameter Code B1.Bullet1">z</i>)</code> is true.<a name="MARKER-2-714"></a><a name="MARKER-2-715"></a></li>
 </ul>
 <a name="HEADING46-19"></a>
 <a name="UID-Types_and_Classes-3901"></a>

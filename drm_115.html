@@ -87,15 +87,15 @@ subviews(*top-view*) := generate-subviews()
 subviews-setter(generate-subviews(), *top-view*) </pre>
     <p class="T1.Text1">(The differences are as follows: the execution time of <code class="cv T1.Text1">subviews-setter</code> is undefined in the first two expressions but defined in the last; the first two expressions will return the value of the call to <code class="cv T1.Text1">generate-subviews</code> while the last will return the value of the call to <code class="cv T1.Text1">subviews-setter</code>.)</p>
     <pre class="Cv.Code">
-name(arg1,...argn ) := new-value </pre>
+name(arg1,&hellip;argn ) := new-value </pre>
     <p class="T1.Text1">behaves exactly the same as</p>
     <pre class="Cv.Code">
 begin
   let <i class="Parameter Cv.Code">temp</i> = new-value;
-  name-setter(temp, arg1,...argn );
+  name-setter(temp, arg1,&hellip;argn );
   <i class="Parameter Cv.Code">temp
 </i>end </pre>
-    <p class="T1.Text1">This is true regardless of whether <code class="cv T1.Text1">name</code> and <code class="cv T1.Text1">name-setter</code> are functions or macros. Here <i class="Parameter T1.Text1">temp</i> stands for a variable with a unique name. If <code class="cv T1.Text1">name-setter</code> is a macro, it  is responsible for the order of executation of <code class="cv T1.Text1">arg1,...argn</code>.</p>
+    <p class="T1.Text1">This is true regardless of whether <code class="cv T1.Text1">name</code> and <code class="cv T1.Text1">name-setter</code> are functions or macros. Here <i class="Parameter T1.Text1">temp</i> stands for a variable with a unique name. If <code class="cv T1.Text1">name-setter</code> is a macro, it  is responsible for the order of executation of <code class="cv T1.Text1">arg1,&hellip;argn</code>.</p>
     <p class="T1.Text1">The same considerations apply to <code class="cv T1.Text1">arg.name := new-value</code>.</p>
     <a name="HEADING115-89"></a>
     <h4 class="H5.Heading5"> Assignment to element references</h4>

@@ -123,6 +123,7 @@ layout(my-widget, size: query-user-for-size() );
 method (#key X :: &lt;integer&gt;)
   ... X ...
 end method;
+
 method (#key X)
   let X :: &lt;integer&gt; = X;
   ... X ...
@@ -134,8 +135,11 @@ end method;
 define method find-happiness (#key hint :: &lt;symbol&gt; =  #&quot;here&quot;)
   ...
 end method find-happiness;
-</pre>
-<p class="T1.Text1"><code class="T1.Text1">define method find-food (#key hint :: &lt;restaurant&gt; <br />                              =  lookup-default-restaurant())<br />  ...<br />end method find-food;<a name="MARKER-2-828"></a><a name="MARKER-2-829"></a></code></p>
+
+define method find-food (#key hint :: &lt;restaurant&gt;
+                              =  lookup-default-restaurant())
+  ...
+end method find-food;<a name="MARKER-2-828"></a><a name="MARKER-2-829"></a></pre>
 <a name="HEADING49-68"></a>
 <a name="UID-Functions-2324"></a>
 <h2 class="H2.Heading2"> <a name="MARKER-2-830"></a>Return Value Declarations<a name="MARKER-2-831"></a></h2>
@@ -155,17 +159,20 @@ define method average (x :: &lt;number&gt;, y :: &lt;number&gt;)
  =&gt; mean :: &lt;number&gt;;
  (x + y) / 2
 end method;
-<code class="cv Cv.Code">// Returning multiple values
+
+// Returning multiple values
 define method limits (center :: &lt;number&gt;, radius :: &lt;number&gt;)
  =&gt; (min :: &lt;number&gt;, max :: &lt;number&gt;);
  values(center - radius, center + radius);
-end method;</code>
-<code class="cv Cv.Code">// The same name used both as a parameter and as a value type
+end method;
+
+// The same name used both as a parameter and as a value type
 define method rotate (image :: &lt;picture&gt;, rotation-angle :: &lt;number&gt;)
 
  =&gt; (image :: &lt;picture&gt;);
- ...
-end method;</code>
+ &hellip;
+end method;
+
 // This method can return one, two, or three values
 define method family (kid :: &lt;person&gt;)
   =&gt; (kid :: &lt;person&gt;, #rest parents);

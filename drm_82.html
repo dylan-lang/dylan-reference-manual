@@ -68,7 +68,7 @@
   <li>Parsed expression fragments are described on <a href="drm_77.html#MARKER-9-1199" class="N/.NList=1">page 146</a>.</li>
   <li>Where <i class="Parameter N.NList">expression, operand,</i> <i class="Parameter N.NList">constituents</i> or <i class="Parameter N.NList">body</i>  appears in the grammar that this constraint accepts, the bound fragment contains a parsed expression fragment, not the original elementary fragments.</li>
   <li>Parsing stops at an intermediate word.</li>
-  <li>The body is wrapped in <code class="cv N.NList">begin ... end</code> to make it an expression, using the standard binding of <code class="cv N.NList">begin</code> in the Dylan module. An empty body defaults to <code class="cv N.NList">#f</code>.</li>
+  <li>The body is wrapped in <code class="cv N.NList">begin &hellip; end</code> to make it an expression, using the standard binding of <code class="cv N.NList">begin</code> in the Dylan module. An empty body defaults to <code class="cv N.NList">#f</code>.</li>
   <li>A pattern-variable with a <code class="cv N.NList">macro</code> constraint accepts exactly one elementary fragment, which must be a macro call fragment. It binds the pattern variable to the expansion of the macro.</li>
 </ol>
 <p class="T1.Text1">Some implementations and a future version of the Dylan language specification might add more constraint choices to this table.</p>

@@ -61,10 +61,10 @@ define class &lt;human&gt; (&lt;humanoid&gt;, &lt;intelligent&gt;) end class;
 <p class="T1.Text1">When sorting the applicable methods, each specializer needs to be viewed with respect to the class precedence list for the class of the argument passed to the generic function in that argument position. For example, given the following definitions</p>
 <pre class="Cv.Code">
 define method psychoanalyze (being :: &lt;intelligent&gt;)
-  ...
+  &hellip;
 end method;
 define method psychoanalyze (being :: &lt;humanoid&gt;) 
-  ...
+  &hellip;
 end method;
 </pre>
 <p class="T1.Text1">calling the generic function <code class="Code T1.Text1">psychoanalyze </code>on a being of type <code class="Code T1.Text1">&lt;human&gt;</code> would cause the method for <code class="Code T1.Text1">&lt;humanoid&gt;</code> to be called first, while calling the generic function on a being of type <code class="Code T1.Text1">&lt;vulcan&gt;</code> would cause the method for <code class="Code T1.Text1">&lt;intelligent&gt;</code> to be called first.</p>
