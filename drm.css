@@ -258,10 +258,11 @@ hr.Colophon-title + * { border-top: 1px solid black; padding-top: 0.5em }
    Definition section headings. Hide HRs and use CSS bottom borders instead.  Right-align
    attributes summaries.
 */
-h3[class~="H4.Heading4"] + hr { display: none }
-h3[class~="H4.Heading4"] var  { font-family: sans-serif }
-span.attributes-summary       { float: right; margin-right: 1em }
-
+h3[class~="H4.Heading4"] var             { font-family: sans-serif }
+h3[class~="H4.Heading4"]                 { float: left; width: 100% }
+h3[class~="H4.Heading4"] > :first-child  { float: left }
+span.attributes-summary                  { float: right; margin-right: 1em }
+h3[class~="H4.Heading4"] + hr            { display: none }
 
 /*
   Contents
