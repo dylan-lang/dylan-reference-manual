@@ -61,7 +61,7 @@ img#book-cover {
    everywhere. Feel free to do it someday and use #id selectors instead.
 */
 
-#navigation                                    { height: 25px }
+#navigation                                    { height: 25px; line-height: 0 }
 #navigation img                                { border: none }
 #navigation > :first-child + * + *             { position: absolute; top: 10px; left:  10px }
 #navigation > :first-child                     { position: absolute; top: 10px; left:  67px }
