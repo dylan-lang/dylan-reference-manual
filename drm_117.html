@@ -93,7 +93,9 @@
     <p><span class="one-of">one of</span> <code class="T1.Text1">#( #[ ## ? ?? ?= ...</code></p>
   </dd>
   <dt><i class="T1.Text1">#-word:</i></dt>
-  <dd><span class="one-of">one of</span> <code class="T1.Text1">#t #f #next #rest #key #all-keys #include</code></dd>
+  <dd>
+    <p><span class="one-of">one of</span> <code class="T1.Text1">#t #f #next #rest #key #all-keys #include</code></p>
+  </dd>
 </dl>
 <a name="HEADING117-7"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2100"></a>Reserved Words</h2>
@@ -107,7 +109,9 @@
     <p><em class="BNFCaps T1.Text1">define-list-word</em></p>
   </dd>
   <dt><i class="T1.Text1">core-word:</i></dt>
-  <dd><span class="one-of">one of</span> <code class="T1.Text1">define end handler let local macro otherwise</code></dd>
+  <dd>
+    <p><span class="one-of">one of</span> <code class="T1.Text1">define end handler let local macro otherwise</code></p>
+  </dd>
 </dl>
 <p class="T1.Text1">The following reserved words are exported by the Dylan module:</p>
 <dl>
@@ -117,11 +121,17 @@
     <p><span class="one-of">one of</span> <code class="T1.Text1">select unless until while</code></p>
   </dd>
   <dt><em class="BNFCaps T1.Text1">function-word:</em></dt>
-  <dd>(none)</dd>
+  <dd>
+    <p>(none)</p>
+  </dd>
   <dt><em class="BNFCaps T1.Text1">define-body-word:</em></dt>
-  <dd><span class="one-of">one of</span> <code class="T1.Text1">class library method module</code></dd>
+  <dd>
+    <p><span class="one-of">one of</span> <code class="T1.Text1">class library method module</code></p>
+  </dd>
   <dt><em class="BNFCaps T1.Text1">define-list-word:</em></dt>
-  <dd><span class="one-of">one of</span> <code class="T1.Text1">constant variable domain</code></dd>
+  <dd>
+    <p><span class="one-of">one of</span> <code class="T1.Text1">constant variable domain</code></p>
+  </dd>
 </dl>
 <a name="HEADING117-15"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2101"></a>Names, Symbols and Keywords</h2>
@@ -174,23 +184,23 @@
   <dt><i class="T1.Text1">word:</i></dt>
   <dd>
     <p><i class="T1.Text1">leading-alphabetic</i></p>
-    <p><i class="T1.Text1">leading-numeric  alphabetic-character  leading-alphabetic</i></p>
-    <p><i class="T1.Text1">leading-graphic  leading-alphabetic</i></p>
+    <p><i class="T1.Text1">leading-numeric</i> <i class="T1.Text1">alphabetic-character</i> <i class="T1.Text1">leading-alphabetic</i></p>
+    <p><i class="T1.Text1">leading-graphic</i> <i class="T1.Text1">leading-alphabetic</i></p>
   </dd>
   <dt><i class="T1.Text1">leading-alphabetic:</i></dt>
   <dd>
     <p><i class="T1.Text1">alphabetic-character</i></p>
-    <p><i class="T1.Text1">leading-alphabetic  any-character</i></p>
+    <p><i class="T1.Text1">leading-alphabetic</i> <i class="T1.Text1">any-character</i></p>
   </dd>
   <dt><i class="T1.Text1">leading-numeric:</i></dt>
   <dd>
     <p><i class="T1.Text1">numeric-character</i></p>
-    <p><i class="T1.Text1">leading-numeric word-character-not-double-alphabetic</i></p>
+    <p><i class="T1.Text1">leading-numeric</i> <i class="T1.Text1">word-character-not-double-alphabetic</i></p>
   </dd>
   <dt><i class="T1.Text1">leading-graphic:</i></dt>
   <dd>
     <p><i class="T1.Text1">graphic-character</i></p>
-    <p><i class="T1.Text1">leading-graphic word-character-not-alphabetic</i></p>
+    <p><i class="T1.Text1">leading-graphic</i> <i class="T1.Text1">word-character-not-alphabetic</i></p>
   </dd>
   <dt><i class="T1.Text1">word-character-not-alphabetic:</i></dt>
   <dd>
@@ -200,7 +210,7 @@
   </dd>
   <dt><i class="T1.Text1">word-character-not-double-alphabetic:</i></dt>
   <dd>
-    <p><i class="T1.Text1">alphabetic-character  word-character-not-alphabetic</i></p>
+    <p><i class="T1.Text1">alphabetic-character</i> <i class="T1.Text1">word-character-not-alphabetic</i></p>
     <p><i class="T1.Text1">numeric-character</i></p>
     <p><i class="T1.Text1">graphic-character</i></p>
     <p><i class="T1.Text1">special-character</i></p>
@@ -259,7 +269,7 @@
   </dd>
   <dt><i class="T1.Text1">more-string:</i></dt>
   <dd>
-    <p><i class="T1.Text1">string-character  more-string</i></p>
+    <p><i class="T1.Text1">string-character</i> <i class="T1.Text1">more-string</i></p>
     <p><code class="T1.Text1">&quot;</code></p>
   </dd>
   <dt><i class="T1.Text1">string-character:</i></dt>

@@ -59,138 +59,595 @@
 <p class="header">A BNF</p>
 
 </div>
+<div class="BNF">
 <a name="HEADING118-0"></a>
 <a name="UID-BNF_Appendix-564"></a>
 <h1 class="H1.Heading1">Phrase Grammar</h1>
 <a name="HEADING118-1"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2107"></a>Program Structure</h2>
-<p class="T1.Text1"><i class="T1.Text1">source-record:<br /> body<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">body:<br /> constituents  <code class="italics T1.Text1">;<em class="Subscript italics T1.Text1"><sub>opt</sub></em></code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">constituents:<br /> constituent  <code class="italics T1.Text1">; &hellip;</code></i></p>
-<p class="T1.Text1"><i class="T1.Text1">constituent:<br /> definition<br /> local-declaration<br /> expression</i></p>
-<p class="T1.Text1"><i class="T1.Text1">macro:<br /> definition-macro-call<br /> statement<br /> function-macro-call</i></p>
-<p class="T1.Text1"><i class="T1.Text1"> parsed-macro-call</i></p>
+<dl>
+  <dt><i class="T1.Text1">source-record:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">body<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
+  </dd>
+  <dt><i class="T1.Text1">body:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">constituents</i> <code class="T1.Text1">;<i class="T1.Text1"><em class="Subscript T1.Text1"><sub>opt</sub></em></i></code></p>
+  </dd>
+  <dt><i class="T1.Text1">constituents:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">constituent</i> <code class="T1.Text1">;</code> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">constituent:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">definition</i></p>
+    <p><i class="T1.Text1">local-declaration</i></p>
+    <p><i class="T1.Text1">expression</i></p>
+  </dd>
+  <dt><i class="T1.Text1">macro:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">definition-macro-call</i></p>
+    <p><i class="T1.Text1">statement</i></p>
+    <p><i class="T1.Text1">function-macro-call</i></p>
+    <p><i class="T1.Text1">parsed-macro-call</i></p>
+  </dd>
+</dl>
 <a name="HEADING118-8"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2108"></a>Property Lists</h2>
-<p class="T1.Text1"><i class="italics T1.Text1">comma-property-list:<br /><code class="italics T1.Text1"> , property-list</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">property-list:<br /> property  <code class="italics T1.Text1">, &hellip;</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">property:<br /><em class="italics T1.Text1"> symbol value</em></i></p>
-<p class="T1.Text1"><i class="T1.Text1">value:<br /> basic-fragment</i></p>
+<dl>
+  <dt><i class="T1.Text1">comma-property-list:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">,</code> <i class="T1.Text1">property-list</i></p>
+  </dd>
+  <dt><i class="T1.Text1">property-list:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">property</i> <code class="T1.Text1">,</code> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">property:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">symbol</em> <i class="T1.Text1">value</i></p>
+  </dd>
+  <dt><i class="T1.Text1">value:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">basic-fragment</i></p>
+  </dd>
+</dl>
 <a name="HEADING118-13"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2109"></a>Fragments</h2>
-<p class="T1.Text1"><i class="T1.Text1">body-fragment:<br /> non-statement-body-fragment<br /> statement   non-statement-body-fragment<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
-<p class="T1.Text1"><i class="T1.Text1">list-fragment:<br /> non-statement-list-fragment<br /> statement   non-statement-list-fragment<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
-<p class="T1.Text1"><i class="T1.Text1">basic-fragment:<br /> non-statement-basic-fragment<br /> statement   non-statement-basic-fragment<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
-<p class="T1.Text1"><i class="T1.Text1">non-statement-body-fragment:<br /> definition   semicolon-fragment<em class="Subscript T1.Text1"><sub>opt</sub><br /> local-declaration   semicolon-fragment<sub>opt</sub><br /></em></i> simple-fragment   body-fragment<em class="Subscript T1.Text1"><sub>opt</sub><br /><code class="Subscript T1.Text1"> , </code></em> body-fragment<em class="Subscript T1.Text1"><sub>opt</sub><br /><code class="Subscript T1.Text1"> ; </code></em> body-fragment<em class="Subscript T1.Text1"><sub>opt</sub></em></p>
-<p class="T1.Text1"><i class="italics T1.Text1">semicolon-fragment:<br /><code class="italics T1.Text1"> ; body-fragment<em class="Subscript italics T1.Text1"><sub>opt</sub></em></code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">non-statement-list-fragment:<br /> simple-fragment   list-fragment<em class="Subscript italics T1.Text1"><sub>opt</sub><br /><code class="Subscript italics T1.Text1"> , list-fragment<sub>opt</sub></code></em></i></p>
-<p class="T1.Text1"><i class="T1.Text1">non-statement-basic-fragment:<br /> simple-fragment   basic-fragment<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">simple-fragment:<br /> variable-name<br /> constant-fragment<br /> <em class="italics T1.Text1">binary-operator<br /> unary-operator<br /> bracketed-fragment<br /> function-macro-call<br /> #-word<br /> one of <code class="italics T1.Text1"> . :: =&gt; ? ?? ?= ... ## otherwise<br /></code></em></i> <i class="Parameter T1.Text1">parsed-function-call<br /></i> <i class="Parameter T1.Text1">parsed-macro-call</i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">bracketed-fragment:<br /><code class="italics T1.Text1"> (  body-fragment<em class="Subscript italics T1.Text1"><sub>opt</sub>  )<br /> [  body-fragment<sub>opt</sub>  ]<br /> {  body-fragment<sub>opt</sub>  }</em></code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">constant-fragment:<br /></i> <em class="T1.Text1">number<br /></em> <em class="T1.Text1">character-literal<br /></em> <em class="T1.Text1">string</em> <br /> <em class="T1.Text1">symbol<br /><code class="T1.Text1"> #(<i class="T1.Text1">  constants  .  constant  )<br /> #(  constants<sub>opt</sub>  )<br /> #[  constants<sub>opt</sub>  ]<br /> parsed-list-constant<br /> parsed-vector-constant</i></code></em></p>
+<dl>
+  <dt><i class="T1.Text1">body-fragment:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">non-statement-body-fragment</i></p>
+    <p><i class="T1.Text1">statement</i> <i class="T1.Text1">non-statement-body-fragment<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
+  </dd>
+  <dt><i class="T1.Text1">list-fragment:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">non-statement-list-fragment</i></p>
+    <p><i class="T1.Text1">statement</i> <i class="T1.Text1">non-statement-list-fragment<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
+  </dd>
+  <dt><i class="T1.Text1">basic-fragment:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">non-statement-basic-fragment</i></p>
+    <p><i class="T1.Text1">statement</i> <i class="T1.Text1">non-statement-basic-fragment<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
+  </dd>
+  <dt><i class="T1.Text1">non-statement-body-fragment:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">definition</i> <i class="T1.Text1">semicolon-fragment<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
+    <p><i class="T1.Text1">local-declaration</i> <i class="T1.Text1">semicolon-fragment<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
+    <p><i class="T1.Text1">simple-fragment</i> <i class="T1.Text1">body-fragment<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
+    <p><code class="T1.Text1">,</code> <i class="T1.Text1">body-fragment<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
+    <p><code class="T1.Text1">;</code> <i class="T1.Text1">body-fragment<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
+  </dd>
+  <dt><i class="T1.Text1">semicolon-fragment:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">;</code> <i class="T1.Text1">body-fragment<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></p>
+  </dd>
+  <dt><i class="T1.Text1">non-statement-list-fragment:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">simple-fragment</i> <i class="T1.Text1">list-fragment<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></p>
+    <p><code class="T1.Text1">,</code> <i class="T1.Text1">list-fragment<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></p>
+  </dd>
+  <dt><i class="T1.Text1">non-statement-basic-fragment:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">simple-fragment</i> <i class="T1.Text1">basic-fragment<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
+  </dd>
+  <dt><i class="T1.Text1">simple-fragment:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">variable-name</i></p>
+    <p><i class="T1.Text1">constant-fragment</i></p>
+    <p><em class="BNFCaps T1.Text1">binary-operator</em></p>
+    <p><em class="BNFCaps T1.Text1">unary-operator</em></p>
+    <p><i class="T1.Text1">bracketed-fragment</i></p>
+    <p><i class="T1.Text1">function-macro-call</i></p>
+    <p><i class="T1.Text1">#-word</i></p>
+    <p><span class="one-of">one of</span>  <code class="T1.Text1">. :: =&gt; ? ?? ?= ... ## otherwise</code></p>
+    <p><i class="Parameter T1.Text1">parsed-function-call</i></p>
+    <p><i class="Parameter T1.Text1">parsed-macro-call</i></p>
+  </dd>
+  <dt><i class="T1.Text1">bracketed-fragment:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">(</code> <i class="T1.Text1">body-fragment<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">)</code></p>
+    <p><code class="T1.Text1">[</code> <i class="T1.Text1">body-fragment<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">]</code></p>
+    <p><code class="T1.Text1">{</code> <i class="T1.Text1">body-fragment<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">}</code></p>
+  </dd>
+  <dt><i class="T1.Text1">constant-fragment:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">number</em></p>
+    <p><em class="BNFCaps T1.Text1">character-literal</em></p>
+    <p><em class="BNFCaps T1.Text1">string</em></p>
+    <p><em class="BNFCaps T1.Text1">symbol</em></p>
+    <p><code class="T1.Text1">#(</code> <i class="T1.Text1">constants</i> <code class="T1.Text1">.</code> <i class="T1.Text1">constant</i> <code class="T1.Text1">)</code></p>
+    <p><code class="T1.Text1">#(</code> <i class="T1.Text1">constants<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">)</code></p>
+    <p><code class="T1.Text1">#[</code> <i class="T1.Text1">constants<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">]</code></p>
+    <p><i class="T1.Text1">parsed-list-constant</i></p>
+    <p><i class="T1.Text1">parsed-vector-constant</i></p>
+  </dd>
+</dl>
 <a name="HEADING118-24"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2110"></a>Definitions</h2>
-<p class="T1.Text1"><i class="italics T1.Text1">definition:<br /></i> <i class="Parameter T1.Text1">definition-macro-call<br /><code class="Parameter T1.Text1"> define  macro  macro-definition<br /> parsed-definition</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">definition-macro-call:<br /><code class="italics T1.Text1"> define  modifiers<em class="Subscript italics T1.Text1"><sub>opt</sub> define-body-word body-fragment<sub>opt</sub> definition-tail<br /> define  modifiers<sub>opt</sub> define-list-word list-fragment<sub>opt</sub></em></code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">modifier:<br /></i> <em class="T1.Text1">unreserved-name</em></p>
-<p class="T1.Text1"><i class="italics T1.Text1">modifiers:<br /></i> <i class="italics T1.Text1">modifier</i> &hellip;</p>
-<p class="T1.Text1"><i class="italics T1.Text1">definition-tail:<br /> <em class="italics T1.Text1">end<br /> end macro-name<br /><code class="italics T1.Text1"> end define-body-word macro-name</code></em></i></p>
+<dl>
+  <dt><i class="T1.Text1">definition:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">definition-macro-call</i></p>
+    <p><code class="T1.Text1">define</code> <code class="T1.Text1">macro</code> <i class="T1.Text1">macro-definition</i></p>
+    <p><i class="T1.Text1">parsed-definition</i></p>
+  </dd>
+  <dt><i class="T1.Text1">definition-macro-call:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">define</code> <i class="T1.Text1">modifiers<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <em class="BNFCaps T1.Text1">define-body-word</em> <i class="T1.Text1">body-fragment<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <i class="T1.Text1">definition-tail</i></p>
+    <p><code class="T1.Text1">define</code> <i class="T1.Text1">modifiers<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <em class="BNFCaps T1.Text1">define-list-word</em> <i class="T1.Text1">list-fragment<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></p>
+  </dd>
+  <dt><i class="T1.Text1">modifier:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">unreserved-name</em></p>
+  </dd>
+  <dt><i class="T1.Text1">modifiers:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">modifier</i> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">definition-tail:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">end</code></p>
+    <p><code class="T1.Text1">end</code> <em class="BNFCaps T1.Text1">macro-name</em></p>
+    <p><code class="T1.Text1">end</code> <em class="BNFCaps T1.Text1">define-body-word</em> <em class="BNFCaps T1.Text1">macro-name</em></p>
+  </dd>
+</dl>
 <a name="HEADING118-30"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2111"></a>Local Declarations</h2>
-<p class="T1.Text1"><i class="italics T1.Text1">local-declaration:<br /><code class="italics T1.Text1"> let  bindings<br /> let  handler  condition  =  handler<br /> local  local-methods<br /> parsed-local-declaration</code></i></p>
-<p class="T1i.Text1italic">condition:<br /> type<br /><code class="T1i.Text1italic"> (</code>  type  comma-property-list <code class="T1i.Text1italic">)</code></p>
-<p class="T1i.Text1italic">handler:<br /> expression</p>
-<p class="T1.Text1"><i class="italics T1.Text1">local-methods:<br /> <code class="italics T1.Text1">method<em class="Subscript italics T1.Text1"><sub>opt</sub>  method-definition  , &hellip;</em></code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">bindings:<br /> variable  <code class="italics T1.Text1">=  expression<br /> (  variable-list  )  =  expression</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">variable-list:<br /> variables<br /> variables  <code class="italics T1.Text1">,  #rest  variable-name <br /> #rest  variable-name  </code></i></p>
-<p class="T1i.Text1italic">variables:<br /> variable  <code class="T1i.Text1italic">,</code> &hellip;</p>
-<p class="T1i.Text1italic">variable:<br /> variable-name <br /> variable-name  <code class="T1i.Text1italic">::</code>  type</p>
-<p class="T1.Text1"><i class="italics T1.Text1">variable-name:<br /></i> <em class="T1.Text1">ordinary-name</em></p>
-<p class="T1i.Text1italic">type:<br /> operand</p>
+<dl>
+  <dt><i class="T1.Text1">local-declaration:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">let</code> <i class="T1.Text1">bindings</i></p>
+    <p><code class="T1.Text1">let</code> <code class="T1.Text1">handler</code> <i class="T1.Text1">condition</i> <code class="T1.Text1">=</code> <i class="T1.Text1">handler</i></p>
+    <p><code class="T1.Text1">local</code> <i class="T1.Text1">local-methods</i></p>
+    <p><i class="T1.Text1">parsed-local-declaration</i></p>
+  </dd>
+  <dt><i class="T1.Text1">condition:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">type</i></p>
+    <p><code class="T1.Text1">(</code> <i class="T1.Text1">type</i> <i class="T1.Text1">comma-property-list</i> <code class="T1.Text1">)</code></p>
+  </dd>
+  <dt><i class="T1.Text1">handler:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">expression</i></p>
+  </dd>
+  <dt><i class="T1.Text1">local-methods:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">method<i class="T1.Text1"><em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></code> <i class="T1.Text1">method-definition</i> <code class="T1.Text1">,</code> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">bindings:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">variable</i> <code class="T1.Text1">=</code> <i class="T1.Text1">expression</i></p>
+    <p><code class="T1.Text1">(</code> <i class="T1.Text1">variable-list</i> <code class="T1.Text1">)</code> <code class="T1.Text1">=</code> <i class="T1.Text1">expression</i></p>
+  </dd>
+  <dt><i class="T1.Text1">variable-list:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">variables</i></p>
+    <p><i class="T1.Text1">variables</i> <code class="T1.Text1">,</code> <code class="T1.Text1">#rest</code> <i class="T1.Text1">variable-name</i></p>
+    <p><code class="T1.Text1">#rest</code> <i class="T1.Text1">variable-name</i></p>
+  </dd>
+  <dt><i class="T1.Text1">variables:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">variable</i> <code class="T1.Text1">,</code> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">variable:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">variable-name</i></p>
+    <p><i class="T1.Text1">variable-name</i> <code class="T1.Text1">::</code> <i class="T1.Text1">type</i></p>
+  </dd>
+  <dt><i class="T1.Text1">variable-name:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">ordinary-name</em></p>
+  </dd>
+  <dt><i class="T1.Text1">type:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">operand</i></p>
+  </dd>
+</dl>
 <a name="HEADING118-41"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2112"></a>Expressions</h2>
-<p class="T1.Text1"><i class="italics T1.Text1">expressions:<br /> expression  <code class="italics T1.Text1">, &hellip;</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">expression:<br /> binary-operand <em class="italics T1.Text1">binary-operator &hellip;</em></i></p>
-<p class="T1.Text1"><i class="Parameter T1.Text1">expression-no-symbol</i>:<br /> <i class="Parameter T1.Text1">binary-operand-no-symbol<br /> binary-operand-no-symbol</i> <em class="T1.Text1">binary-operator <i class="Parameter T1.Text1">expression</i></em></p>
-<p class="T1.Text1"><i class="Parameter T1.Text1">binary-operand-no-symbol</i>:<br /> <em class="T1.Text1">unary-operator<i class="T1.Text1"><sub>opt</sub></i></em> <i class="Parameter T1.Text1">operand</i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">binary-operand:<br /></i> <em class="T1.Text1">symbol<br /> unary-operator<i class="T1.Text1"><sub>opt</sub>  operand</i></em></p>
-<p class="T1.Text1"><i class="italics T1.Text1">operand:<br /> operand  <code class="italics T1.Text1">(  arguments<em class="Subscript italics T1.Text1"><sub>opt</sub>  )<br /> operand  [ arguments<sub>opt</sub> ]<br /> operand  .  variable-name <br /></em></code></i> <i class="Parameter T1.Text1">leaf</i></p>
-<p class="T1.Text1"><i class="T1.Text1">function-macro-call:<br /><em class="T1.Text1"> function-word</em></i> <code class="T1.Text1">(</code> body-fragment<em class="Subscript T1.Text1"><sub>opt</sub> <code class="Subscript T1.Text1">)</code></em></p>
-<p class="T1.Text1"><i class="italics T1.Text1">leaf:<br /> literal<br /> variable-name <br /><code class="italics T1.Text1"> (  expression  )<br /></code></i> <i class="Parameter T1.Text1">function-macro-call<br /> statement<br /> parsed-function-call<br /> parsed-macro-call</i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">arguments:<br /> argument <code class="italics T1.Text1">, &hellip;</code></i></p>
-<p class="T1.Text1"><i class="Parameter T1.Text1">argument</i>:<br /> <em class="T1.Text1">symbol</em> <i class="Parameter T1.Text1">expression<br /></i> <i class="Parameter T1.Text1">expression-no-symbol<br /></i> <em class="T1.Text1">symbol</em></p>
-<p class="T1.Text1"><i class="italics T1.Text1">literal:<br /></i> <em class="T1.Text1">number<br /></em> <em class="T1.Text1">character-literal<br /><i class="italics T1.Text1"> string-literal<br /></i></em> <strong class="bold T1.Text1"><code class="bold T1.Text1">#t<br /> #f<br /> #(<i class="bold T1.Text1">  constants  .  constant  )<br /> #(  constants<em class="Subscript bold T1.Text1"><sub>opt</sub>  )<br /> #[  constants<sub>opt</sub>  ]<br /> parsed-list-constant<br /> parsed-vector-constant</em></i></code></strong></p>
-<p class="T1.Text1"><i class="italics T1.Text1">string-literal:<br /> <em class="italics T1.Text1">string &hellip;</em></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">constants:<br /> constant  <code class="italics T1.Text1">, &hellip;</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">constant:<br /> literal<br /></i> <em class="T1.Text1">symbol</em></p>
+<dl>
+  <dt><i class="T1.Text1">expressions:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">expression</i> <code class="T1.Text1">,</code> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">expression:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">binary-operand</i> <em class="BNFCaps T1.Text1">binary-operator</em> &hellip;</p>
+  </dd>
+  <dt><i class="Parameter T1.Text1">expression-no-symbol:</i></dt>
+  <dd>
+    <p><i class="Parameter T1.Text1">binary-operand-no-symbol</i></p>
+    <p><i class="T1.Text1">binary-operand-no-symbol</i> <em class="BNFCaps T1.Text1">binary-operator</em> <i class="Parameter T1.Text1">expression</i></p>
+  </dd>
+  <dt><i class="Parameter T1.Text1">binary-operand-no-symbol:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">unary-operator<i class="T1.Text1"><em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></em> <i class="Parameter T1.Text1">operand</i></p>
+  </dd>
+  <dt><i class="T1.Text1">binary-operand:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">symbol</em></p>
+    <p><em class="BNFCaps T1.Text1">unary-operator<i class="T1.Text1"><em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></em> <i class="T1.Text1">operand</i></p>
+  </dd>
+  <dt><i class="T1.Text1">operand:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">operand</i> <code class="T1.Text1">(</code> <i class="T1.Text1">arguments<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">)</code></p>
+    <p><i class="T1.Text1">operand</i> <code class="T1.Text1">[</code> <i class="T1.Text1">arguments<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">]</code></p>
+    <p><i class="T1.Text1">operand</i> <code class="T1.Text1">.</code> <i class="T1.Text1">variable-name</i></p>
+    <p><i class="Parameter T1.Text1">leaf</i></p>
+  </dd>
+  <dt><i class="T1.Text1">function-macro-call:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">function-word</em> <code class="T1.Text1">(</code> <i class="T1.Text1">body-fragment<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">)</code></p>
+  </dd>
+  <dt><i class="T1.Text1">leaf:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">literal</i></p>
+    <p><i class="T1.Text1">variable-name</i></p>
+    <p><code class="T1.Text1">(</code> <i class="T1.Text1">expression</i> <code class="T1.Text1">)</code></p>
+    <p><i class="Parameter T1.Text1">function-macro-call</i></p>
+    <p><i class="T1.Text1">statement</i></p>
+    <p><i class="T1.Text1">parsed-function-call</i></p>
+    <p><i class="T1.Text1">parsed-macro-call</i></p>
+  </dd>
+  <dt><i class="T1.Text1">arguments:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">argument</i> <code class="T1.Text1">,</code> &hellip;</p>
+  </dd>
+  <dt><i class="Parameter T1.Text1">argument:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">symbol</em> <i class="Parameter T1.Text1">expression</i></p>
+    <p><i class="Parameter T1.Text1">expression-no-symbol</i></p>
+    <p><em class="BNFCaps T1.Text1">symbol</em></p>
+  </dd>
+  <dt><i class="T1.Text1">literal:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">number</em></p>
+    <p><em class="BNFCaps T1.Text1">character-literal</em></p>
+    <p><i class="T1.Text1">string-literal</i></p>
+    <p><code class="T1.Text1">#t</code></p>
+    <p><code class="T1.Text1">#f</code></p>
+    <p><code class="T1.Text1">#(</code> <i class="T1.Text1">constants</i> <code class="T1.Text1">.</code> <i class="T1.Text1">constant</i> <code class="T1.Text1">)</code></p>
+    <p><code class="T1.Text1">#(</code> <i class="T1.Text1">constants<em class="Subscript bold T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">)</code></p>
+    <p><code class="T1.Text1">#[</code> <i class="T1.Text1">constants<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">]</code></p>
+    <p><i class="T1.Text1">parsed-list-constant</i></p>
+    <p><i class="T1.Text1">parsed-vector-constant</i></p>
+  </dd>
+  <dt><i class="T1.Text1">string-literal:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">string</em> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">constants:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">constant</i> <code class="T1.Text1">,</code> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">constant:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">literal</i></p>
+    <p><em class="BNFCaps T1.Text1">symbol</em></p>
+  </dd>
+</dl>
 <a name="HEADING118-56"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2113"></a>Statements</h2>
-<p class="T1.Text1"><i class="T1.Text1">statement:<br /><em class="T1.Text1"> begin-word</em></i>  body-fragment<em class="Subscript T1.Text1"><sub>opt</sub></em>  end-clause</p>
-<p class="T1.Text1"><i class="italics T1.Text1">end-clause:<br /><code class="italics T1.Text1"> end <em class="italics T1.Text1">begin-word<sub>opt</sub></em></code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">case-body:<br /> cases  <code class="italics T1.Text1">;<em class="Subscript italics T1.Text1"><sub>opt</sub> </em></code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">cases:<br /> case-label  constituents<em class="Subscript italics T1.Text1"><sub>opt</sub>  <code class="Subscript italics T1.Text1">; &hellip;</code></em></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">case-label:<br /> expressions  <code class="italics T1.Text1">=&gt;<br /> (  expression <em class="italics T1.Text1">, expressions )  =&gt;<br /> otherwise  =&gt;<sub>opt</sub></em></code></i></p>
+<dl>
+  <dt><i class="T1.Text1">statement:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">begin-word</em> <i class="T1.Text1">body-fragment<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <i class="T1.Text1">end-clause</i></p>
+  </dd>
+  <dt><i class="T1.Text1">end-clause:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">end</code> <em class="BNFCaps T1.Text1">begin-word<i class="T1.Text1"><em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></em></p>
+  </dd>
+  <dt><i class="T1.Text1">case-body:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">cases</i> <code class="T1.Text1">;<i class="T1.Text1"><em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></code></p>
+  </dd>
+  <dt><i class="T1.Text1">cases:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">case-label</i> <i class="T1.Text1">constituents<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">;</code> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">case-label:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">expressions</i> <code class="T1.Text1">=&gt;</code></p>
+    <p><code class="T1.Text1">(</code> <i class="T1.Text1">expression</i> <code class="T1.Text1">,</code> <i class="T1.Text1">expressions</i> <code class="T1.Text1">)</code> <code class="T1.Text1">=&gt;</code></p>
+    <p><code class="T1.Text1">otherwise</code> <code class="T1.Text1">=&gt;<i class="T1.Text1"><em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></code></p>
+  </dd>
+</dl>
 <a name="HEADING118-62"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2114"></a><a name="MARKER-9-2115"></a>Methods</h2>
-<p class="T1.Text1"><i class="italics T1.Text1">method-definition:<br /> variable-name  parameter-list  body<em class="Subscript italics T1.Text1"><sub>opt</sub>  <code class="Subscript italics T1.Text1">end  method<sub>opt</sub>  variable-name<sub>opt</sub></code></em></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">parameter-list:<br /><code class="italics T1.Text1"> (  parameters<em class="Subscript italics T1.Text1"><sub>opt</sub>  )  ;<sub>opt</sub> <br /> (  parameters<sub>opt</sub>  )  =&gt;  variable  ; <br /> (  parameters<sub>opt</sub> )  =&gt;  ( values-list<sub>opt</sub>  )  ;<sub>opt</sub></em></code></i></p>
-<p class="T1i.Text1italic">parameters:<br /> required-parameters<br /> required-parameters  <code class="T1i.Text1italic">,</code>  next-rest-key-parameter-list<br /> next-rest-key-parameter-list</p>
-<p class="T1.Text1"><i class="italics T1.Text1">next-rest-key-parameter-list:<br /><code class="italics T1.Text1"> #next  variable-name <br /> #next  variable-name  ,  rest-key-parameter-list<br /> rest-key-parameter-list</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">rest-key-parameter-list:<br /><code class="italics T1.Text1"> #rest  variable-name <br /> #rest  variable-name  ,  key-parameter-list<br /> key-parameter-list</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">key-parameter-list:<br /><code class="italics T1.Text1"> #key</code></i>  <i class="T1.Text1">keyword-parameters<em class="Subscript T1.Text1"><sub>opt</sub><br /><code class="Subscript T1.Text1"> #key</code></em></i>  <i class="T1.Text1">keyword-parameters<em class="Subscript T1.Text1"><sub>opt</sub>  <code class="Subscript T1.Text1">,  #all-keys</code></em></i></p>
-<p class="T1i.Text1italic">required-parameters:<br /> required-parameter  <strong class="bold T1i.Text1italic"><code class="bold T1i.Text1italic">, <i class="italics bold T1i.Text1italic">&hellip;</i></code></strong></p>
-<p class="T1i.Text1italic">required-parameter:<br /> variable<br /> variable-name  <code class="T1i.Text1italic">==</code>  expression</p>
-<p class="T1i.Text1italic">keyword-parameters:<br /> keyword-parameter  <code class="T1i.Text1italic">,</code> &hellip;</p>
-<p class="T1.Text1"><i class="italics T1.Text1">keyword-parameter:<br /> <em class="italics T1.Text1">symbol<sub>opt</sub></em></i>  <i class="T1.Text1">variable  default<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">default:<br /><code class="italics T1.Text1"> =</code></i>  <i class="T1.Text1">expression</i></p>
-<p class="T1i.Text1italic"><i class="italics T1i.Text1italic">values-list:<br /> variables<br /></i> variables  <code class="T1i.Text1italic">,</code>  <code class="T1i.Text1italic">#rest</code>  variable <br /><code class="T1i.Text1italic"> #rest</code>  variable </p>
+<dl>
+  <dt><i class="T1.Text1">method-definition:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">variable-name</i> <i class="T1.Text1">parameter-list</i> <i class="T1.Text1">body<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">end</code> <code class="T1.Text1">method<i class="T1.Text1"><em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></code> <i class="T1.Text1">variable-name<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></p>
+  </dd>
+  <dt><i class="T1.Text1">parameter-list:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">(</code> <i class="T1.Text1">parameters<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">)</code> <code class="T1.Text1">;<i class="T1.Text1"><em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></code></p>
+    <p><code class="T1.Text1">(</code> <i class="T1.Text1">parameters<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">)</code> <code class="T1.Text1">=&gt;</code> <i class="T1.Text1">variable</i> <code class="T1.Text1">;</code></p>
+    <p><code class="T1.Text1">(</code> <i class="T1.Text1">parameters<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">)</code> <code class="T1.Text1">=&gt;</code> <code class="T1.Text1">(</code> <i class="T1.Text1">values-list<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">)</code> <code class="T1.Text1">;<i class="T1.Text1"><em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></code></p>
+  </dd>
+  <dt><i class="T1.Text1">parameters:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">required-parameters</i></p>
+    <p><i class="T1.Text1">required-parameters</i> <code class="T1.Text1">,</code> <i class="T1.Text1">next-rest-key-parameter-list</i></p>
+    <p><i class="T1.Text1">next-rest-key-parameter-list</i></p>
+  </dd>
+  <dt><i class="T1.Text1">next-rest-key-parameter-list:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">#next</code> <i class="T1.Text1">variable-name</i></p>
+    <p><code class="T1.Text1">#next</code> <i class="T1.Text1">variable-name</i> <code class="T1.Text1">,</code> <i class="T1.Text1">rest-key-parameter-list</i></p>
+    <p><i class="T1.Text1">rest-key-parameter-list</i></p>
+  </dd>
+  <dt><i class="T1.Text1">rest-key-parameter-list:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">#rest</code> <i class="T1.Text1">variable-name</i></p>
+    <p><code class="T1.Text1">#rest</code> <i class="T1.Text1">variable-name</i> <code class="T1.Text1">,</code> <i class="T1.Text1">key-parameter-list</i></p>
+    <p><i class="T1.Text1">key-parameter-list</i></p>
+  </dd>
+  <dt><i class="T1.Text1">key-parameter-list:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">#key</code> <i class="T1.Text1">keyword-parameters<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></p>
+    <p><code class="Subscript T1.Text1">#key</code> <i class="T1.Text1">keyword-parameters<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">,</code> <code class="T1.Text1">#all-keys</code></p>
+  </dd>
+  <dt><i class="T1.Text1">required-parameters:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">required-parameter</i> <code class="T1.Text1">,</code> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">required-parameter:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">variable</i></p>
+    <p><i class="T1.Text1">variable-name</i> <code class="T1.Text1">==</code> <i class="T1.Text1">expression</i></p>
+  </dd>
+  <dt><i class="T1.Text1">keyword-parameters:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">keyword-parameter</i> <code class="T1.Text1">,</code> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">keyword-parameter:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">symbol<i class="T1.Text1"><em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></em> <i class="T1.Text1">variable</i> <i class="T1.Text1">default<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></p>
+  </dd>
+  <dt><i class="T1.Text1">default:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">=</code> <i class="T1.Text1">expression</i></p>
+  </dd>
+  <dt><i class="T1i.Text1italic">values-list:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">variables</i></p>
+    <p><i class="T1.Text1">variables</i> <code class="T1.Text1">,</code> <code class="T1.Text1">#rest</code> <i class="T1.Text1">variable</i></p>
+    <p><code class="T1.Text1">#rest</code> <i class="T1.Text1">variable</i></p>
+  </dd>
+</dl>
 <a name="HEADING118-75"></a>
 <h2 class="H2.Heading2"><a name="MARKER-2-2116"></a>Macro Definitions</h2>
-<p class="T1.Text1"><i class="italics T1.Text1">macro-definition:<br /></i> macro-name<i class="T1.Text1">  main-rule-set  aux-rule-sets<em class="Subscript T1.Text1"><sub>opt</sub>  <code class="Subscript T1.Text1">end  macro<sub>opt</sub> </code></em></i>macro-name<em class="Subscript T1.Text1"><i class="Subscript T1.Text1"><sub>opt</sub></i></em></p>
-<p class="T1.Text1"><i class="italics T1.Text1">main-rule-set:<br /></i> <i class="italics T1.Text1">body-style-definition-rule</i> &hellip;<br /> <i class="italics T1.Text1">list-style-definition-rule</i> &hellip;<br /> <i class="italics T1.Text1">statement-rule</i> &hellip;<br /> <i class="italics T1.Text1">function-rule</i> &hellip;</p>
-<p class="T1.Text1"><i class="italics T1.Text1">body-style-definition-rule</i>:<br /><code class="T1.Text1"> {<i class="T1.Text1">  define  definition-head<em class="Subscript T1.Text1"><sub>opt</sub> </em></i></code>macro-name<i class="T1.Text1"> pattern<em class="Subscript T1.Text1"><sub>opt</sub>  <code class="Subscript T1.Text1">;<sub>opt</sub>  end } =&gt; rhs</code></em></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">list-style-definition-rule</i>:<br /><code class="T1.Text1"> {<i class="T1.Text1">  define  definition-head<em class="Subscript T1.Text1"><sub>opt</sub> </em></i></code>macro-name<i class="T1.Text1">  pattern<em class="Subscript T1.Text1"><sub>opt</sub> <code class="Subscript T1.Text1">}  =&gt; rhs</code></em></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">rhs:<br /><code class="italics T1.Text1"> {  template<em class="Subscript italics T1.Text1"><sub>opt</sub>  } ;<sub>opt</sub></em></code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1"><a name="MARKER-9-2117"></a>definition-head</i>:<br /><i class="italics T1.Text1"> modifier-pattern</i>  &hellip;</p>
-<p class="T1.Text1"><i class="T1.Text1">modifier-pattern:<br /> modifier<br /> pattern-variable </i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">statement-rule:<br /><code class="italics T1.Text1"> { </code></i>macro-name<i class="T1.Text1">  pattern<em class="Subscript T1.Text1"><sub>opt</sub>  <code class="Subscript T1.Text1">;<sub>opt</sub>  end  }  =&gt; rhs</code></em></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">function-rule:<br /><code class="italics T1.Text1"> { </code></i>macro-name  <strong class="T1.Text1">(</strong>  <i class="T1.Text1">pattern<em class="Subscript T1.Text1"><sub>opt</sub> </em></i> <strong class="T1.Text1">) </strong> <code class="T1.Text1">}<i class="T1.Text1">  =&gt; rhs</i></code></p>
+<dl>
+  <dt><i class="T1.Text1">macro-definition:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">macro-name</em> <i class="T1.Text1">main-rule-set</i> <i class="T1.Text1">aux-rule-sets<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">end</code> <code class="T1.Text1">macro<em class="Subscript  T1.Text1"><i class="T1.Text1"><sub>opt</sub></i></em></code> <em class="BNFCaps T1.Text1">macro-name<em class="Subscript T1.Text1"><i class="Subscript T1.Text1"><sub>opt</sub></i></em></em></p>
+  </dd>
+  <dt><i class="T1.Text1">main-rule-set:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">body-style-definition-rule</i> &hellip;</p>
+    <p><i class="T1.Text1">list-style-definition-rule</i> &hellip;</p>
+    <p><i class="T1.Text1">statement-rule</i> &hellip;</p>
+    <p><i class="T1.Text1">function-rule</i> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">body-style-definition-rule:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">{</code> <code class="T1.Text1">define</code> <i class="T1.Text1">definition-head<em class="Subscript T1.Text1"><sub>opt</sub></em></i> <em class="BNFCaps T1.Text1">macro-name</em> <i class="T1.Text1">pattern<em class="Subscript T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">;<em class="Subscript T1.Text1"><i><sub>opt</sub></i></em></code> <code class="T1.Text1">end</code> <code class="T1.Text1">}</code> <code class="T1.Text1">=&gt;</code> <i class="T1.Text1">rhs</i></p>
+  </dd>
+  <dt><i class="T1.Text1">list-style-definition-rule:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">{</code> <code class="T1.Text1">define</code> <i class="T1.Text1">definition-head<em class="Subscript T1.Text1"><sub>opt</sub></em></i> <em class="BNFCaps T1.Text1">macro-name</em> <i class="T1.Text1">pattern<em class="Subscript T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">}</code> <code class="T1.Text1">=&gt;</code> <i class="T1.Text1">rhs</i></p>
+  </dd>
+  <dt><i class="T1.Text1">rhs:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">{</code> <i class="T1.Text1">template<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">}</code> <code class="T1.Text1">;<em class="Subscript T1.Text1"><i class="T1.Text1"><sub>opt</sub></i></em></code></p>
+  </dd>
+  <dt><i class="T1.Text1"><a name="MARKER-9-2117"></a>definition-head:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">modifier-pattern</i> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">modifier-pattern:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">modifier</i></p>
+    <p><i class="T1.Text1">pattern-variable</i></p>
+  </dd>
+  <dt><i class="T1.Text1">statement-rule:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">{</code> <em class="BNFCaps T1.Text1">macro-name</em> <i class="T1.Text1">pattern<em class="Subscript T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">;<em class="Subscript T1.Text1"><i class="T1.Text1"><sub>opt</sub></i></em></code> <code class="T1.Text1">end</code> <code class="T1.Text1">}</code> <code class="T1.Text1">=&gt;</code> <i class="T1.Text1">rhs</i></p>
+  </dd>
+  <dt><i class="T1.Text1">function-rule:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">{</code> <em class="BNFCaps T1.Text1">macro-name</em> <code class="T1.Text1">(</code> <i class="T1.Text1">pattern<em class="Subscript T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">)</code> <code class="T1.Text1">}</code> <code class="T1.Text1">=&gt;</code> <i class="T1.Text1">rhs</i></p>
+  </dd>
+</dl>
 <a name="HEADING118-85"></a>
 <h3 class="H3.Heading3"><a name="MARKER-2-2118"></a>Patterns</h3>
-<p class="T1.Text1"><i class="italics T1.Text1">pattern:<br /> pattern-list  <code class="italics T1.Text1">; &hellip;</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">pattern-list:<br /> pattern-sequence <br /> property-list-pattern<br /> pattern-sequence  <strong class="italics T1.Text1">,  pattern-list</strong></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">pattern-sequence:<br /> simple-pattern</i> &hellip;</p>
-<p class="T1.Text1"><i class="italics T1.Text1">simple-pattern:<br /> <em class="italics T1.Text1">name-not-end<br /></em></i> <code class="T1.Text1">=&gt;<br /><i class="italics T1.Text1"> bracketed-pattern<br /> binding-pattern<br /> pattern-variable</i></code></p>
-<p class="T1.Text1"><i class="italics T1.Text1">bracketed-pattern:<br /><code class="italics T1.Text1"> ( pattern<em class="Subscript italics T1.Text1"><sub>opt</sub>   )<br /> [ pattern<sub>opt</sub>   ]<br /> { pattern<sub>opt</sub>   }</em></code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">binding-pattern:<br /> pattern-variable <code class="italics T1.Text1"> :: pattern-variable<br /> pattern-variable   = pattern-variable<br /> pattern-variable  :: pattern-variable  = pattern-variable</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">pattern-variable:<br /><code class="italics T1.Text1"> ?  </code></i>name <br /><code class="T1.Text1"> ?<i class="T1.Text1">  <em class="T1.Text1">constrained-name<br /></em></i></code> &hellip;</p>
-<p class="T1.Text1"><i class="italics T1.Text1">property-list-pattern:<br /><code class="italics T1.Text1"> #rest  pattern-variable <br /> #key  pattern-keywords<em class="Subscript italics T1.Text1"><sub>opt</sub> <br /> #rest  pattern-variable  ,  #key  pattern-keywords<sub>opt</sub> </em></code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">pattern-keywords:<br /> <code class="italics T1.Text1">#all-keys<br /></code></i> <i class="italics T1.Text1">pattern-keyword</i> <br /><i class="T1.Text1"> pattern-keyword  <code class="T1.Text1">, pattern-keywords</code></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">pattern-keyword:<br /><code class="italics T1.Text1"> ?  </code></i>name <i class="T1.Text1">default<em class="Subscript T1.Text1"><sub>opt</sub><br /><code class="Subscript T1.Text1"> ?  constrained-name</code></em></i> <i class="T1.Text1">default<em class="Subscript T1.Text1"><sub>opt</sub><br /><code class="Subscript T1.Text1"> ??  </code></em></i>name <i class="T1.Text1">default<em class="Subscript T1.Text1"><sub>opt</sub><br /><code class="Subscript T1.Text1"> ??  constrained-name</code></em></i> <i class="T1.Text1">default<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
+<dl>
+  <dt><i class="T1.Text1">pattern:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">pattern-list</i> <code class="T1.Text1">;</code> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">pattern-list:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">pattern-sequence </i></p>
+    <p><i class="T1.Text1">property-list-pattern</i></p>
+    <p><i class="T1.Text1">pattern-sequence</i> <code class="T1.Text1">,</code> <i class="T1.Text1">pattern-list</i></p>
+  </dd>
+  <dt><i class="T1.Text1">pattern-sequence:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">simple-pattern</i> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">simple-pattern:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">name-not-end</em></p>
+    <p><code class="T1.Text1">=&gt;</code></p>
+    <p><i class="T1.Text1">bracketed-pattern</i></p>
+    <p><i class="T1.Text1">binding-pattern</i></p>
+    <p><i class="T1.Text1">pattern-variable</i></p>
+  </dd>
+  <dt><i class="T1.Text1">bracketed-pattern:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">(</code> <i class="T1.Text1">pattern<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">)</code></p>
+    <p><code class="T1.Text1">[</code> <i class="T1.Text1">pattern<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">]</code></p>
+    <p><code class="T1.Text1">{</code> <i class="T1.Text1">pattern<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">}</code></p>
+  </dd>
+  <dt><i class="T1.Text1">binding-pattern:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">pattern-variable</i> <code class="T1.Text1">::</code> <i class="T1.Text1">pattern-variable</i></p>
+    <p><i class="T1.Text1">pattern-variable</i> <code class="T1.Text1">=</code> <i class="T1.Text1">pattern-variable</i></p>
+    <p><i class="T1.Text1">pattern-variable</i> <code class="T1.Text1">::</code> <i class="T1.Text1">pattern-variable</i> <code class="T1.Text1">=</code> <i class="T1.Text1">pattern-variable</i></p>
+  </dd>
+  <dt><i class="T1.Text1">pattern-variable:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">?</code> <em class="BNFCaps T1.Text1">name</em></p>
+    <p><code class="T1.Text1">?</code> <em class="BNFCaps T1.Text1">constrained-name</em></p>
+    <p>&hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">property-list-pattern:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">#rest</code> <i class="T1.Text1">pattern-variable</i> </p>
+    <p><code class="T1.Text1">#key</code> <i class="T1.Text1">pattern-keywords<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> </p>
+    <p><code class="T1.Text1">#rest</code> <i class="T1.Text1">pattern-variable</i> <code class="T1.Text1">,</code> <code class="T1.Text1">#key</code> <i class="T1.Text1">pattern-keywords<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></p>
+  </dd>
+  <dt><i class="T1.Text1">pattern-keywords:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">#all-keys</code></p>
+    <p><i class="T1.Text1">pattern-keyword</i></p>
+    <p><i class="T1.Text1">pattern-keyword</i> <code class="T1.Text1">,</code> <i class="T1.Text1">pattern-keywords</i></p>
+  </dd>
+  <dt><i class="T1.Text1">pattern-keyword:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">?</code> <em class="BNFCaps T1.Text1">name</em> <i class="T1.Text1">default<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
+    <p><code class="T1.Text1">?</code> <em class="BNFCaps T1.Text1">constrained-name</em> <i class="T1.Text1">default<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
+    <p><code class="T1.Text1">??</code> <em class="BNFCaps T1.Text1">name</em> <i class="T1.Text1">default<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
+    <p><code class="T1.Text1">??</code> <em class="BNFCaps T1.Text1">constrained-name</em> <i class="T1.Text1">default<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
+  </dd>
+</dl>
 <a name="HEADING118-96"></a>
 <h3 class="H3.Heading3"><a name="MARKER-9-2119"></a><a name="MARKER-2-2120"></a>Templates</h3>
-<p class="T1.Text1"><i class="italics T1.Text1"><a name="MARKER-9-2121"></a>template:<br /> template-element</i> &hellip;</p>
-<p class="T1.Text1"><i class="italics T1.Text1">template-element:<br /><em class="italics T1.Text1"> name<br /> symbol<br /> number<br /> character-literal<br /> string<br /> unary-operator<br /> separator<br /> #-word<br /> one of  <code class="italics T1.Text1">. :: =&gt;<br /> (  template<sub>opt</sub>  )<br /> [  template<sub>opt</sub>  ]<br /> {  template<sub>opt</sub>  }<br /> #(  template<sub>opt</sub>  )<br /> #[  template<sub>opt</sub>  ]<br /> parsed-list-constant<br /> parsed-vector-constant<br /> substitution</code></em></i></p>
-<p class="T1.Text1"><i class="italics T1.Text1">separator:<br /> one of  <code class="italics T1.Text1">; ,<br /><em class="italics T1.Text1"> binary-operator</em></code></i></p>
-<p class="T1.Text1"><i class="T1.Text1">substitution:<br /></i> name-prefix<em class="Subscript T1.Text1"><sub>opt</sub> <code class="Subscript T1.Text1">?</code></em> name-string-or-symbol name-suffix<em class="Subscript T1.Text1"><sub>opt</sub></em>  <br /><code class="T1.Text1"> ??</code>  <em class="T1.Text1">name</em>  separator<em class="Subscript T1.Text1"><sub>opt</sub></em>   <code class="T1.Text1">...<br /> ...<br /> ?= name </code></p>
-<p class="T1.Text1"><i class="italics T1.Text1">name-prefix:<br /></i> string  <code class="T1.Text1">##</code></p>
-<p class="T1.Text1"><i class="italics T1.Text1">name-suffix:<br /><code class="italics T1.Text1"> ##</code></i>  string </p>
-<p class="T1.Text1"><i class="italics T1.Text1">name-string-or-symbol:<br /><em class="italics T1.Text1"> name<br /> string<br /> symbol</em></i></p>
+<dl>
+  <dt><i class="T1.Text1"><a name="MARKER-9-2121"></a>template:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">template-element</i> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">template-element:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">name</em></p>
+    <p><em class="BNFCaps T1.Text1">symbol</em></p>
+    <p><em class="BNFCaps T1.Text1">number</em></p>
+    <p><em class="BNFCaps T1.Text1">character-literal</em></p>
+    <p><em class="BNFCaps T1.Text1">string</em></p>
+    <p><em class="BNFCaps T1.Text1">unary-operator</em></p>
+    <p><i class="T1.Text1">separator</i></p>
+    <p><i class="T1.Text1">#-word</i></p>
+    <p><span class="one-of">one of</span>  <code class="T1.Text1">. :: =&gt;</code></p>
+    <p><code class="T1.Text1">(</code> <i class="T1.Text1">template<em class="Subscript T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">)</code></p>
+    <p><code class="T1.Text1">[</code> <i class="T1.Text1">template<em class="Subscript T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">]</code></p>
+    <p><code class="T1.Text1">{</code> <i class="T1.Text1">template<em class="Subscript T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">}</code></p>
+    <p><code class="T1.Text1">#(</code> <i class="T1.Text1">template<em class="Subscript T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">)</code></p>
+    <p><code class="T1.Text1">#[</code> <i class="T1.Text1">template<em class="Subscript T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">]</code></p>
+    <p><i class="T1.Text1">parsed-list-constant</i></p>
+    <p><i class="T1.Text1">parsed-vector-constant</i></p>
+    <p><i class="T1.Text1">substitution</i></p>
+  </dd>
+  <dt><i class="T1.Text1">separator:</i></dt>
+  <dd>
+    <p><span class="one-of">one of</span>  <code class="T1.Text1">; ,</code></p>
+    <p><em class="BNFCaps T1.Text1">binary-operator</em></p>
+  </dd>
+  <dt><i class="T1.Text1">substitution:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">name-prefix<em class="Subscript T1.Text1"><sub>opt</sub></em></i> <code class="Subscript T1.Text1">?</code> <i class="T1.Text1">name-string-or-symbol</i> <i class="T1.Text1">name-suffix<em class="Subscript T1.Text1"><sub>opt</sub></em></i></p>
+    <p><code class="T1.Text1">??</code> <em class="BNFCaps T1.Text1">name</em> <i class="T1.Text1">separator<em class="Subscript T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">...</code></p>
+    <p><code class="T1.Text1">...</code></p>
+    <p><code class="T1.Text1">?=</code> <em class="BNFCaps T1.Text1">name</em></p>
+  </dd>
+  <dt><i class="T1.Text1">name-prefix:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">string</em> <code class="T1.Text1">##</code></p>
+  </dd>
+  <dt><i class="T1.Text1">name-suffix:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">##</code> <em class="BNFCaps T1.Text1">string</em></p>
+  </dd>
+  <dt><i class="T1.Text1">name-string-or-symbol:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">name</em></p>
+    <p><em class="BNFCaps T1.Text1">string</em></p>
+    <p><em class="BNFCaps T1.Text1">symbol</em></p>
+  </dd>
+</dl>
 <a name="HEADING118-104"></a>
 <h3 class="H3.Heading3"><a name="MARKER-9-2122"></a><a name="MARKER-2-2123"></a>Auxiliary Rule Sets</h3>
-<p class="T1i.Text1italic">aux-rule-sets:<br /> aux-rule-set &hellip;</p>
-<p class="T1i.Text1italic"><i class="italics T1i.Text1italic">aux-rule-set:<br /> <em class="italics T1i.Text1italic">symbol</em></i> <i class="italics T1i.Text1italic">aux-rules</i></p>
-<p class="T1i.Text1italic">aux-rules:<br /> aux-rule &hellip;</p>
-<p class="T1.Text1"><i class="italics T1.Text1">aux-rule:<br /><code class="italics T1.Text1"> {  pattern<em class="Subscript italics T1.Text1"><sub>opt</sub>  }  =&gt; rhs</em></code></i></p>
+<dl>
+  <dt><i class="T1.Text1">aux-rule-sets:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">aux-rule-set</i> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">aux-rule-set:</i></dt>
+  <dd>
+    <p><em class="BNFCaps T1.Text1">symbol</em> <i class="T1.Text1">aux-rules</i></p>
+  </dd>
+  <dt><i class="T1.Text1">aux-rules:</i></dt>
+  <dd>
+    <p><i class="T1.Text1">aux-rule</i> &hellip;</p>
+  </dd>
+  <dt><i class="T1.Text1">aux-rule:</i></dt>
+  <dd>
+    <p><code class="T1.Text1">{</code> <i class="T1.Text1">pattern<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code class="T1.Text1">}</code> <code class="T1.Text1">=&gt;</code> <i class="T1.Text1">rhs</i></p>
+  </dd>
+</dl>
 <a name="HEADING118-109"></a>
 <h3 class="H3.Heading3"><a name="MARKER-9-2124"></a>Parsed Fragments</h3>
-<p class="T1.Text1"><i class="Parameter T1.Text1">parsed-definition</i>:<br /> (no external representation)</p>
-<p class="T1.Text1"><i class="Parameter T1.Text1">parsed-local-declaration</i>:<br /> (no external representation)</p>
-<p class="T1.Text1"><i class="Parameter T1.Text1">parsed-function-call</i>:<br /> (no external representation)</p>
-<p class="T1.Text1"><i class="Parameter T1.Text1">parsed-macro-call</i>:<br /> (no external representation)</p>
-<p class="T1.Text1"><i class="Parameter T1.Text1">parsed-list-constant</i>:<br /> (no external representation)</p>
-<p class="T1.Text1"><i class="Parameter T1.Text1">parsed-vector-constant</i>:<br /> (no external representation)<a name="MARKER-2-2125"></a></p>
+<dl>
+  <dt><i class="Parameter T1.Text1">parsed-definition:</i></dt>
+  <dd>
+    <p>(no external representation)</p>
+  </dd>
+  <dt><i class="Parameter T1.Text1">parsed-local-declaration:</i></dt>
+  <dd>
+    <p>(no external representation)</p>
+  </dd>
+  <dt><i class="Parameter T1.Text1">parsed-function-call:</i></dt>
+  <dd>
+    <p>(no external representation)</p>
+  </dd>
+  <dt><i class="Parameter T1.Text1">parsed-macro-call:</i></dt>
+  <dd>
+    <p>(no external representation)</p>
+  </dd>
+  <dt><i class="Parameter T1.Text1">parsed-list-constant:</i></dt>
+  <dd>
+    <p>(no external representation)</p>
+  </dd>
+  <dt><i class="Parameter T1.Text1">parsed-vector-constant:</i></dt>
+  <dd>
+    <p>(no external representation)<a name="MARKER-2-2125"></a></p>
+  </dd>
+</dl>
 <a name="LINK-BNF_Appendix-lastpage"></a>
+</div>
 </div>
 
 <div class="wm-div-footers">
