@@ -62,7 +62,7 @@
 <a name="HEADING50-0"></a>
 <a name="UID-Functions-2196"></a>
 <h1 class="H1.Heading1"><a name="MARKER-9-844"></a>Method Dispatch</h1>
-<p class="T1.Text1"><a name="MARKER-2-845"></a>When a <a name="MARKER-2-846"></a>generic function is called, the generic function uses the types of the arguments to determine which methods to call. This process is called <strong class="Bold T1.Text1">method dispatch</strong>.</p>
+<p class="T1.Text1"><a name="MARKER-2-845"></a>When a <a name="MARKER-2-846"></a>generic function is called, the generic function uses the types of the arguments to determine which methods to call. This process is called <strong class="Bold T1.Text1"><dfn>method dispatch</dfn></strong>.</p>
 <p class="T1.Text1">Method dispatch occurs in three phases. First, all the <a name="MARKER-2-847"></a><a name="MARKER-2-848"></a>applicable methods are selected. Next, the applicable methods are sorted by specificity. Finally, the most specific method is called.</p>
 <a name="HEADING50-3"></a>
 <h3 class="H3.Heading3"><a name="MARKER-9-849"></a>Method Specificity<strong class="H3.Heading3"></strong></h3>
@@ -121,7 +121,7 @@ define method superior-being (a :: &lt;humanoid&gt;,
 <a name="HEADING50-32"></a>
 <a name="UID-Functions-2171"></a>
 <h2 class="H2.Heading2"><a name="MARKER-9-858"></a>Calling Less Specific Methods</h2>
-<p class="T1.Text1"><a name="MARKER-2-859"></a>In many situations, a subtype wants to modify the behavior of a method, rather than replace it completely; it wants to perform some work but also use the inherited behavior. This can be accomplished with <strong class="bold T1.Text1">next-method</strong>. Next-method is a function that, when called, invokes the next most specific method applicable in the generic function. The next-method is the value of the <code class="T1.Text1">#next</code> parameter. Normally this parameter is named <code class="T1.Text1">next-method</code>, though it can have other names at the programmer's discretion.</p>
+<p class="T1.Text1"><a name="MARKER-2-859"></a>In many situations, a subtype wants to modify the behavior of a method, rather than replace it completely; it wants to perform some work but also use the inherited behavior. This can be accomplished with <strong class="bold T1.Text1"><dfn>next-method</dfn></strong>. Next-method is a function that, when called, invokes the next most specific method applicable in the generic function. The next-method is the value of the <code class="T1.Text1">#next</code> parameter. Normally this parameter is named <code class="T1.Text1">next-method</code>, though it can have other names at the programmer's discretion.</p>
 <p class="T1.Text1">One can think of next-method as invoking the method that would have been called if the current method did not exist.</p>
 <p class="T1.Text1">If there are no more methods available, the next-method parameter will be bound to the value <code class="T1.Text1">#f</code> instead of to a method.</p>
 <a name="HEADING50-36"></a>

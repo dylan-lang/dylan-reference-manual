@@ -1,9 +1,30 @@
-body { margin: 20px }
-
 
 /* Debugging: Uncomment this to see all the boxes. */
 
 /** { border: 1px solid }*/
+
+
+
+/*
+  General Document Formatting
+*/
+
+body { margin: 20px }
+
+/*
+  Always use bold for defining instance text (DFN tags), to match the
+  printed DRM, since it specifically says they are set in bold. Two
+  notes:
+
+  1. As it happens, the HTML was originally generated with STRONG tags
+     (and no DFNs), so it usually renders in bold, but now that we
+     have a stylesheet, use it to ensure the formatting is as desired.
+     
+  2. Some browsers apply italics to DFN (on top of STRONG), so be sure
+     to suppress that.
+*/
+
+dfn  { font-weight: bold; font-style: normal }
 
 
 
