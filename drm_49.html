@@ -33,7 +33,7 @@
 <p class="T1.Text1">The complete syntax of parameter lists is given in <a href="drm_118.html#MARKER-9-2115" class="T1.Text1">"Methods" on page 426</a>.</p>
 <p class="T1.Text1">Required parameters correspond to arguments that must be supplied when a function is called. The arguments are supplied in a fixed order and must appear before any other arguments.</p>
 <p class="T1.Text1">Each required parameter may be a name or a name <strong class="T1.Text1"><a name="MARKER-2-792"></a>specialized</strong> by a type. Specifying a type declares that supplied argument must be a general instance of that type.</p>
-<p class="T1.Text1">A rest parameter allows a function to accept an unlimited number of arguments.<a rel="FOOTNOTE" href="#FOOTNOTE-3" class="T1.Text1">[3]</a>  After the required arguments of a function have been supplied, any additional arguments are collected in a sequence, which is passed as the value of the rest parameter. <a name="MARKER-2-793"></a>This sequence may be immutable, and it may or may not be freshly allocated. The types of rest parameters cannot be declared.</p>
+<p class="T1.Text1">A rest parameter allows a function to accept an unlimited number of arguments.<a rel="FOOTNOTE" href="#FOOTNOTE-3" class="T1.Text1"><sup>[3]</sup></a>  After the required arguments of a function have been supplied, any additional arguments are collected in a sequence, which is passed as the value of the rest parameter. <a name="MARKER-2-793"></a>This sequence may be immutable, and it may or may not be freshly allocated. The types of rest parameters cannot be declared.</p>
 <p class="T1.Text1"><a name="MARKER-2-794"></a><a name="MARKER-2-795"></a>Keyword parameters correspond to arguments that are optional and may be given in any order. Symbols are used among the arguments to guide matching of arguments to parameters. These symbols are usually written in keyword syntax and so they are known as keywords. Keyword arguments can only be supplied after all required arguments are supplied. Keyword parameters may be specialized, restricting which values may be supplied for them. Keyword parameters may also be given default values to be used when the caller does not supply a value.</p>
 <p class="T1.Text1"><a name="MARKER-2-796"></a><a name="MARKER-2-797"></a>Required parameters come first in the parameter list, followed by the rest parameter, if any, and then the keyword parameters, if any. A rest parameter is indicated by the token <code class="T1.Text1">#rest</code> followed by the name of the parameter. Keyword parameters are indicated by the token <code class="T1.Text1">#key</code> followed by the keyword parameter specifiers, optionally followed by the token <code class="T1.Text1">#all-keys</code>.</p>
 <p class="T1.Text1">If <code class="T1.Text1">#rest</code> and <code class="T1.Text1">#key</code> are used in the same parameter list, <code class="T1.Text1">#rest</code> must come first. The rest parameter will be bound to a sequence containing all the keyword arguments and their corresponding values.</p>
@@ -236,7 +236,7 @@ end method;
 <div class="wm-div-footnotes">
 <hr />
 
-<a name="FOOTNOTE-3">[3] </a>
+<a name="FOOTNOTE-3"><sup>[3]</sup> </a>
  In practice, an implementation may place a reasonable limit on the number of arguments that may be passed to any function.
 
 </div>

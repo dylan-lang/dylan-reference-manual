@@ -24,7 +24,7 @@
 <a name="UID-Types_and_Classes-2625"></a>
 <h1 class="H1.Heading1"> <a name="MARKER-2-599"></a>Slots</h1>
 <p class="T1.Text1">Slots are the interface to information about instances. They correspond to the <a name="MARKER-2-600"></a>fields or instance variables of other object-oriented programming languages. By default, each instance of the class has private storage for each slot, so one instance can have one value in the slot and another instance can have another value. Some slots are shared among instances, as described in <a href="#MARKER-9-629" class="T1.Text1">"Slot Allocation" on page 60</a>.</p>
-<p class="T1.Text1"><a name="MARKER-2-601"></a>All slot access is performed by function calls.<a rel="FOOTNOTE" href="#FOOTNOTE-2" class="T1.Text1">[2]</a> The method that returns the value of a slot is called the <strong class="Bold T1.Text1"><a name="MARKER-2-602"></a>getter method</strong>, and the method that sets the value of a slot is called the <strong class="Bold T1.Text1"><a name="MARKER-2-603"></a>setter method</strong>. The getter and setter methods are added to generic functions. When defining a class, you specify slots by specifying the generic functions to which the getter and setter methods should be added.</p>
+<p class="T1.Text1"><a name="MARKER-2-601"></a>All slot access is performed by function calls.<a rel="FOOTNOTE" href="#FOOTNOTE-2" class="T1.Text1"><sup>[2]</sup></a> The method that returns the value of a slot is called the <strong class="Bold T1.Text1"><a name="MARKER-2-602"></a>getter method</strong>, and the method that sets the value of a slot is called the <strong class="Bold T1.Text1"><a name="MARKER-2-603"></a>setter method</strong>. The getter and setter methods are added to generic functions. When defining a class, you specify slots by specifying the generic functions to which the getter and setter methods should be added.</p>
 <p class="T1.Text1">For example, the class definition for <code class="Code T1.Text1">&lt;point&gt;</code> might be</p>
 <pre class="Cv.Code">
 define class &lt;point&gt; (&lt;object&gt;)
@@ -181,7 +181,7 @@ end method;<a name="MARKER-2-654"></a><a name="MARKER-2-655"></a>
 <div class="wm-div-footnotes">
 <hr />
 
-<a name="FOOTNOTE-2">[2] </a>
+<a name="FOOTNOTE-2"><sup>[2]</sup> </a>
 This is in contrast to some other languages where slots are accessed through named value references.
 
 </div>
