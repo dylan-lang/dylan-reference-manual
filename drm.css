@@ -5,6 +5,45 @@ body {
 	color: black;
 }
 
+
+/*
+  Table Formatting
+
+  Try to match the DRM a little better than the default HTML format.
+
+  All tables should have some additional padding between the columns
+  so they don't run together, captions and column headings are
+  left-aligned, and cell text is vertically aligned at the baseline.
+  
+  For tables called out in the DRM with "Table ##-## Name", left-align
+  the caption and column headings and put a rule under the
+  caption. (table class="numbered")
+
+  For "index" tables that consist of three columns (an identifier, a
+  Description, and a Page number), provide a minimum width for the
+  first/primary column. (th class="primary")
+
+*/
+
+table.numbered	{ border-top: 1px solid; border-spacing: 0px }
+caption	 	{ padding-bottom: 3px } /* make sure caption descenders and the line don't run together */
+caption, th	{ text-align: left }
+
+th, td 	      	  	      	   { padding-left: 2em; vertical-align: baseline }
+th:first-child, td:first-child	   { padding-left: 0em }
+
+th.primary	{ min-width: 10em } /* the "primary" column should avoid wrapping */
+
+/*
+  Add some space between the "Table ##-##" number and the table title.
+  The number should have some kind of tag around it. This will actually
+  add space around any and all elements within the caption, so we don't
+  have to care exactly what tag or tags are used.
+*/
+
+table.numbered caption * { padding-right: 2em }
+
+
 /*
 
 img { border-width: 0px; }
