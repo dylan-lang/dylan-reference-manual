@@ -63,44 +63,35 @@
 <a name="UID-Macros-6305"></a>
 <h1 class="H1.Heading1"><a name="MARKER-9-1256"></a>Pattern Variable Constraints</h1>
 <p class="T1.Text1"><a name="MARKER-2-1257"></a>Each <i class="Parameter T1.Text1">pattern-variable</i>  in the left-hand side of a rule in a macro definition has a constraint associated with it. This prevents the pattern from matching unless the fragment matched to the pattern-variable satisfies the constraint. In most cases it also controls how the matching fragment is parsed.</p>
-<p class="T1.Text1">You specify a constraint in a <i class="Parameter T1.Text1">pattern-variable</i>  by suffixing a colon and the constraint name to the pattern variable name. Intervening whitespace is not allowed. As an abbreviation, if a pattern variable has the same name as its constraint, the <i class="Parameter T1.Text1">pattern-variable</i>  can be written <code class="cv T1.Text1">?:<i class="Parameter cv T1.Text1">the-name</i></code>  instead of <code class="cv T1.Text1">?<i class="Parameter cv T1.Text1">the-name:the-name</i></code>.</p>
+<p class="T1.Text1">You specify a constraint in a <i class="Parameter T1.Text1">pattern-variable</i>  by suffixing a colon and the constraint name to the pattern variable name. Intervening whitespace is not allowed. As an abbreviation, if a pattern variable has the same name as its constraint, the <i class="Parameter T1.Text1">pattern-variable</i>  can be written <code class="cv T1.Text1">?:<i class="Parameter cv T1.Text1">the-name</i></code>  instead of <code class="cv T1.Text1">?<i class="Parameter cv T1.Text1">the-name</i>:<i class="Parameter cv T1.Text1">the-name</i></code>.</p>
 <p class="T1.Text1">The available constraints are listed in <a href="#MARKER-9-1173" class="T1.Text1">Table 10-1</a>.</p>
 <table class="numbered"><caption class="Tb.Table"><strong>Table 10-1</strong>  <a name="MARKER-9-1173"></a>Available constraints</caption>
 <tr><th><p class="TbH.TblHd"> Constraint name</p>
-</th><th><p class="TbH.TblHd"> </p>
 </th><th><p class="TbH.TblHd"> Grammar accepted</p>
 </th><th><p class="TbH.TblHd"> Binds pattern variable to</p>
 </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">expression</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <i class="TbT.TblText">expression</i></p>
+</td><td><p class="TbT.TblText"> <span class="BNF"><i class="TbT.TblText">expression</i></span></p>
 </td><td><p class="TbT.TblText"> parsed expression fragment(1)</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">variable</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <i class="TbT.TblText">variable</i></p>
+</td><td><p class="TbT.TblText"> <span class="BNF"><i class="TbT.TblText">variable</i></span></p>
 </td><td><p class="TbT.TblText"> fragment(2)</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">name</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <em class="TbT.TblText">name</em></p>
+</td><td><p class="TbT.TblText"> <span class="BNF"><em class="BNFCaps TbT.TblText">name</em></span></p>
 </td><td><p class="TbT.TblText"> one-token fragment</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">token</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <em class="TbT.TblText">token</em></p>
+</td><td><p class="TbT.TblText"> <span class="BNF"><em class="BNFCaps TbT.TblText">token</em></span></p>
 </td><td><p class="TbT.TblText"> one-token fragment</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">body</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <i class="Parameter TbT.TblText">body<em class="Subscript Parameter TbT.TblText"><sub>opt</sub>   </em></i>(3)</p>
+</td><td><p class="TbT.TblText"> <span class="BNF"><i class="Parameter TbT.TblText">body<em class="Subscript Parameter TbT.TblText"><sub>opt</sub></em></i></span> (3)</p>
 </td><td><p class="TbT.TblText"> parsed expression fragment (4)</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">case-body</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <i class="Parameter TbT.TblText">case-body<em class="Subscript Parameter TbT.TblText"><sub>opt</sub>   </em></i>(3)</p>
+</td><td><p class="TbT.TblText"> <span class="BNF"><i class="Parameter TbT.TblText">case-body<em class="Subscript Parameter TbT.TblText"><sub>opt</sub></em></i></span> (3)</p>
 </td><td><p class="TbT.TblText"> fragment(2)</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">macro</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <i class="TbT.TblText">macro</i></p>
+</td><td><p class="TbT.TblText"> <span class="BNF"><i class="TbT.TblText">macro</i></span></p>
 </td><td><p class="TbT.TblText"> fragment(5)</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">*</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <i class="TbT.TblText">(wildcard)</i></p>
+</td><td><p class="TbT.TblText"> (wildcard)</p>
 </td><td><p class="TbT.TblText"> fragment</p>
 </td></tr></table><p class="T1.Text1">Notes:</p>
 <ol>
@@ -122,7 +113,7 @@
 </li>
 <li class="B1.Bullet1">Define an intermediate-variable to be a pattern variable that either immediately follows a body-variable in a left-hand side, or appears at the beginning of a left-hand side in an auxiliary rule-set named by an intermediate-variable. 
 </li>
-<li class="B1.Bullet1">An intermediate word is a <em class="B1.Bullet1">name</em> that either immediately follows a body-variable in a left-hand side, or occurs at the beginning of a left-hand side in an auxiliary rule-set named by an intermediate-variable. Intermediate words are not reserved, they are just used as delimiters during the parsing for a <i class="Parameter B1.Bullet1">pattern-variable</i>  with a <code class="cv B1.Bullet1">body</code> or <code class="cv B1.Bullet1">case-body</code> constraint.<a name="MARKER-2-1260"></a><a name="MARKER-2-1261"></a>
+<li class="B1.Bullet1">An intermediate word is a <em class="BNFCaps B1.Bullet1">name</em> that either immediately follows a body-variable in a left-hand side, or occurs at the beginning of a left-hand side in an auxiliary rule-set named by an intermediate-variable. Intermediate words are not reserved, they are just used as delimiters during the parsing for a <i class="Parameter B1.Bullet1">pattern-variable</i>  with a <code class="cv B1.Bullet1">body</code> or <code class="cv B1.Bullet1">case-body</code> constraint.<a name="MARKER-2-1260"></a><a name="MARKER-2-1261"></a>
 </li>
 </ul>
 

@@ -187,15 +187,15 @@ i.Parameter, code i { font-family: serif }
 
 */
 
-.BNFCaps             { font-variant: small-caps; font-style: normal }
-div.BNF dd p   	     { margin: 0.25em 0 0 0 }
-div.BNF dt           { margin-top: 1em }
-div.BNF i            { font-family: serif }
-div.BNF code         { font-weight: bolder }
-div.BNF code sub     { font-weight: normal }  /* don't make subscripted suffixes bold */
-div.BNF .BNFCaps sub { font-variant: normal } /* don't make subscripted suffixes small-caps */
-div.BNF .one-of      { padding-right: 1em }
-div.BNF dd p>*       { margin-right: 0.25em } /* a little extra space between tokens */
+.BNFCaps          { font-variant: small-caps; font-style: normal; /*font-size: larger*/ }
+.BNF dd p         { margin: 0.25em 0 0 0 }
+.BNF dt           { margin-top: 1em }
+.BNF i            { font-family: serif }
+.BNF code         { font-weight: bolder }
+.BNF code sub     { font-weight: normal }  /* don't make subscripted suffixes bold */
+.BNF .BNFCaps sub { font-variant: normal } /* don't make subscripted suffixes small-caps */
+.BNF .one-of      { padding-right: 1em }
+.BNF dd p>*       { margin-right: 0.25em } /* a little extra space between tokens */
 
 
 
