@@ -28,103 +28,103 @@
 <hr class="H4.Heading4" />
 <p class="T0.Text0">The class of all Dylan objects.</p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None. <code class="cv Cliche">&lt;object&gt;</code> is the root of the Dylan class hierarchy.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <a name="MARKER-2-1366"></a>The class <code class="cv Cliche">&lt;object&gt;</code> is the root of the type system. All objects are general instances of <code class="Code Cliche">&lt;object&gt;</code>, all types are subtypes of <code class="cv Cliche">&lt;object&gt;</code>, and all classes are subclasses of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;object&gt;</code> provides the following operations:</p></dd>
-</dl>
-<p class="Anchor"> </p>
-<table class="numbered"><caption class="Tb.Table"><strong>Table 11-1</strong>  Functions on &lt;object&gt;</caption>
-<tr><th class="primary"><p class="TbH.TblHd"> Function</p>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None. <code class="cv Cliche">&lt;object&gt;</code> is the root of the Dylan class hierarchy.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> <a name="MARKER-2-1366"></a>The class <code class="cv Cliche">&lt;object&gt;</code> is the root of the type system. All objects are general instances of <code class="Code Cliche">&lt;object&gt;</code>, all types are subtypes of <code class="cv Cliche">&lt;object&gt;</code>, and all classes are subclasses of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;object&gt;</code> provides the following operations:</p>
+    <p class="Anchor"> </p>
+    <table class="numbered"><caption class="Tb.Table"><strong>Table 11-1</strong>  Functions on &lt;object&gt;</caption>
+      <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
+	</th><th><p class="TbH.TblHd"> </p>
+	</th><th><p class="TbH.TblHd"> Description</p>
+	</th><th><p class="TbH.TblHd"> Page</p>
+      </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">identity</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1676" class="TbT.TblText">Returns its argument.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1676" class="TbT.TblText">287</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">always</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_104.html#MARKER-9-1888" class="TbT.TblText">Returns a function that always returns a particular object.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_104.html#MARKER-9-1888" class="TbT.TblText">350</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">instance?</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1861" class="TbT.TblText">Tests whether an object is an instance of a type.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1861" class="TbT.TblText">343</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">object-class</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1865" class="TbT.TblText">Returns the class of an object.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1865" class="TbT.TblText">344</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">==</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1578" class="TbT.TblText">Compares two objects for identity.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1578" class="TbT.TblText">268</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">~==</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1582" class="TbT.TblText">Compares two objects for nonidentity.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1582" class="TbT.TblText">269</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">~</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1576" class="TbT.TblText">Returns true if its argument is false; otherwise returns false.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1576" class="TbT.TblText">268</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">object-hash</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1855" class="TbT.TblText">The hash function for the equivalence predicate ==.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1855" class="TbT.TblText">342</a></p>
+    </td></tr></table><p class="Anchor"> </p>
+    <table class="numbered"><caption class="Tb.Table"><strong>Table 11-2</strong>  Generic functions on &lt;object&gt;</caption>
+      <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
+	</th><th><p class="TbH.TblHd"> </p>
+	</th><th><p class="TbH.TblHd"> Description</p>
+	</th><th><p class="TbH.TblHd"> Page</p>
+      </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">initialize</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1543" class="TbT.TblText">Performs instance initialization that cannot be specified declaratively by a class definition.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1543" class="TbT.TblText">260</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">as</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1680" class="TbT.TblText">Coerces an object to a type.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1680" class="TbT.TblText">288</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">shallow-copy</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1692" class="TbT.TblText">Returns a copy of its argument.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1692" class="TbT.TblText">292</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">type-for-copy</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1694" class="TbT.TblText">Returns an appropriate type for creating mutable copies of its argument.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1694" class="TbT.TblText">292</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">size</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1702" class="TbT.TblText">Returns the size of its argument.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1702" class="TbT.TblText">295</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">empty?</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1700" class="TbT.TblText">Returns true if its argument is empty.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1700" class="TbT.TblText">294</a></p>
+    </td></tr></table><p class="Anchor"> </p>
+    <table class="numbered"><caption class="Tb.Table"><strong>Table 11-3</strong>  Methods on &lt;object&gt;</caption>
+      <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
 </th><th><p class="TbH.TblHd"> </p>
-</th><th><p class="TbH.TblHd"> Description</p>
-</th><th><p class="TbH.TblHd"> Page</p>
-</th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">identity</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1676" class="TbT.TblText">Returns its argument.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1676" class="TbT.TblText">287</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">always</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_104.html#MARKER-9-1888" class="TbT.TblText">Returns a function that always returns a particular object.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_104.html#MARKER-9-1888" class="TbT.TblText">350</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">instance?</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1861" class="TbT.TblText">Tests whether an object is an instance of a type.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1861" class="TbT.TblText">343</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">object-class</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1865" class="TbT.TblText">Returns the class of an object.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1865" class="TbT.TblText">344</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">==</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1578" class="TbT.TblText">Compares two objects for identity.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1578" class="TbT.TblText">268</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">~==</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1582" class="TbT.TblText">Compares two objects for nonidentity.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1582" class="TbT.TblText">269</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">~</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1576" class="TbT.TblText">Returns true if its argument is false; otherwise returns false.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1576" class="TbT.TblText">268</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">object-hash</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1855" class="TbT.TblText">The hash function for the equivalence predicate ==.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1855" class="TbT.TblText">342</a></p>
-</td></tr></table><p class="Anchor"> </p>
-<table class="numbered"><caption class="Tb.Table"><strong>Table 11-2</strong>  Generic functions on &lt;object&gt;</caption>
-<tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-</th><th><p class="TbH.TblHd"> </p>
-</th><th><p class="TbH.TblHd"> Description</p>
-</th><th><p class="TbH.TblHd"> Page</p>
-</th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">initialize</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1543" class="TbT.TblText">Performs instance initialization that cannot be specified declaratively by a class definition.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1543" class="TbT.TblText">260</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">as</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1680" class="TbT.TblText">Coerces an object to a type.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1680" class="TbT.TblText">288</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">shallow-copy</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1692" class="TbT.TblText">Returns a copy of its argument.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1692" class="TbT.TblText">292</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">type-for-copy</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1694" class="TbT.TblText">Returns an appropriate type for creating mutable copies of its argument.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1694" class="TbT.TblText">292</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">size</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1702" class="TbT.TblText">Returns the size of its argument.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1702" class="TbT.TblText">295</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">empty?</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1700" class="TbT.TblText">Returns true if its argument is empty.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1700" class="TbT.TblText">294</a></p>
-</td></tr></table><p class="Anchor"> </p>
-<table class="numbered"><caption class="Tb.Table"><strong>Table 11-3</strong>  Methods on &lt;object&gt;</caption>
-<tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-</th><th><p class="TbH.TblHd"> </p>
-</th><th><p class="TbH.TblHd"> Description</p>
-</th><th><p class="TbH.TblHd"> Page</p>
-</th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">initialize</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1543" class="TbT.TblText">Performs instance initialization that cannot be specified declaratively by a class definition.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1543" class="TbT.TblText">260</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">type-for-copy</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1694" class="TbT.TblText">Returns an appropriate type for creating mutable copies of its argument.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1694" class="TbT.TblText">292</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">=</code></p>
-</td><td><p class="TbT.TblText"> </p>
+	</th><th><p class="TbH.TblHd"> Description</p>
+	</th><th><p class="TbH.TblHd"> Page</p>
+      </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">initialize</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1543" class="TbT.TblText">Performs instance initialization that cannot be specified declaratively by a class definition.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1543" class="TbT.TblText">260</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">type-for-copy</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1694" class="TbT.TblText">Returns an appropriate type for creating mutable copies of its argument.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1694" class="TbT.TblText">292</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">=</code></p>
+	</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1584" class="TbT.TblText">Compares two objects for equality.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1584" class="TbT.TblText">269</a></p>
-</td></tr></table><p class="Anchor"> <a name="MARKER-2-1367"></a></p>
-
+	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1584" class="TbT.TblText">269</a></p>
+    </td></tr></table><p class="Anchor"> <a name="MARKER-2-1367"></a></p>
+  </dd>
+</dl>
 </div>
 
 <div class="wm-div-footers">

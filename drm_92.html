@@ -34,15 +34,15 @@
 <hr class="H4.Heading4" />
 <p class="T0.Text0">The class of all numbers.</p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;object&gt;</code></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> The class of all numbers.</p>
-<p class="T1.Text1">The class <code class="cv T1.Text1">&lt;number&gt;</code> is open, to allow programmers to create additional numeric classes. <a name="MARKER-2-1384"></a>The built-in numeric operations do not provide default implementations for <code class="cv T1.Text1">&lt;number&gt;</code>, but for <code class="cv T1.Text1">&lt;complex&gt;</code>, a sealed subclass of <code class="cv T1.Text1">&lt;number&gt;</code>.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;object&gt;</code></p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> The class of all numbers.</p>
+    <p class="T1.Text1">The class <code class="cv T1.Text1">&lt;number&gt;</code> is open, to allow programmers to create additional numeric classes. <a name="MARKER-2-1384"></a>The built-in numeric operations do not provide default implementations for <code class="cv T1.Text1">&lt;number&gt;</code>, but for <code class="cv T1.Text1">&lt;complex&gt;</code>, a sealed subclass of <code class="cv T1.Text1">&lt;number&gt;</code>.</p></dd>
 </dl>
 <a name="HEADING92-12"></a>
 <a name="UID-Built-In_Classes-15908"></a>
@@ -52,51 +52,53 @@
 <hr class="H4.Heading4" />
 <p class="T0.Text0">The class of complex numbers.</p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;number&gt;</code></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> The sealed superclass of all built-in numbers, including real numbers. There are no non-real subclasses of <code class="cv Cliche">&lt;complex&gt;</code> defined by the language, but implementations may define such subclasses. Because <code class="cv Cliche">&lt;complex&gt;</code> and all its defined subclasses are sealed, implementation-defined subclasses may be added efficiently.</p>
-<p class="T1.Text1">Many built-in functions are defined to have methods on <code class="cv T1.Text1">&lt;complex&gt;</code>. This means that the function is defined on all built-in subclasses of <code class="cv T1.Text1">&lt;complex&gt;</code>. It does not imply that there is a single method specialized on the <code class="cv T1.Text1">&lt;complex&gt;</code> class.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> The class &lt;complex&gt; provides implementations for the following functions:</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;number&gt;</code></p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> The sealed superclass of all built-in numbers, including real numbers. There are no non-real subclasses of <code class="cv Cliche">&lt;complex&gt;</code> defined by the language, but implementations may define such subclasses. Because <code class="cv Cliche">&lt;complex&gt;</code> and all its defined subclasses are sealed, implementation-defined subclasses may be added efficiently.</p>
+    <p class="T1.Text1">Many built-in functions are defined to have methods on <code class="cv T1.Text1">&lt;complex&gt;</code>. This means that the function is defined on all built-in subclasses of <code class="cv T1.Text1">&lt;complex&gt;</code>. It does not imply that there is a single method specialized on the <code class="cv T1.Text1">&lt;complex&gt;</code> class.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> The class &lt;complex&gt; provides implementations for the following functions:</p>
+    <p class="Anchor"> </p>
+    <table class="numbered"><caption><strong>Table 11-10</strong>  Methods on &lt;complex&gt;</caption>
+      <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
+	</th><th><p class="TbH.TblHd"> </p>
+	</th><th><p class="TbH.TblHd"> Description</p>
+	</th><th><p class="TbH.TblHd"> Page</p>
+      </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">=</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1584" class="TbT.TblText">Compares two objects for equality.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1584" class="TbT.TblText">269</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">zero?</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1610" class="TbT.TblText">Tests for the property of being equal to zero.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1610" class="TbT.TblText">275</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">+</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1619" class="TbT.TblText">Returns the sum of its arguments.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1619" class="TbT.TblText">277</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">*</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1621" class="TbT.TblText">Returns the product of its arguments.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1621" class="TbT.TblText">277</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">-</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1623" class="TbT.TblText">Returns the difference of its arguments.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1623" class="TbT.TblText">278</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">/</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1625" class="TbT.TblText">Returns the quotient of its arguments.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1625" class="TbT.TblText">278</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">^</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1651" class="TbT.TblText">Raises an object to a specified power.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1651" class="TbT.TblText">283</a></p>
+    </td></tr></table>
+  </dd>
 </dl>
-<p class="Anchor"> </p>
-<table class="numbered"><caption><strong>Table 11-10</strong>  Methods on &lt;complex&gt;</caption>
-<tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-</th><th><p class="TbH.TblHd"> </p>
-</th><th><p class="TbH.TblHd"> Description</p>
-</th><th><p class="TbH.TblHd"> Page</p>
-</th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">=</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1584" class="TbT.TblText">Compares two objects for equality.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1584" class="TbT.TblText">269</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">zero?</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1610" class="TbT.TblText">Tests for the property of being equal to zero.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1610" class="TbT.TblText">275</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">+</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1619" class="TbT.TblText">Returns the sum of its arguments.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1619" class="TbT.TblText">277</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">*</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1621" class="TbT.TblText">Returns the product of its arguments.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1621" class="TbT.TblText">277</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">-</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1623" class="TbT.TblText">Returns the difference of its arguments.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1623" class="TbT.TblText">278</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">/</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1625" class="TbT.TblText">Returns the quotient of its arguments.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1625" class="TbT.TblText">278</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">^</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1651" class="TbT.TblText">Raises an object to a specified power.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1651" class="TbT.TblText">283</a></p>
-</td></tr></table><a name="HEADING92-138"></a>
+<a name="HEADING92-138"></a>
 <a name="UID-Built-In_Classes-11427"></a>
 <h2 class="H2.Heading2"> Reals</h2>
 <a name="HEADING92-139"></a>
@@ -104,92 +106,94 @@
 <hr class="H4.Heading4" />
 <p class="T0.Text0">The class of real numbers.</p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;complex&gt;</code></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> The class of real numbers.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;real&gt;</code> provides implementations for the following functions:</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;complex&gt;</code></p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> The class of real numbers.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;real&gt;</code> provides implementations for the following functions:</p>
+    <p class="Anchor"> </p>
+    <table class="numbered"><caption><strong>Table 11-11</strong>  Functions on &lt;real&gt;</caption>
+      <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
+	</th><th><p class="TbH.TblHd"> </p>
+	</th><th><p class="TbH.TblHd"> Description</p>
+	</th><th><p class="TbH.TblHd"> Page</p>
+      </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">floor</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1631" class="TbT.TblText">Truncates a real number toward negative infinity.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1631" class="TbT.TblText">279</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">ceiling</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1633" class="TbT.TblText">Truncates a real number toward positive infinity.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1633" class="TbT.TblText">280</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">round</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1635" class="TbT.TblText">Rounds a real number toward the nearest mathematical integer.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1635" class="TbT.TblText">280</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">truncate</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1637" class="TbT.TblText">Truncates a real number toward zero.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1637" class="TbT.TblText">280</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">floor/</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1639" class="TbT.TblText">Returns the floor of the quotient of two numbers.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1639" class="TbT.TblText">281</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">ceiling/</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1641" class="TbT.TblText">Returns the ceiling of the quotient of two numbers.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1641" class="TbT.TblText">281</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">round/</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1643" class="TbT.TblText">Rounds off the quotient of two numbers.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1643" class="TbT.TblText">282</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">truncate/</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1645" class="TbT.TblText">Returns the truncated quotient of two numbers.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1645" class="TbT.TblText">282</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">modulo</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1647" class="TbT.TblText">Returns the second value of <code class="TbT.TblText">floor/</code>.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1647" class="TbT.TblText">282</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">remainder</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1649" class="TbT.TblText">Returns the second value of <code class="TbT.TblText">truncate/</code>.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1649" class="TbT.TblText">283</a></p>
+    </td></tr></table><p class="Anchor"> </p>
+    <table class="numbered"><caption><strong>Table 11-12</strong>  Methods on &lt;real&gt;</caption>
+      <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
+	</th><th><p class="TbH.TblHd"> </p>
+	</th><th><p class="TbH.TblHd"> Description</p>
+	</th><th><p class="TbH.TblHd"> Page</p>
+      </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">&lt;</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1589" class="TbT.TblText">Returns true if its first operand is less than its second operand.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1589" class="TbT.TblText">271</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">abs</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1654" class="TbT.TblText">Returns the absolute value of its argument.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1654" class="TbT.TblText">284</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">positive?</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1612" class="TbT.TblText">Tests for the property of being positive.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1612" class="TbT.TblText">276</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">negative?</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1614" class="TbT.TblText">Tests for the property of being negative.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1614" class="TbT.TblText">276</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">integral?</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1616" class="TbT.TblText">Tests for the property of being integral.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1616" class="TbT.TblText">276</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">negative</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1629" class="TbT.TblText">Returns the negation of an object.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1629" class="TbT.TblText">279</a></p>
+    </td></tr></table>
+  </dd>
 </dl>
-<p class="Anchor"> </p>
-<table class="numbered"><caption><strong>Table 11-11</strong>  Functions on &lt;real&gt;</caption>
-<tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-</th><th><p class="TbH.TblHd"> </p>
-</th><th><p class="TbH.TblHd"> Description</p>
-</th><th><p class="TbH.TblHd"> Page</p>
-</th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">floor</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1631" class="TbT.TblText">Truncates a real number toward negative infinity.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1631" class="TbT.TblText">279</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">ceiling</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1633" class="TbT.TblText">Truncates a real number toward positive infinity.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1633" class="TbT.TblText">280</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">round</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1635" class="TbT.TblText">Rounds a real number toward the nearest mathematical integer.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1635" class="TbT.TblText">280</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">truncate</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1637" class="TbT.TblText">Truncates a real number toward zero.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1637" class="TbT.TblText">280</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">floor/</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1639" class="TbT.TblText">Returns the floor of the quotient of two numbers.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1639" class="TbT.TblText">281</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">ceiling/</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1641" class="TbT.TblText">Returns the ceiling of the quotient of two numbers.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1641" class="TbT.TblText">281</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">round/</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1643" class="TbT.TblText">Rounds off the quotient of two numbers.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1643" class="TbT.TblText">282</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">truncate/</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1645" class="TbT.TblText">Returns the truncated quotient of two numbers.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1645" class="TbT.TblText">282</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">modulo</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1647" class="TbT.TblText">Returns the second value of <code class="TbT.TblText">floor/</code>.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1647" class="TbT.TblText">282</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">remainder</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1649" class="TbT.TblText">Returns the second value of <code class="TbT.TblText">truncate/</code>.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1649" class="TbT.TblText">283</a></p>
-</td></tr></table><p class="Anchor"> </p>
-<table class="numbered"><caption><strong>Table 11-12</strong>  Methods on &lt;real&gt;</caption>
-<tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-</th><th><p class="TbH.TblHd"> </p>
-</th><th><p class="TbH.TblHd"> Description</p>
-</th><th><p class="TbH.TblHd"> Page</p>
-</th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">&lt;</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1589" class="TbT.TblText">Returns true if its first operand is less than its second operand.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1589" class="TbT.TblText">271</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">abs</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1654" class="TbT.TblText">Returns the absolute value of its argument.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1654" class="TbT.TblText">284</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">positive?</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1612" class="TbT.TblText">Tests for the property of being positive.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1612" class="TbT.TblText">276</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">negative?</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1614" class="TbT.TblText">Tests for the property of being negative.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1614" class="TbT.TblText">276</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">integral?</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1616" class="TbT.TblText">Tests for the property of being integral.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1616" class="TbT.TblText">276</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">negative</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1629" class="TbT.TblText">Returns the negation of an object.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1629" class="TbT.TblText">279</a></p>
-</td></tr></table><a name="HEADING92-409"></a>
+<a name="HEADING92-409"></a>
 <a name="UID-Built-In_Classes-9235"></a>
 <h2 class="H2.Heading2"> Floats</h2>
 <p class="T1.Text1"><a name="MARKER-2-1387"></a>The classes <code class="cv T1.Text1">&lt;single-float&gt;</code> and <code class="cv T1.Text1">&lt;double-float&gt;</code> are intended but not required to be the corresponding IEEE types. The class <code class="cv T1.Text1">&lt;extended-float&gt;</code> is intended but not required to have more range and/or precision than <code class="cv T1.Text1">&lt;double-float&gt;</code>.</p>
@@ -199,56 +203,56 @@
 <hr class="H4.Heading4" />
 <p class="T0.Text0">The class of floating-point numbers.</p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;real&gt;</code></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> The class of all floating-point numbers. This class is abstract. All floating point numbers will be instances of some concrete subclass of this class.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;real&gt;</code></p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> The class of all floating-point numbers. This class is abstract. All floating point numbers will be instances of some concrete subclass of this class.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None.</p></dd>
 </dl>
 <a name="HEADING92-418"></a>
 <h3 class="H4.Heading4"> <code class="H4.Heading4"><a name="MARKER-2-1389"></a>&lt;single-float&gt;</code> [Sealed Class]</h3>
 <hr class="H4.Heading4" />
 <p class="T0.Text0">The class of single-precision floating-point numbers.</p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;float&gt;</code></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> The class of single-precision floating-point numbers. This class is intended but not required to correspond to IEEE single-precision.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;float&gt;</code></p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> The class of single-precision floating-point numbers. This class is intended but not required to correspond to IEEE single-precision.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None.</p></dd>
 </dl>
 <a name="HEADING92-424"></a>
 <h3 class="H4.Heading4"> <code class="H4.Heading4"><a name="MARKER-2-1390"></a>&lt;double-float&gt;</code> [Sealed Class]</h3>
 <hr class="H4.Heading4" />
 <p class="T0.Text0">The class of double-precision floating-point numbers.</p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;float&gt;</code></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> The class of double-precision floating-point numbers. This class is intended but not required to correspond to IEEE double-precision.<a name="MARKER-2-1391"></a></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;float&gt;</code></p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> The class of double-precision floating-point numbers. This class is intended but not required to correspond to IEEE double-precision.<a name="MARKER-2-1391"></a></p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None.</p></dd>
 </dl>
 <a name="HEADING92-430"></a>
 <h3 class="H4.Heading4"> <code class="H4.Heading4"><a name="MARKER-2-1392"></a>&lt;extended-float&gt;</code> [Sealed Class]</h3>
 <hr class="H4.Heading4" />
 <p class="T0.Text0">The class of extended-precision floating-point numbers.</p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;float&gt;</code></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> The class of extended-precision floating-point numbers. This class is intended but not required to provide more precision that <code class="cv Cliche">&lt;double-float&gt;</code>.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;float&gt;</code></p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> The class of extended-precision floating-point numbers. This class is intended but not required to provide more precision that <code class="cv Cliche">&lt;double-float&gt;</code>.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None.</p></dd>
 </dl>
 <a name="HEADING92-436"></a>
 <a name="UID-Built-In_Classes-412"></a>
@@ -258,14 +262,14 @@
 <hr class="H4.Heading4" />
 <p class="T0.Text0">The class of rational numbers.</p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;real&gt;</code></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> The class of rational numbers.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;real&gt;</code></p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> The class of rational numbers.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None.</p></dd>
 </dl>
 <a name="HEADING92-443"></a>
 <a name="UID-Built-In_Classes-414"></a>
@@ -275,80 +279,81 @@
 <hr class="H4.Heading4" />
 <p class="T0.Text0">The class of integers.</p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;rational&gt;</code></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> The class of integers.</p>
-<p class="T1.Text1"><a name="MARKER-2-1395"></a>Implementations are required to support integers with at least 28 bits of precision. The overflow and underflow behavior is implementation-defined. (Some implementations may choose to have integers of unlimited size, but this is not required.)</p>
-<p class="T1.Text1"><a name="MARKER-2-1396"></a>The result of dividing two integers with / is implementation defined. Portable programs should use <code class="Code T1.Text1">floor/</code>, <code class="Code T1.Text1">ceiling/</code>, <code class="Code T1.Text1">round/</code>, or <code class="Code T1.Text1">truncate/</code> to divide two integers.</p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;integer&gt;</code> provides the following operations:</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;rational&gt;</code></p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> None.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> The class of integers.</p>
+    <p class="T1.Text1"><a name="MARKER-2-1395"></a>Implementations are required to support integers with at least 28 bits of precision. The overflow and underflow behavior is implementation-defined. (Some implementations may choose to have integers of unlimited size, but this is not required.)</p>
+    <p class="T1.Text1"><a name="MARKER-2-1396"></a>The result of dividing two integers with / is implementation defined. Portable programs should use <code class="Code T1.Text1">floor/</code>, <code class="Code T1.Text1">ceiling/</code>, <code class="Code T1.Text1">round/</code>, or <code class="Code T1.Text1">truncate/</code> to divide two integers.</p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;integer&gt;</code> provides the following operations:</p>
+    <p class="Anchor"> </p>
+    <table class="numbered"><caption><strong>Table 11-13</strong>  Functions on &lt;integer&gt;</caption>
+      <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
+	</th><th><p class="TbH.TblHd"> </p>
+	</th><th><p class="TbH.TblHd"> Description</p>
+	</th><th><p class="TbH.TblHd"> Page</p>
+      </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">odd?</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1606" class="TbT.TblText">Tests for the property of being an odd number.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1606" class="TbT.TblText">275</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">even?</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1608" class="TbT.TblText">Tests for the property of being an even number.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1608" class="TbT.TblText">275</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">logior</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1656" class="TbT.TblText">Returns the bitwise inclusive or of its integer arguments.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1656" class="TbT.TblText">284</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">logxor</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1659" class="TbT.TblText">Returns the bitwise exclusive or of its integer arguments.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1659" class="TbT.TblText">284</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">logand</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1661" class="TbT.TblText">Returns the bitwise and of its integer arguments.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1661" class="TbT.TblText">285</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">lognot</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1663" class="TbT.TblText">Returns the bitwise not of its integer argument.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1663" class="TbT.TblText">285</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">logbit?</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1665" class="TbT.TblText">Tests the value of a particular bit in its integer argument.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1665" class="TbT.TblText">285</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">ash</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1667" class="TbT.TblText">Performs an arithmetic shift on its first argument.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1667" class="TbT.TblText">286</a></p>
+    </td></tr></table><p class="Anchor"> </p>
+    <table class="numbered"><caption><strong>Table 11-14</strong>  Methods on &lt;integer&gt;</caption>
+      <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
+	</th><th><p class="TbH.TblHd"> </p>
+	</th><th><p class="TbH.TblHd"> Description</p>
+	</th><th><p class="TbH.TblHd"> Page</p>
+      </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">lcm</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1670" class="TbT.TblText">Returns the least common multiple of its two arguments.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1670" class="TbT.TblText">286</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">gcd</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1672" class="TbT.TblText">Returns the greatest common divisor of its two arguments.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1672" class="TbT.TblText">287</a></p>
+    </td></tr></table><p class="Anchor"> <a name="MARKER-2-1397"></a></p>
+    <table class="numbered"><caption><strong>Table 11-15</strong>  Methods on singleton(&lt;integer&gt;)</caption>
+      <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
+	</th><th><p class="TbH.TblHd"> </p>
+	</th><th><p class="TbH.TblHd"> Description</p>
+	</th><th><p class="TbH.TblHd"> Page</p>
+      </th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">limited</code></p>
+	</td><td><p class="TbT.TblText"> </p>
+	</td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1559" class="TbT.TblText">Returns a limited subtype of a class.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1559" class="TbT.TblText">263</a></p>
+    </td></tr></table>
+  </dd>
 </dl>
-<p class="Anchor"> </p>
-<table class="numbered"><caption><strong>Table 11-13</strong>  Functions on &lt;integer&gt;</caption>
-<tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-</th><th><p class="TbH.TblHd"> </p>
-</th><th><p class="TbH.TblHd"> Description</p>
-</th><th><p class="TbH.TblHd"> Page</p>
-</th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">odd?</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1606" class="TbT.TblText">Tests for the property of being an odd number.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1606" class="TbT.TblText">275</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">even?</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1608" class="TbT.TblText">Tests for the property of being an even number.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1608" class="TbT.TblText">275</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">logior</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1656" class="TbT.TblText">Returns the bitwise inclusive or of its integer arguments.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1656" class="TbT.TblText">284</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">logxor</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1659" class="TbT.TblText">Returns the bitwise exclusive or of its integer arguments.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1659" class="TbT.TblText">284</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">logand</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1661" class="TbT.TblText">Returns the bitwise and of its integer arguments.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1661" class="TbT.TblText">285</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">lognot</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1663" class="TbT.TblText">Returns the bitwise not of its integer argument.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1663" class="TbT.TblText">285</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">logbit?</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1665" class="TbT.TblText">Tests the value of a particular bit in its integer argument.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1665" class="TbT.TblText">285</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">ash</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1667" class="TbT.TblText">Performs an arithmetic shift on its first argument.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1667" class="TbT.TblText">286</a></p>
-</td></tr></table><p class="Anchor"> </p>
-<table class="numbered"><caption><strong>Table 11-14</strong>  Methods on &lt;integer&gt;</caption>
-<tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-</th><th><p class="TbH.TblHd"> </p>
-</th><th><p class="TbH.TblHd"> Description</p>
-</th><th><p class="TbH.TblHd"> Page</p>
-</th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">lcm</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1670" class="TbT.TblText">Returns the least common multiple of its two arguments.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1670" class="TbT.TblText">286</a></p>
-</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">gcd</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1672" class="TbT.TblText">Returns the greatest common divisor of its two arguments.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1672" class="TbT.TblText">287</a></p>
-</td></tr></table><p class="Anchor"> <a name="MARKER-2-1397"></a></p>
-<table class="numbered"><caption><strong>Table 11-15</strong>  Methods on singleton(&lt;integer&gt;)</caption>
-<tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-</th><th><p class="TbH.TblHd"> </p>
-</th><th><p class="TbH.TblHd"> Description</p>
-</th><th><p class="TbH.TblHd"> Page</p>
-</th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">limited</code></p>
-</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1559" class="TbT.TblText">Returns a limited subtype of a class.</a></p>
-</td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1559" class="TbT.TblText">263</a></p>
-</td></tr></table>
 </div>
 
 <div class="wm-div-footers">

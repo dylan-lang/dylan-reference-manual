@@ -64,11 +64,13 @@
 </td><td><p class="TbT.TblText"> <i class="TbT.TblText">(wildcard)</i></p>
 </td><td><p class="TbT.TblText"> fragment</p>
 </td></tr></table><p class="T1.Text1">Notes:</p>
-<p class="N/.NList=1">Parsed expression fragments are described on <a href="drm_77.html#MARKER-9-1199" class="N/.NList=1">page 146</a>.</p>
-<p class="N.NList">Where <i class="Parameter N.NList">expression, operand,</i> <i class="Parameter N.NList">constituents</i> or <i class="Parameter N.NList">body</i>  appears in the grammar that this constraint accepts, the bound fragment contains a parsed expression fragment, not the original elementary fragments.</p>
-<p class="N.NList">Parsing stops at an intermediate word.</p>
-<p class="N.NList">The body is wrapped in <code class="cv N.NList">begin ... end</code> to make it an expression, using the standard binding of <code class="cv N.NList">begin</code> in the Dylan module. An empty body defaults to <code class="cv N.NList">#f</code>.</p>
-<p class="N.NList">A pattern-variable with a <code class="cv N.NList">macro</code> constraint accepts exactly one elementary fragment, which must be a macro call fragment. It binds the pattern variable to the expansion of the macro.</p>
+<ol>
+  <li>Parsed expression fragments are described on <a href="drm_77.html#MARKER-9-1199" class="N/.NList=1">page 146</a>.</li>
+  <li>Where <i class="Parameter N.NList">expression, operand,</i> <i class="Parameter N.NList">constituents</i> or <i class="Parameter N.NList">body</i>  appears in the grammar that this constraint accepts, the bound fragment contains a parsed expression fragment, not the original elementary fragments.</li>
+  <li>Parsing stops at an intermediate word.</li>
+  <li>The body is wrapped in <code class="cv N.NList">begin ... end</code> to make it an expression, using the standard binding of <code class="cv N.NList">begin</code> in the Dylan module. An empty body defaults to <code class="cv N.NList">#f</code>.</li>
+  <li>A pattern-variable with a <code class="cv N.NList">macro</code> constraint accepts exactly one elementary fragment, which must be a macro call fragment. It binds the pattern variable to the expansion of the macro.</li>
+</ol>
 <p class="T1.Text1">Some implementations and a future version of the Dylan language specification might add more constraint choices to this table.</p>
 <p class="T1.Text1">When a pattern variable has the same name as an auxiliary rule-set, its constraint defaults to <a name="MARKER-2-1258"></a>wildcard and can be omitted. Otherwise a constraint must be specified in every <i class="Parameter T1.Text1">pattern-variable</i> and <i class="Parameter T1.Text1">pattern-keyword</i>.</p>
 <p class="T1.Text1">A constraint applies only to the specific pattern variable occurrence to which it is attached. It does not constrain other pattern variable occurrences with the same name. </p>

@@ -27,14 +27,14 @@
 <p class="T1.Text1">Dylan <a name="MARKER-2-2091"></a>syntax can be parsed with an <a name="MARKER-2-2092"></a>LALR(1) <a name="MARKER-2-2093"></a>grammar.</p>
 <p class="T1.Text1"><a name="MARKER-2-2094"></a>This appendix uses some special notation to make the presentation of the grammar more readable. </p>
 <ul class="B1.Bullet1">
-<li class="B1.Bullet1">The <em class="Subscript B1.Bullet1"><i class="Subscript B1.Bullet1"><sub>opt</sub></i></em> suffix means that the preceding item is optional.</li>
-<li class="B1.Bullet1">A trailing ellipsis (...) is used in two different ways to signal possible repetition.</li>
-<ul class="B2.Bullet2">
-<li class="B2.Bullet2">If there is only one item on the line preceding the ellipsis, the item may appear one or more times.</li>
-<li class="B2.Bullet2">If more than one item precedes the ellipsis, the last of these items is designated a separator; the rest may appear one or more times, with the separator appearing after each occurrence but the last. (When only one item appears, the separator does not appear.)</li>
-</ul>
-<li class="B1.Bullet1">Identifiers for grammar rules are written with uppercase letters when the identifier is used in the phrase grammar but defined in the lexical grammar.</li>
-<li class="B1.Bullet1">The grammar does not use distinct identifiers for grammar rules that differ only in alphabetic case.</li>
+  <li class="B1.Bullet1">The <em class="Subscript B1.Bullet1"><i class="Subscript B1.Bullet1"><sub>opt</sub></i></em> suffix means that the preceding item is optional.</li>
+  <li class="B1.Bullet1">A trailing ellipsis (...) is used in two different ways to signal possible repetition.</li>
+  <ul class="B2.Bullet2">
+    <li class="B2.Bullet2">If there is only one item on the line preceding the ellipsis, the item may appear one or more times.</li>
+    <li class="B2.Bullet2">If more than one item precedes the ellipsis, the last of these items is designated a separator; the rest may appear one or more times, with the separator appearing after each occurrence but the last. (When only one item appears, the separator does not appear.)</li>
+  </ul>
+  <li class="B1.Bullet1">Identifiers for grammar rules are written with uppercase letters when the identifier is used in the phrase grammar but defined in the lexical grammar.</li>
+  <li class="B1.Bullet1">The grammar does not use distinct identifiers for grammar rules that differ only in alphabetic case.</li>
 </ul>
 <p class="Default"> In the following grammar, some tokens are used multiple ways. For example the hyphen, "<code class="cv Default">-</code>," is punctuation, a unary operator, and a binary operator; also, "<code class="cv Default">method</code>" is a <em class="Default">begin-word</em> and a <em class="Default">define-body-word</em>. In some parsing implementations such multiple meanings of a token may not be possible. However this is just an implementation issue since the meaning of the grammar is clear. <code class="cv Default">method</code> is used as punctuation in <i class="Parameter Default">local-methods</i> and <i class="Parameter Default">method-definition</i>; since <code class="cv Default">method</code> is not a core reserved word, this typically has to be implemented by accepting any <em class="Default">macro-name</em> and checking semantically that the word used is "<code class="cv Default">method</code>." The grammar as presented is not obviously LALR(1), since the required changes would tend to obscure the readability for human beings (especially in macro definitions and case-body). The grammar can be made LALR(1) through well-known standard transformations implemented by most parser generators.</p>
 <a name="HEADING116-11"></a>

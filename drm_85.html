@@ -28,17 +28,14 @@
 <p class="T1.Text1">Specifically, a macro can bind <a name="MARKER-2-1272"></a>temporary variables in its expansion without the risk of accidentally capturing references in the macro call to another binding with the same name. Furthermore, a macro can reference module bindings in its expansion without the risk of those references accidentally being <a name="MARKER-2-1273"></a>captured by bindings of other variables with the same name that surround the macro call. A macro can reference module bindings in its expansion without worrying that the intended bindings might have different names in a module where the macro is called.</p>
 <p class="T1.Text1">One way to implement this is for each <i class="Parameter T1.Text1">template-element</i> that is a <em class="T1.Text1">name</em>, <em class="T1.Text1">unary-operator</em>, or <em class="T1.Text1">binary-operator</em> to be replaced in the macro expansion by a special token that plays the same grammatical role as the <em class="T1.Text1">name</em>, <em class="T1.Text1">unary-operator</em>, or <em class="T1.Text1">binary-operator</em> but remembers three pieces of information:</p>
 <ul class="B1.Bullet1">
-<li class="B1.Bullet1">The original <em class="B1.Bullet1">name</em>. For an operator, this is the name listed in <a href="drm_31.html#MARKER-9-427" class="B1.Bullet1">Table 4-1 on page 37</a>.
-</li>
-<li class="B1.Bullet1">The lexical context where the macro was defined, which is just a module since macro definitions are only allowed at top level, not inside of bindings.
-</li>
-<li class="B1.Bullet1">The specific macro call occurrence. This could be an integer that is incremented each time a macro expansion occurs.
+  <li class="B1.Bullet1">The original <em class="B1.Bullet1">name</em>. For an operator, this is the name listed in <a href="drm_31.html#MARKER-9-427" class="B1.Bullet1">Table 4-1 on page 37</a>.</li>
+  <li class="B1.Bullet1">The lexical context where the macro was defined, which is just a module since macro definitions are only allowed at top level, not inside of bindings.</li>
+  <li class="B1.Bullet1">The specific macro call occurrence. This could be an integer that is incremented each time a macro expansion occurs.</li>
+</ul>
 <p class="T1.Text1">In general one cannot know until all macros are expanded whether a <em class="T1.Text1">name</em> is a bound variable reference, a module binding reference, a variable that is being bound, or something that is not a binding name at all, such as a definition <i class="Parameter T1.Text1">modifier</i> or an intermediate word. Similarly, one cannot know until all macros are expanded whether a <em class="T1.Text1">unary-operator</em> or <em class="T1.Text1">binary-operator</em> refers to a local binding or a module binding. Thus the information for each of those cases is retained in the special token. A named value reference and a binding connect if and only if the original <em class="T1.Text1">names</em> and the specific macro call occurrences are both the same. (In that case, the lexical contexts will also be the same, but this need not be checked.)  A named value reference and a binding never connect if one originated in a template and the other originated in a macro call. </p>
 <p class="T1.Text1"><a name="MARKER-2-1274"></a>References in a macro expansion to <code class="cv T1.Text1">element</code> or <code class="cv T1.Text1">aref</code> created by using element reference syntax  must receive similar treatment so the <em class="T1.Text1">name</em> <code class="cv T1.Text1">element</code> or <code class="cv T1.Text1">aref</code> gets looked up  in the environment of the macro definition, not the environment of the  macro call.</p>
 <p class="T1.Text1">For purposes of hygiene, a <i class="Parameter T1.Text1">pattern-keyword default</i> is treated like part of a template, even though it is actually part of a pattern.</p>
 <p class="T1.Text1"><a name="MARKER-2-1275"></a>The mapping from getters to setters done by the <code class="cv T1.Text1">:=</code> operator is hygienic. In all cases the setter name is looked up in the same lexical context and macro call occurrence as the getter name.</p>
-</li>
-</ul>
 <a name="HEADING85-12"></a>
 <a name="UID-Macros-1902"></a>
 <h2 class="H2.Heading2"> Intentional Hygiene Violation</h2>
@@ -51,36 +48,24 @@
 <p class="T1.Text1">This allows exported macros to make use of private bindings without requiring these bindings to be exported for general use. The module that calls the macro does not need to import the private bindings used by the expansion.</p>
 <p class="T1.Text1">If one of the following template-element sequences appears in the right-hand side of a rewrite rule, it may introduce named value references to the indicated name in an expansion of the macro. If such a named value reference does not refer to a local binding created by the macro expansion then it must have the same meaning as would a named value reference with the same name adjacent to the macro definition.</p>
 <ul class="B1.Bullet1">
-<li class="B1.Bullet1"><i class="Parameter B1.Bullet1">variable-name<em class="Parameter B1.Bullet1"><br /><br /></em></i>Reference to <i class="Parameter B1.Bullet1">variable-name</i>
-</li>
-<li class="B1.Bullet1"><i class="Parameter B1.Bullet1">getter-name</i> <code class="cv B1.Bullet1">( <i class="Parameter cv B1.Bullet1">template<em class="Subscript Parameter cv B1.Bullet1"><sub>opt</sub>  )</em></i></code> <i class="Parameter B1.Bullet1">assignment-operator<br />assignment-operator-name<code class="cv Parameter B1.Bullet1"> ( template<em class="Subscript cv Parameter B1.Bullet1"><sub>opt</sub> getter-name ( template<sub>opt</sub></em></code></i> <code class="cv B1.Bullet1">) )<br /><br /></code>Reference to <i class="Parameter B1.Bullet1">getter-name<code class="cv Parameter B1.Bullet1"> ## &quot;-setter&quot;</code></i>
-</li>
-<li class="B1.Bullet1"><code class="cv B1.Bullet1">[</code> <i class="Parameter B1.Bullet1">template<em class="Subscript Parameter B1.Bullet1"><sub>opt</sub><code class="cv Subscript Parameter B1.Bullet1"> ] assignment-operator<br />assignment-operator-name ( template<sub>opt</sub> [ template<sub>opt</sub> ] )<br /></code></em></i><br />Reference to either <code class="cv B1.Bullet1">element-setter</code> and <code class="cv B1.Bullet1">aref-setter</code>
-</li>
-<li class="B1.Bullet1"><code class="cv B1.Bullet1">. <i class="Parameter cv B1.Bullet1">getter-name</i></code> <i class="Parameter B1.Bullet1">assignment-operator<br />assignment-operator-name<code class="cv Parameter B1.Bullet1"> ( template<em class="Subscript cv Parameter B1.Bullet1"><sub>opt</sub> . getter-name )<br /></em></code></i><br />Reference to <i class="Parameter B1.Bullet1">getter-name<code class="cv Parameter B1.Bullet1"> ## &quot;-setter&quot;</code></i>
-</li>
-<li class="B1.Bullet1"><code class="cv B1.Bullet1">define <i class="Parameter cv B1.Bullet1">definition-head<em class="Subscript Parameter cv B1.Bullet1"><sub>opt</sub> definer-name<br /></em></i></code><br />Reference to <i class="Parameter B1.Bullet1">definer-name<code class="cv Parameter B1.Bullet1"> ## &quot;-definer&quot;</code></i>
+  <li class="B1.Bullet1"><i class="Parameter B1.Bullet1">variable-name<em class="Parameter B1.Bullet1"><br /><br /></em></i>Reference to <i class="Parameter B1.Bullet1">variable-name</i></li>
+  <li class="B1.Bullet1"><i class="Parameter B1.Bullet1">getter-name</i> <code class="cv B1.Bullet1">( <i class="Parameter cv B1.Bullet1">template<em class="Subscript Parameter cv B1.Bullet1"><sub>opt</sub>  )</em></i></code> <i class="Parameter B1.Bullet1">assignment-operator<br />assignment-operator-name<code class="cv Parameter B1.Bullet1"> ( template<em class="Subscript cv Parameter B1.Bullet1"><sub>opt</sub> getter-name ( template<sub>opt</sub></em></code></i> <code class="cv B1.Bullet1">) )<br /><br /></code>Reference to <i class="Parameter B1.Bullet1">getter-name<code class="cv Parameter B1.Bullet1"> ## &quot;-setter&quot;</code></i></li>
+  <li class="B1.Bullet1"><code class="cv B1.Bullet1">[</code> <i class="Parameter B1.Bullet1">template<em class="Subscript Parameter B1.Bullet1"><sub>opt</sub><code class="cv Subscript Parameter B1.Bullet1"> ] assignment-operator<br />assignment-operator-name ( template<sub>opt</sub> [ template<sub>opt</sub> ] )<br /></code></em></i><br />Reference to either <code class="cv B1.Bullet1">element-setter</code> and <code class="cv B1.Bullet1">aref-setter</code></li>
+  <li class="B1.Bullet1"><code class="cv B1.Bullet1">. <i class="Parameter cv B1.Bullet1">getter-name</i></code> <i class="Parameter B1.Bullet1">assignment-operator<br />assignment-operator-name<code class="cv Parameter B1.Bullet1"> ( template<em class="Subscript cv Parameter B1.Bullet1"><sub>opt</sub> . getter-name )<br /></em></code></i><br />Reference to <i class="Parameter B1.Bullet1">getter-name<code class="cv Parameter B1.Bullet1"> ## &quot;-setter&quot;</code></i></li>
+  <li class="B1.Bullet1"><code class="cv B1.Bullet1">define <i class="Parameter cv B1.Bullet1">definition-head<em class="Subscript Parameter cv B1.Bullet1"><sub>opt</sub> definer-name<br /></em></i></code><br />Reference to <i class="Parameter B1.Bullet1">definer-name<code class="cv Parameter B1.Bullet1"> ## &quot;-definer&quot;</code></i></li>
+</ul>
 <p class="T1.Text1">Items in the preceding template-element sequences have the following meanings:</p>
 <ul class="B2.Bullet2">
-<li class="B2.Bullet2"><i class="Parameter B2.Bullet2"> assignment-operator-name</i> is a <em class="B2.Bullet2">name</em>, and the value of the binding with that name (in the module containing the macro definition in which the template occurs) is the assignment macro that is the value of the binding named <code class="cv B2.Bullet2">\:= </code>exported by the Dylan module of the Dylan library. 
-</li>
-<li class="B2.Bullet2"> <i class="Parameter B2.Bullet2">assignment-operator</i> is a binary-operator whose associated binding is an <i class="Parameter B2.Bullet2">assignment-operator-name</i>.)
-</li>
-<li class="B2.Bullet2"><i class="Parameter B2.Bullet2">definer-name</i> is a <em class="B2.Bullet2">define-body-word</em> or <em class="B2.Bullet2">define-list-word</em>.
-</li>
-<li class="B2.Bullet2"><i class="Parameter B2.Bullet2">variable-name</i> and <i class="Parameter B2.Bullet2">getter-name</i> are <em class="B2.Bullet2">name</em>s.
-</li>
-<li class="B2.Bullet2"><i class="Parameter B2.Bullet2">template</i> is defined in <a href="drm_116.html#MARKER-9-2090" class="B2.Bullet2">Appendix A, "BNF,"</a> on <a href="drm_118.html#MARKER-9-2121" class="B2.Bullet2">page 429</a>.
-</li>
-<li class="B2.Bullet2"><i class="Parameter B2.Bullet2">definition-head</i> is defined in <a href="drm_116.html#MARKER-9-2090" class="B2.Bullet2">Appendix A, "BNF,"</a> on <a href="drm_118.html#MARKER-9-2117" class="B2.Bullet2">page 427</a>.
-</li>
-<li class="B2.Bullet2">The notation <i class="Parameter B2.Bullet2">foo<code class="cv Parameter B2.Bullet2"> ## &quot;string&quot;</code></i> indicates a new token composed of the text of <i class="Parameter B2.Bullet2">foo</i> concatenated with the string.
+  <li class="B2.Bullet2"><i class="Parameter B2.Bullet2"> assignment-operator-name</i> is a <em class="B2.Bullet2">name</em>, and the value of the binding with that name (in the module containing the macro definition in which the template occurs) is the assignment macro that is the value of the binding named <code class="cv B2.Bullet2">\:= </code>exported by the Dylan module of the Dylan library.</li>
+  <li class="B2.Bullet2"> <i class="Parameter B2.Bullet2">assignment-operator</i> is a binary-operator whose associated binding is an <i class="Parameter B2.Bullet2">assignment-operator-name</i>.)</li>
+  <li class="B2.Bullet2"><i class="Parameter B2.Bullet2">definer-name</i> is a <em class="B2.Bullet2">define-body-word</em> or <em class="B2.Bullet2">define-list-word</em>.</li>
+  <li class="B2.Bullet2"><i class="Parameter B2.Bullet2">variable-name</i> and <i class="Parameter B2.Bullet2">getter-name</i> are <em class="B2.Bullet2">name</em>s.</li>
+  <li class="B2.Bullet2"><i class="Parameter B2.Bullet2">template</i> is defined in <a href="drm_116.html#MARKER-9-2090" class="B2.Bullet2">Appendix A, "BNF,"</a> on <a href="drm_118.html#MARKER-9-2121" class="B2.Bullet2">page 429</a>.</li>
+  <li class="B2.Bullet2"><i class="Parameter B2.Bullet2">definition-head</i> is defined in <a href="drm_116.html#MARKER-9-2090" class="B2.Bullet2">Appendix A, "BNF,"</a> on <a href="drm_118.html#MARKER-9-2117" class="B2.Bullet2">page 427</a>.</li>
+  <li class="B2.Bullet2">The notation <i class="Parameter B2.Bullet2">foo<code class="cv Parameter B2.Bullet2"> ## &quot;string&quot;</code></i> indicates a new token composed of the text of <i class="Parameter B2.Bullet2">foo</i> concatenated with the string.</li>
+</ul>
 <p class="T1.Text1">Note that these template-element sequences can overlap in a template. For example <code class="cv T1.Text1">{ foo (bar) := }</code> is a potential reference to <code class="cv T1.Text1">foo</code>, to <code class="cv T1.Text1">foo-setter</code>, and to <code class="cv T1.Text1">bar</code>.</p>
 <p class="T1.Text1">Implementations must use some automatic mechanism for noting the bindings associated with the named value references in macro expansions produced by the template-element sequences described above, and must make such bindings available to any library where the macro is accessible. In general, the set of bindings that must be made available to other libraries cannot be computed precisely because the right-hand sides of rewrite rules are not fully parsed until after a macro is called and expanded, making it impossible to determine whether an occurrence of one of the described sequences of template elements will actually produce a named variable reference in the expansion. However, an upper bound on this set of bindings can be computed by assuming that all occurrences of the described template-element sequences might introduce the indicated named value reference if there is a binding for that name accessible from the module in which the macro definition appears.<a name="MARKER-2-1279"></a><a name="MARKER-2-1280"></a></p>
-</li>
-</ul>
-</li>
-</ul>
 
 </div>
 
