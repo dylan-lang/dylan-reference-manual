@@ -487,13 +487,14 @@
   <dd class="Cliche"><p class="Cliche"> None.</p></dd>
   <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
   <dd class="Cliche"><p class="Cliche"> The class of collections that may grow or shrink to accommodate adding or removing elements.</p>
-    <p class="T1.Text1"><a name="MARKER-2-1423"></a>Stretchy collections allow <code class="T1.Text1"><a name="MARKER-2-1424"></a>element-setter </code>to be called with a key that is not present in the collection, expanding the collection as necessary to add a new element in that case. Each concrete subclass of <code class="T1.Text1">&lt;stretchy-collection&gt;</code> must provide or inherit a method for <code class="T1.Text1">element-setter </code>that behaves as follows when there is not already an element present for the indicated key:</p></dd>
+    <p class="T1.Text1"><a name="MARKER-2-1423"></a>Stretchy collections allow <code class="T1.Text1"><a name="MARKER-2-1424"></a>element-setter </code>to be called with a key that is not present in the collection, expanding the collection as necessary to add a new element in that case. Each concrete subclass of <code class="T1.Text1">&lt;stretchy-collection&gt;</code> must provide or inherit a method for <code class="T1.Text1">element-setter </code>that behaves as follows when there is not already an element present for the indicated key:</p>
+    <ul class="B1.Bullet1">
+      <li class="B1.Bullet1"> If the class is a subclass of <code class="B1.Bullet1">&lt;explicit-key-collection&gt;,</code> adds a new element to the collection with the indicated key.</li>
+      <li class="B1.Bullet1">If the class is a subclass of <code class="B1.Bullet1">&lt;sequence&gt;,</code> first calls <code class="B1.Bullet1">size-setter</code> on the key + 1 and the collection to expand the sequence. The key must be a non-negative integer.</li>
+    </ul>
+    <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;stretchy-collection&gt;</code> is <code class="cv T1.Text1">indefinite &lArr; &lt;object&gt;</code>.</p>
+  </dd>
 </dl>
-<ul class="B1.Bullet1">
-  <li class="B1.Bullet1"> If the class is a subclass of <code class="B1.Bullet1">&lt;explicit-key-collection&gt;,</code> adds a new element to the collection with the indicated key.</li>
-  <li class="B1.Bullet1">If the class is a subclass of <code class="B1.Bullet1">&lt;sequence&gt;,</code> first calls <code class="B1.Bullet1">size-setter</code> on the key + 1 and the collection to expand the sequence. The key must be a non-negative integer.
-    <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;stretchy-collection&gt;</code> is <code class="cv T1.Text1">indefinite &lArr; &lt;object&gt;</code>.</p></li>
-</ul>
 <dl class="Cliche">
   <dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
   <dd class="Cliche"><p class="Cliche"> The class <code class="cv Cliche">&lt;stretchy-collection&gt;</code> provides the following operations:</p>
