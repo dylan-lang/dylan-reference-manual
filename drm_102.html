@@ -47,7 +47,7 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>Collection Operations</title>
+  <title>The Dylan Reference Manual: Collection Operations</title>
 </head>
 <body>
 
@@ -55,10 +55,237 @@
 <a name="HEADING102"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_103.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_101.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_96.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">12 The Built-In Functions</p>
+<p id="navigation"><a href="drm_101.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_103.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 12</p>
+  <p id="section-name">The Built-In Functions</p>
+</div>
+
+<div class="wm-div-toc">
+  <ul class="page-toc">
+    <li><a href="drm_102.html#HEADING102-3">Collection Properties</a>
+      <ul>
+	<li><a href="drm_102.html#HEADING102-4"><code>empty?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-10"><code>empty?</code>   collection &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-12"><code>size</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-18"><code>size</code> collection &rArr; integer-or-false <span class="attributes-summary">[G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-20"><code>size</code> array &rArr; size  <span class="attributes-summary">[G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-23"><code>size</code>  list  &rArr;  integer-or-false <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-25"><code>size</code>   range &rArr;  size <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-27"><code>size</code>   table &rArr;  size <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-29"><code>size-setter</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-40"><code>rank</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-46"><code>rank</code> array &rArr; rank <span class="attributes-summary">[G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-48"><code>row-major-index</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-56"><code>row-major-index</code> array #rest subscripts &rArr; index  <span class="attributes-summary">[G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-58"><code>dimensions</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-64"><code>dimensions</code> vector &rArr;  sequence <span class="attributes-summary">[G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-66"><code>dimension</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-74"><code>dimension</code> array axis &rArr; dimension   <span class="attributes-summary">[G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-76"><code>key-test</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-83"><code>key-test</code> sequence  &rArr; test-function <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-85"><code>key-test</code> table  &rArr; test-function <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-87"><code>key-sequence</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+      </ul>
+    </li>
+    <li><a href="drm_102.html#HEADING102-95">Selecting Elements</a>
+      <ul>
+	<li><a href="drm_102.html#HEADING102-96"><code>element</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-105"><code>element</code> simple-vector  index #key default &rArr;  element  <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-107"><code>element</code> unicode-string index #key default  &rArr;  character   <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-109"><code>element</code> byte-string index #key default  &rArr;  character       <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-111"><code>element</code> table key #key default  &rArr;  element       <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-113"><code>element-setter</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-125"><code>element-setter</code>  new-element simple-vector  index  <span class="attributes-summary">[Sealed G.F. Method]</span> &rArr;  new-element </a></li>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-127"><code>element-setter</code>   new-value table key  <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-129"><code>element-setter</code>  character unicode-string index   <span class="attributes-summary">[Sealed G.F. Method]</span> &rArr;  character</a></li>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-131"><code>element-setter</code>  character byte-string index &rArr;  character  <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-133"><code>aref</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-141"><code>aref</code> array #rest indices &rArr; element  <span class="attributes-summary">[G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-143"><code>aref-setter</code>   <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-153"><code>aref-setter</code> new-value   array  #rest indices &rArr; new-value  <span class="attributes-summary">[G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-155"><code>first</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-163"><code>second</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-170"><code>third</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-177"><code>first-setter</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-185"><code>second-setter</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-192"><code>third-setter</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-199"><code>last</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-208"><code>last-setter</code>      <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-219"><code>head</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-227"><code>tail</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-235"><code>head-setter</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-244"><code>tail-setter</code> <span class="attributes-summary">[Function]</span></a></li>
+      </ul>
+    </li>
+    <li><a href="drm_102.html#HEADING102-253">Adding and Removing Elements</a>
+      <ul>
+	<li><a href="drm_102.html#HEADING102-254"><code>add</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-264"><code>add!</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-274"><code>add!</code>   deque new-value  &rArr; deque <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-276"><code>add!</code>   stretchy-vector new-element  &rArr; stretchy-vector <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-278"><code>add!</code>   list element &rArr;  pair <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-280"><code>add-new</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-291"><code>add-new!</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-302"><code>remove</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-314"><code>remove!</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-325"><code>remove!</code>   deque value #key test count   &rArr; deque <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-327"><code>remove!</code>   stretchy-vector element #key test count   <span class="attributes-summary">[Sealed G.F. Method]</span> &rArr; stretchy-vector</a></li>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-329"><code>remove!</code>   list element #key test count  &rArr;  list <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-331"><code>push</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-339"><code>pop</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-346"><code>push-last</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-354"><code>pop-last</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+      </ul>
+    </li>
+    <li><a href="drm_102.html#HEADING102-361">Reordering Elements</a>
+      <ul>
+	<li><a href="drm_102.html#HEADING102-362"><code>reverse</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-371"><code>reverse</code>   range &rArr;  new-range <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-373"><code>reverse!</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-382"><code>reverse!</code>   range &rArr;  range <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-384"><code>sort</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-395"><code>sort!</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+      </ul>
+    </li>
+    <li><a href="drm_102.html#HEADING102-407">Set Operations</a>
+      <ul>
+	<li><a href="drm_102.html#HEADING102-408"><code>intersection</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-419"><code>intersection</code>   range1 range2  #key test &rArr;  range <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-421"><code>union</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-433"><code>remove-duplicates</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-443"><code>remove-duplicates!</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+      </ul>
+    </li>
+    <li><a href="drm_102.html#HEADING102-453">Subsequence Operations</a>
+      <ul>
+	<li><a href="drm_102.html#HEADING102-454"><code>copy-sequence</code>  <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-463"><code>copy-sequence</code>   range #key start end &rArr;  new-range <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-465"><code>concatenate</code>  <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-475"><code>concatenate-as</code>    <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-486"><code>replace-subsequence!</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-500"><code>subsequence-position</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+      </ul>
+    </li>
+    <li><a href="drm_102.html#HEADING102-511">Mapping and Reducing</a>
+      <ul>
+	<li><a href="drm_102.html#HEADING102-512">Simple Mapping</a>
+	  <ul>
+	    <li><a href="drm_102.html#HEADING102-515"><code>do</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="drm_102.html#HEADING102-524"><code>map</code>   <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="drm_102.html#HEADING102-534"><code>map-as</code> <span class="attributes-summary">[Function]</span> </a></li>
+	    <li><a href="drm_102.html#HEADING102-544"><code>map-into</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="drm_102.html#HEADING102-558"><code>any?</code>    <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="drm_102.html#HEADING102-568"><code>every?</code>  <span class="attributes-summary">[Function]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-578">Extensible Mapping Functions</a>
+	  <ul>
+	    <li><a href="drm_102.html#HEADING102-579"><code>reduce</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	    <li><a href="drm_102.html#HEADING102-590"><code>reduce1</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	    <li><a href="drm_102.html#HEADING102-601"><code>choose</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	    <li><a href="drm_102.html#HEADING102-609"><code>choose-by</code>   <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-618">Other Mapping Functions</a>
+	  <ul>
+	    <li><a href="drm_102.html#HEADING102-619"><code>member?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	      <ul>
+		<li class="gf-method"><a href="drm_102.html#HEADING102-629"><code>member?</code>  val range  #key test &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_102.html#HEADING102-631"><code>find-key</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	    <li><a href="drm_102.html#HEADING102-642"><code>remove-key!</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	      <ul>
+		<li class="gf-method"><a href="drm_102.html#HEADING102-650"><code>remove-key!</code> table key   &rArr; table <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_102.html#HEADING102-652"><code>replace-elements!</code>  <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	    <li><a href="drm_102.html#HEADING102-663"><code>fill!</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	  </ul>
+	</li>
+      </ul>
+    </li>
+    <li><a href="drm_102.html#HEADING102-674">The Iteration Protocol</a>
+      <ul>
+	<li><a href="drm_102.html#HEADING102-675"><code>forward-iteration-protocol</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_102.html#HEADING102-703"><code>forward-iteration-protocol</code> table    &rArr;  initial-state limit next-state finished-state? current-key current-element current-element-setter copy-state  <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_102.html#HEADING102-705"><code>backward-iteration-protocol</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	<li><a href="drm_102.html#HEADING102-719">The Table Protocol</a>
+	  <ul>
+	    <li><a href="drm_102.html#HEADING102-721"><code>table-protocol</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	      <ul>
+		<li class="gf-method"><a href="drm_102.html#HEADING102-732"><code>table-protocol</code> object-table   &rArr; test-function  hash-function <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_102.html#HEADING102-736"><code>merge-hash-codes</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="drm_102.html#HEADING102-749"><code>object-hash</code> <span class="attributes-summary">[Function]</span></a></li>
+	  </ul>
+	</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<hr />
 
 </div>
+
 <a name="HEADING102-0"></a>
 <a name="UID-Built-In_Functions-3130"></a>
 <h1 class="H1.Heading1"><a name="MARKER-9-1696"></a>Collection Operations</h1>
@@ -174,9 +401,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>object</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -252,9 +476,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;array&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>subscripts</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;integer&gt;</code>.</p></dd>
   </dl></dd>
@@ -331,9 +552,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;array&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>axis</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;integer&gt;</code>.</p></dd>
   </dl></dd>
@@ -452,9 +670,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;collection&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">key<code></code></i></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">default<code></code></i></dt>
@@ -505,9 +720,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">mutable-collection<code></code></i></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;mutable-collection&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">key<code></code></i></dt>
@@ -563,9 +775,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;array&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">indices<code></code></i></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;integer&gt;</code>.</p></dd>
   </dl></dd>
@@ -605,9 +814,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">array<code></code></i></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;array&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>indices</var></dt>
@@ -650,9 +856,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">default<code></code></i></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -688,9 +891,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">default<code></code></i></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -725,9 +925,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">default<code></code></i></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -762,9 +959,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>mutable-sequence</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;mutable-sequence&gt;</code>.</p></dd>
   </dl></dd>
@@ -800,9 +994,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>mutable-sequence</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;mutable-sequence&gt;</code>.</p></dd>
   </dl></dd>
@@ -837,9 +1028,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>mutable-sequence</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;mutable-sequence&gt;</code>.</p></dd>
   </dl></dd>
@@ -874,9 +1062,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>default</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -916,9 +1101,6 @@ last (#(&quot;emperor&quot;, &quot;of&quot;, &quot;china&quot;))
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>mutable-sequence</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;mutable-sequence&gt;</code>.</p></dd>
   </dl></dd>
@@ -1049,9 +1231,6 @@ tail (#())
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>pair</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;pair&gt;</code>.</p></dd>
   </dl></dd>
@@ -1094,9 +1273,6 @@ x
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>pair</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;pair&gt;</code>.</p></dd>
   </dl></dd>
@@ -1146,9 +1322,6 @@ x
       <dd>
         <p class="Cliche2">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>new-element</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -1192,9 +1365,6 @@ add (*numbers*, 1)
       <dd>
         <p class="Cliche2">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>new-element</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -1247,9 +1417,6 @@ add! (*numbers*, 1)
       <dd>
         <p class="Cliche2">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>new-element</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>test</var></dt>
@@ -1294,9 +1461,6 @@ add-new (#(3, 4, 5), 4)
       <dd>
         <p class="Cliche2">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>new-element</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>test</var></dt>
@@ -1341,9 +1505,6 @@ add-new! (list (3, 4, 5), 4)
       <dd>
         <p class="Cliche2">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>value</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>test</var></dt>
@@ -1392,9 +1553,6 @@ define variable *new-list* = remove(*old-list*, 1)
       <dd>
         <p class="Cliche2">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>value</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>test</var></dt>
@@ -1445,9 +1603,6 @@ define variable *new-list* = remove(*old-list*, 1)
       <dd>
         <p class="Cliche">An instance of <code>&lt;deque&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>new-value</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -1517,9 +1672,6 @@ define variable *new-list* = remove(*old-list*, 1)
       <dd>
         <p class="Cliche">An instance of <code>&lt;deque&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>new-value</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -1679,9 +1831,6 @@ reverse(*x*)
       <dd>
         <p class="Cliche2">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>test</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;function&gt;</code>. The default is <code>&lt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>stable</var></dt>
@@ -1729,9 +1878,6 @@ sort (*numbers*)
       <dd>
         <p class="Cliche2">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>test</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;function&gt;</code>. The default is <code>&lt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>stable</var></dt>
@@ -1775,9 +1921,6 @@ sort (*numbers*)
       <dd>
         <p class="Cliche">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>sequence2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;sequence&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>test</var></dt>
@@ -1802,7 +1945,7 @@ sort (*numbers*)
                 test: \=)
 #(&quot;george&quot;)</pre>
     <a name="HEADING102-419"></a>
-    <h4 class="H5.Heading5"><code>intersection   range1 range2 </code> <code>#key</code> test &rArr;  range <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code>intersection <var>range1 range2</var> #key <var>test</var> </code>&rArr;<code> <var>range</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1"><code>intersection</code> applied to two ranges and a test of <code>==</code> (the default) will produce another range as its result, even though the <code>type-for-copy</code> of a range is not <code>&lt;range&gt;</code>. If either <var>range1</var> or <var>range2</var> is unbounded, this method is guaranteed to terminate only if the <var>test</var> is <code>==</code>.</p>
   </dd>
 </dl>
@@ -1825,9 +1968,6 @@ sort (*numbers*)
       <dd>
         <p class="Cliche">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>sequence2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;sequence&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>test</var></dt>
@@ -1874,9 +2014,6 @@ union (#(&quot;butter&quot;, &quot;flour&quot;, &quot;sugar&quot;, &quot;salt&qu
       <dd>
         <p class="Cliche2">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>test</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;function&gt;</code>. The default is <code>==</code>.</p></dd>
   </dl></dd>
@@ -1923,9 +2060,6 @@ or
       <dd>
         <p class="Cliche2">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>test</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;function&gt;</code>. The default is <code>==</code>.</p></dd>
   </dl></dd>
@@ -1977,9 +2111,6 @@ or
       <dd>
         <p class="Cliche">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>start</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;integer&gt;</code>. The default is <code>0</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>end</var></dt>
@@ -2026,9 +2157,6 @@ copy-sequence (hamlet, start: 2, end: 4)
       <dd>
         <p class="Cliche2">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>more-sequences</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;sequence&gt;</code>.</p></dd>
   </dl></dd>
@@ -2069,9 +2197,6 @@ concatenate (&quot;low-&quot;, &quot;calorie&quot;)
       <dd>
         <p class="Cliche2">An instance of <code>&lt;type&gt;</code>, which must be a subtype of <code>&lt;mutable-sequence&gt;</code></p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>first-sequence</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam">  An instance of <code>&lt;sequence&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>more-sequences</var></dt>
@@ -2114,9 +2239,6 @@ concatenate-as (&lt;string&gt;, #('n', 'o', 'n'), #('f', 'a', 't'))
       <dd>
         <p class="Cliche">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>insert-sequence</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;sequence&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>start</var></dt>
@@ -2166,9 +2288,6 @@ define variable *original* = list (&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, 
       <dd>
         <p class="Cliche">An instance of <code>&lt;sequence&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>pattern</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;sequence&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>test</var></dt>
@@ -2219,9 +2338,6 @@ subsequence-position (&quot;Ralph Waldo Emerson&quot;, &quot;Waldo&quot;)
       <dd>
         <p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>collection</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;collection&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>more-collections</var></dt>
@@ -2268,9 +2384,6 @@ do (method (a b) print (a + b) end,
       <dd>
         <p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>collection</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;collection&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>more-collections</var></dt>
@@ -2314,9 +2427,6 @@ map (\+,
       <dd>
         <p class="Cliche2">An instance of <code>&lt;type&gt;</code>. It must be an instantiable subtype of <code>&lt;mutable-collection&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>function</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;function&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>collection</var></dt>
@@ -2361,9 +2471,6 @@ map-as (&lt;vector&gt;, \+,
       <dd>
         <p class="Cliche2">An instance of <code>&lt;mutable-collection&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>function</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;function&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>collection</var></dt>
@@ -2413,9 +2520,6 @@ x
       <dd>
         <p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>collection</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;collection&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>more-collections</var></dt>
@@ -2459,9 +2563,6 @@ any? (even?, #(1, 3, 5, 7))
       <dd>
         <p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>collection</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;collection&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>more-collections</var></dt>
@@ -2507,9 +2608,6 @@ every? (odd?, #(1, 3, 5, 7))
       <dd>
         <p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>initial-value</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>collection</var></dt>
@@ -2555,9 +2653,6 @@ reduce (max, high-score, #(3, 12, 9, 8, 8, 6))
       <dd>
         <p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>collection</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;collection&gt;</code>.</p></dd>
   </dl></dd>
@@ -2599,9 +2694,6 @@ reduce1 (\+, #(1, 2, 3, 4, 5))
       <dd>
         <p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>source-sequence</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;sequence&gt;</code>.</p></dd>
   </dl></dd>
@@ -2640,9 +2732,6 @@ choose (even?, #(3, 1, 4, 1, 5, 8, 9))
       <dd>
         <p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>test-sequence</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;sequence&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>value-sequence</var></dt>
@@ -2686,9 +2775,6 @@ choose-by (even?, range (from: 1),
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>collection</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;collection&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>test</var></dt>
@@ -2736,9 +2822,6 @@ member? (#&quot;banana&quot;, flavors)
       <dd>
         <p class="Cliche">An instance of <code>&lt;collection&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>predicate</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;function&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>skip</var></dt>
@@ -2786,9 +2869,6 @@ flavors[1]
       <dd>
         <p class="Cliche">An instance of <code>&lt;mutable-explicit-key-collection&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>key</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -2828,9 +2908,6 @@ flavors[1]
       <dd>
         <p class="Cliche2">An instance of <code>&lt;mutable-collection&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>predicate</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;function&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>new-value-fn</var></dt>
@@ -2875,9 +2952,6 @@ replace-elements! (numbers, odd?, double)
       <dd>
         <p class="Cliche2">An instance of <code>&lt;mutable-collection&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>value</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>start</var></dt>
@@ -2934,9 +3008,6 @@ fill! (numbers, 3, start: 2)
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>. The initial iteration state object.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">limit<code></code></i></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>  that is used by the <var>finished-state?</var> function to determine whether the iteration has been completed.</p></dd>
       <dt class="RP.RoutineParam"><var>next-state</var></dt>
@@ -2945,7 +3016,6 @@ fill! (numbers, 3, start: 2)
 	  <dt class="RP2.RoutineParam2"><code>next-state <var>collection state</var> </code>&rArr;<code> <var>new-state</var></code></dt>
 	  <dd class="RP2.RoutineParam2"><p class="RP2.RoutineParam2"></p></dd>
       </dl></dd>
-      <dt class="RP.RoutineParam"></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> This function steps the iteration by producing a new state from the associated <var>collection</var>  and <var>state. </var>The <var>next-state</var> function may or may not modify the <var>state</var>  argument; it is an error to use a state value after it has been passed to the associated <var>next-state</var> function. The <var>copy-state</var> function provides a mechanism for saving a particular state in an iteration for later resumption.</p></dd>
       <dt class="RP.RoutineParam"><var>finished-state?</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;function&gt;</code>. Its signature is</p></dd>
@@ -2953,7 +3023,6 @@ fill! (numbers, 3, start: 2)
 	  <dt class="RP2.RoutineParam2"><code>finished-state? <var>collection state limit</var></code> &rArr;<code> <var>boolean</var></code></dt>
 	  <dd class="RP2.RoutineParam2"><p class="RP2.RoutineParam2"></p></dd>
       </dl></dd>
-      <dt class="RP.RoutineParam"></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> This function returns <code>#t</code> if the iteration of the collection has been completed, i.e., there are no other elements of the collection to consider. It returns <code>#f</code> otherwise. It is an error to use a finished state in a call to the associated <var>next-state</var>, <var>current-element</var>, <var>current-key</var> or <var>current-element-setter</var> functions.</p></dd>
       <dt class="RP.RoutineParam"><var>current-key</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;function&gt;</code>. Its signature is</p></dd>
@@ -2961,7 +3030,6 @@ fill! (numbers, 3, start: 2)
 	  <dt class="RP2.RoutineParam2"><code>current-key <var>collection state</var></code> &rArr;<code> <var>key</var></code></dt>
 	  <dd class="RP2.RoutineParam2"><p class="RP2.RoutineParam2"></p></dd>
       </dl></dd>
-      <dt class="RP.RoutineParam"></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> This function returns the unique key associated with <var>state </var> in the <var>collection</var>. If the <var>current-key</var> function were called once with each <var>state</var> value produced during an iteration over a collection, the resulting sequence of values would contain every key from the collection exactly once; it would be the key-sequence of the collection.</p></dd>
       <dt class="RP.RoutineParam"><var>current-element</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam">  An instance of <code>&lt;function&gt;</code>. Its signature is</p></dd>
@@ -2969,12 +3037,10 @@ fill! (numbers, 3, start: 2)
 	  <dt class="RP2.RoutineParam2"><code>current-element <var>collection state</var></code> &rArr;<code> <var>element</var></code></dt>
 	  <dd class="RP2.RoutineParam2"><p class="RP2.RoutineParam2"></p></dd>
       </dl></dd>
-      <dt class="RP.RoutineParam"></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> This function returns the element of <var>collection</var> currently indicated by <var>state</var>.</p></dd>
       <dt class="RP.RoutineParam"><var>current-element-setter</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;function&gt;</code>. Its signature is</p></dd>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> current-element-setter <var>value</var> <i class="RP.RoutineParam">collection state<code> &rArr; value</code></i></p></dd>
-      <dt class="RP.RoutineParam"></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> This function sets the element of <var>collection</var>  indicated by <var>state</var> to <var>value</var>  and returns <var>value. </var>If <var>collection</var> is not an instance of <code>&lt;mutable-collection&gt;</code>, or if the <var>value</var> is not of a type acceptable to the collection, an error is signaled.</p></dd>
       <dt class="RP.RoutineParam"><var>copy-state</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;function&gt;</code>. Its signature is</p></dd>
@@ -2982,7 +3048,6 @@ fill! (numbers, 3, start: 2)
 	  <dt class="RP2.RoutineParam2"><code>copy-state <var>collection state</var></code> &rArr;<code> <var>new-state</var></code></dt>
 	  <dd class="RP2.RoutineParam2"><p class="RP2.RoutineParam2"></p></dd>
       </dl></dd>
-      <dt class="RP.RoutineParam"></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> This function returns a state that represents the same point in the iteration over <var>collection</var>  as is represented by <var>state. </var>  </p></dd>
   </dl></dd>
   <dt class="Cliche">Description:</dt>
@@ -3023,9 +3088,6 @@ fill! (numbers, 3, start: 2)
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">limit<code></code></i></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>next-state</var></dt>
@@ -3083,7 +3145,6 @@ fill! (numbers, 3, start: 2)
 	  <dt class="RP2.RoutineParam2"><code>test-function <var>key1 key2</var> </code>&rArr;<code> <var>boolean</var></code></dt>
 	  <dd class="RP2.RoutineParam2"><p class="RP2.RoutineParam2"></p></dd>
       </dl></dd>
-      <dt class="RP.RoutineParam"></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <var>test-function</var> is used to compare keys. It returns true if the keys are members of the same equivalence class according to the table's equivalence predicate.</p></dd>
       <dt class="RP.RoutineParam"><var>hash-function</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam">  An instance of <code>&lt;function&gt;</code>. Its signature is</p></dd>
@@ -3091,7 +3152,6 @@ fill! (numbers, 3, start: 2)
 	  <dt class="RP2.RoutineParam2"><code>hash-function <var>key</var> </code>&rArr;<code> <var>id</var> <var>state</var></code></dt>
 	  <dd class="RP2.RoutineParam2"><p class="RP2.RoutineParam2"></p></dd>
       </dl></dd>
-      <dt class="RP.RoutineParam"></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <var>hash-function</var> computes the hash code  of the <var>key</var>, using the hash function associated with the table's equivalence predicate. The hash code is returned as two values, <var>id</var> (an integer) and <var>state</var> (a hash state).</p></dd>
   </dl></dd>
   <dt class="Cliche">Description:</dt>
@@ -3127,9 +3187,6 @@ end method table-protocol; </pre>
       <dd>
         <p class="Cliche">An instance of <code>&lt;integer&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>state1</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>id2</var></dt>
@@ -3146,9 +3203,6 @@ end method table-protocol; </pre>
       <dd>
         <p class="Cliche">An instance of <code>&lt;integer&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>merged-state</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -3185,9 +3239,6 @@ end method table-protocol; </pre>
       <dd>
         <p class="Cliche">An instance of <code>&lt;integer&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>hash-state</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -3199,133 +3250,9 @@ end method table-protocol; </pre>
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-<ul class="footer">
-<li class="footer"><a href="drm_102.html#HEADING102-3" class="footer">Collection Properties</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-4" class="footer">empty? [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-10" class="footer">empty?   collection &rArr;  boolean [G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-12" class="footer">size [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-18" class="footer">size collection &rArr; integer-or-false [G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-20" class="footer">size array &rArr; size  [G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-23" class="footer">size  list  &rArr;  integer-or-false [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-25" class="footer">size   range &rArr;  size [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-27" class="footer">size   table &rArr;  size [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-29" class="footer">size-setter [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-40" class="footer">rank [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-46" class="footer">rank array &rArr; rank [G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-48" class="footer">row-major-index [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-56" class="footer">row-major-index array #rest subscripts &rArr; index  [G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-58" class="footer">dimensions [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-64" class="footer">dimensions vector &rArr;  sequence [G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-66" class="footer">dimension [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-74" class="footer">dimension array axis &rArr; dimension   [G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-76" class="footer">key-test [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-83" class="footer">key-test sequence  &rArr; test-function [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-85" class="footer">key-test table  &rArr; test-function [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-87" class="footer">key-sequence [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-95" class="footer">Selecting Elements</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-96" class="footer">element [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-105" class="footer">element simple-vector  index #key default &rArr;  element  [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-107" class="footer">element unicode-string index #key default  &rArr;  character   [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-109" class="footer">element byte-string index #key default  &rArr;  character       [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-111" class="footer">element table key #key default  &rArr;  element       [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-113" class="footer">element-setter [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-125" class="footer">element-setter  new-element simple-vector  index  [Sealed G.F. Method] &rArr;  new-element </a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-127" class="footer">element-setter   new-value table key  [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-129" class="footer">element-setter  character unicode-string index   [Sealed G.F. Method] &rArr;  character</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-131" class="footer">element-setter  character byte-string index &rArr;  character  [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-133" class="footer">aref [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-141" class="footer">aref array #rest indices &rArr; element  [G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-143" class="footer">aref-setter   [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-153" class="footer">aref-setter new-value   array  #rest indices &rArr; new-value  [G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-155" class="footer">first [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-163" class="footer">second [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-170" class="footer">third [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-177" class="footer">first-setter [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-185" class="footer">second-setter [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-192" class="footer">third-setter [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-199" class="footer">last [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-208" class="footer">last-setter      [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-219" class="footer">head [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-227" class="footer">tail [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-235" class="footer">head-setter [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-244" class="footer">tail-setter [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-253" class="footer">Adding and Removing Elements</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-254" class="footer">add [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-264" class="footer">add! [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-274" class="footer">add!   deque new-value  &rArr; deque [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-276" class="footer">add!   stretchy-vector new-element  &rArr; stretchy-vector [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-278" class="footer">add!   list element &rArr;  pair [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-280" class="footer">add-new [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-291" class="footer">add-new! [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-302" class="footer">remove [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-314" class="footer">remove! [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-325" class="footer">remove!   deque value #key test count   &rArr; deque [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-327" class="footer">remove!   stretchy-vector element #key test count   [Sealed G.F. Method] &rArr; stretchy-vector</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-329" class="footer">remove!   list element #key test count  &rArr;  list [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-331" class="footer">push [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-339" class="footer">pop [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-346" class="footer">push-last [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-354" class="footer">pop-last [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-361" class="footer">Reordering Elements</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-362" class="footer">reverse [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-371" class="footer">reverse   range &rArr;  new-range [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-373" class="footer">reverse! [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-382" class="footer">reverse!   range &rArr;  range [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-384" class="footer">sort [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-395" class="footer">sort! [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-407" class="footer">Set Operations</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-408" class="footer">intersection [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-419" class="footer">intersection   range1 range2  #key test &rArr;  range [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-421" class="footer">union [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-433" class="footer">remove-duplicates [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-443" class="footer">remove-duplicates! [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-453" class="footer">Subsequence Operations</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-454" class="footer">copy-sequence  [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-463" class="footer">copy-sequence   range #key start end &rArr;  new-range [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-465" class="footer">concatenate  [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-475" class="footer">concatenate-as    [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-486" class="footer">replace-subsequence! [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-500" class="footer">subsequence-position [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-511" class="footer">Mapping and Reducing</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-512" class="footer">Simple Mapping</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-515" class="footer">do [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-524" class="footer">map   [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-534" class="footer">map-as [Function] </a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-544" class="footer">map-into [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-558" class="footer">any?    [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-568" class="footer">every?  [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-578" class="footer">Extensible Mapping Functions</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-579" class="footer">reduce [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-590" class="footer">reduce1 [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-601" class="footer">choose [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-609" class="footer">choose-by   [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-618" class="footer">Other Mapping Functions</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-619" class="footer">member? [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-629" class="footer">member?  val range  #key test &rArr;  boolean [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-631" class="footer">find-key [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-642" class="footer">remove-key! [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-650" class="footer">remove-key! table key   &rArr; table [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-652" class="footer">replace-elements!  [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-663" class="footer">fill! [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-674" class="footer">The Iteration Protocol</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-675" class="footer">forward-iteration-protocol [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-703" class="footer">forward-iteration-protocol table    &rArr;  initial-state limit next-state finished-state? current-key current-element current-element-setter copy-state  [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-705" class="footer">backward-iteration-protocol [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-719" class="footer">The Table Protocol</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-721" class="footer">table-protocol [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-732" class="footer">table-protocol object-table   &rArr; test-function  hash-function [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-736" class="footer">merge-hash-codes [Function]</a></li>
-<li class="footer"><a href="drm_102.html#HEADING102-749" class="footer">object-hash [Function]</a></li>
-</ul>
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_103.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_101.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_96.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_101.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_103.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

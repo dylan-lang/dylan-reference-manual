@@ -46,18 +46,44 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>B Exported Names</title>
+  <title>The Dylan Reference Manual: B Exported Names</title>
 </head>
-<body>
+<body class="section-start">
 
 <div class="wm-div-body">
 <a name="HEADING119"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_120.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_118.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">The Dylan Reference Manual</p>
+<p id="navigation">
+  <a href="drm_118.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a>
+  <a href="drm_126.html"><img alt="next" src="next.gif" title="Go to next page" /></a>
+  <img id="up" alt="Up" src="upg.gif" title="Go to start of chapter" />
+  <a href="drm_1.html"><img alt="top" src="top.gif" /></a>
+  <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a>
+  <a href="drm_127.html"><img alt="index" src="index.gif" /></a>
+</p>
+
+<div id="section-header">
+  <p id="section-prefix">Appendix B</p>
+  <p id="section-name">Exported Names</p>
+</div>
+
+<div class="wm-div-toc">
+  <ul class="page-toc">
+    <li><a href="drm_119.html#HEADING119-1">Overview</a></li>
+    <li><a href="drm_119.html#HEADING120-0">Exported Classes</a></li>
+    <li><a href="drm_119.html#HEADING121-0">Exported Functions</a></li>
+    <li><a href="drm_119.html#HEADING122-0">Exported Constants</a></li>
+    <li><a href="drm_119.html#HEADING123-0">Exported Defining Macros</a></li>
+    <li><a href="drm_119.html#HEADING124-0">Exported Statement Macros</a></li>
+    <li><a href="drm_119.html#HEADING125-0">Exported Function Macros</a></li>
+  </ul>
+</div>
+
+<hr />
 
 </div>
+
 <a name="LINK-Name_Appendix-firstpage"></a><a name="HEADING119-0"></a>
 <a name="UID-Name_Appendix-299"></a>
 <h1 class="ApT.ApdxTitle">Exported Names</h1>
@@ -68,30 +94,305 @@
 <p class="T1.Text1"></p>
 <p class="T1.Text1"></p>
 
+<!-- Appended and adapted from drm_120.html -->
+<a name="HEADING120-0"></a>
+<a name="UID-Name_Appendix-6438"></a>
+<h2 class="H2.Heading2">Exported Classes</h2>
+<p class="T2.Text2">Fifty-two names exported from the Dylan module are bound to classes.</p>
+<pre class="NF.NameEntryFirst">
+&lt;abort&gt;
+&lt;array&gt;
+&lt;boolean&gt;
+&lt;byte-string&gt;
+&lt;character&gt;
+&lt;class&gt;
+&lt;collection&gt;
+&lt;complex&gt;
+&lt;condition&gt;
+&lt;deque&gt;
+&lt;double-float&gt;
+&lt;empty-list&gt;
+&lt;error&gt;
+&lt;explicit-key-collection&gt;
+&lt;extended-float&gt;
+&lt;float&gt;
+&lt;function&gt;
+&lt;generic-function&gt;
+&lt;integer&gt;
+&lt;list&gt;
+&lt;method&gt;
+&lt;mutable-collection&gt;
+&lt;mutable-explicit-key-collection&gt;
+&lt;mutable-sequence&gt;
+&lt;number&gt;
+&lt;object-table&gt;
+&lt;object&gt;
+&lt;pair&gt;
+&lt;range&gt;
+&lt;rational&gt;
+&lt;real&gt;
+&lt;restart&gt;
+&lt;sealed-object-error&gt;
+&lt;sequence&gt;
+&lt;serious-condition&gt;
+&lt;simple-error&gt;
+&lt;simple-object-vector&gt;
+&lt;simple-restart&gt;
+&lt;simple-vector&gt;
+&lt;simple-warning&gt;
+&lt;single-float&gt;
+&lt;singleton&gt;
+&lt;stretchy-collection&gt;
+&lt;stretchy-vector&gt;
+&lt;string&gt;
+&lt;symbol&gt;
+&lt;table&gt;
+&lt;type-error&gt;
+&lt;type&gt;
+&lt;unicode-string&gt;
+&lt;vector&gt;
+&lt;warning&gt;
+</pre>
+
+<!-- Appended and adapted from drm_121.html -->
+<a name="HEADING121-0"></a>
+<a name="UID-Name_Appendix-5322"></a>
+<h2 class="H2.Heading2">Exported Functions</h2>
+<p class="T2.Text2">One hundred sixty-nine names exported from the Dylan module are bound to functions.</p>
+<pre class="NF.NameEntryFirst">
+\*
+\+
+\-
+\/
+\&lt;
+\&lt;=
+\=
+\==
+\&gt;
+\&gt;=
+\^
+\~
+\~=
+\~==
+abort
+abs
+add
+add!
+add-method
+add-new
+add-new!
+all-superclasses
+always
+any?
+applicable-method?
+apply
+aref
+aref-setter
+as
+as-lowercase
+as-lowercase!
+as-uppercase
+as-uppercase!
+ash
+backward-iteration-protocol
+break
+ceiling
+ceiling/
+cerror
+check-type
+choose
+choose-by
+complement
+compose
+concatenate
+concatenate-as
+condition-format-arguments
+condition-format-string
+conjoin
+copy-sequence
+curry
+default-handler
+dimension
+dimensions
+direct-subclasses
+direct-superclasses
+disjoin
+do
+do-handlers
+element
+element-setter
+empty?
+error
+even?
+every?
+fill!
+find-key
+find-method
+first
+first-setter
+floor
+floor/
+forward-iteration-protocol
+function-arguments
+function-return-values
+function-specializers
+gcd
+generic-function-mandatory-
+keywords
+generic-function-methods
+head
+head-setter
+identity
+initialize
+instance?
+integral?
+intersection
+key-sequence
+key-test
+last
+last-setter
+lcm
+limited
+list
+logand
+logbit?
+logior
+lognot
+logxor
+make
+map
+map-as
+map-into
+max
+member?
+merge-hash-codes
+min
+modulo
+negative
+negative?
+object-class
+object-hash
+odd?
+pair
+pop
+pop-last
+positive?
+push
+push-last
+range
+rank
+rcurry
+reduce
+reduce1
+remainder
+remove
+remove!
+remove-duplicates
+remove-duplicates!
+remove-key!
+remove-method
+replace-elements!
+replace-subsequence!
+restart-query
+return-allowed?
+return-description
+return-query
+reverse
+reverse!
+round
+round/
+row-major-index
+second
+second-setter
+shallow-copy
+signal
+singleton
+size
+size-setter
+slot-initialized?
+sort
+sort!
+sorted-applicable-methods
+subsequence-position
+subtype?
+table-protocol
+tail
+tail-setter
+third
+third-setter
+truncate
+truncate/
+type-error-expected-type
+type-error-value
+type-for-copy
+type-union
+union
+values
+vector
+zero?
+</pre>
+
+<!-- Appended and adapted from drm_122.html -->
+<a name="HEADING122-0"></a>
+<a name="UID-Name_Appendix-5865"></a>
+<h2 class="H2.Heading2">Exported Constants</h2>
+<p class="T2.Text2">One name exported from the Dylan module is bound to the distinguished permanent hash state.</p>
+<pre class="NF.NameEntryFirst">
+ $permanent-hash-state
+</pre>
+
+<!-- Appended and adapted from drm_123.html -->
+<a name="HEADING123-0"></a>
+<a name="UID-Name_Appendix-5888"></a>
+<h2 class="H2.Heading2">Exported Defining Macros</h2>
+<p class="T2.Text2">Eight names exported from the Dylan module are bound to defining macros.</p>
+<pre class="NF.NameEntryFirst">
+class-definer
+constant-definer
+domain-definer
+generic-definer
+library-definer
+method-definer
+module-definer
+variable-definer
+</pre>
+
+<!-- Appended and adapted from drm_124.html -->
+<a name="HEADING124-0"></a>
+<a name="UID-Name_Appendix-5925"></a>
+<h2 class="H2.Heading2">Exported Statement Macros</h2>
+<p class="T2.Text2">Ten names exported from the Dylan module are bound to statement macros.</p>
+<pre class="NF.NameEntryFirst">
+begin
+block
+case
+for
+if
+method
+select
+unless
+until
+while
+</pre>
+
+<!-- Appended and adapted from drm_125.html -->
+<a name="HEADING125-0"></a>
+<a name="UID-Name_Appendix-6022"></a>
+<h2 class="H2.Heading2">Exported Function Macros</h2>
+<p class="T2.Text2">Three names exported from the Dylan module are bound to function macros.</p>
+<pre class="NF.NameEntryFirst">
+:=
+|
+&amp;
+</pre>
+
 </div>
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-<ul class="footer">
-<li class="footer"><a href="drm_119.html#HEADING119-1" class="footer">Overview</a>
-<ul class="footer">
-<li class="footer"><a href="drm_120.html#HEADING120-0" class="footer">Exported Classes</a></li>
-<li class="footer"><a href="drm_121.html#HEADING121-0" class="footer">Exported Functions</a></li>
-<li class="footer"><a href="drm_122.html#HEADING122-0" class="footer">Exported Constants</a></li>
-<li class="footer"><a href="drm_123.html#HEADING123-0" class="footer">Exported Defining Macros</a></li>
-<li class="footer"><a href="drm_124.html#HEADING124-0" class="footer">Exported Statement Macros</a></li>
-<li class="footer"><a href="drm_125.html#HEADING125-0" class="footer">Exported Function Macros</a></li>
-</ul></li>
-</ul>
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_120.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_118.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_118.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_120.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

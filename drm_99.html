@@ -46,7 +46,7 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
   
-  <title>Equality and Comparison</title>
+  <title>The Dylan Reference Manual: Equality and Comparison</title>
 </head>
 <body>
 
@@ -54,10 +54,62 @@
 <a name="HEADING99"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_100.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_98.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_96.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">12 The Built-In Functions</p>
+<p id="navigation"><a href="drm_98.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_100.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 12</p>
+  <p id="section-name">The Built-In Functions</p>
+</div>
+
+<div class="wm-div-toc">
+  <ul class="page-toc">
+    <li><a href="drm_99.html#HEADING99-8">Logical Negation</a>
+      <ul>
+	<li><a href="drm_99.html#HEADING99-9"><code>~</code> <span class="attributes-summary">[Function]</span></a></li>
+      </ul>
+    </li>
+    <li><a href="drm_99.html#HEADING99-15">Equality Comparisons</a>
+      <ul>
+	<li><a href="drm_99.html#HEADING99-16"><code>==</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_99.html#HEADING99-25"><code>~==</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_99.html#HEADING99-33"><code>=</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_99.html#HEADING99-44"><code><var>object1</var> = <var>object2</var> </code>&rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_99.html#HEADING99-46"><code><var>complex1</var> = <var>complex2</var> </code>&rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_99.html#HEADING99-48"><code><var>collection1</var> = <var>collection2</var> </code>&rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_99.html#HEADING99-50"><code><var>sequence1</var> = <var>sequence2</var> </code>&rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_99.html#HEADING99-52"><code><var>list1</var> = <var>list2</var> </code>&rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_99.html#HEADING99-54"><code><var>list</var> = <var>sequence</var> </code>&rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[G.F. Method]</span><br />
+		<code><var>sequence</var> = <var>list</var> </code>&rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_99.html#HEADING99-56"><code><var>range1</var> = <var>range2</var> </code>&rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_99.html#HEADING99-58"><code>~=</code> <span class="attributes-summary">[Function]</span></a></li>
+      </ul>
+    </li>
+    <li><a href="drm_99.html#HEADING99-66">Magnitude Comparisons</a>
+      <ul>
+	<li><a href="drm_99.html#HEADING99-67"><code>&lt;</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_99.html#HEADING99-75"><code><var>real1</var> &lt; <var>real2</var> </code>&rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_99.html#HEADING99-77"><code><var>character1</var> &lt; <var>character2</var> </code>&rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_99.html#HEADING99-79"><code><var>string1</var> &lt; <var>string2</var> </code>&rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_99.html#HEADING99-82"><code>&gt;</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_99.html#HEADING99-90"><code>&lt;=</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_99.html#HEADING99-98"><code>&gt;=</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_99.html#HEADING99-106"><code>min</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_99.html#HEADING99-114"><code>max</code> <span class="attributes-summary">[Function]</span></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<hr />
 
 </div>
+
 <a name="HEADING99-0"></a>
 <a name="UID-Built-In_Functions-2295"></a>
 <h1 class="H1.Heading1">Equality and Comparison</h1>
@@ -68,7 +120,6 @@
   <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> If (a <code>=</code> b), then (b <code>=</code> a).</p></dd>
   <dt class="RP.RoutineParam"><a name="MARKER-2-1572"></a>Transitivity: </dt>
   <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> If (a <code>&lt;</code>  b) and (b <code>&lt;</code> c), then (a <code>&lt;</code>  c).</p></dd>
-  <dt class="RP.RoutineParam"></dt>
   <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> If (a <code>=</code>  b) and (b <code>=</code>  c), then (a <code>=</code> c).</p></dd>
   <dt class="RP.RoutineParam"><a name="MARKER-2-1573"></a>Trichotomy: </dt>
   <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Exactly one of: (a <code>&lt;</code>  b), (a <code>=</code> b), (b <code>&lt;</code>  a) always holds (on the assumption that these two operations are defined for the objects in question).</p>
@@ -132,9 +183,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -171,9 +219,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -209,9 +254,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -229,27 +271,51 @@
     <p class="T1.Text1">Programmers may define methods for <code>=</code> specialized on classes they define. A programmer may be required to provide an <code>=</code> method when defining subclasses of some predefined classes in order to fullfill the protocol of the class, as described below. For objects that do not have a more specific = method, =  returns the same as ==.</p>
     <p class="T1.Text1">= is not guaranteed to return. For example, it may not return when called on circular structures or otherwise unbounded structures.</p>
     <p class="T1.Text1">In addition to the sealed domains specified by the methods below, <code>=</code> is sealed over the following domains:</p>
-    <p class="T1.Text1"><code>     &lt;object&gt;, &lt;symbol&gt;<br />     &lt;symbol&gt;, &lt;object&gt;<br />     &lt;object&gt;, &lt;character&gt;<br />     &lt;character&gt;, &lt;object&gt;<br />     &lt;object&gt;, &lt;boolean&gt;<br />     &lt;boolean&gt;, &lt;object&gt;</code></p>
+    <p class="T1.Text1">
+      <code>
+	&lt;object&gt;, &lt;symbol&gt;<br />
+	&lt;symbol&gt;, &lt;object&gt;<br />
+	&lt;object&gt;, &lt;character&gt;<br />
+	&lt;character&gt;, &lt;object&gt;<br />
+	&lt;object&gt;, &lt;boolean&gt;<br />
+	&lt;boolean&gt;, &lt;object&gt;
+      </code>
+    </p>
     <a name="HEADING99-44"></a>
-    <h4 class="H5.Heading5">object1 <code>= object2 </code> &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code><var>object1</var> = <var>object2</var> </code>
+      &rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">The default method on <code>=</code> calls <code>==</code> and returns the result returned by <code>==</code>.</p>
     <a name="HEADING99-46"></a>
-    <h4 class="H5.Heading5">complex1 <code>= complex2 </code> &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    
+    <h4 class="H5.Heading5"><code><var>complex1</var> = <var>complex2</var> </code>
+      &rArr;<code> <var>boolean</var></code><span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">Complex numbers are equal if they have the same mathematical value.</p>
     <a name="HEADING99-48"></a>
-    <h4 class="H5.Heading5">collection1 <code>= collection2 </code> &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
+
+    <h4 class="H5.Heading5"><code><var>collection1</var> = <var>collection2</var> </code>
+      &rArr;<code> <var>boolean</var></code><span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">Two collections are equal if they have identical <code>key-test</code> functions, they have the same keys (as determined by their <code>key-test</code> functions), the elements at corresponding keys are =,  and neither collection is a dotted list.</p>
     <a name="HEADING99-50"></a>
-    <h4 class="H5.Heading5">sequence1  <code>= sequence2 </code> &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
+
+    <h4 class="H5.Heading5"><code><var>sequence1</var> = <var>sequence2</var> </code>
+      &rArr;<code> <var>boolean</var></code><span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">For sequences, <code>=</code>  returns true if <var>sequence1</var> and <var>sequence2</var> have the same size and elements with = keys are =, and returns false otherwise.</p>
     <a name="HEADING99-52"></a>
-    <h4 class="H5.Heading5">list1 <code>=</code> list2 &rArr;  boolean  <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+
+    <h4 class="H5.Heading5"><code><var>list1</var> = <var>list2</var> </code>
+      &rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">For lists, <code>=</code>  returns true if the two lists are the same size, corresponding elements of <var>list1</var> and <var>list2</var> are <code>=</code> and the final tails are <code>=</code>. It returns false otherwise.</p>
     <a name="HEADING99-54"></a>
-    <h4 class="H5.Heading5">list  <code>=</code> sequence  &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span><br />sequence  <code>=</code>  list  &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
+
+    <h4 class="H5.Heading5"><code><var>list</var> = <var>sequence</var> </code>
+      &rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code><var>sequence</var> = <var>list</var> </code>
+      &rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">For mixed lists and sequences, <code>=</code> returns true if the <var>list</var> is not a dotted list, both have the same size, and elements with <code>=</code> keys are <code>=</code>. It returns false otherwise.</p>
     <a name="HEADING99-56"></a>
-    <h4 class="H5.Heading5">range1 <code>= range2 &rArr;</code>  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+
+    <h4 class="H5.Heading5"><code><var>range1</var> = <var>range2</var> </code>
+      &rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">When called with two ranges, <code>=</code> always terminates, even if one or both ranges are unbounded in size.</p>
   </dd>
 </dl>
@@ -272,9 +338,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -313,9 +376,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -332,13 +392,16 @@
   <dd class="Cliche"><p class="Cliche"> Returns true if <var>object1</var> is less than <var>object2</var>.</p>
     <p class="T1.Text1">The generic function <code>&lt;</code> is sealed over the domain <code>(&lt;complex&gt;, &lt;complex&gt;)</code>.</p>
     <a name="HEADING99-75"></a>
-    <h4 class="H5.Heading5">real1  <code>&lt;</code> real2  &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code><var>real1</var> &lt; <var>real2</var> </code>
+      &rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">Built-in real numbers are compared by mathematical value.</p>
     <a name="HEADING99-77"></a>
-    <h4 class="H5.Heading5">character1  <code>&lt;</code> character2  &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code><var>character1</var> &lt; <var>character2</var> </code>
+      &rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">Characters are compared by the ordinal value of the underlying character set. Character case is significant.</p>
     <a name="HEADING99-79"></a>
-    <h4 class="H5.Heading5">string1<code> <strong class="cv H5.Heading5">&lt; string2  &rArr;</strong></code>  <var>boolean</var> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code><var>string1</var> &lt; <var>string2</var> </code>
+	  &rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">When both arguments are strings, <code>&lt;</code> compares strings by comparing elements from left to right, using <code>&lt;</code> and <code>=</code> on corresponding elements, and stopping when the elements are not <code>=</code>. If one string is a strict prefix of the other, the shorter string is considered the "smaller" one.</p>
     <p class="T1.Text1">For variations on string comparison (such as comparisons that ignore case), different comparison operators must be used.</p>
   </dd>
@@ -362,9 +425,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -400,9 +460,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -438,9 +495,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -476,9 +530,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>objects</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -514,9 +565,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>objects</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -538,41 +586,9 @@
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-<ul class="footer">
-<li class="footer"><a href="drm_99.html#HEADING99-8" class="footer">Logical Negation</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-9" class="footer">~ [Function]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-15" class="footer">Equality Comparisons</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-16" class="footer">== [Function]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-25" class="footer">~== [Function]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-33" class="footer">= [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-44" class="footer">object1 = object2  &rArr;  boolean [G.F. Method]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-46" class="footer">complex1 = complex2  &rArr;  boolean [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-48" class="footer">collection1 = collection2  &rArr;  boolean [G.F. Method]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-50" class="footer">sequence1  = sequence2  &rArr;  boolean [G.F. Method]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-52" class="footer">list1 = list2 &rArr;  boolean  [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-54" class="footer">list  = sequence  &rArr;  boolean [G.F. Method] sequence  =  list  &rArr;  boolean [G.F. Method]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-56" class="footer">range1 = range2 &rArr;  boolean [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-58" class="footer">~= [Function]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-66" class="footer">Magnitude Comparisons</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-67" class="footer">&lt; [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-75" class="footer">real1  &lt; real2  &rArr;  boolean [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-77" class="footer">character1  &lt; character2  &rArr;  boolean [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-79" class="footer">string1 &lt; string2  &rArr;  boolean [G.F. Method]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-82" class="footer">&gt; [Function]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-90" class="footer">&lt;= [Function]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-98" class="footer">&gt;= [Function]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-106" class="footer">min [Function]</a></li>
-<li class="footer"><a href="drm_99.html#HEADING99-114" class="footer">max [Function]</a></li>
-</ul>
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_100.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_98.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_96.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_98.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_100.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

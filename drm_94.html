@@ -47,7 +47,7 @@
     
     <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-    <title>Functions</title>
+    <title>The Dylan Reference Manual: Functions</title>
   </head>
   <body>
 
@@ -55,10 +55,37 @@
       <a name="HEADING94"></a>
 
       <div class="wm-div-headers">
-	<p class="header"><a href="drm_95.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_93.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_87.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-	<p class="header">11 The Built-In Classes</p>
+	<p id="navigation"><a href="drm_93.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_95.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_87.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+	
+	<div id="section-header">
+	  <p id="section-prefix">Chapter 11</p>
+	  <p id="section-name">The Built-In Classes</p>
+	</div>
+
+	<div class="wm-div-toc">
+	  <ul class="page-toc">
+	    <li><a href="drm_94.html#HEADING94-4">General Functions</a>
+	      <ul>
+		<li><a href="drm_94.html#HEADING94-5"><code>&lt;function&gt;</code> <span class="attributes-summary">[Sealed Abstract Class]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_94.html#HEADING94-367">Generic Functions</a>
+	      <ul>
+		<li><a href="drm_94.html#HEADING94-368"><code>&lt;generic-function&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_94.html#HEADING94-490">Methods</a>
+	      <ul>
+		<li><a href="drm_94.html#HEADING94-491"><code>&lt;method&gt;</code> <span class="attributes-summary">[Sealed Class]</span></a></li>
+	      </ul>
+	    </li>
+	  </ul>
+	</div>
+
+	<hr />
 
       </div>
+
       <a name="HEADING94-0"></a>
       <a name="UID-Built-In_Classes-15102"></a>
       <h1 class="H1.Heading1"><a name="MARKER-2-1466"></a>Functions</h1>
@@ -66,7 +93,7 @@
       <p class="T1.Text1"><a href="#MARKER-9-1467" class="T1.Text1">Figure 11-5</a> shows the built-in function classes and some of their characteristics.</p>
       <p class="Fg.Figure"><strong>Figure</strong> <strong>11-5</strong>  <a name="MARKER-9-1467"></a>The Function Classes<!-- img alt="dr94ima6" src="dr94ima6.gif" --></p>
       
-      <div class="figure">
+      <div class="figure" style="min-width: 292px">
 	<img alt="Function Class Hierarchy" src="drm_Figure_11-5_Function_Classes.png" width="292" height="205" />
 	
 	<table class="class-attributes-legend" style="clear: both">
@@ -101,106 +128,80 @@
 	<dd class="Cliche"><p class="Cliche"> All functions are instances of <code>&lt;function&gt;</code>. Functions are described in <a href="drm_46.html#MARKER-9-723" class="Cliche">Chapter 6, "Functions."</a></p></dd>
 	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;function&gt;</code> provides the following operations:</p>
-	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-65</strong>  Functions on &lt;function&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>compose</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-2-1755" class="TbT.TblText">Returns the composition of one or more functions.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-2-1755" class="TbT.TblText">346</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>complement</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_104.html#MARKER-9-1878" class="TbT.TblText">Returns a function that expresses the complement of a predicate.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_104.html#MARKER-9-1878" class="TbT.TblText">346</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>disjoin</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_104.html#MARKER-9-1880" class="TbT.TblText">Returns a function that expresses the disjunction of one or more predicates.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_104.html#MARKER-9-1880" class="TbT.TblText">347</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>conjoin</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_104.html#MARKER-9-1882" class="TbT.TblText">Returns a function that expresses the conjunction of one or more predicates.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_104.html#MARKER-9-1882" class="TbT.TblText">347</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>curry</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_104.html#MARKER-9-1884" class="TbT.TblText">Returns a function based on an existing function and a number of default initial arguments.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_104.html#MARKER-9-1884" class="TbT.TblText">348</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>rcurry</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_104.html#MARKER-9-1886" class="TbT.TblText">Returns a function based on an existing function and a number of default final arguments.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_104.html#MARKER-9-1886" class="TbT.TblText">349</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>function-specializers</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1901" class="TbT.TblText">Returns the specializers of a function.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1901" class="TbT.TblText">353</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>function-arguments</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1903" class="TbT.TblText">Returns information about the arguments accepted by a function.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1903" class="TbT.TblText">354</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>function-return-values</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1905" class="TbT.TblText">Returns information about the values returned by a function.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1905" class="TbT.TblText">354</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>applicable-method?</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1907" class="TbT.TblText">Tests if a function is applicable to sample arguments.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1907" class="TbT.TblText">355</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>apply</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_105.html#MARKER-9-1891" class="TbT.TblText">Applies a function to arguments.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_105.html#MARKER-9-1891" class="TbT.TblText">350</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>do</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1810" class="TbT.TblText">Iterates over one or more collections for side effect.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1810" class="TbT.TblText">327</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>map</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1812" class="TbT.TblText">Iterates over one or more collections and collects the results in a freshly allocated collection.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1812" class="TbT.TblText">328</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>map-as</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1814" class="TbT.TblText">Iterates over one or more collections and collects the results in a freshly allocated collection of a specified type.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1814" class="TbT.TblText">328</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>map-into</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1816" class="TbT.TblText">Iterates over one or more collections and collects the results in an existing mutable collection.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1816" class="TbT.TblText">329</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>any?</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1818" class="TbT.TblText">Returns the first true value obtained by iterating over one or more collections.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1818" class="TbT.TblText">330</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>every?</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1821" class="TbT.TblText">Returns true if a predicate returns true when applied to all corresponding elements of a set of collections.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1821" class="TbT.TblText">331</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>reduce</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1824" class="TbT.TblText">Combines the elements of a collection and a seed value into a single value by repeatedly applying a binary function.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1824" class="TbT.TblText">331</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>reduce1</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1826" class="TbT.TblText">Combines the elements of a collection into a single value by repeatedly applying a binary function, using the first element of the collection as the seed value.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1826" class="TbT.TblText">332</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>find-key</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1837" class="TbT.TblText">Returns the key in a collection such that the corresponding collection element satisfies a predicate.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1837" class="TbT.TblText">335</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>replace-elements!</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1842" class="TbT.TblText">Replaces those collection elements that satisfy a predicate.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1842" class="TbT.TblText">336</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>choose</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1828" class="TbT.TblText">Returns those elements of a sequence that satisfy a predicate.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1828" class="TbT.TblText">333</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>choose-by</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1831" class="TbT.TblText">Returns those elements of a sequence that correspond to those in another sequence that satisfy a predicate.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1831" class="TbT.TblText">333</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>do-handlers</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1937" class="TbT.TblText">Applies a function to all dynamically active handlers.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1937" class="TbT.TblText">362</a></p>
 	  </td></tr></table>
@@ -221,19 +222,15 @@
 	<dd><dl class="RP.RoutineParam">
 	    <dt class="RP.RoutineParam"><code>required:</code></dt>
 	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;number&gt;</code> or <code>&lt;sequence&gt;</code>.</p></dd>
-	    <dt class="RP.RoutineParam"></dt>
 	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> This argument represents the required arguments that the generic function accepts. If a sequence is supplied, the size of the sequence is the number of required arguments, and the elements of the sequence are the specializers. If a number is supplied, it is the number of required arguments, and the specializers default to <code>&lt;object&gt;</code>. If the argument is not supplied, or the supplied argument is neither a sequence nor a non-negative integer, an error is signaled.</p></dd>
 	    <dt class="RP.RoutineParam"><code>rest?:</code></dt>
 	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;boolean&gt;</code>.</p></dd>
-	    <dt class="RP.RoutineParam"></dt>
 	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> A true value indicates that the generic function accepts a variable number of arguments. The default value is <code>#f</code>.</p></dd>
 	    <dt class="RP.RoutineParam"><code>key:</code></dt>
 	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>#f</code> or an instance of <code>&lt;collection&gt;</code> whose elements are keywords.</p></dd>
-	    <dt class="RP.RoutineParam"></dt>
 	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> If the value is a collection, then the generic function accepts keyword arguments, and the collection specifies the set of mandatory keywords for the generic function. A value of <code>#f</code> indicates that the generic function does not accept keyword arguments. The default value is <code>#f</code>.</p></dd>
 	    <dt class="RP.RoutineParam"><code>all-keys?:</code></dt>
 	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;boolean&gt;</code>.</p></dd>
-	    <dt class="RP.RoutineParam"></dt>
 	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> A true value indicates that the generic function accepts all keyword arguments. The default value is <code>#f.</code></p></dd>
 	</dl></dd>
 	<dt class="Cliche">Description:</dt>
@@ -243,34 +240,29 @@
 	  <p class="T1.Text1">An error is signaled if the value of <code>all-keys?:</code> is true and the value of <code>key:</code> is <code>#f</code>.</p>
 	  <p class="T1.Text1">A new generic function initially has no methods. An error will be signaled if a generic function is called before methods are added to it. Once a generic function is created, you can give it behavior by adding methods to it with <code>add-method</code> or <code>define method</code>.</p>
 	  <p class="T1.Text1">Generic functions are not usually created by calling <code>make</code> directly. Most often they are created by <code>define generic</code> or implicitly by <code>define method</code>.</p>
-	  <p class="Anchor"> <strong class="IMPORTANT Anchor">Operations:</strong> The class <code>&lt;generic-function&gt;</code> provides the following operations:</p>
+	</dd>
+	<dt class="Cliche">Operations:</dt>
+	<dd class="Cliche"><p class="Cliche">The class <code>&lt;generic-function&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-66</strong>  Functions on &lt;generic-function&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>generic-function-methods</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1895" class="TbT.TblText">Returns the methods of a generic function.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1895" class="TbT.TblText">351</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>add-method</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1897" class="TbT.TblText">Adds a method to a generic function.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1897" class="TbT.TblText">352</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>generic-function-mandatory-keywords</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1899" class="TbT.TblText">Returns the mandatory keywords of a generic function, if any.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1899" class="TbT.TblText">353</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>sorted-applicable-methods</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1909" class="TbT.TblText">Returns all the methods in a generic function that are applicable to sample arguments, sorted in order of specificity.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1909" class="TbT.TblText">356</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>find-method</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1911" class="TbT.TblText">Returns the method in a generic function that has particular specializers.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1911" class="TbT.TblText">356</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>remove-method</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1913" class="TbT.TblText">Removes a method from a generic function.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1913" class="TbT.TblText">357</a></p>
 	  </td></tr></table>
@@ -295,15 +287,12 @@
 	  <p class="Anchor"> <a name="MARKER-2-1471"></a></p>
 	  <table class="numbered"><caption><strong>Table 11-67</strong>  Functions on &lt;method&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>add-method</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1897" class="TbT.TblText">Adds a method to a generic function.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1897" class="TbT.TblText">352</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>remove-method</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1913" class="TbT.TblText">Removes a method from a generic function.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_106.html#MARKER-9-1913" class="TbT.TblText">357</a></p>
 	  </td></tr></table>
@@ -313,23 +302,9 @@
 
     <div class="wm-div-footers">
 
-      <div class="wm-div-toc">
-
-	<ul class="footer">
-	  <li class="footer"><a href="drm_94.html#HEADING94-4" class="footer">General Functions</a></li>
-	  <li class="footer"><a href="drm_94.html#HEADING94-5" class="footer">&lt;function&gt; [Sealed Abstract Class]</a></li>
-	  <li class="footer"><a href="drm_94.html#HEADING94-367" class="footer">Generic Functions</a></li>
-	  <li class="footer"><a href="drm_94.html#HEADING94-368" class="footer">&lt;generic-function&gt; [Sealed Instantiable Class]</a></li>
-	  <li class="footer"><a href="drm_94.html#HEADING94-490" class="footer">Methods</a></li>
-	  <li class="footer"><a href="drm_94.html#HEADING94-491" class="footer">&lt;method&gt; [Sealed Class]</a></li>
-	</ul>
-
-
-      </div>
-
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a href="drm_95.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_93.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_87.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+      <p class="footer"><a href="drm_93.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_95.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_87.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
       <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
       <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

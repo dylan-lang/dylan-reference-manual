@@ -47,7 +47,7 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>Function Macros</title>
+  <title>The Dylan Reference Manual: Function Macros</title>
 </head>
 <body>
 
@@ -55,29 +55,51 @@
 <a name="HEADING115"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_116.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_114.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_110.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">14 The Built-In Macros and Special Definitions</p>
+<p id="navigation"><a href="drm_114.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_116.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_110.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 14</p>
+  <p id="section-name">The Built-In Macros and Special Definitions</p>
+</div>
+
+<div class="wm-div-toc">
+  <ul class="page-toc">
+    <li><a href="drm_115.html#HEADING115-63">Assignment</a>
+      <ul>
+	<li><a href="drm_115.html#HEADING115-64"><code>:=</code><span class="attributes-summary">[Function Macro]</span></a></li>
+	<li><a href="drm_115.html#HEADING115-75">Assignment to a binding</a></li>
+	<li><a href="drm_115.html#HEADING115-78">Assignment to a function or function macro</a></li>
+	<li><a href="drm_115.html#HEADING115-89">Assignment to element references</a></li>
+      </ul>
+    </li>
+    <li><a href="drm_115.html#HEADING115-92">Conditional Execution</a>
+      <ul>
+	<li><a href="drm_115.html#HEADING115-93"><code>|</code> <span class="attributes-summary">[Function Macro]</span></a></li>
+	<li><a href="drm_115.html#HEADING115-100"><code>&amp;</code> <span class="attributes-summary">[Function Macro]</span></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<hr />
 
 </div>
+
 <a name="HEADING115-0"></a>
 <a name="UID-Built-In_Macros-5344"></a>
 <h1 class="H1.Heading1"><a name="MARKER-9-2068"></a>Function Macros</h1>
 <p class="T1.Text1"><a name="MARKER-2-2069"></a>Function macros provide syntax for assignment and for conditional execution. These three built-in function macros may be called using function-call syntax or operator syntax.</p>
 <table class="numbered"><caption class="Tb.Table"><strong>Table 14-4</strong>  Function Macros</caption>
   <tr><th class="primary"><p class="TbH.TblHd"> Macro</p>
-    </th><th><p class="TbH.TblHd"> </p>
     </th><th><p class="TbH.TblHd"> Description</p>
     </th><th><p class="TbH.TblHd"> Page</p>
   </th></tr><tr><td><p class="TbT.TblText"> <code>:=</code></p>
-    </td><td><p class="TbT.TblText"> </p>
     </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2072" class="TbT.TblText">Stores a new value in a location.</a></p>
     </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2072" class="TbT.TblText">409</a></p>
   </td></tr><tr><td><p class="TbT.TblText"> <code>|</code></p>
-    </td><td><p class="TbT.TblText"> </p>
     </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2076" class="TbT.TblText">Returns the value of the first of two operands that is true.</a></p>
     </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2075" class="TbT.TblText">412</a></p>
   </td></tr><tr><td><p class="TbT.TblText"> <code>&amp;</code></p>
-    </td><td><p class="TbT.TblText"> </p>
     </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2079" class="TbT.TblText">If the value of a first operand is true, executes a second operand and returns its values.</a></p>
     </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2079" class="TbT.TblText">412</a></p>
 </td></tr></table><a name="HEADING115-63"></a>
@@ -89,28 +111,19 @@
 <p class="SD.ShortDescription"><a name="MARKER-9-2072"></a>Stores a new value in a location.</p>
 <dl class="Cliche">
   <dt class="Cliche">Macro Call:</dt>
-  <dd class="Cliche"><p class="Cliche"> <i class="parameter Cliche">place<code> := new-value</code></i></p></dd>
+  <dd class="Cliche"><p class="Cliche"> <var>place</var> <code>:=</code> <var>new-value</var></p></dd>
   <dt class="Cliche">Arguments:</dt>
   <dd class="Cliche">
     <dl>
       <dt><var>place</var></dt>
-      <dd>
-        <p class="Cliche"><code>expression<em class="BNF Cliche"><sub>bnf</sub></em></code></p>
-      </dd>
+      <dd><p class="Cliche">expression<em class="BNF Cliche"><sub>bnf</sub></em></p></dd>
+      <dt class="RP.RoutineParam"><var>new-value</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
     </dl>
   </dd>
-  <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><var>new-value</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>expression<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-  </dl></dd>
   <dt class="Cliche">Values:</dt>
   <dd class="Cliche">
-    <dl>
-      <dt><var>new-value</var></dt>
-      <dd>
-        <p class="Cliche">, an instance of <code>&lt;object&gt;</code>.</p>
-      </dd>
-    </dl>
+    <p class="Cliche"><var>new-value</var>, an instance of <code>&lt;object&gt;</code>.</p>
   </dd>
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> <code>:=</code> stores <var>new-value</var> in <var>place</var> and returns <var>new-value</var>.</p>
@@ -168,20 +181,16 @@ element-setter (&quot;quux&quot;, foo, 2).<a name="MARKER-2-2073"></a> </pre>
 <p class="SD.ShortDescription"><a name="MARKER-9-2075"></a>Returns the value of the first of two operands that is true.<a name="MARKER-9-2076"></a></p>
 <dl class="Cliche">
 <dt class="Cliche">Macro Call:</dt>
-<dd class="Cliche"><p class="Cliche"> <i class="parameter Cliche">one<code>  | another</code></i></p></dd>
+<dd class="Cliche"><p class="Cliche"> <var>one</var> <code>|</code> <var>another</var></p></dd>
 <dt class="Cliche">Arguments:</dt>
 <dd class="Cliche">
-    <dl>
-      <dt><var>one</var></dt>
-      <dd>
-        <p class="Cliche"><code>expression<em class="BNF Cliche"><sub>bnf</sub></em></code></p>
-      </dd>
-    </dl>
-  </dd>
-<dd><dl class="RP.RoutineParam">
-<dt class="RP.RoutineParam"><var>another</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>expression<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-</dl></dd>
+  <dl>
+    <dt><var>one</var></dt>
+    <dd><p class="Cliche">expression<em class="BNF Cliche"><sub>bnf</sub></em></p></dd>
+    <dt class="RP.RoutineParam"><var>another</var></dt>
+    <dd class="RP.RoutineParam"><p class="RP.RoutineParam">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
+  </dl>
+</dd>
 <dt class="Cliche">Values:</dt>
 <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
 <dt class="Cliche">Description:</dt>
@@ -195,22 +204,18 @@ element-setter (&quot;quux&quot;, foo, 2).<a name="MARKER-2-2073"></a> </pre>
 <dt class="Cliche">Macro Call:</dt>
 <dd class="Cliche">
   <p class="macro-call">
-    <code><var>one</var> &amp; <var>another</var> </code>&rArr;<code> <var>values</var></code>
+    <var>one</var> <code>&amp;</code> <var>another</var> &rArr; <var>values</var>
   </p>
 </dd>
 <dt class="Cliche">Arguments:</dt>
 <dd class="Cliche">
-    <dl>
-      <dt><var>one</var></dt>
-      <dd>
-        <p class="Cliche"><code>expression<em class="BNF Cliche"><sub>bnf</sub></em></code></p>
-      </dd>
-    </dl>
-  </dd>
-<dd><dl class="RP.RoutineParam">
-<dt class="RP.RoutineParam"><var>another</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>expression<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-</dl></dd>
+  <dl>
+    <dt><var>one</var></dt>
+    <dd><p class="Cliche">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
+    <dt class="RP.RoutineParam"><var>another</var></dt>
+    <dd class="RP.RoutineParam"><p class="RP.RoutineParam">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
+  </dl>
+</dd>
 <dt class="Cliche">Values:</dt>
 <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
 <dt class="Cliche">Description:</dt>
@@ -222,25 +227,9 @@ element-setter (&quot;quux&quot;, foo, 2).<a name="MARKER-2-2073"></a> </pre>
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-<ul class="footer">
-<li class="footer"><a href="drm_115.html#HEADING115-63" class="footer">Assignment</a></li>
-<li class="footer"><a href="drm_115.html#HEADING115-64" class="footer"> := [Function Macro]</a></li>
-<li class="footer"><a href="drm_115.html#HEADING115-75" class="footer">Assignment to a binding</a></li>
-<li class="footer"><a href="drm_115.html#HEADING115-78" class="footer">Assignment to a function or function macro</a></li>
-<li class="footer"><a href="drm_115.html#HEADING115-89" class="footer">Assignment to element references</a></li>
-<li class="footer"><a href="drm_115.html#HEADING115-92" class="footer">Conditional Execution</a></li>
-<li class="footer"><a href="drm_115.html#HEADING115-93" class="footer">| [Function Macro]</a></li>
-<li class="footer"><a href="drm_115.html#HEADING115-100" class="footer">&amp;  [Function Macro]</a></li>
-</ul>
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_116.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_114.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_110.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_114.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_116.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_110.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

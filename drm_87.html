@@ -46,46 +46,106 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>11 The Built-In Classes</title>
+  <title>The Dylan Reference Manual: 11 The Built-In Classes</title>
 </head>
-<body>
+<body class="section-start">
 
 <div class="wm-div-body">
 <a name="HEADING87"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_88.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_86.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">The Dylan Reference Manual</p>
+<p id="navigation">
+  <a href="drm_86.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a>
+  <a href="drm_88.html"><img alt="next" src="next.gif" title="Go to next page" /></a>
+  <img id="up" alt="Up" src="upg.gif" title="Go to start of chapter" />
+  <a href="drm_1.html"><img alt="top" src="top.gif" /></a>
+  <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a>
+  <a href="drm_127.html"><img alt="index" src="index.gif" /></a>
+</p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 11</p>
+  <p id="section-name">The Built-In Classes</p>
+</div>
+
+<hr />
 
 </div>
+
 <a name="LINK-Built-In_Classes-firstpage"></a><a name="HEADING87-0"></a>
 <a name="UID-Built-In_Classes-1378"></a>
 <h1 class="ChT.ChapterTitle"><a name="MARKER-9-1359"></a>The Built-In Classes</h1>
+<h2 class="ChT.ChapterTitle">Contents</h2>
+
+<ul class="TOC">
+  <li><a href="drm_88.html#HEADING88-0">Overview</a></li>
+  <li><a href="drm_89.html#HEADING89-0">Objects</a></li>
+  <li><a href="drm_90.html#HEADING90-0">Types</a>
+    <ul>
+      <li><a href="drm_90.html#HEADING90-3">General Types</a></li>
+      <li><a href="drm_90.html#HEADING90-106">Classes</a></li>
+      <li><a href="drm_90.html#HEADING90-238">Singletons</a></li>
+    </ul>
+  </li>
+  <li><a href="drm_91.html#HEADING91-0">Simple Objects</a>
+    <ul>
+      <li><a href="drm_91.html#HEADING91-3">Characters</a></li>
+      <li><a href="drm_91.html#HEADING91-86">Symbols</a></li>
+      <li><a href="drm_91.html#HEADING91-127">Booleans</a></li>
+    </ul>
+  </li>
+  <li><a href="drm_92.html#HEADING92-0">Numbers</a>
+    <ul>
+      <li><a href="drm_92.html#HEADING92-4">General Numbers</a></li>
+      <li><a href="drm_92.html#HEADING92-12">Complex Numbers</a></li>
+      <li><a href="drm_92.html#HEADING92-138">Reals</a></li>
+      <li><a href="drm_92.html#HEADING92-409">Floats</a></li>
+      <li><a href="drm_92.html#HEADING92-436">Rationals</a></li>
+      <li><a href="drm_92.html#HEADING92-443">Integers</a></li>
+    </ul>
+  </li>
+  <li><a href="drm_93.html#HEADING93-0">Collections</a>
+    <ul>
+      <li><a href="drm_93.html#HEADING93-5">General Collections</a></li>
+      <li><a href="drm_93.html#HEADING93-374">Explicit Key Collections</a></li>
+      <li><a href="drm_93.html#HEADING93-417">Sequences</a></li>
+      <li><a href="drm_93.html#HEADING93-837">Mutable Collections</a></li>
+      <li><a href="drm_93.html#HEADING93-1194">Stretchy Collections</a></li>
+      <li><a href="drm_93.html#HEADING93-1239">Arrays</a></li>
+      <li><a href="drm_93.html#HEADING93-1510">Vectors</a></li>
+      <li><a href="drm_93.html#HEADING93-1862">Deques</a></li>
+      <li><a href="drm_93.html#HEADING93-2045">Lists</a></li>
+      <li><a href="drm_93.html#HEADING93-2363">Ranges</a></li>
+      <li><a href="drm_93.html#HEADING93-2560">Strings</a></li>
+      <li><a href="drm_93.html#HEADING93-2809">Tables</a></li>
+    </ul>
+  </li>
+  <li><a href="drm_94.html#HEADING94-0">Functions</a>
+    <ul>
+      <li><a href="drm_94.html#HEADING94-4">General Functions</a></li>
+      <li><a href="drm_94.html#HEADING94-367">Generic Functions</a></li>
+      <li><a href="drm_94.html#HEADING94-490">Methods</a></li>
+    </ul>
+  </li>
+  <li><a href="drm_95.html#HEADING95-0">Conditions</a>
+    <ul>
+      <li><a href="drm_95.html#HEADING95-4">General Conditions</a></li>
+      <li><a href="drm_95.html#HEADING95-197">Serious Conditions</a></li>
+      <li><a href="drm_95.html#HEADING95-238">Errors</a></li>
+      <li><a href="drm_95.html#HEADING95-364">Warnings</a></li>
+      <li><a href="drm_95.html#HEADING95-462">Restarts</a></li>
+      <li><a href="drm_95.html#HEADING95-594">Aborts</a></li>
+    </ul>
+  </li>
+</ul>
 
 </div>
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-
-<ul class="footer">
-<li class="footer"><a href="drm_88.html#HEADING88-0" class="footer">Overview</a></li>
-<li class="footer"><a href="drm_89.html#HEADING89-0" class="footer">Objects</a></li>
-<li class="footer"><a href="drm_90.html#HEADING90-0" class="footer">Types</a></li>
-<li class="footer"><a href="drm_91.html#HEADING91-0" class="footer">Simple Objects</a></li>
-<li class="footer"><a href="drm_92.html#HEADING92-0" class="footer">Numbers</a></li>
-<li class="footer"><a href="drm_93.html#HEADING93-0" class="footer">Collections</a></li>
-<li class="footer"><a href="drm_94.html#HEADING94-0" class="footer">Functions</a></li>
-<li class="footer"><a href="drm_95.html#HEADING95-0" class="footer">Conditions</a></li>
-</ul>
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_88.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_86.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_86.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_88.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

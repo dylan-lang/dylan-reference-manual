@@ -47,7 +47,7 @@
     
     <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-    <title>Conditions</title>
+    <title>The Dylan Reference Manual: Conditions</title>
   </head>
   <body>
 
@@ -55,10 +55,57 @@
       <a name="HEADING95"></a>
 
       <div class="wm-div-headers">
-	<p class="header"><a href="drm_96.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_94.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_87.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-	<p class="header">11 The Built-In Classes</p>
+	<p id="navigation"><a href="drm_94.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_96.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_87.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+	
+	<div id="section-header">
+	  <p id="section-prefix">Chapter 11</p>
+	  <p id="section-name">The Built-In Classes</p>
+	</div>
+
+	<div class="wm-div-toc">
+	  <ul class="page-toc">
+	    <li><a href="drm_95.html#HEADING95-4">General Conditions</a>
+	      <ul>
+		<li><a href="drm_95.html#HEADING95-5"><code>&lt;condition&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_95.html#HEADING95-197">Serious Conditions</a>
+	      <ul>
+		<li><a href="drm_95.html#HEADING95-198"><code>&lt;serious-condition&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_95.html#HEADING95-238">Errors</a>
+	      <ul>
+		<li><a href="drm_95.html#HEADING95-239"><code>&lt;error&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></a></li>
+		<li><a href="drm_95.html#HEADING95-246"><code>&lt;simple-error&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></a></li>
+		<li><a href="drm_95.html#HEADING95-302"><code>&lt;type-error&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></a></li>
+		<li><a href="drm_95.html#HEADING95-358"><code>&lt;sealed-object-error&gt;</code> <span class="attributes-summary">[Sealed Class]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_95.html#HEADING95-364">Warnings</a>
+	      <ul>
+		<li><a href="drm_95.html#HEADING95-365"><code>&lt;warning&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></a></li>
+		<li><a href="drm_95.html#HEADING95-406"><code>&lt;simple-warning&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_95.html#HEADING95-462">Restarts</a>
+	      <ul>
+		<li><a href="drm_95.html#HEADING95-463"><code>&lt;restart&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></a></li>
+		<li><a href="drm_95.html#HEADING95-538"><code>&lt;simple-restart&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_95.html#HEADING95-594">Aborts</a>
+	      <ul>
+		<li><a href="drm_95.html#HEADING95-595"><code>&lt;abort&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></a></li>
+	      </ul>
+	    </li>
+	  </ul>
+	</div>
+
+	<hr />
 
       </div>
+
       <a name="HEADING95-0"></a>
       <a name="UID-Built-In_Classes-399"></a>
       <h1 class="H1.Heading1"><a name="MARKER-9-1472"></a><a name="MARKER-2-1473"></a>Conditions</h1>
@@ -66,7 +113,7 @@
       <p class="T1.Text1"><a href="#MARKER-9-1474" class="T1.Text1">Figure 11-6</a> shows the built-in condition classes and some of their characteristics.</p>
       <p class="Fg.Figure"><strong>Figure</strong> <strong>11-6</strong>  <a name="MARKER-9-1474"></a>The Condition Classes<!-- img alt="dr95ima7" src="dr95ima7.gif" --></p>
       
-      <div class="figure">
+      <div class="figure wide" style="min-width: 699px">
 	<img alt="Condition Class Hierarchy" src="drm_Figure_11-6_Condition_Classes.png" width="699" height="432" />
 	
 	<table class="class-attributes-legend" style="clear: both">
@@ -100,58 +147,45 @@
 	<dd class="Cliche"><p class="Cliche"> The class of condition objects. A complete description of conditions is given in <a href="drm_51.html#MARKER-9-869" class="Cliche">Chapter 7, "Conditions."</a></p></dd>
 	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;condition&gt;</code> provides the following operations:</p>
-	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-68</strong>  Functions on &lt;condition&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>signal</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1919" class="TbT.TblText">Signals a condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1919" class="TbT.TblText">357</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>error</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1921" class="TbT.TblText">Signals a nonrecoverable error.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1921" class="TbT.TblText">358</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>cerror</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1923" class="TbT.TblText">Signals a correctable error.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1923" class="TbT.TblText">359</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>break</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1925" class="TbT.TblText">Invokes the debugger.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1925" class="TbT.TblText">359</a></p>
-	  </td></tr></table><p class="Anchor"> </p>
+	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-69</strong>  Generic functions on &lt;condition&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>default-handler</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">Called if no dynamic handler handles a condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">361</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>return-query</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1933" class="TbT.TblText">Queries the user for values to return.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1933" class="TbT.TblText">362</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>return-allowed?</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1939" class="TbT.TblText">Returns true if a condition's recovery protocol allows returning values.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1939" class="TbT.TblText">363</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>return-description</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1941" class="TbT.TblText">Returns a description of a condition's returned values.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1941" class="TbT.TblText">363</a></p>
-	  </td></tr></table><p class="Anchor"> </p>
+	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-70</strong>  Methods on &lt;condition&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>default-handler</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">Called if no dynamic handler handles a condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">361</a></p>
 	  </td></tr></table>
@@ -173,14 +207,11 @@
 	<dd class="Cliche"><p class="Cliche"> The class of conditions that cannot safely be ignored.</p></dd>
 	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The following operation is defined on <code>&lt;serious-condition&gt;</code>:</p>
-	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-71</strong>  Methods on &lt;serious-condition&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>default-handler</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">Called if no dynamic handler handles a condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">361</a></p>
 	  </td></tr></table>
@@ -220,18 +251,14 @@
 	  <p class="T1.Text1">The recovery protocol of <code>&lt;simple-error&gt;</code> is empty.</p></dd>
 	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class &lt;simple-error&gt; provides the following operations:</p>
-	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-72</strong>  Functions on &lt;simple-error&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>condition-format-string</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-2-1681" class="TbT.TblText">Returns the format string of a simple condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-2-1681" class="TbT.TblText">364</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>condition-format-arguments</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1945" class="TbT.TblText">Returns the format arguments of a simple condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1945" class="TbT.TblText">364</a></p>
 	  </td></tr></table>
@@ -255,18 +282,14 @@
 	  <p class="T1.Text1">The recovery protocol is empty.</p></dd>
 	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;type-error&gt;</code> provides the following operations:</p>
-	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-73</strong>  Functions on &lt;type-error&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>type-error-value</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1947" class="TbT.TblText">Returns the value that was not of the expected type.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1947" class="TbT.TblText">365</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>type-error-expected-type</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1949" class="TbT.TblText">Returns the expected type of the type check that led to the type error.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1949" class="TbT.TblText">365</a></p>
 	  </td></tr></table>
@@ -300,14 +323,11 @@
 	<dd class="Cliche"><p class="Cliche"> None.</p></dd>
 	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The following operation is defined on <code>&lt;warning&gt;</code>:</p>
-	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-74</strong>  Methods on &lt;warning&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>default-handler</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">Called if no dynamic handler handles a condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">361</a></p>
 	  </td></tr></table>
@@ -326,28 +346,25 @@
 	<dt class="Cliche">Superclasses:</dt>
 	<dd class="Cliche"><p class="Cliche"> <code>&lt;warning&gt;</code></p></dd>
 	<dt class="Cliche2">Init-keywords:</dt>
-	<dd class="Cliche2"><p class="Cliche2"> <code>format-string:</code> <br />An instance of <code>&lt;string&gt;</code>. A format string describing the warning.</p></dd>
 	<dd><dl class="RP.RoutineParam">
-	    <dt class="RP.RoutineParam"><code>format-arguments:<br /></code>An instance of <code>&lt;sequence&gt;</code>. Format arguments to splice into the format string to describe the warning.</dt>
-	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"></p></dd>
+	    <dt class="Cliche2"> <code>format-string:</code></dd>
+	    <dd class="Cliche2"><p class="Cliche2">An instance of <code>&lt;string&gt;</code>. A format string describing the warning.</p></dd>
+	    <dt class="RP.RoutineParam"><code>format-arguments:</code></dt>
+	    <dd class="Cliche2"><p>An instance of <code>&lt;sequence&gt;</code>. Format arguments to splice into the format string to describe the warning.</p></dt>
 	</dl></dd>
 	<dt class="Cliche">Description:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class of warnings described by a format string and arguments.</p>
 	  <p class="T1.Text1">The recovery protocol is that any value can be returned and will be ignored.</p></dd>
 	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class &lt;simple-warning&gt; provides the following operations:</p>
-	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-75</strong>  Functions on &lt;simple-warning&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>condition-format-string</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-2-1681" class="TbT.TblText">Returns the format string of a simple condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-2-1681" class="TbT.TblText">364</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>condition-format-arguments</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1945" class="TbT.TblText">Returns the format arguments of a simple condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1945" class="TbT.TblText">364</a></p>
 	  </td></tr></table>
@@ -370,24 +387,19 @@
 	  <p class="T1.Text1">There is a default handler for <code>&lt;restart&gt;</code> that signals an error reporting an attempt to use a restart for which no restart handler was established. The recovery protocol concept is not applicable to restarts.</p></dd>
 	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;restart&gt;</code> provides the following operations:</p>
-	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-76</strong>  Generic functions on &lt;restart&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>restart-query</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1637" class="TbT.TblText">Called to query the user and restart.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1637" class="TbT.TblText">361</a></p>
-	  </td></tr></table><p class="Anchor"> </p>
+	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-77</strong>  Methods on &lt;restart&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>default-handler</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">Called if no dynamic handler handles a condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1929" class="TbT.TblText">361</a></p>
 	  </td></tr></table>
@@ -401,28 +413,25 @@
 	<dt class="Cliche">Superclasses:</dt>
 	<dd class="Cliche"><p class="Cliche"> <code>&lt;restart&gt;</code></p></dd>
 	<dt class="Cliche2">Init-keywords:</dt>
-	<dd class="Cliche2"><p class="Cliche2"> <code>format-string:</code> <br />An instance of <code>&lt;string&gt;</code>. A format string describing the restart.</p></dd>
 	<dd><dl class="RP.RoutineParam">
-	    <dt class="RP.RoutineParam"><code>format-arguments:<br /></code>An instance of <code>&lt;sequence&gt;</code>. Format arguments to splice into the format string to describe the restart.</dt>
-	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"></p></dd>
+	    <dt class="Cliche2"><code>format-string:</code></dt>
+	    <dd><p>An instance of <code>&lt;string&gt;</code>. A format string describing the restart.</p></dd>
+	    <dt class="RP.RoutineParam"><code>format-arguments:</code></dt>
+	    <dd><p>An instance of <code>&lt;sequence&gt;</code>. Format arguments to splice into the format string to describe the restart.</p></dd>
 	</dl></dd>
 	<dt class="Cliche">Description:</dt>
 	<dd class="Cliche"><p class="Cliche"> A default class of restarts.</p>
 	  <p class="T1.Text1">Typical implementations will use the format string and format arguments to produce a description of the restart.</p></dd>
 	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class &lt;simple-restart&gt; provides the following operations:</p>
-	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-78</strong>  Functions on &lt;simple-restart&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>condition-format-string</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-2-1681" class="TbT.TblText">Returns the format string of a simple condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-2-1681" class="TbT.TblText">364</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>condition-format-arguments</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1945" class="TbT.TblText">Returns the format arguments of a simple condition.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_107.html#MARKER-9-1945" class="TbT.TblText">364</a></p>
 	  </td></tr></table>
@@ -452,34 +461,9 @@
 
     <div class="wm-div-footers">
 
-      <div class="wm-div-toc">
-
-	<ul class="footer">
-	  <li class="footer"><a href="drm_95.html#HEADING95-4" class="footer">General Conditions</a></li>
-	  <li class="footer"><a href="drm_95.html#HEADING95-5" class="footer">&lt;condition&gt; [Open Abstract Class]</a></li>
-	  <li class="footer"><a href="drm_95.html#HEADING95-197" class="footer">Serious Conditions</a></li>
-	  <li class="footer"><a href="drm_95.html#HEADING95-198" class="footer">&lt;serious-condition&gt; [Open Abstract Class]</a></li>
-	  <li class="footer"><a href="drm_95.html#HEADING95-238" class="footer">Errors</a></li>
-	  <li class="footer"><a href="drm_95.html#HEADING95-239" class="footer">&lt;error&gt; [Open Abstract Class]</a></li>
-	  <li class="footer"><a href="drm_95.html#HEADING95-246" class="footer">&lt;simple-error&gt; [Sealed Instantiable Class]</a></li>
-	  <li class="footer"><a href="drm_95.html#HEADING95-302" class="footer">&lt;type-error&gt; [Sealed Instantiable Class]</a></li>
-	  <li class="footer"><a href="drm_95.html#HEADING95-358" class="footer">&lt;sealed-object-error&gt; [Sealed Class]</a></li>
-	  <li class="footer"><a href="drm_95.html#HEADING95-364" class="footer">Warnings</a></li>
-	  <li class="footer"><a href="drm_95.html#HEADING95-365" class="footer">&lt;warning&gt; [Open Abstract Class]</a></li>
-	  <li class="footer"><a href="drm_95.html#HEADING95-406" class="footer">&lt;simple-warning&gt; [Sealed Instantiable Class]</a></li>
-	  <li class="footer"><a href="drm_95.html#HEADING95-462" class="footer">Restarts</a></li>
-	  <li class="footer"><a href="drm_95.html#HEADING95-463" class="footer">&lt;restart&gt; [Open Abstract Class]</a></li>
-	  <li class="footer"><a href="drm_95.html#HEADING95-538" class="footer">&lt;simple-restart&gt; [Sealed Instantiable Class]</a></li>
-	  <li class="footer"><a href="drm_95.html#HEADING95-594" class="footer">Aborts</a></li>
-	  <li class="footer"><a href="drm_95.html#HEADING95-595" class="footer">&lt;abort&gt; [Sealed Instantiable Class]</a></li>
-	</ul>
-
-
-      </div>
-
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a href="drm_96.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_94.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_87.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+      <p class="footer"><a href="drm_94.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_96.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_87.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
       <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
       <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

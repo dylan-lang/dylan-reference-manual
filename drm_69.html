@@ -47,7 +47,7 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>Limited Collection Types</title>
+  <title>The Dylan Reference Manual: Limited Collection Types</title>
 </head>
 <body>
 
@@ -55,10 +55,29 @@
 <a name="HEADING69"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_70.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_68.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_59.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">8 Collections</p>
+<p id="navigation"><a href="drm_68.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_70.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_59.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 8</p>
+  <p id="section-name">Collections</p>
+</div>
+
+<div class="wm-div-toc">
+  <ul class="page-toc">
+    <li><a href="drm_69.html#HEADING69-31">Element Type Subclassing</a></li>
+    <li><a href="drm_69.html#HEADING69-36">Creating Limited Collection Types</a>
+      <ul>
+	<li><a href="drm_69.html#HEADING69-39">Uninstantiable Limited Collection Types</a></li>
+	<li><a href="drm_69.html#HEADING69-49">Instantiable Limited Collection Types</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<hr />
 
 </div>
+
 <a name="HEADING69-0"></a>
 <a name="UID-Collections-3802"></a>
 <h1 class="H1.Heading1"><a name="MARKER-9-1060"></a>Limited Collection Types</h1>
@@ -71,7 +90,7 @@
 <p class="T1.Text1">Some limited collection types are instantiable. <code>make(limited(<var>C</var>, <var>&hellip;</var>), <var>&hellip;</var>)</code> returns a direct instance of some subclass of <var>C</var>. Typically this class is not standardized and its name is not exported, but it is valid for this class to be <var>C</var> itself. There is nothing special about this class; it is simply a class known to the applicable <code>limited</code> method and its creation is subject to all the usual sealing restrictions.</p>
 <p class="T1.Text1"><a name="MARKER-2-1062"></a>An object <var>X</var> is an instance of a limited collection type <code>limited(<var>C</var>, of: <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i>, size: <var>S</var>)</code> if and only if all of the following are true:</p>
 <ul class="B1.Bullet1">
-<li class="B1.Bullet1"><code>object-class(<var>X)</var></code> is a subclass of <var>C</var>.</li>
+<li class="B1.Bullet1"><code>object-class(<var>X</var>)</code> is a subclass of <var>C</var>.</li>
 <li class="B1.Bullet1"><var>X</var>'s size matches <var>S</var>, as described above.</li>
 <li class="B1.Bullet1">If <var>X</var> is an instance of <code>&lt;stretchy-collection&gt;</code> then <var>S</var> must be <code>#f</code>.</li>
 <li class="B1.Bullet1">The element type of <var>X</var> is equivalent to <i class="parameter B1.Bullet1">T<em class="Subscript Parameter B1.Bullet1"><sub>2</sub></em></i>.</li>
@@ -149,21 +168,9 @@
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-<ul class="footer">
-<li class="footer"><a href="drm_69.html#HEADING69-31" class="footer">Element Type Subclassing</a></li>
-<li class="footer"><a href="drm_69.html#HEADING69-36" class="footer">Creating Limited Collection Types</a></li>
-<li class="footer"><a href="drm_69.html#HEADING69-39" class="footer">Uninstantiable Limited Collection Types</a></li>
-<li class="footer"><a href="drm_69.html#HEADING69-49" class="footer">Instantiable Limited Collection Types</a></li>
-</ul>
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_70.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_68.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_59.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_68.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_70.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_59.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

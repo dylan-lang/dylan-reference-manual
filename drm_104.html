@@ -47,7 +47,7 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>Functional Operations</title>
+  <title>The Dylan Reference Manual: Functional Operations</title>
 </head>
 <body>
 
@@ -55,10 +55,29 @@
 <a name="HEADING104"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_105.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_103.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_96.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">12 The Built-In Functions</p>
+<p id="navigation"><a href="drm_103.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_105.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 12</p>
+  <p id="section-name">The Built-In Functions</p>
+</div>
+
+<div class="wm-div-toc">
+  <ul class="page-toc">
+    <li><a href="drm_104.html#HEADING104-2"><code>compose</code> <span class="attributes-summary">[Function]</span></a></li>
+    <li><a href="drm_104.html#HEADING104-13"><code>complement</code> <span class="attributes-summary">[Function]</span></a></li>
+    <li><a href="drm_104.html#HEADING104-20"><code>disjoin</code> <span class="attributes-summary">[Function]</span></a></li>
+    <li><a href="drm_104.html#HEADING104-29"><code>conjoin</code> <span class="attributes-summary">[Function]</span></a></li>
+    <li><a href="drm_104.html#HEADING104-38"><code>curry</code> <span class="attributes-summary">[Function]</span></a></li>
+    <li><a href="drm_104.html#HEADING104-47"><code>rcurry</code> <span class="attributes-summary">[Function]</span></a></li>
+    <li><a href="drm_104.html#HEADING104-57"><code>always</code> <span class="attributes-summary">[Function]</span></a></li>
+  </ul>
+</div>
+
+<hr />
 
 </div>
+
 <a name="HEADING104-0"></a>
 <a name="UID-Built-In_Functions-420"></a>
 <h1 class="H1.Heading1"><a name="MARKER-9-1873"></a>Functional Operations</h1>
@@ -79,15 +98,11 @@
   <dd class="Cliche">
     <dl>
       <dt><var>function1</var></dt>
-      <dd>
-        <p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p>
-      </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
+      <dd><p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>more-functions</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;function&gt;</code>.</p></dd>
-  </dl></dd>
+    </dl>
+  </dd>
   <dt class="Cliche">Values:</dt>
   <dd class="Cliche">
     <dl>
@@ -160,15 +175,11 @@ choose(complement(zero?), #(1, 3, 0, 4, 0, 0, 3))
   <dd class="Cliche">
     <dl>
       <dt><var>predicate1</var></dt>
-      <dd>
-        <p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p>
-      </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
+      <dd><p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>more-predicates</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam">  Functions.</p></dd>
-  </dl></dd>
+    </dl>
+  </dd>
   <dt class="Cliche">Values:</dt>
   <dd class="Cliche">
     <dl>
@@ -203,15 +214,11 @@ nonzero?(4)
   <dd class="Cliche">
     <dl>
       <dt><var>predicate1</var></dt>
-      <dd>
-        <p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p>
-      </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
+      <dd><p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>more-predicates</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;function&gt;</code>.</p></dd>
-  </dl></dd>
+    </dl>
+  </dd>
   <dt class="Cliche">Values:</dt>
   <dd class="Cliche">
     <dl>
@@ -245,15 +252,11 @@ choose(conjoin(positive?, integral?), #(-1, -3, 5, -3.7, 3.5, 7))
   <dd class="Cliche">
     <dl>
       <dt><var>function</var></dt>
-      <dd>
-        <p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p>
-      </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
+      <dd><p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>curried-args</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;object&gt;</code>.</p></dd>
-  </dl></dd>
+    </dl>
+  </dd>
   <dt class="Cliche">Values:</dt>
   <dd class="Cliche">
     <dl>
@@ -290,15 +293,11 @@ less-than-10?(4)
   <dd class="Cliche">
     <dl>
       <dt><var>function</var></dt>
-      <dd>
-        <p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p>
-      </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
+      <dd><p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p></dd>
       <dt class="RP.RoutineParam"><var>curried-args</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;object&gt;</code>.</p></dd>
-  </dl></dd>
+    </dl>
+  </dd>
   <dt class="Cliche">Values:</dt>
   <dd class="Cliche">
     <dl>
@@ -338,9 +337,7 @@ greater-than-10?(4)
   <dd class="Cliche">
     <dl>
       <dt><var>object</var></dt>
-      <dd>
-        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
-      </dd>
+      <dd><p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p></dd>
     </dl>
   </dd>
   <dt class="Cliche">Values:</dt>
@@ -369,24 +366,9 @@ menu(4, 5, 6)
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-<ul class="footer">
-<li class="footer"><a href="drm_104.html#HEADING104-2" class="footer">compose [Function]</a></li>
-<li class="footer"><a href="drm_104.html#HEADING104-13" class="footer">complement [Function]</a></li>
-<li class="footer"><a href="drm_104.html#HEADING104-20" class="footer">disjoin [Function]</a></li>
-<li class="footer"><a href="drm_104.html#HEADING104-29" class="footer">conjoin [Function]</a></li>
-<li class="footer"><a href="drm_104.html#HEADING104-38" class="footer">curry [Function]</a></li>
-<li class="footer"><a href="drm_104.html#HEADING104-47" class="footer">rcurry [Function]</a></li>
-<li class="footer"><a href="drm_104.html#HEADING104-57" class="footer">always [Function]</a></li>
-</ul>
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_105.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_103.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_96.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_103.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_105.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

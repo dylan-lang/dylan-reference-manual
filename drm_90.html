@@ -47,7 +47,7 @@
     
     <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-    <title>Types</title>
+    <title>The Dylan Reference Manual: Types</title>
   </head>
   <body>
 
@@ -55,17 +55,44 @@
       <a name="HEADING90"></a>
 
       <div class="wm-div-headers">
-	<p class="header"><a href="drm_91.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_89.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_87.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-	<p class="header">11 The Built-In Classes</p>
+	<p id="navigation"><a href="drm_89.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_91.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_87.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+	
+	<div id="section-header">
+	  <p id="section-prefix">Chapter 11</p>
+	  <p id="section-name">The Built-In Classes</p>
+	</div>
+
+	<div class="wm-div-toc">
+	  <ul class="page-toc">
+	    <li><a href="drm_90.html#HEADING90-3">General Types</a>
+	      <ul>
+		<li><a href="drm_90.html#HEADING90-4"><code>&lt;type&gt;</code> <span class="attributes-summary">[Sealed Abstract Class]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_90.html#HEADING90-106">Classes</a>
+	      <ul>
+		<li><a href="drm_90.html#HEADING90-107"><code>&lt;class&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_90.html#HEADING90-238">Singletons</a>
+	      <ul>
+		<li><a href="drm_90.html#HEADING90-239"><code>&lt;singleton&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></a></li>
+	      </ul>
+	    </li>
+	  </ul>
+	</div>
+
+	<hr />
 
       </div>
+
       <a name="HEADING90-0"></a>
       <a name="UID-Built-In_Classes-20036"></a>
       <h1 class="H1.Heading1"><a name="MARKER-2-1368"></a>Types</h1>
       <p class="T0.Text0">Types are used to categorize objects. <a href="#MARKER-9-1369" class="T0.Text0">Figure 11-1</a> shows the built-in classes of types and some of their characteristics.</p>
       <p class="Fg.Figure"><strong>Figure</strong> <strong>11-1</strong>  <a name="MARKER-9-1369"></a>The Type Classes<!-- img alt="dr90ima2" src="dr90ima2.gif" --></p>
 	
-      <div class="figure">
+      <div class="figure" style="min-width: 292px">
 	<img alt="Type Class Hierarchy" src="drm_Figure_11-1_Type_Classes.png" width="292" height="205" />
 	
 	<table class="class-attributes-legend" style="clear: both">
@@ -100,32 +127,25 @@
 	<dd class="Cliche"><p class="Cliche"> The class of all types. All types (including <code>&lt;type&gt;</code> and <code>&lt;class&gt;</code>) are instances of <code>&lt;type&gt;</code>.</p></dd>
 	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;type&gt;</code> provides the following operations:</p>
-	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption class="Tb.Table"><strong>Table 11-4</strong>  Functions on &lt;type&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>instance?</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1861" class="TbT.TblText">Tests whether an object is an instance of a type.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1861" class="TbT.TblText">343</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>subtype?</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1863" class="TbT.TblText">Tests whether a type is a subtype of another type.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1863" class="TbT.TblText">343</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>type-union</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1564" class="TbT.TblText">Returns the union of two or more types.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1564" class="TbT.TblText">266</a></p>
 	  </td></tr></table><p class="Anchor">  </p>
 	  <table class="numbered"><caption class="Tb.Table"><strong>Table 11-5</strong>  Generic Functions on &lt;type&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>make</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1539" class="TbT.TblText">Returns a general instance of its first argument.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1539" class="TbT.TblText">258</a></p>
 	  </td></tr></table>
@@ -144,13 +164,12 @@
 	<dt class="Cliche">Init-keywords:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;class&gt;</code> supports the following init-keywords:</p></dd>
 	<dd><dl class="RP.RoutineParam">
-	    <dt class="RP.RoutineParam"><code>superclasses:<br /></code>An instance of <code>&lt;class&gt;</code> or <code>&lt;sequence&gt;</code> specifying the direct superclasses of the class. If it is a sequence, the elements of the sequence must be instances of <code>&lt;class&gt;</code>. The default value is <code>&lt;object&gt;</code>. The meaning of the order of the superclasses is the same as in <code>define class</code>.</dt>
-	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"></p></dd>
+	    <dt class="RP.RoutineParam"><code>superclasses:</code></dt>
+	    <dd><p class="RP.RoutineParam">An instance of <code>&lt;class&gt;</code> or <code>&lt;sequence&gt;</code> specifying the direct superclasses of the class. If it is a sequence, the elements of the sequence must be instances of <code>&lt;class&gt;</code>. The default value is <code>&lt;object&gt;</code>. The meaning of the order of the superclasses is the same as in <code>define class</code>.</p></dt>
 	    <dt class="RP.RoutineParam"><code>abstract?:</code></dt>
 	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;boolean&gt;</code> specifying whether the class is abstract or concrete. The default value is <code>#f</code>.</p></dd>
 	    <dt class="RP.RoutineParam"><code>slots:</code></dt>
 	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;sequence&gt;</code> containing slot specs, where each slot-spec is a sequence of keyword/value pairs.</p></dd>
-	    <dt class="RP.RoutineParam" />
 	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> The following keywords and corresponding values  are accepted by all implementations. Implementations may also define additional keywords and values for use within slot specs.</p></dd>
 	    <dd><dl class="RP2.RoutineParam2">
 		<dt class="RP2.RoutineParam2"><code>getter:</code></dt>
@@ -179,36 +198,28 @@
 	  <p class="T1.Text1">If <code>make</code> is used to create a new class and creating the new class would violate any restrictions specified by sealing directives, then an error of type <code>&lt;sealed-object-error&gt;</code> is signaled.</p></dd>
 	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;class&gt;</code> provides the following operations:</p>
-	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption class="Tb.Table"><strong>Table 11-6</strong>  Functions on &lt;class&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>all-superclasses</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1867" class="TbT.TblText">Returns the class precedence list a class.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1867" class="TbT.TblText">344</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>direct-superclasses</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1869" class="TbT.TblText">Returns the direct superclasses of a class.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1869" class="TbT.TblText">345</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>direct-subclasses</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1871" class="TbT.TblText">Returns the direct subclasses of a class.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1871" class="TbT.TblText">345</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>limited</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1559" class="TbT.TblText">Returns a limited subtype of a class.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1559" class="TbT.TblText">263</a></p>
-	  </td></tr></table><p class="Anchor"> </p>
+	  </td></tr></table>
 	  <table class="numbered"><caption class="Tb.Table"><strong>Table 11-7</strong>  Methods on &lt;class&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>make</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1539" class="TbT.TblText">Returns a general instance of its first argument.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1541" class="TbT.TblText">259</a></p>
 	  </td></tr></table>
@@ -241,23 +252,9 @@
 
     <div class="wm-div-footers">
 
-      <div class="wm-div-toc">
-
-	<ul class="footer">
-	  <li class="footer"><a href="drm_90.html#HEADING90-3" class="footer">General Types</a></li>
-	  <li class="footer"><a href="drm_90.html#HEADING90-4" class="footer">&lt;type&gt; [Sealed Abstract Class]</a></li>
-	  <li class="footer"><a href="drm_90.html#HEADING90-106" class="footer">Classes</a></li>
-	  <li class="footer"><a href="drm_90.html#HEADING90-107" class="footer">&lt;class&gt; [Sealed Instantiable Class]</a></li>
-	  <li class="footer"><a href="drm_90.html#HEADING90-238" class="footer">Singletons</a></li>
-	  <li class="footer"><a href="drm_90.html#HEADING90-239" class="footer">&lt;singleton&gt; [Sealed Instantiable Class]</a></li>
-	</ul>
-
-
-      </div>
-
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a href="drm_91.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_89.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_87.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+      <p class="footer"><a href="drm_89.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_91.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_87.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
       <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
       <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

@@ -1,7 +1,7 @@
 
 /* Debugging: Uncomment this to see all the boxes. */
 
-/** { border: 1px solid }*/
+/* * { border: 1px solid red } */
 
 
 
@@ -9,19 +9,173 @@
   General Document Formatting
 */
 
-body { margin: 20px }
+body {
+       padding-left: 8em;
+       max-width: 40em
+     }
+
+
+/* On-screen, interactive navigation. */
+
+@media screen {
+
+/* Leave room for navigation UI and margins inside a window. */
+
+body {
+       margin-left: 200px; margin-right: 20px
+     }
+
+img#book-cover { 
+                 position: absolute; left: 250px; top: 50px;
+                 border: 2px solid
+               }
+
+
+/* Navigation header floats at left edge of viewport. */
+
+.wm-div-headers {
+                  overflow: auto;
+                  position: fixed; top: 0; left: 0; bottom: 0;
+                  width: 170px;
+                  padding-left: 20px;
+                  background-color: #eee;
+/*
+   Alternative color scheme that brings in the colors from the cover of the printed DRM.
+   Disabled for now because I'm not sure whether it looks nicer or just noisier.
+*/
+/*
+                  background-color: orange;
+                  border-top: 10px dotted purple;
+                  border-bottom: 10px dotted red;
+                  color: purple; font-family: sans-serif; font-weight: bold
+*/
+                }
 
 /*
-  Always use bold for defining instance text (DFN tags), to match the
-  printed DRM, since it specifically says they are set in bold. Two
-  notes:
+   Layout navigation buttons to exact locations. These selectors are a little wonky
+   because some buttons have links around them and some don't, and we need to position
+   both the button image and the surrounding link. So, we pick all the first-level
+   entities regardless of type. An alternative which is less brittle is to either add id
+   attributes to the A and IMG tags as appropriate, or to wrap them inside some other
+   entity which has the id assigned. However, I didn't want to take the time to add ids
+   everywhere. Feel free to do it someday and use #id selectors instead.
+*/
 
-  1. As it happens, the HTML was originally generated with STRONG tags
-     (and no DFNs), so it usually renders in bold, but now that we
-     have a stylesheet, use it to ensure the formatting is as desired.
+#navigation                                    { height: 25px }
+#navigation img                                { border: none }
+#navigation > :first-child + * + *             { position: absolute; top: 10px; left:  10px }
+#navigation > :first-child                     { position: absolute; top: 10px; left:  67px }
+#navigation > :first-child + *                 { position: absolute; top: 10px; left: 124px }
+#navigation > :first-child + * + * + *         { position: absolute; top: 27px; left:  10px }
+#navigation > :first-child + * + * + * + *     { position: absolute; top: 27px; left:  67px }
+#navigation > :first-child + * + * + * + * + * { position: absolute; top: 27px; left: 124px }
+
+/* Name of section this page belongs to. */
+
+#section-header {
+                  margin-left: -10px; padding-left: 10px;
+                  padding-top: 0.25em; padding-bottom: 0.25em;
+                  background-color: orange;
+                  border: 3px dotted;
+                  border-top-color: red;
+                  border-right: none;
+                  border-bottom-color: purple;
+                  border-left-color: teal;
+                }
+#section-header p:first-child
+                {
+                  text-transform: uppercase;
+                  font-family: serif;
+                  font-size: smaller;
+                  letter-spacing: 0.5em;
+                  margin: 0.25em auto;
+                }
+#section-header p:first-child + p
+                {
+                  margin: 0.25em auto
+                }
+
+/* TOC in the navigation area. */
+
+.wm-div-toc:before
+                {
+                  display: block;
+                  color: black;
+                  content: "On this page:";
+                }
+/* "mini-TOC" links to other pages: hide "On this page:" */
+.wm-div-toc.pages:before
+                {
+                  display: none
+                }
+
+.wm-div-toc     {
+                  margin-top: 0.5em; padding-top: 0.5em; padding-bottom: 0.5em;
+                  padding-right: 5px;
+                  margin-left: -10px; padding-left: 10px;
+                  color: gray;
+                  font-family: sans-serif;
+                }
+
+/* don't underline navigation links; keeps things readable */
+.wm-div-toc a       { text-decoration: none }
+.wm-div-toc a:hover { text-decoration: underline }
+
+
+/*
+   Hide horizontal rules that are in the page header. They're used to provide separation
+   in the absence of CSS.
+*/
+
+.wm-div-headers hr { display: none }
+
+}
+
+
+/* When printing, hide on-screen navigation elements. */
+
+@media print {
+
+/* the section name is redundant on section start pages, so hide it */
+body.section-start #section-name, 
+
+.wm-div-headers p#navigation,
+.wm-div-headers hr,
+.wm-div-toc                         { display: none }
+
+/* print the section prefix and name at top of page */
+#section-prefix { text-transform: uppercase; letter-spacing: 0.75em }
+#section-name   { font-family: sans-serif }
+
+/* print links like plain text */
+a { text-decoration: none; color: inherit; }
+
+}
+
+/* Page Footer Format */
+
+.wm-div-footers { font-size: smaller; margin-top: 10em }
+
+/*
+   Hide navigation footer; it is only useful when floating navigation buttons via CSS are
+   not available.
+*/
+
+#navigation-footer, /* migrate tags to use this id, then delete the second selector */
+.wm-div-footers > address + p.footer { display: none }
+
+
+
+/*
+  Always use bold for defining instance text (DFN tags), to match the printed DRM, since
+  it specifically says they are set in bold. Two notes:
+
+  1. As it happens, the HTML was originally generated with STRONG tags (and no DFNs), so
+     it usually renders in bold, but now that we have a stylesheet, use it to ensure the
+     formatting is as desired.
      
-  2. Some browsers apply italics to DFN (on top of STRONG), so be sure
-     to suppress that.
+  2. Some browsers apply italics to DFN (in addition to bold), so be sure to suppress
+     that.
 */
 
 dfn  { font-weight: bold; font-style: normal }
@@ -31,21 +185,111 @@ dfn  { font-weight: bold; font-style: normal }
 /*
   Headings
 
-  Add some whitespace above headings and a rule below to make them
-  stand out more from preceding text, and, for definition sections,
-  float the "[Open Abstract Foo]" tag on the right, so it doesn't run
-  together with the definition name (and besides, it matches the
-  printed DRM.)
-
+  Add some whitespace above headings and a rule below to make them stand out more from
+  preceding text, and, for definition sections, float the "[Open Abstract Foo]" tag on the
+  right.
 */
 
-h1[class~="H1.Heading1"], h2, h3 { margin-top: 1em; padding-bottom: 3px; border-bottom: 1px solid }
+/* non-chapter sections often have custom page headings */
+h1.BookTitle,
+h1.WWW-TOC,
+h1[class~="PrT.PrefaceTitle"],
+h1[class~="ChT.ChapterTitle"],
+h1[class~="ApT.ApdxTitle"],
+h1[class~="BackT.BackTitle"],
+h1.WWW-IX                        { font-size: 24pt }
 
-/* definition section headings */
+h1.BookTitle                     {
+                                   margin-top: 3em;
+                                   border-top: 1px solid black;
+                                   padding-top: 0.25em
+                                 }
 
-h3[class~="H4.Heading4"]       { margin-top: 2em; padding-bottom: 0px; border-bottom: none }
-h3[class~="H4.Heading4"] code  { font-size: larger }
-span.attributes-summary        { position: absolute; right: 20px; margin-right: 1em }
+h1.WWW-TOC,
+h1[class~="PrT.PrefaceTitle"],
+h1[class~="ChT.ChapterTitle"],
+h1[class~="ApT.ApdxTitle"],
+h1[class~="BackT.BackTitle"],
+h1.WWW-IX
+                                 { margin-top: 2em }
+
+h1[class~="PrT.PrefaceTitle"],
+h1[class~="ChT.ChapterTitle"],
+h1[class~="ApT.ApdxTitle"],
+h1[class~="BackT.BackTitle"],
+h1.WWW-IX
+                                 {
+                                   margin-left: -3em; padding-left: 3em;
+                                   padding-bottom: 2em;
+                                   border-bottom: 1px solid
+                                 }
+h1[class~="H1.Heading1"]         { margin-left: -3.5em }
+h1[class~="H1.Heading1"], h2, h3 { padding-top: 1em; padding-bottom: 3px; border-bottom: 1px solid }
+h2, h3, h4                       { font-family: sans-serif }
+
+/* chapter start pages have some custom heading styles */
+h1[class~="ChT.ChapterTitle"]    { margin-bottom: 0 }
+h2[class~="ChT.ChapterTitle"]    {
+                                   margin-top: 0.25em; padding-top: 0; border: none;
+                                   font-family: inherit
+                                 }
+
+/* h4 is used for method signatures; indent if a line break occurs in the signature */
+h4 { margin-top: 2em; margin-bottom: 1em; text-indent: -1em; margin-left: 1em }
+/* consecutive method signatures should not have space between them */
+h4 + h4 { margin-top: -1em }
+
+/*
+   Hide these headings, which aren't in the printed DRM. I'm I'm hiding them rather than
+   deleting them from the HTML in case they prove useful in the future. No sense deleting
+   information you can just hide from view with CSS.
+*/
+
+h1.Colophon-title,
+h1[class~="CT.copyrightTitle"] { visibility: hidden; height: 0 }
+
+/* replace the top rule with a border */
+hr.WWW-TOC,
+hr.Colophon-title     { display: none }
+hr.Colophon-title + * { border-top: 1px solid black; padding-top: 0.5em }
+
+
+/*
+   Definition section headings. Hide HRs and use CSS bottom borders instead.  Right-align
+   attributes summaries.
+*/
+h3[class~="H4.Heading4"] + hr { display: none }
+h3[class~="H4.Heading4"] var  { font-family: sans-serif }
+span.attributes-summary       { float: right; margin-right: 1em }
+
+
+/*
+  Contents
+  
+  The Contents chapter has some unique formatting.
+*/
+
+body.contents h2 {
+                   margin-left: -4.5em; padding-left: 4.5em;
+                   margin-bottom: 0.25em
+                 }
+body.contents h2 > span:first-child
+                 {
+                   float: left;
+                   margin-left: -5.5em;
+                   padding-top: 0.25em;
+                   font-weight: normal;
+                   font-size: smaller;
+                 }
+
+/*
+   Hide all but the top-level TOC items. The HTML goes three levels deep, but
+   the printed DRM only has the top level. The added levels of information
+   make the Contents cluttered. We could just delete the other levels, but
+   I lean towards preserving information in case we want to do something with
+   it in the future, so just hide them for now.
+*/
+body.contents ul.TOC ul { display: none }
 
 
 
@@ -58,75 +302,128 @@ span.attributes-summary        { position: absolute; right: 20px; margin-right: 
 
 */
 
-ul		    { padding-left: 1.25em }
-ol   		    { padding-left: 1.5em  }
+ul                 { padding-left: 1.25em }
+ol                 { padding-left: 1.5em  }
 
-ul	  	    { list-style-type: square }
-ul ul, ol ul	    { list-style-type: circle }
-ul ul ul, ol ul ul  { list-style-type: disc   }
+ul                 { list-style-type: square }
+ul ul,    ol ul    { list-style-type: circle }
+ul ul ul, ol ul ul { list-style-type: disc   }
 
-li    	     	    { margin-top: 0.75em 0 0.75em 0 }
-li li 		    { margin-top: 0.5em  0 0.5em  0 }
+li                 { margin-top: 0.75em }
+li li              { margin-top: 0.5em  }
 
-/*
-  TOC Lists are formatted more compactly and have a gray background to
-  set them apart from the page content.
-*/
+/* TOC Lists are formatted more compactly. */
 
-ul.footer 	    { padding: 1em 0 1em 2em; margin: 1em 0 0 0; background-color: #dddddd }
-ul.footer ul.footer { padding-top: 0; padding-bottom: 0; margin-top: 0 }
+/* no space between items */
+ul.TOC li,
+ul.index li        { margin-top: 0 }
 
-ul.footer 	      	      { list-style-type: disc   } /* use the default bullets */
-ul.footer ul.footer	      { list-style-type: circle }
-ul.footer ul.footer ul.footer { list-style-type: square }
+/* little space between items */
+.wm-div-toc.pages li
+                   { margin: 0.25em auto }
+.wm-div-toc.pages ol
+                   { margin: 0 auto }
 
-li.footer 	      	      { margin-top: 0 }
+/* use bullets, numbers, letters for "mini-TOC" */
+.wm-div-toc.pages ul.page-toc
+                   {
+                     list-style-type: square; padding-left: 1em;
+                     margin: 0 auto
+                   }
+.wm-div-toc.pages ol.page-toc
+                   { padding-left: 1em }
+.wm-div-toc.pages ul.page-toc.errata
+                   { list-style-type: circle }
 
+
+/* no space between wrapped lines; helps group them together */
+ul.page-toc li     { line-height: 100% }
+
+/* no margin above lists, no bullets */
+ul.TOC,      ul.TOC ul,
+ul.index,    ul.index ul,
+ul.page-toc, ul.page-toc ul
+                   {
+                     margin-top: 0;
+                     list-style-type: none;
+                   }
+ul.TOC,
+ul.index,
+ul.page-toc        { padding-left: 0 }
+
+/* shallower indents and smaller fonts to provide more horizontal room */
+ul.page-toc ul        { padding-left: 0.5em }
+ul.page-toc > li > ul { font-size: smaller }
+
+/* hide GF method entries and attributes summaries */
+ul.page-toc li.gf-method,
+ul.page-toc span.attributes-summary { display: none }
+
+/* some are layed out horizontally (e.g., Index) */
+ul.page-toc.vertical + ul.page-toc.horizontal li
+                               { margin-top: 0; padding-top: 0 }
+ul.page-toc.horizontal li      { float: left; width: 1em; text-align: center }
+ul.page-toc.horizontal li + li { margin-left: 1em }
+ul.page-toc.horizontal + *     { clear: left }
 
 /*
   Definitions
 
-  Definition labels (e.g., "Signature:") are bold.
+  Definition labels (e.g., "Signature:") are bold and set off in the left margin.
+
+  Terms and definitions are positioned side-by-side.
 
 */
 
-dl.Cliche > dt { font-weight: bold }
-
-
+/* some useful debugging code for visualizing definition list nesting */
 /*
-  Definitions
-
-  Some experimental declarations to try to format things more like the
-  printed DRM, with labels to the left instead of on separate lines. I
-  suspect the final answer will be to changet the HTML tags to use
-  something other than dt/dd, as the following attempts aren't
-  producing the desired results.
-
+dt { border-left: 2px solid green }
+dd { border-left: 2px solid blue }
+dl { border-left: 2px solid orange }
+dl p { border-left: 2px solid red }
 */
 
-/*
-dd dt, dd dd, dd dd p { display: inline }
-dd dt, dd dd, dd dd p { display: table-cell }
-dl { display: table-row-group }
-dd dd p { display: table-cell }
-dd dd + dt { display: block }
-dd dd { position: absolute; left: 10em }
-*/
+/* top-level DT outdent/small/bold */
+.wm-div-body > dl.Cliche > dt
+               {
+                 float: left; margin-left: -8em;
+                 font-family: sans-serif;
+                 font-weight: bold;
+                 font-size: smaller;
+                 /* this margin-top is kinda kludgey, but necessary to line up baselines;
+                    feel free to come up with a better way */
+                 margin-top: 0.2em;
+               }
+.wm-div-body > dl.Cliche > dd      { margin-left: 0 }
+.wm-div-body > dl.Cliche > dd > p  {  margin-top: 0 }
+
+/* second-level DTs outdent and have a fixed width */
+.wm-div-body > dl.Cliche > dd > dl > dt
+               {
+                 float: left;
+                 padding-right: 1em;
+               }
+.wm-div-body > dl.Cliche > dd > dl > dd
+               {
+                 margin-left: 9em;
+               }
+
+/* less space between lines within lower-level definition lists */
+.wm-div-body > dl.Cliche > dd > dl > dd > p { margin: 0.5em auto; }
 
 
 
 /*
   Table Formatting
 
-  Try to match the DRM a little better than the default HTML format.
-
   All tables should have some additional padding between the columns
   so they don't run together, captions and column headings are
-  left-aligned, and cell text is vertically aligned at the baseline.
+  left-aligned, and cell text is vertically aligned at the top.
   
-  For tables called out in the DRM with "Table ##-## Name", left-align
-  the caption and column headings and put a rule under the
-  caption. (table class="numbered")
+  For tables labled with "Table ##-## Title", left-align the caption
+  and column headings and put a rule under the caption. Also, some
+  additional space is placed between the table number and the
+  title. (table class="numbered")
 
   For "index" tables that consist of three columns (an identifier, a
   Description, and a Page number), provide a minimum width for the
@@ -134,8 +431,49 @@ dd dd { position: absolute; left: 10em }
 
 */
 
-table.numbered		{ border-top: 1px solid; border-collapse: collapse }
-table.numbered caption	{ padding-bottom: 3px }	  /* don't let caption descenders touch the line */
+/*
+
+   NOTE: On Mac OS X, Safari and Omniweb don't handle the margin-top
+   of captions correctly. Those browsers behave as though the caption
+   margin-top is for the table and put space between the caption and
+   the table, instead of above the caption.
+
+   As a workaround, we use the caption's padding-top. The drawback is
+   that adjacent margins don't collapse and you can end up with a lot
+   of extra space. One common case is consecutive tables, which we
+   work around with a special rule to eliminate the padding when a
+   table immediately follows another table.
+
+   Change this to use margin-top when those browsers (the WebCore
+   framework, actually) are fixed.
+*/
+
+table.numbered         {
+                         border-collapse: collapse;
+                         width: 100%;
+                         margin-bottom: 3em
+                       }
+table.numbered + table.numbered caption /* caption margin-top workaround */
+                       {
+                         padding-top: 0;
+                       }
+table.numbered caption {
+                      /* margin-top */ padding-top: 2em;
+                         padding-bottom: 0.25em;
+                         border-bottom: 1px solid black
+                       }
+table.numbered tr > th { padding-top: 1em; padding-bottom: 0 } 
+
+/*
+  Add some space between the "Table ##-##" number and the table title.
+  The number label should have some kind of tag around it. This will
+  actually add space around any and all elements within the caption,
+  so we don't have to care exactly what tag or tags are used.
+*/
+
+table.numbered caption * { padding-right: 2em }
+
+table td { vertical-align: top }
 
 /*
   For tables with thead/tbody groups, put lines between groups. This
@@ -148,60 +486,71 @@ table.numbered caption	{ padding-bottom: 3px }	  /* don't let caption descenders
 table.grouped thead	{ border-bottom: hidden } /* no line below the header */
 table.grouped tbody	{ border-top: 1px solid } /* put a line between row groups */
 
-caption, th		{ text-align: left }
+caption, th		{ text-align: left; font-family: sans-serif }
 
 th, td 	      	  	{ padding-top: 0.5em; padding-bottom: 0.5em }	/* space rows about a line height */
 th + th, td + td 	{ padding-left: 2em; vertical-align: baseline }
 
-th.primary, td.primary	{ min-width: 10em } /* the "primary" column should avoid wrapping */
+th.primary, td.primary	{ width: 12em } /* the "primary" column should avoid wrapping */
+table.numbered th.primary + th + th { width: 2em } /* fix the width of the last column so that the middle column gets any additional space allocated to it */
 
 /*
-  Add some space between the "Table ##-##" number and the table title.
-  The number label should have some kind of tag around it. This will
-  actually add space around any and all elements within the caption,
-  so we don't have to care exactly what tag or tags are used.
+   Don't underline links in the Description column, because it's a lot of text and makes
+   it harder to read.
 */
 
-table.numbered caption * { padding-right: 2em }
+table.numbered td:first-child + td a       { text-decoration: none }
+table.numbered td:first-child + td a:hover { text-decoration: underline }
+
 
 /*
-  The generated table contents erroneously wrap each cell with a
-  paragraph tag, causing ridiculous amounts of vertical
-  whitespace. Fix this by making the <p> tag inline (only within
-  tables, of course) so it doesn't introduce line breaks.
-
-  We should eventually clean up the HTML and remove these tags, but
-  this is a lightweight work-around.
+  The generated table contents wrap each cell with a paragraph tag (which we should
+  probably remove at some point), causing ridiculous amounts of vertical whitespace. Make
+  sure Paragraphs within tables don't add any of their own top/bottom margins.
 */
 
-table tr p { display: inline }
+table tr p { margin-top: 0; margin-bottom: 0 }
 
 
 
 /*
-  Figures and class hierarchy graphs
+  Figures
 */
 
-p[class~="Fg.Figure"] :first-child {
-	   border-bottom: 1px solid;
-	   padding-bottom: 3px;
-	   padding-left: 10px; margin-left: -10px;
+p[class~="Fg.Figure"]
+           {
+             font-family: sans-serif;
+             margin-top: 3em;
+             margin-bottom: 2em
+           }
+
+p[class~="Fg.Figure"] :first-child
+           {
+             border-bottom: 1px solid;
+             padding-bottom: 3px;
+             padding-left: 7em; margin-left: -7em;
 	   }
-
-p[class~="Fg.Figure"] :first-child + * {
-	   margin-right: 2em;
+p[class~="Fg.Figure"] :first-child + *
+           {
+             margin-right: 2em;
 	   }
 
 div.figure {
-	   min-width: 38pc;
-	   border: 1px solid; border-bottom: 3px solid; border-right: 3px solid;
-	   padding: 1em;
-	   font-family: sans-serif
+             border: 1px solid; border-bottom: 3px solid; border-right: 3px solid;
+             padding: 1em;
+             margin-bottom: 3em;
+             font-family: sans-serif
 	   }
 
-table.class-attributes-legend		     { margin-top: 1em; border-collapse: collapse }
-table.class-attributes-legend td    	     { padding: 0 3px 0 0 }
-table.class-attributes-legend td.description { padding-right: 2em }
+/* some figures are wide and must be moved into the left margin to fit */
+div.figure.wide
+          {
+            margin-left: -8em
+          }
+
+table.class-attributes-legend		          { margin-top: 1em; border-collapse: collapse }
+table.class-attributes-legend td    	          { padding: 0 3px 0 0 }
+table.class-attributes-legend td.description + td { padding-left: 2em }
 
 
 
@@ -221,23 +570,26 @@ table.class-attributes-legend td.description { padding-right: 2em }
 
 code i, i.parameter, var { font-family: serif }
 
-/* Italic text in bold code (predefined method signatures) is sans-serif. */
+/* Some segments of "code" are not literal and are contrasted by not using bold. */
+h4 > code em { font-weight: normal; font-style: normal }
 
+/* Italic text in bold code (predefined method signatures) is sans-serif. */
 h4 > code var { font-family: sans-serif }
 
 
 
 /*
-  Regular Expression Formatting
+  Regular Expression Meta-Syntax Formatting
 
-  Regular expression syntax is used to define some parts of the grammar
-  outside of the formal BNF grammar. Regular expression markers like
-  {, and }* should be in a heavy font, and a little larger to add even
-  more weight (because typically just making it bold doesn't provide
-  enough contrast).
+  Regular expression meta-syntax is used to define some parts of the
+  grammar outside of the formal BNF grammar. Regular expression
+  markers like {, and }* should be bold and in the code font.
 */
 
-strong.re { font-size: larger }
+strong.MetaSyntax,
+strong.re { font-family: monospace }
+code strong.MetaSyntax,
+code strong.re { font-family: inherit }
 
 
 
@@ -264,7 +616,8 @@ strong.re { font-size: larger }
 .BNFCaps          { font-variant: small-caps; font-style: normal; /*font-size: larger*/ }
 .BNF dd p         { margin: 0.25em 0 0 0 }
 .BNF dt           { margin-top: 1em }
-.BNF i            { font-family: serif }
+.BNF i,
+.BNF em, em.BNF   { font-family: serif }
 .BNF code         { font-weight: bolder }
 .BNF code sub     { font-weight: normal }  /* don't make subscripted suffixes bold */
 .BNF .BNFCaps sub { font-variant: normal } /* don't make subscripted suffixes small-caps */
@@ -299,25 +652,6 @@ div.wm-div-body {
 }
 */
 
-
-/*
-  Some experimental declarations to float the navigation buttons at
-  the top of each page.
-*/
-
-/*
-div.wm-div-headers {
-	position: fixed;
-	top: 0px;
-	background: white;
-	border-bottom: 1px solid gray;
-	width: 100%;
-	min-height: 5em;
-	margin: 0;
-}
-
-div.wm-div-body { margin-top: 6em }
-*/
 
 /*
 div.wm-div-footnotes {

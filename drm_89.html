@@ -47,7 +47,7 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>Objects</title>
+  <title>The Dylan Reference Manual: Objects</title>
 </head>
 <body>
 
@@ -55,10 +55,23 @@
 <a name="HEADING89"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_90.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_88.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_87.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">11 The Built-In Classes</p>
+<p id="navigation"><a href="drm_88.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_90.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_87.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 11</p>
+  <p id="section-name">The Built-In Classes</p>
+</div>
+
+<div class="wm-div-toc">
+  <ul class="page-toc">
+    <li><a href="drm_89.html#HEADING89-1"><code>&lt;object&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></a></li>
+  </ul>
+</div>
+
+<hr />
 
 </div>
+
 <a name="HEADING89-0"></a>
 <a name="UID-Built-In_Classes-12784"></a>
 <h1 class="H1.Heading1"><a name="MARKER-2-1364"></a>Objects</h1>
@@ -75,91 +88,70 @@
   <dd class="Cliche"><p class="Cliche"> <a name="MARKER-2-1366"></a>The class <code>&lt;object&gt;</code> is the root of the type system. All objects are general instances of <code>&lt;object&gt;</code>, all types are subtypes of <code>&lt;object&gt;</code>, and all classes are subclasses of <code>&lt;object&gt;</code>.</p></dd>
   <dt class="Cliche">Operations:</dt>
   <dd class="Cliche"><p class="Cliche"> The class <code>&lt;object&gt;</code> provides the following operations:</p>
-    <p class="Anchor"> </p>
     <table class="numbered"><caption class="Tb.Table"><strong>Table 11-1</strong>  Functions on &lt;object&gt;</caption>
       <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	</th><th><p class="TbH.TblHd"> </p>
 	</th><th><p class="TbH.TblHd"> Description</p>
 	</th><th><p class="TbH.TblHd"> Page</p>
       </th></tr><tr><td><p class="TbT.TblText"> <code>identity</code></p>
-	</td><td><p class="TbT.TblText"> </p>
 	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1676" class="TbT.TblText">Returns its argument.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1676" class="TbT.TblText">287</a></p>
       </td></tr><tr><td><p class="TbT.TblText"> <code>always</code></p>
-	</td><td><p class="TbT.TblText"> </p>
 	</td><td><p class="TbT.TblText"> <a href="drm_104.html#MARKER-9-1888" class="TbT.TblText">Returns a function that always returns a particular object.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_104.html#MARKER-9-1888" class="TbT.TblText">350</a></p>
       </td></tr><tr><td><p class="TbT.TblText"> <code>instance?</code></p>
-	</td><td><p class="TbT.TblText"> </p>
 	</td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1861" class="TbT.TblText">Tests whether an object is an instance of a type.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1861" class="TbT.TblText">343</a></p>
       </td></tr><tr><td><p class="TbT.TblText"> <code>object-class</code></p>
-	</td><td><p class="TbT.TblText"> </p>
 	</td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1865" class="TbT.TblText">Returns the class of an object.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_103.html#MARKER-9-1865" class="TbT.TblText">344</a></p>
       </td></tr><tr><td><p class="TbT.TblText"> <code>==</code></p>
-	</td><td><p class="TbT.TblText"> </p>
 	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1578" class="TbT.TblText">Compares two objects for identity.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1578" class="TbT.TblText">268</a></p>
       </td></tr><tr><td><p class="TbT.TblText"> <code>~==</code></p>
-	</td><td><p class="TbT.TblText"> </p>
 	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1582" class="TbT.TblText">Compares two objects for nonidentity.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1582" class="TbT.TblText">269</a></p>
       </td></tr><tr><td><p class="TbT.TblText"> <code>~</code></p>
-	</td><td><p class="TbT.TblText"> </p>
 	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1576" class="TbT.TblText">Returns true if its argument is false; otherwise returns false.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1576" class="TbT.TblText">268</a></p>
       </td></tr><tr><td><p class="TbT.TblText"> <code>object-hash</code></p>
-	</td><td><p class="TbT.TblText"> </p>
 	</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1855" class="TbT.TblText">The hash function for the equivalence predicate ==.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1855" class="TbT.TblText">342</a></p>
-    </td></tr></table><p class="Anchor"> </p>
+    </td></tr></table>
     <table class="numbered"><caption class="Tb.Table"><strong>Table 11-2</strong>  Generic functions on &lt;object&gt;</caption>
       <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	</th><th><p class="TbH.TblHd"> </p>
 	</th><th><p class="TbH.TblHd"> Description</p>
 	</th><th><p class="TbH.TblHd"> Page</p>
       </th></tr><tr><td><p class="TbT.TblText"> <code>initialize</code></p>
-	</td><td><p class="TbT.TblText"> </p>
 	</td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1543" class="TbT.TblText">Performs instance initialization that cannot be specified declaratively by a class definition.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1543" class="TbT.TblText">260</a></p>
       </td></tr><tr><td><p class="TbT.TblText"> <code>as</code></p>
-	</td><td><p class="TbT.TblText"> </p>
 	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1680" class="TbT.TblText">Coerces an object to a type.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1680" class="TbT.TblText">288</a></p>
       </td></tr><tr><td><p class="TbT.TblText"> <code>shallow-copy</code></p>
-	</td><td><p class="TbT.TblText"> </p>
 	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1692" class="TbT.TblText">Returns a copy of its argument.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1692" class="TbT.TblText">292</a></p>
       </td></tr><tr><td><p class="TbT.TblText"> <code>type-for-copy</code></p>
-	</td><td><p class="TbT.TblText"> </p>
 	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1694" class="TbT.TblText">Returns an appropriate type for creating mutable copies of its argument.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1694" class="TbT.TblText">292</a></p>
       </td></tr><tr><td><p class="TbT.TblText"> <code>size</code></p>
-	</td><td><p class="TbT.TblText"> </p>
 	</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1702" class="TbT.TblText">Returns the size of its argument.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1702" class="TbT.TblText">295</a></p>
       </td></tr><tr><td><p class="TbT.TblText"> <code>empty?</code></p>
-	</td><td><p class="TbT.TblText"> </p>
 	</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1700" class="TbT.TblText">Returns true if its argument is empty.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_102.html#MARKER-9-1700" class="TbT.TblText">294</a></p>
-    </td></tr></table><p class="Anchor"> </p>
+    </td></tr></table>
     <table class="numbered"><caption class="Tb.Table"><strong>Table 11-3</strong>  Methods on &lt;object&gt;</caption>
       <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-</th><th><p class="TbH.TblHd"> </p>
-	</th><th><p class="TbH.TblHd"> Description</p>
+</th><th><p class="TbH.TblHd"> Description</p>
 	</th><th><p class="TbH.TblHd"> Page</p>
       </th></tr><tr><td><p class="TbT.TblText"> <code>initialize</code></p>
-	</td><td><p class="TbT.TblText"> </p>
 	</td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1543" class="TbT.TblText">Performs instance initialization that cannot be specified declaratively by a class definition.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1543" class="TbT.TblText">260</a></p>
       </td></tr><tr><td><p class="TbT.TblText"> <code>type-for-copy</code></p>
-	</td><td><p class="TbT.TblText"> </p>
 	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1694" class="TbT.TblText">Returns an appropriate type for creating mutable copies of its argument.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_101.html#MARKER-9-1694" class="TbT.TblText">292</a></p>
       </td></tr><tr><td><p class="TbT.TblText"> <code>=</code></p>
-	</td><td><p class="TbT.TblText"> </p>
-</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1584" class="TbT.TblText">Compares two objects for equality.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1584" class="TbT.TblText">Compares two objects for equality.</a></p>
 	</td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1584" class="TbT.TblText">269</a></p>
     </td></tr></table><p class="Anchor"> <a name="MARKER-2-1367"></a></p>
   </dd>
@@ -168,18 +160,9 @@
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-<ul class="footer">
-<li class="footer"><a href="drm_89.html#HEADING89-1" class="footer">&lt;object&gt; [Open Abstract Class]</a></li>
-</ul>
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_90.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_88.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_87.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_88.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_90.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_87.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

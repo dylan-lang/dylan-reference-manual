@@ -47,7 +47,7 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>Conditional Execution</title>
+  <title>The Dylan Reference Manual: Conditional Execution</title>
 </head>
 <body>
 
@@ -55,41 +55,47 @@
 <a name="HEADING33"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_34.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_32.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_28.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">4 Program Control</p>
+<p id="navigation"><a href="drm_32.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_34.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_28.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 4</p>
+  <p id="section-name">Program Control</p>
+</div>
+
+<div class="wm-div-toc">
+  <ul class="page-toc">
+    <li class="footer"><a href="drm_33.html#HEADING33-105" class="footer">True and False</a></li>
+  </ul>
+</div>
+
+<hr />
 
 </div>
+
 <a name="HEADING33-0"></a>
 <a name="UID-Program_Control-2526"></a>
 <h1 class="H1.Heading1"><a name="MARKER-2-459"></a>Conditional Execution</h1>
 <p class="T0.Text0">There are a number of statements and function macros that can be used to conditionally execute code. These are described in detail in <a href="drm_110.html#MARKER-9-1995" class="T0.Text0">Chapter 14, "The Built-In Macros and Special Definitions."</a></p>
 <table class="numbered"><caption><strong>Table 4-2</strong>  Conditional Execution</caption>
 <tr><th class="primary"><p class="TbH.TblHd"> Macro / Operator</p>
-</th><th><p class="TbH.TblHd"> </p>
 </th><th><p class="TbH.TblHd"> Description</p>
 </th><th><p class="TbH.TblHd"> Page</p>
 </th></tr><tr><td><p class="TbT.TblText"> <code>if</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="drm_114.html#MARKER-9-2044" class="TbT.TblText">Executes an implicit body if the value of a test is true or an alternate if the test is false.</a></p>
 </td><td><p class="TbT.TblText"> <a href="drm_114.html#MARKER-9-2044" class="TbT.TblText">395</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>unless</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="drm_114.html#MARKER-9-2046" class="TbT.TblText">Executes an implicit body unless the value of a test is true.</a></p>
 </td><td><p class="TbT.TblText"> <a href="drm_114.html#MARKER-9-2046" class="TbT.TblText">396</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>case</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="drm_114.html#MARKER-9-2048" class="TbT.TblText">Executes a number of tests until one is true, and then executes an implicit body associated with the true test.</a></p>
 </td><td><p class="TbT.TblText"> <a href="drm_114.html#MARKER-9-2048" class="TbT.TblText">397</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>select</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="drm_114.html#MARKER-9-2050" class="TbT.TblText">Compares a target object to a series of potential matches, and executes an implicit body associated with the first match found.</a></p>
 </td><td><p class="TbT.TblText"> <a href="drm_114.html#MARKER-9-2050" class="TbT.TblText">398</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>|</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="drm_115.html#MARKER-9-2076" class="TbT.TblText">Returns the value of the first of two operands that is true.</a> This is a logical or operation.</p>
 </td><td><p class="TbT.TblText"> <a href="drm_115.html#MARKER-9-2075" class="TbT.TblText">412</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>&amp;</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="drm_115.html#MARKER-9-2079" class="TbT.TblText">If the value of a first operand is true, executes a second operand and returns its values.</a> This is a logical and operation.</p>
 </td><td><p class="TbT.TblText"> <a href="drm_115.html#MARKER-9-2079" class="TbT.TblText">412</a></p>
 </td></tr></table><a name="HEADING33-105"></a>
@@ -104,18 +110,9 @@
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-<ul class="footer">
-<li class="footer"><a href="drm_33.html#HEADING33-105" class="footer">True and False</a></li>
-</ul>
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_34.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_32.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_28.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_32.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_34.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_28.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

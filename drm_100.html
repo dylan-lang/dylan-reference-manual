@@ -47,7 +47,7 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>Arithmetic Operations</title>
+  <title>The Dylan Reference Manual: Arithmetic Operations</title>
 </head>
 <body>
 
@@ -55,10 +55,114 @@
 <a name="HEADING100"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_101.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_99.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_96.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">12 The Built-In Functions</p>
+<p id="navigation"><a href="drm_99.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_101.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 12</p>
+  <p id="section-name">The Built-In Functions</p>
+</div>
+
+<div class="wm-div-toc">
+  <ul class="page-toc">
+    <li><a href="drm_100.html#HEADING100-2">Properties</a>
+      <ul>
+	<li><a href="drm_100.html#HEADING100-3"><code>odd?</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-9"><code>even?</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-15"><code>zero?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_100.html#HEADING100-21"><code>zero?</code> complex &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_100.html#HEADING100-23"><code>positive?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_100.html#HEADING100-29"><code>positive?</code>   real &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_100.html#HEADING100-31"><code>negative?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_100.html#HEADING100-37"><code>negative?</code>   real &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_100.html#HEADING100-39"><code>integral?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_100.html#HEADING100-45"><code>integral?</code>   object &rArr;  false <span class="attributes-summary">[G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_100.html#HEADING100-47"><code>integral?</code>   real &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+      </ul>
+    </li>
+    <li><a href="drm_100.html#HEADING100-49">Arithmetic Operations</a>
+      <ul>
+	<li><a href="drm_100.html#HEADING100-50"><code>+</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_100.html#HEADING100-57">complex1  + complex2 &rArr;  complex <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_100.html#HEADING100-59"><code>*</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_100.html#HEADING100-66">complex1  * complex2 &rArr;  complex <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_100.html#HEADING100-68"><code>-</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_100.html#HEADING100-75">complex1  - complex2 &rArr;  complex <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_100.html#HEADING100-77"><code>/</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_100.html#HEADING100-84">complex1  / complex2 &rArr;  complex <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_100.html#HEADING100-88"><code>negative</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_100.html#HEADING100-94">negative real1  &rArr;  real2 <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_100.html#HEADING100-96"><code>floor</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-103"><code>ceiling</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-110"><code>round</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-117"><code>truncate</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-124"><code>floor/</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-132"><code>ceiling/</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-140"><code>round/</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-148"><code>truncate/</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-156"><code>modulo</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-163"><code>remainder</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-170"><code>^</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_100.html#HEADING100-177">complex  ^ integer &rArr;  number <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_100.html#HEADING100-179"><code>abs</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_100.html#HEADING100-185"><code>abs</code> complex &rArr;  real <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_100.html#HEADING100-187"><code>logior</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-193"><code>logxor</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-199"><code>logand</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-205"><code>lognot</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-211"><code>logbit?</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-219"><code>ash</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_100.html#HEADING100-230"><code>lcm</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_100.html#HEADING100-237">lcm  integer1 integer2   &rArr;  integer3 <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_100.html#HEADING100-239"><code>gcd</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_100.html#HEADING100-246">gcd  integer1 integer2   &rArr;  integer3 <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<hr />
 
 </div>
+
 <a name="HEADING100-0"></a>
 <a name="UID-Built-In_Functions-410"></a>
 <h1 class="H1.Heading1">Arithmetic Operations</h1>
@@ -165,7 +269,8 @@
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Returns true if its argument is equal to zero.</p>
     <a name="HEADING100-21"></a>
-    <h4 class="H5.Heading5"><code>zero?</code>   complex &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code>zero? <var>complex</var> </code>
+      &rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">A method is defined for the class <code>&lt;complex&gt;</code>.</p>
   </dd>
 </dl>
@@ -202,7 +307,8 @@
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Returns true if its argument is positive.</p>
     <a name="HEADING100-29"></a>
-    <h4 class="H5.Heading5"><code>positive?</code>   real &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code>positive? <var>real</var> </code>
+      &rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">A method is defined for the class <code>&lt;real&gt;</code>.</p>
   </dd>
 </dl>
@@ -239,7 +345,8 @@
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Returns true if its argument is negative.</p>
     <a name="HEADING100-37"></a>
-    <h4 class="H5.Heading5"><code>negative?</code>   real &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code>negative? <var>real</var> </code>
+      &rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">A method is defined for the class <code>&lt;real&gt;</code>.</p>
   </dd>
 </dl>
@@ -276,10 +383,12 @@
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Returns true if its argument is an integer.</p>
     <a name="HEADING100-45"></a>
-    <h4 class="H5.Heading5"><code>integral? <var>object</var> </code>&rArr;<code> <var>false</var></code> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code>integral? <var>object</var> </code>
+      &rArr;<code> <var>false</var></code> <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">A method is defined for the class <code>&lt;object&gt;</code> that returns <code>#f</code>.</p>
     <a name="HEADING100-47"></a>
-    <h4 class="H5.Heading5"><code>integral? <var>real</var> </code>&rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code>integral? <var>real</var> </code>
+      &rArr;<code> <var>boolean</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">A method is defined for real numbers that is equivalent to <i class="parameter T1.Text1">real<code> = round(real)</code></i>.<a name="MARKER-2-1617"></a></p>
   </dd>
 </dl>
@@ -305,9 +414,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -323,7 +429,8 @@
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Adds two objects and returns the sum.</p>
     <a name="HEADING100-57"></a>
-    <h4 class="H5.Heading5">complex1  <code>+</code> complex2 &rArr;  complex <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code><var>complex1</var> + <var>complex2</var> </code>
+      &rArr;<code> <var>complex</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">A predefined method returns the sum of two complex numbers.</p>
   </dd>
 </dl>
@@ -346,9 +453,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -364,7 +468,8 @@
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Multiplies two objects and returns the product.</p>
     <a name="HEADING100-66"></a>
-    <h4 class="H5.Heading5">complex1  <code>*</code> complex2 &rArr;  complex <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code><var>complex1</var> * <var>complex2</var> </code>
+      &rArr;<code> <var>complex</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">A predefined method returns the product of two complex numbers.</p>
   </dd>
 </dl>
@@ -387,9 +492,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -405,7 +507,8 @@
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Subtracts <var>object2</var> from <var>object1</var> and returns the difference.</p>
     <a name="HEADING100-75"></a>
-    <h4 class="H5.Heading5">complex1  <code>-</code> complex2 &rArr;  complex <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code><var>complex1</var> - <var>complex2</var> </code>
+      &rArr;<code> <var>complex</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">A predefined method returns the difference of two complex numbers.</p>
   </dd>
 </dl>
@@ -428,9 +531,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -446,7 +546,8 @@
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Divides <var>object2</var> into <var>object1</var> and returns the quotient.</p>
     <a name="HEADING100-84"></a>
-    <h4 class="H5.Heading5">complex1  <code>/</code> complex2 &rArr;  complex <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code><var>complex1</var> / <var>complex2</var> </code>
+      &rArr;<code> <var>complex</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">A predefined method returns the quotient of two complex numbers.</p>
     <p class="T1.Text1"><a name="MARKER-2-1626"></a><a name="MARKER-2-1627"></a>Division by zero signals an error.</p>
     <p class="T1.Text1">The result of dividing two integers with / is implementation defined. Portable programs should use <code>floor/</code>, <code>ceiling/</code>, <code>round/</code>, or <code>truncate/</code> to divide two integers.</p>
@@ -485,7 +586,8 @@
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Returns the negation of its argument. The unary minus operator is equivalent to a call to the <code>negative</code> in the current binding environment.</p>
     <a name="HEADING100-94"></a>
-    <h4 class="H5.Heading5"><code>negative <var>real1</var> </code>&rArr;<code> <var>real2</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code>negative <var>real1</var> </code>
+      &rArr;<code> <var>real2</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">A predefined method returns the additive inverse of a real number.</p>
   </dd>
 </dl>
@@ -517,9 +619,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;integer&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
@@ -554,9 +653,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;integer&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
@@ -591,9 +687,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;integer&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
@@ -628,9 +721,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;integer&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
@@ -656,9 +746,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;real&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
@@ -669,9 +756,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;integer&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>real3</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
@@ -697,9 +781,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;real&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
@@ -710,9 +791,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;integer&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>real3</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
@@ -738,9 +816,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;real&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
@@ -751,9 +826,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;integer&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>real3</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
@@ -779,9 +851,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;real&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
@@ -792,9 +861,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;integer&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>real3</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
@@ -820,9 +886,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;real&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
@@ -857,9 +920,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;real&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
@@ -894,9 +954,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -912,7 +969,8 @@
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Returns <var>object1 </var> raised to the power <var>object2</var>. An error is signaled if both arguments are zero.</p>
     <a name="HEADING100-177"></a>
-    <h4 class="H5.Heading5">complex  ^ integer &rArr;  number <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code><var>complex</var> ^ <var>integer</var> </code>
+      &rArr;<code><var>number</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">A predefined method raises a complex number to an integral power and returns the result.</p>
   </dd>
 </dl>
@@ -949,7 +1007,8 @@
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Returns the absolute value of <var>object1</var>.</p>
     <a name="HEADING100-185"></a>
-    <h4 class="H5.Heading5"><code>abs</code> complex &rArr;  real <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code>abs <var>complex</var> </code>
+      &rArr;<code> <var>real</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">A predefined method returns the absolute value of a complex number.</p>
   </dd>
 </dl>
@@ -1104,9 +1163,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;integer&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>integer</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;integer&gt;</code>.</p></dd>
   </dl></dd>
@@ -1142,9 +1198,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;integer&gt;.</code></p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>count</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;integer&gt;.</code></p></dd>
   </dl></dd>
@@ -1188,9 +1241,6 @@ ash(32, -1)
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -1206,7 +1256,8 @@ ash(32, -1)
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Returns the least common multiple of <var>object1</var> and <var>object2.</var></p>
     <a name="HEADING100-237"></a>
-    <h4 class="H5.Heading5"><code>lcm</code>  integer1 integer2   &rArr;  integer3 <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code>lcm <var>integer1 integer2</var> </code>
+      &rArr;<code> <var>integer3</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">A predefined method returns the least common multiple of two integers.</p>
   </dd>
 </dl>
@@ -1229,9 +1280,6 @@ ash(32, -1)
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -1247,7 +1295,8 @@ ash(32, -1)
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> Returns the greatest common divisor of <var>object1</var> and <var>object2</var>.</p>
     <a name="HEADING100-246"></a>
-    <h4 class="H5.Heading5"><code>gcd</code>  integer1 integer2   &rArr;  integer3 <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code>gcd <var>integer1 integer2</var> </code>
+      &rArr;<code> <var>integer3</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">A predefined method returns the greatest common divisor of two integers.<a name="MARKER-2-1673"></a></p>
   </dd>
 </dl>
@@ -1256,64 +1305,9 @@ ash(32, -1)
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-<ul class="footer">
-<li class="footer"><a href="drm_100.html#HEADING100-2" class="footer">Properties</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-3" class="footer">odd? [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-9" class="footer">even? [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-15" class="footer">zero? [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-21" class="footer">zero?   complex &rArr;  boolean [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-23" class="footer">positive? [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-29" class="footer">positive?   real &rArr;  boolean [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-31" class="footer">negative? [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-37" class="footer">negative?   real &rArr;  boolean [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-39" class="footer">integral? [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-45" class="footer">integral?   object &rArr;  false [G.F. Method]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-47" class="footer">integral?   real &rArr;  boolean [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-49" class="footer">Arithmetic Operations</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-50" class="footer">+ [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-57" class="footer">complex1  + complex2 &rArr;  complex [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-59" class="footer">* [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-66" class="footer">complex1  * complex2 &rArr;  complex [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-68" class="footer">- [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-75" class="footer">complex1  - complex2 &rArr;  complex [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-77" class="footer">/ [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-84" class="footer">complex1  / complex2 &rArr;  complex [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-88" class="footer">negative [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-94" class="footer">negative real1  &rArr;  real2 [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-96" class="footer">floor [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-103" class="footer">ceiling [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-110" class="footer">round [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-117" class="footer">truncate [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-124" class="footer">floor/ [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-132" class="footer">ceiling/ [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-140" class="footer">round/ [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-148" class="footer">truncate/ [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-156" class="footer">modulo [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-163" class="footer">remainder [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-170" class="footer">^ [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-177" class="footer">complex  ^ integer &rArr;  number [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-179" class="footer">abs [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-185" class="footer">abs complex &rArr;  real [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-187" class="footer">logior [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-193" class="footer">logxor [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-199" class="footer">logand [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-205" class="footer">lognot [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-211" class="footer">logbit? [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-219" class="footer">ash [Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-230" class="footer">lcm [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-237" class="footer">lcm  integer1 integer2   &rArr;  integer3 [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-239" class="footer">gcd [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_100.html#HEADING100-246" class="footer">gcd  integer1 integer2   &rArr;  integer3 [Sealed G.F. Method]</a></li>
-</ul>
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_101.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_99.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_96.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_99.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_101.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

@@ -46,45 +46,84 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>5 Types and Classes</title>
+  <title>The Dylan Reference Manual: 5 Types and Classes</title>
 </head>
-<body>
+<body class="section-start">
 
 <div class="wm-div-body">
 <a name="HEADING38"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_39.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_37.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">The Dylan Reference Manual</p>
+<p id="navigation">
+  <a href="drm_37.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a>
+  <a href="drm_39.html"><img alt="next" src="next.gif" title="Go to next page" /></a>
+  <img id="up" alt="Up" src="upg.gif" title="Go to start of chapter" />
+  <a href="drm_1.html"><img alt="top" src="top.gif" /></a>
+  <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a>
+  <a href="drm_127.html"><img alt="index" src="index.gif" /></a>
+</p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 5</p>
+  <p id="section-name">Types and Classes</p>
+</div>
+
+<hr />
 
 </div>
+
 <a name="LINK-Types_and_Classes-firstpage"></a><a name="HEADING38-0"></a>
 <a name="UID-Types_and_Classes-648"></a>
 <h1 class="ChT.ChapterTitle">Types and Classes</h1>
+<h2 class="ChT.ChapterTitle">Contents</h2>
+
+<ul class="TOC">
+  <li><a href="drm_39.html#HEADING39-0">Overview</a></li>
+  <li><a href="drm_40.html#HEADING40-0">The Type Protocol</a>
+    <ul>
+      <li><a href="drm_40.html#HEADING40-14">Base Types and Pseudosubtypes</a></li>
+      <li><a href="drm_40.html#HEADING40-19">Type Disjointness</a></li>
+    </ul>
+  </li>
+  <li><a href="drm_41.html#HEADING41-0">Classes</a>
+    <ul>
+      <li><a href="drm_41.html#HEADING41-5">Features of Classes</a></li>
+      <li><a href="drm_41.html#HEADING41-11">Creating Classes</a></li>
+      <li><a href="drm_41.html#HEADING41-19">Class Inheritance</a></li>
+      <li><a href="drm_41.html#HEADING41-25">Computing the Class Precedence List</a></li>
+    </ul>
+  </li>
+  <li><a href="drm_42.html#HEADING42-0">Slots</a>
+    <ul>
+      <li><a href="drm_42.html#HEADING42-11">Slot Inheritance</a></li>
+      <li><a href="drm_42.html#HEADING42-16">Slot Specifications</a></li>
+    </ul>
+  </li>
+  <li><a href="drm_43.html#HEADING43-0">Instance Creation and Initialization</a>
+    <ul>
+      <li><a href="drm_43.html#HEADING43-2">Overview</a></li>
+      <li><a href="drm_43.html#HEADING43-37">Inherited Slot Specifications</a></li>
+      <li><a href="drm_43.html#HEADING43-44">Initialization Argument Specifications</a></li>
+    </ul>
+  </li>
+  <li><a href="drm_44.html#HEADING44-0">Singletons</a></li>
+  <li><a href="drm_45.html#HEADING45-0">Union Types</a></li>
+  <li><a href="drm_46.html#HEADING46-0">Limited Types</a>
+    <ul>
+      <li><a href="drm_46.html#HEADING46-3">Limited Type Constructor</a></li>
+      <li><a href="drm_46.html#HEADING46-6">Limited Integer Types</a></li>
+      <li><a href="drm_46.html#HEADING46-19">Limited Collection Types</a></li>
+    </ul>
+  </li>
+</ul>
 
 </div>
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-<ul class="footer">
-<li class="footer"><a href="drm_39.html#HEADING39-0" class="footer">Overview</a></li>
-<li class="footer"><a href="drm_40.html#HEADING40-0" class="footer">The Type Protocol</a></li>
-<li class="footer"><a href="drm_41.html#HEADING41-0" class="footer">Classes</a></li>
-<li class="footer"><a href="drm_42.html#HEADING42-0" class="footer">Slots</a></li>
-<li class="footer"><a href="drm_43.html#HEADING43-0" class="footer">Instance Creation and Initialization</a></li>
-<li class="footer"><a href="drm_44.html#HEADING44-0" class="footer">Singletons</a></li>
-<li class="footer"><a href="drm_45.html#HEADING45-0" class="footer">Union Types</a></li>
-<li class="footer"><a href="drm_46.html#HEADING46-0" class="footer">Limited Types</a></li>
-</ul>
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_39.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_37.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_37.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_39.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

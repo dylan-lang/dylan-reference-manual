@@ -47,7 +47,7 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>Exception Handling</title>
+  <title>The Dylan Reference Manual: Exception Handling</title>
 </head>
 <body>
 
@@ -55,10 +55,26 @@
 <a name="HEADING56"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_57.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_55.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_52.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">7 Conditions</p>
+<p id="navigation"><a href="drm_55.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_57.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_52.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 7</p>
+  <p id="section-name">Conditions</p>
+</div>
+
+<div class="wm-div-toc">
+  <ul class="page-toc">
+    <li><a href="drm_56.html#HEADING56-3">Stack Model</a></li>
+    <li><a href="drm_56.html#HEADING56-11">Recovery and Exits</a></li>
+    <li><a href="drm_56.html#HEADING56-22">Restarts</a></li>
+    <li><a href="drm_56.html#HEADING56-25">Recovery Protocols</a></li>
+  </ul>
+</div>
+
+<hr />
 
 </div>
+
 <a name="HEADING56-0"></a>
 <a name="UID-Conditions-1884"></a>
 <h1 class="H1.Heading1">Exception Handling</h1>
@@ -74,7 +90,12 @@
   <li class="B1.Bullet1"><strong class="B1.Bullet1"><a name="MARKER-2-929"></a>middle stack<br /></strong>The state existing just before the signaling unit was called, minus the outside stack. In other words, the state between the handler and the signaling unit.</li>
   <li class="B1.Bullet1"><strong class="B1.Bullet1"><a name="MARKER-2-930"></a>inside stack<br /></strong>The state existing just before signaling occurred, minus the middle stack and outside stack. In other words, the portion of the signaling unit prior to the call to <code>signal</code>.</li>
 </ul>
-<p class="Fg.Figure">Figure 7-1  <a name="MARKER-9-931"></a><img alt="dr56ima1" src="dr56ima1.gif" />The Stack Model</p>
+<p class="Fg.Figure"><strong>Figure</strong> <strong>7-1</strong>  <a name="MARKER-9-931"></a><!-- img alt="dr56ima1" src="dr56ima1.gif" -->The Stack Model</p>
+
+<div class="figure" style="min-width: 100px">
+  <img alt="Stack Model Diagram" src="dr56ima1.gif" />
+</div>
+
 <p class="T1.Text1">The handler in <a href="#MARKER-9-931" class="T1.Text1">Figure 7-1</a> may either return normally, in which case execution resumes as the call to <code>signal</code> returns normally, or the handler may make a nonlocal exit, such as calling the exit function from a dynamically active <code>block</code> statement.<a name="MARKER-2-932"></a></p>
 <a name="HEADING56-11"></a>
 <a name="UID-Conditions-2820"></a>
@@ -175,21 +196,9 @@ end method;<a name="MARKER-2-937"></a>
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-<ul class="footer">
-<li class="footer"><a href="drm_56.html#HEADING56-3" class="footer">Stack Model</a></li>
-<li class="footer"><a href="drm_56.html#HEADING56-11" class="footer">Recovery and Exits</a></li>
-<li class="footer"><a href="drm_56.html#HEADING56-22" class="footer">Restarts</a></li>
-<li class="footer"><a href="drm_56.html#HEADING56-25" class="footer">Recovery Protocols</a></li>
-</ul>
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_57.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_55.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_52.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_55.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_57.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_52.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

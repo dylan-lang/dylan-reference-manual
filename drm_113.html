@@ -47,7 +47,7 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>Local Declarations</title>
+  <title>The Dylan Reference Manual: Local Declarations</title>
 </head>
 <body>
 
@@ -55,29 +55,40 @@
 <a name="HEADING113"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_114.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_112.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_110.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">14 The Built-In Macros and Special Definitions</p>
+<p id="navigation"><a href="drm_112.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_114.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_110.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 14</p>
+  <p id="section-name">The Built-In Macros and Special Definitions</p>
+</div>
+
+<div class="wm-div-toc">
+  <ul class="page-toc">
+    <li><a href="drm_113.html#HEADING113-63"><code>let</code> <span class="attributes-summary">[Local Declaration]</span></a></li>
+    <li><a href="drm_113.html#HEADING113-79"><code>local</code> <span class="attributes-summary">[Local Declaration]</span></a></li>
+    <li><a href="drm_113.html#HEADING113-89"><code>let handler</code> <span class="attributes-summary">[Local Declaration]</span></a></li>
+  </ul>
+</div>
+
+<hr />
 
 </div>
+
 <a name="HEADING113-0"></a>
 <a name="UID-Built-In_Macros-7985"></a>
 <h1 class="H1.Heading1">Local Declarations</h1>
 <p class="T1.Text1"><a name="MARKER-2-2029"></a>Local declarations are used to create bindings or install handlers that are active for the remainder of the innermost body containing the declaration. Bindings created by local declarations can be referenced only in the remaining program text of the body. Handlers installed are active while the execution of the remainder of the body is active, which includes the time during which any functions called from the remainder of the body are active.</p>
 <table class="numbered"><caption><strong>Table 14-2</strong>  Local Declarations</caption>
 <tr><th class="primary"><p class="TbH.TblHd"> Macro</p>
-</th><th><p class="TbH.TblHd"> </p>
 </th><th><p class="TbH.TblHd"> Description</p>
 </th><th><p class="TbH.TblHd"> Page</p>
 </th></tr><tr><td><p class="TbT.TblText"> <code>let</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2031" class="TbT.TblText">Creates and initializes new local bindings within the smallest enclosing implicit body.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2031" class="TbT.TblText">390</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>local</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2035" class="TbT.TblText">Creates new local bindings within the smallest enclosing implicit body and initializes them to local methods that can be self-recursive and mutually recursive.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2035" class="TbT.TblText">391</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>let handler</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2038" class="TbT.TblText">Establishes a condition handler for the duration of the execution of smallest enclosing implicit body.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2038" class="TbT.TblText">392</a></p>
 </td></tr></table><a name="HEADING113-63"></a>
@@ -94,9 +105,6 @@
       <dd>
         <p class="Cliche"><span class="BNF">variable<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>(</code> <span class="BNF">variable-list<em class="BNF"><sub>bnf</sub></em></span> <code>)</code></p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>init</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
   </dl></dd>
@@ -134,9 +142,6 @@ let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount)
       <dd>
         <p class="Cliche"><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p>
       </dd>
-    </dl>
-  </dd>
-<dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">parameter-list<code></code></i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> parameter-list<em class="RP.RoutineParam"><sub>bnf</sub></em></p></dd>
 <dt class="RP.RoutineParam"><var>body</var></dt>
@@ -162,9 +167,6 @@ let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount)
       <dd>
         <p class="Cliche"><var>type</var> <strong class="re">|</strong> <code>(</code> <var>type</var> <strong class="re">{</strong> <code>,</code> <var>option</var> <strong class="re">}*</strong> <code>)</code></p>
       </dd>
-    </dl>
-  </dd>
-<dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><var>type</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 <dt class="RP.RoutineParam"><var>option</var></dt>
@@ -199,20 +201,9 @@ let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount)
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-<ul class="footer">
-<li class="footer"><a href="drm_113.html#HEADING113-63" class="footer">let [Local Declaration]</a></li>
-<li class="footer"><a href="drm_113.html#HEADING113-79" class="footer">local [Local Declaration]</a></li>
-<li class="footer"><a href="drm_113.html#HEADING113-89" class="footer">let handler [Local Declaration]</a></li>
-</ul>
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_114.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_112.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_110.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_112.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_114.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_110.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

@@ -47,7 +47,7 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>Condition Messages</title>
+  <title>The Dylan Reference Manual: Condition Messages</title>
 </head>
 <body>
 
@@ -55,10 +55,17 @@
 <a name="HEADING57"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_58.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_56.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_52.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">7 Conditions</p>
+<p id="navigation"><a href="drm_56.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_58.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_52.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 7</p>
+  <p id="section-name">Conditions</p>
+</div>
+
+<hr />
 
 </div>
+
 <a name="HEADING57-0"></a>
 <a name="UID-Conditions-1428"></a>
 <h1 class="H1.Heading1"><a name="MARKER-9-951"></a>Condition Messages</h1>
@@ -66,43 +73,33 @@
 <p class="T1.Text1">Condition messages are constructed using <strong class="Bold T1.Text1"><a name="MARKER-2-953"></a><dfn>format strings</dfn></strong>. A format string is a string template into which values can be inserted to construct a message. The two-character <strong class="Bold T1.Text1"><a name="MARKER-2-954"></a><dfn>format directives</dfn></strong> <code>%d</code>, <code>%b</code>, <code>%o</code>, <code>%x</code>, <code>%c</code>, <code>%s</code>, and <code>%=</code> are replaced by the corresponding element of the associated sequence of <strong class="Bold T1.Text1"><a name="MARKER-2-955"></a><dfn>format arguments</dfn></strong>. Upper and lower case letters are equivalent in these format directives. The inserted value is formatted according to the following table:<a rel="FOOTNOTE" href="#FOOTNOTE-4" class="T1.Text1"><sup>[4]</sup></a></p>
 <table class="numbered"><caption><strong>Table 7-1</strong>  Format Directives</caption>
 <tr><th><p class="TbH.TblHd"> Directive</p>
-</th><th><p class="TbH.TblHd"> </p>
 </th><th><p class="TbH.TblHd"> Argument Type</p>
 </th><th><p class="TbH.TblHd"> Textual Format</p>
 </th></tr><tr><td><p class="TbT.TblText"> <code><a name="MARKER-2-885"></a>%d</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <code>&lt;integer&gt;</code></p>
 </td><td><p class="TbT.TblText"> decimal number</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>%b</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <code>&lt;integer&gt;</code></p>
 </td><td><p class="TbT.TblText"> binary number</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>%o</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <code>&lt;integer&gt;</code></p>
 </td><td><p class="TbT.TblText"> octal number</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>%x</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <code>&lt;integer&gt;</code></p>
 </td><td><p class="TbT.TblText"> hexadecimal number</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>%c</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <code>&lt;character&gt;</code></p>
 </td><td><p class="TbT.TblText"> character (with no quotes)</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>%s</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <code>&lt;string&gt;</code></p>
 </td><td><p class="TbT.TblText"> string (with no quotes)</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>%s</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <code>&lt;condition&gt;</code></p>
 </td><td><p class="TbT.TblText"> condition message (with no quotes)</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>%=</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <code>&lt;object&gt;</code></p>
 </td><td><p class="TbT.TblText"> unspecified, but works with any object</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>%%</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> none</p>
 </td><td><p class="TbT.TblText"> literal <code>%</code></p>
 </td></tr></table><p class="T1.Text1">The text printed by the <code>%=</code> format directive for any given object is implementation-defined. The behavior when a format argument is not of the type specified in the table above is implementation-defined. The behavior when too many or too few format arguments are supplied is implementation-defined.</p>
@@ -127,15 +124,9 @@
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_58.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_56.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_52.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_56.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_58.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_52.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

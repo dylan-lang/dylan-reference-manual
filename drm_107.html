@@ -47,7 +47,7 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>Operations on Conditions</title>
+  <title>The Dylan Reference Manual: Operations on Conditions</title>
 </head>
 <body>
 
@@ -55,10 +55,65 @@
 <a name="HEADING107"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_108.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_106.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_96.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">12 The Built-In Functions</p>
+<p id="navigation"><a href="drm_106.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_108.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 12</p>
+  <p id="section-name">The Built-In Functions</p>
+</div>
+
+<div class="wm-div-toc">
+  <ul class="page-toc">
+    <li><a href="drm_107.html#HEADING107-2">Signaling Conditions</a>
+      <ul>
+	<li><a href="drm_107.html#HEADING107-3"><code>signal</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_107.html#HEADING107-12"><code>error</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_107.html#HEADING107-21"><code>cerror</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_107.html#HEADING107-32"><code>break</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_107.html#HEADING107-42"><code>check-type</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_107.html#HEADING107-49"><code>abort</code> <span class="attributes-summary">[Function]</span></a></li>
+      </ul>
+    </li>
+    <li><a href="drm_107.html#HEADING107-56">Handling Conditions</a>
+      <ul>
+	<li><a href="drm_107.html#HEADING107-57"><code>default-handler</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_107.html#HEADING107-63"><code>default-handler</code> condition &rArr;  false <span class="attributes-summary">[G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_107.html#HEADING107-65"><code>default-handler</code> serious-condition &rArr;  {does not return} <span class="attributes-summary">[G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_107.html#HEADING107-67"><code>default-handler</code> warning &rArr;  false <span class="attributes-summary">[G.F. Method]</span></a></li>
+	    <li class="gf-method"><a href="drm_107.html#HEADING107-69"><code>default-handler</code> restart &rArr;  {does not return} <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_107.html#HEADING107-71"><code>restart-query</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_107.html#HEADING107-78"><code>restart-query</code> restart &rArr; object <span class="attributes-summary">[G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_107.html#HEADING107-80"><code>return-query</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+      </ul>
+    </li>
+    <li><a href="drm_107.html#HEADING107-87">Introspection on Conditions</a>
+      <ul>
+	<li><a href="drm_107.html#HEADING107-88"><code>do-handlers</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_107.html#HEADING107-94"><code>return-allowed?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+	  <ul>
+	    <li class="gf-method"><a href="drm_107.html#HEADING107-101"><code>return-allowed?</code> condition &rArr; false <span class="attributes-summary">[G.F. Method]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_107.html#HEADING107-103"><code>return-description</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	<li><a href="drm_107.html#HEADING107-110"><code>condition-format-string</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_107.html#HEADING107-116"><code>condition-format-arguments</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_107.html#HEADING107-122"><code>type-error-value</code> <span class="attributes-summary">[Function]</span></a></li>
+	<li><a href="drm_107.html#HEADING107-128"><code>type-error-expected-type</code> <span class="attributes-summary">[Function]</span></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<hr />
 
 </div>
+
 <a name="HEADING107-0"></a>
 <a name="UID-Built-In_Functions-1613"></a>
 <h1 class="H1.Heading1">Operations on Conditions</h1>
@@ -96,9 +151,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;string&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>arguments</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
@@ -145,9 +197,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;string&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-<dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><var>arguments</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;object&gt;</code>.</p></dd>
 </dl></dd>
@@ -178,9 +227,6 @@
       <dd>
         <p class="Cliche2">An instance of <code>&lt;string&gt;</code>, interpreted as a format string.</p>
       </dd>
-    </dl>
-  </dd>
-<dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><var>condition</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;condition&gt;</code>.</p></dd>
 </dl></dd>
@@ -191,9 +237,6 @@
       <dd>
         <p class="Cliche2">An instance of <code>&lt;string&gt;</code>, interpreted as a format string.</p>
       </dd>
-    </dl>
-  </dd>
-<dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><var>string</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;string&gt;</code>.</p></dd>
 <dt class="RP.RoutineParam"><var>arguments</var></dt>
@@ -244,9 +287,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;string&gt;</code>, interpreted as a format string.</p>
       </dd>
-    </dl>
-  </dd>
-<dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><var>arguments</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;object&gt;</code>, interpreted as format arguments.</p></dd>
 </dl></dd>
@@ -284,9 +324,6 @@
       <dd>
         <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-    </dl>
-  </dd>
-<dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><var>type</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;type&gt;</code>.</p></dd>
 </dl></dd>
@@ -690,42 +727,9 @@
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-<ul class="footer">
-<li class="footer"><a href="drm_107.html#HEADING107-2" class="footer">Signaling Conditions</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-3" class="footer">signal [Function]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-12" class="footer">error [Function]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-21" class="footer">cerror [Function]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-32" class="footer">break [Function]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-42" class="footer">check-type [Function]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-49" class="footer">abort [Function]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-56" class="footer">Handling Conditions</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-57" class="footer">default-handler [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-63" class="footer">default-handler condition &rArr;  false [G.F. Method]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-65" class="footer">default-handler serious-condition &rArr;  {does not return} [G.F. Method]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-67" class="footer">default-handler warning &rArr;  false [G.F. Method]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-69" class="footer">default-handler restart &rArr;  {does not return} [Sealed G.F. Method]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-71" class="footer">restart-query [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-78" class="footer">restart-query restart &rArr; object [G.F. Method]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-80" class="footer">return-query [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-87" class="footer">Introspection on Conditions</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-88" class="footer">do-handlers [Function]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-94" class="footer">return-allowed? [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-101" class="footer">return-allowed? condition &rArr; false [G.F. Method]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-103" class="footer">return-description [Open Generic Function]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-110" class="footer">condition-format-string [Function]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-116" class="footer">condition-format-arguments [Function]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-122" class="footer">type-error-value [Function]</a></li>
-<li class="footer"><a href="drm_107.html#HEADING107-128" class="footer">type-error-expected-type [Function]</a></li>
-</ul>
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_108.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_106.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_96.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_106.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_108.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

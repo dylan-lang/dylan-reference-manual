@@ -47,7 +47,7 @@
     
     <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-    <title>Numbers</title>
+    <title>The Dylan Reference Manual: Numbers</title>
   </head>
   <body>
 
@@ -55,10 +55,55 @@
       <a name="HEADING92"></a>
 
       <div class="wm-div-headers">
-	<p class="header"><a href="drm_93.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_91.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_87.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-	<p class="header">11 The Built-In Classes</p>
+	<p id="navigation"><a href="drm_91.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_93.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_87.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+	
+	<div id="section-header">
+	  <p id="section-prefix">Chapter 11</p>
+	  <p id="section-name">The Built-In Classes</p>
+	</div>
+
+	<div class="wm-div-toc">
+	  <ul class="page-toc">
+	    <li><a href="drm_92.html#HEADING92-4">General Numbers</a>
+	      <ul>
+		<li><a href="drm_92.html#HEADING92-5"><code>&lt;number&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_92.html#HEADING92-12">Complex Numbers</a>
+	      <ul>
+		<li><a href="drm_92.html#HEADING92-13"><code>&lt;complex&gt;</code> <span class="attributes-summary">[Sealed Abstract Class]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_92.html#HEADING92-138">Reals</a>
+	      <ul>
+		<li><a href="drm_92.html#HEADING92-139"><code>&lt;real&gt;</code> <span class="attributes-summary">[Sealed Abstract Class]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_92.html#HEADING92-409">Floats</a>
+	      <ul>
+		<li><a href="drm_92.html#HEADING92-412"><code>&lt;float&gt;</code> <span class="attributes-summary">[Sealed Abstract Class]</span></a></li>
+		<li><a href="drm_92.html#HEADING92-418"><code>&lt;single-float&gt;</code> <span class="attributes-summary">[Sealed Class]</span></a></li>
+		<li><a href="drm_92.html#HEADING92-424"><code>&lt;double-float&gt;</code> <span class="attributes-summary">[Sealed Class]</span></a></li>
+		<li><a href="drm_92.html#HEADING92-430"><code>&lt;extended-float&gt;</code> <span class="attributes-summary">[Sealed Class]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_92.html#HEADING92-436">Rationals</a>
+	      <ul>
+		<li><a href="drm_92.html#HEADING92-437"><code>&lt;rational&gt;</code> <span class="attributes-summary">[Sealed Abstract Class]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="drm_92.html#HEADING92-443">Integers</a>
+	      <ul>
+		<li><a href="drm_92.html#HEADING92-444"><code>&lt;integer&gt;</code> <span class="attributes-summary">[Sealed Class]</span></a></li>
+	      </ul>
+	    </li>
+	  </ul>
+	</div>
+
+	<hr />
 
       </div>
+
       <a name="HEADING92-0"></a>
       <a name="UID-Built-In_Classes-395"></a>
       <h1 class="H1.Heading1"><a name="MARKER-2-1381"></a>Numbers</h1>
@@ -66,7 +111,7 @@
       <p class="T1.Text1"><a href="#MARKER-9-1382" class="T1.Text1">Figure 11-3</a> shows the built-in number classes and some of their characteristics.</p>
       <p class="Fg.Figure"><strong>Figure</strong> <strong>11-3</strong>  <a name="MARKER-9-1382"></a>The Number Classes<!-- img alt="dr92ima4" src="dr92ima4.gif" --></p>
       
-      <div class="figure">
+      <div class="figure wide" style="min-width: 616px">
 	<img alt="Number Class Hierarchy" src="drm_Figure_11-3_Number_Classes.png" width="616" height="442" />
 	
 	<table class="class-attributes-legend" style="clear: both">
@@ -120,38 +165,29 @@
 	  <p class="T1.Text1">Many built-in functions are defined to have methods on <code>&lt;complex&gt;</code>. This means that the function is defined on all built-in subclasses of <code>&lt;complex&gt;</code>. It does not imply that there is a single method specialized on the <code>&lt;complex&gt;</code> class.</p></dd>
 	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class &lt;complex&gt; provides implementations for the following functions:</p>
-	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-10</strong>  Methods on &lt;complex&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>=</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1584" class="TbT.TblText">Compares two objects for equality.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1584" class="TbT.TblText">269</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>zero?</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1610" class="TbT.TblText">Tests for the property of being equal to zero.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1610" class="TbT.TblText">275</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>+</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1619" class="TbT.TblText">Returns the sum of its arguments.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1619" class="TbT.TblText">277</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>*</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1621" class="TbT.TblText">Returns the product of its arguments.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1621" class="TbT.TblText">277</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>-</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1623" class="TbT.TblText">Returns the difference of its arguments.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1623" class="TbT.TblText">278</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>/</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1625" class="TbT.TblText">Returns the quotient of its arguments.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1625" class="TbT.TblText">278</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>^</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1651" class="TbT.TblText">Raises an object to a specified power.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1651" class="TbT.TblText">283</a></p>
 	  </td></tr></table>
@@ -173,80 +209,61 @@
 	<dd class="Cliche"><p class="Cliche"> The class of real numbers.</p></dd>
 	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;real&gt;</code> provides implementations for the following functions:</p>
-	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-11</strong>  Functions on &lt;real&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>floor</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1631" class="TbT.TblText">Truncates a real number toward negative infinity.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1631" class="TbT.TblText">279</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>ceiling</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1633" class="TbT.TblText">Truncates a real number toward positive infinity.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1633" class="TbT.TblText">280</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>round</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1635" class="TbT.TblText">Rounds a real number toward the nearest mathematical integer.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1635" class="TbT.TblText">280</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>truncate</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1637" class="TbT.TblText">Truncates a real number toward zero.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1637" class="TbT.TblText">280</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>floor/</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1639" class="TbT.TblText">Returns the floor of the quotient of two numbers.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1639" class="TbT.TblText">281</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>ceiling/</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1641" class="TbT.TblText">Returns the ceiling of the quotient of two numbers.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1641" class="TbT.TblText">281</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>round/</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1643" class="TbT.TblText">Rounds off the quotient of two numbers.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1643" class="TbT.TblText">282</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>truncate/</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1645" class="TbT.TblText">Returns the truncated quotient of two numbers.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1645" class="TbT.TblText">282</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>modulo</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1647" class="TbT.TblText">Returns the second value of <code>floor/</code>.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1647" class="TbT.TblText">282</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>remainder</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1649" class="TbT.TblText">Returns the second value of <code>truncate/</code>.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1649" class="TbT.TblText">283</a></p>
-	  </td></tr></table><p class="Anchor"> </p>
+	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-12</strong>  Methods on &lt;real&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>&lt;</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1589" class="TbT.TblText">Returns true if its first operand is less than its second operand.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_99.html#MARKER-9-1589" class="TbT.TblText">271</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>abs</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1654" class="TbT.TblText">Returns the absolute value of its argument.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1654" class="TbT.TblText">284</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>positive?</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1612" class="TbT.TblText">Tests for the property of being positive.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1612" class="TbT.TblText">276</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>negative?</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1614" class="TbT.TblText">Tests for the property of being negative.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1614" class="TbT.TblText">276</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>integral?</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1616" class="TbT.TblText">Tests for the property of being integral.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1616" class="TbT.TblText">276</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>negative</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1629" class="TbT.TblText">Returns the negation of an object.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1629" class="TbT.TblText">279</a></p>
 	  </td></tr></table>
@@ -348,66 +365,51 @@
 	  <p class="T1.Text1"><a name="MARKER-2-1396"></a>The result of dividing two integers with / is implementation defined. Portable programs should use <code>floor/</code>, <code>ceiling/</code>, <code>round/</code>, or <code>truncate/</code> to divide two integers.</p></dd>
 	<dt class="Cliche">Operations:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;integer&gt;</code> provides the following operations:</p>
-	  <p class="Anchor"> </p>
 	  <table class="numbered"><caption><strong>Table 11-13</strong>  Functions on &lt;integer&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>odd?</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1606" class="TbT.TblText">Tests for the property of being an odd number.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1606" class="TbT.TblText">275</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>even?</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1608" class="TbT.TblText">Tests for the property of being an even number.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1608" class="TbT.TblText">275</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>logior</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1656" class="TbT.TblText">Returns the bitwise inclusive or of its integer arguments.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1656" class="TbT.TblText">284</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>logxor</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1659" class="TbT.TblText">Returns the bitwise exclusive or of its integer arguments.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1659" class="TbT.TblText">284</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>logand</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1661" class="TbT.TblText">Returns the bitwise and of its integer arguments.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1661" class="TbT.TblText">285</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>lognot</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1663" class="TbT.TblText">Returns the bitwise not of its integer argument.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1663" class="TbT.TblText">285</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>logbit?</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1665" class="TbT.TblText">Tests the value of a particular bit in its integer argument.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1665" class="TbT.TblText">285</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>ash</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1667" class="TbT.TblText">Performs an arithmetic shift on its first argument.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1667" class="TbT.TblText">286</a></p>
-	  </td></tr></table><p class="Anchor"> </p>
+	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-14</strong>  Methods on &lt;integer&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>lcm</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1670" class="TbT.TblText">Returns the least common multiple of its two arguments.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1670" class="TbT.TblText">286</a></p>
 	    </td></tr><tr><td><p class="TbT.TblText"> <code>gcd</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1672" class="TbT.TblText">Returns the greatest common divisor of its two arguments.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_100.html#MARKER-9-1672" class="TbT.TblText">287</a></p>
 	  </td></tr></table><p class="Anchor"> <a name="MARKER-2-1397"></a></p>
 	  <table class="numbered"><caption><strong>Table 11-15</strong>  Methods on singleton(&lt;integer&gt;)</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
-	      </th><th><p class="TbH.TblHd"> </p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
 	      </th><th><p class="TbH.TblHd"> Page</p>
 	    </th></tr><tr><td><p class="TbT.TblText"> <code>limited</code></p>
-	      </td><td><p class="TbT.TblText"> </p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1559" class="TbT.TblText">Returns a limited subtype of a class.</a></p>
 	      </td><td><p class="TbT.TblText"> <a href="drm_98.html#MARKER-9-1559" class="TbT.TblText">263</a></p>
 	  </td></tr></table>
@@ -417,32 +419,9 @@
 
     <div class="wm-div-footers">
 
-      <div class="wm-div-toc">
-
-	<ul class="footer">
-	  <li class="footer"><a href="drm_92.html#HEADING92-4" class="footer">General Numbers</a></li>
-	  <li class="footer"><a href="drm_92.html#HEADING92-5" class="footer">&lt;number&gt; [Open Abstract Class]</a></li>
-	  <li class="footer"><a href="drm_92.html#HEADING92-12" class="footer">Complex Numbers</a></li>
-	  <li class="footer"><a href="drm_92.html#HEADING92-13" class="footer">&lt;complex&gt; [Sealed Abstract Class]</a></li>
-	  <li class="footer"><a href="drm_92.html#HEADING92-138" class="footer">Reals</a></li>
-	  <li class="footer"><a href="drm_92.html#HEADING92-139" class="footer">&lt;real&gt; [Sealed Abstract Class]</a></li>
-	  <li class="footer"><a href="drm_92.html#HEADING92-409" class="footer">Floats</a></li>
-	  <li class="footer"><a href="drm_92.html#HEADING92-412" class="footer">&lt;float&gt; [Sealed Abstract Class]</a></li>
-	  <li class="footer"><a href="drm_92.html#HEADING92-418" class="footer">&lt;single-float&gt; [Sealed Class]</a></li>
-	  <li class="footer"><a href="drm_92.html#HEADING92-424" class="footer">&lt;double-float&gt; [Sealed Class]</a></li>
-	  <li class="footer"><a href="drm_92.html#HEADING92-430" class="footer">&lt;extended-float&gt; [Sealed Class]</a></li>
-	  <li class="footer"><a href="drm_92.html#HEADING92-436" class="footer">Rationals</a></li>
-	  <li class="footer"><a href="drm_92.html#HEADING92-437" class="footer">&lt;rational&gt; [Sealed Abstract Class]</a></li>
-	  <li class="footer"><a href="drm_92.html#HEADING92-443" class="footer">Integers</a></li>
-	  <li class="footer"><a href="drm_92.html#HEADING92-444" class="footer">&lt;integer&gt; [Sealed Class]</a></li>
-	</ul>
-
-
-      </div>
-
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a href="drm_93.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_91.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_87.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+      <p class="footer"><a href="drm_91.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_93.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_87.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
       <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
       <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

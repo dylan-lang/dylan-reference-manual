@@ -46,48 +46,98 @@
     
     <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-    <title>12 The Built-In Functions</title>
+    <title>The Dylan Reference Manual: 12 The Built-In Functions</title>
   </head>
-  <body>
+  <body class="section-start">
 
     <div class="wm-div-body">
       <a name="HEADING96"></a>
 
       <div class="wm-div-headers">
-	<p class="header"><a href="drm_97.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_95.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-	<p class="header">The Dylan Reference Manual</p>
+	<p id="navigation">
+	  <a href="drm_95.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a>
+	  <a href="drm_97.html"><img alt="next" src="next.gif" title="Go to next page" /></a>
+	  <img id="up" alt="Up" src="upg.gif" title="Go to start of chapter" />
+	  <a href="drm_1.html"><img alt="top" src="top.gif" /></a>
+	  <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a>
+	  <a href="drm_127.html"><img alt="index" src="index.gif" /></a>
+	</p>
+	
+	<div id="section-header">
+	  <p id="section-prefix">Chapter 12</p>
+	  <p id="section-name">The Built-In Functions</p>
+	</div>
+
+	<hr />
 
       </div>
+
       <a name="LINK-Built-In_Functions-firstpage"></a><a name="HEADING96-0"></a>
       <a name="UID-Built-In_Functions-20426"></a>
       <h1 class="ChT.ChapterTitle"><a name="MARKER-9-1527"></a>The Built-In Functions</h1>
+      <h2 class="ChT.ChapterTitle">Contents</h2>
 
     </div>
 
-    <div class="wm-div-footers">
-
-      <div class="wm-div-toc">
-
-	<ul class="footer">
-	  <li class="footer"><a href="drm_97.html#HEADING97-0" class="footer">Overview</a></li>
-	  <li class="footer"><a href="drm_98.html#HEADING98-0" class="footer">Constructing and Initializing Instances</a></li>
-	  <li class="footer"><a href="drm_99.html#HEADING99-0" class="footer">Equality and Comparison</a></li>
-	  <li class="footer"><a href="drm_100.html#HEADING100-0" class="footer">Arithmetic Operations</a></li>
-	  <li class="footer"><a href="drm_101.html#HEADING101-0" class="footer">Coercing and Copying Objects</a></li>
-	  <li class="footer"><a href="drm_102.html#HEADING102-0" class="footer">Collection Operations</a></li>
-	  <li class="footer"><a href="drm_103.html#HEADING103-0" class="footer">Reflective Operations on Types</a></li>
-	  <li class="footer"><a href="drm_104.html#HEADING104-0" class="footer">Functional Operations</a></li>
-	  <li class="footer"><a href="drm_105.html#HEADING105-0" class="footer">Function Application</a></li>
-	  <li class="footer"><a href="drm_106.html#HEADING106-0" class="footer">Reflective Operations on Functions</a></li>
-	  <li class="footer"><a href="drm_107.html#HEADING107-0" class="footer">Operations on Conditions</a></li>
+    <ul class="TOC">
+      <li><a href="drm_97.html#HEADING97-0">Overview</a></li>
+      <li><a href="drm_98.html#HEADING98-0">Constructing and Initializing Instances</a>
+	<ul>
+	  <li><a href="drm_98.html#HEADING98-2">General Constructor</a></li>
+	  <li><a href="drm_98.html#HEADING98-29">Initialization</a></li>
+	  <li><a href="drm_98.html#HEADING98-49">Specific Constructors</a></li>
 	</ul>
+      </li>
+      <li><a href="drm_99.html#HEADING99-0">Equality and Comparison</a>
+    <ul>
+      <li><a href="drm_99.html#HEADING99-8">Logical Negation</a></li>
+      <li><a href="drm_99.html#HEADING99-15">Equality Comparisons</a></li>
+      <li><a href="drm_99.html#HEADING99-66">Magnitude Comparisons</a></li>
+    </ul>
+  </li>
+      <li><a href="drm_100.html#HEADING100-0">Arithmetic Operations</a>
+    <ul>
+      <li><a href="drm_100.html#HEADING100-2">Properties</a></li>
+      <li><a href="drm_100.html#HEADING100-49">Arithmetic Operations</a></li>
+    </ul>
+  </li>
+      <li><a href="drm_101.html#HEADING101-0">Coercing and Copying Objects</a>
+    <ul>
+      <li><a href="drm_101.html#HEADING101-15">General Coercion Function</a></li>
+      <li><a href="drm_101.html#HEADING101-36">Coercing Case</a></li>
+      <li><a href="drm_101.html#HEADING101-77">Copying Objects</a></li>
+    </ul>
+  </li>
+      <li><a href="drm_102.html#HEADING102-0">Collection Operations</a>
+    <ul>
+      <li><a href="drm_102.html#HEADING102-3">Collection Properties</a></li>
+      <li><a href="drm_102.html#HEADING102-95">Selecting Elements</a></li>
+      <li><a href="drm_102.html#HEADING102-253">Adding and Removing Elements</a></li>
+      <li><a href="drm_102.html#HEADING102-361">Reordering Elements</a></li>
+      <li><a href="drm_102.html#HEADING102-407">Set Operations</a></li>
+      <li><a href="drm_102.html#HEADING102-453">Subsequence Operations</a></li>
+      <li><a href="drm_102.html#HEADING102-511">Mapping and Reducing</a></li>
+      <li><a href="drm_102.html#HEADING102-674">The Iteration Protocol</a></li>
+    </ul>
+  </li>
+      <li><a href="drm_103.html#HEADING103-0">Reflective Operations on Types</a></li>
+      <li><a href="drm_104.html#HEADING104-0">Functional Operations</a></li>
+      <li><a href="drm_105.html#HEADING105-0">Function Application</a></li>
+      <li><a href="drm_106.html#HEADING106-0">Reflective Operations on Functions</a></li>
+      <li><a href="drm_107.html#HEADING107-0">Operations on Conditions</a>
+    <ul>
+      <li><a href="drm_107.html#HEADING107-2">Signaling Conditions</a></li>
+      <li><a href="drm_107.html#HEADING107-56">Handling Conditions</a></li>
+      <li><a href="drm_107.html#HEADING107-87">Introspection on Conditions</a></li>
+    </ul>
+  </li>
+    </ul>
 
-
-      </div>
+    <div class="wm-div-footers">
 
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a href="drm_97.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_95.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+      <p class="footer"><a href="drm_95.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_97.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
       <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
       <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

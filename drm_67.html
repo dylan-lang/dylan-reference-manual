@@ -47,7 +47,7 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>Tables</title>
+  <title>The Dylan Reference Manual: Tables</title>
 </head>
 <body>
 
@@ -55,10 +55,17 @@
 <a name="HEADING67"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_68.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_66.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_59.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">8 Collections</p>
+<p id="navigation"><a href="drm_66.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_68.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_59.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 8</p>
+  <p id="section-name">Collections</p>
+</div>
+
+<hr />
 
 </div>
+
 <a name="HEADING67-0"></a>
 <a name="UID-Collections-2785"></a>
 <h1 class="H1.Heading1"><a name="MARKER-9-1036"></a>Tables</h1>
@@ -66,9 +73,9 @@
 <p class="T1.Text1"><a name="MARKER-2-1039"></a>The iteration protocol for tables is implemented in terms of the function <code><a name="MARKER-2-1040"></a>table-protocol</code>. Every concrete subclass of <code>&lt;table&gt;</code> must provide or inherit a method for <code>table-protocol</code>. This function accepts a table as an argument, and returns an equivalence predicate and hash-function, as described below.</p>
 <p class="T1.Text1">The <strong class="Bold T1.Text1"><a name="MARKER-2-1041"></a><dfn>equivalence predicate</dfn></strong> of a table is used to compare keys. (It is the table's <a name="MARKER-2-1042"></a>key test.)  The table maps keys that are equivalent under the predicate to the same table element. An equivalence predicate is a boolean function of two arguments that returns true if and only if the arguments are considered to be the same according to some specified criteria. For a function to be used as an equivalence predicate, it must be reflexive, commutative, and transitive. That is, for a function <var>F</var> and any arguments <var>X</var>, <var>Y</var>, and <var>Z</var> in the domain of <var>F</var>, the following must be true:</p>
 <ul class="B1.Bullet1">
-  <li class="B1.Bullet1"><i class="parameter B1.Bullet1">F<code>(X,X)</code></i> must be true.</li>
-  <li class="B1.Bullet1"><i class="parameter B1.Bullet1">F<code>(X,Y)</code></i> must be true if and only if <i class="parameter B1.Bullet1">F<code>(Y,X)</code></i> is true.</li>
-  <li class="B1.Bullet1">If both <i class="parameter B1.Bullet1">F<code>(X,Y)</code></i> and <i class="parameter B1.Bullet1">F<code>(Y,Z)</code></i> are true then <i class="parameter B1.Bullet1">F<code>(X,Z)</code></i> must be true.</li>
+  <li class="B1.Bullet1"><var>F</var><code>(<var>X</var>,<var>X</var>)</code> must be true.</li>
+  <li class="B1.Bullet1"><var>F</var><code>(<var>X</var>,<var>Y</var>)</code> must be true if and only if <var>F</var><code>(<var>Y</var>,<var>X</var>)</code> is true.</li>
+  <li class="B1.Bullet1">If both <var>F</var><code>(<var>X</var>,<var>Y</var>)</code> and <var>F</var><code>(<var>Y</var>,<var>Z</var>)</code> are true then <var>F</var><code>(<var>X</var>,<var>Z</var>)</code> must be true.</li>
 </ul>
 <p class="T1.Text1">An <strong class="Bold T1.Text1"><a name="MARKER-2-1043"></a><dfn>equivalence class</dfn></strong> (for an equivalence predicate) is a set of objects, or potential objects, that are all the same under the specified equivalence predicate and different from all objects not in the class. (This use of the term "class" does not refer to Dylan classes.)</p>
 <p class="T1.Text1">An object is said to be <strong class="T1.Text1"><a name="MARKER-2-1044"></a>visibly modified</strong> with respect to an equivalence predicate if the modification changes the equivalence class of the object. The modifications that are visible to an equivalence predicate are determined by the definition of the predicate. (For example, changing a character in a string would be a visible modification with respect to an equivalence predicate that compared strings character by character, but it would not be a visible modification with respect to an equivalence predicate that compared objects by identity, without regard for their contents.)</p>
@@ -90,15 +97,9 @@
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_68.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_66.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_59.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_66.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_68.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_59.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

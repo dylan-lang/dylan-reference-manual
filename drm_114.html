@@ -47,7 +47,7 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>Statements</title>
+  <title>The Dylan Reference Manual: Statements</title>
 </head>
 <body>
 
@@ -55,10 +55,47 @@
 <a name="HEADING114"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_115.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_113.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_110.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">14 The Built-In Macros and Special Definitions</p>
+<p id="navigation"><a href="drm_113.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_115.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_110.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 14</p>
+  <p id="section-name">The Built-In Macros and Special Definitions</p>
+</div>
+
+<div class="wm-div-toc">
+  <ul class="page-toc">
+    <li><a href="drm_114.html#HEADING114-162">Conditionals</a>
+      <ul>
+	<li><a href="drm_114.html#HEADING114-164"><code>if</code> <span class="attributes-summary">[Statement]</span></a></li>
+	<li><a href="drm_114.html#HEADING114-181"><code>unless</code> <span class="attributes-summary">[Statement]</span></a></li>
+	<li><a href="drm_114.html#HEADING114-190"><code>case</code> <span class="attributes-summary">[Statement]</span></a></li>
+	<li><a href="drm_114.html#HEADING114-201"><code>select</code> <span class="attributes-summary">[Statement]</span></a></li>
+      </ul>
+    </li>
+    <li><a href="drm_114.html#HEADING114-220">Iteration Constructs</a>
+      <ul>
+	<li><a href="drm_114.html#HEADING114-221"><code>while</code> <span class="attributes-summary">[Statement]</span></a></li>
+	<li><a href="drm_114.html#HEADING114-229"><code>until</code> <span class="attributes-summary">[Statement]</span></a></li>
+	<li><a href="drm_114.html#HEADING114-237"><code>for</code> <span class="attributes-summary">[Statement]</span></a></li>
+      </ul>
+    </li>
+    <li><a href="drm_114.html#HEADING114-280">Other Statement Macros</a>
+      <ul>
+	<li><a href="drm_114.html#HEADING114-281"><code>begin</code> <span class="attributes-summary">[Statement]</span></a></li>
+	<li><a href="drm_114.html#HEADING114-287"><code>block</code> <span class="attributes-summary">[Statement]</span></a></li>
+	<li><a href="drm_114.html#HEADING114-310">Dynamic Extent of Block Features</a></li>
+	<li><a href="drm_114.html#HEADING114-315">Intervening Cleanup Clauses</a></li>
+	<li><a href="drm_114.html#HEADING114-320">Restrictions on the use of exit procedures</a></li>
+	<li><a href="drm_114.html#HEADING114-324"><code>method</code> <span class="attributes-summary">[Statement]</span></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<hr />
 
 </div>
+
 <a name="HEADING114-0"></a>
 <a name="UID-Built-In_Macros-2670"></a>
 <h1 class="H1.Heading1">Statements</h1>
@@ -66,47 +103,36 @@
 <p class="T1.Text1">Many statements include an optional implicit body, which may contain one or more constituents separated by semicolons. When an implicit body is executed, the expressions in the implicit body are executed in order (left to right). The values of the implicit body are the values of the last expression. If the optional implicit body is not present or contains no expressions, the return value is <code>#f</code>.</p>
 <table class="numbered"><caption><strong>Table 14-3</strong> Statements</caption>
 <tr><th class="primary"><p class="TbH.TblHd"> Macro</p>
-</th><th><p class="TbH.TblHd"> </p>
 </th><th><p class="TbH.TblHd"> Description</p>
 </th><th><p class="TbH.TblHd"> Page</p>
 </th></tr><tr><td><p class="TbT.TblText"> <code>if</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2044" class="TbT.TblText">Executes an implicit body if the value of a test is true or an alternate if the test is false.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2044" class="TbT.TblText">395</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>unless</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2046" class="TbT.TblText">Executes an implicit body unless the value of a test is true.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2046" class="TbT.TblText">396</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>case</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2048" class="TbT.TblText">Executes a number of tests until one is true, and then executes an implicit body associated with the true test.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2048" class="TbT.TblText">397</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>select</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2050" class="TbT.TblText">Compares a target object to a series of potential matches, and executes an implicit body associated with the first match found.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2050" class="TbT.TblText">398</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>while</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2054" class="TbT.TblText">Repeatedly executes a body until a test expression is false.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2054" class="TbT.TblText">399</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>until</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2056" class="TbT.TblText">Repeatedly executes a body until a test expression is true.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2056" class="TbT.TblText">400</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>for</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2058" class="TbT.TblText">Performs general iteration over a body, updating bindings and performing end tests on each iteration.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2058" class="TbT.TblText">400</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>begin</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2061" class="TbT.TblText">Executes expressions in a body, in order.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2061" class="TbT.TblText">404</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>block</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2063" class="TbT.TblText">Executes a body with several options for nonstandard flow of control.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2063" class="TbT.TblText">404</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>method</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2066" class="TbT.TblText">Creates and returns a method.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2066" class="TbT.TblText">408</a></p>
 </td></tr></table><a name="HEADING114-162"></a>
@@ -119,20 +145,19 @@
 <p class="SD.ShortDescription"><code><a name="MARKER-9-2044"></a></code>Executes an implicit body if the value of a test is true or an alternate if the test is false.</p>
 <dl class="Cliche">
   <dt class="Cliche">Macro Call:</dt>
-  <dd class="Cliche"><p class="Cliche"> <code>if (</code> <var>test</var> <code>)</code> <strong class="re">[</strong> <var>consequent</var> <strong class="re">]</strong><br />
+  <dd class="Cliche">
+    <p class="Cliche">
+      <code>if (</code> <var>test</var> <code>)</code> <strong class="re">[</strong> <var>consequent</var> <strong class="re">]</strong><br />
       <strong class="re">{</strong> <code>elseif</code> <code>(</code> <var>elseif-test</var> <code>)</code> <strong class="re">[</strong> <var>elseif-consequent</var> <strong class="re">] }*</strong><br />
       <strong class="re">[</strong> <code>else</code> <strong class="re">[</strong> <var>alternate</var> <strong class="re">] ]</strong><br />
-      <code>end</code> <strong class="re">[</strong> <code>if</code> <strong class="re">]</strong></p></dd>
+      <code>end</code> <strong class="re">[</strong> <code>if</code> <strong class="re">]</strong>
+    </p>
+  </dd>
   <dt class="Cliche">Arguments:</dt>
   <dd class="Cliche">
     <dl>
       <dt><var>test</var></dt>
-      <dd>
-        <p class="Cliche"><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p>
-      </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
+      <dd><p class="Cliche"><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
       <dt class="RP.RoutineParam"><var>consequent</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">body<em class="BNF"><sub>bnf</sub></em></span></p></dd>
       <dt class="RP.RoutineParam"><var>elseif-test</var></dt>
@@ -141,7 +166,8 @@
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">body<em class="BNF"><sub>bnf</sub></em></span></p></dd>
       <dt class="RP.RoutineParam"><var>alternate</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">body<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-  </dl></dd>
+    </dl>
+  </dd>
   <dt class="Cliche">Values:</dt>
   <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   <dt class="Cliche">Description:</dt>
@@ -191,15 +217,11 @@ end if; </pre>
   <dd class="Cliche2">
     <dl>
       <dt><var>test</var></dt>
-      <dd>
-        <p class="Cliche2"><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p>
-      </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
+      <dd><p class="Cliche2"><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p> </dd>
       <dt class="RP.RoutineParam"><var>body</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">body<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-  </dl></dd>
+    </dl>
+  </dd>
   <dt class="Cliche">Values:</dt>
   <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   <dt class="Cliche">Description:</dt>
@@ -217,22 +239,29 @@ end unless </pre>
 <p class="SD.ShortDescription"><a name="MARKER-9-2048"></a>Executes a number of tests until one is true, and then executes an implicit body associated with the true test.</p>
 <dl class="Cliche">
   <dt class="Cliche">Macro Call:</dt>
-  <dd class="Cliche"><p class="Cliche"> <code>case<br /> { <i class="parameter Code Cliche">test  =&gt; consequent } *<br /> [ otherwise [ =&gt; ] alternate  ]<br />end [ case ]</i></code></p></dd>
+  <dd class="Cliche">
+    <p class="Cliche">
+      <code>case</code><br />
+      <strong class="re">{</strong> <var>test</var> <code>=&gt;</code> <var>consequent</var> <strong class="re">}*</strong><br />
+      <strong class="re">[</strong> <code>otherwise</code> <strong class="re">[</strong> <code>=&gt;</code> <strong class="re">]</strong> <var>alternate</var> <strong class="re">]</strong><br />
+      <code>end</code> <strong class="re">[</strong> <code>case</code> <strong class="re">]</strong>
+    </p>
+  </dd>
   <dt class="Cliche2">Arguments:</dt>
   <dd class="Cliche2">
     <dl>
       <dt><var>test</var></dt>
-      <dd>
-        <p class="Cliche2"><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p>
+      <dd><p class="Cliche2"><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt class="RP.RoutineParam"><var>consequent</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"><strong class="re">[</strong> constituents<em class="BNF"><sub>bnf</sub></em> <strong class="re">]</strong> <code>;</code>
+	</p>
+      </dd>
+      <dt class="RP.RoutineParam"><var>alternate</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"><strong class="re">[</strong> constituents<em class="BNF"><sub>bnf</sub></em> <strong class="re">]</strong> <code>;</code>
+	</p>
       </dd>
     </dl>
   </dd>
-  <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><var>consequent</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>[ constituents<em class="MetaSyntax RP.RoutineParam"><sub>bnf</sub> ] ;</em></code></p></dd>
-      <dt class="RP.RoutineParam"><var>alternate</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>[ constituents<em class="MetaSyntax RP.RoutineParam"><sub>bnf</sub> ] ;</em></code></p></dd>
-  </dl></dd>
   <dt class="Cliche">Values:</dt>
   <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   <dt class="Cliche">Description:</dt>
@@ -257,26 +286,31 @@ end case; </pre>
 <p class="SD.ShortDescription"><a name="MARKER-9-2050"></a>Compares a target object to a series of potential matches, and executes an implicit body associated with the first match found.</p>
 <dl class="Cliche">
   <dt class="Cliche">Macro Call:</dt>
-  <dd class="Cliche"><p class="Cliche"> <code>select ( <i class="parameter Code Cliche">target  [ by test  ] )<br /> { matches  =&gt; consequent }*<br /> [ otherwise [ =&gt; ] alternate ] <br />end [ select ]</i></code></p></dd>
+  <dd class="Cliche">
+    <p class="Cliche">
+      <code>
+	select ( <var>target</var> [ by <var>test</var>  ] )<br />
+	{ <var>matches</var>  =&gt; <var>consequent</var> }*<br />
+	[ otherwise [ =&gt; ] <var>alternate</var> ]<br />
+	end [ select ]
+      </code>
+    </p>
+  </dd>
   <dt class="Cliche2">Arguments:</dt>
   <dd class="Cliche2">
     <dl>
       <dt><var>target</var></dt>
-      <dd>
-        <p class="Cliche2"><code>expression<em class="BNF Parameter Cliche2"><sub>bnf</sub></em></code></i></p>
-      </dd>
+      <dd><p class="Cliche2"><code>expression<em class="BNF Parameter Cliche2"><sub>bnf</sub></em></code></p></dd>
+      <dt class="RP.RoutineParam"><var>test</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>expression<em class="BNF"><sub>bnf</sub></em></code></p></dd>
+      <dt class="RP.RoutineParam"><var>matches</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>{ expression<em class="BNF"><sub>bnf</sub></em> } ,<strong class="re">+ |</strong> ( { expression<sub>bnf</sub> } ,+ )</code></p></dd>
+      <dt class="RP.RoutineParam"><var>consequent</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>[ constituents<em class="MetaSyntax"><sub>bnf</sub></em> ] ;</code></p></dd>
+      <dt class="RP.RoutineParam"><var>alternate</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>[ constituents<em class="MetaSyntax"><sub>bnf</sub></em> ] ;</code></p></dd>
     </dl>
   </dd>
-  <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><var>test</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>expression<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-      <dt class="RP.RoutineParam"><var>matches</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>{ expression<em class="MetaSyntax RP.RoutineParam"><sub>bnf</sub> } ,<strong class="MetaSyntax RP.RoutineParam">+ | ( { expression<sub>bnf</sub> } ,+ )</strong></em></code></p></dd>
-      <dt class="RP.RoutineParam"><var>consequent</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>[ constituents<em class="MetaSyntax RP.RoutineParam"><sub>bnf</sub> ] ;</em></code></p></dd>
-      <dt class="RP.RoutineParam"><var>alternate</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>[ constituents<em class="MetaSyntax RP.RoutineParam"><sub>bnf</sub> ] ;</em></code></p></dd>
-  </dl></dd>
   <dt class="Cliche">Values:</dt>
   <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   <dt class="Cliche">Description:</dt>
@@ -320,15 +354,11 @@ end select<a name="MARKER-2-2051"></a> </pre>
   <dd class="Cliche2">
     <dl>
       <dt><var>test</var></dt>
-      <dd>
-        <p class="Cliche2"><code>expression<em class="BNF Cliche2"><sub>bnf</sub></em></code></p>
-      </dd>
+      <dd><p class="Cliche2">expression<em class="BNF Cliche2"><sub>bnf</sub></em></p></dd>
+      <dt class="RP.RoutineParam"><var>body</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">body<em class="BNF"><sub>bnf</sub></em></p></dd>
     </dl>
   </dd>
-  <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><var>body</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>body<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-  </dl></dd>
   <dt class="Cliche">Values:</dt>
   <dd class="Cliche"><p class="Cliche"> <code>#f</code></p></dd>
   <dt class="Cliche">Description:</dt>
@@ -336,25 +366,28 @@ end select<a name="MARKER-2-2051"></a> </pre>
     <p class="T1.Text1">Each pass through the loop begins by executing <var>test</var>. If <var>test</var> returns a true value, the expressions in the <var>body</var> are executed and the looping continues. If <var>test</var> returns false, the loop terminates and <code>while</code> returns <code>#f</code>.</p></dd>
 </dl>
 <a name="HEADING114-229"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-2055"></a>until</code>  <code> (</code> test  <code>) </code> <span class="attributes-summary">[Statement]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-2055"></a>until ( <var>test</var> )</code> <span class="attributes-summary">[Statement]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2056"></a>Repeatedly executes a body until a test expression is true.</p>
 <dl class="Cliche">
   <dt class="Cliche">Macro Call:</dt>
-  <dd class="Cliche"><p class="Cliche"> <code>until ( <i class="parameter Code Cliche">test )<br /></i></code>    <code>[ <var>body</var></code>  <code>]<br />end</code> [<code>until</code>]  <br />&rArr; <strong class="Cliche"> <code>#f</code></strong></p></dd>
+  <dd class="Cliche">
+    <p class="Cliche">
+      <code>until ( <var>test</var> )</code><br />
+      [ <var>body</var> ]<br />
+      <code>end</code> [ <code>until</code> ]<br />
+      &rArr; <code>#f</code>
+    </p>
+  </dd>
   <dt class="Cliche">Arguments:</dt>
   <dd class="Cliche">
     <dl>
       <dt><var>test</var></dt>
-      <dd>
-        <p class="Cliche"><code>expression<em class="BNF Cliche"><sub>bnf</sub></em></code></p>
-      </dd>
+      <dd><p class="Cliche">expression<em class="BNF Cliche"><sub>bnf</sub></em></p></dd>
+      <dt class="RP.RoutineParam"><var>body</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">body<em class="BNF"><sub>bnf</sub></em></p></dd>
     </dl>
   </dd>
-  <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><var>body</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>body<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-  </dl></dd>
   <dt class="Cliche">Values:</dt>
   <dd class="Cliche"><p class="Cliche"> <code>#f</code></p></dd>
   <dt class="Cliche">Description:</dt>
@@ -367,46 +400,56 @@ end select<a name="MARKER-2-2051"></a> </pre>
 <p class="SD.ShortDescription"><a name="MARKER-9-2058"></a>Performs general iteration over a body, updating bindings and performing end tests on each iteration.</p>
 <dl class="Cliche">
   <dt class="Cliche">Macro Call:</dt>
-  <dd class="Cliche"><p class="Cliche"> <code>for ( { <i class="parameter Code Cliche">for-clause } ,*  |<br />     { { for-clause  ,}* end-clause  })<br /> [ loop-body  ]<br /> [ finally [ result-body  ] ]<br />end [ for ]</i></code></p></dd>
+  <dd class="Cliche">
+    <p class="Cliche">
+      <code>for (</code> { <var>for-clause</var> } <code>,</code>* |<br />
+      { { <var>for-clause</var> <code>,</code>}* <var>end-clause</var> }<code>)</code><br />
+      [ <var>loop-body</var> ]<br />
+      [ <code>finally</code> [ <var>result-body</var> ] ]<br />
+      <code>end</code> [ <code>for</code> ]
+    </p>
+  </dd>
   <dt class="Cliche2">Arguments:</dt>
   <dd class="Cliche2">
     <dl>
       <dt><var>for-clause</var></dt>
-      <dd>
-        <p class="Cliche2">explicit-step-clause<code>  |</code></i></p>
-      </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> collection-clause<code>  |</code></p></dd>
+      <dd><p class="Cliche2">explicit-step-clause <strong class="re">|</strong></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">collection-clause <strong class="re">|</strong></p></dd>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> numeric-clause </p></dd>
       <dt class="RP.RoutineParam"><var>end-test</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>expression<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
       <dt class="RP.RoutineParam"><var>loop-body</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>body<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">body<em class="BNF"><sub>bnf</sub></em></p></dd>
       <dt class="RP.RoutineParam"><var>result-body</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>body<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-      <dt class="RP3.RoutineParam"><i class="parameter RP3.RoutineParam">explicit-step-clause<code></code></i></dt>
-      <dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> variable<em class="RP3.RoutineParam"><sub>bnf</sub></em><code> = <var>init-value</var>  then <var>next-value</var></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">body<em class="BNF"><sub>bnf</sub></em></p></dd>
+      <dt class="RP3.RoutineParam"><var>explicit-step-clause</var></dt>
+      <dd class="RP3.RoutineParam"><p class="RP3.RoutineParam">variable<em class="BNF"><sub>bnf</sub></em><code> = <var>init-value</var>  then <var>next-value</var></code></p></dd>
       <dt class="RP3.RoutineParam"><var>collection-clause</var></dt>
-      <dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> <code>variable<em class="BNF RP3.RoutineParam"><sub>bnf</sub> in <var>collection</var></em></code></p></dd>
+      <dd class="RP3.RoutineParam"><p class="RP3.RoutineParam">variable<em class="BNF"><sub>bnf</sub> in <var>collection</var></em></p></dd>
       <dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">numeric-clause<code></code></i></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> variable<em class="RP.RoutineParam"><sub>bnf</sub><code> from <i class="parameter MetaSyntax RP.RoutineParam">start<br />                [ { to | above  |below } bound  ]<br />                [ by increment  ]</i></code></em></p></dd>
+      <dd class="RP.RoutineParam">
+	<p class="RP.RoutineParam">
+	  variable<em class="BNF"><sub>bnf</sub></em> <code>from</code> <var>start</var><br />
+          [ { <code>to</code> | <code>above</code> | <code>below</code> } <var>bound</var> ]<br />
+          [ <code>by</code> <var>increment</var> ]
+	</p>
+      </dd>
       <dt class="RP.RoutineParam"><var>end-clause</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>{ until: | while: } <var>end-test</var></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">{ <code>until:</code> | <code>while:</code> } <var>end-test</var></p></dd>
       <dt class="RP.RoutineParam"><var>init-value</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>expression<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
       <dt class="RP.RoutineParam"><var>next-value</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>expression<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
       <dt class="RP.RoutineParam"><var>collection</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>expression<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
       <dt class="RP.RoutineParam"><var>start</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>expression<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
       <dt class="RP.RoutineParam"><var>bound</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>expression<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
       <dt class="RP.RoutineParam"><var>increment</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>expression<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-  </dl></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
+    </dl>
+  </dd>
   <dt class="Cliche">Values:</dt>
   <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   <dt class="Cliche">Description:</dt>
@@ -471,19 +514,21 @@ end;<a name="MARKER-2-2059"></a> </pre>
 <a name="UID-Built-In_Macros-13876"></a>
 <h2 class="H2.Heading2">Other Statement Macros</h2>
 <a name="HEADING114-281"></a>
-<h3 class="H4.Heading4"><code><strong class="H4.Heading4"><a name="MARKER-2-2060"></a>begin</strong></code> <strong class="H4.Heading4">[Statement]</strong></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-2060"></a>begin</code> <span class="attributes-summary">[Statement]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2061"></a>Executes expressions in a body, in order.</p>
 <dl class="Cliche">
   <dt class="Cliche">Macro Call:</dt>
-  <dd class="Cliche"><p class="Cliche"> <code>begin [ <var>body  ] end</var></code></p></dd>
+  <dd class="Cliche">
+    <p class="Cliche">
+      <code>begin</code> <strong class="re">[</strong> <var>body</var> <strong class="re">]</strong> <code>end</code>
+    </p>
+  </dd>
   <dt class="Cliche">Arguments:</dt>
   <dd class="Cliche">
     <dl>
       <dt><var>body</var></dt>
-      <dd>
-        <p class="Cliche"><code>body<em class="BNF Cliche"><sub>bnf</sub></em></code></p>
-      </dd>
+      <dd><p class="Cliche">body<em class="BNF Cliche"><sub>bnf</sub></em></p></dd>
     </dl>
   </dd>
   <dt class="Cliche">Values:</dt>
@@ -492,37 +537,51 @@ end;<a name="MARKER-2-2059"></a> </pre>
   <dd class="Cliche"><p class="Cliche"> Begin executes the expressions in a body, in order. The values of the last expression are returned. If there are no expressions in the body, <code>#f</code> is returned.</p></dd>
 </dl>
 <a name="HEADING114-287"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-2062"></a>block</code>  <span class="attributes-summary">[Statement]</span></h3>
+<h3 class="H4.Heading4"><code><a name="MARKER-2-2062"></a>block</code> <span class="attributes-summary">[Statement]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2063"></a>Executes a body with several options for nonstandard flow of control.</p>
 <dl class="Cliche">
   <dt class="Cliche">Macro Call:</dt>
-  <dd class="Cliche"><p class="Cliche"> <code>block ( [ <i class="parameter Code Cliche">exit-variable ] )<br /> [ block-body ]<br /> [ afterwards [ afterwards-clause ] ]<br /> [ cleanup [ cleanup-clause  ] ]<br /> { exception exception-clause  }*<br />end [ block ]</i></code></p></dd>
+  <dd class="Cliche">
+    <p class="Cliche">
+      <code>block (</code> <strong class="re">[</strong> <var>exit-variable</var> <strong class="re">]</strong> <code>)</code><br />
+      <strong class="re">[</strong> <var>block-body</var> <strong class="re">]</strong><br />
+      <strong class="re">[</strong> <code>afterwards</code> <strong class="re">[</strong> <var>afterwards-clause</var> <strong class="re">]</strong> <strong class="re">]</strong><br />
+      <strong class="re">[</strong> <code>cleanup</code> <strong class="re">[</strong> <var>cleanup-clause</var> <strong class="re">]</strong> <strong class="re">]</strong><br />
+      <strong class="re">{</strong> <code>exception</code> <var>exception-clause</var> <strong class="re">}*</strong><br />
+      <code>end</code> <strong class="re">[</strong> <code>block</code> <strong class="re">]</strong>
+    </p>
+  </dd>
   <dt class="Cliche2">Arguments:</dt>
   <dd class="Cliche2">
     <dl>
       <dt><var>exit-variable</var></dt>
-      <dd>
-        <p class="Cliche2"><code>variable-name<em class="BNF Parameter Cliche2"><sub>bnf</sub></em></code></i></p>
+      <dd><p class="Cliche2">variable-name<em class="BNF"><sub>bnf</sub></em></p></dd>
+      <dt class="RP.RoutineParam"><var>block-body</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">body<em class="BNF"><sub>bnf</sub></em></p></dd>
+      <dt class="RP3.RoutineParam"><var>afterwards-clause</var></dt>
+      <dd class="RP3.RoutineParam"><p class="RP3.RoutineParam">body<em class="BNF"><sub>bnf</sub></em></p></dd>
+      <dt class="RP.RoutineParam"><var>cleanup-clause</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">body<em class="BNF"><sub>bnf</sub></em></p></dd>
+      <dt class="RP.RoutineParam"><var>exception-clause</var></dt>
+      <dd class="RP.RoutineParam">
+	<p class="RP.RoutineParam">
+	  <code>(</code> <strong class="re">[</strong> <var>name</var> <code>::</code> <strong class="re">]</strong> <var>type</var> <strong class="re">{</strong> <code>,</code> <var>exception-options</var> <strong class="re">}*</strong> <code>)</code><br />
+	  <strong class="re">[</strong> body<em class="BNF"><sub>bnf</sub></em> <strong class="re">]</strong>
+	</p>
+      </dd>
+      <dt class="RP.RoutineParam"><var>name</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">variable-name<em class="BNF"><sub>bnf</sub></em></p></dd>
+      <dt class="RP.RoutineParam"><var>type</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
+      <dt class="RP.RoutineParam"><var>exception-options</var></dt>
+      <dd class="RP.RoutineParam">
+	<p class="RP.RoutineParam">
+	  <strong class="re">{</strong> <code>test:</code> expression<em class="BNF"><sub>bnf</sub></em> <strong class="re">} | {</strong> <code>init-arguments:</code> expression<em class="BNF"><sub>bnf</sub></em> <strong class="re">}</strong>
+	</p>
       </dd>
     </dl>
   </dd>
-  <dd><dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><var>block-body</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>body<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-      <dt class="RP3.RoutineParam"><i class="parameter RP3.RoutineParam">afterwards-clause<code></code></i></dt>
-      <dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> body<em class="RP3.RoutineParam"><sub>bnf</sub></em></p></dd>
-      <dt class="RP.RoutineParam"><var>cleanup-clause</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>body<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-      <dt class="RP.RoutineParam"><var>exception-clause</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code> ( [ <i class="parameter Code RP.RoutineParam">name  :: ] type  { ,exception-options  }*)<br />    [ body<em class="parameter Code RP.RoutineParam"><sub>bnf</sub> ]</em></i></code></p></dd>
-      <dt class="RP.RoutineParam"><var>name</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>variable-name<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-      <dt class="RP.RoutineParam"><var>type</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>expression<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-      <dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">exception-options<br /><code>{ test: expression<em class="MetaSyntax Parameter RP.RoutineParam"><sub>bnf</sub> } | { init-arguments: expression<sub>bnf</sub> }</em></code></i></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"></p></dd>
-  </dl></dd>
   <dt class="Cliche">Values:</dt>
   <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   <dt class="Cliche">Description:</dt>
@@ -587,20 +646,16 @@ foo(5)
 <p class="SD.ShortDescription"><a name="MARKER-9-2066"></a>Creates and returns a method.</p>
 <dl class="Cliche">
 <dt class="Cliche">Macro Call:</dt>
-<dd class="Cliche"><p class="Cliche"> <code>method <var>parameter-list  [ body ] end [ method ]</var></code></p></dd>
+<dd class="Cliche"><p class="Cliche"> <code>method <var>parameter-list</var> [ <var>body</var> ] <code>end</code> [ <code>method</code> ]</code></p></dd>
 <dt class="Cliche2">Arguments:</dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>parameter-list</var></dt>
-      <dd>
-        <p class="Cliche2"><code>parameter-list<em class="BNF Parameter Cliche2"><sub>bnf</sub></em></code></i></p>
-      </dd>
+      <dd><p class="Cliche2">parameter-list<em class="BNF"><sub>bnf</sub></em></p></dd>
+      <dt class="RP.RoutineParam"><var>body</var></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">body<em class="BNF"><sub>bnf</sub></em></p></dd>
     </dl>
-  </dd>
-<dd><dl class="RP.RoutineParam">
-<dt class="RP.RoutineParam"><var>body</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>body<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-</dl></dd>
+</dd>
 <dt class="Cliche">Values:</dt>
 <dd class="Cliche"><p class="Cliche"> An instance of <code>&lt;method&gt;</code>.</p></dd>
 <dt class="Cliche">Description:</dt>
@@ -611,33 +666,9 @@ foo(5)
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-<ul class="footer">
-<li class="footer"><a href="drm_114.html#HEADING114-162" class="footer">Conditionals</a></li>
-<li class="footer"><a href="drm_114.html#HEADING114-164" class="footer">if [Statement]</a></li>
-<li class="footer"><a href="drm_114.html#HEADING114-181" class="footer">unless [Statement]</a></li>
-<li class="footer"><a href="drm_114.html#HEADING114-190" class="footer">case               [Statement]</a></li>
-<li class="footer"><a href="drm_114.html#HEADING114-201" class="footer">select [Statement]</a></li>
-<li class="footer"><a href="drm_114.html#HEADING114-220" class="footer">Iteration Constructs</a></li>
-<li class="footer"><a href="drm_114.html#HEADING114-221" class="footer">while  [Statement]</a></li>
-<li class="footer"><a href="drm_114.html#HEADING114-229" class="footer">until   ( test  )  [Statement]</a></li>
-<li class="footer"><a href="drm_114.html#HEADING114-237" class="footer">for [Statement]</a></li>
-<li class="footer"><a href="drm_114.html#HEADING114-280" class="footer">Other Statement Macros</a></li>
-<li class="footer"><a href="drm_114.html#HEADING114-281" class="footer">begin [Statement]</a></li>
-<li class="footer"><a href="drm_114.html#HEADING114-287" class="footer">block  [Statement]</a></li>
-<li class="footer"><a href="drm_114.html#HEADING114-310" class="footer">Dynamic Extent of Block Features</a></li>
-<li class="footer"><a href="drm_114.html#HEADING114-315" class="footer">Intervening Cleanup Clauses</a></li>
-<li class="footer"><a href="drm_114.html#HEADING114-320" class="footer">Restrictions on the use of exit procedures</a></li>
-<li class="footer"><a href="drm_114.html#HEADING114-324" class="footer">method [Statement]</a></li>
-</ul>
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_115.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_113.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_110.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_113.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_115.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_110.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 

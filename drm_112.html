@@ -47,7 +47,7 @@
   
   <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>Definitions</title>
+  <title>The Dylan Reference Manual: Definitions</title>
 </head>
 <body>
 
@@ -55,53 +55,64 @@
 <a name="HEADING112"></a>
 
 <div class="wm-div-headers">
-<p class="header"><a href="drm_113.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_111.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_110.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
-<p class="header">14 The Built-In Macros and Special Definitions</p>
+<p id="navigation"><a href="drm_111.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_113.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_110.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 14</p>
+  <p id="section-name">The Built-In Macros and Special Definitions</p>
+</div>
+
+<div class="wm-div-toc">
+  <ul class="page-toc">
+    <li><a href="drm_112.html#HEADING112-147"><code>define variable</code> <span class="attributes-summary">[Definition]</span></a></li>
+    <li><a href="drm_112.html#HEADING112-163"><code>define constant</code> <span class="attributes-summary">[Definition]</span></a></li>
+    <li><a href="drm_112.html#HEADING112-178"><code>define generic</code> <span class="attributes-summary">[Definition]</span></a></li>
+    <li><a href="drm_112.html#HEADING112-196"><code>define method</code> <span class="attributes-summary">[Definition]</span></a></li>
+    <li><a href="drm_112.html#HEADING112-209"><code>define class</code> <span class="attributes-summary">[Definition]</span></a></li>
+    <li><a href="drm_112.html#HEADING112-240"><code>define module</code> <span class="attributes-summary">[Definition]</span></a></li>
+    <li><a href="drm_112.html#HEADING112-282"><code>define library</code> <span class="attributes-summary">[Definition]</span></a></li>
+    <li><a href="drm_112.html#HEADING112-313"><code>define sealed domain</code> <span class="attributes-summary">[Definition]</span></a></li>
+    <li><a href="drm_112.html#HEADING112-321"><code>define macro </code> <span class="attributes-summary">[Special Definition]</span></a></li>
+  </ul>
+</div>
+
+<hr />
 
 </div>
+
 <a name="HEADING112-0"></a>
 <a name="UID-Built-In_Macros-12290"></a>
 <h1 class="H1.Heading1">Definitions</h1>
 <p class="T1.Text1"><a name="MARKER-2-1996"></a>Definitions are used to declare the overall structure of a program. They often define one or more module bindings, but do not always do so. Definitions can only appear at top level in a program. Definitions do not return values.</p>
 <table class="numbered"><caption><strong>Table 14-1</strong>  Definitions</caption>
 <tr><th class="primary"><p class="TbH.TblHd"> Macro</p>
-</th><th><p class="TbH.TblHd"> </p>
 </th><th><p class="TbH.TblHd"> Description</p>
 </th><th><p class="TbH.TblHd"> Page</p>
 </th></tr><tr><td><p class="TbT.TblText"> <code>define variable</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2000" class="TbT.TblText">Defines and initializes a variable binding in the current module.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2000" class="TbT.TblText">374</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>define constant</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2003" class="TbT.TblText">Defines and initializes a constant binding in the current module.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2003" class="TbT.TblText">375</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>define generic</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2007" class="TbT.TblText">Defines a constant binding in the current module and initializes it to a new generic function.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2007" class="TbT.TblText">376</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>define method</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2010" class="TbT.TblText">Adds a method to a generic function, and potentially defines a constant binding in the current module containing a new generic function.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2010" class="TbT.TblText">377</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>define class</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2013" class="TbT.TblText">Defines a constant binding in the current module and initializes it to a new class.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2013" class="TbT.TblText">378</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>define module</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2016" class="TbT.TblText">Defines and names a module, describing the imports and exports of the module.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2016" class="TbT.TblText">380</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>define library</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2020" class="TbT.TblText">Defines and names a library, describing the imports and exports of the library.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2020" class="TbT.TblText">386</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>define domain</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2024" class="TbT.TblText">Restricts the ways in which a generic function and set of types can be extended, thereby enabling additional error checking and compiler optimization.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2024" class="TbT.TblText">388</a></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>define macro</code></p>
-</td><td><p class="TbT.TblText"> </p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2027" class="TbT.TblText">Defines a constant module binding containing a macro.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2027" class="TbT.TblText">389</a></p>
 </td></tr></table><a name="HEADING112-147"></a>
@@ -122,9 +133,6 @@
       <dd>
         <p class="Cliche2"><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The adjectives allowed are implementation dependent.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>variables</var></dt>
       <dd class="RP.RoutineParam">
 	<p class="RP.RoutineParam"> <span class="BNF">variable<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>(</code> <span class="BNF">variable-list<em class="BNF"><sub>bnf</sub></em></span> <code>)</code>
@@ -173,13 +181,10 @@ define variable (*whole-part* :: &lt;integer&gt;, *remainder* :: &lt;real&gt;)
       <dd>
         <p class="Cliche2"><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The adjectives allowed are implementation dependent.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>constants</var></dt>
       <dd class="RP.RoutineParam">
 	<p class="RP.RoutineParam">
-	  <span class="BNF">variable<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>(</code> <span class="BNF">variable-list<em class="BNF"><sub>bnf</sub></em> <code>)</code></span>
+	  <span class="BNF">variable<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>(</code> <span class="BNF">variable-list<em class="BNF"><sub>bnf</sub></em></span> <code>)</code>
 	  </p>
 	</dd>
       <dt class="RP.RoutineParam"><var>init</var></dt>
@@ -220,9 +225,6 @@ define constant $start-time :: &lt;integer&gt; = get-current-time(); </pre>
       <dt class="RP.RoutineParam"><var>adjective</var></dt>
       <dd><p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The allowed adjectives are <code>sealed</code> and <code>open</code>. These adjectives are mutually exclusive. The default is <code>sealed</code>. Additional implementation-defined adjectives may be supported.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>name</var></dt>
       <dd class="RP.RoutineParam">
 	<p class="RP.RoutineParam">
@@ -285,9 +287,6 @@ define generic brew (brand :: &lt;coffee-brand&gt;, #key strength)
       <dd>
         <p class="Cliche"><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The allowed adjective is <code>sealed</code>. Additional implementation-defined <var>adjectives</var> may be supported.</p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>name</var></dt>
       <dd class="RP.RoutineParam">
 	<p class="RP.RoutineParam">
@@ -332,47 +331,50 @@ end method tune </pre>
       <dd>
         <p class="Cliche2"><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The allowed adjectives are <code>abstract</code>, <code>concrete</code>, <code>primary</code>, <code>free</code>, <code>sealed</code>, and <code>open</code>. Additional implementation-dependent class-adjectives may be supported.</p>
       </dd>
-    </dl>
-  </dd>
-<dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><var>name</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>variable-name<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 <dt class="RP.RoutineParam"><var>superclass</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>expression<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 <dt class="RP.RoutineParam"><var>slot-spec</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>{ <i class="parameter MetaSyntax RP.RoutineParam">slot-adjective }* [ allocation ]<br />slot getter-name [ :: type ] [ init-expression ]<br />{ , slot-option  }*</i></code></p></dd>
 <dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">init-arg-spec<code></code></i></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>[ required ] keyword symbol<em class="MetaSyntax RP.RoutineParam"><sub>bnf</sub> [ <i class="parameter MetaSyntax RP.RoutineParam">init-expression ]<br />{ , init-arg-option  }*</i></em></code></p></dd>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>[ required ] keyword symbol<em class="MetaSyntax"><sub>bnf</sub> [ <i class="parameter MetaSyntax RP.RoutineParam">init-expression ]<br />{ , init-arg-option  }*</i></em></code></p></dd>
 <dt class="RP3.RoutineParam"><i class="parameter RP3.RoutineParam">inherited-slot-spec<code></code></i></dt>
 <dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> inherited slot<code> <i class="parameter MetaSyntax RP3.RoutineParam">getter-name [ init-expression ]<br />{ , inherited-option  }*</i></code></p></dd>
 <dt class="RP.RoutineParam"><var>slot-adjective</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>unreserved-name<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code>. Supported slot-adjectives are <code>constant</code> and <code>sealed</code>. Additional implementation-dependent slot-adjectives may be supported.</p></dd>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. Supported slot-adjectives are <code>constant</code> and <code>sealed</code>. Additional implementation-dependent slot-adjectives may be supported.</p></dd>
 <dt class="RP.RoutineParam"><var>allocation</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>unreserved-name<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code>. Supported allocations are <code>instance</code>, <code>class</code>, <code>each-subclass</code>, and <code>virtual</code>. Additional implementation-defined allocations may be supported.</p></dd>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. Supported allocations are <code>instance</code>, <code>class</code>, <code>each-subclass</code>, and <code>virtual</code>. Additional implementation-defined allocations may be supported.</p></dd>
 <dt class="RP.RoutineParam"><var>getter-name</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>variable-name<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 <dt class="RP.RoutineParam"><var>type</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>operand<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">operand<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 <dt class="RP.RoutineParam"><var>init-expression</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code> = expression<em class="MetaSyntax RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>=</code> <span class="MetaSyntax">expression<em class="MetaSyntax"><sub>bnf</sub></em></span></p></dd>
 <dt class="RP.RoutineParam"><var>slot-option</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> setter-option<code>  |<br /><i class="parameter MetaSyntax RP.RoutineParam">init-keyword-option  |<br />required-init-keyword-option  |<br />init-value-option  |<br />init-function-option  |<br />type-option</i></code></p></dd>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam">
+    <code><i class="parameter MetaSyntax RP.RoutineParam">setter-option  |<br />
+	init-keyword-option  |<br />
+	required-init-keyword-option  |<br />
+	init-value-option  |<br />
+	init-function-option  |<br />
+	type-option</i></code></p></dd>
 <dt class="RP.RoutineParam"><var>init-arg-option</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> type-option<code>  |<br /><i class="parameter MetaSyntax RP.RoutineParam">init-value-option  |<br />init-function-option</i></code></p></dd>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code><i class="parameter MetaSyntax RP.RoutineParam">type-option  |<br />init-value-option  |<br />init-function-option</i></code></p></dd>
 <dt class="RP3.RoutineParam"><var>inherited-option</var></dt>
-<dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> init-value-option<code>  |<br /><var>init-function-option</var></code></p></dd>
+<dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> <code><var>init-value-option  |<br />init-function-option</var></code></p></dd>
 <dt class="RP.RoutineParam"><var>setter-option</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>setter: { variable-name<em class="Code RP.RoutineParam"><sub>bnf</sub> | #f }</em></code></p></dd>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>setter: { variable-name<em class="BNF"><sub>bnf</sub> | #f }</em></code></p></dd>
 <dt class="RP3.RoutineParam"><i class="parameter RP3.RoutineParam">init-keyword-option<code></code></i></dt>
-<dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> init-keyword:<code> symbol<em class="MetaSyntax RP3.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-<dt class="RP3.RoutineParam"><i class="parameter RP3.RoutineParam">required-init-keyword-option<code></code></i></dt>
-<dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> required-init-keyword:<code> symbol<em class="MetaSyntax RP3.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+<dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> <code>init-keyword: symbol<em class="MetaSyntax RP3.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+<dt class="RP3.RoutineParam"><i class="parameter RP3.RoutineParam">required-init-keyword-option</i></dt>
+<dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> <code>required-init-keyword: symbol<em class="MetaSyntax RP3.RoutineParam"><sub>bnf</sub></em></code></p></dd>
 <dt class="RP3.RoutineParam"><var>init-value-option</var></dt>
 <dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> <code>init-value: expression<em class="Code RP3.RoutineParam"><sub>bnf</sub></em></code></p></dd>
 <dt class="RP3.RoutineParam"><var>init-function-option</var></dt>
 <dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> <code>init-function: expression<em class="Code RP3.RoutineParam"><sub>bnf</sub></em></code></p></dd>
 <dt class="RP.RoutineParam"><var>type-option</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>type: expression<em class="Code RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>type: expression<em class="BNF"><sub>bnf</sub></em></code></p></dd>
 </dl></dd>
 <dt class="Cliche">Description:</dt>
 <dd class="Cliche"><p class="Cliche"> <a name="MARKER-2-2014"></a><code>define class</code> is used to define classes.</p>
@@ -398,36 +400,32 @@ end method tune </pre>
       <dd>
         <p class="Cliche2"><span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span></p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>export-clause</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>export { ordinary-name<em class="Code RP.RoutineParam"><sub>bnf</sub> } ,*</em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>export { ordinary-name<em class="BNF"><sub>bnf</sub> } ,*</em></code></p></dd>
       <dt class="RP.RoutineParam"><var>create-clause</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>create { ordinary-name<em class="Code RP.RoutineParam"><sub>bnf</sub> } ,*</em></code> </p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>create { ordinary-name<em class="BNF"><sub>bnf</sub> } ,*</em></code> </p></dd>
       <dt class="RP.RoutineParam"><var>use-clause</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>use <var>used-module { ,option }*</var></code></p></dd>
       <dt class="RP.RoutineParam"><var>used-module</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>ordinary-name<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
       <dt class="RP.RoutineParam"><var>option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">import-option<code> |</code></i></p></dd>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">exclude-option<code> |</code></i></p></dd>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">prefix-option<code> |</code></i></p></dd>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">rename-option<code> |</code></i></p></dd>
-      <dt class="RP.RoutineParam"></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">import-option</i> <strong class="re">|</strong></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">exclude-option</i> <strong class="re">|</strong></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">prefix-option</i> <strong class="re">|</strong></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">rename-option</i> <strong class="re">|</strong></p></dd>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <var>export-option</var> </p></dd>
       <dt class="RP.RoutineParam"><var>import-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>import: all | { { <var>variable-spec } ,* }</var></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>import: all | { { <var>variable-spec</var> } ,* }</code></p></dd>
       <dt class="RP.RoutineParam"><var>variable-spec</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>name<em class="BNF RP.RoutineParam"><sub>bnf</sub> [ =&gt; name<sub>bnf</sub> ]</em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>name<em class="BNF"><sub>bnf</sub></em> [ =&gt; name<em class="BNF"><sub>bnf</sub></em> ]</code></p></dd>
       <dt class="RP.RoutineParam"><var>exclude-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>exclude: { { name<em class="Code RP.RoutineParam"><sub>bnf</sub> } ,* }</em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>exclude: { { name<em class="BNF"><sub>bnf</sub></em> } ,* }</code></p></dd>
       <dt class="RP.RoutineParam"><var>prefix-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>prefix: string-literal<em class="Code RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>prefix: string-literal<em class="BNF"><sub>bnf</sub></em></code></p></dd>
       <dt class="RP.RoutineParam"><var>rename-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>rename: { { name<em class="Code RP.RoutineParam"><sub>bnf</sub> =&gt; name<sub>bnf</sub> } ,* }</em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>rename: { { name<em class="BNF"><sub>bnf</sub></em> =&gt; name<em class="BNF"><sub>bnf</sub></em> } ,* }</code></p></dd>
       <dt class="RP.RoutineParam"><var>export-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>export: all | { { name<em class="Code RP.RoutineParam"><sub>bnf</sub> } ,* }</em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>export: all | { { name<em class="BNF"><sub>bnf</sub></em> } ,* }</code></p></dd>
   </dl></dd>
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> <a name="MARKER-2-2017"></a><code><a name="MARKER-9-2018"></a>define module</code> defines a module with the given name. It describes which modules are used by the module being defined, which bindings are imported from the used modules, and which bindings are exported by the module being defined.</p>
@@ -536,34 +534,30 @@ dylan-gx
       <dd>
         <p class="Cliche2"><span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span></p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>use-clause</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>use <var>used-library { ,option }*</var></code></p></dd>
       <dt class="RP.RoutineParam"><var>export-clause</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>export { ordinary-name<em class="Code RP.RoutineParam"><sub>bnf</sub> } ,*</em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>export { ordinary-name<em class="BNF"><sub>bnf</sub> } ,*</em></code></p></dd>
       <dt class="RP.RoutineParam"><var>used-library</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>ordinary-name<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
       <dt class="RP.RoutineParam"><var>option</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">import-option<code> |</code></i></p></dd>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">exclude-option<code> |</code></i></p></dd>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">prefix-option<code> |</code></i></p></dd>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">rename-option<code> |</code></i></p></dd>
-      <dt class="RP.RoutineParam"></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <var>export-option</var> </p></dd>
       <dt class="RP.RoutineParam"><var>import-option</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>import: all | { { <var>module-spec } ,* }</var></code></p></dd>
       <dt class="RP.RoutineParam"><var>module-spec</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>name<em class="BNF RP.RoutineParam"><sub>bnf</sub> [ =&gt; name<sub>bnf</sub> ]</em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>name<em class="BNF"><sub>bnf</sub> [ =&gt; name<sub>bnf</sub> ]</em></code></p></dd>
       <dt class="RP.RoutineParam"><var>exclude-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>exclude: { { name<em class="Code RP.RoutineParam"><sub>bnf</sub> } ,* }</em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>exclude: { { name<em class="BNF"><sub>bnf</sub> } ,* }</em></code></p></dd>
       <dt class="RP.RoutineParam"><var>prefix-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>prefix: string-literal<em class="Code RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>prefix: string-literal<em class="BNF"><sub>bnf</sub></em></code></p></dd>
       <dt class="RP.RoutineParam"><var>rename-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>rename: { { name<em class="Code RP.RoutineParam"><sub>bnf</sub> =&gt; name<sub>bnf</sub> } ,* }</em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>rename: { { name<em class="BNF"><sub>bnf</sub> =&gt; name<sub>bnf</sub> } ,* }</em></code></p></dd>
       <dt class="RP.RoutineParam"><var>export-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>export: all | { { name<em class="Code RP.RoutineParam"><sub>bnf</sub> } ,* }</em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>export: all | { { name<em class="BNF"><sub>bnf</sub> } ,* }</em></code></p></dd>
   </dl></dd>
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> <code>define library</code> defines a library with the given name. It describes which libraries are used by the library being defined, which modules are imported from the used libraries, and which modules are exported by the library being defined.</p>
@@ -600,11 +594,8 @@ dylan-gx
       <dd>
         <p class="Cliche"><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></span></p>
       </dd>
-    </dl>
-  </dd>
-  <dd><dl class="RP.RoutineParam">
       <dt class="RP.RoutineParam"><var>type</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>expression<em class="BNF RP.RoutineParam"><sub>bnf</sub></em></code></p></dd>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
   </dl></dd>
   <dt class="Cliche">Description:</dt>
   <dd class="Cliche"><p class="Cliche"> <code>define sealed domain</code> seals the specified <var>generic-function</var> over the domain indicated by the <var>types</var>. For a complete description of the rules governing <code>define sealed domain</code> and the implications of a <code>define sealed domain</code> definition, see <a href="drm_75.html#MARKER-9-1123" class="Cliche">"Define Sealed Domain" on page 135</a>.</p>
@@ -639,26 +630,9 @@ dylan-gx
 
 <div class="wm-div-footers">
 
-<div class="wm-div-toc">
-
-<ul class="footer">
-<li class="footer"><a href="drm_112.html#HEADING112-147" class="footer">define variable [Definition]</a></li>
-<li class="footer"><a href="drm_112.html#HEADING112-163" class="footer">define constant [Definition]</a></li>
-<li class="footer"><a href="drm_112.html#HEADING112-178" class="footer">define generic [Definition]</a></li>
-<li class="footer"><a href="drm_112.html#HEADING112-196" class="footer">define method [Definition]</a></li>
-<li class="footer"><a href="drm_112.html#HEADING112-209" class="footer">define class [Definition]</a></li>
-<li class="footer"><a href="drm_112.html#HEADING112-240" class="footer">define module   [Definition]</a></li>
-<li class="footer"><a href="drm_112.html#HEADING112-282" class="footer">define library   [Definition]</a></li>
-<li class="footer"><a href="drm_112.html#HEADING112-313" class="footer">define sealed domain  [Definition]</a></li>
-<li class="footer"><a href="drm_112.html#HEADING112-321" class="footer">define macro [Special Definition]</a></li>
-</ul>
-
-
-</div>
-
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_113.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_111.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_110.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer"><a href="drm_111.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_113.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_110.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
 <p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
 
