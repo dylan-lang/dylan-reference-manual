@@ -32,42 +32,38 @@
 <h2 class="H2.Heading2"> <a name="MARKER-2-489"></a>Execution Order Within Expressions</h2>
 <p class="T1.Text1">In general, execution within an expression proceeds left-to-right. The chief exception to this rule is the <a name="MARKER-2-490"></a>assignment operator, which is executed right-to-left.</p>
 <ul class="B1.Bullet1">
-<li class="B1.Bullet1"><a name="MARKER-2-491"></a>In a standard function call, the function operand is executed first, followed by the argument expressions. (Remember, the function need not be a named value reference, but can be a more complex operand). After the function operand has been executed and each of the argument expressions has been executed, the function is applied to the arguments.</li>
+  <li class="B1.Bullet1"><a name="MARKER-2-491"></a>In a standard function call, the function operand is executed first, followed by the argument expressions. (Remember, the function need not be a named value reference, but can be a more complex operand). After the function operand has been executed and each of the argument expressions has been executed, the function is applied to the arguments.
+    <pre class="Cv.Code">
+one(two, three, four) </pre>
+  </li>
+  <li class="B1.Bullet1"><a name="MARKER-2-492"></a>In slot references, the object operand is executed first, followed by the function named value reference. Then the function is applied to the object.
+    <pre class="Cv.Code">
+one.two </pre>
+  </li>
+  <li class="B1.Bullet1"><a name="MARKER-2-493"></a>In element references, the collection operand is executed first, followed by the key expressions in order. Then the element access is performed. The execution time of the binding <code class="cv B1.Bullet1">element</code> or <code class="cv B1.Bullet1">aref</code> is unspecified.
+    <pre class="Cv.Code">
+one[two, three] </pre>
+  </li>
+  <li class="B1.Bullet1"><a name="MARKER-2-494"></a>In an operator call, the operands are executed left-to-right. The execution time of the binding specified by the operand (e.g. <code class="cv B1.Bullet1">+</code> or <code class="cv B1.Bullet1">*</code>) is unspecified.
+    <pre class="Cv.Code">
+one + two - three </pre>
+  </li>
+  <li class="B1.Bullet1">In an assignment to a place that represents a function call, the order of execution is largely the same as it would be in a call to the corresponding setter function. The new-value expression is executed first, followed by the argument expressions. The execution time of the binding named by the setter function is undefined.
+    <pre class="Cv.Code">
+function-setter(one, two, three)
+function(two, three) := one
+
+slot-setter(one, two)
+two.slot := one
+
+element-setter(one, two, three)
+two[three] := one
+
+aref-setter(one, two, three, four)
+two[three, four] := one<a name="MARKER-2-495"></a><a name="MARKER-2-496"></a></pre>
+  </li>
 </ul>
-<pre class="Cv.Code">
-	one(two, three, four)
-</pre>
-<ul class="B1.Bullet1">
-<li class="B1.Bullet1"><a name="MARKER-2-492"></a>In slot references, the object operand is executed first, followed by the function named value reference. Then the function is applied to the object.</li>
-</ul>
-<pre class="Cv.Code">
-	one.two
-</pre>
-<ul class="B1.Bullet1">
-<li class="B1.Bullet1"><a name="MARKER-2-493"></a>In element references, the collection operand is executed first, followed by the key expressions in order. Then the element access is performed. The execution time of the binding <code class="cv B1.Bullet1">element</code> or <code class="cv B1.Bullet1">aref</code> is unspecified.</li>
-</ul>
-<pre class="Cv.Code">
-	one[two, three]		
-</pre>
-<ul class="B1.Bullet1">
-<li class="B1.Bullet1"><a name="MARKER-2-494"></a>In an operator call, the operands are executed left-to-right. The execution time of the binding specified by the operand (e.g. <code class="cv B1.Bullet1">+</code> or <code class="cv B1.Bullet1">*</code>) is unspecified.</li>
-</ul>
-<pre class="Cv.Code">
-	one + two - three
-</pre>
-<ul class="B1.Bullet1">
-<li class="B1.Bullet1">In an assignment to a place that represents a function call, the order of execution is largely the same as it would be in a call to the corresponding setter function. The new-value expression is executed first, followed by the argument expressions. The execution time of the binding named by the setter function is undefined.</li>
-</ul>
-<pre class="Cv.Code">
-	function-setter(one, two, three)
-	function(two, three) := one
-	slot-setter(one, two)
-	two.slot := one
-	element-setter(one, two, three)
-	two[three] := one
-	aref-setter(one, two, three, four)
-	two[three, four] := one<a name="MARKER-2-495"></a><a name="MARKER-2-496"></a>
-<a name="LINK-Program_Control-lastpage"></a><a name="LINK-Types_and_ClassesTOC-firstpage"></a></pre>
+<a name="LINK-Program_Control-lastpage"></a><a name="LINK-Types_and_ClassesTOC-firstpage"></a>
 <a name="UID-Types_and_ClassesTOC-1085"></a>
 <a name="LINK-Types_and_ClassesTOC-lastpage"></a>
 </div>
