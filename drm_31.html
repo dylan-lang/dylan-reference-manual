@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_28.html" />
+<link rel="prev" href="drm_30.html" />
+<link rel="next" href="drm_32.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Operators</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING31"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_32.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_30.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_28.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">4 Program Control</p>
+
+</div>
+<a name="HEADING31-0"></a>
+<a name="UID-Program_Control-1279"></a>
+<h1 class="H1.Heading1"> <a name="MARKER-2-438"></a>Operators</h1>
+<p class="T1.Text1">Dylan provides a small number of unary and binary operators. These are syntactic shorthand for function calls or function-macro calls.</p>
+<p class="T1.Text1">Because of the possibility of <a name="MARKER-2-439"></a>token blending, operators and their operands must often be separated by <a name="MARKER-2-440"></a>whitespace. For example, <code class="cv T1.Text1">foo+bar</code> is a single named value reference, not an invocation of the addition operator. The complete rules of tokenization are given in the lexical syntax in <a href="drm_116.html#MARKER-9-2090" class="T1.Text1">Appendix A, "BNF."</a></p>
+<p class="T1.Text1">All binary operators are <a name="MARKER-2-441"></a>left-associative, except for the assignment operator, <code class="cv T1.Text1">:=</code>, and the exponentiation operator, <code class="cv T1.Text1">^</code>, which are <a name="MARKER-2-442"></a>right-associative.</p>
+<p class="T1.Text1"><a name="MARKER-2-443"></a>Each operator corresponds to a binding name, given in the table below. When an operator is called, the corresponding name is looked up in the environment of the call. (It is not looked up in the <a name="MARKER-2-444"></a>Dylan module, and will only refer to a binding in the Dylan module if that binding has been imported in the current module and has not been shadowed by a lexical binding.)</p>
+<p class="T1.Text1">If the name given in the table has the same spelling as the operator, it must be escaped with <a name="MARKER-2-445"></a>\ to be used as a named value reference. For example, to add a method to <code class="cv T1.Text1">+</code> with <code class="cv T1.Text1">define method</code>, you use <code class="cv T1.Text1">\+</code>. To use <code class="cv T1.Text1">&lt;</code> as an argument to <code class="cv T1.Text1">sort</code>, you write <code class="cv T1.Text1">\&lt;</code>.</p>
+<p class="T1.Text1"><a name="MARKER-2-446"></a>The operands of a binary operator call that is shorthand for a function call are executed in left to right order. The operands of a binary operator call which is shorthand for a function macro call are passed to the macro. Their order of execution depends on the definition of the macro. The built-in function macros are described in <a href="drm_115.html#MARKER-9-2068" class="T1.Text1">"Function Macros" on page 409</a>.</p>
+<p class="T1.Text1"><a name="MARKER-2-447"></a><a name="MARKER-2-448"></a>The operators are listed in <a href="#MARKER-9-427" class="T1.Text1">Table 4-1</a> in descending order of precedence. Operators within a group share the same precedence. When a function call using slot reference syntax appears as an operand, it has greater precedence than any of the binary operators.</p>
+<p class="T0.Text0"><a name="MARKER-2-449"></a><a name="MARKER-2-450"></a></p>
+<table><caption>Table 4-1  <a name="MARKER-9-427"></a>Operators
+</caption><tr><th><p class="TbH.TblHd"> Operator</p>
+</th><th><p class="TbH.TblHd"> </p>
+</th><th><p class="TbH.TblHd"> Unary/Binary</p>
+</th><th><p class="TbH.TblHd"> Description</p>
+</th><th><p class="TbH.TblHd"> Name</p>
+</th></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">-</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> unary</p>
+</td><td><p class="TbT.TblText"> arithmetic negation</p>
+</td><td><p class="TbT.TblText"> <code class="TbT.TblText">negative</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">~</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> unary</p>
+</td><td><p class="TbT.TblText"> logical negation</p>
+</td><td><p class="TbT.TblText"> <code class="TbT.TblText">~</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">^</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> binary</p>
+</td><td><p class="TbT.TblText"> exponentiation</p>
+</td><td><p class="TbT.TblText"> <code class="TbT.TblText">^</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">*</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> binary</p>
+</td><td><p class="TbT.TblText"> multiplication</p>
+</td><td><p class="TbT.TblText"> <code class="TbT.TblText">*</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">/</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> binary</p>
+</td><td><p class="TbT.TblText"> division</p>
+</td><td><p class="TbT.TblText"> <code class="TbT.TblText">/</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">+</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> binary</p>
+</td><td><p class="TbT.TblText"> addition</p>
+</td><td><p class="TbT.TblText"> <code class="TbT.TblText">+</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">-</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> binary</p>
+</td><td><p class="TbT.TblText"> subtraction</p>
+</td><td><p class="TbT.TblText"> <code class="TbT.TblText">-</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">=</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> binary</p>
+</td><td><p class="TbT.TblText"> equality</p>
+</td><td><p class="TbT.TblText"> <code class="TbT.TblText">=</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">==</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> binary</p>
+</td><td><p class="TbT.TblText"> identity</p>
+</td><td><p class="TbT.TblText"> <code class="TbT.TblText">==</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">~=</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> binary</p>
+</td><td><p class="TbT.TblText"> non-equality</p>
+</td><td><p class="TbT.TblText"> <code class="TbT.TblText">~=</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">~==</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> binary</p>
+</td><td><p class="TbT.TblText"> non-identity</p>
+</td><td><p class="TbT.TblText"> <code class="TbT.TblText">~==</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">&lt;</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> binary</p>
+</td><td><p class="TbT.TblText"> less than</p>
+</td><td><p class="TbT.TblText"> <code class="TbT.TblText">&lt;</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">&gt;</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> binary</p>
+</td><td><p class="TbT.TblText"> greater than</p>
+</td><td><p class="TbT.TblText"> <code class="TbT.TblText">&gt;</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">&lt;=</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> binary</p>
+</td><td><p class="TbT.TblText"> less than or equals</p>
+</td><td><p class="TbT.TblText"> <code class="TbT.TblText">&lt;=</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">&gt;=</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> binary</p>
+</td><td><p class="TbT.TblText"> greater than or equals</p>
+</td><td><p class="TbT.TblText"> <code class="TbT.TblText">&gt;=</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">&amp;</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> binary</p>
+</td><td><p class="TbT.TblText"> logical and</p>
+</td><td><p class="TbT.TblText"> <code class="cv TbT.TblText">&amp;</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">|</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> binary</p>
+</td><td><p class="TbT.TblText"> logical or</p>
+</td><td><p class="TbT.TblText"> <code class="cv TbT.TblText">|</code></p>
+</td></tr><tr><td><p class="TbT.TblText"> <code class="TbT.TblText">:=</code></p>
+</td><td><p class="TbT.TblText"> </p>
+</td><td><p class="TbT.TblText"> binary</p>
+</td><td><p class="TbT.TblText"> assignment</p>
+</td><td><p class="TbT.TblText"> <code class="cv TbT.TblText">:=</code></p>
+</td></tr></table>
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC -->
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_32.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_30.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_28.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

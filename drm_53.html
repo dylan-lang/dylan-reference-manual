@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_52.html" />
+<link rel="prev" href="drm_52.html" />
+<link rel="next" href="drm_54.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Background</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING53"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_54.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_52.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_52.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">7 Conditions</p>
+
+</div>
+<a name="HEADING53-0"></a>
+<a name="UID-Conditions-2630"></a>
+<h1 class="H1.Heading1"> Background</h1>
+<p class="T1.Text1"><a name="MARKER-2-887"></a><a name="MARKER-2-888"></a>A long-standing problem of software engineering is the need to develop an organized way to deal with exceptions, situations that must be handled gracefully but that are not conceptually part of the normal operation of the program.</p>
+<p class="T1.Text1">Of course it is possible to program exception handling without using special linguistic features. For example, all functions could return an extra result that indicates whether they succeeded or failed, functions could take an extra argument that they consult if an exception occurs, or a designated exception-handling function could be called whenever a problem arises. All of these approaches have been used in one real-life system or another, but they are deficient in two ways. First, they are too informal and don't provide enough structure to allow an organized, systematic approach to exception handling. Second, and more importantly, the first two approaches do not provide textual separation between "normal code" and "code for dealing with exceptions"; exception-related code is sprinkled throughout the program. This leads to two problems: one is the well-known mistake of forgetting to test error codes and thus failing to detect an exception (perhaps because the programmer believed the error could never occur); the other is that program clarity is lost because it isn't easy to think about the main flow of the program while temporarily ignoring exceptions.</p>
+<p class="T1.Text1">All exception systems involve the concept of "<a name="MARKER-2-889"></a>signal" (sometimes with a different name, such as "<a name="MARKER-2-890"></a>raise" or "<a name="MARKER-2-891"></a>throw") and the concept of "<a name="MARKER-2-892"></a>handle" (sometimes with a different name such as "<a name="MARKER-2-893"></a>on-unit" or "<a name="MARKER-2-894"></a>catch"). <a name="MARKER-2-895"></a>Most exception systems dynamically match signalers with handlers, first invoking the most recently established matching handler still active, and then, if that matching handler declines to handle the exception, invoking the next most recent matching handler, and so on.</p>
+<p class="T1.Text1">In addition, it is necessary to have a way to clean up when execution of a function is terminated by a nonlocal exit initiated either by the function itself or by something it explicitly or implicitly called.</p>
+<p class="T1.Text1">Exception systems may be name-based or object-based, they may be exiting or calling, and they may or may not provide formal recovery mechanisms.</p>
+<p class="T1.Text1">In a <a name="MARKER-2-896"></a>name-based exception system a program signals a name, and a handler matches if it handles the same name or "any."  The name is a constant in the source text of the program, not the result of an expression.</p>
+<p class="T1.Text1">In an <a name="MARKER-2-897"></a>object-based exception system a program signals an object, and a handler matches if it handles a type that object belongs to. Object-based exceptions are more powerful, because the object can communicate additional information from the signaler to the handler, because the object to be signaled can be chosen at run-time rather than signaling a fixed name, and because type inheritance in the handler matching adds abstraction and provides an organizing framework.</p>
+<p class="T1.Text1">In an <a name="MARKER-2-898"></a>exiting exception system, all dynamic state between the handler and the signaler is unwound before the handler receives control, as if signaling were a nonlocal goto from the signaler to the handler.</p>
+<p class="T1.Text1"><a name="MARKER-2-899"></a>In a <a name="MARKER-2-900"></a>calling exception system the signaler is still active when a handler receives control. Control can be returned to the signaler, as if signaling were a function call from the signaler to the handler.</p>
+<p class="T1.Text1">Exiting exception systems are acceptable for errors. However, they do not work for an exception that is not an error and doesn't require an exit, either because there is a default way to handle it and recover or because it can safely be ignored by applications that don't care about it. <a name="MARKER-2-901"></a>Non-error exceptions are quite common in networked environments, in computers with gradually expiring resources (such as batteries), in complex user interfaces, and as one approach for reflecting hardware exceptions such as page protection violations or floating-point overflow to the application.</p>
+<p class="T1.Text1">Most languages have not formalized how to recover from exceptions, leaving programmers to invent ad hoc mechanisms. However, a <a name="MARKER-2-902"></a>formal recovery mechanism is useful for several reasons: it ensures that recovery is implemented correctly;  it allows options for recovery to be categorized just as exceptions are categorized;  and it allows <a name="MARKER-2-903"></a>introspection on the options for recovery, for example, by a debugger.</p>
+<p class="T1.Text1">The Dylan exception facility is object-based. It uses calling semantics but also provides exiting handlers. It provides formal recovery.<a name="MARKER-2-904"></a></p>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC -->
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_54.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_52.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_52.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

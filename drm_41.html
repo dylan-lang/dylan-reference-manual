@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_38.html" />
+<link rel="prev" href="drm_40.html" />
+<link rel="next" href="drm_42.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Classes</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING41"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_42.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_40.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_38.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">5 Types and Classes</p>
+
+</div>
+<a name="HEADING41-0"></a>
+<a name="UID-Types_and_Classes-361"></a>
+<h1 class="H1.Heading1"> <a name="MARKER-2-561"></a>Classes</h1>
+<p class="T1.Text1"><a name="MARKER-2-562"></a>Classes are used to define the inheritance, structure, and initialization of objects.</p>
+<p class="T1.Text1">Every object is a <b class="Bold T1.Text1"><a name="MARKER-2-563"></a>direct instance</b> of exactly one class, and a general instance of  the <b class="Bold T1.Text1"><a name="MARKER-2-564"></a>general superclasses</b> of that class.</p>
+<p class="T1.Text1">A class determines which <b class="T1.Text1"><a name="MARKER-2-565"></a>slots</b> its instances have. Slots are the local storage available within instances. They are used to store the state of objects.</p>
+<p class="T1.Text1">Classes determine how their instances are initialized by using the <b class="bold T1.Text1"><a name="MARKER-2-566"></a>initialization protocol</b>.</p>
+<a name="HEADING41-5"></a>
+<a name="UID-Types_and_Classes-5438"></a>
+<h2 class="H2.Heading2"> <a name="MARKER-2-567"></a>Features of Classes</h2>
+<p class="T1.Text1">There are four features of classes. These features relate to each other, but can be declared independently.</p>
+<ul class="B1.Bullet1">
+<li class="B1.Bullet1">A class can be <b class="bold B1.Bullet1"><a name="MARKER-2-568"></a>abstract</b> or <b class="bold B1.Bullet1"><a name="MARKER-2-569"></a>concrete</b>. If the class is concrete, it can have direct instances. If it is abstract, it cannot have direct instances, but only indirect instances.</li>
+<li class="B1.Bullet1">A class can be <b class="bold B1.Bullet1"><a name="MARKER-2-570"></a>instantiable</b> or <b class="bold B1.Bullet1"><a name="MARKER-2-571"></a>uninstantiable</b>. If the class is instantiable, it can be used as the first argument to <code class="cv B1.Bullet1">make</code>. If it is uninstantiable, it cannot be used as the first argument to <code class="cv B1.Bullet1">make</code>.</li>
+<li class="B1.Bullet1">A class can be <b class="bold B1.Bullet1"><a name="MARKER-2-572"></a>primary</b> or <b class="bold B1.Bullet1"><a name="MARKER-2-573"></a>free</b>. This controls how a class can be used for multiple inheritance. For a full description of this feature, see <a href="drm_73.html#MARKER-9-1106" class="B1.Bullet1">"Declaring Characteristics of Classes" on page 134</a>.</li>
+<li class="B1.Bullet1">A class can be <b class="bold B1.Bullet1"><a name="MARKER-2-574"></a>sealed</b> or <b class="bold B1.Bullet1"><a name="MARKER-2-575"></a>open</b>. This controls whether a class can be subclassed outside the library where it is defined. For a full description of this feature, see <a href="drm_73.html#MARKER-9-1106" class="B1.Bullet1">"Declaring Characteristics of Classes" on page 134</a>.<a name="MARKER-2-576"></a></li>
+</ul>
+<a name="HEADING41-11"></a>
+<a name="UID-Types_and_Classes-2532"></a>
+<h2 class="H2.Heading2"> <a name="MARKER-2-577"></a>Creating Classes</h2>
+<p class="T1.Text1">New classes may be created by calling <a name="MARKER-2-578"></a><code class="Code T1.Text1">make</code> on <code class="Code T1.Text1">&lt;class&gt;</code>, or with the defini-<br />tion <a name="MARKER-2-579"></a><code class="T1.Text1">define class</code>. In most programs the latter is more commonly used.</p>
+<p class="T1.Text1">When a class is created with <code class="cv T1.Text1">make</code>, it is instantiated and returned just like any other object. The options available when creating a class with <code class="cv T1.Text1">make</code> are described on <a href="drm_90.html#MARKER-9-1372" class="T1.Text1">page 191</a>.</p>
+<p class="T1.Text1"><a name="MARKER-2-580"></a>When a class is created with <code class="Code T1.Text1">define class</code> it is used to initialize a new module binding. <code class="cv T1.Text1">define class</code> allows the specification of superclasses, slots, initialization behavior, and options related to sealing. The complete syntax of <code class="Code T1.Text1">define class</code> is given on <a href="drm_112.html#MARKER-9-2013" class="T1.Text1">page 378</a>.</p>
+<p class="T1.Text1">The following simple class definition creates a class named by the module binding <code class="Code T1.Text1">&lt;new&gt;</code>. The class inherits from <code class="Code T1.Text1">&lt;object&gt;</code> and does not specify any slots.</p>
+<pre class="Cv.Code">
+define class &lt;new&gt; (&lt;object&gt;)
+end class &lt;new&gt;;
+</pre>
+<p class="T1.Text1">The following class definition illustrates the creation of a class with multiple superclasses. Again, there are no slots defined by the class.</p>
+<pre class="Cv.Code">
+define class &lt;color-window&gt; (&lt;palette&gt;, &lt;window&gt;)
+end class &lt;color-window&gt;;<a name="MARKER-2-581"></a>
+</pre>
+<a name="HEADING41-19"></a>
+<a name="UID-Types_and_Classes-5460"></a>
+<h2 class="H2.Heading2"> <a name="MARKER-2-582"></a><a name="MARKER-9-583"></a>Class Inheritance</h2>
+<p class="T1.Text1">When a class is created, its <b class="bold T1.Text1"><a name="MARKER-2-584"></a>direct superclasses</b> are specified. The new class directly inherits from these classes; it is a <b class="bold T1.Text1"><a name="MARKER-2-585"></a>direct subclass</b> of each of these classes. There can be no duplicates in the direct superclasses of a class.</p>
+<p class="T1.Text1">The subclass relationship is transitive. If a class <i class="Parameter T1.Text1">C</i> is a direct subclass of <i class="Parameter T1.Text1">C<em class="Subscript Parameter T1.Text1">1</em></i>,  <i class="Parameter T1.Text1">C<em class="Subscript Parameter T1.Text1">1</em></i> is a direct subclass of <i class="Parameter T1.Text1">C<em class="Subscript Parameter T1.Text1">2</em></i>, and <i class="Parameter T1.Text1">C<em class="Subscript Parameter T1.Text1">2</em></i> is a direct subclass of <i class="Parameter T1.Text1">C<em class="Subscript Parameter T1.Text1">3</em></i>, then <i class="Parameter T1.Text1">C</i> is an <b class="Bold T1.Text1"><a name="MARKER-2-586"></a>indirect subclass</b> of <i class="Parameter T1.Text1">C<em class="Subscript Parameter T1.Text1">2</em></i> and <i class="Parameter T1.Text1">C<em class="Subscript Parameter T1.Text1">3</em></i>. A <b class="Bold T1.Text1"><a name="MARKER-2-587"></a>general subclass</b> is a direct or indirect subclass.</p>
+<p class="T1.Text1">Inheritance cannot be <a name="MARKER-2-588"></a>circular. A class cannot be its own general subclass.</p>
+<p class="T1.Text1">A class is a subtype of each of its general superclasses.</p>
+<p class="T1.Text1">Every class is a general subclass of <code class="Code T1.Text1">&lt;object&gt;</code>.<a name="MARKER-2-589"></a></p>
+<a name="HEADING41-25"></a>
+<a name="UID-Types_and_Classes-7969"></a>
+<h2 class="H2.Heading2"> <a name="MARKER-9-590"></a><a name="MARKER-2-591"></a>Computing the Class Precedence List</h2>
+<p class="T1.Text1">The definition of a class specifies a <a name="MARKER-2-592"></a>total ordering on that class and its direct superclasses. This ordering is called the <b class="T1.Text1"><a name="MARKER-2-593"></a>local precedence order</b>. In the local precedence order:</p>
+<ul class="B1.Bullet1">
+<li class="B1.Bullet1">The class precedes its direct superclasses.</li>
+<li class="B1.Bullet1">Each direct superclass precedes all other direct superclasses that follow it in the sequence of direct superclasses given in the class definition.
+<p class="T1.Text1">The <b class="T1.Text1"><a name="MARKER-2-594"></a>class precedence list</b> for a class <i class="Parameter T1.Text1">C</i> is a total ordering on <i class="Parameter T1.Text1">C</i> and its superclasses that is consistent with the local precedence order of <i class="Parameter T1.Text1">C</i> and with the class precedence lists of its superclasses. (Two lists are consistent if for every <i class="Parameter T1.Text1">A</i> and <i class="Parameter T1.Text1">B</i> that are each members of both lists, either <i class="Parameter T1.Text1">A</i> precedes <i class="Parameter T1.Text1">B</i> in both or <i class="Parameter T1.Text1">B</i> precedes <i class="Parameter T1.Text1">A</i> in both.) The class precedence list is used in determining the order of specificity of methods based on the types they are specialized on when dispatching;  for details, see <a href="drm_50.html#MARKER-9-844" class="T1.Text1">"Method Dispatch" on page 95</a>.</p>
+<p class="T1.Text1">Sometimes there are several such consistent total orderings on <i class="Parameter T1.Text1">C</i> and its superclasses. Dylan uses a deterministic algorithm to compute the class precedence list, which chooses one of the consistent total orderings.</p>
+<p class="T1.Text1">Sometimes there is no possible total ordering on <i class="Parameter T1.Text1">C</i> and its superclasses that is consistent with the local precedence orders for <i class="Parameter T1.Text1">C</i> and with the class precedence lists of its superclasses. In this case, the class precedence list cannot be computed, and an error is signaled.</p>
+<p class="T1.Text1">Note that because the class precedence list for a class is consistent with the class precedence lists of its superclasses, inheritance in Dylan is <b class="bold T1.Text1">monotonic</b>. That is, if a generic function call using a direct instance of <i class="Parameter T1.Text1">C</i> dispatches to a method specialized in that parameter position on an indirect superclass of <i class="Parameter T1.Text1">C</i>, then there is a direct superclass of <i class="Parameter T1.Text1">C</i> that has the same behavior.</p>
+<p class="T1.Text1">To compute the class precedence list for class <i class="Parameter T1.Text1">C</i>, merge the local precedence order of the class with the class precedence lists of the direct superclasses of the class. Computing the class precedence list for <i class="Parameter T1.Text1">C</i> requires computing the class precedence lists for its superclasses. This does not lead to infinite recursion because circular class inheritance is prohibited.</p>
+<p class="T1.Text1"><a name="MARKER-2-595"></a>Note that because the class precedence lists of the direct superclasses are consistent with their local precedence orders and with the class precedence lists of their direct superclasses, and so on, the class precedence list  for <i class="Parameter T1.Text1">C</i> is consistent with the local precedence orders and class precedence lists of all its superclasses and not just the direct superclasses.</p>
+<p class="T1.Text1">The merge of several sequences is a sequence that contains each of the elements of the several input sequences. An element that appears in more than one of the input sequences appears only once in the output sequence. If two elements appear in the same input sequence, their order in the output sequence is the same as their order in that input sequence.</p>
+<p class="T1.Text1">When there are several possible merges of the inputs, at each position in the output where there is a choice, pick the class that has a direct subclass closest to the end of the output sequence. (This is unambiguous because two candidates for a position cannot both be direct superclasses of the same class, since they would then be ordered by that class's local precedence order. This is easily computable because a class always follows its direct subclasses in the merge, therefore the most recently added direct subclass can be found by searching from the end to the beginning of the output sequence and the merge can be computed in one pass.)</p>
+<p class="T1.Text1">This algorithm can be implemented with the following Dylan program:</p></li>
+</ul>
+<pre class="Cv.Code">
+define constant compute-class-linearization =
+  method (c :: &lt;class&gt;) =&gt; (cpl :: &lt;list&gt;)
+    local method merge-lists (reversed-partial-result :: &lt;list&gt;,
+                              remaining-inputs :: &lt;sequence&gt;)
+            if (every?(empty?, remaining-inputs))
+              reverse!(reversed-partial-result)
+            else
+              local method candidate (c :: &lt;class&gt;)
+                      // returns c if it can go in the result now,
+                      // otherwise false
+                      local method head? (l :: &lt;list&gt;)
+                              c == head(l)
+                            end method head?,
+                            method tail? (l :: &lt;list&gt;)
+                              member?(c, tail(l))
+                            end method tail?;
+                      any?(head?, remaining-inputs)
+                        &amp; ~any?(tail?, remaining-inputs)
+                        &amp; c
+                    end method candidate,
+                    method candidate-direct-superclass (c :: &lt;class&gt;)
+                      any?(candidate, direct-superclasses(c))
+                    end method candidate-direct-superclass;
+              let next = any?(candidate-direct-superclass,
+                              reversed-partial-result);
+              if (next)
+                local method remove-next (l :: &lt;list&gt;)
+                        if (head(l) == next) tail(l) else l end
+                      end method remove-next;
+                merge-lists(pair(next, reversed-partial-result),
+                            map(remove-next, remaining-inputs))
+              else
+                error(&quot;Inconsistent precedence graph&quot;);
+              end if
+            end if
+          end method merge-lists;
+    let c-direct-superclasses = direct-superclasses(c);
+    local method cpl-list (c)
+            as(&lt;list&gt;, all-superclasses(c))
+          end method cpl-list;
+    merge-lists(list(c),
+                add(map(cpl-list, c-direct-superclasses),
+                    as(&lt;list&gt;, c-direct-superclasses)));
+  end method; // compute-class-linearization
+</pre>
+<p class="T0.Text0">Note that the selection rule from above is enforced because <code class="cv T0.Text0">any?</code> uses the natural iteration order for sequences and returns the first true value it encounters when searching the reversed partially computed class precedence list.<a name="MARKER-2-596"></a><a name="MARKER-2-597"></a><a name="MARKER-2-598"></a></p>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC --><ul class="footer">
+<li class="footer"><a rel="BELOW" href="drm_41.html#HEADING41-5" class="footer">Features of Classes</a></li>
+<li class="footer"><a rel="BELOW" href="drm_41.html#HEADING41-11" class="footer">Creating Classes</a></li>
+<li class="footer"><a rel="BELOW" href="drm_41.html#HEADING41-19" class="footer">Class Inheritance</a></li>
+<li class="footer"><a rel="BELOW" href="drm_41.html#HEADING41-25" class="footer">Computing the Class Precedence List</a></li>
+</ul>
+
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_42.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_40.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_38.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_38.html" />
+<link rel="prev" href="drm_39.html" />
+<link rel="next" href="drm_41.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>The Type Protocol</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING40"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_41.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_39.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_38.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">5 Types and Classes</p>
+
+</div>
+<a name="HEADING40-0"></a>
+<a name="UID-Types_and_Classes-1198"></a>
+<h1 class="H1.Heading1"> <a name="MARKER-9-536"></a><a name="MARKER-2-537"></a>The Type Protocol</h1>
+<p class="T1.Text1">The type protocol comprises the following:</p>
+<ul class="B1.Bullet1">
+<li class="B1.Bullet1"><a name="MARKER-2-538"></a>All types may be used as specializers for method parameters, bindings, and slots.</li>
+<li class="B1.Bullet1"><code class="Code B1.Bullet1"><a name="MARKER-2-539"></a>instance?(<i class="Parameter Code B1.Bullet1">object, type)</i></code> tests type membership.</li>
+<li class="B1.Bullet1"><code class="Code B1.Bullet1"><a name="MARKER-2-540"></a>subtype?(<i class="Parameter Code B1.Bullet1">type1, type2)</i></code> tests type inclusion.</li>
+<li class="B1.Bullet1"><code class="Code B1.Bullet1"><a name="MARKER-2-541"></a>make(<i class="Parameter Code B1.Bullet1">type ...)</i></code> makes an instance. This operation is only supported if the type is instantiable.</li>
+<li class="B1.Bullet1"><a name="MARKER-2-542"></a>Type objects are immutable.</li>
+<li class="B1.Bullet1"><a name="MARKER-2-543"></a>If two type objects are equivalent and are not classes, it is unspecified whether they are <code class="Code B1.Bullet1">==</code>.
+<p class="T1.Text1"><a name="MARKER-2-544"></a>The following is an informal description of type relationships: The function <a name="MARKER-2-545"></a><code class="Code T1.Text1">subtype?</code> defines a partial ordering of all types. Type <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">1</em></i> is a subtype of type <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">2</em></i> (i.e., <code class="Code T1.Text1">subtype?(<i class="Parameter Code T1.Text1">t<em class="Subscript Parameter Code T1.Text1">1, t2)</em></i></code> is true) if it is impossible to encounter an object that is an instance of <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">1</em></i> but not an instance of <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">2</em></i>. It follows that every type is a subtype of itself. Two types <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">1</em></i> and <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">2</em></i> are said to be <b class="Bold T1.Text1"><a name="MARKER-2-546"></a>equivalent types</b> if <code class="Code T1.Text1">subtype?(<i class="Parameter Code T1.Text1">t<em class="Subscript Parameter Code T1.Text1">1, t2)</em></i></code> and <code class="Code T1.Text1">subtype?(<i class="Parameter Code T1.Text1">t<em class="Subscript Parameter Code T1.Text1">2, t1)</em></i></code> are both true. <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">1</em></i> is said to be a <b class="Bold T1.Text1"><a name="MARKER-2-547"></a>proper subtype</b> of <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">2</em></i> if <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">1</em></i> is a subtype of <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">2</em></i> and <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">2</em></i> is not a subtype of <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">1</em></i>.</p>
+<p class="T1.Text1"><code class="Code T1.Text1">subtype?</code> on classes is defined by inheritance. A class is a subtype of itself and of its general superclasses.</p>
+<p class="T1.Text1"><code class="Code T1.Text1">subtype?</code> on <a name="MARKER-2-548"></a>singletons is defined by object type and identity. If <i class="Parameter T1.Text1">x</i> is an object and <i class="Parameter T1.Text1">t</i> is a type, <code class="Code T1.Text1">subtype?(singleton(<i class="Parameter Code T1.Text1">x), t)</i></code> will be true only if <code class="Code T1.Text1">instance?(<i class="Parameter Code T1.Text1">x, t)</i></code> is true.</p>
+<p class="T1.Text1"><code class="cv T1.Text1">subtype?</code> rules for union types are given in <a href="drm_45.html#MARKER-9-701" class="T1.Text1">"Union Types" on page 72</a>. <code class="cv T1.Text1">subtype?</code> rules for limited integer types are given in <a href="drm_46.html#MARKER-9-710" class="T1.Text1">"Limited Integer Types" on page 74</a>. <code class="cv T1.Text1">subtype?</code> rules for limited collection types are given in <a href="drm_69.html#MARKER-9-1060" class="T1.Text1">"Limited Collection Types" on page 126</a>.</p>
+<p class="T1.Text1"><code class="cv T1.Text1"><a name="MARKER-2-549"></a>&lt;object&gt;</code> is the root of the type hierarchy. All objects are instances of <code class="cv T1.Text1">&lt;object&gt;</code>, and all types are subtypes of <code class="cv T1.Text1">&lt;object&gt;</code>.</p>
+<p class="T1.Text1">A number of operations on types are described in <a href="drm_103.html#MARKER-9-1858" class="T1.Text1">"Reflective Operations on Types" on page 343</a>.</p>
+</li></ul>
+<a name="HEADING40-14"></a>
+<a name="UID-Types_and_Classes-4914"></a>
+<h2 class="H2.Heading2"> <a name="MARKER-2-550"></a>Base Types and Pseudosubtypes</h2>
+<p class="T1.Text1">Every type has a <b class="bold T1.Text1">base type</b>. The base type for a class is the class itself. The base type of a singleton is the singleton  itself. The base type of a union is the union of the base types of its  component types. The base type of a limited type <code class="cv T1.Text1">limited(<i class="Parameter cv T1.Text1">C,</i></code> ...<code class="cv T1.Text1">)</code> is <i class="Parameter T1.Text1">C</i>.</p>
+<p class="T1.Text1">The type <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">1</em></i> is a <b class="bold T1.Text1">pseudosubtype</b> of the type <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">2</em></i> if <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">1</em></i> is a subtype of the base type of <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">2</em></i> and <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">1</em></i> and <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">2</em></i> are not disjoint.</p>
+<p class="T1.Text1">Note that<i class="Parameter T1.Text1"> t<em class="Subscript Parameter T1.Text1">1</em></i> being a subtype of <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">2</em></i> implies that <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">1</em></i> is a pseudosubtype of <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">2</em></i>, but <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">1</em></i> being a pseudosubtype of <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">2</em></i> does not imply that <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">1</em></i> is a subtype of <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">2</em></i>. Note also that if <i class="Parameter T1.Text1">t<em class="Subscript Parameter T1.Text1">2</em></i> is not a limited type or some other nonstandard type, then pseudosubtype is the same as subtype.</p>
+<p class="T1.Text1">Base types and pseudosubtypes are used in the rules for sealing, described in <a href="drm_69.html#MARKER-9-1078" class="T1.Text1">Chapter 9, "Sealing."</a><a name="MARKER-2-551"></a></p>
+<a name="HEADING40-19"></a>
+<a name="UID-Types_and_Classes-4893"></a>
+<h2 class="H2.Heading2"> <a name="MARKER-2-552"></a><a name="MARKER-9-553"></a>Type Disjointness</h2>
+<p class="T1.Text1">Informally, two types are disjoint if there can be no object that is an instance of both types. Formally, the disjointness of types is specified by the following set of rules. (Some of these rules reference definitions given in <a href="drm_46.html#MARKER-9-710" class="T1.Text1">"Limited Integer Types" on page 74</a>,  <a href="drm_68.html#MARKER-9-1051" class="T1.Text1">"Element Types" on page 124</a> and <a href="drm_69.html#MARKER-9-1060" class="T1.Text1">"Limited Collection Types" on page 126</a>.)</p>
+<ul class="B1.Bullet1">
+<li class="B1.Bullet1">Two <a name="MARKER-2-554"></a>classes are disjoint if they have no common subclasses.</li>
+<li class="B1.Bullet1">A <a name="MARKER-2-555"></a>union type is disjoint from another type if all of the union type's component types are disjoint from that other type.</li>
+<li class="B1.Bullet1">A <a name="MARKER-2-556"></a>singleton type is disjoint from another type if the singleton's object is not an instance of that other type.</li>
+<li class="B1.Bullet1">A <a name="MARKER-2-557"></a>limited collection type is disjoint from a class if their base types are disjoint, or the class is a subclass of <code class="cv B1.Bullet1">&lt;collection&gt;</code> and its element type is definite and not equivalent to the limited collection type's element type, or the class is a subclass of <code class="cv B1.Bullet1">&lt;collection&gt;</code> and its element type is indefinite and not a supertype of the limited collection type's element type.</li>
+<li class="B1.Bullet1">A limited collection type is disjoint from a limited integer type because the classes <code class="cv B1.Bullet1">&lt;collection&gt;</code> and <code class="cv B1.Bullet1">&lt;integer&gt;</code> are disjoint.</li>
+<li class="B1.Bullet1">Two limited collection types are disjoint if their base types are disjoint, or their element types are not equivalent, or their sizes are not compatible. Two sizes are compatible if either is <code class="cv B1.Bullet1">#f</code>, or they are <code class="cv B1.Bullet1">=</code> to each other, or one is a sequence of integers and the other is the product of those integers.</li>
+<li class="B1.Bullet1">Two limited integer types are disjoint if the minimum value of one is greater than the maximum value for the other.</li>
+<li class="B1.Bullet1">A limited integer type is disjoint from a class if their base types are disjoint or the class is a subclass of <code class="cv B1.Bullet1">&lt;integer&gt;</code> whose range is disjoint from the limited integer type's range.<a name="MARKER-2-558"></a><a name="MARKER-2-559"></a><a name="MARKER-2-560"></a></li>
+</ul>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC --><ul class="footer">
+<li class="footer"><a rel="BELOW" href="drm_40.html#HEADING40-14" class="footer">Base Types and Pseudosubtypes</a></li>
+<li class="footer"><a rel="BELOW" href="drm_40.html#HEADING40-19" class="footer">Type Disjointness</a></li>
+</ul>
+
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_41.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_39.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_38.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,687 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_76.html" />
+<link rel="prev" href="drm_85.html" />
+<link rel="next" href="drm_87.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Rewrite Rule Examples</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING86"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_87.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_85.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_76.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">10 Macros</p>
+
+</div>
+<a name="HEADING86-0"></a>
+<a name="UID-Macros-6935"></a>
+<h1 class="H1.Heading1"> Rewrite Rule Examples</h1>
+<p class="T1.Text1"><a name="MARKER-2-1281"></a>The following definitions of all of the built-in macros are provided as examples. This section is not intended to be a tutorial on how to write macros, just a collection of demonstrations of some of the tricks.</p>
+<p class="T1.Text1">The built-in macros cannot really be implemented this way; for example <code class="cv T1.Text1">if</code> and <code class="cv T1.Text1">case</code> cannot really both be implemented by expanding to the other. Certain built-in macros cannot be implemented with rewrite rules or necessarily rewrite into implementation-dependent code; in these cases the right-hand sides are shown as <i class="Parameter T1.Text1">id</i>.</p>
+<a name="HEADING86-3"></a>
+<a name="UID-Macros-6941"></a>
+<h2 class="H2.Heading2"> Statement Macros</h2>
+<a name="HEADING86-4"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1282"></a>Begin</h3>
+<pre class="Cv.Code">
+define macro begin
+  { begin ?:body end } =&gt; { ?body }
+end;
+</pre>
+<a name="HEADING86-6"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1283"></a>Block</h3>
+<pre class="Cv.Code">
+define macro block
+  { block () ?ebody end }
+   =&gt; { ?ebody }
+  { block (?:name) ?ebody end }
+   =&gt; { with-exit(method(?name) ?ebody end) }
+ // Left-recursive so leftmost clause is innermost
+ ebody:
+  { ... exception (?type:expression, ?eoptions) ?:body }
+   =&gt; { with-handler(method() ... end,
+                     method(ignore) ?body end,
+                     ?type, ?eoptions) }
+  { ... exception (?:name :: ?type:expression, ?eoptions) ?:body }
+   =&gt; { with-handler(method() ... end,
+                     method(?name) ?body end,
+                     ?type, ?eoptions) }
+  { ?abody cleanup ?cleanup:body}
+   =&gt; { with-cleanup(method() ?abody end, method () ?cleanup end) }
+  { ?abody }
+   =&gt; { ?abody }
+ abody:
+  { ?main:body }
+   =&gt; { ?main }
+  { ?main:body afterwards ?after:body }
+   =&gt; { with-afterwards(method() ?main end, method () ?after end) }
+ eoptions:
+  { #rest ?options:expression, 
+    #key ?test:expression = always(#t),
+    ?init-arguments:expression = #() }
+   =&gt; { ?options }
+end;
+</pre>
+<a name="HEADING86-11"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1284"></a>Case</h3>
+<pre class="Cv.Code">
+define macro case
+  { case ?:case-body end }            =&gt; { ?case-body }
+ case-body:
+  { }                                 =&gt; { #f }
+  { otherwise ?:body }                =&gt; { ?body }
+  { ?test:expression =&gt; ?:body; ... } =&gt; { if (?test) ?body
+                                           else ... end if }
+end;
+</pre>
+<a name="HEADING86-13"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1285"></a>For</h3>
+<pre class="Cv.Code">
+// This macro has three auxiliary macros, whose definitions follow
+define macro for
+ { for (?header) ?fbody end }       =&gt; { for-aux ?fbody, ?header end }
+ // pass main body and finally body as two expressions
+ fbody:
+  { ?main:body }                     =&gt; { ?main, #f }
+  { ?main:body finally ?val:body }   =&gt; { ?main, ?val }
+ // convert iteration clauses to property list via for-clause macro
+ header:
+  { ?v:variable in ?c:expression, ... }
+   =&gt; { for-clause(?v in ?c) ... }
+  { ?v:variable = ?e1:expression then ?e2:expression, ... }
+   =&gt; { for-clause(?v = ?e1 then ?e2) ... }
+  { ?v:variable from ?e1:expression ?to, ... }
+   =&gt; { for-clause(?v from ?e1 ?to) ... }
+  { }                                =&gt; { }
+  { #key ?while:expression }         =&gt; { for-clause(~?while stop) }
+  { #key ?until:expression }         =&gt; { for-clause(?until stop) }
+ // parse the various forms of numeric iteration clause
+ to:
+  { to ?limit:expression by ?step:expression }
+                                     =&gt; { hard ?limit ?step }
+  { to ?limit:expression }           =&gt; { easy ?limit 1   &gt; }
+  { above ?limit:expression ?by }    =&gt; { easy ?limit ?by &lt;= }
+  { below ?limit:expression ?by }    =&gt; { easy ?limit ?by &gt;= }
+  { ?by }                            =&gt; { loop ?by }
+ by:
+  { }                                =&gt; { 1 }
+  { by ?step:expression }            =&gt; { ?step }
+end;
+// Auxiliary macro to make the property list for an iteration clause.
+// Each iteration clause is a separate call to this macro so the
+// hygiene rules will keep the temporary variables for each clause
+// distinct.
+// The properties are:
+//  init0: - constituents for start of body, outside the loop
+//  var1:  - a variable to bind on each iteration
+//  init1: - initial value for that variable
+//  next1: - value for that variable on iterations after the first
+//  stop1: - test expression, stop if true, after binding var1's
+//  var2:  - a variable to bind on each iteration, after stop1 tests
+//  next2: - value for that variable on every iteration
+//  stop2: - test expression, stop if true, after binding var2's
+define macro for-clause
+  // while:/until: clause
+  { for-clause(?e:expression stop) }
+   =&gt; { , stop2: ?e }
+  // Explicit step clause
+  { for-clause(?v:variable = ?e1:expression then ?e2:expression) }
+   =&gt; { , var1: ?v, init1: ?e1, next1: ?e2 }
+  // Collection clause
+  { for-clause(?v:variable in ?c:expression) }
+   =&gt; { , init0: [ let collection = ?c;
+                   let (initial-state, limit,
+                        next-state, finished-state?,
+                        current-key, current-element)
+                       = forward-iteration-protocol(collection); ]
+        , var1: state, init1: initial-state
+        , next1: next-state(collection, state)
+        , stop1: finished-state?(collection, state, limit)
+       , var2: ?v, next2: current-element(collection, state) }
+  // Numeric clause (three cases depending on ?to right-hand side)
+  { for-clause(?v:name :: ?t:expression from ?e1:expression
+               loop ?by:expression) }
+   =&gt; { , init0: [ let init = ?e1;
+                   let by = ?by; ]
+        , var1: ?v :: ?t, init1: init, next1: ?v + by }
+  { for-clause(?v:name :: ?t:expression from ?e1:expression
+               easy ?limit:expression ?by:expression ?test:token) }
+   =&gt; { , init0: [ let init = ?e1;
+                   let limit = ?limit;
+                   let by = ?by; ]
+        , var1: ?v :: ?t, init1: init, next1: ?v + by
+        , stop1: ?v ?test limit }
+  { for-clause(?v:name :: ?t:expression from ?e1:expression
+               hard ?limit:expression ?by:expression) }
+   =&gt; { , init0: [ let init = ?e1;
+                   let limit = ?limit;
+                   let by = ?by; ]
+        , var1: ?v :: ?t, init1: init, next1: ?v + by
+        , stop1: if (by &gt;= 0) ?v &gt; limit else ?v &lt; limit end if }
+end;
+// Auxiliary macro to expand multiple for-clause macros and
+// concatenate their expansions into a single property list.
+define macro for-aux
+  { for-aux ?main:expression, ?value:expression, ?clauses:* end }
+   =&gt; { for-aux2 ?main, ?value ?clauses end }
+ clauses:
+  { } =&gt; { }
+  { ?clause:macro ... } =&gt; { ?clause ... }
+end;
+// Auxiliary macro to assemble collected stuff into a loop.
+// Tricky points:
+// loop iterates by tail-calling itself.
+// return puts the finally clause into the correct lexical scope.
+// ??init0 needs an auxiliary rule set to strip off the shielding
+// brackets that make it possible to stash local declarations in
+// a property list.
+// ??var2 and ??next2 need a default because let doesn't allow
+// an empty variable list.
+// ??stop1 and ??stop2 need a default because if () is invalid.
+define macro for-aux2
+  { for-aux2 ?main:expression, ?value:expression,
+             #key ??init0:*, ??var1:variable,
+                  ??init1:expression, ??next1:expression,
+                  ??stop1:expression = #f,
+                  ??var2:variable = x, ??next2:expression = 0,
+                  ??stop2:expression = #f
+    end }
+   =&gt; { ??init0 ...
+        local method loop(??var1, ...)
+                let return = method() ?value end method;
+                if (??stop1 | ...) return()
+                else let (??var2, ...) = values(??next2, ...);
+                     if(??stop2 | ...) return()
+                     else ?main; loop(??next1, ...)
+                     end if;
+                end if;
+              end method;
+        loop(??init1, ...) }
+ // strip off brackets used only for grouping
+ init0:
+  { [ ?stuff:* ] } =&gt; { ?stuff }
+end;
+</pre>
+<a name="HEADING86-30"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1286"></a>If</h3>
+<pre class="Cv.Code">
+define macro if
+  { if (?test:expression) ?:body ?elses end }
+                                     =&gt; { case ?test =&gt; ?body;
+                                          otherwise ?elses end }
+ elses:
+  { }                                =&gt; { #f }
+  { else ?:body }                    =&gt; { ?body }
+  { elseif (?test:expression) ?:body ... }
+                                     =&gt; { case ?test =&gt; ?body;
+                                          otherwise ... end }
+end;
+</pre>
+<a name="HEADING86-32"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1287"></a>Method</h3>
+<pre class="Cv.Code">
+define macro method
+  { method (?parameters:*) =&gt; (?results:*) ; ?:body end }     =&gt;  <i class="Parameter Cv.Code">id
+</i>  { method (?parameters:*) =&gt; (?results:*) ?:body end }       =&gt;  <i class="Parameter Cv.Code">id
+</i>  { method (?parameters:*) =&gt; ?result:variable ; ?:body end } =&gt;  <i class="Parameter Cv.Code">id
+</i>  { method (?parameters:*) ; ?:body end }                     =&gt;  <i class="Parameter Cv.Code">id
+</i>  { method (?parameters:*) ?:body end }                       =&gt;  <i class="Parameter Cv.Code">id
+</i>end;
+</pre>
+<a name="HEADING86-34"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1288"></a>Select</h3>
+<pre class="Cv.Code">
+define macro select
+  { select (?what) ?:case-body end } =&gt; { ?what; ?case-body }
+ what:
+  { ?object:expression by ?compare:expression }
+                                    =&gt;  { let object = ?object;
+                                          let compare = ?compare }
+  { ?object:expression }            =&gt;  { let object = ?object;
+                                          let compare = \== }
+ case-body:
+  { }
+   =&gt; { error(&quot;select error, %= doesn't match any key&quot;, object) }
+  { otherwise ?:body }              =&gt; { ?body }
+  { ?keys =&gt; ?:body; ... }          =&gt; { if (?keys) ?body
+                                         else ... end if }
+ keys:
+  { ?key:expression }               =&gt; { compare(object, ?key) }
+  { (?keys2) }                      =&gt; { ?keys2 }
+  { ?keys2 }                        =&gt; { ?keys2 }
+ keys2:
+  { ?key:expression }               =&gt; { compare(object, ?key) }
+  { ?key:expression, ... }          =&gt; { compare(object, ?key) | ... }
+end;
+</pre>
+<a name="HEADING86-40"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1289"></a>Unless</h3>
+<pre class="Cv.Code">
+define macro unless
+  { unless (?test:expression) ?:body end }
+   =&gt; { if (~ ?test) ?body end }
+end;
+</pre>
+<a name="HEADING86-42"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1290"></a>Until</h3>
+<pre class="Cv.Code">
+define macro until
+  { until (?test:expression) ?:body end }
+   =&gt; { local method loop ()
+                if (~ ?test)
+                  ?body;
+                  loop()
+                end if;
+              end method;
+        loop() }
+end;
+</pre>
+<a name="HEADING86-44"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1291"></a>While</h3>
+<pre class="Cv.Code">
+define macro while
+  { while (?test:expression) ?:body end }
+   =&gt; { local method loop ()
+                if (?test)
+                  ?body;
+                  loop()
+                end if;
+              end method;
+        loop() }
+end;
+</pre>
+<a name="HEADING86-46"></a>
+<a name="UID-Macros-7223"></a>
+<h2 class="H2.Heading2"> Definition Macros</h2>
+<a name="HEADING86-47"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1292"></a>Define Class</h3>
+<pre class="Cv.Code">
+define macro class-definer
+  { define ?mods:* class ?:name (?supers) ?slots end }  =&gt;  <i class="Parameter Cv.Code">id</i>
+ supers:
+  { }                                                   =&gt;  <i class="Parameter Cv.Code">id
+</i>  { ?super:expression, ... }                            =&gt;  <i class="Parameter Cv.Code">id</i>
+ slots:
+  { }                                                   =&gt;  <i class="Parameter Cv.Code">id
+</i>  { inherited slot ?:name, #rest ?options:*; ... }      =&gt;  <i class="Parameter Cv.Code">id
+</i>  { inherited slot ?:name = ?init:expression,
+    #rest ?options:*; ... }                             =&gt;  <i class="Parameter Cv.Code">id
+</i>  { ?mods:* slot ?:name, #rest ?options:*; ... }        =&gt;  <i class="Parameter Cv.Code">id
+</i>  { ?mods:* slot ?:name = ?init:expression,
+    #rest ?options:*; ... }                             =&gt;  <i class="Parameter Cv.Code">id
+</i>  { ?mods:* slot ?:name :: ?type:expression,
+    #rest ?options:*; ... }                             =&gt;  <i class="Parameter Cv.Code">id
+</i>  { ?mods:* slot ?:name :: ?type:expression = ?init:expression,
+    #rest ?options:*; ... }                             =&gt;  <i class="Parameter Cv.Code">id
+</i>  { required keyword ?key:expression,
+    #rest ?options:*; ... }                             =&gt;  <i class="Parameter Cv.Code">id
+</i>  { required keyword ?key:expression ?equals:token ?init:expression,
+    #rest ?options:*; ... }                             =&gt;  <i class="Parameter Cv.Code">id
+</i>  { keyword ?key:expression, #rest ?options:*; ... }    =&gt;  <i class="Parameter Cv.Code">id
+</i>  { keyword ?key:expression ?equals:token ?init:expression,
+    #rest ?options:*; ... }                             =&gt;  <i class="Parameter Cv.Code">id
+</i>end;
+</pre>
+<a name="HEADING86-51"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1293"></a>Define Constant</h3>
+<pre class="Cv.Code">
+define macro constant-definer
+  { define ?modifiers:* constant
+    ?:name :: ?type:expression = ?init:expression }     =&gt;  <i class="Parameter Cv.Code">id
+</i>  { define ?modifiers:* constant
+    (?variables:*) ?equals:token ?init:expression }     =&gt;  <i class="Parameter Cv.Code">id
+</i>end;
+</pre>
+<a name="HEADING86-53"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1294"></a>Define Domain</h3>
+<pre class="Cv.Code">
+define macro domain-definer
+  { define sealed domain ?:name ( ?types ) }            =&gt;  <i class="Parameter Cv.Code">id</i>
+ types:
+  { } =&gt; { }
+  { ?type:expression, ... } =&gt; { ?type, ... }
+end;
+</pre>
+<a name="HEADING86-56"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1295"></a>Define Generic</h3>
+<pre class="Cv.Code">
+define macro generic-definer
+  { define ?mods:* generic ?:name ?rest:* }             =&gt;  <i class="Parameter Cv.Code">id</i>
+ rest:
+  { ( ?parameters:* ), #key }                           =&gt;  <i class="Parameter Cv.Code">id
+</i>  { ( ?parameters:* ) =&gt; ?:variable, #key }             =&gt;  <i class="Parameter Cv.Code">id
+</i>  { ( ?parameters:* ) =&gt; (?variables:*), #key }         =&gt;  <i class="Parameter Cv.Code">id
+</i>end;
+</pre>
+<a name="HEADING86-59"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1296"></a>Define Library</h3>
+<pre class="Cv.Code">
+define macro library-definer
+  { define library ?:name ?items end }                  =&gt;  <i class="Parameter Cv.Code">id</i>
+ items:
+  { }                                                   =&gt;  <i class="Parameter Cv.Code">id
+</i>  { use ?:name, #rest ?options:*; ... }                 =&gt;  <i class="Parameter Cv.Code">id
+</i>  { export ?names; ... }                                =&gt;  <i class="Parameter Cv.Code">id</i>
+ names:
+  { ?:name }                                            =&gt;  <i class="Parameter Cv.Code">id
+</i>  { ?:name, ... }                                       =&gt;  <i class="Parameter Cv.Code">id
+</i>end;
+</pre>
+<a name="HEADING86-63"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1297"></a>Define Method</h3>
+<pre class="Cv.Code">
+define macro method-definer
+  { define ?mods:* method ?:name ?rest end }            =&gt;  <i class="Parameter Cv.Code">id
+</i> rest:
+  { (?parameters:*) =&gt; (?results:*) ; ?:body }          =&gt;  <i class="Parameter Cv.Code">id
+</i>  { (?parameters:*) =&gt; (?results:*) ?:body }            =&gt;  <i class="Parameter Cv.Code">id
+</i>  { (?parameters:*) =&gt; ?result:variable ; ?:body }      =&gt;  <i class="Parameter Cv.Code">id
+</i>  { (?parameters:*) ; ?:body }                          =&gt;  <i class="Parameter Cv.Code">id
+</i>  { (?parameters:*) ?:body }                            =&gt;  <i class="Parameter Cv.Code">id
+</i>end;
+</pre>
+<a name="HEADING86-65"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1298"></a>Define Module</h3>
+<pre class="Cv.Code">
+define macro module-definer
+  { define module ?:name ?items end }                   =&gt;  <i class="Parameter Cv.Code">id</i>
+ items:
+  { }                                                   =&gt;  <i class="Parameter Cv.Code">id
+</i>  { use ?:name, #rest ?options:*; ... }                 =&gt;  <i class="Parameter Cv.Code">id
+</i>  { export ?names; ... }                                =&gt;  <i class="Parameter Cv.Code">id
+</i>  { create ?names; ... }                                =&gt;  <i class="Parameter Cv.Code">id</i>
+ names:
+  { ?:name }                                            =&gt;  <i class="Parameter Cv.Code">id
+</i>  { ?:name, ... }                                       =&gt;  <i class="Parameter Cv.Code">id
+</i>end;
+</pre>
+<a name="HEADING86-69"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1299"></a>Define Variable</h3>
+<pre class="Cv.Code">
+define macro variable-definer
+  { define ?modifiers:* variable
+    ?:name :: ?type:expression = ?init:expression }     =&gt;  <i class="Parameter Cv.Code">id
+</i>  { define ?modifiers:* variable
+    (?variables:*) ?equals:token ?init:expression }     =&gt;  <i class="Parameter Cv.Code">id
+</i>end;
+</pre>
+<a name="HEADING86-71"></a>
+<a name="UID-Macros-7337"></a>
+<h2 class="H2.Heading2"> Operator Function Macros</h2>
+<a name="HEADING86-72"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1300"></a>&amp;</h3>
+<pre class="Cv.Code">
+define macro \&amp;
+  { \&amp;(?first:expression, ?second:expression) }
+   =&gt; { if (?first) ?second else #f end }
+end;
+</pre>
+<a name="HEADING86-74"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1301"></a>|</h3>
+<pre class="Cv.Code">
+define macro \|
+  { \|(?first:expression, ?second:expression) }
+   =&gt; { let temp = ?first;
+        if (temp) temp else ?second end }
+end;
+</pre>
+<a name="HEADING86-76"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-1302"></a>:=</h3>
+<pre class="Cv.Code">
+define macro \:=
+  { \:=(?place:macro, ?value:expression) }              =&gt;  <i class="Parameter Cv.Code">id
+</i>  { \:=(?place:expression, ?value:expression) }         =&gt;  <i class="Parameter Cv.Code">id
+</i>end;<a name="MARKER-2-1303"></a>
+</pre>
+<a name="HEADING86-78"></a>
+<a name="UID-Macros-7361"></a>
+<h2 class="H2.Heading2"> Additional Examples</h2>
+<p class="T1.Text1">The following macros are not built-in, but are simply supplied as examples. Each is shown as a definition followed by a sample call.</p>
+<a name="HEADING86-80"></a>
+<h3 class="H3.Heading3"> Test and Test-setter</h3>
+<pre class="Cv.Code">
+define macro test
+  { test(?object:expression) }
+   =&gt; { frame-slot-getter(?object, #&quot;test&quot;) }
+end macro;
+define macro test-setter
+  { test-setter(?value:expression, ?object:expression) }
+   =&gt; { frame-slot-setter(?value, ?object, #&quot;test&quot;) }
+end macro;
+test(foo.bar) := foo.baz;
+</pre>
+<a name="HEADING86-84"></a>
+<h3 class="H3.Heading3"> Transform!</h3>
+<pre class="Cv.Code">
+define macro transform!
+ // base case
+ { transform!(?xform:expression) } =&gt; { ?xform }
+ // the main recursive rule
+ { transform!(?xform:expression, ?x:expression, ?y:expression,
+              ?more:*) }
+  =&gt; { let xform = ?xform;
+       let (nx, ny) = transform(xform, ?x, ?y);
+       ?x := nx; ?y := ny;
+       transform!(xform, ?more) }
+end macro;
+transform!(w.transformation, xvar, yvar, w.pos.x, w.pos.y);
+</pre>
+<a name="HEADING86-87"></a>
+<h3 class="H3.Heading3"> Formatting-table</h3>
+<pre class="Cv.Code">
+define macro formatting-table
+  { formatting-table (?:expression,
+                      #rest ?options:expression,
+                      #key ?x-spacing:expression = 0,
+                           ?y-spacing:expression = 0)
+      ?:body end }
+   =&gt; { do-formatting-table(?expression, method() ?body end,
+                            ?options) }
+end macro;
+formatting-table (stream, x-spacing: 10, y-spacing: 12)
+  foobar(stream)
+end;
+</pre>
+<a name="HEADING86-90"></a>
+<h3 class="H3.Heading3"> With-input-context</h3>
+<pre class="Cv.Code">
+define macro with-input-context
+  { with-input-context (?context-type:expression,
+                        #key ?override:expression = #f)
+     ?bbody end }
+   =&gt; { do-with-input-context(?context-type, ?bbody,
+                              override: ?override) }
+ bbody:
+  { ?:body ?clauses }  =&gt; { list(?clauses), method() ?body end }
+ clauses:
+  { }                  =&gt; { }
+  { on (?:name :: ?spec:expression, ?type:variable) ?:body ... }
+   =&gt; { pair(?spec, method (?name :: ?spec, ?type) ?body end),
+        ... }
+end macro;
+with-input-context (context-type, override: #t)
+      // the body that reads from the user
+      read-command-or-form (stream);
+    // the clauses that dispatch on the type
+    on (object :: &lt;command&gt;, type) execute-command (object);
+    on (object :: &lt;form&gt;, type) evaluate-form (object, type);
+end;
+</pre>
+<a name="HEADING86-95"></a>
+<h3 class="H3.Heading3"> Define Command</h3>
+<pre class="Cv.Code">
+define macro command-definer
+ { define command ?:name (?arguments:*) (#rest ?options:expression)
+     ?:body end }
+  =&gt; { define-command-1 ?name (?arguments) ?body end;
+       define-command-2 ?name (?arguments) (?options) end }
+end macro;
+// define the method that implements a command
+// throws away the &quot;stuff&quot; in each argument used by the command parser
+define macro define-command-1
+ { define-command-1 ?:name (?arguments) ?:body end }
+  =&gt; { define method ?name (?arguments) ?body end }
+ // map over ?arguments, reducing each to a parameter-list entry
+ // but when we get to the first argument that has a default, put
+ // in #key and switch to the key-arguments loop
+ arguments:
+  { } =&gt; { }
+  { ?:variable = ?default:expression ?stuff:*, ?key-arguments }
+   =&gt; { #key ?variable = ?default, ?key-arguments }
+  { ?argument, ... } =&gt; { ?argument, ... }
+ // map over keyword arguments the same way, each must
+ // have a default
+ key-arguments:
+  { } =&gt; { }
+  { ?key-argument, ... } =&gt; { ?key-argument, ... }
+ // reduce one required argument spec to a parameter-list entry
+ argument:
+  { ?:variable ?stuff:* } =&gt; { ?variable }
+ // reduce one keyword argument spec to a parameter-list entry
+ key-argument:
+  { ?:variable = ?default:expression ?stuff:* }
+   =&gt; { ?variable = ?default }
+end macro;
+// generate the datum that describes a command and install it
+define macro define-command-2
+ { define-command-2 ?:name (?arguments) (#rest ?options:*) end }
+  =&gt; { install-command(?name, list(?arguments), ?options) }
+ // map over ?arguments, reducing each to a data structure
+ arguments:
+  { } =&gt; { }
+  { ?argument, ... } =&gt; { ?argument, ... }
+ // reduce one argument specification to a data structure
+ argument:
+  { ?:name :: ?type:expression = ?default:expression ?details }
+   =&gt; { make(&lt;argument-info&gt;, name: ?&quot;name&quot;, type: ?type,
+             default: ?default, ?details) }
+  { ?:name :: ?type:expression ?details }
+   =&gt; { make(&lt;argument-info&gt;, name: ?&quot;name&quot;, type: ?type, ?details) }
+ // translate argument specification to &lt;argument-info&gt; init keywords
+ details:
+  { } =&gt; { }
+  { ?key:name ?value:expression ... } =&gt; { ?#&quot;key&quot; ?value, ... }
+end macro;
+define command com-show-home-directory
+       (directory :: &lt;type&gt; provide-default #t,
+        before :: &lt;time&gt; = #() prompt &quot;date&quot;,
+        after  :: &lt;time&gt; = #() prompt &quot;date&quot;)
+       // Options
+       (command-table: directories,
+        name: &quot;Show Home Directory&quot;)
+    body()
+end command com-show-home-directory;
+</pre>
+<a name="HEADING86-107"></a>
+<h3 class="H3.Heading3"> Get-resource</h3>
+<pre class="Cv.Code">
+// The idea is that in this application each library has its own
+// variable named $library, which is accessible to modules in that
+// library. Get-resource gets a resource associated with the library
+// containing the call to it. Get-resource-from-library is a function.
+// The get-resource macro is a device to make programs more concise.
+define macro get-resource
+  { get-resource(?type:expression, ?id:expression) }
+   =&gt; { get-resource-from-library(?=$library, ?type, ?id) }
+end macro;
+show-icon(get-resource(ResType(&quot;ICON&quot;), 1044));
+</pre>
+<a name="HEADING86-110"></a>
+<h3 class="H3.Heading3"> Completing-from-suggestions</h3>
+<pre class="Cv.Code">
+// The completing-from-suggestions macro defines a lexically visible
+// helper function called &quot;suggest,&quot; which is only meaningful inside
+// of calls to the completer. The &quot;suggest&quot; function is passed as an
+// argument to the method passed to complete-input; alternatively it
+// could have been defined in a local declaration wrapped around the
+// method.
+define macro completing-from-suggestions
+  { completing-from-suggestions (?stream:expression,
+                                 #rest ?options:expression)
+      ?:body end }
+   =&gt;{ complete-input(?stream,
+                      method (?=suggest) ?body end,
+                      ?options) }
+end macro;
+completing-from-suggestions (stream, partial-completers: #(' ', '-'))
+  for (command in commands)
+    suggest (command, command-name (command))
+  end for;
+end completing-from-suggestions;
+</pre>
+<a name="HEADING86-113"></a>
+<h3 class="H3.Heading3"> Define Jump-instruction</h3>
+<pre class="Cv.Code">
+define macro jump-instruction-definer
+  { define jump-instruction ?:name ?options:* end }
+   =&gt; { register-instruction(&quot;j&quot; ## ?#&quot;name&quot;,
+                             make(&lt;instruction&gt;,
+                                  debug-name: &quot;j&quot; ## ?&quot;name&quot;,
+                                  ?options)) }
+end macro;
+define jump-instruction eq cr-bit: 2, commutative?: #t end;
+</pre>
+<p class="T1.Text1"><a name="MARKER-2-1304"></a><a name="MARKER-2-1305"></a></p>
+<a name="LINK-Macros-lastpage"></a><a name="LINK-Built-in_ClassesTOC-firstpage"></a><a name="UID-Built-in_ClassesTOC-2080"></a>
+<a name="LINK-Built-in_ClassesTOC-lastpage"></a>
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC --><ul class="footer">
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-3" class="footer">Statement Macros</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-4" class="footer">Begin</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-6" class="footer">Block</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-11" class="footer">Case</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-13" class="footer">For</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-30" class="footer">If</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-32" class="footer">Method</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-34" class="footer">Select</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-40" class="footer">Unless</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-42" class="footer">Until</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-44" class="footer">While</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-46" class="footer">Definition Macros</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-47" class="footer">Define Class</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-51" class="footer">Define Constant</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-53" class="footer">Define Domain</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-56" class="footer">Define Generic</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-59" class="footer">Define Library</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-63" class="footer">Define Method</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-65" class="footer">Define Module</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-69" class="footer">Define Variable</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-71" class="footer">Operator Function Macros</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-72" class="footer">&amp;</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-74" class="footer">|</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-76" class="footer">:=</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-78" class="footer">Additional Examples</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-80" class="footer">Test and Test-setter</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-84" class="footer">Transform!</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-87" class="footer">Formatting-table</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-90" class="footer">With-input-context</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-95" class="footer">Define Command</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-107" class="footer">Get-resource</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-110" class="footer">Completing-from-suggestions</a></li>
+<li class="footer"><a rel="BELOW" href="drm_86.html#HEADING86-113" class="footer">Define Jump-instruction</a></li>
+</ul>
+
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_87.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_85.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_76.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

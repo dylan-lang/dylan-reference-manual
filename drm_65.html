@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_59.html" />
+<link rel="prev" href="drm_64.html" />
+<link rel="next" href="drm_66.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Collection Alignment</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING65"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_66.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_64.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_59.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">8 Collections</p>
+
+</div>
+<a name="HEADING65-0"></a>
+<a name="UID-Collections-2808"></a>
+<h1 class="H1.Heading1"> <a name="MARKER-9-1021"></a>Collection Alignment</h1>
+<p class="T1.Text1"><a name="MARKER-2-1022"></a>Some operations on collections are defined to allow the use of more than a single collection. For example, some looping functions accept any number of collections and operate on these collections in parallel. Each pass through the loop uses one element from each collection. The presence of  collections that are unstable under iteration can create problems for multi-collection operations unless special care is taken. If iteration is effectively performed in random order, then naively performing parallel iterations over two different collections would randomly combine values from the two collections. This would presumably have no meaning.</p>
+<p class="T1.Text1">To prevent such random combinations, operations on more than one collection must in general align the collections. <b class="Bold T1.Text1">Collection alignment</b> consists of effectively computing the intersection of the collections' key sequences and then using the random-access operations (<code class="Code T1.Text1">element</code> and <code class="Code T1.Text1">element-setter</code>) to operate on the collections themselves.</p>
+<p class="T1.Text1">If implemented naively, this definition of alignment has the potential for extreme inefficiency because of its dependence on <code class="Code T1.Text1">element</code> and the potential loops implied by the calls to <code class="Code T1.Text1">key-sequence</code>. However, an important special case of this problem is that of iterating over multiple sequences. In this case, the intersection of key sequences will always be the non-negative integers up to the length of the shortest sequence. Further, unlike collections in general, sequences are required to exhibit stability so the explicit computation of key sequences is not actually required. It is correct simply to iterate until one or more of the sequences is exhausted.</p>
+<p class="T1.Text1">Iteration operations that store results in a target collection must generally include the target collection during alignment. This alignment requirement is relaxed if the target collection is a <code class="Code T1.Text1"><a name="MARKER-2-1023"></a>&lt;stretchy-collection&gt;</code>. In this case, the target collection  is not considered during alignment. Rather, only the source collections are aligned. New keys may be added to the target collection during the course of the iteration, and keys may be given new values. Other keys are left undisturbed.</p>
+<p class="T1.Text1"><a name="MARKER-2-1024"></a>It is only possible to align collections that have identical key tests.<a name="MARKER-2-1025"></a></p>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC -->
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_66.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_64.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_59.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_59.html" />
+<link rel="prev" href="drm_62.html" />
+<link rel="next" href="drm_64.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Mutability</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING63"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_64.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_62.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_59.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">8 Collections</p>
+
+</div>
+<a name="HEADING63-0"></a>
+<a name="UID-Collections-3523"></a>
+<h1 class="H1.Heading1"> Mutability</h1>
+<p class="T1.Text1"><a name="MARKER-2-1006"></a>Some collections can be modified after they have been created while others cannot. The <code class="Code T1.Text1"><a name="MARKER-2-1007"></a>&lt;mutable-collection&gt;</code> and <a name="MARKER-2-1008"></a><code class="Code T1.Text1">&lt;stretchy-collection&gt;</code> mixin classes are provided to allow methods to distinguish between mutable and immutable collections. Instances of <code class="Code T1.Text1">&lt;mutable-collection&gt;</code> can have their elements changed after they are created. Instances of <code class="Code T1.Text1">&lt;stretchy- collection&gt;</code> can have keys added and removed after they are created.</p>
+<p class="T1.Text1"><a name="MARKER-2-1009"></a>An element of a mutable collection is set to a new value with <code class="cv T1.Text1"><a name="MARKER-2-1010"></a>element-setter</code>. If the collection is not stretchy, then the key specified must already be present in the collection; its value will be changed. If the collection is stretchy, then the key will be added if it is not already present. If the collection is a stretchy sequence and the key is not already present, then the size of the sequence will first be set to the new key plus 1, and then the value of the new key will be set.</p>
+<p class="T1.Text1">A key and its corresponding value can be removed from an explicit key collection with the function <code class="cv T1.Text1"><a name="MARKER-2-1011"></a>remove-key!</code>.<a name="MARKER-2-1012"></a></p>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC -->
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_64.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_62.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_59.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

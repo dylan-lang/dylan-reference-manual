@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_76.html" />
+<link rel="prev" href="drm_83.html" />
+<link rel="next" href="drm_85.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Auxiliary Rule Sets</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING84"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_85.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_83.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_76.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">10 Macros</p>
+
+</div>
+<a name="HEADING84-0"></a>
+<a name="UID-Macros-1862"></a>
+<h1 class="H1.Heading1"> Auxiliary Rule Sets</h1>
+<p class="T1.Text1"><a name="MARKER-2-1265"></a>Auxiliary rule sets are like <a name="MARKER-2-1266"></a>subroutines for rewrite rules. An auxiliary rule set rewrites the value of a pattern variable after it is bound by a pattern and before it is substituted into a template. Auxiliary rule sets only come into play after a pattern has matched; the failure of all patterns in an auxiliary rule set to match causes the entire macro call to be declared invalid, rather than back-tracking and trying the next pattern in the calling rule set.</p>
+<p class="T1.Text1">See the definition of <i class="Parameter T1.Text1">aux-rule-sets</i> in <a href="drm_118.html#MARKER-9-2122" class="T1.Text1">"Auxiliary Rule Sets" on page 430</a>.</p>
+<p class="T1.Text1">A <em class="T1.Text1">symbol</em> flags the beginning of an auxiliary rule set. For readability it is generally written as <code class="cv T1.Text1">name:</code> rather than <code class="cv T1.Text1">#&quot;name&quot;</code>. The name of the symbol is the same as the name of the pattern variable that is rewritten by this auxiliary rule set. All occurrences of this pattern variable in all rule sets are rewritten. A pattern variable can occur in the very auxiliary rule set that rewrites that pattern variable; this is how you write recursive rewrite rules, which greatly expand the power of pattern-matching.</p>
+<p class="T1.Text1">When an auxiliary rule set's pattern variable occurs in a double question-mark <i class="Parameter T1.Text1">pattern-keyword</i>, the auxiliary rule set rewrites each property value in the sequence individually.</p>
+<p class="T1.Text1">The order of auxiliary rule sets in a macro definition is immaterial.</p>
+<p class="T1.Text1">The ellipsis <code class="cv T1.Text1">...</code> in patterns and templates of an auxiliary rule set means exactly the same thing as the pattern variable that is rewritten by this auxiliary rule set. Using ellipsis instead of the pattern variable can make recursive rewrite rules more readable.<a name="MARKER-2-1267"></a></p>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC -->
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_85.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_83.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_76.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

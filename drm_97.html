@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_96.html" />
+<link rel="prev" href="drm_96.html" />
+<link rel="next" href="drm_98.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Overview</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING97"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_98.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_96.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_96.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">12 The Built-In Functions</p>
+
+</div>
+<a name="HEADING97-0"></a>
+<a name="UID-Built-In_Functions-20433"></a>
+<h1 class="H1.Heading1"> Overview</h1>
+<p class="T1.Text1"><a name="MARKER-2-1528"></a>This chapter contains an entry for each function defined by Dylan.</p>
+<p class="T1.Text1"><a name="MARKER-2-1529"></a>The functions described below are annotated either as an "open generic function" or as a "function."</p>
+<p class="T1.Text1">A function specified as an "<a name="MARKER-2-1530"></a>open generic function" can be extended through the addition of programmer defined methods. The signature of the generic function constrains which methods can be added through the congruency rules described on <a href="drm_49.html#MARKER-9-837" class="T1.Text1">page 93</a>. The signature does not imply a set of <a name="MARKER-2-1531"></a>predefined methods. For example, the signature of <code class="cv T1.Text1">+</code> is <code class="cv T1.Text1">(&lt;object&gt;, &lt;object&gt;)</code>, but the predefined methods on <code class="cv T1.Text1">+</code> only cover subtypes of <code class="cv T1.Text1">&lt;number&gt;</code>. Particular behavior of the function is given in its description and in the description of its methods.</p>
+<p class="T1.Text1"><a name="MARKER-2-1532"></a>A function specified as a "function" cannot portably be extended through the addition of methods. Implementations are free to implement these functions as open generic functions, but programs that take advantage of such <a name="MARKER-2-1533"></a>liberality will not be portable. The signature of such a function specifies the types of the arguments to which the function may be applicable, but does not necessarily imply that the function is applicable to all instances of the types. The exact behavior of the function is given in its description.</p>
+<p class="T1.Text1">Implementations are allowed to define these generic functions and functions with signatures that are less restrictive than those given below. However, programs that take advantage of this liberality will not be portable.</p>
+<p class="T1.Text1">When a method is specified, it describes the behavior of a generic function when applied to arguments of particular types. It does not imply that this behavior is implemented by a single method. A method described as "<a name="MARKER-2-1534"></a>sealed" specifies a sealed domain covering the generic function and specializers of the method.</p>
+<p class="T1.Text1">Where a sealed domain is specified, implementations are free to seal the domain or leave the domain unsealed. Portable programs should not rely on the domain being unsealed.<a name="MARKER-2-1535"></a></p>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC -->
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_98.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_96.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_96.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

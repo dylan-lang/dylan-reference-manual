@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_9.html" />
+<link rel="prev" href="drm_10.html" />
+<link rel="next" href="drm_12.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Libraries and Modules</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING11"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_12.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_10.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_9.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">2 Syntax</p>
+
+</div>
+<a name="HEADING11-0"></a>
+<a name="UID-Syntax-1428"></a>
+<h1 class="H1.Heading1"> Libraries and Modules</h1>
+<p class="T1.Text1">A complete Dylan <b class="Bold T1.Text1">program</b> consists of one or more <b class="Bold T1.Text1"><a name="MARKER-2-221"></a>libraries</b>. Some of these libraries are written by the programmer, others are supplied by other programmers or by the Dylan implementation. A library is Dylan's unit of separate compilation and optimization. The libraries that compose a program can be linked together as early as during compilation or as late as while the program is running. Program structure inside of a library is static and does not change after compilation. However, many Dylan implementations provide an <a name="MARKER-2-222"></a>incremental compilation feature that allows a library under development to be modified, while the program is running, by modifying and recompiling portions of the library.</p>
+<p class="T1.Text1">A library contains one or more <b class="Bold T1.Text1"><a name="MARKER-2-223"></a>modules</b>. A module is Dylan's unit of global name scoping, and thus of modularity and information hiding. A module can be exported from its library; otherwise it is internal to that library. A library can import modules from other libraries. Only an exported module can be imported.</p>
+<p class="T1.Text1">A module contains zero or more source records and a set of bindings.</p>
+<p class="T1.Text1">A <b class="Bold T1.Text1"><a name="MARKER-2-224"></a>source record</b> is an implementation-defined unit of source program text. For example, in a file-based development environment each source file might be one source record. As another example, in an interactive Dylan interpreter each executable unit of programmer input would be a source record. The source program text in a source record is a body, a grammatical element used in several places in Dylan.</p>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC -->
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_12.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_10.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_9.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

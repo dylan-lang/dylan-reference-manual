@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_76.html" />
+<link rel="prev" href="drm_82.html" />
+<link rel="next" href="drm_84.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Templates</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING83"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_84.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_82.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_76.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">10 Macros</p>
+
+</div>
+<a name="HEADING83-0"></a>
+<a name="UID-Macros-1805"></a>
+<h1 class="H1.Heading1"> Templates</h1>
+<p class="T1.Text1"><a name="MARKER-2-1262"></a>Approximately speaking, a template has the same structure as what it constructs, but contains pattern variables that will be replaced by fragments extracted from the macro call. Thus a template in the <i class="Parameter T1.Text1">main-rule-set</i>  looks like the macro expansion.</p>
+<p class="T1.Text1">However, templates do not have a full grammar. A template is essentially any sequence of tokens and <i class="Parameter T1.Text1">substitutions</i> in which all of Dylan's brackets are balanced: <code class="cv T1.Text1">()</code>, <code class="cv T1.Text1">[]</code>, <code class="cv T1.Text1">{}</code>, <code class="cv T1.Text1">#()</code>, and <code class="cv T1.Text1">#[]</code>. Substitution for pattern variables produces a sequence of tokens and other elementary fragments. </p>
+<p class="T1.Text1"><a name="MARKER-2-1263"></a>Note that using unparsed token sequences as templates allows a macro expansion to contain macro calls without creating any inter-dependencies between macros. Since the template is not parsed at macro definition time, any macros called in the template do not have to be defined first, and macros can be compiled independently of each other. This simplifies the implementation at the minor cost of deferring some error checking from when a macro is defined until the time when the macro is called.</p>
+<p class="T1.Text1">The grammar for templates is the definition of <i class="Parameter T1.Text1">template </i> in <a href="drm_118.html#MARKER-9-2119" class="T1.Text1">"Templates" on page 429</a>.</p>
+<p class="T1.Text1">All <i class="Parameter T1.Text1">template-elements</i>  other than <i class="Parameter T1.Text1">substitution</i>  are copied directly into the macro expansion. The various kinds of <i class="Parameter T1.Text1">substitution</i>  insert something else into the macro expansion, as follows:</p>
+<dl class="RP.RoutineParam">
+<dt class="RP.RoutineParam"><code class="cv RP.RoutineParam">? <em class="cv RP.RoutineParam">name</em></code></dt>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> The fragment bound to the pattern variable named <em class="RP.RoutineParam">name</em>.</p></dd>
+<dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">name-prefix<em class="Subscript Parameter RP.RoutineParam">opt<code class="cv Subscript Parameter RP.RoutineParam"> ? name-string-or-symbol name-suffixopt</code></em></i></dt>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"></p></dd>
+<dt class="RP.RoutineParam" /><dd class="RP.RoutineParam"><p class="RP.RoutineParam"> The fragment bound to the pattern variable named <i class="Parameter RP.RoutineParam">name-string-or-symbol</i>, converted to a <em class="RP.RoutineParam">string</em> or <em class="RP.RoutineParam">symbol</em> and/or concatenated with a prefix and/or suffix. Note that this rule applies only when the first rule does not. The fragment must be a <em class="RP.RoutineParam">name</em>. Concatenate the prefix, if any, the characters of the fragment, and the suffix, if any. The alphabetic case of the characters of the fragment is unspecified. Convert this to the same grammatical type (<em class="RP.RoutineParam">name</em>, <em class="RP.RoutineParam">string</em>, or <em class="RP.RoutineParam">symbol</em>) as <i class="Parameter RP.RoutineParam">name-string-or-symbol</i>. When the result is a <em class="RP.RoutineParam">name</em>, its hygiene context is the same as that of the fragment.</p></dd>
+<dt class="RP.RoutineParam"><code class="cv RP.RoutineParam">?? <em class="cv RP.RoutineParam">name</em></code>  <i class="Parameter RP.RoutineParam">separator<em class="Subscript Parameter RP.RoutineParam">opt<code class="cv Subscript Parameter RP.RoutineParam"> ...</code></em></i></dt>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"></p></dd>
+<dt class="RP.RoutineParam"><code class="RP.RoutineParam"></code></dt>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> The sequence of fragments bound to the pattern variable named <em class="RP.RoutineParam">name</em>, with <i class="Parameter RP.RoutineParam">separator</i> inserted between each pair of fragments. The pattern variable must have been bound by a <code class="cv RP.RoutineParam">??</code> <i class="Parameter RP.RoutineParam">pattern-keyword.</i> <i class="Parameter RP.RoutineParam">Separator</i> can be a binary operator, comma, or semicolon. If the size of the sequence is 1 or <i class="Parameter RP.RoutineParam">separator</i> is omitted, no separator is inserted. If the sequence is empty, nothing is inserted.</p></dd>
+<dt class="RP.RoutineParam"><code class="cv RP.RoutineParam">...</code></dt>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> The fragment bound to the pattern variable that names this rule set; this is only valid in an auxiliary rule set.</p></dd>
+<dt class="RP.RoutineParam"><code class="cv RP.RoutineParam">?= <em class="cv RP.RoutineParam">name</em></code></dt>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> A reference to <em class="RP.RoutineParam">NAME</em>, in the lexical context where the macro was called.</p>
+<p class="T1.Text1">It is an error for a single question-mark <i class="Parameter T1.Text1">substitution</i>  to use a pattern variable that was bound by a double question-mark <i class="Parameter T1.Text1">pattern-keyword.</i> </p>
+<p class="T1.Text1">It is an error for a double question-mark <i class="Parameter T1.Text1">substitution</i>  to use a pattern variable that was bound by a single question-mark <i class="Parameter T1.Text1">pattern-variable</i> or <i class="Parameter T1.Text1">pattern-keyword.</i> </p>
+<p class="T1.Text1">It is an error for a <i class="Parameter T1.Text1">substitution</i> to use a pattern variable that does not appear on the left-hand side of the same rule.</p>
+<p class="T1.Text1">When a template contains a <i class="Parameter T1.Text1">separator</i> immediately followed by a <i class="Parameter T1.Text1">substitution</i>, and the fragment inserted into the macro expansion by the <i class="Parameter T1.Text1">substitution</i> is empty, the separator is removed from the macro expansion.<a name="MARKER-2-1264"></a></p></dd>
+</dl>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC -->
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_84.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_82.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_76.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_59.html" />
+<link rel="prev" href="drm_66.html" />
+<link rel="next" href="drm_68.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Tables</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING67"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_68.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_66.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_59.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">8 Collections</p>
+
+</div>
+<a name="HEADING67-0"></a>
+<a name="UID-Collections-2785"></a>
+<h1 class="H1.Heading1"> <a name="MARKER-9-1036"></a>Tables</h1>
+<p class="T1.Text1"><a name="MARKER-2-1037"></a>Tables map arbitrary keys to elements. Table keys may be any object, including complex objects such as strings. All tables are instances of <code class="Code T1.Text1"><a name="MARKER-2-1038"></a>&lt;table&gt;</code>. <code class="Code T1.Text1">&lt;table&gt;</code> is the only instantiable subclass of <code class="Code T1.Text1">&lt;explicit-key-collection&gt;</code> defined by Dylan. Tables are unstable under iteration.</p>
+<p class="T1.Text1"><a name="MARKER-2-1039"></a>The iteration protocol for tables is implemented in terms of the function <code class="cv T1.Text1"><a name="MARKER-2-1040"></a>table-protocol</code>. Every concrete subclass of <code class="T1.Text1">&lt;table&gt;</code> must provide or inherit a method for <code class="T1.Text1">table-protocol</code>. This function accepts a table as an argument, and returns an equivalence predicate and hash-function, as described below.</p>
+<p class="T1.Text1">The <b class="Bold T1.Text1"><a name="MARKER-2-1041"></a>equivalence predicate</b> of a table is used to compare keys. (It is the table's <a name="MARKER-2-1042"></a>key test.)  The table maps keys that are equivalent under the predicate to the same table element. An equivalence predicate is a boolean function of two arguments that returns true if and only if the arguments are considered to be the same according to some specified criteria. For a function to be used as an equivalence predicate, it must be reflexive, commutative, and transitive. That is, for a function <i class="Parameter T1.Text1">F</i> and any arguments <i class="Parameter T1.Text1">X</i>, <i class="Parameter T1.Text1">Y</i>, and <i class="Parameter T1.Text1">Z</i> in the domain of <i class="Parameter T1.Text1">F</i>, the following must be true:</p>
+<ul class="B1.Bullet1">
+<li class="B1.Bullet1"><i class="Parameter B1.Bullet1">F<code class="Code Parameter B1.Bullet1">(X,X)</code></i> must be true.</li>
+<li class="B1.Bullet1"><i class="Parameter B1.Bullet1">F<code class="Code Parameter B1.Bullet1">(X,Y)</code></i> must be true if and only if <i class="Parameter B1.Bullet1">F<code class="Code Parameter B1.Bullet1">(Y,X)</code></i> is true.</li>
+<li class="B1.Bullet1">If both <i class="Parameter B1.Bullet1">F<code class="Code Parameter B1.Bullet1">(X,Y)</code></i> and <i class="Parameter B1.Bullet1">F<code class="Code Parameter B1.Bullet1">(Y,Z)</code></i> are true then <i class="Parameter B1.Bullet1">F<code class="Code Parameter B1.Bullet1">(X,Z)</code></i> must be true.
+<p class="T1.Text1">An <b class="Bold T1.Text1"><a name="MARKER-2-1043"></a>equivalence class</b> (for an equivalence predicate) is a set of objects, or potential objects, that are all the same under the specified equivalence predicate and different from all objects not in the class. (This use of the term "class" does not refer to Dylan classes.)</p>
+<p class="T1.Text1">An object is said to be <b class="T1.Text1"><a name="MARKER-2-1044"></a>visibly modified</b> with respect to an equivalence predicate if the modification changes the equivalence class of the object. The modifications that are visible to an equivalence predicate are determined by the definition of the predicate. (For example, changing a character in a string would be a visible modification with respect to an equivalence predicate that compared strings character by character, but it would not be a visible modification with respect to an equivalence predicate that compared objects by identity, without regard for their contents.)</p>
+<p class="T1.Text1">If an object <i class="Parameter T1.Text1">X</i> is a key in a table <i class="Parameter T1.Text1">T</i> and is visibly modified with regard to the test function of <i class="Parameter T1.Text1">T</i>, then the consequences are unspecified if any of the following objects are used as a key in any subsequent operations on <i class="Parameter T1.Text1">T</i>:</p></li>
+<li class="B1.Bullet1">The original object, <i class="Parameter B1.Bullet1">X</i>.</li>
+<li class="B1.Bullet1">Some object <i class="Parameter B1.Bullet1">Y</i> that is in the same equivalence class (as determined by the test function) as <i class="Parameter B1.Bullet1">X</i> prior to the modification of <i class="Parameter B1.Bullet1">X</i>.</li>
+<li class="B1.Bullet1">Some object <i class="Parameter B1.Bullet1">Z</i> that is in the same equivalence class (as determined by the test function) as <i class="Parameter B1.Bullet1">X</i> after the modification of <i class="Parameter B1.Bullet1">X</i>.
+<p class="T1.Text1">Each table also has an associated <b class="Bold T1.Text1"><a name="MARKER-2-1045"></a>hash function</b>, which is a function that relates table keys and table elements by computing <b class="Bold T1.Text1"><a name="MARKER-2-1046"></a>hash codes</b>. A hash code is a conceptual object consisting of a <b class="Bold T1.Text1"><a name="MARKER-2-1047"></a>hash id</b> and its associated <b class="Bold T1.Text1"><a name="MARKER-2-1048"></a>hash state</b>. (It is not an actual Dylan object.)  A hash id is an integer encoding of an object. A hash state is an object of implementation-dependent type that is associated with a particular hash id and can be used by the implementation to determine whether the hash id has been invalidated. A hash function accepts one argument, a key, and returns two values, a hash id and a hash state, which together represent the hash code.</p>
+<p class="T1.Text1">Each hash function is associated with a specific equivalence predicate, and must obey the following constraints:</p></li>
+<li class="B1.Bullet1">The domain of the hash function must include the domain of valid arguments to the corresponding equivalence predicate. A hash function need not be defined for all Dylan objects, only those that are acceptable as arguments to the equivalence predicate.</li>
+<li class="B1.Bullet1"><a name="MARKER-9-1049"></a>All objects in a given equivalence class have the same (<code class="Code B1.Bullet1">=</code>) valid hash id, where validity is determined from the associated hash state.
+<p class="T1.Text1">In addition, a hash function should have the property that the hash ids computed by it are well distributed over the range of possible values. That is, it should be unlikely that two randomly chosen equivalence classes have the same valid hash id.<a name="MARKER-2-1050"></a></p></li>
+</ul>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC -->
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_68.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_66.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_59.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

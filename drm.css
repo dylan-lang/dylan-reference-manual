@@ -1,0 +1,48 @@
+body {
+	margin-left: 20px;
+	margin-right: 20px;
+
+	background-color: white;
+	color: black;
+}
+
+img { border-width: 0px; }
+ul { list-style-type: square }
+li > ul { list-style-type: disc; }
+
+
+div.wm-div-body {
+	margin: 20px;
+	padding: 10px;
+	background-color: #dddddd;
+}
+
+div.wm-div-headers {
+	margin: 20px;
+	padding: 10px;
+	background-color: white;
+}
+
+div.wm-div-footnotes {
+	margin: 20px;
+	padding: 10px;
+	background-color: red;
+}
+
+div.wm-div-footers {
+	margin: 20px;
+	padding: 10px;
+	background-color: #dddddd;
+}
+
+div.wm-div-index {
+	margin: 20px;
+	padding: 10px;
+	background-color: green;
+}
+
+div.wm-div-toc {
+	margin: 20px;
+	padding: 10px;
+	background-color: white;
+}

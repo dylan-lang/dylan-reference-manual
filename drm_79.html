@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_76.html" />
+<link rel="prev" href="drm_78.html" />
+<link rel="next" href="drm_80.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Macro Names</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING79"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_80.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_78.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_76.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">10 Macros</p>
+
+</div>
+<a name="HEADING79-0"></a>
+<a name="UID-Macros-1593"></a>
+<h1 class="H1.Heading1"> Macro Names</h1>
+<p class="T1.Text1"><a name="MARKER-2-1223"></a>A macro is named by a <a name="MARKER-2-1224"></a>constant module binding. The macro is available to be called in any scope where this binding is accessible. <a name="MARKER-2-1225"></a>Macro names can be exported and can be renamed during module importing just like any other module binding. Macro bindings are constant and cannot be changed by the assignment operator <code class="cv T1.Text1">:=</code>.</p>
+<p class="T1.Text1">The name bound to a definition macro is the macro's <em class="T1.Text1">define-body-word</em> or <em class="T1.Text1">define-list-word</em> suffixed by "<code class="cv T1.Text1"><a name="MARKER-2-1226"></a>-definer</code>". This suffixing convention is analogous to the naming convention for setters and allows the <em class="T1.Text1">define-body-word</em> or <em class="T1.Text1">define-list-word</em> to be used for another purpose. The name bound to a statement macro is the macro's <em class="T1.Text1">begin-word</em>. The name bound to a function macro is the macro's <em class="T1.Text1">function-word</em>.</p>
+<p class="T1.Text1">A <a name="MARKER-2-1227"></a>named value reference is not allowed when the value of the binding is a macro, because macros are not run-time objects. </p>
+<p class="T1.Text1">A macro cannot be named by a local binding. Macro definitions are always scoped to modules.</p>
+<p class="T1.Text1">Attempting to create a <a name="MARKER-2-1228"></a>local binding that shadows a binding to a macro is an error.</p>
+<p class="T1.Text1"><a name="MARKER-2-1229"></a>Reserved words created by a macro definition are reserved in any module where the binding that names the macro is accessible. In other modules, the same words are ordinary names. Each module has an associated syntax table  used when parsing code associated with that module. The syntax table controls the lexical analyzer's assignment of names to the <em class="T1.Text1">define-body-word</em>, <em class="T1.Text1">define-list-word</em>, <em class="T1.Text1">begin-word</em>, and <em class="T1.Text1">function-word</em> categories. <a name="MARKER-2-1230"></a>Importing a macro into a module makes the same modifications to that module's syntax table that would be made by defining that macro in the module. If a definition macro is renamed when it is imported, the <em class="T1.Text1">define-body-word</em> or <em class="T1.Text1">define-list-word</em> derives from the new name. If the new name does not end in "<code class="cv T1.Text1">-definer</code>", the imported macro cannot be called.</p>
+<p class="T1.Text1">A <em class="T1.Text1">name</em> or <em class="T1.Text1">unreserved-name</em> in the lexical grammar can be a <a name="MARKER-2-1231"></a>backslash ('<code class="cv T1.Text1">\</code>') character followed by a word. This prevents the word from being recognized as a reserved word during parsing, but does not change which binding the word names. Quoting the name of a statement or function macro with a backslash allows the name to be mentioned without calling the macro, for example to export it from a module.</p>
+<p class="T1.Text1">When a binding that names a macro is exported from a module that is exported from a library, clients of that library can call the macro. Information derived from the macro definition goes into the <a name="MARKER-2-1232"></a>library export information part of the library description.<a name="MARKER-2-1233"></a></p>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC -->
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_80.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_78.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_76.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

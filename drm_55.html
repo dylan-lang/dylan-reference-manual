@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_52.html" />
+<link rel="prev" href="drm_54.html" />
+<link rel="next" href="drm_56.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Signalers, Conditions, and Handlers</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING55"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_56.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_54.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_52.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">7 Conditions</p>
+
+</div>
+<a name="HEADING55-0"></a>
+<a name="UID-Conditions-1987"></a>
+<h1 class="H1.Heading1"> Signalers, Conditions, and Handlers</h1>
+<p class="T1.Text1">A condition is an object used to locate and provide information to a handler. A condition represents a situation that needs to be handled. Examples are <a name="MARKER-2-912"></a>errors, <a name="MARKER-2-913"></a>warnings, and attempts to <a name="MARKER-2-914"></a>recover from errors. All conditions are instances of <code class="Code T1.Text1"><a name="MARKER-2-915"></a>&lt;condition&gt;</code>. Several subclasses of <code class="Code T1.Text1">&lt;condition&gt;</code> are provided for additional behavior. These are described in <a href="drm_95.html#MARKER-9-1472" class="T1.Text1">"Conditions" on page 244</a>.</p>
+<p class="T1.Text1"><a name="MARKER-2-916"></a>A handler is a function for handling conditions of a particular type. Handlers may be installed dynamically with the local declaration <code class="Code T1.Text1"><a name="MARKER-2-917"></a>let handler</code>, and with the <code class="Code T1.Text1"><a name="MARKER-2-918"></a>exception</code> clause of the <code class="Code T1.Text1">block</code> statement. Dynamically installed handlers are active for the duration of the execution of a body. More recently installed handlers take precedence over less recently installed handlers. If no dynamically installed handler handles a condition, the generic function <code class="Code T1.Text1"><a name="MARKER-2-919"></a>default-handler</code> is called. <code class="Code T1.Text1">default-handler</code> has predefined methods and may also have program-defined methods.<a name="MARKER-2-920"></a></p>
+<p class="T1.Text1">Signaling is the mechanism for locating the most recently installed handler for a condition. The basic mechanism for signaling is the function <code class="Code T1.Text1"><a name="MARKER-2-921"></a>signal</code>. Several functions built on <code class="Code T1.Text1">signal</code> are provided for additional behavior. These are described in <a href="drm_107.html#MARKER-9-1917" class="T1.Text1">"Signaling Conditions" on page 357</a>.</p>
+<p class="T1.Text1"><a name="MARKER-2-922"></a>When a condition is signaled, the condition facility locates the most recently installed applicable handler and calls it. An applicable handler is one that matches the signaled condition by type and by an optional test function associated with the handler. The condition system is simply a way for a signaler and a handler to be introduced to each other. Once they have met, they communicate through an ordinary function call. The condition object is the argument to that call.</p>
+<p class="T1.Text1">Like any function, the called handler either returns some values or takes a nonlocal exit. Either way, the handler has handled the condition, and the act of signaling is completed.</p>
+<p class="T1.Text1"><a name="MARKER-2-923"></a><a name="MARKER-2-924"></a>A handler also has the option of declining to handle the condition by passing control to the next applicable handler. It does this by tail recursively calling a next-handler function which it received as an argument. The next-handler function calls the next most recently installed applicable handler with appropriate arguments. This is analogous to the next-method function used in methods of generic functions.</p>
+<p class="T1.Text1">(The call to next-handler is described as tail-recursive to ensure that all values returned by the call are returned by the handler. Not returning all the values could interfere with the condition's recovery protocol. A handler that really knows what it is doing could use a non-tail-recursive call, but anything that knows what it's doing in this situation is probably unmodular. Note that a handler might not know the full recovery protocol, because the condition might be a subtype of the handler's expected type.)</p>
+<p class="T1.Text1">Every signaled condition is handled, because the system ensures that there is always an applicable default handler that does not decline.</p>
+<p class="T1.Text1">If a handler handles a condition by returning (rather than by taking a nonlocal exit) the values it returns are returned by <code class="Code T1.Text1">signal</code>.</p>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC -->
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_56.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_54.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_52.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

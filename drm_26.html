@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_25.html" />
+<link rel="prev" href="drm_25.html" />
+<link rel="next" href="drm_27.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Modules</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING26"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_27.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_25.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_25.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">3 Program Structure</p>
+
+</div>
+<a name="HEADING26-0"></a>
+<a name="UID-Program_Structure-2480"></a>
+<h1 class="H1.Heading1"> <a name="MARKER-2-361"></a>Modules</h1>
+<p class="T1.Text1">Modules are used for creating large-scale <a name="MARKER-2-362"></a>namespaces of bindings. The bindings <a name="MARKER-2-363"></a>accessible in a module are <a name="MARKER-2-364"></a>visible to all the code within the module (except where shadowed by a local binding). Only the bindings explicitly <a name="MARKER-2-365"></a>exported are visible from outside the module.</p>
+<p class="T1.Text1">Some languages have module systems with distinct support for exporting variables, functions, types, and classes. Dylan modules operate only on bindings. Because functions and classes are commonly named by bindings, access to them is controlled by <a name="MARKER-2-366"></a>controlling access to the bindings that name them. By exporting the binding naming a class or function, a program has effectively exported the class or function. If the binding is not exported, then the class or function is effectively private.<a rel="FOOTNOTE" href="#FOOTNOTE-1" class="T1.Text1">[1]</a></p>
+<p class="T1.Text1"><a name="MARKER-2-367"></a>A <a name="MARKER-2-368"></a>module definition defines the imports and exports of a module, and may specify bindings owned by the module. A complete description of module definitions is given on <a href="drm_112.html#MARKER-9-2016" class="T1.Text1">page 381</a>.</p>
+<a name="HEADING26-4"></a>
+<a name="UID-Program_Structure-1436"></a>
+<h2 class="H2.Heading2"> <a name="MARKER-2-369"></a>Defining Module Bindings</h2>
+<p class="T1.Text1">A module consists of a set of bindings. A binding may be <b class="T1.Text1"><a name="MARKER-2-370"></a>owned</b> by a module, or a module may <b class="T1.Text1"><a name="MARKER-2-371"></a>import</b> the binding from another module by <b class="T1.Text1"><a name="MARKER-2-372"></a>using</b> the other module. Modules <b class="T1.Text1"><a name="MARKER-2-373"></a>export</b> bindings to make them accessible to other modules. Only exported bindings can be imported by other modules.</p>
+<p class="T1.Text1">Module-use relationships may not be <a name="MARKER-2-374"></a>circular. To create a common set of bindings for a group of modules, the modules can import the bindings from another module or modules.</p>
+<p class="T1.Text1">Within a given module, a <a name="MARKER-2-375"></a>name refers to at most one module binding. It is an error to create or import two or more different bindings with the same name in a single module. If a name does refer to a binding, the binding is said to be <b class="T1.Text1"><a name="MARKER-2-376"></a>accessible</b> from the module. Each binding is owned by exactly one module, but it can be accessible from many modules.</p>
+<p class="T1.Text1">Module <a name="MARKER-2-377"></a>bindings are created by <a name="MARKER-2-378"></a>definitions. <b class="Bold T1.Text1"><a name="MARKER-2-379"></a>Explicit definitions</b> are created by <code class="Code T1.Text1"><a name="MARKER-2-380"></a>define constant</code>, <a name="MARKER-2-381"></a><code class="Code T1.Text1">define variable</code>, <a name="MARKER-2-382"></a><code class="Code T1.Text1">define generic</code>, <a name="MARKER-2-383"></a><code class="Code T1.Text1">define macro</code> and the class name in <a name="MARKER-2-384"></a><code class="Code T1.Text1">define class</code>. <b class="Bold T1.Text1"><a name="MARKER-2-385"></a>Implicit definitions</b> are created by <a name="MARKER-2-386"></a><code class="Code T1.Text1">define method </code>and the slot specifications of <a name="MARKER-2-387"></a><code class="Code T1.Text1">define class</code>.</p>
+<p class="T1.Text1">Within a library, a module binding may have no explicit definition or it may have one explicit definition. It may not have more than one explicit definition. If a module binding has no explicit definition, it must have one or more implicit definitions. If it does have an explicit definition, it can have zero or more implicit definitions.</p>
+<p class="T1.Text1">A binding may be <a name="MARKER-2-388"></a>declared by the <a name="MARKER-2-389"></a><code class="cv T1.Text1">create</code> clause of a module definition. This does not define the binding, but instead declares that it is owned by the module. Other modules may import the binding from that module. The binding must be defined by one of the modules that imports it.</p>
+<p class="T1.Text1">If a binding is not declared by the <code class="cv T1.Text1">create</code> clause of a module definition, it is owned by the module in which its explicit definition appears. If it does not have an explicit definition, it is owned by one of the modules in which at least one of its implicit definitions appears; the exact owning module cannot be determined.</p>
+<p class="T1.Text1">It is an error to reference a name for the purpose of getting or setting its value if the name does not designate either a local or module binding in the environment where the reference occurs.<a name="MARKER-2-390"></a></p>
+
+</div>
+
+<div class="wm-div-footnotes">
+
+<div class="wm-div-footnotes">
+<hr />
+
+<a name="FOOTNOTE-1">[1] </a>
+This privacy can sometimes be circumvented through certain introspective operations.
+
+</div>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC --><ul class="footer">
+<li class="footer"><a rel="BELOW" href="drm_26.html#HEADING26-4" class="footer">Defining Module Bindings</a></li>
+</ul>
+
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_27.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_25.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_25.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

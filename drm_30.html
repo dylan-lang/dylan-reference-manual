@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_28.html" />
+<link rel="prev" href="drm_29.html" />
+<link rel="next" href="drm_31.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Function Calls</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING30"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_31.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_29.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_28.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">4 Program Control</p>
+
+</div>
+<a name="HEADING30-0"></a>
+<a name="UID-Program_Control-4699"></a>
+<h1 class="H1.Heading1"> <a name="MARKER-2-430"></a>Function Calls</h1>
+<a name="HEADING30-1"></a>
+<a name="UID-Program_Control-1538"></a>
+<h2 class="H2.Heading2"> <a name="MARKER-2-431"></a>General Syntax</h2>
+<p class="T1.Text1">The general syntax for function calls is</p>
+<p class="T1.Text1"><i class="Parameter T1.Text1">function<code class="cv Parameter T1.Text1">(arg1,</code></i> <i class="Parameter T1.Text1">arg2<code class="cv Parameter T1.Text1">,</code></i> ... <i class="Parameter T1.Text1">argn<code class="cv Parameter T1.Text1">)</code></i></p>
+<p class="T1.Text1"><i class="Parameter T1.Text1">function</i> has the syntax of an operand and is the function to be called. The <i class="Parameter T1.Text1">args</i> have the syntax of expressions, and are the arguments to the function. The <i class="Parameter T1.Text1">function</i> will often be a named value reference, but it can be any other kind of operand as well.</p>
+<p class="T1.Text1">In the following example, the function being called is the value of the binding <code class="cv T1.Text1">average</code>.</p>
+<pre class="Cv.Code">
+average(x, y)
+</pre>
+<p class="T1.Text1">In the following two examples, the function being called is the value of a <code class="cv T1.Text1">method</code> statement. The examples differ only in that the second example puts parentheses around the <code class="cv T1.Text1">method</code> statement, to make the code somewhat more readable.</p>
+<pre class="Cv.Code">
+method(x) x + 1 end (99)
+(method(x) x + 1 end) (99)
+</pre>
+<p class="T1.Text1">In the following examples, the function being called is the result of another function call. <code class="cv T1.Text1">key-test</code> takes a collection as an argument, and returns a predicate function. The predicate function is then applied to the two keys. The following three program fragments will have the same effect.</p>
+<pre class="Cv.Code">
+key-test(collection)(key1, key2)
+(key-test(collection))(key1, key2)
+begin
+ let fun = key-test(collection);
+ fun(key1, key2);
+end
+</pre>
+<p class="T1.Text1">Functions may accept keyword arguments. These are optional and order-independent. They may also accept a variable number of "rest" arguments.</p>
+<p class="T1.Text1">A complete description of functions, parameter lists, and function calling is given in <a href="drm_47.html#MARKER-9-744" class="T1.Text1">Chapter 6, "Functions."</a></p>
+<a name="HEADING30-16"></a>
+<a name="UID-Program_Control-1278"></a>
+<h2 class="H2.Heading2"> <a name="MARKER-2-432"></a>Slot Reference<a name="MARKER-2-433"></a></h2>
+<p class="T1.Text1">Dylan provides a shorthand syntax for functions that accept one argument. The syntax <i class="Parameter T1.Text1">argument<code class="cv Parameter T1.Text1">.function</code></i> applies <i class="Parameter T1.Text1">function</i> to <i class="Parameter T1.Text1">argument</i>. This syntax is commonly used for slot reference, to access the <i class="Parameter T1.Text1">function </i> slot of <i class="Parameter T1.Text1">argument</i>.</p>
+<p class="T1.Text1">Order of execution aside, the following pairs of function calls are equivalent:</p>
+<pre class="Cv.Code">
+america.capital
+capital(america)
+
+window.position
+position(window)
+</pre>
+<p class="T1.Text1">Slot reference syntax can be cascaded and is left associative. Order of execution aside, the following pair of expressions are equivalent. Each returns the origin of the root-view of a window.</p>
+<pre class="Cv.Code">
+window.root-view.origin
+origin(root-view(window))<a name="MARKER-2-434"></a>
+</pre>
+<a name="HEADING30-22"></a>
+<a name="UID-Program_Control-1292"></a>
+<h2 class="H2.Heading2"> <a name="MARKER-2-435"></a>Element Reference<a name="MARKER-2-436"></a></h2>
+<p class="T1.Text1">Dylan provides a shorthand syntax for element reference. The syntax <i class="Parameter T1.Text1">sequence<code class="cv Parameter T1.Text1">[i]</code></i> is equivalent to the function call <code class="cv T1.Text1">element(<i class="Parameter cv T1.Text1">sequence, i)</i></code>. The syntax <i class="Parameter T1.Text1">array<code class="cv Parameter T1.Text1">[i<em class="Subscript cv Parameter T1.Text1">1,</em></code></i> <i class="Parameter T1.Text1">i<em class="Subscript Parameter T1.Text1">2<code class="cv Subscript Parameter T1.Text1">,</code></em></i> ... <i class="Parameter T1.Text1">i<em class="Subscript Parameter T1.Text1">n<code class="cv Subscript Parameter T1.Text1">]</code></em></i> is equivalent to the function call <code class="cv T1.Text1">aref(<i class="Parameter cv T1.Text1">array,</i></code> <i class="Parameter T1.Text1">i<em class="Subscript Parameter T1.Text1">1<code class="cv Subscript Parameter T1.Text1">,</code></em></i> <i class="Parameter T1.Text1">i<em class="Subscript Parameter T1.Text1">2<code class="cv Subscript Parameter T1.Text1">,</code></em></i> ... <i class="Parameter T1.Text1">i<em class="Subscript Parameter T1.Text1">n<code class="cv Subscript Parameter T1.Text1">)</code></em></i>.</p>
+<p class="T1.Text1">Order of execution aside, the following pairs of expressions are equivalent:</p>
+<pre class="Cv.Code">
+*all-windows*[0]
+element(*all-windows*, 0)
+
+*tic-tac-toe*[1, 2]
+aref(*tic-tac-toe*, 1, 2)
+</pre>
+<p class="T1.Text1">The names <code class="cv T1.Text1">element</code> and <code class="cv T1.Text1">aref</code> are looked up in the environment of the element reference expression.<a name="MARKER-2-437"></a></p>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC --><ul class="footer">
+<li class="footer"><a rel="BELOW" href="drm_30.html#HEADING30-1" class="footer">General Syntax</a></li>
+<li class="footer"><a rel="BELOW" href="drm_30.html#HEADING30-16" class="footer">Slot Reference</a></li>
+<li class="footer"><a rel="BELOW" href="drm_30.html#HEADING30-22" class="footer">Element Reference</a></li>
+</ul>
+
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_31.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_29.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_28.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

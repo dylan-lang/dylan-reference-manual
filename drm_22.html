@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_9.html" />
+<link rel="prev" href="drm_21.html" />
+<link rel="next" href="drm_23.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Top-Level Definitions</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING22"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_23.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_21.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_9.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">2 Syntax</p>
+
+</div>
+<a name="HEADING22-0"></a>
+<a name="UID-Syntax-1543"></a>
+<h1 class="H1.Heading1"> <a name="MARKER-2-314"></a>Top-Level Definitions</h1>
+<p class="T1.Text1">Dylan's built-in defining macros and special definitons can only be used at top level. When the expansion of a user-defined macro includes a call to a built-in defining macro or special definition, the user-defined macro also can only be used at top level.</p>
+<p class="T1.Text1"><a name="MARKER-2-315"></a>A constituent is at<b class="Bold T1.Text1"> top level</b> if and only if it is a direct constituent of a body, no preceding constituent of that body is a local declaration, and the body is either the body of a source record or the body of a <code class="Code T1.Text1">begin</code> statement that is itself a constituent at top level. When a constituent appears inside a call to a macro, whether that constituent is at top level must be determined after macro expansion.</p>
+<p class="T1.Text1">The effect of the above rule is that a constituent at top level is not in the scope of any local declarations, is not subject to any condition handlers other than default handlers, and is not affected by any flow of control constructs such as conditionals and iterations. This restriction enhances the <a name="MARKER-2-316"></a>static nature of definitions.</p>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC -->
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_23.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_21.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_9.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

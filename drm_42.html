@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_38.html" />
+<link rel="prev" href="drm_41.html" />
+<link rel="next" href="drm_43.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Slots</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING42"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_43.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_41.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_38.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">5 Types and Classes</p>
+
+</div>
+<a name="HEADING42-0"></a>
+<a name="UID-Types_and_Classes-2625"></a>
+<h1 class="H1.Heading1"> <a name="MARKER-2-599"></a>Slots</h1>
+<p class="T1.Text1">Slots are the interface to information about instances. They correspond to the <a name="MARKER-2-600"></a>fields or instance variables of other object-oriented programming languages. By default, each instance of the class has private storage for each slot, so one instance can have one value in the slot and another instance can have another value. Some slots are shared among instances, as described in <a href="#MARKER-9-629" class="T1.Text1">"Slot Allocation" on page 60</a>.</p>
+<p class="T1.Text1"><a name="MARKER-2-601"></a>All slot access is performed by function calls.<a rel="FOOTNOTE" href="#FOOTNOTE-2" class="T1.Text1">[2]</a> The method that returns the value of a slot is called the <b class="Bold T1.Text1"><a name="MARKER-2-602"></a>getter method</b>, and the method that sets the value of a slot is called the <b class="Bold T1.Text1"><a name="MARKER-2-603"></a>setter method</b>. The getter and setter methods are added to generic functions. When defining a class, you specify slots by specifying the generic functions to which the getter and setter methods should be added.</p>
+<p class="T1.Text1">For example, the class definition for <code class="Code T1.Text1">&lt;point&gt;</code> might be</p>
+<pre class="Cv.Code">
+define class &lt;point&gt; (&lt;object&gt;)
+  slot horizontal;
+  slot vertical;
+end class;
+</pre>
+<p class="T1.Text1">This definition indicates that instances of <code class="T1.Text1">&lt;point&gt;</code> should have two slots, <code class="Code T1.Text1">horizontal</code> and <code class="Code T1.Text1">vertical</code>. The getter method for the first slot is added to the generic function <code class="Code T1.Text1">horizontal</code>, and the getter method for the second slot is added to the generic function <code class="Code T1.Text1">vertical</code>. The setter method for the first slot is added to the generic function <code class="Code T1.Text1">horizontal-setter</code>, while the setter method for the second slot is added to the generic function <code class="Code T1.Text1">vertical-setter.</code></p>
+<p class="T1.Text1">The following two code fragments are equivalent. Each returns the horizontal coordinate of a point:</p>
+<pre class="Cv.Code">
+horizontal(a-point)
+a-point.horizontal
+</pre>
+<p class="T1.Text1">The following three code fragments each set the horizontal coordinate of a point to 10:</p>
+<pre class="Cv.Code">
+horizontal-setter(10, my-point)
+horizontal(my-point) := 10
+my-point.horizontal := 10
+</pre>
+<p class="T1.Text1"><a name="MARKER-2-604"></a>A slot setter method returns its new value argument.</p>
+<a name="HEADING42-11"></a>
+<a name="UID-Types_and_Classes-1861"></a>
+<h2 class="H2.Heading2"> <a name="MARKER-2-605"></a>Slot Inheritance</h2>
+<p class="T1.Text1">Slots are inherited from superclasses.</p>
+<p class="T1.Text1">The collection of all the getter and setter generic functions for slots specified in a class or inherited from its superclasses must not contain any duplicates.</p>
+<p class="T1.Text1"><a name="MARKER-2-606"></a><a name="MARKER-2-607"></a>If a superclass is inherited through multiple paths, its slots are inherited once. For example, if class <i class="Parameter T1.Text1">A</i> has direct superclasses <i class="Parameter T1.Text1">B</i> and <i class="Parameter T1.Text1">C</i>, and both <i class="Parameter T1.Text1">B</i> and <i class="Parameter T1.Text1">C</i> have <i class="Parameter T1.Text1">D</i> as a direct superclass, <i class="Parameter T1.Text1">A</i> inherits from <i class="Parameter T1.Text1">D</i> both through <i class="Parameter T1.Text1">B</i> and through <i class="Parameter T1.Text1">C</i>, but the slots defined by <i class="Parameter T1.Text1">D</i> are only counted once. Because of this, multiple inheritance does not by itself create any duplicates among the getters and setters.</p>
+<p class="T1.Text1">Note that two classes that specify a slot with the same getter or setter generic function are <b class="Bold T1.Text1"><a name="MARKER-2-608"></a>disjoint<i class="Bold T1.Text1"> </i></b>--they can never have a common subclass and no object can be an instance of both classes.<a name="MARKER-2-609"></a><b class="T1.Text1"></b></p>
+<a name="HEADING42-16"></a>
+<a name="UID-Types_and_Classes-1868"></a>
+<h2 class="H2.Heading2"> <a name="MARKER-9-610"></a>Slot Specifications</h2>
+<p class="T1.Text1">A slot specification describes a slot.</p>
+<p class="T1.Text1"><a name="MARKER-2-611"></a>A slot specification must include the name of the getter of the slot (i.e., the name of the generic function to which the getter method will be added). This is how slots are identified. The specification may optionally include the name of the setter method. If it does not, a default name is generated by appending "<code class="cv T1.Text1">-setter</code>" to the name of the getter.</p>
+<p class="T1.Text1">A number of other options are available in slot specifications:</p>
+<ul class="B1.Bullet1">
+<li class="B1.Bullet1"><a name="MARKER-2-612"></a>An initial value for the slot may be specified with an <b class="bold B1.Bullet1"><a name="MARKER-2-613"></a>init specification</b>.</li>
+<li class="B1.Bullet1"><a name="MARKER-2-614"></a>An init-keyword may be specified. This allows a value for the slot to be supplied when an instance is created.</li>
+<li class="B1.Bullet1"><a name="MARKER-2-615"></a>Slot allocation may be specified. This controls whether storage for the slot is allocated in each instance, or some other way. </li>
+<li class="B1.Bullet1"><a name="MARKER-2-616"></a>A slot may be specifed as constant. There will be no setter for the slot.</li>
+<li class="B1.Bullet1"><a name="MARKER-2-617"></a>A type may be specified. The value of the slot will be constrained to be an instance of that type.</li>
+<li class="B1.Bullet1"><a name="MARKER-2-618"></a>A sealing directive may be specified. See <a href="drm_75.html#MARKER-9-1123" class="B1.Bullet1">"Define Sealed Domain" on page 135</a> for a complete description of the sealing constraints imposed by this directive.
+<p class="T1.Text1">For the complete syntax of slot specifications, see the reference entry of <code class="Code T1.Text1">define class</code> on <a href="drm_112.html#MARKER-9-2013" class="T1.Text1">page 378</a>.</p>
+<p class="T1.Text1">The following example defines a class with three slots, using a variety of slot options. </p></li>
+</ul>
+<pre class="Cv.Code">
+define class &lt;window&gt; (&lt;view&gt;)
+  slot title :: &lt;string&gt; = "untitled";
+  slot position :: &lt;point&gt;, init-keyword: window-position:;
+  slot color, init-keyword: color:, init-value: $blue-color;
+end class &lt;window&gt;;
+</pre>
+<a name="HEADING42-29"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-619"></a><a name="MARKER-9-620"></a>Init Specifications</h3>
+<p class="T0.Text0">An init specification provides a default initial value for a slot. It can do this directly (if it is an init specification of a slot) or it can do it indirectly by providing a default value for an init-keyword (if it is an init specification of an init-keyword).</p>
+<p class="T1.Text1">There are three kinds of init specifications:</p>
+<ul class="B1.Bullet1">
+<li class="B1.Bullet1">An <b class="bold B1.Bullet1"><a name="MARKER-2-621"></a>init value</b> specifies a value that is used to initialize the slot. Each time the slot needs to be initialized, the identical value is used.</li>
+<li class="B1.Bullet1">An <b class="bold B1.Bullet1"><a name="MARKER-2-622"></a>init function</b> specifies a function to be called to generate a value that is used to initialize the slot. Each time the slot needs to be initialized, the function is called and its value is used. This allows slots to be initialized to fresh values, or to values computed from the current program state.</li>
+<li class="B1.Bullet1">An <b class="bold B1.Bullet1"><a name="MARKER-2-623"></a>init expression</b> specifies an expression to be executed to generate a value that is used to initialize the slot. Each time the slot needs to be initialized, the expression is executed and its value is used. This allows slots to be initialized to fresh values, or to values computed from the current program state.
+<p class="T1.Text1">Only one init specification may be supplied in a given slot specification, inherited slot specification, or initialization argument specification.</p>
+<p class="T1.Text1">In general, an <i class="Parameter T1.Text1">init-function</i> will be called and an <i class="Parameter T1.Text1">init-expression</i> will be executed only if its value will actually be used.<a name="MARKER-2-624"></a></p></li>
+</ul>
+<a name="HEADING42-37"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-625"></a>Init-Keywords</h3>
+<p class="T1.Text1">An init-keyword allows the value of a slot to be specified by a keyword argument in the call to <code class="cv T1.Text1">make</code> when an instance is created. An init-keyword may be optional or required.</p>
+<p class="T1.Text1">When the value of a slot is provided by a keyword in a call to <code class="cv T1.Text1">make</code>, it is called an <b class="bold T1.Text1"><a name="MARKER-2-626"></a>initialization argument</b>.</p>
+<p class="T1.Text1">If an init-keyword is specified, the slot is said to be <b class="Bold T1.Text1"><a name="MARKER-2-627"></a>keyword initializable</b>.</p>
+<a name="HEADING42-41"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-628"></a><a name="MARKER-9-629"></a>Slot Allocation</h3>
+<p class="T1.Text1">Options for slot allocation include <code class="cv T1.Text1"><a name="MARKER-2-630"></a>instance</code>, <a name="MARKER-2-631"></a><code class="cv T1.Text1">class</code>, <a name="MARKER-2-632"></a><code class="cv T1.Text1">each-subclass</code>, and <code class="cv T1.Text1"><a name="MARKER-2-633"></a>virtual</code>.</p>
+<p class="T1.Text1"><code class="cv T1.Text1"><a name="MARKER-2-634"></a>instance</code> allocation specifies that each instance gets its own storage for the slot. This is the default.</p>
+<p class="T1.Text1"><a name="MARKER-2-635"></a><code class="cv T1.Text1">class</code> allocation specifies there is only one storage location used by all the general instances of the class. All the instances share a single value for the slot. If the value is changed in one instance, all the instances see the new value.</p>
+<p class="T1.Text1"><code class="cv T1.Text1">each-subclass</code> allocation specifies that the class gets one storage location for the slot, to be used by all the direct instances of the class. In addition, every subclass of the class gets a storage location for the slot, for use by its direct instances.</p>
+<p class="T1.Text1"><code class="cv T1.Text1"><a name="MARKER-2-636"></a>virtual</code> allocation specifies that no storage will be allocated for the slot. If allocation is <code class="cv T1.Text1">virtual</code>, then it is up to the programmer to define methods on the getter and setter generic functions to retrieve and store the value of the slot. Dylan will ensure the existence of generic functions for any specified getter and setter but will not add any methods to them. A virtual slot cannot specify an init specification or init-keyword. Any required initialization for the slot must be performed in a method on <a name="MARKER-2-637"></a><code class="cv T1.Text1">initialize</code>.<a name="MARKER-2-638"></a></p>
+<a name="HEADING42-47"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-639"></a>Constant Slots</h3>
+<p class="T1.Text1">Specifying a slot as constant is equivalent to specifying <code class="cv T1.Text1">setter: #f</code>. If the constant adjective is supplied, it is an error to supply an explicit value for the <code class="cv T1.Text1">setter:</code> keyword in the slot specification. Such slots can only be given values at instance creation time (with an <a name="MARKER-2-640"></a>init specification or <a name="MARKER-2-641"></a>init-keyword).</p>
+<pre class="Cv.Code">
+<code class="cv Cv.Code">define class &lt;person&gt; (&lt;being&gt;)
+  constant slot birthplace, required-init-keyword: birthplace:;
+end class &lt;person&gt;;</code>
+<code class="cv Cv.Code">define class &lt;astronaut&gt; (&lt;person&gt;)
+  constant class slot employer = #&quot;NASA&quot;;
+end class &lt;astronaut&gt;;</code>
+<code class="cv Cv.Code">define class &lt;hair-trigger&gt; (&lt;object&gt;)
+  constant slot error-if-touched;
+end class &lt;hair-trigger&gt;;<a name="MARKER-2-642"></a></code>
+</pre>
+<a name="HEADING42-52"></a>
+<h3 class="H3.Heading3"> <a name="MARKER-2-643"></a>Specializing Slots</h3>
+<p class="T1.Text1">Slots may be specialized by <a name="MARKER-2-644"></a>declaring the type of the slot when a class is created. Specializing a slot has the following effects on the getter and setter methods of the slot:</p>
+<ul class="B1.Bullet1">
+<li class="B1.Bullet1"><a name="MARKER-2-645"></a>The automatically defined slot getter method has its single parameter specialized on the class that specified the slot and has a <a name="MARKER-2-646"></a>return value declaration that indicates that it returns a single value of the type specified for the slot.</li>
+<li class="B1.Bullet1"><a name="MARKER-2-647"></a>The automatically defined slot setter method has its instance argument specialized on the class that specified the slot, has its new-value argument specialized on the type specified for the slot, and has a <a name="MARKER-2-648"></a>return value declaration that indicates that it returns a single value of the type specified for the slot.
+<p class="T1.Text1">The following example demonstrates how an explicitly defined setter method can be used to coerce a slot value of the wrong type (<code class="cv T1.Text1">&lt;sequence&gt;</code>) to the right type (<code class="cv T1.Text1">&lt;simple-object-vector&gt;</code>).</p></li>
+</ul>
+<pre class="Cv.Code">
+   define class &lt;person&gt; (&lt;object&gt;)
+     slot friends :: &lt;simple-object-vector&gt;, init-value: #[];
+   end class;
+   define method friends-setter (f :: &lt;sequence&gt;, p :: &lt;person&gt;)
+     p.friends := as(&lt;simple-object-vector&gt;, f);
+     f;             // return new-value argument
+   end method
+   tom.friends := list(dick, harry);
+</pre>
+<p class="T1.Text1">The assignment expression invokes the method with the new-value parameter specialized on <code class="Code T1.Text1">&lt;sequence&gt;</code>, which reinvokes the function with a new-value argument that is a <code class="Code T1.Text1">&lt;simple-object-vector&gt;</code>, which invokes the slot setter method.<a name="MARKER-2-649"></a></p>
+<a name="HEADING42-61"></a>
+<h3 class="H3.Heading3"> Overriding Slots in Subclasses</h3>
+<p class="T1.Text1"><a name="MARKER-2-650"></a>Some slot options related to instance initialization can be overridden in subclasses. The mechanisms for doing this are described in <a href="drm_43.html#MARKER-9-677" class="T1.Text1">"Inherited Slot Specifications" on page 67</a> and in <a href="drm_43.html#MARKER-9-680" class="T1.Text1">"Initialization Argument Specifications" on page 68</a>.</p>
+<a name="HEADING42-63"></a>
+<h3 class="H3.Heading3"> Using Slots</h3>
+<p class="T1.Text1"><a name="MARKER-2-651"></a><a name="MARKER-2-652"></a>Because slots are accessed through methods in generic functions, they appear to clients just like any other methods in generic functions. It is possible for a value to be stored in a slot in instances of one class, but computed from auxiliary values by instances of another class. <a name="MARKER-2-653"></a>It is possible to filter the value of a slot when it is retrieved or stored. In all of these cases, the interface to the value is a function call, thus hiding the implementation details from clients.</p>
+<p class="T1.Text1">In the following example, the class <code class="Code T1.Text1">&lt;view&gt;</code> stores <code class="Code T1.Text1">position</code> directly, while <code class="Code T1.Text1">&lt;displaced-view&gt;</code> performs a transformation on the value of the slot when storing or retrieving it.</p>
+<pre class="Cv.Code">
+define class &lt;view&gt; (&lt;object&gt;)
+  instance slot position;
+end class;
+define class &lt;displaced-view&gt; (&lt;view&gt;)
+end class;
+define method position (v :: &lt;displaced-view&gt;)
+  // call the  inherited method (the raw slot getter)
+  // and transform the result
+  displace-transform (next-method (v));
+end method;
+define method position-setter (new-position,
+                               v :: &lt;displaced-view&gt;)
+  // call the inherited method (the raw slot setter)
+  // on the result of untransforming the position
+  next-method (displace-untransform (new-position),
+               v);
+  new-position;  // return the new position
+end method;
+</pre>
+<p class="T1.Text1">In other situations, a programmer will want storage in an instance for a slot value, but will want to perform some auxiliary action whenever the slot is accessed. In this case, the programmer should define two slots:  an instance slot to provide the storage and a virtual slot to provide the interface. In general, only the virtual slot will be documented. The instance slot will be an internal implementation used by the virtual slot for storage. An example of such use would be a slot that caches a value.</p>
+<pre class="Cv.Code">
+define class &lt;shape&gt; (&lt;view&gt;)
+  virtual slot image;
+  instance slot cached-image, init-value: #f;
+  ...
+end class;
+define method image (shape :: &lt;shape&gt;)
+  cached-image (shape)
+    | (cached-image (shape) := compute-image (shape));
+end method;
+define method image-setter (new-image, shape :: &lt;shape&gt;)
+  cached-image (shape) := new-image;
+end method;<a name="MARKER-2-654"></a><a name="MARKER-2-655"></a>
+</pre>
+
+</div>
+
+<div class="wm-div-footnotes">
+
+<div class="wm-div-footnotes">
+<hr />
+
+<a name="FOOTNOTE-2">[2] </a>
+This is in contrast to some other languages where slots are accessed through named value references.
+
+</div>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC --><ul class="footer">
+<li class="footer"><a rel="BELOW" href="drm_42.html#HEADING42-11" class="footer">Slot Inheritance</a></li>
+<li class="footer"><a rel="BELOW" href="drm_42.html#HEADING42-16" class="footer">Slot Specifications</a></li>
+<li class="footer"><a rel="BELOW" href="drm_42.html#HEADING42-29" class="footer">Init Specifications</a></li>
+<li class="footer"><a rel="BELOW" href="drm_42.html#HEADING42-37" class="footer">Init-Keywords</a></li>
+<li class="footer"><a rel="BELOW" href="drm_42.html#HEADING42-41" class="footer">Slot Allocation</a></li>
+<li class="footer"><a rel="BELOW" href="drm_42.html#HEADING42-47" class="footer">Constant Slots</a></li>
+<li class="footer"><a rel="BELOW" href="drm_42.html#HEADING42-52" class="footer">Specializing Slots</a></li>
+<li class="footer"><a rel="BELOW" href="drm_42.html#HEADING42-61" class="footer">Overriding Slots in Subclasses</a></li>
+<li class="footer"><a rel="BELOW" href="drm_42.html#HEADING42-63" class="footer">Using Slots</a></li>
+</ul>
+
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_43.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_41.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_38.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>

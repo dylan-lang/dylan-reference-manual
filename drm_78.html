@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="top" href="drm_1.html" />
+<link rel="up" href="drm_76.html" />
+<link rel="prev" href="drm_77.html" />
+<link rel="next" href="drm_79.html" />
+<link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+<title>Extensible Grammar</title>
+</head>
+<body>
+
+<div class="wm-div-body">
+<a name="HEADING78"></a>
+
+<div class="wm-div-headers">
+<p class="header"><a href="drm_79.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_77.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_76.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="header">10 Macros</p>
+
+</div>
+<a name="HEADING78-0"></a>
+<a name="UID-Macros-1543"></a>
+<h1 class="H1.Heading1"> Extensible Grammar</h1>
+<p class="T1.Text1"><a name="MARKER-2-1210"></a><a name="MARKER-2-1211"></a>There are three kinds of macros: definition macros, which extend the available set of definitions; <a name="MARKER-2-1212"></a>statement macros, which extend the available set of statements; and <a name="MARKER-2-1213"></a>function macros, which syntactically resemble function calls but are more flexible. <a name="MARKER-2-1214"></a>Named value references and <a name="MARKER-2-1215"></a>local declarations cannot be macro calls. Only statements, function calls, and definitions are extensible.</p>
+<a name="HEADING78-2"></a>
+<a name="UID-Macros-1546"></a>
+<h2 class="H2.Heading2"> Definition Macros</h2>
+<p class="T1.Text1"><a name="MARKER-2-1216"></a>A definition macro extends the <i class="Parameter T1.Text1">definition-macro-call </i>production of the Dylan phrase grammar to recognize additional constructs as valid definitions, by creating a new <em class="T1.Text1">define-body-word<i class="T1.Text1"> </i></em>that is recognized by the following grammar line:</p>
+<p class="T1.Text1"><i class="italics T1.Text1">definition-macro-call:<br /><code class="italics T1.Text1">    define  modifiers<em class="Subscript italics T1.Text1">opt  define-body-word  body-fragmentopt definition-tail</em></code></i></p>
+<p class="T1.Text1">or by creating a new <em class="T1.Text1">define-list-word<i class="T1.Text1"> </i></em>that is recognized by the following grammar line:</p>
+<p class="T1.Text1"><i class="T1.Text1">definition-macro-call:<br /><code class="T1.Text1">   define</code></i>  modifiers<em class="Subscript T1.Text1">opt</em>  <em class="T1.Text1">define-list-word</em>  list-fragment<em class="Subscript T1.Text1">opt</em></p>
+<p class="T1.Text1">This allows programmers to extend Dylan by defining new kinds of definitions. The syntax of the definition must be parseable by one of these two predefined grammar rules. The first handles body-style definitions like <code class="cv T1.Text1">define class</code>, <code class="cv T1.Text1">define method</code>, and <code class="cv T1.Text1">define module</code>,  while the second handles list-style definitions like <code class="cv T1.Text1">define constant</code>. See <a href="drm_116.html#MARKER-9-2090" class="T1.Text1">Appendix A, "BNF,"</a> for the details.</p>
+<p class="T1.Text1">The new <em class="T1.Text1">define-body-word<i class="T1.Text1">  </i></em>or <em class="T1.Text1">define-list-word<i class="T1.Text1">  </i></em>becomes a partially reserved word in each module where the macro definition is visible. In particular a <em class="T1.Text1">define-body-word<i class="T1.Text1">  </i></em>or <em class="T1.Text1">define-list-word<i class="T1.Text1">  </i></em>cannot be used as a modifier in a definition. It can still be used as a variable-name.<a name="MARKER-2-1217"></a></p>
+<a name="HEADING78-9"></a>
+<a name="UID-Macros-1562"></a>
+<h2 class="H2.Heading2"> Statement Macros</h2>
+<p class="T1.Text1"><a name="MARKER-2-1218"></a>A statement macro extends the <i class="Parameter T1.Text1">statement</i> production of the Dylan phrase grammar to recognize additional constructs as valid statements by creating a new <em class="T1.Text1">begin-word</em> that is recognized by the following grammar line:</p>
+<p class="T1.Text1"><i class="T1.Text1">statement:<br /></i>   <em class="T1.Text1">begin-word</em>  body-fragment<em class="Subscript T1.Text1">opt</em> end-clause</p>
+<p class="T1.Text1">The new <em class="T1.Text1">begin-word</em> becomes a reserved word in each module where the macro definition is visible. It can only be used at the beginning and end of this new statement.<a name="MARKER-2-1219"></a></p>
+<a name="HEADING78-13"></a>
+<a name="UID-Macros-1569"></a>
+<h2 class="H2.Heading2"> Function Macros</h2>
+<p class="T1.Text1"><a name="MARKER-2-1220"></a>A function macro extends the <i class="Parameter T1.Text1">function-macro-call </i>production of the Dylan phrase grammar to recognize additional constructs by creating a new <em class="T1.Text1">function-word</em> that is recognized by the following grammar line:</p>
+<p class="T1.Text1"><i class="italics T1.Text1">function-macro-call:<br /></i>   function-word<i class="T1.Text1">  <code class="cv T1.Text1">(  body-fragment<em class="Subscript cv T1.Text1">opt )</em></code></i></p>
+<p class="T1.Text1">In addition, a function macro can be invoked by any of the shorthand syntax constructs available for invoking functions. In this case, the arguments are always parsed expression fragments, as described on <a href="drm_77.html#MARKER-9-1199" class="T1.Text1">page 146</a>.</p>
+<p class="T1.Text1">The new <em class="T1.Text1">function-word</em> becomes a reserved word in each module where the macro definition is visible. It can only be used at the beginning of a macro call.<a name="MARKER-2-1221"></a><a name="MARKER-2-1222"></a></p>
+
+</div>
+
+<div class="wm-div-footers">
+
+<div class="wm-div-toc">
+
+<!-- TOC --><ul class="footer">
+<li class="footer"><a rel="BELOW" href="drm_78.html#HEADING78-2" class="footer">Definition Macros</a></li>
+<li class="footer"><a rel="BELOW" href="drm_78.html#HEADING78-9" class="footer">Statement Macros</a></li>
+<li class="footer"><a rel="BELOW" href="drm_78.html#HEADING78-13" class="footer">Function Macros</a></li>
+</ul>
+
+
+</div>
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a href="drm_79.html" class="header"><img alt="next" src="next.gif" class="header" /></a> <a href="drm_77.html" class="header"><img alt="prev" src="prev.gif" class="header" /></a> <a href="drm_76.html" class="header"><img alt="up" src="up.gif" class="header" /></a> <a href="drm_1.html" class="header"><img alt="top" src="top.gif" class="header" /></a> <a href="drm_2.html" class="header"><img alt="content" src="content.gif" class="header" /></a> <a href="drm_127.html" class="header"><img alt="index" src="index.gif" class="header" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+
+</div>
+</body>
+</html>
