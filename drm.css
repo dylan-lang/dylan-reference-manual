@@ -63,7 +63,7 @@ caption, th			{ text-align: left }
 th, td 	      	  	     	{ padding-top: 0.5em; padding-bottom: 0.5em }	/* space rows about a line height */
 th + th, td + td 	      	{ padding-left: 2em; vertical-align: baseline }
 
-th.primary			{ min-width: 10em } /* the "primary" column should avoid wrapping */
+th.primary, td.primary		{ min-width: 10em } /* the "primary" column should avoid wrapping */
 
 /*
   Add some space between the "Table ##-##" number and the table title.
