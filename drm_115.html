@@ -48,17 +48,17 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2072"></a>Stores a new value in a location.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">place<code class="Code Parameter Cliche"> := new-value</code></i></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">place</i> <code class="BNF Cliche">expression<em class="BNF Cliche">bnf</em></code></p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">new-value</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">expression<em class="BNF RP.RoutineParam">bnf</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">new-value</i>, an instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">:=</code> stores <i class="Parameter Cliche">new-value</i> in <i class="Parameter Cliche">place</i> and returns <i class="Parameter Cliche">new-value</i>.</p>
 <p class="T1.Text1"><i class="Parameter T1.Text1">place</i> may be a variable, a getter function or macro call with a corresponding setter, a slot access, or an element reference.</p>
 <p class="T1.Text1"><i class="Parameter T1.Text1">new-value</i> may be any operand. It is executed, and its value is stored in <i class="Parameter T1.Text1">place</i>.</p>
@@ -117,17 +117,17 @@ element-setter (&quot;quux&quot;, foo, 2).<a name="MARKER-2-2073"></a>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2075"></a>Returns the value of the first of two operands that is true.<a name="MARKER-9-2076"></a></p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">one<code class="MetaSyntax Parameter Cliche">  | another</code></i></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">one</i> <code class="BNF Cliche">expression<em class="BNF Cliche">bnf</em></code></p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">another</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">expression<em class="BNF RP.RoutineParam">bnf<i class="Parameter BNF RP.RoutineParam"></i></em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">|</code> (<a name="MARKER-2-2077"></a>logical or) executes <i class="Parameter Cliche">one</i>. If the first value of <i class="Parameter Cliche">one</i> is true, that value is returned and <i class="Parameter Cliche">another</i> is not executed. Otherwise <i class="Parameter Cliche">another</i> is executed and its values are returned.</p></dd>
 </dl>
 <a name="HEADING115-100"></a>
@@ -135,17 +135,17 @@ element-setter (&quot;quux&quot;, foo, 2).<a name="MARKER-2-2073"></a>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2079"></a>If the value of a first operand is true, executes a second operand and returns its values.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">one<code class="Code Parameter Cliche"> &amp; another</code></i>  fi<b class="Cliche">  <i class="Parameter Cliche">values</i></b></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">one<code class="Code Parameter Cliche"> &amp; another</code></i>  fi<strong class="Cliche">  <i class="Parameter Cliche">values</i></strong></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">one</i> <code class="BNF Cliche">expression<em class="BNF Cliche">bnf</em></code></p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">another</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">expression<em class="BNF RP.RoutineParam">bnf</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">&amp;</code> (<a name="MARKER-2-2080"></a>logical and) executes <i class="Parameter Cliche">one</i>. If the first value returned by <i class="Parameter Cliche">one</i> is false, <code class="Code Cliche">#f</code> is returned and <i class="Parameter Cliche">another</i> is not executed. Otherwise, <i class="Parameter Cliche">another</i> is executed and its values are returned.<a name="MARKER-2-2081"></a></p>
 <a name="LINK-Built-In_Macros-lastpage"></a></dd>
 </dl>

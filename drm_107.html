@@ -32,19 +32,19 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1919"></a>Signals a condition.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signatures:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">signal<b class="cv Cliche">   <i class="Parameter cv Cliche">condition   =&gt; #rest  values<br />signal   string #rest arguments   =&gt; #rest values</i></b></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments (1):</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signatures:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">signal<strong class="cv Cliche">   <i class="Parameter cv Cliche">condition   =&gt; #rest  values<br />signal   string #rest arguments   =&gt; #rest values</i></strong></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments (1):</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">condition</i> An instance of <code class="cv Cliche">&lt;condition&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments (2):</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments (2):</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">string</i> An instance of <code class="cv Cliche">&lt;string&gt;</code>.</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">arguments</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code class="cv RP.RoutineParam">&lt;object&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">values</i> Instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Signals the <i class="Cliche">condition</i>, trying each active dynamic handler, the most recent first. If all dynamic handlers decline, <code class="Cliche">signal</code> calls <code class="Cliche">default-handler(<i class="Cliche">condition)</i></code>. If a handler returns, all the values that it returned are returned from <code class="Cliche">signal</code>. If <code class="Cliche">signal</code> returns when <i class="Cliche">condition</i>'s recovery protocol does not allow returning, some handler has violated protocol; <code class="Cliche">signal</code> does not check for this error. If <i class="Cliche">condition</i> is a restart, the caller of <code class="Cliche">signal</code> should always assume that it might return.</p>
 <p class="T1.Text1">The second form signals a condition of type <code class="T1.Text1">&lt;simple-warning&gt;</code>. </p></dd>
 </dl>
@@ -53,19 +53,19 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1921"></a>Signals a nonrecoverable error.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signatures:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">error</code>   <i class="Parameter Cliche">condition<b class="Parameter Cliche">   =&gt;  {will never return}<br /><code class="cv Parameter Cliche">error</code></b></i>  <i class="Parameter Cliche">string</i> <code class="cv Cliche">#rest<b class="cv Cliche"> <i class="Parameter cv Cliche">arguments   =&gt;  {will never return}</i></b></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments (1):</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signatures:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">error</code>   <i class="Parameter Cliche">condition<strong class="Parameter Cliche">   =&gt;  {will never return}<br /><code class="cv Parameter Cliche">error</code></strong></i>  <i class="Parameter Cliche">string</i> <code class="cv Cliche">#rest<strong class="cv Cliche"> <i class="Parameter cv Cliche">arguments   =&gt;  {will never return}</i></strong></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments (1):</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">condition</i> An instance of <code class="cv Cliche">&lt;condition&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments (2):</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments (2):</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">string</i> An instance of <code class="cv Cliche">&lt;string&gt;</code>.</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">arguments</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code class="cv RP.RoutineParam">&lt;object&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> None. <code class="Code Cliche">error</code> will never return.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Cliche">error</code> is similar to <code class="Cliche">signal</code> but never returns; if a handler returns, <code class="Cliche">error</code> invokes the debugger immediately. <code class="Cliche">error</code> is used to make it clear that a program does not expect to receive control again after signaling a condition and might enable the compiler to generate slightly more compact code.</p>
 <p class="T1.Text1">The second form signals a condition of type <code class="T1.Text1">&lt;simple-error&gt;</code>.</p></dd>
 </dl>
@@ -74,15 +74,15 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1923"></a>Signals a correctable error.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signatures:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">cerror<b class="cv Cliche">   <i class="Parameter cv Cliche">restart-description condition   =&gt;  false<br />cerror   restart-description string #rest arguments  =&gt;  false</i></b></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments (1):</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signatures:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">cerror<strong class="cv Cliche">   <i class="Parameter cv Cliche">restart-description condition   =&gt;  false<br />cerror   restart-description string #rest arguments  =&gt;  false</i></strong></code></p></dd>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments (1):</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">restart-description</i>  An instance of <code class="cv Cliche2">&lt;string&gt;</code>, interpreted as a format string.</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">condition</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;condition&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments (2):</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments (2):</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">restart-description </i>An instance of <code class="cv Cliche2">&lt;string&gt;</code>, interpreted as a format string.</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">string</i></dt>
@@ -90,9 +90,9 @@
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">arguments</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code class="cv RP.RoutineParam">&lt;object&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">false</i> <code class="cv Cliche">#f</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">cerror</code> is the same as <code class="cv Cliche">error</code> but first establishes a handler for<code class="Cliche"> &lt;simple-restart&gt;</code>, with a format string of <i class="Parameter Cliche">restart-description</i> and format arguments of a sequence containing the <i class="Parameter Cliche">arguments</i>.</p>
 <p class="T1.Text1">If the restart handler is invoked, <code class="cv T1.Text1">cerror</code> returns <code class="cv T1.Text1">#f</code>; otherwise, <code class="cv T1.Text1">cerror</code> never returns. If <code class="cv T1.Text1">cerror</code> returns, the program should take the corrective actions promised in the <i class="Parameter T1.Text1">restart-description</i>. <code class="cv T1.Text1">cerror</code> is the standard way to signal correctable errors when no special class of restart condition is required.</p></dd>
 </dl>
@@ -101,21 +101,21 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Invokes the debugger<a name="MARKER-9-1925"></a>.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signatures:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">break<b class="cv Cliche">   <i class="Parameter cv Cliche">condition  =&gt;  false<br />break   string #rest arguments   =&gt;  false<br />break  =&gt;  false</i></b></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments (1):</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signatures:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">break<strong class="cv Cliche">   <i class="Parameter cv Cliche">condition  =&gt;  false<br />break   string #rest arguments   =&gt;  false<br />break  =&gt;  false</i></strong></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments (1):</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">condition</i> An instance of <code class="cv Cliche">&lt;condition&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments (2):</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments (2):</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">string</i> An instance of <code class="cv Cliche">&lt;string&gt;</code>, interpreted as a format string.</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">arguments</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code class="cv RP.RoutineParam">&lt;object&gt;</code>, interpreted as format arguments.</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments (3):</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments (3):</strong></dt>
 <dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">false</i> <code class="Code Cliche">#f</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Obtains a condition in the same way as <code class="Cliche">signal</code> but then invokes the debugger immediately without signaling first. <code class="Cliche">break</code> establishes a <code class="Cliche">&lt;simple-restart&gt;</code> so the debugger can continue execution. This is useful for breakpoints. <code class="Cliche">break</code> always returns <code class="Cliche">#f</code>. With no arguments, a default message string is used.</p>
 <p class="T1.Text1">The behavior of the debugger is implementation-defined.</p></dd>
 </dl>
@@ -124,17 +124,17 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Checks an object to ensure that it is an instance of a specified type.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">check-type <i class="Parameter cv Cliche">value type<b class="Parameter cv Cliche">   =&gt;  value</b></i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">check-type <i class="Parameter cv Cliche">value type<strong class="Parameter cv Cliche">   =&gt;  value</strong></i></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">value</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">type</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;type&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">value</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Checks <i class="Parameter Cliche">value</i> to ensure that it is an instance of <i class="Parameter Cliche">type</i>, and signal an error of type <code class="cv Cliche">&lt;type-error&gt;</code> if it is not.</p></dd>
 </dl>
 <a name="HEADING107-49"></a>
@@ -142,13 +142,13 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Aborts and never returns.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">abort</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> None. <code class="Cliche">abort</code> will never return.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Performs <code class="Cliche">error(make (&lt;abort&gt;))</code>.</p>
 <p class="T1.Text1">This function is provided as a convenient shortcut. The call is to <code class="T1.Text1">error</code>, rather than to <code class="T1.Text1">signal</code>, to guarantee that <code class="T1.Text1">abort</code> will never return.</p></dd>
 </dl>
@@ -160,13 +160,13 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1929"></a>Called if no dynamic handler handles a condition.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">default-handler <i class="Parameter cv Cliche">condition<b class="Parameter cv Cliche">   =&gt; #rest  values</b></i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">default-handler <i class="Parameter cv Cliche">condition<strong class="Parameter cv Cliche">   =&gt; #rest  values</strong></i></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">condition</i> An instance of <code class="cv Cliche">&lt;condition&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">values</i> Instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Called if no dynamic handler handles a condition.</p></dd>
 </dl>
 <a name="HEADING107-63"></a>
@@ -186,13 +186,13 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1637"></a>Called to query the user and restart.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">restart-query <i class="Parameter cv Cliche">restart<b class="Parameter cv Cliche">   =&gt; #rest  values</b></i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">restart-query <i class="Parameter cv Cliche">restart<strong class="Parameter cv Cliche">   =&gt; #rest  values</strong></i></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">restart</i> An instance of <code class="cv Cliche">&lt;restart&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">values</i> Instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Engages the interactive user in a dialog and stores the results in slots of <i class="Parameter Cliche">restart</i>.</p>
 <p class="T1.Text1">This function is designed to be called from a handler, after making a restart and before signaling it. The debugger uses <code class="T1.Text1">restart-query</code>, for example. </p></dd>
 </dl>
@@ -204,13 +204,13 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1933"></a>Queries the user for values to return.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">return-query <i class="Parameter cv Cliche">condition<b class="Parameter cv Cliche">   =&gt; #rest  values</b></i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">return-query <i class="Parameter cv Cliche">condition<strong class="Parameter cv Cliche">   =&gt; #rest  values</strong></i></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">condition</i> An instance of <code class="cv Cliche">&lt;condition&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">values</i> Instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> If the recovery protocol of <i class="Cliche">condition</i> allows returning values, this engages the program user in a dialog and returns the results as any number of values, which the handler should return.</p>
 <p class="T1.Text1"><code class="T1.Text1">return-query</code> should not be called if <code class="T1.Text1">return-allowed?</code> returns <code class="T1.Text1">#f</code>. Programs that define condition classes whose recovery protocol allows returning values should ensure that there is an appropriate method for this function defined on or inherited by the condition class.</p></dd>
 </dl>
@@ -222,13 +222,13 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1937"></a>Applies a function to all dynamically active handlers.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">do-handlers <i class="Parameter cv Cliche">function<b class="Parameter cv Cliche">   =&gt;  false</b></i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">do-handlers <i class="Parameter cv Cliche">function<strong class="Parameter cv Cliche">   =&gt;  false</strong></i></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">function</i> An instance of <code class="cv Cliche">&lt;function&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">false</i> <code class="cv Cliche">#f</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Applies<i class="Cliche"> function</i> to all dynamically active handlers, the most recently established first. <i class="Cliche">function</i> receives four arguments: <i class="Cliche">type</i>, <i class="Cliche">test</i>, <i class="Cliche">function</i>, and <i class="Cliche">init-arguments</i>. The arguments describe a dynamically active handler. All arguments have dynamic extent and must not be modified. <i class="Cliche">test</i> defaults to a function that always returns <code class="Cliche">#t</code>. <i class="Cliche">init-arguments</i> will be an empty sequence if it was not supplied by the handler.</p></dd>
 </dl>
 <a name="HEADING107-94"></a>
@@ -236,13 +236,13 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1939"></a>Returns true if a condition's recovery protocol allows returning values.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">return-allowed? <i class="Parameter cv Cliche">condition<b class="Parameter cv Cliche">   =&gt;  boolean</b></i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">return-allowed? <i class="Parameter cv Cliche">condition<strong class="Parameter cv Cliche">   =&gt;  boolean</strong></i></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">condition</i> An instance of <code class="cv Cliche">&lt;condition&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">boolean</i> An instance of <code class="cv Cliche">&lt;boolean&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Returns <code class="Cliche">#t</code> if the recovery protocol of <i class="Cliche">condition</i> allows returning values, or <code class="Cliche">#f</code> if it does not.</p>
 <p class="T1.Text1">There is a default method for <code class="T1.Text1">&lt;condition&gt;</code> that returns <code class="T1.Text1">#f</code>. Programs which define condition classes whose recovery protocol allows returning values should ensure that there is an appropriate method for this function defined on or inherited by the condition class.</p></dd>
 </dl>
@@ -254,13 +254,13 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1941"></a>Returns a description of a condition's returned values.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">return-description <i class="Parameter cv Cliche">condition<b class="Parameter cv Cliche">  =&gt;  description</b></i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">return-description <i class="Parameter cv Cliche">condition<strong class="Parameter cv Cliche">  =&gt;  description</strong></i></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">condition</i> An instance of <code class="cv Cliche">&lt;condition&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">description</i> <code class="Code Cliche">#f</code> or an instance of <code class="cv Cliche">&lt;string&gt;</code> or an instance of <code class="cv Cliche">&lt;restart&gt;</code>. </p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> If the recovery protocol of this condition allows returning values, <code class="Cliche">return-description</code> returns a description of the meaning of returning values.</p>
 <p class="T1.Text1">This <i class="T1.Text1">description</i> can be a restart, a string, or <code class="T1.Text1">#f</code>. <code class="T1.Text1">return-description</code> should not be called if <code class="T1.Text1">return-allowed?</code> returns <code class="T1.Text1">#f</code>. If you define your own condition class whose recovery protocol allows returning values, you need to define a method for <code class="T1.Text1">return-description</code> unless the inherited method is suitable.</p></dd>
 </dl>
@@ -269,13 +269,13 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-2-1681"></a>Returns the format string of a simple condition.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">condition-format-string <i class="Parameter cv Cliche">simple-condition<b class="Parameter cv Cliche">   =&gt; format-string</b></i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">condition-format-string <i class="Parameter cv Cliche">simple-condition<strong class="Parameter cv Cliche">   =&gt; format-string</strong></i></code></p></dd>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">simple-condition </i>An instance of <code class="cv Cliche2">&lt;simple-error&gt;</code>, <code class="cv Cliche2">&lt;simple-warning&gt;</code>, or <code class="cv Cliche2">&lt;simple-restart&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">format-string</i> An instance of <code class="cv Cliche">&lt;string&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Returns the format string that was supplied as an initialization argument when the <i class="Parameter Cliche">simple-condition</i> was created.</p></dd>
 </dl>
 <a name="HEADING107-116"></a>
@@ -283,13 +283,13 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1945"></a>Returns the format arguments of a simple condition.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">condition-format-arguments <i class="Parameter cv Cliche">simple-condition<b class="Parameter cv Cliche">   =&gt;  format-args</b></i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">condition-format-arguments <i class="Parameter cv Cliche">simple-condition<strong class="Parameter cv Cliche">   =&gt;  format-args</strong></i></code></p></dd>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">simple-condition </i>An instance of <code class="cv Cliche2">&lt;simple-error&gt;</code>, <code class="cv Cliche2">&lt;simple-warning&gt;</code>, or <code class="cv Cliche2">&lt;simple-restart&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">format-args</i> An instance of <code class="cv Cliche">&lt;sequence&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Returns the sequence of format arguments that was supplied as an initialization argument when the <i class="Parameter Cliche">simple-condition</i> was created.</p></dd>
 </dl>
 <a name="HEADING107-122"></a>
@@ -297,13 +297,13 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1947"></a>Returns the value that was not of the expected type.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">type-error-value <i class="Parameter cv Cliche">type-error<b class="Parameter cv Cliche">   =&gt; object</b></i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">type-error-value <i class="Parameter cv Cliche">type-error<strong class="Parameter cv Cliche">   =&gt; object</strong></i></code></p></dd>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">type-error</i> An instance of <code class="cv Cliche2">&lt;type-error&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Returns the value that was not of the expected type, and thereby led to the type error.</p></dd>
 </dl>
 <a name="HEADING107-128"></a>
@@ -311,13 +311,13 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1949"></a>Returns the expected type of the type check that led to the type error.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">type-error-expected-type <i class="Parameter cv Cliche">type-error<b class="Parameter cv Cliche">   =&gt; type</b></i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">type-error-expected-type <i class="Parameter cv Cliche">type-error<strong class="Parameter cv Cliche">   =&gt; type</strong></i></code></p></dd>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">type-error</i> An instance of <code class="cv Cliche2">&lt;type-error&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">type</i> An instance of <code class="cv Cliche">&lt;type&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Returns the expected type of the type check that led to the type error.<a name="MARKER-2-1950"></a><a name="MARKER-2-1951"></a><a name="MARKER-2-1952"></a></p>
 <p class="T1.Text1"></p>
 <a name="LINK-Built-In_Functions-lastpage"></a><a name="LINK-Built-In_ObjectsTOC-firstpage"></a></dd>

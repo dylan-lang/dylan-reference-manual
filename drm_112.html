@@ -69,9 +69,9 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-2-1999"></a><a name="MARKER-9-2000"></a>Defines and initializes a variable binding in the current module.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">define { <i class="Parameter Code Cliche">adjective }* variable variables = init</i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">adjective <code class="BNF Parameter Cliche2">unreserved-name<em class="BNF Parameter Cliche2">bnf</em></code></i>. The adjectives allowed are implementation dependent.</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">variables</i></dt>
@@ -79,7 +79,7 @@
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">init</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">expression<em class="BNF RP.RoutineParam">bnf</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">define variable</code> defines variable bindings in the current module.</p>
 <p class="T1.Text1">The values returned by <i class="T1.Text1">init</i> are used to initialize the bindings. The first value returned is bound to the first <i class="Parameter T1.Text1">variable</i>, the second value to the second <i class="Parameter T1.Text1">variable</i>, etc. The last <i class="Parameter T1.Text1">variable</i> may be preceded by <code class="Code T1.Text1">#rest</code>, in which case it is bound to a sequence containing all the remaining values.</p>
 <p class="T1.Text1">If more than one binding is defined, the <i class="Parameter T1.Text1">variables</i> are enclosed in parentheses and separated by commas.</p></dd>
@@ -103,9 +103,9 @@ define variable (*whole-part* :: &lt;integer&gt;, *remainder* :: &lt;real&gt;)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2003"></a>Defines and initializes a constant binding in the current module. </p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">define { <i class="Parameter Code Cliche">adjective }* constant constants = init</i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">adjective <code class="BNF Parameter Cliche2">unreserved-name<em class="BNF Parameter Cliche2">bnf</em></code></i>. The adjectives allowed are implementation dependent.</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">constants</i></dt>
@@ -113,7 +113,7 @@ define variable (*whole-part* :: &lt;integer&gt;, *remainder* :: &lt;real&gt;)
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">init</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">expression<em class="BNF RP.RoutineParam">bnf</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <a name="MARKER-2-2004"></a><code class="cv Cliche">define constant</code> defines constant bindings in the current module.</p>
 <p class="T1.Text1">The values returned by <i class="T1.Text1">init</i> are used to initialize the constant bindings. The first value returned is bound to the first <i class="Parameter T1.Text1">constant</i>, the second value to the second <i class="Parameter T1.Text1">constant</i>, etc. The last <i class="Parameter T1.Text1">constant</i> may be preceded by <code class="Code T1.Text1">#rest</code>, in which case it is bound to a sequence containing all the remaining values.</p>
 <p class="T1.Text1">If more than one <i class="Parameter T1.Text1">constant</i> is defined, the <i class="Parameter T1.Text1">constants</i> are enclosed in parentheses and separated by commas.</p></dd>
@@ -133,9 +133,9 @@ define constant $start-time :: &lt;integer&gt; = get-current-time();
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2007"></a>Defines a constant binding in the current module and initializes it to a new generic function.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">define { <i class="Parameter Code Cliche">adjective }* generic name parameter-list [ options ]</i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">adjective <code class="BNF Parameter Cliche2">unreserved-name<em class="BNF Parameter Cliche2">bnf</em></code></i>. The allowed adjectives are <code class="Code Cliche2">sealed</code> and <code class="Code Cliche2">open</code>. These adjectives are mutually exclusive. The default is <code class="cv Cliche2">sealed</code>. Additional implementation-defined adjectives may be supported.</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">name</i></dt>
@@ -147,7 +147,7 @@ define constant $start-time :: &lt;integer&gt; = get-current-time();
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">values</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">variable<em class="BNF RP.RoutineParam">bnf | ( [ values-listbnf ] )</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">define generic</code> is used to define generic functions.</p>
 <p class="T1.Text1"><a name="MARKER-2-2008"></a>It defines a constant module binding with the name <i class="Parameter T1.Text1">name</i>, and initializes it to a new generic function described by the <i class="Parameter T1.Text1">adjectives</i>, <i class="Parameter T1.Text1">parameter-list</i> and <i class="Parameter T1.Text1">options</i>.</p>
 <p class="T1.Text1">The <i class="T1.Text1">adjectives</i> specify whether the generic function is sealed. A complete description of generic function sealing is given in <a href="drm_74.html#MARKER-9-1116" class="T1.Text1">"Declaring Characteristics of Generic Functions" on page 135</a>.</p>
@@ -170,9 +170,9 @@ define generic brew (brand :: &lt;coffee-brand&gt;, #key strength)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2010"></a>Adds a method to a generic function, and potentially defines a constant binding in the current module containing a new generic function.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">define { <i class="Parameter Code Cliche">adjective }* method name parameter-list <br />    [ body ]<br />end [ method ] [ name ]</i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">adjective <code class="BNF Parameter Cliche">unreserved-name<em class="BNF Parameter Cliche">bnf</em></code></i>. The allowed adjective is <code class="Code Cliche">sealed</code>. Additional implementation-defined <i class="Parameter Cliche">adjectives</i> may be supported.</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">name</i></dt>
@@ -184,7 +184,7 @@ define generic brew (brand :: &lt;coffee-brand&gt;, #key strength)
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">body</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">body<em class="BNF RP.RoutineParam">bnf</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <a name="MARKER-2-2011"></a><code class="Cliche">define method</code> creates a method and adds it to the generic function in <i class="Cliche">name</i>. If the module binding <i class="Cliche">name</i>  is not already defined, it is defined as with <code class="Cliche">define generic</code>. Thus,  <code class="Cliche">define method</code> will create a new generic function or extend an old one, as needed.</p>
 <p class="T1.Text1">The <i class="T1.Text1">adjective</i> allows a sealing declaration to be made about the generic function to which the method is added. The effect of this adjective is described in <a href="drm_75.html#MARKER-9-1131" class="T1.Text1">"Abbreviations for Define Sealed Domain" on page 138</a>. </p>
 <p class="T1.Text1">The <i class="T1.Text1">parameter-list</i>  describes the parameters and return values of the method, including their number and type. The method can be called only with arguments that match the types of the parameters, and the method will always return values in the quantity and typed declared. Methods added to a generic function must have parameter lists that are congruent with the generic function's parameter list. A complete description of parameter lists is given in <a href="drm_49.html#MARKER-9-782" class="T1.Text1">"Parameter Lists" on page 84</a>.</p>
@@ -200,9 +200,9 @@ end method tune
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2013"></a>Defines a constant binding in the current module and initializes it to a new class. </p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">define { <i class="Parameter Code Cliche">class-adjective }* class name ( { superclass } ,+ )<br />   { slot-spec | init-arg-spec | inherited-slot-spec } ;*<br />end [ class ] [ name ]</i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">class-adjective<code class="BNF Parameter Cliche2"> unreserved-name<em class="BNF Parameter Cliche2">bnf</em></code></i>. The allowed adjectives are <code class="Code Cliche2">abstract</code>, <code class="Code Cliche2">concrete</code>, <code class="Code Cliche2">primary</code>, <code class="Code Cliche2">free</code>, <code class="Code Cliche2">sealed</code>, and <code class="Code Cliche2">open</code>. Additional implementation-dependent class-adjectives may be supported.</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">name</i></dt>
@@ -244,7 +244,7 @@ end method tune
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">type-option</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="Code RP.RoutineParam">type: expression<em class="Code RP.RoutineParam">bnf</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <a name="MARKER-2-2014"></a><code class="Code Cliche">define class</code> is used to define classes.</p>
 <p class="T1.Text1">It defines a constant module binding with the name <i class="Parameter T1.Text1">name</i>, and initializes it to a new class.</p>
 <p class="T1.Text1">The <i class="T1.Text1">class-adjectives</i> provide sealing information about the class. Among the adjectives, <code class="Code T1.Text1">abstract</code> and <code class="Code T1.Text1">concrete</code> are mutually exclusive, <code class="Code T1.Text1">primary</code> and <code class="Code T1.Text1">free</code> are mutually exclusive, and <code class="Code T1.Text1">sealed</code> and <code class="Code T1.Text1">open</code> are mutually exclusive. Additional implementation-defined adjectives may be supported. See <a href="drm_73.html#MARKER-9-1106" class="T1.Text1">"Declaring Characteristics of Classes" on page 134</a> for a complete description of these adjectives.</p>
@@ -259,9 +259,9 @@ end method tune
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2016"></a>Defines and names a module, describing the imports and exports of the module.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">define module <i class="Parameter Code Cliche">module-name<br />    { export-clause | create-clause |use-clause  } ;*<br /></i></code> <code class="Code Cliche">end [ module ] [ <i class="Parameter Code Cliche">module-name ]</i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">module-name <code class="BNF Parameter Cliche2">name<em class="BNF Parameter Cliche2">bnf</em></code></i></p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">export-clause</i></dt>
@@ -295,7 +295,7 @@ end method tune
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">export-option</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="Code RP.RoutineParam">export: all | { { name<em class="Code RP.RoutineParam">bnf } ,* }</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <a name="MARKER-2-2017"></a><code class="cv Cliche"><a name="MARKER-9-2018"></a>define module</code> defines a module with the given name. It describes which modules are used by the module being defined, which bindings are imported from the used modules, and which bindings are exported by the module being defined.</p>
 <p class="T1.Text1">Circular use relationships among modules are not allowed. The graph of the module-uses-module relation must be directed and acyclic.</p>
 <p class="T1.Text1">Like other definitions, module definitions are only allowed at top level. Like all constituents, module definitions are contained in a module. The names of bindings being imported and exported in a module definition refer to bindings in the module being defined and the modules being used. These are not affected by the module that contains the module definition.</p>
@@ -394,9 +394,9 @@ dylan-gx
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2020"></a><a name="MARKER-2-2021"></a>Defines and names a library, describing the imports and exports of the library.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">define library <i class="Parameter Code Cliche">library-name<br />    { export-clause | use-clause } ;*<br />end [ library ] [ library-name ]</i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">library-name <code class="BNF Parameter Cliche2">name<em class="BNF Parameter Cliche2">bnf</em></code></i></p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">use-clause</i></dt>
@@ -428,7 +428,7 @@ dylan-gx
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">export-option</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="Code RP.RoutineParam">export: all | { { name<em class="Code RP.RoutineParam">bnf } ,* }</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">define library</code> defines a library with the given name. It describes which libraries are used by the library being defined, which modules are imported from the used libraries, and which modules are exported by the library being defined.</p>
 <p class="T1.Text1">Circular use relationships among libraries are not allowed. The graph of the library-uses-library relation must be directed and acyclic.</p>
 <p class="T1.Text1">Like other definitions, library definitions are only allowed at top level. Like all constituents, library definitions are contained in a module. The names of modules being imported and exported by a library definition do not refer to bindings, and are not affected by the environment in which the library definition occurs.</p>
@@ -452,15 +452,15 @@ dylan-gx
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-2-2023"></a><a name="MARKER-9-2024"></a>Restricts the ways in which a generic function and set of types can be extended, thereby enabling additional error checking and compiler optimization.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">define sealed domain</code> <i class="Parameter Cliche">generic-function<code class="MetaSyntax Parameter Cliche">  ( { type } ,* )</code></i></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">generic-function<code class="BNF Parameter Cliche"> variable-name<em class="BNF Parameter Cliche">bnf<br /></em></code></i></p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">type</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">expression<em class="BNF RP.RoutineParam">bnf</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">define sealed domain</code> seals the specified <i class="Parameter Cliche">generic-function</i> over the domain indicated by the <i class="Parameter Cliche">types</i>. For a complete description of the rules governing <code class="cv Cliche">define sealed domain</code> and the implications of a <code class="cv Cliche">define sealed domain</code> definition, see <a href="drm_75.html#MARKER-9-1123" class="Cliche">"Define Sealed Domain" on page 135</a>.</p></dd>
 </dl>
 <ul class="B1.Bullet1">
@@ -472,11 +472,11 @@ dylan-gx
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-2-2026"></a><a name="MARKER-9-2027"></a>Defines a constant module binding containing a macro.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">define macro <i class="Parameter Code Cliche">macro-definition</i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">macro-definition<code class="BNF Parameter Cliche2"> macro-definition<em class="BNF Parameter Cliche2">bnf</em></code></i></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> See <a href="drm_75.html#MARKER-9-1143" class="Cliche">Chapter 10, "Macros,"</a> for a complete description of the macro system.</p>
 <p class="T1.Text1">Note that <code class="Code T1.Text1">define macro</code> is not a defining macro but a special definition. It is not named by a binding, and so it cannot being excluded or renamed using module operations.<a name="MARKER-2-2028"></a></p></dd>
 </dl>

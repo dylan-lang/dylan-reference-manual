@@ -29,13 +29,13 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><code class="SD.ShortDescription"><a name="MARKER-9-1676"></a></code>Returns its argument.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">identity <i class="Parameter cv Cliche">object<b class="Parameter cv Cliche">   =&gt;  object</b></i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">identity <i class="Parameter cv Cliche">object<strong class="Parameter cv Cliche">   =&gt;  object</strong></i></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Values:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Values:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">object</i> An instance of <code class="cv Cliche2">&lt;object&gt;</code>; the same object that was passed in as an argument.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Returns <i class="Cliche">object</i> unaltered.</p></dd>
 </dl>
 <a name="HEADING101-8"></a>
@@ -43,13 +43,13 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-2-1678"></a>Returns its arguments as multiple values.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">values #rest <i class="Parameter cv Cliche">the-values <em class="Symbol Parameter cv Cliche">fi  #rest the-values</em></i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">the-values</i> Zero or more instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Values:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Values:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">the-values</i> Zero or more instances of <code class="cv Cliche2">&lt;object&gt;</code>; the objects that were passed as arguments.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Returns <i class="Cliche">the-values</i> as multiple values.</p></dd>
 </dl>
 <pre class="Cv.Code">
@@ -66,17 +66,17 @@ values(1, 2, 3);
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><code class="SD.ShortDescription"><a name="MARKER-9-1680"></a></code>Coerces an object to a type.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">as <i class="Parameter cv Cliche">type object<b class="Parameter cv Cliche">   =&gt;  instance</b></i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">as <i class="Parameter cv Cliche">type object<strong class="Parameter cv Cliche">   =&gt;  instance</strong></i></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">type</i> An instance of <code class="cv Cliche">&lt;type&gt;</code>.</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">object</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">instance</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>. It must be an instance of <i class="Parameter Cliche">type</i>. </p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Coerces <i class="Cliche">object</i> to <i class="Cliche">type</i>. That is, it returns an instance of <i class="Cliche">type</i> that has the same contents as <i class="Cliche">object</i>. If <i class="Cliche">object</i> is already an instance of <i class="Cliche">type</i>, it is returned unchanged. In general, the value returned may or may not be freshly allocated.</p>
 <p class="T1.Text1">Predefined methods allow coercion between integers and characters, between strings and symbols, and between collection types. No methods are predefined for other classes. Programs may define additional methods.</p></dd>
 </dl>
@@ -115,13 +115,13 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1683"></a>Coerces an object to uppercase.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">as-uppercase <i class="Parameter cv Cliche">object1<b class="Parameter cv Cliche">   =&gt; object2</b></i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">as-uppercase <i class="Parameter cv Cliche">object1<strong class="Parameter cv Cliche">   =&gt; object2</strong></i></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object2</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Coerces an object to uppercase and returns the resulting new object.</p>
 <p class="T1.Text1"><i class="Parameter T1.Text1">object1</i> is not modified by this operation.</p></dd>
 </dl>
@@ -136,13 +136,13 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1685"></a>Coerces an object to uppercase in place.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">as-uppercase! <i class="Parameter cv Cliche">object<b class="Parameter cv Cliche">  =&gt; object</b></i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">as-uppercase! <i class="Parameter cv Cliche">object<strong class="Parameter cv Cliche">  =&gt; object</strong></i></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Values:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Values:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">object</i> An instance of <code class="cv Cliche2">&lt;object&gt;</code>; the same object that was passed in as an argument.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Coerces an object to uppercase in place and returns the modified object.</p>
 <p class="T1.Text1"><i class="Parameter T1.Text1">object</i> may be modified by this operation, and the result will be <code class="cv T1.Text1">==</code> to the <i class="Parameter T1.Text1">object</i>.</p></dd>
 </dl>
@@ -154,13 +154,13 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1687"></a>Coerces an object to lowercase.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">as-lowercase <i class="Parameter cv Cliche">object1<b class="Parameter cv Cliche">   =&gt;  object2</b></i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">as-lowercase <i class="Parameter cv Cliche">object1<strong class="Parameter cv Cliche">   =&gt;  object2</strong></i></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object2</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Coerces an object to lowercase and returns the resulting new object.</p>
 <p class="T1.Text1"><i class="Parameter T1.Text1">object1</i> will not be modified by this operation.</p></dd>
 </dl>
@@ -175,13 +175,13 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-2-1671"></a>Coerces an object to lowercase in place.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">as-lowercase! <i class="Parameter cv Cliche">object<b class="Parameter cv Cliche">   =&gt; object</b></i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">as-lowercase! <i class="Parameter cv Cliche">object<strong class="Parameter cv Cliche">   =&gt; object</strong></i></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Values:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Values:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">object</i> An instance of <code class="cv Cliche2">&lt;object&gt;</code>; the same object that was passed in as an argument.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Coerces an object to lowercase in place and returns the modified object.</p>
 <p class="T1.Text1"><i class="Parameter T1.Text1">object</i> may be modified by this operation, and the result will be <code class="cv T1.Text1">==</code> to the <i class="Parameter T1.Text1">object</i>.</p></dd>
 </dl>
@@ -196,13 +196,13 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><code class="SD.ShortDescription"><a name="MARKER-9-1692"></a></code>Returns a copy of its argument.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">shallow-copy <i class="Parameter cv Cliche">object1<b class="Parameter cv Cliche">   =&gt;  #rest objects</b></i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">shallow-copy <i class="Parameter cv Cliche">object1<strong class="Parameter cv Cliche">   =&gt;  #rest objects</strong></i></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object1</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">objects</i> Instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Returns a new object that has the same contents as  <i class="Cliche">object1</i>. The contents are not copied but are the same objects contained in <i class="Cliche">object1</i>.</p>
 <p class="T1.Text1">There is a predefined method for instances of <code class="cv T1.Text1">&lt;collection&gt;</code>. For other classes, the programmer must provide a method.</p></dd>
 </dl>
@@ -214,13 +214,13 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><code class="SD.ShortDescription"><a name="MARKER-9-1694"></a></code>Returns an appropriate type for creating mutable copies of its argument.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Signature:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">type-for-copy <i class="Parameter cv Cliche">object<b class="Parameter cv Cliche">   =&gt;  type</b></i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Signature:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">type-for-copy <i class="Parameter cv Cliche">object<strong class="Parameter cv Cliche">   =&gt;  type</strong></i></code></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">object</i> An instance of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Values:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Values:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">type</i> An instance of <code class="cv Cliche2">&lt;type&gt;.</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Returns an appropriate type for creating mutable copies of <i class="Parameter Cliche">object</i>. </p>
 <p class="T1.Text1">The <code class="cv T1.Text1">type-for-copy</code> value of a collection must be an instantiable subtype of <code class="cv T1.Text1">&lt;mutable-collection&gt;</code>. For collections that are themselves mutable, the collection's actual class is generally the most appropriate (assuming it is instantiable). The <code class="cv T1.Text1">type-for-copy</code> value for a sequence should be a subtype of <code class="cv T1.Text1">&lt;sequence&gt;</code>, and the <code class="cv T1.Text1">type-for-copy</code> value of an explicit-key-collection should be a subtype of <code class="cv T1.Text1">&lt;explicit-key-collection&gt;</code>.</p></dd>
 </dl>

@@ -78,9 +78,9 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><code class="SD.ShortDescription"><a name="MARKER-9-2044"></a></code>Executes an implicit body if the value of a test is true or an alternate if the test is false.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">if ( <i class="Parameter Code Cliche">test ) [consequent ]<br /> { elseif ( elseif-test  ) [elseif-consequent ] }*<br /> [ else [alternate  ] ]<br />end [ if ]</i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">test <code class="BNF Parameter Cliche">expression<em class="BNF Parameter Cliche">bnf</em></code></i></p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">consequent</i></dt>
@@ -92,9 +92,9 @@
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">alternate</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">body<em class="BNF RP.RoutineParam">bnf</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">if</code> executes one or more expressions, executing and returning the values of a body following the first test that returns true.</p>
 <p class="T1.Text1"><i class="Parameter T1.Text1">test</i> is the first expression to be executed. If its value is true, <code class="Code T1.Text1">if</code> executes and returns the values of the <i class="Parameter T1.Text1">consequent</i>. If the value of <i class="Parameter T1.Text1">test</i> is false, <code class="Code T1.Text1">if</code> proceeds with the optional elseif-tests and alternate.</p>
 <p class="T1.Text1">First the elseif clauses are tried in order. The first <i class="Parameter T1.Text1">elseif-test</i> is executed. If its value is true, the corresponding <i class="Parameter T1.Text1">elseif-consequent</i> is executed and its values are returned as the value of the <code class="Code T1.Text1">if</code> statement. If its value is false, the next <i class="Parameter T1.Text1">elseif-test</i> is tried. This continues until a true <i class="Parameter T1.Text1">elseif-test</i> is found, or until there are no more elseif clauses.</p>
@@ -130,17 +130,17 @@ end if;
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2046"></a>Executes an implicit body unless the value of a test is true.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">unless ( <i class="Parameter Code Cliche">test  )<br /><b class="Parameter Code Cliche">   [  body  ]<br />end [ unless ]</b></i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">unless ( <i class="Parameter Code Cliche">test  )<br /><strong class="Parameter Code Cliche">   [  body  ]<br />end [ unless ]</strong></i></code></p></dd>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">test</i> <code class="BNF Cliche2">expression<em class="BNF Cliche2">bnf</em></code></p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">body</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">body<em class="BNF RP.RoutineParam">bnf</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">unless</code> executes <i class="Parameter Cliche">test</i>. If the value of <i class="Parameter Cliche">test</i> is false, then the <i class="Parameter Cliche">body</i> is executed and its values are returned by <code class="Code Cliche">unless</code>. If the value of <i class="Parameter Cliche">test</i> is true, the <i class="Parameter Cliche">body</i> is not executed and <code class="Code Cliche">unless</code> returns <code class="cv Cliche">#f</code>.</p>
 <p class="T1.Text1">If there are no expressions in the <i class="Parameter T1.Text1">body</i>, then <code class="Code T1.Text1">#f</code> is returned.</p></dd>
 </dl>
@@ -154,9 +154,9 @@ end unless
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2048"></a>Executes a number of tests until one is true, and then executes an implicit body associated with the true test.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">case<br /> { <i class="Parameter Code Cliche">test  =&gt; consequent } *<br /> [ otherwise [ =&gt; ] alternate  ]<br />end [ case ]</i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">test <code class="BNF Parameter Cliche2">expression<em class="BNF Parameter Cliche2">bnf</em></code></i></p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">consequent</i></dt>
@@ -164,9 +164,9 @@ end unless
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">alternate</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="MetaSyntax RP.RoutineParam">[ constituents<em class="MetaSyntax RP.RoutineParam">bnf ] ;</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Cliche">case</code> executes the <i class="Cliche">test</i> in order, until it reaches a test that returns true. When it reaches a test that returns true, it executes the corresponding <i class="Parameter Cliche">consequent</i> and returns its values. Subsequent tests are not executed. If the corresponding <i class="Parameter Cliche">consequent</i> is empty, the first value of the successful test is returned.</p>
 <p class="T1.Text1">As a special case, the name <code class="T1.Text1">otherwise</code> may appear as a <i class="T1.Text1">test</i>. This <i class="T1.Text1">test</i> always succeeds if there is no preceding successful <i class="T1.Text1">test</i>.</p>
 <p class="T1.Text1">If no <i class="T1.Text1">test</i> is true, then <code class="T1.Text1">case</code> returns <code class="T1.Text1">#f</code>.</p></dd>
@@ -187,23 +187,23 @@ end case;
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2050"></a>Compares a target object to a series of potential matches, and executes an implicit body associated with the first match found.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">select ( <i class="Parameter Code Cliche">target  [ by test  ] )<br /> { matches  =&gt; consequent }*<br /> [ otherwise [ =&gt; ] alternate ] <br />end [ select ]</i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">target <code class="BNF Parameter Cliche2">expression<em class="BNF Parameter Cliche2">bnf</em></code></i></p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">test</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">expression<em class="BNF RP.RoutineParam">bnf</em></code></p></dd>
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">matches</i></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="MetaSyntax RP.RoutineParam">{ expression<em class="MetaSyntax RP.RoutineParam">bnf } ,<b class="MetaSyntax RP.RoutineParam">+ | ( { expressionbnf } ,+ )</b></em></code></p></dd>
+<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="MetaSyntax RP.RoutineParam">{ expression<em class="MetaSyntax RP.RoutineParam">bnf } ,<strong class="MetaSyntax RP.RoutineParam">+ | ( { expressionbnf } ,+ )</strong></em></code></p></dd>
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">consequent</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="MetaSyntax RP.RoutineParam">[ constituents<em class="MetaSyntax RP.RoutineParam">bnf ] ;</em></code></p></dd>
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">alternate</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="MetaSyntax RP.RoutineParam">[ constituents<em class="MetaSyntax RP.RoutineParam">bnf ] ; </em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">select</code> generates a target object and then compares it to a series of potential matches, in order. If it finds a match, it executes the corresponding <i class="Parameter Cliche">consequent</i> and returns the values of the <i class="Parameter Cliche">consequent</i>. If no match is found, an error is signaled.</p>
 <p class="T1.Text1">The <i class="Parameter T1.Text1">target</i> is executed to produce the match object.</p>
 <p class="T1.Text1">The <i class="Parameter T1.Text1">test</i>, if supplied, is a function used to compare the target object to the potential matches. The default <i class="Parameter T1.Text1">test</i> is <code class="Code T1.Text1">==</code>.</p>
@@ -237,17 +237,17 @@ end select<a name="MARKER-2-2051"></a>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2054"></a>Repeatedly executes a body until a test expression is false.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">while ( <i class="Parameter Code Cliche">test  )<br /></i></code>    <code class="MetaSyntax Cliche">[ <i class="Parameter MetaSyntax Cliche">body</i></code>  <code class="MetaSyntax Cliche">]<br />end</code> <code class="MetaSyntax Cliche">[ while ]<br />fi <b class="MetaSyntax Cliche"> #f</b></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">while ( <i class="Parameter Code Cliche">test  )<br /></i></code>    <code class="MetaSyntax Cliche">[ <i class="Parameter MetaSyntax Cliche">body</i></code>  <code class="MetaSyntax Cliche">]<br />end</code> <code class="MetaSyntax Cliche">[ while ]<br />fi <strong class="MetaSyntax Cliche"> #f</strong></code></p></dd>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">test</i> <code class="BNF Cliche2">expression<em class="BNF Cliche2">bnf</em></code></p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">body</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">body<em class="BNF RP.RoutineParam">bnf</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">#f</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">while</code> loops over <i class="Parameter Cliche">body</i> until <i class="Parameter Cliche">test</i> returns false.</p>
 <p class="T1.Text1">Each pass through the loop begins by executing <i class="T1.Text1">test</i>. If <i class="T1.Text1">test</i> returns a true value, the expressions in the <i class="T1.Text1">body</i> <i class="T1.Text1"> </i>are executed and the looping continues. If <i class="T1.Text1">test</i> returns false, the loop terminates and <code class="Code T1.Text1">while</code> returns <code class="Code T1.Text1">#f</code>.</p></dd>
 </dl>
@@ -256,17 +256,17 @@ end select<a name="MARKER-2-2051"></a>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2056"></a>Repeatedly executes a body until a test expression is true.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">until ( <i class="Parameter Code Cliche">test )<br /></i></code>    <code class="MetaSyntax Cliche">[ <i class="Parameter MetaSyntax Cliche">body</i></code>  <code class="MetaSyntax Cliche">]<br />end</code> [<code class="Code Cliche">until</code>]  <br />fi <b class="Cliche"> <code class="Code Cliche">#f</code></b></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
+<dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">until ( <i class="Parameter Code Cliche">test )<br /></i></code>    <code class="MetaSyntax Cliche">[ <i class="Parameter MetaSyntax Cliche">body</i></code>  <code class="MetaSyntax Cliche">]<br />end</code> [<code class="Code Cliche">until</code>]  <br />fi <strong class="Cliche"> <code class="Code Cliche">#f</code></strong></p></dd>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">test</i> <code class="BNF Cliche">expression<em class="BNF Cliche">bnf</em></code></p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">body</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">body<em class="BNF RP.RoutineParam">bnf</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">#f</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">until</code> loops over <i class="Parameter Cliche">body</i> until <i class="Parameter Cliche">test</i> returns true.</p>
 <p class="T1.Text1">Each pass through the loop begins by executing <i class="T1.Text1">test</i>. If <i class="T1.Text1">test</i> returns false, the expressions in the <i class="T1.Text1">body</i> <i class="T1.Text1"> </i>are executed and the looping continues. If <i class="T1.Text1">test</i> returns true, the loop terminates and <code class="Code T1.Text1">until</code> returns <code class="Code T1.Text1">#f</code>.</p></dd>
 </dl>
@@ -275,9 +275,9 @@ end select<a name="MARKER-2-2051"></a>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2058"></a>Performs general iteration over a body, updating bindings and performing end tests on each iteration.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">for ( { <i class="Parameter Code Cliche">for-clause } ,*  |<br />     { { for-clause  ,}* end-clause  })<br /> [ loop-body  ]<br /> [ finally [ result-body  ] ]<br />end [ for ]</i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">for-clause explicit-step-clause<code class="MetaSyntax Parameter Cliche2">  |</code></i></p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam"></i></dt>
@@ -311,9 +311,9 @@ end select<a name="MARKER-2-2051"></a>
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">increment</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">expression<em class="BNF RP.RoutineParam">bnf</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">for</code> iterates over <i class="Parameter Cliche">loop-body</i>, creating and updating iteration bindings on each iteration according to the <i class="Parameter Cliche">for-clauses</i>. Iteration ends when one of the <i class="Parameter Cliche">for-clauses</i> is exhausted, or when the optional <i class="Parameter Cliche">end-test</i> is satisfied.</p>
 <p class="T1.Text1">Each <i class="T1.Text1">for-clause<code class="T1.Text1"> </code></i>controls one iteration binding. The optional <i class="T1.Text1">end-test</i> does not control any iteration bindings.</p>
 <p class="T1.Text1">There are three kinds of for-clauses: <i class="Parameter T1.Text1">explicit-step-clauses</i>, <i class="Parameter T1.Text1">collection-clauses</i>, and <i class="Parameter T1.Text1">numeric-clauses</i>:  An <i class="Parameter T1.Text1">explicit-step-clause</i> creates bindings for the results of executing an expression. A <i class="Parameter T1.Text1">collection-clause</i> creates bindings for successive elements of a collection. A <i class="Parameter T1.Text1">numeric-clause</i> creates bindings for a series of numbers.</p>
@@ -363,17 +363,17 @@ end;<a name="MARKER-2-2059"></a>
 <a name="UID-Built-In_Macros-13876"></a>
 <h2 class="H2.Heading2"> Other Statement Macros</h2>
 <a name="HEADING114-281"></a>
-<h3 class="H4.Heading4"> <code class="H4.Heading4"><b class="H4.Heading4"><a name="MARKER-2-2060"></a>begin</b></code> <b class="H4.Heading4">[Statement]</b></h3>
+<h3 class="H4.Heading4"> <code class="H4.Heading4"><strong class="H4.Heading4"><a name="MARKER-2-2060"></a>begin</strong></code> <strong class="H4.Heading4">[Statement]</strong></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2061"></a>Executes expressions in a body, in order.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">begin [ <i class="Parameter Code Cliche">body  ] end</i></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Arguments:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">body</i> <code class="BNF Cliche">body<em class="BNF Cliche">bnf</em></code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Begin executes the expressions in a body, in order. The values of the last expression are returned. If there are no expressions in the body, <code class="Code Cliche">#f</code> is returned.</p></dd>
 </dl>
 <a name="HEADING114-287"></a>
@@ -381,9 +381,9 @@ end;<a name="MARKER-2-2059"></a>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2063"></a>Executes a body with several options for nonstandard flow of control. </p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">block ( [ <i class="Parameter Code Cliche">exit-variable ] )<br /> [ block-body ]<br /> [ afterwards [ afterwards-clause ] ]<br /> [ cleanup [ cleanup-clause  ] ]<br /> { exception exception-clause  }*<br />end [ block ]</i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">exit-variable <code class="BNF Parameter Cliche2">variable-name<em class="BNF Parameter Cliche2">bnf</em></code></i></p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">block-body</i></dt>
@@ -401,9 +401,9 @@ end;<a name="MARKER-2-2059"></a>
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">exception-options<br /><code class="MetaSyntax Parameter RP.RoutineParam">{ test: expression<em class="MetaSyntax Parameter RP.RoutineParam">bnf } | { init-arguments: expressionbnf }</em></code></i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code class="cv Cliche">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <a name="MARKER-2-2064"></a><code class="Code Cliche">block</code> executes the expressions in the <i class="Parameter Cliche">block-body</i> in order, and then executes the optional <i class="Parameter Cliche">afterwards-clause</i> and <i class="Parameter Cliche">cleanup-clause</i>. Unless there is a nonlocal exit, block returns the values of the <i class="Parameter Cliche">block-body</i>, or <code class="cv Cliche">#f</code> if there is no <i class="Parameter Cliche">block-body</i>.</p>
 <p class="T1.Text1">If <i class="Parameter T1.Text1">exit-variable</i> is provided, it is bound to an exit procedure (an object of type <code class="cv T1.Text1">&lt;function&gt;</code>) that is valid during the execution of the block body and the clauses. At any point in time before the last clause returns, the exit procedure can be called. Calling the exit procedure has the effect of immediately terminating the execution of the block, and returning as values the arguments to the exit procedure.</p>
 <p class="T1.Text1">The body of the <i class="Parameter T1.Text1">afterwards-clause</i>, if provided, is executed after the <i class="Parameter T1.Text1">block-body</i>. The values produced by the <i class="Parameter T1.Text1">afterwards-clause</i> are ignored. This is useful when you want to execute an expression for side-effect after the <i class="Parameter T1.Text1">block-body</i> has executed, but still want to return the values of the last expression in the <i class="Parameter T1.Text1">block-body</i>. </p>
@@ -466,17 +466,17 @@ foo(5)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2066"></a>Creates and returns a method.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Macro Call:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">method <i class="Parameter Code Cliche">parameter-list  [ body ] end [ method ]</i></code></p></dd>
-<dt class="Cliche2"><b class="IMPORTANT Cliche2">Arguments:</b></dt>
+<dt class="Cliche2"><strong class="IMPORTANT Cliche2">Arguments:</strong></dt>
 <dd class="Cliche2"><p class="Cliche2"> <i class="Parameter Cliche2">parameter-list <code class="BNF Parameter Cliche2">parameter-list<em class="BNF Parameter Cliche2">bnf</em></code></i></p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">body</i></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">body<em class="BNF RP.RoutineParam">bnf</em></code></p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Values:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Values:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> An instance of <code class="cv Cliche">&lt;method&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">method</code> creates and returns a method specified by the <i class="Parameter Cliche">parameter-list</i> and <i class="Parameter Cliche">body</i>. For a complete description of methods, see <a href="drm_48.html#MARKER-9-762" class="Cliche">"Methods" on page 80</a>.<a name="MARKER-2-2067"></a></p></dd>
 </dl>
 

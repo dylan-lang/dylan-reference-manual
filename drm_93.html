@@ -35,15 +35,15 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of collections, aggregate data structures.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;object&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class of collections.</p>
 <p class="T1.Text1"><code class="cv T1.Text1">&lt;collection&gt;</code> is the root class of the collection class hierarchy. It provides a set of basic operations on all collections.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;collection&gt;</code> is <code class="cv T1.Text1">indefinite &lt; &lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;collection&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -156,15 +156,15 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of all collections that are not sequences. </p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;collection&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class of all collections that are not sequences.</p>
 <p class="T1.Text1">This class is disjoint from <code class="cv T1.Text1">&lt;sequence&gt;</code> because <code class="cv T1.Text1">key-test</code> is sealed over the domain <code class="cv T1.Text1">&lt;sequence&gt;</code>.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;explicit-key-collection&gt;</code> is <code class="cv T1.Text1">indefinite &lt; &lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;explicit-key-collection&gt;</code> provides the following operation:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -185,17 +185,17 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of collections whose keys are consecutive integers starting from zero.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;collection&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class of collections whose keys are consecutive integers starting from zero.</p>
 <p class="T1.Text1"><a name="MARKER-2-1404"></a>Sequences must be stable under iteration, and the iteration order must match the order of keys. Thus, the key associated with a sequence's iteration state can be determined by keeping a counter in parallel with the iteration state.</p>
 <p class="T1.Text1"><code class="T1.Text1"><a name="MARKER-2-1405"></a><a name="MARKER-2-1406"></a><a name="MARKER-2-1407"></a><a name="MARKER-2-1408"></a><a name="MARKER-2-1409"></a><a name="MARKER-2-1410"></a><a name="MARKER-2-1411"></a><a name="MARKER-2-1412"></a><a name="MARKER-2-1413"></a><a name="MARKER-2-1414"></a><a name="MARKER-2-1415"></a><a name="MARKER-2-1416"></a></code>The default methods for <code class="T1.Text1">add</code>, <code class="T1.Text1">add-new</code>, <code class="T1.Text1">remove</code>, <code class="T1.Text1">choose</code>, <code class="T1.Text1">choose-by</code>, <code class="T1.Text1">intersection</code>, <code class="T1.Text1">union</code>, <code class="T1.Text1">remove-duplicates</code>, <code class="T1.Text1">copy-sequence</code>, <code class="T1.Text1">concatenate</code>, <code class="T1.Text1">reverse</code>, and <code class="T1.Text1">sort</code> all return new sequences that are instances of the <code class="T1.Text1"><a name="MARKER-2-1417"></a>type-for-copy</code> of their primary sequence argument. However, more specialized methods are permitted to choose a more appropriate result class; for example, <code class="T1.Text1">copy-sequence</code> of a range returns another range, even though the <code class="T1.Text1">type-for-copy</code> value of a range is the <code class="T1.Text1">&lt;list&gt;</code> class.</p>
 <p class="T1.Text1"><code class="cv T1.Text1">&lt;sequence&gt;</code> is disjoint from <code class="cv T1.Text1">&lt;explicit-key-collection&gt;</code> because of the sealed domain over the function <code class="cv T1.Text1">key-test</code> for <code class="cv T1.Text1">&lt;sequence&gt;</code>.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;sequence&gt;</code> is <code class="cv T1.Text1">indefinite &lt; &lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;sequence&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -321,15 +321,15 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of collections that may be modified.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;collection&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class of collections that may be modified.</p>
 <p class="T1.Text1">Every mutable collection is required to allow modification by implementing <code class="T1.Text1"><a name="MARKER-2-1419"></a>element-setter</code>.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;mutable-collection&gt;</code> is <code class="cv T1.Text1">indefinite &lt; &lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;mutable-collection&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -377,14 +377,14 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of explicit-key-collections that can have elements replaced.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;explicit-key-collection&gt; &lt;mutable-collection&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class of explicit-key-collections that can have elements replaced. </p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;mutable-explicit-key-collection&gt;</code> is <code class="cv T1.Text1">indefinite &lt; &lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;mutable-explicit-key-collection&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -412,14 +412,14 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of sequences that may be modified.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;sequence&gt; &lt;mutable-collection&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class of sequences that may be modified.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;mutable-sequence&gt;</code> is <code class="cv T1.Text1">indefinite &lt; &lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="cv Cliche">&lt;mutable-sequence&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -468,11 +468,11 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of collections that may grow or shrink to accommodate adding or removing elements.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;collection&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class of collections that may grow or shrink to accommodate adding or removing elements.</p>
 <p class="T1.Text1"><a name="MARKER-2-1423"></a>Stretchy collections allow <code class="T1.Text1"><a name="MARKER-2-1424"></a>element-setter </code>to be called with a key that is not present in the collection, expanding the collection as necessary to add a new element in that case. Each concrete subclass of <code class="T1.Text1">&lt;stretchy-collection&gt;</code> must provide or inherit a method for <code class="T1.Text1">element-setter </code>that behaves as follows when there is not already an element present for the indicated key:</p></dd>
 </dl>
@@ -482,7 +482,7 @@
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;stretchy-collection&gt;</code> is <code class="cv T1.Text1">indefinite &lt; &lt;object&gt;</code>.</p></li>
 </ul>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="cv Cliche">&lt;stretchy-collection&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -503,9 +503,9 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of sequences whose elements are arranged according to a Cartesian coordinate system.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;mutable-sequence&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The make method on <code class="Cliche">singleton(&lt;array&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code class="cv Cliche">&lt;array&gt;</code>.</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">dimensions:</code></dt>
@@ -513,7 +513,7 @@
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">fill:</code> </dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code> specifying an initial value for each element of the array. The default value is <code class="cv RP.RoutineParam">#f</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class of collections whose elements are arranged according to a Cartesian coordinate system.</p>
 <p class="T1.Text1">An array element is referred to by a (possibly empty) series of indices. The length of the series must equal the rank of the array. Each index must be a non-negative integer less than the corresponding dimension. An array element may alternatively be referred to by an integer, which is interpreted as a row-major index.</p>
 <p class="T1.Text1">Arrays typically use space efficient representations, and the average time required to access a randomly chosen element is typically sublinear to the number of elements.</p>
@@ -521,7 +521,7 @@
 <p class="T1.Text1"><a name="MARKER-2-1428"></a>When a single-dimensional array is created, the array created will be an instance of <code class="cv T1.Text1">&lt;vector&gt;</code>.</p>
 <p class="T1.Text1">Each concrete subclass of <code class="cv T1.Text1">&lt;array&gt;</code> must either provide or inherit implementations of the functions <code class="cv T1.Text1"><a name="MARKER-2-1429"></a>element</code>, <code class="cv T1.Text1">element-setter</code>, and <code class="cv T1.Text1">dimensions</code>.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;array&gt;</code> is <code class="cv T1.Text1">indefinite &lt; &lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;array&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -606,9 +606,9 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of arrays of rank one (i.e., exactly one dimension).</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;array&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The make method on <code class="Cliche">singleton(&lt;vector&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code class="cv Cliche">&lt;vector&gt;</code>.</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">size:</code> </dt>
@@ -616,12 +616,12 @@
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">fill:</code> </dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code> specifying an initial value for each element of the vector. The default value is <code class="cv RP.RoutineParam">#f</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class of one-dimensional arrays.</p>
 <p class="T1.Text1"><code class="T1.Text1">&lt;vector&gt;</code> has no direct instances; calling <code class="T1.Text1">make</code> on <code class="T1.Text1">&lt;vector&gt;</code> returns an instance of <code class="T1.Text1">&lt;simple-object-vector&gt;</code>.</p>
 <p class="T1.Text1">Each concrete subclass of <code class="T1.Text1">&lt;vector&gt;</code> must either provide or inherit an implementation of <a name="MARKER-2-1433"></a><code class="T1.Text1">size</code> that shadows the method provided by <code class="T1.Text1">&lt;array&gt;</code>.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;vector&gt;</code> is <code class="cv T1.Text1">indefinite &lt; &lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;vector&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -667,9 +667,9 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">A predefined subclass of <code class="cv T1.Text1">&lt;vector&gt;</code> that provides an efficient implementation of fixed-length vectors.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;vector&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The make method on <code class="Cliche">singleton(&lt;simple-vector&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code class="cv Cliche">&lt;simple-vector&gt;</code>.</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">size:</code> </dt>
@@ -677,14 +677,14 @@
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">fill:</code> </dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code> specifying an initial value for each element of the vector. The default value is <code class="cv RP.RoutineParam">#f</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class of simple and efficient vectors.</p>
 <p class="T1.Text1"><a name="MARKER-2-1436"></a>The class <code class="T1.Text1">&lt;simple-vector&gt;</code> provides a constant time implementation for the <code class="T1.Text1">element</code>  and <code class="T1.Text1">element-setter </code>functions. This property is shared by all subtypes of <code class="cv T1.Text1">&lt;simple-vector&gt;</code>.</p>
 <p class="T1.Text1">Calling <code class="cv T1.Text1">make</code> on a <code class="cv T1.Text1">&lt;simple-vector&gt;</code> returns an instance of <code class="cv T1.Text1">&lt;simple-object-vector&gt;</code>. The size of a simple vector cannot be changed after the simple vector has been created.</p>
 <p class="T1.Text1"><a name="MARKER-2-1437"></a>Vector literals (created with the <code class="cv T1.Text1">#[</code>...<code class="cv T1.Text1">]</code> syntax) are general instances of <code class="cv T1.Text1">&lt;simple-vector&gt;</code>.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;simple-vector&gt;</code> is <code class="cv T1.Text1">indefinite &lt; &lt;object&gt;</code>.</p>
 <p class="T1.Text1">The class <code class="cv T1.Text1">&lt;simple-object-vector&gt;</code> and the type <code class="cv T1.Text1">limited(&lt;simple-vector&gt;, of: &lt;object&gt;)</code> have exactly the same instances, but neither is a subtype of the other. The relationship between them is simply that the <code class="cv T1.Text1">make</code> method for the type returns an instance of the class.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;simple-vector&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -720,9 +720,9 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of simple vectors that may have elements of any type.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;simple-vector&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;simple-object-vector&gt;</code> supports the following init-keywords: </p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">size:</code> </dt>
@@ -730,10 +730,10 @@
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">fill:</code> </dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code> specifying the initial value for each element. The default value is <code class="cv RP.RoutineParam">#f</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;simple-object-vector&gt;</code> represents vectors that may have elements of any type. It provides a constant time implementation for the <code class="Cliche">element</code>  and <code class="Cliche">element-setter </code>functions.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;simple-object-vector&gt;</code> is<code class="cv T1.Text1"> &lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> None.</p></dd>
 </dl>
 <a name="HEADING93-1770"></a>
@@ -741,9 +741,9 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of vectors that are stretchy. </p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;vector&gt; &lt;stretchy-collection&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;stretchy-vector&gt;</code> supports the following init-keywords:</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">size:</code> </dt>
@@ -751,11 +751,11 @@
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">fill:</code></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code> specifying the initial value for each element. The default value is <code class="cv RP.RoutineParam">#f</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class of vectors that are stretchy.</p>
 <p class="T1.Text1">Because <code class="cv T1.Text1">&lt;stretchy-vector&gt;</code> is abstract and instantiable but has no specified subclasses, every implementation must provide one or more concrete subclass to instantiate. These concrete subclasses have no specified names, and their names are not exported by the Dylan module.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;simple-vector&gt;</code> is <code class="cv T1.Text1">indefinite &lt; &lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;stretchy-vector&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -790,9 +790,9 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of double-ended queues.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;mutable-sequence&gt; &lt;stretchy-collection&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;deque&gt;</code> supports the following init-keywords: </p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">size:</code> </dt>
@@ -800,11 +800,11 @@
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">fill:</code> </dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code> specifying the initial value for each element. The default value is <code class="cv RP.RoutineParam">#f</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> A subclass of sequence that supports efficient forward and backward iteration, and efficient addition and removal of elements from the beginning or end of the sequence.</p>
 <p class="T1.Text1">Because <code class="cv T1.Text1">&lt;deque&gt;</code> is abstract and instantiable but has no specified subclasses, every implementation must provide one or more concrete subclasses to instantiate. These concrete subclasses have no specified names, and their names are not exported by the Dylan module.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;deque&gt;</code> is <code class="cv T1.Text1">indefinite &lt; &lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;deque&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -861,17 +861,17 @@
 <a name="UID-Built-In_Classes-423"></a>
 <h2 class="H2.Heading2"> <a name="MARKER-2-1443"></a>Lists</h2>
 <p class="T1.Text1">Lists are constructed by linking together instances of <code class="cv T1.Text1">&lt;pair&gt;</code>. The <a name="MARKER-2-1444"></a>head of a list contains an element, and the <a name="MARKER-2-1445"></a>tail of the list contains a pointer to the next pair in the list. The list ends when the tail of a pair contains something besides another pair.</p>
-<p class="T1.Text1">A <b class="bold T1.Text1"><a name="MARKER-2-1446"></a>proper list</b> has a final pair with a tail containing the empty list.</p>
-<p class="T1.Text1">An <b class="T1.Text1"><a name="MARKER-2-1447"></a>improper list</b> does not have a final pair with a tail containing the empty list, either because the tail of its final pair is not the empty list, or because the list is circular and thus does not have a final pair. Except when their behavior on improper lists is documented explicitly, collection or sequence functions are not guaranteed to return an answer when an improper list is used as a collection or a sequence. At the implementation's option, these functions may return the correct result, signal a <code class="T1.Text1">&lt;type-error&gt;</code>, or  (in the case of a circular list) fail to return.</p>
+<p class="T1.Text1">A <strong class="bold T1.Text1"><a name="MARKER-2-1446"></a>proper list</strong> has a final pair with a tail containing the empty list.</p>
+<p class="T1.Text1">An <strong class="T1.Text1"><a name="MARKER-2-1447"></a>improper list</strong> does not have a final pair with a tail containing the empty list, either because the tail of its final pair is not the empty list, or because the list is circular and thus does not have a final pair. Except when their behavior on improper lists is documented explicitly, collection or sequence functions are not guaranteed to return an answer when an improper list is used as a collection or a sequence. At the implementation's option, these functions may return the correct result, signal a <code class="T1.Text1">&lt;type-error&gt;</code>, or  (in the case of a circular list) fail to return.</p>
 <p class="T1.Text1">When treated as a collection, the elements of a list are the heads of successive pairs in the list.</p>
 <a name="HEADING93-2050"></a>
 <h3 class="H4.Heading4"> <code class="H4.Heading4"><a name="MARKER-2-1448"></a><a name="MARKER-9-1449"></a>&lt;list&gt;</code> [Sealed Instantiable Abstract Class]</h3>
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of linked lists. </p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;mutable-sequence&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The make method on <code class="Cliche">singleton(&lt;list&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code class="cv Cliche">&lt;list&gt;</code>.</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">size:</code> </dt>
@@ -879,11 +879,11 @@
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">fill:</code> </dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;object&gt;</code> specifying the initial value for each element. The default value is <code class="cv RP.RoutineParam">#f</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class of linked lists.</p>
 <p class="T1.Text1">The <code class="T1.Text1">&lt;list&gt;</code> class is partitioned into two concrete subclasses, <code class="T1.Text1">&lt;pair&gt;</code> and <code class="T1.Text1">&lt;empty-list&gt;</code>. Calling make on <code class="cv T1.Text1">&lt;list&gt;</code> will return a linked list made from pairs and terminated with the empty list. </p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;list&gt;</code> is <code class="cv T1.Text1">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;list&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -951,14 +951,14 @@
 <hr class="H4.Heading4" />
 <p class="T0.Text0">The class of lists that can have new values assigned to their heads and tails.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;list&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class of lists that can have new values assigned to their heads and tails.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;pair&gt;</code> is <code class="cv T1.Text1">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The following operations are provided on <code class="cv Cliche">&lt;pair&gt;</code>:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -994,14 +994,14 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class with only one instance, the empty list.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;list&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;empty-list&gt;</code> has only one instance, the empty list. The empty list is a direct instance of <code class="Cliche">&lt;empty-list&gt;</code> and an indirect instance of <code class="Cliche">&lt;list&gt;</code>. Note that <code class="Cliche">&lt;empty-list&gt;</code> is not <code class="Cliche">==</code> to <code class="Cliche">singleton (#())</code>.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;empty-list&gt;</code> is <code class="cv T1.Text1">&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> None.<a name="MARKER-2-1452"></a></p></dd>
 </dl>
 <a name="HEADING93-2363"></a>
@@ -1012,9 +1012,9 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of arithmetic sequences.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;sequence&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;range&gt;</code> supports the following init-keywords:</p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">from:</code> </dt>
@@ -1030,13 +1030,13 @@
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">size:</code> </dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;integer&gt;</code> specifying the size of the range.</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="cv Cliche">&lt;range&gt;</code> is used for creating sequences of numbers. Ranges may be infinite in size, and may run from higher numbers to lower numbers.</p>
 <p class="T1.Text1">If <code class="cv T1.Text1">size:</code> is specified and none of <code class="cv T1.Text1">to:</code>, <code class="cv T1.Text1">above:</code> or <code class="cv T1.Text1">below:</code> is specified, then the  <code class="cv T1.Text1">size:</code> argument determines the size of the range.</p>
 <p class="T1.Text1">If <code class="cv T1.Text1">size:</code> is specified and one of <code class="cv T1.Text1">to:</code>, <code class="cv T1.Text1">above:</code> or <code class="cv T1.Text1">below:</code> is specified, than it is an error if the number of elements implied by the <code class="cv T1.Text1">to:</code>, <code class="cv T1.Text1">above:</code> or <code class="cv T1.Text1">below:</code> argument (and the <code class="cv T1.Text1">by:</code> argument, if present) does not agree with the number of elements specified by the <code class="cv T1.Text1">size:</code> argument.</p>
 <p class="T1.Text1">Because <code class="cv T1.Text1">&lt;range&gt;</code> in abstract and instantiable but has no specified subclasses, every implementation must provide one or more concrete subclass to instantiate. These concrete subclasses have no specified names, and their names are not exported by the Dylan module.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;range&gt;</code> is <code class="cv T1.Text1">indefinite &lt; &lt;real&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;range&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor">   </p>
@@ -1099,9 +1099,9 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of sequences with elements that are characters.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;mutable-sequence&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;string&gt;</code> supports the following init-keywords: </p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">size:</code> </dt>
@@ -1109,11 +1109,11 @@
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">fill:</code> </dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;character&gt;</code> specifying the initial value for each element. The default value is <code class="cv RP.RoutineParam">' ' </code>(space).</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="cv Cliche">&lt;string&gt;</code> is used for holding sequences of characters.</p>
 <p class="T1.Text1"><code class="T1.Text1">&lt;string&gt;</code> has no direct instances; calling <code class="T1.Text1">make</code> on <code class="T1.Text1">&lt;string&gt;</code> will return an instance of a concrete subclass of <code class="T1.Text1">&lt;string&gt;</code>.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;string&gt;</code> is <code class="cv T1.Text1">indefinite &lt; &lt;character&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;string&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -1157,9 +1157,9 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of vectors with elements that are eight-bit characters.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;string&gt;</code>  <code class="cv Cliche">&lt;vector&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;byte-string&gt;</code> supports the following init-keywords: </p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">size:</code> </dt>
@@ -1167,10 +1167,10 @@
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">fill:</code> </dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;character&gt;</code> specifying the initial value for each element. The default value is <code class="cv RP.RoutineParam">' ' </code>(space).</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;byte-string&gt;</code> represents strings with elements that are eight bit characters. It provides constant time <code class="cv Cliche">element</code> and <code class="cv Cliche">element-setter</code> methods.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;byte-string&gt;</code> is <code class="cv T1.Text1">indefinite &lt; <i class="Parameter cv T1.Text1">K<em class="Subscript Parameter cv T1.Text1">2</em></i></code> (where <i class="Parameter T1.Text1">K<em class="Subscript Parameter T1.Text1">2</em></i> is a subtype of <code class="cv T1.Text1">&lt;character&gt;</code>).</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;byte-string&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -1192,9 +1192,9 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of vectors with elements that are sixteen-bit Unicode characters.</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;string&gt;</code>  <code class="cv Cliche">&lt;vector&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;unicode-string&gt;</code> supports the following init-keywords: </p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">size:</code> </dt>
@@ -1202,10 +1202,10 @@
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">fill:</code> </dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code class="cv RP.RoutineParam">&lt;character&gt;</code> specifying the initial value for each element. The default value is <code class="cv RP.RoutineParam">' ' </code>(space).</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;unicode-string&gt;</code> represents strings with elements that are sixteen bit Unicode characters. It provides constant time <code class="cv Cliche">element</code> and <code class="cv Cliche">element-setter</code> methods.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;unicode-string&gt;</code> is <code class="cv T1.Text1">indefinite &lt; <i class="Parameter cv T1.Text1">K<em class="Subscript Parameter cv T1.Text1">1</em></i></code> (where <i class="Parameter T1.Text1">K<em class="Subscript Parameter T1.Text1">1</em></i> is a subtype of <code class="cv T1.Text1">&lt;character&gt;</code>).</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;unicode-string&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> <a name="MARKER-2-1459"></a></p>
@@ -1233,20 +1233,20 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of tables (also known as hash tables).</p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;mutable-explicit-key-collection&gt; &lt;stretchy-collection&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;table&gt;</code> supports the following init-keyword: </p></dd>
 <dd><dl class="RP.RoutineParam">
 <dt class="RP.RoutineParam"><code class="RP.RoutineParam">size:</code> </dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of &lt;integer&gt;. If specified, this value provides a hint to the implementation as to the expected number of elements to be stored in the table, which might be used to control how much space to initially allocate for the table. The default value is unspecified.</p></dd>
 </dl></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="cv Cliche">&lt;table&gt;</code> is the only predefined instantiable subclass of <code class="cv Cliche">&lt;explicit-key-collection&gt;</code>.</p>
 <p class="T1.Text1">Every concrete subclass of <code class="T1.Text1">&lt;table&gt;</code> must provide or inherit a method for <code class="T1.Text1">table-protocol</code>. For details, see <a href="drm_67.html#MARKER-9-1036" class="T1.Text1">"Tables" on page 122</a>.</p>
 <p class="T1.Text1"><code class="T1.Text1">&lt;table&gt;</code> has no direct instances; calling <code class="T1.Text1">make</code> on <code class="T1.Text1">&lt;table&gt;</code> will return an instance of <code class="T1.Text1">&lt;object-table&gt;</code>.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;table&gt;</code> is <code class="cv T1.Text1">indefinite &lt; &lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;table&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> </p>
@@ -1312,14 +1312,14 @@
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The class of tables that compare keys using <code class="T1.Text1">==.</code></p>
 <dl class="Cliche">
-<dt class="Cliche"><b class="IMPORTANT Cliche">Superclasses:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Superclasses:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> <code class="cv Cliche">&lt;table&gt;</code></p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Init-keywords:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Init-keywords:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Description:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> Calling <code class="Cliche">make</code> on <code class="Cliche">&lt;table&gt;</code> will return a general instance of <code class="Cliche">&lt;object-table&gt;</code>. Because <code class="cv Cliche">&lt;object-table&gt;</code> is abstract and instantiable but has no specified subclasses, every implementation must provide one or more concrete subclasses to instantiate. These concrete subclasses have no specified names, and their names are not exported by the Dylan module.</p>
 <p class="T1.Text1">The element type of <code class="cv T1.Text1">&lt;object-table&gt;</code> is <code class="cv T1.Text1">indefinite &lt; &lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><b class="IMPORTANT Cliche">Operations:</b></dt>
+<dt class="Cliche"><strong class="IMPORTANT Cliche">Operations:</strong></dt>
 <dd class="Cliche"><p class="Cliche"> The class <code class="Cliche">&lt;object-table&gt;</code> provides the following operations:</p></dd>
 </dl>
 <p class="Anchor"> </p>
