@@ -5,6 +5,22 @@ body {
 	color: black;
 }
 
+/*
+  Headings
+
+  Add some whitespace above headings and a rule below to make them
+  stand out more from preceding text, and, for definition sections,
+  set the "[Foo]" tag apart from the identifier so they don't run
+  together.
+*/
+
+h1[class~="H1.Heading1"], h2, h3 { padding-top: 0.5em; padding-bottom: 3px; border-bottom: 1px solid }
+
+/* definition section headings */
+
+h3[class~="H4.Heading4"] { padding-top: 1.5em; padding-bottom: 0px; border-bottom: none }
+h3[class~="H4.Heading4"] code:first-child { font-size: 120%; padding-right: 10em }
+
 
 /*
   Table Formatting
