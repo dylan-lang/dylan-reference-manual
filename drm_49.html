@@ -34,7 +34,7 @@
 <p class="T1.Text1">Required parameters correspond to arguments that must be supplied when a function is called. The arguments are supplied in a fixed order and must appear before any other arguments.</p>
 <p class="T1.Text1">Each required parameter may be a name or a name <strong class="T1.Text1"><a name="MARKER-2-792"></a>specialized</strong> by a type. Specifying a type declares that supplied argument must be a general instance of that type.</p>
 <p class="T1.Text1">A rest parameter allows a function to accept an unlimited number of arguments.<a rel="FOOTNOTE" href="#FOOTNOTE-3" class="T1.Text1">[3]</a>  After the required arguments of a function have been supplied, any additional arguments are collected in a sequence, which is passed as the value of the rest parameter. <a name="MARKER-2-793"></a>This sequence may be immutable, and it may or may not be freshly allocated. The types of rest parameters cannot be declared.</p>
-<p class="T1.Text1"><a name="MARKER-2-794"></a><a name="MARKER-2-795"></a>Keyword parameters correspond to arguments that are optional and may be given in any order. Symbols are used among the arguments to guide matching of arguments to parameters. These symbols are usually written in keyword syntax and so they are known as keywords. Keyword arguments can only be supplied after all required arguments are supplied. Keyword parameters may <br /><br /><br /><br />be specialized, restricting which values may be supplied for them. Keyword parameters may also be given default values to be used when the caller does not supply a value.</p>
+<p class="T1.Text1"><a name="MARKER-2-794"></a><a name="MARKER-2-795"></a>Keyword parameters correspond to arguments that are optional and may be given in any order. Symbols are used among the arguments to guide matching of arguments to parameters. These symbols are usually written in keyword syntax and so they are known as keywords. Keyword arguments can only be supplied after all required arguments are supplied. Keyword parameters may be specialized, restricting which values may be supplied for them. Keyword parameters may also be given default values to be used when the caller does not supply a value.</p>
 <p class="T1.Text1"><a name="MARKER-2-796"></a><a name="MARKER-2-797"></a>Required parameters come first in the parameter list, followed by the rest parameter, if any, and then the keyword parameters, if any. A rest parameter is indicated by the token <code class="T1.Text1">#rest</code> followed by the name of the parameter. Keyword parameters are indicated by the token <code class="T1.Text1">#key</code> followed by the keyword parameter specifiers, optionally followed by the token <code class="T1.Text1">#all-keys</code>.</p>
 <p class="T1.Text1">If <code class="T1.Text1">#rest</code> and <code class="T1.Text1">#key</code> are used in the same parameter list, <code class="T1.Text1">#rest</code> must come first. The rest parameter will be bound to a sequence containing all the keyword arguments and their corresponding values.</p>
 <p class="T1.Text1"><a name="MARKER-2-798"></a>A next-method parameter is indicated by the token <code class="T1.Text1">#next</code>, followed by the name of the parameter. It is not normally necessary to specify a next-method parameter explicitly. If a next-method parameter is not specified by the programmer, <code class="T1.Text1">define method</code> inserts one with the name <code class="T1.Text1">next-method</code>. If an explicit next-method parameter is given, it must come after the required parameters and before the rest and keyword parameters. Details of using next-method are given in <a href="drm_50.html#MARKER-9-858" class="T1.Text1">"Calling Less Specific Methods" on page 98</a>.<a name="MARKER-2-799"></a></p>
@@ -47,19 +47,21 @@
 <li class="B1.Bullet1">A function is said to <strong class="B1.Bullet1"><a name="MARKER-2-802"></a>require a fixed number of arguments</strong> if its parameter list does not specify either <code class="B1.Bullet1"><a name="MARKER-2-803"></a>#rest</code> or <code class="B1.Bullet1"><a name="MARKER-2-804"></a>#key</code>.</li>
 <li class="B1.Bullet1">A function is said to <strong class="B1.Bullet1"><a name="MARKER-2-805"></a>accept keyword arguments</strong> if its parameter list specifies <code class="B1.Bullet1">#key</code>. The parameter list could also specify <code class="B1.Bullet1">#rest</code> if it is a method, but not if it is a generic function.</li>
 <li class="B1.Bullet1">A function is said to <strong class="B1.Bullet1"><a name="MARKER-2-806"></a>accept all keyword arguments</strong> if its parameter list specifies <code class="B1.Bullet1">#all-keys</code> in addition to <code class="Code B1.Bullet1">#key</code>.</li>
-<li class="B1.Bullet1">A function is said to <strong class="B1.Bullet1"><a name="MARKER-2-807"></a>accept a variable number of arguments</strong> if its parameter list specifies <code class="B1.Bullet1">#rest</code> but does not specify <code class="B1.Bullet1">#key</code>. (Note: If the parameter list specifies <code class="cv B1.Bullet1">#key</code> in addition to <code class="cv B1.Bullet1">#rest</code> it is not said to accept a variable number of arguments.)
+<li class="B1.Bullet1">A function is said to <strong class="B1.Bullet1"><a name="MARKER-2-807"></a>accept a variable number of arguments</strong> if its parameter list specifies <code class="B1.Bullet1">#rest</code> but does not specify <code class="B1.Bullet1">#key</code>. (Note: If the parameter list specifies <code class="cv B1.Bullet1">#key</code> in addition to <code class="cv B1.Bullet1">#rest</code> it is not said to accept a variable number of arguments.)</li>
+</ul>
 <p class="T1.Text1">A method that accepts keyword arguments is said to <strong class="T1.Text1"><a name="MARKER-2-808"></a>recognize</strong> the keywords mentioned in its parameter list. (A method may, of course, mention them in the parameter list and then ignore their values. It is still said to recognize them.)  It is possible for a method to accept keyword arguments in general but not recognize any particular keywords; it does this by specifying <code class="Code T1.Text1">#key</code> without any subsequent keyword parameters.</p>
 <p class="T1.Text1">If a generic function that accepts keyword arguments mentions any specific keyword arguments in its parameter list, these are the <strong class="T1.Text1"><a name="MARKER-2-809"></a>mandatory keywords</strong> of the generic function. Every method added to the generic function must recognize these keywords.</p>
 <p class="T1.Text1">A function may accept all keyword arguments by specifying <code class="cv T1.Text1">#all-keys</code> in its parameter list.<a name="MARKER-2-810"></a><a name="MARKER-2-811"></a><a name="MARKER-2-812"></a></p>
-<p class="T1.Text1">When a function that accepts keyword arguments is called, it is said to <strong class="T1.Text1"><a name="MARKER-2-813"></a>permit</strong> a keyword argument in the call if one of the following is true:</p></li>
+<p class="T1.Text1">When a function that accepts keyword arguments is called, it is said to <strong class="T1.Text1"><a name="MARKER-2-813"></a>permit</strong> a keyword argument in the call if one of the following is true:</p>
+<ul>
 <li class="B1.Bullet1">The function is a method that recognizes the keyword.</li>
 <li class="B1.Bullet1">The function is a generic function and the keyword is recognized by any of the applicable methods of the call.</li>
 <li class="B1.Bullet1">The function accepts all keyword arguments.</li>
-<li class="B1.Bullet1">The function is a generic function and any of the applicable methods of the call accepts all keyword arguments.
+<li class="B1.Bullet1">The function is a generic function and any of the applicable methods of the call accepts all keyword arguments.</li>
+</ul>
 <p class="T1.Text1"><a name="MARKER-2-814"></a>If a function that accepts keyword arguments is called, it will signal an error if called with a keyword argument that it does not permit, or if the arguments following the required arguments are not keyword/value pairs. This is true even if the function specifies <code class="cv T1.Text1">#rest</code>.</p>
 <p class="T1.Text1">If a method is called via a generic function or via next-method (rather than directly), the method itself does not check whether it received any keyword arguments it does not permit, nor does it check that the arguments following the required arguments are keyword/value pairs. This check is performed by the generic function or next-method, and is made relative to the call as a whole, not relative to an individual method or the methods remaining to be called.</p>
-<p class="T1.Text1"><a name="MARKER-2-815"></a>A call to a function may supply the same keyword argument more than once. When this is done, the leftmost keyword/value pair is used.<a name="MARKER-2-816"></a></p></li>
-</ul>
+<p class="T1.Text1"><a name="MARKER-2-815"></a>A call to a function may supply the same keyword argument more than once. When this is done, the leftmost keyword/value pair is used.<a name="MARKER-2-816"></a></p>
 <a name="HEADING49-32"></a>
 <a name="UID-Functions-2288"></a>
 <h2 class="H2.Heading2"> Specializing Required Parameters</h2>
@@ -75,11 +77,11 @@ end method;
 <ul class="B1.Bullet1">
 <li class="B1.Bullet1">It makes the intent of the program clear. It indicates to the compiler and to anyone reading the code that an error is signaled if an argument is not of the specializer type.</li>
 <li class="B1.Bullet1">It allows the compiler to perform additional optimizations.</li>
-<li class="B1.Bullet1"><a name="MARKER-2-819"></a>It is used to control method dispatch. By defining methods on the same generic function with different specializers, you can define behavior applicable to different sets of types. A generic function chooses among its methods on the basis of the methods' specializers. The generic function chooses the method whose specializers most closely match the types of the arguments.
+<li class="B1.Bullet1"><a name="MARKER-2-819"></a>It is used to control method dispatch. By defining methods on the same generic function with different specializers, you can define behavior applicable to different sets of types. A generic function chooses among its methods on the basis of the methods' specializers. The generic function chooses the method whose specializers most closely match the types of the arguments.</li>
+</ul>
 <p class="T1.Text1">Syntactically, specializers are operands. These operands are executed once when the function is created. They are not re-executed each time the function is called. The value of the operand must be a type.</p>
 <p class="T1.Text1">It is most common for specializers to be constant module bindings or calls to a built-in type constructor such as <code class="Code T1.Text1">singleton</code>, <code class="Code T1.Text1">limited</code>, or <code class="Code T1.Text1">type-union</code>.</p>
-<p class="T1.Text1">There is a convenient syntax for singleton specializers, which is equivalent to explicitly calling <code class="Code T1.Text1">singleton</code> in the current lexical scope.<a name="MARKER-2-820"></a></p></li>
-</ul>
+<p class="T1.Text1">There is a convenient syntax for singleton specializers, which is equivalent to explicitly calling <code class="Code T1.Text1">singleton</code> in the current lexical scope.<a name="MARKER-2-820"></a></p>
 <a name="HEADING49-44"></a>
 <a name="UID-Functions-2308"></a>
 <h2 class="H2.Heading2"> Keyword Parameters</h2>
@@ -145,9 +147,9 @@ end method find-happiness;
 <ul class="B1.Bullet1">
 <li class="B1.Bullet1">Each value returned by a function must be an instance of the corresponding value type, or else an error of type <code class="B1.Bullet1">&lt;type-error&gt;</code> will be signaled.</li>
 <li class="B1.Bullet1"><a name="MARKER-2-835"></a>If fewer values are returned by the function's body (or by the applicable method if the function is a generic function) than the number of required value declarations in the function's parameter-list, the missing values are defaulted to <code class="B1.Bullet1">#f</code> and returned. If <code class="B1.Bullet1">#f</code> is not an instance of the corresponding value type, an error of type <code class="B1.Bullet1">&lt;type-error&gt;</code> is signaled.</li>
-<li class="B1.Bullet1">If a function does not have a rest value declaration, and more values are returned by the function's body (or by the applicable method if the function is a generic function) than the number of required value declarations in the function's parameter-list, the extra values are discarded and not returned.
-<p class="T1.Text1"><a name="MARKER-2-836"></a>Because of the parameter list congruency rules for value declarations (see <a href="#MARKER-9-837" class="T1.Text1">"Parameter List Congruency" on page 93</a>) the values returned by a generic function do not have to be checked by the generic function. The check inside a method will always be enough to verify that the return values are valid for the generic function.</p></li>
+<li class="B1.Bullet1">If a function does not have a rest value declaration, and more values are returned by the function's body (or by the applicable method if the function is a generic function) than the number of required value declarations in the function's parameter-list, the extra values are discarded and not returned.</li>
 </ul>
+<p class="T1.Text1"><a name="MARKER-2-836"></a>Because of the parameter list congruency rules for value declarations (see <a href="#MARKER-9-837" class="T1.Text1">"Parameter List Congruency" on page 93</a>) the values returned by a generic function do not have to be checked by the generic function. The check inside a method will always be enough to verify that the return values are valid for the generic function.</p>
 <pre class="Cv.Code">
 define method average (x :: &lt;number&gt;, y :: &lt;number&gt;)
  =&gt; mean :: &lt;number&gt;;
@@ -192,25 +194,27 @@ end method;
 <li class="B1.Bullet1">They have the same number of required arguments.</li>
 <li class="B1.Bullet1">Each of the method's parameter specializers is a subtype of the corresponding parameter specializer of the generic function.</li>
 <li class="B1.Bullet1">One of the following is true:</li>
-<li><ul class="B2.Bullet2">
+<ul class="B2.Bullet2">
 <li class="B2.Bullet2">both accept keyword arguments</li>
 <li class="B2.Bullet2">both accept a variable number of arguments</li>
 <li class="B2.Bullet2">both require a fixed number of arguments</li>
-</ul></li>
-<li class="B1.Bullet1">If the generic function accepts keyword arguments, each method must recognize the mandatory keywords of the generic function.
-<p class="T1.Text1">In addition, the value declarations must be congruent, defined as follows:</p></li>
+</ul>
+<li class="B1.Bullet1">If the generic function accepts keyword arguments, each method must recognize the mandatory keywords of the generic function.</li>
+</ul>
+<p class="T1.Text1">In addition, the value declarations must be congruent, defined as follows:</p>
+<ul>
 <li class="B1.Bullet1">If the generic function's parameter list does not contain a rest value declaration, then</li>
-<li><ul class="B2.Bullet2">
+<ul class="B2.Bullet2">
 <li class="B2.Bullet2">The method's parameter list must not contain a rest value declaration.</li>
 <li class="B2.Bullet2">The two parameter lists must contain the same number of required value declarations.</li>
 <li class="B2.Bullet2">Each value type in the method's parameter list must be a subtype of the corresponding value type in the generic function's parameter list.</li>
-</ul></li>
+</ul>
 <li class="B1.Bullet1"><a name="MARKER-2-839"></a>If the generic function's parameter list contains a rest value declaration, then:</li>
-<li><ul class="B2.Bullet2">
+<ul class="B2.Bullet2">
 <li class="B2.Bullet2">The method's parameter list is permitted, but not required, to contain a rest value declaration.</li>
 <li class="B2.Bullet2">The method's parameter list must contain at least as many required value declarations as the generic function's parameter list.</li>
 <li class="B2.Bullet2">Each value type in the method's parameter list must be a subtype of the corresponding value type in the generic function's parameter list. If the method has a rest value type, it corresponds to the generic function's rest value type. If the method has more required value types than the generic function, the extra ones must be subtypes of the generic function's rest value type.<a name="MARKER-2-840"></a></li>
-</ul></li>
+</ul>
 </ul>
 <a name="HEADING49-102"></a>
 <a name="UID-Functions-3556"></a>

@@ -35,28 +35,34 @@
 <li class="B1.Bullet1"><code class="cv B1.Bullet1">object-class(<i class="Parameter cv B1.Bullet1">X)</i></code> is a subclass of <i class="Parameter B1.Bullet1">C</i>.</li>
 <li class="B1.Bullet1"><i class="Parameter B1.Bullet1">X</i>'s size matches <i class="Parameter B1.Bullet1">S</i>, as described above.</li>
 <li class="B1.Bullet1">If <i class="Parameter B1.Bullet1">X</i> is an instance of <code class="cv B1.Bullet1">&lt;stretchy-collection&gt;</code> then <i class="Parameter B1.Bullet1">S</i> must be <code class="cv B1.Bullet1">#f</code>.</li>
-<li class="B1.Bullet1">The element type of <i class="Parameter B1.Bullet1">X</i> is equivalent to <i class="Parameter B1.Bullet1">T<em class="Subscript Parameter B1.Bullet1">2</em></i>.
-<p class="T1.Text1">An object <i class="Parameter T1.Text1">X</i> is an instance of a type <code class="cv T1.Text1">limited(<i class="Parameter cv T1.Text1">C, of: T<em class="Subscript Parameter cv T1.Text1">2, dimensions: D)</em></i></code> if and only if all of the following are true:</p></li>
+<li class="B1.Bullet1">The element type of <i class="Parameter B1.Bullet1">X</i> is equivalent to <i class="Parameter B1.Bullet1">T<em class="Subscript Parameter B1.Bullet1">2</em></i>.</li>
+</ul>
+<p class="T1.Text1">An object <i class="Parameter T1.Text1">X</i> is an instance of a type <code class="cv T1.Text1">limited(<i class="Parameter cv T1.Text1">C, of: T<em class="Subscript Parameter cv T1.Text1">2, dimensions: D)</em></i></code> if and only if all of the following are true:</p>
+<ul>
 <li class="B1.Bullet1"><code class="cv B1.Bullet1">object-class(<i class="Parameter cv B1.Bullet1">X)</i></code> is a subclass of <i class="Parameter B1.Bullet1">C</i>.</li>
 <li class="B1.Bullet1"><code class="cv B1.Bullet1">dimensions(<i class="Parameter cv B1.Bullet1">X)</i></code> <code class="cv B1.Bullet1">=</code> <i class="Parameter B1.Bullet1">D</i>.</li>
 <li class="B1.Bullet1"><i class="Parameter B1.Bullet1">X</i> is not an instance of <code class="cv B1.Bullet1">&lt;stretchy-collection&gt;</code>.</li>
-<li class="B1.Bullet1">The element type of <i class="Parameter B1.Bullet1">X</i> is equivalent to <i class="Parameter B1.Bullet1">T<em class="Subscript Parameter B1.Bullet1">2</em></i>.<a name="MARKER-2-1063"></a>
+<li class="B1.Bullet1">The element type of <i class="Parameter B1.Bullet1">X</i> is equivalent to <i class="Parameter B1.Bullet1">T<em class="Subscript Parameter B1.Bullet1">2</em></i>.<a name="MARKER-2-1063"></a></li>
+</ul>
 <p class="T1.Text1">Each element of an instance of a limited collection type must be an instance of the element type. Fetching an element of the collection is guaranteed to return an instance of the element type. Setting or initializing an element will check that the new element is an instance of the element type and signal an error of type <code class="cv T1.Text1">&lt;type-error&gt;</code> if it is not.</p>
 <p class="T1.Text1"><a name="MARKER-2-1064"></a>If <i class="Parameter T1.Text1">L<em class="Subscript Parameter T1.Text1">1</em></i> is a subtype of <i class="Parameter T1.Text1">L<em class="Subscript Parameter T1.Text1">2</em></i> and <i class="Parameter T1.Text1">L<em class="Subscript Parameter T1.Text1">2</em></i> is a limited collection type, then <i class="Parameter T1.Text1">L<em class="Subscript Parameter T1.Text1">1</em></i> is either a singleton of an instance of <i class="Parameter T1.Text1">L<em class="Subscript Parameter T1.Text1">2</em></i> or a limited collection type that satisfies one of the following sets of rules:</p>
-<p class="N.NList">If neither <i class="Parameter N.NList">L<em class="Subscript Parameter N.NList">1</em></i> nor <i class="Parameter N.NList">L<em class="Subscript Parameter N.NList">2</em></i> specifies a <code class="cv N.NList">dimensions:</code> attribute, let <i class="Parameter N.NList">L<em class="Subscript Parameter N.NList">1</em></i> be <code class="cv N.NList">limited(<i class="Parameter cv N.NList">C<em class="Subscript Parameter cv N.NList">1, of: T1, size: S1)</em></i></code>, and <i class="Parameter N.NList">L<em class="Subscript Parameter N.NList">2</em></i> be <code class="cv N.NList">limited(<i class="Parameter cv N.NList">C<em class="Subscript Parameter cv N.NList">2, of: T2, size: S2)</em></i></code>. All of the following must be true:</p></li>
-<li><ul class="B2.Bullet2">
+<ol>
+<li>If neither <i class="Parameter N.NList">L<em class="Subscript Parameter N.NList">1</em></i> nor <i class="Parameter N.NList">L<em class="Subscript Parameter N.NList">2</em></i> specifies a <code class="cv N.NList">dimensions:</code> attribute, let <i class="Parameter N.NList">L<em class="Subscript Parameter N.NList">1</em></i> be <code class="cv N.NList">limited(<i class="Parameter cv N.NList">C<em class="Subscript Parameter cv N.NList">1, of: T1, size: S1)</em></i></code>, and <i class="Parameter N.NList">L<em class="Subscript Parameter N.NList">2</em></i> be <code class="cv N.NList">limited(<i class="Parameter cv N.NList">C<em class="Subscript Parameter cv N.NList">2, of: T2, size: S2)</em></i></code>. All of the following must be true:</li>
+<ul class="B2.Bullet2">
 <li class="B2.Bullet2"><i class="Parameter B2.Bullet2">C<em class="Subscript Parameter B2.Bullet2">1</em></i> is a subclass of <i class="Parameter B2.Bullet2">C<em class="Subscript Parameter B2.Bullet2">2</em></i>.</li>
 <li class="B2.Bullet2">If <i class="Parameter B2.Bullet2">S<em class="Subscript Parameter B2.Bullet2">2</em></i> is not #<code class="cv B2.Bullet2">f</code>, <i class="Parameter B2.Bullet2">S<em class="Subscript Parameter B2.Bullet2">1</em></i> = <i class="Parameter B2.Bullet2">S<em class="Subscript Parameter B2.Bullet2">2</em></i>.</li>
-<li class="B2.Bullet2"><i class="Parameter B2.Bullet2">T<em class="Subscript Parameter B2.Bullet2">1</em></i> and <i class="Parameter B2.Bullet2">T<em class="Subscript Parameter B2.Bullet2">2</em></i> are equivalent types.
-<p class="N.NList">If either <i class="Parameter N.NList">L<em class="Subscript Parameter N.NList">1</em></i> or <i class="Parameter N.NList">L<em class="Subscript Parameter N.NList">2</em></i>, specifies a <code class="cv N.NList">dimensions:</code> attribute, then all of the following must be true. Let <i class="Parameter N.NList">L<em class="Subscript Parameter N.NList">1</em></i> be <code class="cv N.NList">limited(<i class="Parameter cv N.NList">C<em class="Subscript Parameter cv N.NList">1, of: T1, dimensions: D1)</em></i></code>, and <i class="Parameter N.NList">L<em class="Subscript Parameter N.NList">2</em></i> be either <code class="cv N.NList">limited(<i class="Parameter cv N.NList">C<em class="Subscript Parameter cv N.NList">2, of: T2, dimensions: D2</em></i></code>) or <code class="cv N.NList">limited(<i class="Parameter cv N.NList">C<em class="Subscript Parameter cv N.NList">2, of: T2, size: S2)</em></i></code>.</p></li>
+<li class="B2.Bullet2"><i class="Parameter B2.Bullet2">T<em class="Subscript Parameter B2.Bullet2">1</em></i> and <i class="Parameter B2.Bullet2">T<em class="Subscript Parameter B2.Bullet2">2</em></i> are equivalent types.</li>
+</ul>
+<li>If either <i class="Parameter N.NList">L<em class="Subscript Parameter N.NList">1</em></i> or <i class="Parameter N.NList">L<em class="Subscript Parameter N.NList">2</em></i>, specifies a <code class="cv N.NList">dimensions:</code> attribute, then all of the following must be true. Let <i class="Parameter N.NList">L<em class="Subscript Parameter N.NList">1</em></i> be <code class="cv N.NList">limited(<i class="Parameter cv N.NList">C<em class="Subscript Parameter cv N.NList">1, of: T1, dimensions: D1)</em></i></code>, and <i class="Parameter N.NList">L<em class="Subscript Parameter N.NList">2</em></i> be either <code class="cv N.NList">limited(<i class="Parameter cv N.NList">C<em class="Subscript Parameter cv N.NList">2, of: T2, dimensions: D2</em></i></code>) or <code class="cv N.NList">limited(<i class="Parameter cv N.NList">C<em class="Subscript Parameter cv N.NList">2, of: T2, size: S2)</em></i></code>.</li>
+<ul>
 <li class="B2.Bullet2"><i class="Parameter B2.Bullet2">C<em class="Subscript Parameter B2.Bullet2">1</em></i> is a subclass of <i class="Parameter B2.Bullet2">C<em class="Subscript Parameter B2.Bullet2">2</em></i>.</li>
 <li class="B2.Bullet2"><i class="Parameter B2.Bullet2">D<em class="Subscript Parameter B2.Bullet2">1</em></i> is present (i.e. <i class="Parameter B2.Bullet2">L<em class="Subscript Parameter B2.Bullet2">1</em></i> must specify a dimensions attribute).</li>
 <li class="B2.Bullet2">If <i class="Parameter B2.Bullet2">D<em class="Subscript Parameter B2.Bullet2">2</em></i> is present, <i class="Parameter B2.Bullet2">D<em class="Subscript Parameter B2.Bullet2">1</em></i> <code class="cv B2.Bullet2">=</code> <i class="Parameter B2.Bullet2">D<em class="Subscript Parameter B2.Bullet2">2</em></i>.</li>
 <li class="B2.Bullet2">If <i class="Parameter B2.Bullet2">S<em class="Subscript Parameter B2.Bullet2">2</em></i> is not <code class="cv B2.Bullet2">#f</code>, <code class="cv B2.Bullet2">reduce1(\*, <i class="Parameter cv B2.Bullet2">D<em class="Subscript Parameter cv B2.Bullet2">1) = S2</em></i></code>.</li>
-<li class="B2.Bullet2"><i class="Parameter B2.Bullet2">T<em class="Subscript Parameter B2.Bullet2">1</em></i> and <i class="Parameter B2.Bullet2">T<em class="Subscript Parameter B2.Bullet2">2</em></i> are equivalent types.
-<p class="T1.Text1">The limited collection type <code class="cv T1.Text1">limited(<i class="Parameter cv T1.Text1">C, of: T, size: S)</i></code> is a subtype of <i class="Parameter T1.Text1">C</i>. The limited collection type <code class="cv T1.Text1">limited(<i class="Parameter cv T1.Text1">C, of: T, dimensions: D)</i></code> is a subtype of <i class="Parameter T1.Text1">C</i>.<a name="MARKER-2-1065"></a></p></li>
-</ul></li>
+<li class="B2.Bullet2"><i class="Parameter B2.Bullet2">T<em class="Subscript Parameter B2.Bullet2">1</em></i> and <i class="Parameter B2.Bullet2">T<em class="Subscript Parameter B2.Bullet2">2</em></i> are equivalent types.</li>
 </ul>
+</ol>
+<p class="T1.Text1">The limited collection type <code class="cv T1.Text1">limited(<i class="Parameter cv T1.Text1">C, of: T, size: S)</i></code> is a subtype of <i class="Parameter T1.Text1">C</i>. The limited collection type <code class="cv T1.Text1">limited(<i class="Parameter cv T1.Text1">C, of: T, dimensions: D)</i></code> is a subtype of <i class="Parameter T1.Text1">C</i>.<a name="MARKER-2-1065"></a></p>
 <a name="HEADING69-31"></a>
 <h3 class="H3.Heading3"> Element Type Subclassing</h3>
 <p class="T1.Text1"><a name="MARKER-2-1066"></a>The element type subclassing rules are generalized to limited collection types as follows (this is implied by the preceding and is included here for explanatory purposes only):</p>
@@ -78,9 +84,9 @@
 <li class="B1.Bullet1"><code class="B1.Bullet1">&lt;stretchy-collection&gt;</code></li>
 <li class="B1.Bullet1"><code class="B1.Bullet1">&lt;mutable-explicit-key-collection&gt;</code></li>
 <li class="B1.Bullet1"><code class="B1.Bullet1">&lt;sequence&gt;</code></li>
-<li class="B1.Bullet1"><code class="B1.Bullet1">&lt;mutable-sequence&gt;</code>
-<p class="T1.Text1">Although limited types created from these classes cannot be instantiated, they are still useful as specializers.<a name="MARKER-2-1070"></a></p></li>
+<li class="B1.Bullet1"><code class="B1.Bullet1">&lt;mutable-sequence&gt;</code></li>
 </ul>
+<p class="T1.Text1">Although limited types created from these classes cannot be instantiated, they are still useful as specializers.<a name="MARKER-2-1070"></a></p>
 <a name="HEADING69-49"></a>
 <h3 class="H3.Heading3"> Instantiable Limited Collection Types</h3>
 <p class="T1.Text1"><a name="MARKER-2-1071"></a>Methods on <code class="cv T1.Text1">limited</code> support the creation of instantiable limited types for the following classes:</p>
@@ -92,10 +98,10 @@
 <li class="B1.Bullet1"><code class="B1.Bullet1">&lt;simple-vector&gt;</code></li>
 <li class="B1.Bullet1"><code class="B1.Bullet1">&lt;stretchy-vector&gt;</code></li>
 <li class="B1.Bullet1"><code class="B1.Bullet1">&lt;string&gt;</code></li>
-<li class="B1.Bullet1"><code class="B1.Bullet1">&lt;range&gt;</code>
-<p class="T1.Text1">These methods are described in <a href="drm_96.html#MARKER-9-1527" class="T1.Text1">Chapter 12, "The Built-In Functions,"</a> on <a href="drm_98.html#MARKER-9-1559" class="T1.Text1">page 263</a>.<a name="MARKER-2-1072"></a><a name="MARKER-2-1073"></a><a name="MARKER-2-1074"></a></p>
-<a name="LINK-Collections-lastpage"></a><a name="LINK-SealingTOC-firstpage"></a></li>
+<li class="B1.Bullet1"><code class="B1.Bullet1">&lt;range&gt;</code></li>
 </ul>
+<p class="T1.Text1">These methods are described in <a href="drm_96.html#MARKER-9-1527" class="T1.Text1">Chapter 12, "The Built-In Functions,"</a> on <a href="drm_98.html#MARKER-9-1559" class="T1.Text1">page 263</a>.<a name="MARKER-2-1072"></a><a name="MARKER-2-1073"></a><a name="MARKER-2-1074"></a></p>
+<a name="LINK-Collections-lastpage"></a><a name="LINK-SealingTOC-firstpage"></a>
 <a name="UID-SealingTOC-411"></a>
 <a name="LINK-SealingTOC-lastpage"></a>
 </div>
