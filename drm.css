@@ -1,5 +1,12 @@
 body { margin: 20px }
 
+
+/* Debugging: Uncomment this to see all the boxes. */
+
+/** { border: 1px solid }*/
+
+
+
 /*
   Headings
 
@@ -10,13 +17,69 @@ body { margin: 20px }
   the printed DRM.)
 */
 
-h1[class~="H1.Heading1"], h2, h3 { padding-top: 0.5em; padding-bottom: 3px; border-bottom: 1px solid }
+h1[class~="H1.Heading1"], h2, h3 { margin-top: 1em; padding-bottom: 3px; border-bottom: 1px solid }
 
 /* definition section headings */
 
-h3[class~="H4.Heading4"] { padding-top: 1.5em; padding-bottom: 0px; border-bottom: none }
-h3[class~="H4.Heading4"] code { font-size: larger }
-span.attributes-summary { position: absolute; right: 20px; margin-right: 1em }
+h3[class~="H4.Heading4"]       { margin-top: 2em; padding-bottom: 0px; border-bottom: none }
+h3[class~="H4.Heading4"] code  { font-size: larger }
+span.attributes-summary        { position: absolute; right: 20px; margin-right: 1em }
+
+
+
+/*
+  Lists
+
+  To match the printed DRM, left-align bullets near/at the left margin
+  instead of indenting, use larger vertical margins than the default
+  (which is about zero), and use squares for the first level bullets.
+*/
+
+ul		    { padding-left: 1.25em }
+ol   		    { padding-left: 1.5em  }
+
+ul	  	    { list-style-type: square }
+ul ul, ol ul	    { list-style-type: circle }
+ul ul ul, ol ul ul  { list-style-type: disc   }
+
+li    	     	    { margin-top: 0.75em 0 0.75em 0 }
+li li 		    { margin-top: 0.5em  0 0.5em  0 }
+
+/*
+  TOC Lists are formatted more compactly and have a gray background to
+  set them apart from the page content.
+*/
+
+ul.footer 	    { padding: 1em 0 1em 2em; margin: 1em 0 0 0; background-color: #dddddd }
+ul.footer ul.footer { padding-top: 0; padding-bottom: 0; margin-top: 0 }
+
+ul.footer 	      	      { list-style-type: disc   } /* use the default bullets */
+ul.footer ul.footer	      { list-style-type: circle }
+ul.footer ul.footer ul.footer { list-style-type: square }
+
+li.footer 	      	      { margin-top: 0 }
+
+
+
+/*
+  Definitions
+
+  Some experimental declarations to try to format things more like
+  the printed DRM, with labels to the left instead of on separate
+  lines. I suspect the final answer will be to changet the HTML
+  tags to use something other than dt/dd, as the following attempts
+  aren't producing the desired results.
+*/
+
+/*
+dd dt, dd dd, dd dd p { display: inline }
+dd dt, dd dd, dd dd p { display: table-cell }
+dl { display: table-row-group }
+dd dd p { display: table-cell }
+dd dd + dt { display: block }
+dd dd { position: absolute; left: 10em }
+*/
+
 
 
 /*
@@ -38,8 +101,8 @@ span.attributes-summary { position: absolute; right: 20px; margin-right: 1em }
 
 */
 
-table.numbered			{ border-top: 1px solid; border-collapse: collapse }
-table.numbered caption		{ padding-bottom: 3px }	  /* don't let caption descenders touch the line */
+table.numbered		{ border-top: 1px solid; border-collapse: collapse }
+table.numbered caption	{ padding-bottom: 3px }	  /* don't let caption descenders touch the line */
 
 /*
   For tables with thead/tbody groups, put lines between groups. This
@@ -50,15 +113,16 @@ table.numbered caption		{ padding-bottom: 3px }	  /* don't let caption descender
   browsers.
 */
 
-table.grouped thead		{ border-bottom: hidden } /* no line below the header */
-table.grouped tbody		{ border-top: 1px solid } /* put a line between row groups */
+table.grouped thead	{ border-bottom: hidden } /* no line below the header */
+table.grouped tbody	{ border-top: 1px solid } /* put a line between row groups */
 
-caption, th			{ text-align: left }
+caption, th		{ text-align: left }
 
-th, td 	      	  	     	{ padding-top: 0.5em; padding-bottom: 0.5em }	/* space rows about a line height */
-th + th, td + td 	      	{ padding-left: 2em; vertical-align: baseline }
+th, td 	      	  	{ padding-top: 0.5em; padding-bottom: 0.5em }	/* space rows about a line height */
+th + th, td + td 	{ padding-left: 2em; vertical-align: baseline }
 
-th.primary, td.primary		{ min-width: 10em } /* the "primary" column should avoid wrapping */
+th.primary, td.primary	{ min-width: 10em } /* the "primary" column should avoid wrapping */
+
 /*
   Add some space between the "Table ##-##" number and the table title.
   The number label should have some kind of tag around it. This will
@@ -101,6 +165,23 @@ i.Parameter, code i { font-family: serif }
 
 
 /*
+  BNF Formatting
+
+  Non-terminals are all-caps. This is unfinished. Doing this right
+  will require cleaning up the HTML tag spans.
+ */
+
+
+/*
+.BNF	   { font-variant: small-caps }
+code.BNF   { font-family: serif }
+i code.BNF { font-style: normal }
+em.BNF 	   { font-size: larger; font-style: italic }
+*/
+
+
+
+/*
 
 img { border-width: 0px; }
 ul { list-style-type: square }
@@ -115,7 +196,11 @@ div.wm-div-body {
 */
 
 
-/* Float the navigation buttons at the top of each page. */
+/*
+  Some experimental declarations to float the navigation buttons at
+  the top of each page.
+*/
+
 /*
 div.wm-div-headers {
 	position: fixed;
