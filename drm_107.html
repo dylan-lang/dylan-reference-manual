@@ -61,13 +61,13 @@
 </div>
 <a name="HEADING107-0"></a>
 <a name="UID-Built-In_Functions-1613"></a>
-<h1 class="H1.Heading1"> Operations on Conditions</h1>
+<h1 class="H1.Heading1">Operations on Conditions</h1>
 <p class="T0.Text0">The following functions are used to create, signal, handle, and examine conditions.</p>
 <a name="HEADING107-2"></a>
 <a name="UID-Built-In_Functions-23522"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-1916"></a><a name="MARKER-9-1917"></a>Signaling Conditions</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-1916"></a><a name="MARKER-9-1917"></a>Signaling Conditions</h2>
 <a name="HEADING107-3"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1918"></a>signal</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1918"></a>signal</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1919"></a>Signals a condition.</p>
 <dl class="Cliche">
@@ -88,7 +88,7 @@
     <p class="T1.Text1">The second form signals a condition of type <code class="T1.Text1">&lt;simple-warning&gt;</code>. </p></dd>
 </dl>
 <a name="HEADING107-12"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1920"></a>error</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1920"></a>error</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1921"></a>Signals a nonrecoverable error.</p>
 <dl class="Cliche">
@@ -109,7 +109,7 @@
 <p class="T1.Text1">The second form signals a condition of type <code class="T1.Text1">&lt;simple-error&gt;</code>.</p></dd>
 </dl>
 <a name="HEADING107-21"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1922"></a>cerror</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1922"></a>cerror</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1923"></a>Signals a correctable error.</p>
 <dl class="Cliche">
@@ -136,7 +136,7 @@
 <p class="T1.Text1">If the restart handler is invoked, <code class="cv T1.Text1">cerror</code> returns <code class="cv T1.Text1">#f</code>; otherwise, <code class="cv T1.Text1">cerror</code> never returns. If <code class="cv T1.Text1">cerror</code> returns, the program should take the corrective actions promised in the <i class="Parameter T1.Text1">restart-description</i>. <code class="cv T1.Text1">cerror</code> is the standard way to signal correctable errors when no special class of restart condition is required.</p></dd>
 </dl>
 <a name="HEADING107-32"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1924"></a>break</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1924"></a>break</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Invokes the debugger<a name="MARKER-9-1925"></a>.</p>
 <dl class="Cliche">
@@ -159,7 +159,7 @@
 <p class="T1.Text1">The behavior of the debugger is implementation-defined.</p></dd>
 </dl>
 <a name="HEADING107-42"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1926"></a>check-type</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1926"></a>check-type</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Checks an object to ensure that it is an instance of a specified type.</p>
 <dl class="Cliche">
@@ -177,7 +177,7 @@
 <dd class="Cliche"><p class="Cliche"> Checks <i class="Parameter Cliche">value</i> to ensure that it is an instance of <i class="Parameter Cliche">type</i>, and signal an error of type <code class="cv Cliche">&lt;type-error&gt;</code> if it is not.</p></dd>
 </dl>
 <a name="HEADING107-49"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1927"></a>abort</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1927"></a>abort</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Aborts and never returns.</p>
 <dl class="Cliche">
@@ -193,9 +193,9 @@
 </dl>
 <a name="HEADING107-56"></a>
 <a name="UID-Built-In_Functions-423"></a>
-<h2 class="H2.Heading2"> Handling Conditions</h2>
+<h2 class="H2.Heading2">Handling Conditions</h2>
 <a name="HEADING107-57"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1928"></a>default-handler</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1928"></a>default-handler</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1929"></a>Called if no dynamic handler handles a condition.</p>
 <dl class="Cliche">
@@ -208,21 +208,21 @@
   <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
   <dd class="Cliche"><p class="Cliche"> Called if no dynamic handler handles a condition.</p>
     <a name="HEADING107-63"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">default-handler</code> condition<code class="H5.Heading5"> &rArr;  false</code> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">default-handler</code> condition<code class="H5.Heading5"> &rArr;  false</code> <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="SD.ShortDescription">A predefined method on <code class="cv SD.ShortDescription">&lt;condition&gt;</code> simply returns <code class="cv SD.ShortDescription">#f</code>.</p>
     <a name="HEADING107-65"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">default-handler</code> serious-condition<code class="H5.Heading5"> &rArr;  </code>{does not return} <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">default-handler</code> serious-condition<code class="H5.Heading5"> &rArr;  </code>{does not return} <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="SD.ShortDescription">A predefined method on <code class="cv SD.ShortDescription">&lt;serious-condition&gt;</code> invokes an implementation-defined debugger.</p>
     <a name="HEADING107-67"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">default-handler</code> warning<code class="H5.Heading5"> &rArr;  false</code> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">default-handler</code> warning<code class="H5.Heading5"> &rArr;  false</code> <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="SD.ShortDescription">A predefined method on <code class="cv SD.ShortDescription">&lt;warning&gt;</code> prints the warning's message in an implementation-defined way and then returns <code class="cv SD.ShortDescription">#f</code>.</p>
     <a name="HEADING107-69"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">default-handler</code> restart<code class="H5.Heading5"> &rArr;  </code>{does not return} <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">default-handler</code> restart<code class="H5.Heading5"> &rArr;  </code>{does not return} <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="SD.ShortDescription">A predefined method on <code class="cv SD.ShortDescription">&lt;restart&gt;</code> signals an error.</p>
   </dd>
 </dl>
 <a name="HEADING107-71"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1930"></a>restart-query</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1930"></a>restart-query</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1637"></a>Called to query the user and restart.</p>
 <dl class="Cliche">
@@ -236,12 +236,12 @@
   <dd class="Cliche"><p class="Cliche"> Engages the interactive user in a dialog and stores the results in slots of <i class="Parameter Cliche">restart</i>.</p>
     <p class="T1.Text1">This function is designed to be called from a handler, after making a restart and before signaling it. The debugger uses <code class="T1.Text1">restart-query</code>, for example. </p>
     <a name="HEADING107-78"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">restart-query</code> restart &rArr; object <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">restart-query</code> restart &rArr; object <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">There is a default method for <code class="T1.Text1">&lt;restart&gt;</code> that does nothing.</p>
   </dd>
 </dl>
 <a name="HEADING107-80"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1932"></a>return-query</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1932"></a>return-query</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1933"></a>Queries the user for values to return.</p>
 <dl class="Cliche">
@@ -257,9 +257,9 @@
 </dl>
 <a name="HEADING107-87"></a>
 <a name="UID-Built-In_Functions-1650"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-9-1934"></a>Introspection on Conditions</h2>
+<h2 class="H2.Heading2"><a name="MARKER-9-1934"></a>Introspection on Conditions</h2>
 <a name="HEADING107-88"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1935"></a><a name="MARKER-2-1936"></a>do-handlers</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1935"></a><a name="MARKER-2-1936"></a>do-handlers</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1937"></a>Applies a function to all dynamically active handlers.</p>
 <dl class="Cliche">
@@ -273,7 +273,7 @@
   <dd class="Cliche"><p class="Cliche"> Applies<i class="Cliche"> function</i> to all dynamically active handlers, the most recently established first. <i class="Cliche">function</i> receives four arguments: <i class="Cliche">type</i>, <i class="Cliche">test</i>, <i class="Cliche">function</i>, and <i class="Cliche">init-arguments</i>. The arguments describe a dynamically active handler. All arguments have dynamic extent and must not be modified. <i class="Cliche">test</i> defaults to a function that always returns <code class="Cliche">#t</code>. <i class="Cliche">init-arguments</i> will be an empty sequence if it was not supplied by the handler.</p></dd>
 </dl>
 <a name="HEADING107-94"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1938"></a>return-allowed?</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1938"></a>return-allowed?</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1939"></a>Returns true if a condition's recovery protocol allows returning values.</p>
 <dl class="Cliche">
@@ -287,12 +287,12 @@
   <dd class="Cliche"><p class="Cliche"> Returns <code class="Cliche">#t</code> if the recovery protocol of <i class="Cliche">condition</i> allows returning values, or <code class="Cliche">#f</code> if it does not.</p>
     <p class="T1.Text1">There is a default method for <code class="T1.Text1">&lt;condition&gt;</code> that returns <code class="T1.Text1">#f</code>. Programs which define condition classes whose recovery protocol allows returning values should ensure that there is an appropriate method for this function defined on or inherited by the condition class.</p>
     <a name="HEADING107-101"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">return-allowed?</code> condition &rArr; false <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">return-allowed?</code> condition &rArr; false <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">There is a default method for <code class="T1.Text1">&lt;condition&gt;</code> that returns <code class="T1.Text1">#f</code>.</p>
   </dd>
 </dl>
 <a name="HEADING107-103"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1940"></a>return-description</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1940"></a>return-description</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1941"></a>Returns a description of a condition's returned values.</p>
 <dl class="Cliche">
@@ -307,7 +307,7 @@
 <p class="T1.Text1">This <i class="T1.Text1">description</i> can be a restart, a string, or <code class="T1.Text1">#f</code>. <code class="T1.Text1">return-description</code> should not be called if <code class="T1.Text1">return-allowed?</code> returns <code class="T1.Text1">#f</code>. If you define your own condition class whose recovery protocol allows returning values, you need to define a method for <code class="T1.Text1">return-description</code> unless the inherited method is suitable.</p></dd>
 </dl>
 <a name="HEADING107-110"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1942"></a>condition-format-string</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1942"></a>condition-format-string</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-2-1681"></a>Returns the format string of a simple condition.</p>
 <dl class="Cliche">
@@ -321,7 +321,7 @@
 <dd class="Cliche"><p class="Cliche"> Returns the format string that was supplied as an initialization argument when the <i class="Parameter Cliche">simple-condition</i> was created.</p></dd>
 </dl>
 <a name="HEADING107-116"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1944"></a>condition-format-arguments</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1944"></a>condition-format-arguments</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1945"></a>Returns the format arguments of a simple condition.</p>
 <dl class="Cliche">
@@ -335,7 +335,7 @@
 <dd class="Cliche"><p class="Cliche"> Returns the sequence of format arguments that was supplied as an initialization argument when the <i class="Parameter Cliche">simple-condition</i> was created.</p></dd>
 </dl>
 <a name="HEADING107-122"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1946"></a>type-error-value</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1946"></a>type-error-value</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1947"></a>Returns the value that was not of the expected type.</p>
 <dl class="Cliche">
@@ -349,7 +349,7 @@
 <dd class="Cliche"><p class="Cliche"> Returns the value that was not of the expected type, and thereby led to the type error.</p></dd>
 </dl>
 <a name="HEADING107-128"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1948"></a>type-error-expected-type</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1948"></a>type-error-expected-type</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1949"></a>Returns the expected type of the type check that led to the type error.</p>
 <dl class="Cliche">

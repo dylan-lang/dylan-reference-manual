@@ -61,7 +61,7 @@
 </div>
 <a name="HEADING23-0"></a>
 <a name="UID-Syntax-1728"></a>
-<h1 class="H1.Heading1"> <a name="MARKER-9-317"></a>Dylan Interchange Format</h1>
+<h1 class="H1.Heading1"><a name="MARKER-9-317"></a>Dylan Interchange Format</h1>
 <p class="T1.Text1">The <strong class="T1.Text1"><a name="MARKER-2-318"></a>Dylan interchange format</strong> is a standard file format for publishing Dylan <a name="MARKER-2-319"></a>source code. Such a file has two parts, the <strong class="Bold T1.Text1"><a name="MARKER-2-320"></a>file header</strong> and the <strong class="Bold T1.Text1"><a name="MARKER-2-321"></a>code body</strong>. The file header comes before the code body.</p>
 <p class="T1.Text1">The code body consists of a <a name="MARKER-2-322"></a>source record.</p>
 <p class="T1.Text1">The  file header consists of one or more keyword-value pairs, as follows:</p>
@@ -79,15 +79,15 @@
 <p class="T1.Text1"><a name="MARKER-2-324"></a>Blank lines may not appear in the file header. A blank line defines the end of the file header and the beginning of the code body. The blank line is not part of the code body. (A "blank line" is a line consisting of zero or more space or tab characters, ending in a newline character.)</p>
 <p class="T1.Text1">The following standard keywords are defined:</p>
 <a name="HEADING23-15"></a>
-<h3 class="H4.Heading4"> <code class="H4.Heading4"><a name="MARKER-2-325"></a>language:</code>  language-name <span class="attributes-summary">[Header keyword]</span> </h3>
+<h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-325"></a>language:</code>  language-name <span class="attributes-summary">[Header keyword]</span> </h3>
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The source record in the file is written in the named language. The only portable value for this keyword is <code class="cv T1.Text1">infix-dylan</code>.<code class="cv T1.Text1"></code></p>
 <a name="HEADING23-17"></a>
-<h3 class="H4.Heading4"> <code class="H4.Heading4"><a name="MARKER-2-326"></a>module:</code>  module-name <span class="attributes-summary">[Header keyword]</span> </h3>
+<h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-326"></a>module:</code>  module-name <span class="attributes-summary">[Header keyword]</span> </h3>
 <hr class="H4.Heading4" />
 <p class="T1.Text1">The source record in the file is associated with the named module. This keyword is required.</p>
 <a name="HEADING23-19"></a>
-<h3 class="H4.Heading4"> <code class="H4.Heading4"><a name="MARKER-2-327"></a>author:</code> text <span class="attributes-summary">[Header keyword]</span><br /><code class="H4.Heading4"><a name="MARKER-2-328"></a>copyright:</code> text <span class="attributes-summary">[Header keyword]</span><br /><code class="H4.Heading4"><a name="MARKER-2-329"></a>version:</code> text <span class="attributes-summary">[Header keyword]</span></h3>
+<h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-327"></a>author:</code> text <span class="attributes-summary">[Header keyword]</span><br /><code class="H4.Heading4"><a name="MARKER-2-328"></a>copyright:</code> text <span class="attributes-summary">[Header keyword]</span><br /><code class="H4.Heading4"><a name="MARKER-2-329"></a>version:</code> text <span class="attributes-summary">[Header keyword]</span></h3>
 <hr class="H4.Heading4" />
 <p class="T1.Text1">These are provided for standardization. They are optional, and can be ignored by the implementation.</p>
 <p class="T1.Text1">A typical Dylan source file might look like this:</p>

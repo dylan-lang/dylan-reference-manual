@@ -60,9 +60,9 @@
 </div>
 <a name="LINK-BNF_Appendix-firstpage"></a><a name="HEADING116-0"></a>
 <a name="UID-BNF_Appendix-299"></a>
-<h1 class="ApT.ApdxTitle"> <a name="MARKER-9-2090"></a>BNF</h1>
+<h1 class="ApT.ApdxTitle"><a name="MARKER-9-2090"></a>BNF</h1>
 <a name="HEADING116-1"></a>
-<h2 class="H2.Heading2"> General Notes</h2>
+<h2 class="H2.Heading2">General Notes</h2>
 <p class="T1.Text1">Dylan <a name="MARKER-2-2091"></a>syntax can be parsed with an <a name="MARKER-2-2092"></a>LALR(1) <a name="MARKER-2-2093"></a>grammar.</p>
 <p class="T1.Text1"><a name="MARKER-2-2094"></a>This appendix uses some special notation to make the presentation of the grammar more readable. </p>
 <ul class="B1.Bullet1">
@@ -78,7 +78,7 @@
 </ul>
 <p class="Default"> In the following grammar, some tokens are used multiple ways. For example the hyphen, "<code class="cv Default">-</code>," is punctuation, a unary operator, and a binary operator; also, "<code class="cv Default">method</code>" is a <em class="Default">begin-word</em> and a <em class="Default">define-body-word</em>. In some parsing implementations such multiple meanings of a token may not be possible. However this is just an implementation issue since the meaning of the grammar is clear. <code class="cv Default">method</code> is used as punctuation in <i class="Parameter Default">local-methods</i> and <i class="Parameter Default">method-definition</i>; since <code class="cv Default">method</code> is not a core reserved word, this typically has to be implemented by accepting any <em class="Default">macro-name</em> and checking semantically that the word used is "<code class="cv Default">method</code>." The grammar as presented is not obviously LALR(1), since the required changes would tend to obscure the readability for human beings (especially in macro definitions and case-body). The grammar can be made LALR(1) through well-known standard transformations implemented by most parser generators.</p>
 <a name="HEADING116-11"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-2095"></a>Lexical Notes</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-2095"></a>Lexical Notes</h2>
 <p class="T1.Text1">In the lexical grammar, the various elements that come together to form a single token on the right-hand sides of rules must <i class="T1.Text1">not</i> be separated by whitespace, so that the end result will be a single token. This is in contrast to the phrase grammar, where each element is already a complete token or a series of complete tokens.</p>
 <p class="T1.Text1">Arbitrary whitespace is permitted between tokens, but it is required only as necessary to separate tokens that might otherwise blend together.</p>
 <p class="T1.Text1">Case is not significant except within character and string literals. The grammars do not reflect this, using one case or the other, but it is still true.</p>

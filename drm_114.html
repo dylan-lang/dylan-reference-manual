@@ -61,7 +61,7 @@
 </div>
 <a name="HEADING114-0"></a>
 <a name="UID-Built-In_Macros-2670"></a>
-<h1 class="H1.Heading1"> Statements</h1>
+<h1 class="H1.Heading1">Statements</h1>
 <p class="T1.Text1"><a name="MARKER-2-2041"></a>Statements are used to implement a variety of program constructs.</p>
 <p class="T1.Text1">Many statements include an optional implicit body, which may contain one or more constituents separated by semicolons. When an implicit body is executed, the expressions in the implicit body are executed in order (left to right). The values of the implicit body are the values of the last expression. If the optional implicit body is not present or contains no expressions, the return value is <code class="cv T1.Text1">#f</code>.</p>
 <table class="numbered"><caption><strong>Table 14-3</strong> Statements</caption>
@@ -111,10 +111,10 @@
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2066" class="TbT.TblText">408</a></p>
 </td></tr></table><a name="HEADING114-162"></a>
 <a name="UID-Built-In_Macros-10641"></a>
-<h2 class="H2.Heading2"> Conditionals</h2>
+<h2 class="H2.Heading2">Conditionals</h2>
 <p class="T1.Text1"><a name="MARKER-2-2042"></a>The following statements are used to perform conditional execution.</p>
 <a name="HEADING114-164"></a>
-<h3 class="H4.Heading4"> <code class="H4.Heading4"><a name="MARKER-2-2043"></a>if</code> <span class="attributes-summary">[Statement]</span></h3>
+<h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-2043"></a>if</code> <span class="attributes-summary">[Statement]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><code class="SD.ShortDescription"><a name="MARKER-9-2044"></a></code>Executes an implicit body if the value of a test is true or an alternate if the test is false.</p>
 <dl class="Cliche">
@@ -169,7 +169,7 @@ end if; </pre>
   </dd>
 </dl>
 <a name="HEADING114-181"></a>
-<h3 class="H4.Heading4"> <code class="H4.Heading4"><a name="MARKER-2-2045"></a>unless</code> <span class="attributes-summary">[Statement]</span></h3>
+<h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-2045"></a>unless</code> <span class="attributes-summary">[Statement]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2046"></a>Executes an implicit body unless the value of a test is true.</p>
 <dl class="Cliche">
@@ -193,7 +193,7 @@ end unless </pre>
   </dd>
 </dl>
 <a name="HEADING114-190"></a>
-<h3 class="H4.Heading4"> <code class="H4.Heading4"><a name="MARKER-2-2047"></a>case              </code> <span class="attributes-summary">[Statement]</span></h3>
+<h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-2047"></a>case              </code> <span class="attributes-summary">[Statement]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2048"></a>Executes a number of tests until one is true, and then executes an implicit body associated with the true test.</p>
 <dl class="Cliche">
@@ -226,7 +226,7 @@ end case; </pre>
   </dd>
 </dl>
 <a name="HEADING114-201"></a>
-<h3 class="H4.Heading4"> <code class="H4.Heading4"><a name="MARKER-2-2049"></a>select</code> <span class="attributes-summary">[Statement]</span></h3>
+<h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-2049"></a>select</code> <span class="attributes-summary">[Statement]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2050"></a>Compares a target object to a series of potential matches, and executes an implicit body associated with the first match found.</p>
 <dl class="Cliche">
@@ -275,9 +275,9 @@ end select<a name="MARKER-2-2051"></a> </pre>
 </dl>
 <a name="HEADING114-220"></a>
 <a name="UID-Built-In_Macros-1898"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-2052"></a>Iteration Constructs</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-2052"></a>Iteration Constructs</h2>
 <a name="HEADING114-221"></a>
-<h3 class="H4.Heading4"> <code class="H4.Heading4"><a name="MARKER-2-2053"></a>while</code>  <span class="attributes-summary">[Statement]</span></h3>
+<h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-2053"></a>while</code>  <span class="attributes-summary">[Statement]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2054"></a>Repeatedly executes a body until a test expression is false.</p>
 <dl class="Cliche">
@@ -296,7 +296,7 @@ end select<a name="MARKER-2-2051"></a> </pre>
     <p class="T1.Text1">Each pass through the loop begins by executing <i class="T1.Text1">test</i>. If <i class="T1.Text1">test</i> returns a true value, the expressions in the <i class="T1.Text1">body</i> <i class="T1.Text1"> </i>are executed and the looping continues. If <i class="T1.Text1">test</i> returns false, the loop terminates and <code class="Code T1.Text1">while</code> returns <code class="Code T1.Text1">#f</code>.</p></dd>
 </dl>
 <a name="HEADING114-229"></a>
-<h3 class="H4.Heading4"> <code class="H4.Heading4"><a name="MARKER-2-2055"></a>until</code>  <code class="H4.Heading4"> (</code> test  <code class="H4.Heading4">) </code> <span class="attributes-summary">[Statement]</span></h3>
+<h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-2055"></a>until</code>  <code class="H4.Heading4"> (</code> test  <code class="H4.Heading4">) </code> <span class="attributes-summary">[Statement]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2056"></a>Repeatedly executes a body until a test expression is true.</p>
 <dl class="Cliche">
@@ -315,7 +315,7 @@ end select<a name="MARKER-2-2051"></a> </pre>
     <p class="T1.Text1">Each pass through the loop begins by executing <i class="T1.Text1">test</i>. If <i class="T1.Text1">test</i> returns false, the expressions in the <i class="T1.Text1">body</i> <i class="T1.Text1"> </i>are executed and the looping continues. If <i class="T1.Text1">test</i> returns true, the loop terminates and <code class="Code T1.Text1">until</code> returns <code class="Code T1.Text1">#f</code>.</p></dd>
 </dl>
 <a name="HEADING114-237"></a>
-<h3 class="H4.Heading4"> <code class="H4.Heading4"><a name="MARKER-2-2057"></a>for</code> <span class="attributes-summary">[Statement]</span></h3>
+<h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-2057"></a>for</code> <span class="attributes-summary">[Statement]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2058"></a>Performs general iteration over a body, updating bindings and performing end tests on each iteration.</p>
 <dl class="Cliche">
@@ -417,9 +417,9 @@ end;<a name="MARKER-2-2059"></a> </pre>
 </dl>
 <a name="HEADING114-280"></a>
 <a name="UID-Built-In_Macros-13876"></a>
-<h2 class="H2.Heading2"> Other Statement Macros</h2>
+<h2 class="H2.Heading2">Other Statement Macros</h2>
 <a name="HEADING114-281"></a>
-<h3 class="H4.Heading4"> <code class="H4.Heading4"><strong class="H4.Heading4"><a name="MARKER-2-2060"></a>begin</strong></code> <strong class="H4.Heading4">[Statement]</strong></h3>
+<h3 class="H4.Heading4"><code class="H4.Heading4"><strong class="H4.Heading4"><a name="MARKER-2-2060"></a>begin</strong></code> <strong class="H4.Heading4">[Statement]</strong></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2061"></a>Executes expressions in a body, in order.</p>
 <dl class="Cliche">
@@ -433,7 +433,7 @@ end;<a name="MARKER-2-2059"></a> </pre>
   <dd class="Cliche"><p class="Cliche"> Begin executes the expressions in a body, in order. The values of the last expression are returned. If there are no expressions in the body, <code class="Code Cliche">#f</code> is returned.</p></dd>
 </dl>
 <a name="HEADING114-287"></a>
-<h3 class="H4.Heading4"> <code class="H4.Heading4"><a name="MARKER-2-2062"></a>block</code>  <span class="attributes-summary">[Statement]</span></h3>
+<h3 class="H4.Heading4"><code class="H4.Heading4"><a name="MARKER-2-2062"></a>block</code>  <span class="attributes-summary">[Statement]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2063"></a>Executes a body with several options for nonstandard flow of control. </p>
 <dl class="Cliche">
@@ -489,7 +489,7 @@ cleanup
   close-files();
 end block </pre>
     <a name="HEADING114-310"></a>
-    <h4 class="H5.Heading5"> Dynamic Extent of Block Features</h4>
+    <h4 class="H5.Heading5">Dynamic Extent of Block Features</h4>
     <p class="T1.Text1">A block installs features that are active for different portions of the execution of the block.</p>
     <ul class="B1.Bullet1">
       <li class="B1.Bullet1">During the execution of the block body and the afterwards clause the exit procedure, exception clauses, and cleanup clauses are active.</li>
@@ -497,13 +497,13 @@ end block </pre>
       <li class="B1.Bullet1">During the execution of a handler installed by an exception clause, the exit procedure is active.</li>
     </ul>
     <a name="HEADING114-315"></a>
-    <h4 class="H5.Heading5"> Intervening Cleanup Clauses</h4>
+    <h4 class="H5.Heading5">Intervening Cleanup Clauses</h4>
     <p class="T1.Text1">When an exit procedure is called, it initiates a nonlocal exit out of its establishing block. Before the nonlocal exit can complete, however, the cleanup clauses of intervening blocks (blocks that have been entered, but not exited, since the establishing block was entered) must be executed, beginning with the most recently entered intervening block. Once the cleanup clauses of an intervening block have been executed, it is an error to invoke the exit procedure established by that block. The cleanup clauses of the establishing block are executed last. At that point, further invocation of the exit procedure becomes invalid, and the establishing block returns with the values that were passed to the exit procedure.</p>
     <p class="T1.Text1">Note that a block statement may also be exited due to the execution of a handler clause. Before the exception clause is executed, intervening cleanup clauses are executed as described above (including any clause for the establishing block.)  The exit procedure may be invoked during execution of exception clauses, in which case the argument values are immediately returned from the block (the cleanup clause already having been executed).</p>
     <p class="T1.Text1">During the process of executing the cleanup clauses of the intervening blocks, any valid exit procedure may be invoked and may interrupt the current nonlocal exit.</p>
     <p class="T1.Text1">All exception clauses are executed in the same dynamic environment. None of the handlers established in the block are visible during the execution of one of the handlers. This can be thought of as parallel installation of the handlers.</p>
     <a name="HEADING114-320"></a>
-    <h4 class="H5.Heading5"> Restrictions on the use of exit procedures</h4>
+    <h4 class="H5.Heading5">Restrictions on the use of exit procedures</h4>
     <p class="T1.Text1">The exit procedure is a first-class object. Specifically, it can be passed as an argument to functions, stored in data structures, and so on. Its use is not restricted to the lexical body of the block in which it was established. However, invocation of the exit procedure is valid only during the execution of the establishing block. It is an error to invoke an exit procedure after its establishing block has returned, or after execution of the establishing block has been terminated by a nonlocal exit.</p>
     <p class="T1.Text1">In the following example, the <code class="cv T1.Text1">block</code> establishes an exit procedure in the binding <code class="cv T1.Text1">bar</code>. The <code class="cv T1.Text1">block</code> returns a method containing a call to <code class="cv T1.Text1">bar</code>, and the  method is stored in the binding <code class="cv T1.Text1">foo</code>. Calling <code class="cv T1.Text1">foo</code> is an error because it is no longer valid to invoke <code class="cv T1.Text1">bar</code> after its establishing <code class="cv T1.Text1">block</code> has returned.</p>
     <pre class="Cv.Code">
@@ -516,7 +516,7 @@ foo(5)
   </dd>
 </dl>
 <a name="HEADING114-324"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-2065"></a>method</code> <span class="attributes-summary">[Statement]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-2065"></a>method</code> <span class="attributes-summary">[Statement]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2066"></a>Creates and returns a method.</p>
 <dl class="Cliche">

@@ -61,11 +61,11 @@
 </div>
 <a name="HEADING78-0"></a>
 <a name="UID-Macros-1543"></a>
-<h1 class="H1.Heading1"> Extensible Grammar</h1>
+<h1 class="H1.Heading1">Extensible Grammar</h1>
 <p class="T1.Text1"><a name="MARKER-2-1210"></a><a name="MARKER-2-1211"></a>There are three kinds of macros: definition macros, which extend the available set of definitions; <a name="MARKER-2-1212"></a>statement macros, which extend the available set of statements; and <a name="MARKER-2-1213"></a>function macros, which syntactically resemble function calls but are more flexible. <a name="MARKER-2-1214"></a>Named value references and <a name="MARKER-2-1215"></a>local declarations cannot be macro calls. Only statements, function calls, and definitions are extensible.</p>
 <a name="HEADING78-2"></a>
 <a name="UID-Macros-1546"></a>
-<h2 class="H2.Heading2"> Definition Macros</h2>
+<h2 class="H2.Heading2">Definition Macros</h2>
 <p class="T1.Text1"><a name="MARKER-2-1216"></a>A definition macro extends the <i class="Parameter T1.Text1">definition-macro-call </i>production of the Dylan phrase grammar to recognize additional constructs as valid definitions, by creating a new <em class="T1.Text1">define-body-word<i class="T1.Text1"> </i></em>that is recognized by the following grammar line:</p>
 <p class="T1.Text1"><i class="italics T1.Text1">definition-macro-call:<br /><code class="italics T1.Text1">    define  modifiers<em class="Subscript italics T1.Text1"><sub>opt</sub>  define-body-word  body-fragment<sub>opt</sub> definition-tail</em></code></i></p>
 <p class="T1.Text1">or by creating a new <em class="T1.Text1">define-list-word<i class="T1.Text1"> </i></em>that is recognized by the following grammar line:</p>
@@ -74,13 +74,13 @@
 <p class="T1.Text1">The new <em class="T1.Text1">define-body-word<i class="T1.Text1">  </i></em>or <em class="T1.Text1">define-list-word<i class="T1.Text1">  </i></em>becomes a partially reserved word in each module where the macro definition is visible. In particular a <em class="T1.Text1">define-body-word<i class="T1.Text1">  </i></em>or <em class="T1.Text1">define-list-word<i class="T1.Text1">  </i></em>cannot be used as a modifier in a definition. It can still be used as a variable-name.<a name="MARKER-2-1217"></a></p>
 <a name="HEADING78-9"></a>
 <a name="UID-Macros-1562"></a>
-<h2 class="H2.Heading2"> Statement Macros</h2>
+<h2 class="H2.Heading2">Statement Macros</h2>
 <p class="T1.Text1"><a name="MARKER-2-1218"></a>A statement macro extends the <i class="Parameter T1.Text1">statement</i> production of the Dylan phrase grammar to recognize additional constructs as valid statements by creating a new <em class="T1.Text1">begin-word</em> that is recognized by the following grammar line:</p>
 <p class="T1.Text1"><i class="T1.Text1">statement:<br /></i>   <em class="T1.Text1">begin-word</em>  body-fragment<em class="Subscript T1.Text1"><sub>opt</sub></em> end-clause</p>
 <p class="T1.Text1">The new <em class="T1.Text1">begin-word</em> becomes a reserved word in each module where the macro definition is visible. It can only be used at the beginning and end of this new statement.<a name="MARKER-2-1219"></a></p>
 <a name="HEADING78-13"></a>
 <a name="UID-Macros-1569"></a>
-<h2 class="H2.Heading2"> Function Macros</h2>
+<h2 class="H2.Heading2">Function Macros</h2>
 <p class="T1.Text1"><a name="MARKER-2-1220"></a>A function macro extends the <i class="Parameter T1.Text1">function-macro-call </i>production of the Dylan phrase grammar to recognize additional constructs by creating a new <em class="T1.Text1">function-word</em> that is recognized by the following grammar line:</p>
 <p class="T1.Text1"><i class="italics T1.Text1">function-macro-call:<br /></i>   function-word<i class="T1.Text1">  <code class="cv T1.Text1">(  body-fragment<em class="Subscript cv T1.Text1"><sub>opt</sub> )</em></code></i></p>
 <p class="T1.Text1">In addition, a function macro can be invoked by any of the shorthand syntax constructs available for invoking functions. In this case, the arguments are always parsed expression fragments, as described on <a href="drm_77.html#MARKER-9-1199" class="T1.Text1">page 146</a>.</p>

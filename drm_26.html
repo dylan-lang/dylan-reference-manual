@@ -61,13 +61,13 @@
 </div>
 <a name="HEADING26-0"></a>
 <a name="UID-Program_Structure-2480"></a>
-<h1 class="H1.Heading1"> <a name="MARKER-2-361"></a>Modules</h1>
+<h1 class="H1.Heading1"><a name="MARKER-2-361"></a>Modules</h1>
 <p class="T1.Text1">Modules are used for creating large-scale <a name="MARKER-2-362"></a>namespaces of bindings. The bindings <a name="MARKER-2-363"></a>accessible in a module are <a name="MARKER-2-364"></a>visible to all the code within the module (except where shadowed by a local binding). Only the bindings explicitly <a name="MARKER-2-365"></a>exported are visible from outside the module.</p>
 <p class="T1.Text1">Some languages have module systems with distinct support for exporting variables, functions, types, and classes. Dylan modules operate only on bindings. Because functions and classes are commonly named by bindings, access to them is controlled by <a name="MARKER-2-366"></a>controlling access to the bindings that name them. By exporting the binding naming a class or function, a program has effectively exported the class or function. If the binding is not exported, then the class or function is effectively private.<a rel="FOOTNOTE" href="#FOOTNOTE-1" class="T1.Text1"><sup>[1]</sup></a></p>
 <p class="T1.Text1"><a name="MARKER-2-367"></a>A <a name="MARKER-2-368"></a>module definition defines the imports and exports of a module, and may specify bindings owned by the module. A complete description of module definitions is given on <a href="drm_112.html#MARKER-9-2016" class="T1.Text1">page 381</a>.</p>
 <a name="HEADING26-4"></a>
 <a name="UID-Program_Structure-1436"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-369"></a>Defining Module Bindings</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-369"></a>Defining Module Bindings</h2>
 <p class="T1.Text1">A module consists of a set of bindings. A binding may be <strong class="T1.Text1"><a name="MARKER-2-370"></a>owned</strong> by a module, or a module may <strong class="T1.Text1"><a name="MARKER-2-371"></a>import</strong> the binding from another module by <strong class="T1.Text1"><a name="MARKER-2-372"></a>using</strong> the other module. Modules <strong class="T1.Text1"><a name="MARKER-2-373"></a>export</strong> bindings to make them accessible to other modules. Only exported bindings can be imported by other modules.</p>
 <p class="T1.Text1">Module-use relationships may not be <a name="MARKER-2-374"></a>circular. To create a common set of bindings for a group of modules, the modules can import the bindings from another module or modules.</p>
 <p class="T1.Text1">Within a given module, a <a name="MARKER-2-375"></a>name refers to at most one module binding. It is an error to create or import two or more different bindings with the same name in a single module. If a name does refer to a binding, the binding is said to be <strong class="T1.Text1"><a name="MARKER-2-376"></a>accessible</strong> from the module. Each binding is owned by exactly one module, but it can be accessible from many modules.</p>

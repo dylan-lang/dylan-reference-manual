@@ -61,10 +61,10 @@
 </div>
 <a name="HEADING103-0"></a>
 <a name="UID-Built-In_Functions-419"></a>
-<h1 class="H1.Heading1"> <a name="MARKER-9-1858"></a>Reflective Operations on Types</h1>
+<h1 class="H1.Heading1"><a name="MARKER-9-1858"></a>Reflective Operations on Types</h1>
 <p class="T0.Text0">The following functions return information on types and test type membership. They provide part of the implementation of the type protocol, as described in <a href="drm_40.html#MARKER-9-536" class="T0.Text0">"The Type Protocol" beginning on page 49</a>.</p>
 <a name="HEADING103-2"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1859"></a><a name="MARKER-2-1860"></a>instance?</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1859"></a><a name="MARKER-2-1860"></a>instance?</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1861"></a>Tests whether an object is an instance of a type.</p>
 <dl class="Cliche">
@@ -82,7 +82,7 @@
 <dd class="Cliche"><p class="Cliche"> Returns true if <i class="Cliche">object</i> is a general instance of <i class="Cliche">type</i>.</p></dd>
 </dl>
 <a name="HEADING103-9"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1862"></a>subtype?</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1862"></a>subtype?</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1863"></a>Tests whether a type is a subtype of another type.</p>
 <dl class="Cliche">
@@ -100,7 +100,7 @@
 <dd class="Cliche"><p class="Cliche"> Returns true if <i class="Cliche">type1 </i> is a subtype of <i class="Cliche">type2</i>. Subtype rules are given in <a href="drm_40.html#MARKER-9-536" class="Cliche">"The Type Protocol" on page 49</a>.</p></dd>
 </dl>
 <a name="HEADING103-16"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1864"></a>object-class</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1864"></a>object-class</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1865"></a>Returns the class of an object.</p>
 <dl class="Cliche">
@@ -114,7 +114,7 @@
 <dd class="Cliche"><p class="Cliche"> Returns the class of which <i class="Cliche">object</i>  is a direct instance.</p></dd>
 </dl>
 <a name="HEADING103-22"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1866"></a>all-superclasses</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1866"></a>all-superclasses</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1867"></a>Returns the class precedence list a class.</p>
 <dl class="Cliche">
@@ -129,7 +129,7 @@
 <p class="T1.Text1">The result <i class="Parameter T1.Text1">sequence</i> should never be destructively modified. Doing so may cause unpredictable behavior. If <i class="T1.Text1">class</i> is sealed, an implementation may choose to signal an error of type <code class="T1.Text1">&lt;sealed-object-error&gt;</code> rather than returning the sequence of all superclasses.</p></dd>
 </dl>
 <a name="HEADING103-29"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1868"></a>direct-superclasses</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1868"></a>direct-superclasses</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1869"></a>Returns the direct superclasses of a class.</p>
 <dl class="Cliche">
@@ -144,7 +144,7 @@
 <p class="T1.Text1">The result <i class="Parameter T1.Text1">sequence</i> should never be destructively modified. Doing so may cause unpredictable behavior. If <i class="T1.Text1">class</i> is sealed, an implementation may choose to signal an error of type <code class="T1.Text1">&lt;sealed-object-error&gt;</code> rather than returning the direct superclasses.</p></dd>
 </dl>
 <a name="HEADING103-36"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1870"></a>direct-subclasses</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1870"></a>direct-subclasses</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1871"></a>Returns the direct subclasses of a class.</p>
 <dl class="Cliche">

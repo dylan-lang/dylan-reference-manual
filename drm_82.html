@@ -61,7 +61,7 @@
 </div>
 <a name="HEADING82-0"></a>
 <a name="UID-Macros-6305"></a>
-<h1 class="H1.Heading1"> <a name="MARKER-9-1256"></a>Pattern Variable Constraints</h1>
+<h1 class="H1.Heading1"><a name="MARKER-9-1256"></a>Pattern Variable Constraints</h1>
 <p class="T1.Text1"><a name="MARKER-2-1257"></a>Each <i class="Parameter T1.Text1">pattern-variable</i>  in the left-hand side of a rule in a macro definition has a constraint associated with it. This prevents the pattern from matching unless the fragment matched to the pattern-variable satisfies the constraint. In most cases it also controls how the matching fragment is parsed.</p>
 <p class="T1.Text1">You specify a constraint in a <i class="Parameter T1.Text1">pattern-variable</i>  by suffixing a colon and the constraint name to the pattern variable name. Intervening whitespace is not allowed. As an abbreviation, if a pattern variable has the same name as its constraint, the <i class="Parameter T1.Text1">pattern-variable</i>  can be written <code class="cv T1.Text1">?:<i class="Parameter cv T1.Text1">the-name</i></code>  instead of <code class="cv T1.Text1">?<i class="Parameter cv T1.Text1">the-name:the-name</i></code>.</p>
 <p class="T1.Text1">The available constraints are listed in <a href="#MARKER-9-1173" class="T1.Text1">Table 10-1</a>.</p>
@@ -115,7 +115,7 @@
 <p class="T1.Text1">A constraint applies only to the specific pattern variable occurrence to which it is attached. It does not constrain other pattern variable occurrences with the same name. </p>
 <a name="HEADING82-144"></a>
 <a name="UID-Macros-5860"></a>
-<h2 class="H2.Heading2"> Intermediate Words</h2>
+<h2 class="H2.Heading2">Intermediate Words</h2>
 <p class="T1.Text1"><a name="MARKER-2-1259"></a>When a <i class="Parameter T1.Text1">pattern-variable </i> has a constraint of <code class="cv T1.Text1">body</code> or <code class="cv T1.Text1">case-body</code>, its parsing of the fragment stops before any token that is an intermediate word. This allows intermediate words to delimit clauses that have separate bodies, like <code class="cv T1.Text1">else</code> and <code class="cv T1.Text1">elseif</code> in an <code class="cv T1.Text1">if</code> statement. The intermediate words of a macro are identified as follows:</p>
 <ul class="B1.Bullet1">
 <li class="B1.Bullet1">Define a body-variable to be a pattern variable that either has a constraint of <code class="cv B1.Bullet1">body</code> or <code class="cv B1.Bullet1">case-body</code>, or  names an auxiliary rule-set where some left-hand side in that rule-set ends in a body-variable. This is a least fixed point<i class="B1.Bullet1">, </i> so a recursive auxiliary rule-set does not automatically make its name into a body-variable.  Note that an ellipsis that stands for a pattern variable is a body-variable when that pattern variable is one.

@@ -61,17 +61,17 @@
 </div>
 <a name="HEADING117-0"></a>
 <a name="UID-BNF_Appendix-327"></a>
-<h1 class="H1.Heading1"> <a name="MARKER-9-2096"></a><a name="MARKER-2-2097"></a>Lexical Grammar</h1>
+<h1 class="H1.Heading1"><a name="MARKER-9-2096"></a><a name="MARKER-2-2097"></a>Lexical Grammar</h1>
 <a name="HEADING117-1"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-2098"></a>Comments</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-2098"></a>Comments</h2>
 <p class="T1.Text1"><i class="italics T1.Text1">comment:<br /><code class="italics T1.Text1"> //</code></i>  &hellip;the rest of the line<br /><code class="T1.Text1"> /*</code>  &hellip;everything even across lines, including nested comments&hellip;  <code class="T1.Text1">*/</code></p>
 <a name="HEADING117-3"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-2099"></a>Tokens</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-2099"></a>Tokens</h2>
 <p class="T1.Text1"><em class="T1.Text1">token<i class="italics T1.Text1">:<br /></i></em> <em class="T1.Text1">name<br /> symbol<br /> number<br /> character-literal<br /> string<br /> unary-operator<br /> binary-operator<br /></em> <i class="italics T1.Text1">punctuation<br /></i> <i class="italics T1.Text1">#-word</i></p>
 <p class="T1.Text1"><i class="italics T1.Text1">punctuation:<br /> one of <code class="italics T1.Text1">  ( ) , . ; [ ] { } :: - = == =&gt;<br /> one of   #( #[ ## ? ?? ?= ...</code></i></p>
 <p class="T1.Text1"><i class="italics T1.Text1">#-word:<br /> one of  <code class="italics T1.Text1">#t #f #next #rest #key #all-keys #include</code></i></p>
 <a name="HEADING117-7"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-2100"></a>Reserved Words</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-2100"></a>Reserved Words</h2>
 <p class="T1.Text1"><i class="italics T1.Text1">reserved-word:<br /></i> <i class="italics T1.Text1">core-word<br /></i> <em class="T1.Text1">begin-word<br /></em> <em class="T1.Text1">function-word<br /></em> <em class="T1.Text1">define-body-word<br /></em> <em class="T1.Text1">define-list-word</em></p>
 <p class="T1.Text1"><i class="italics T1.Text1">core-word:<br /> one of   <code class="italics T1.Text1">define end handler let local macro otherwise</code></i></p>
 <p class="T1.Text1">The following reserved words are exported by the Dylan module:</p>
@@ -80,7 +80,7 @@
 <p class="T1.Text1"><em class="T1.Text1">define-body-word</em>:<br /> one of <i class="T1.Text1"> <code class="T1.Text1">class library method module</code></i></p>
 <p class="T1.Text1"><em class="T1.Text1">define-list-word</em>:<br /> one of<i class="T1.Text1">  <code class="T1.Text1">constant variable domain</code></i></p>
 <a name="HEADING117-15"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-2101"></a>Names, Symbols and Keywords</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-2101"></a>Names, Symbols and Keywords</h2>
 <p class="T1.Text1"><em class="T1.Text1">name</em>:<br /><i class="T1.Text1"> word</i> <br /><i class="T1.Text1"> <code class="T1.Text1">\ word</code></i> <br /><i class="T1.Text1"> operator-name</i></p>
 <p class="T1.Text1"><em class="T1.Text1">unreserved-name</em>:<br /> any <i class="T1.Text1">word </i> that is not also a <i class="T1.Text1">reserved-word<br /> <code class="T1.Text1">\ word</code></i> <br /> <i class="italics T1.Text1">operator-name</i></p>
 <p class="T1.Text1"><em class="T1.Text1">ordinary-name</em>:<br /> <em class="T1.Text1">unreserved-name<br /></em> <em class="T1.Text1">define-body-word<br /></em> <em class="T1.Text1">define-list-word</em></p>
@@ -101,11 +101,11 @@
 <p class="T1.Text1"><i class="italics T1.Text1">graphic-character:<br /> one of  <code class="italics T1.Text1">! &amp; * &lt; &gt; | ^ $ % @ _</code></i></p>
 <p class="T1.Text1"><i class="italics T1.Text1">special-character:<br /> one of </i> <code class="T1.Text1">- + ~ ? / =</code></p>
 <a name="HEADING117-35"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-2102"></a>Operators</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-2102"></a>Operators</h2>
 <p class="T1.Text1"><em class="T1.Text1">unary-operator</em>:<br /> one of<i class="T1.Text1">  <code class="T1.Text1">- ~</code></i></p>
 <p class="T1.Text1"><i class="T1.Text1"><em class="T1.Text1">binary-operator:<br /> one of  <code class="T1.Text1">+ - * / ^ = == ~= ~== &lt; &lt;= &gt; &gt;= &amp; | :=</code></em></i></p>
 <a name="HEADING117-38"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-2103"></a>Character and String Literals</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-2103"></a>Character and String Literals</h2>
 <p class="T1.Text1"><em class="T1.Text1">character-literal</em>:<br /><code class="T1.Text1"> '<i class="T1.Text1">  character  '</i></code></p>
 <p class="T1.Text1"><i class="T1.Text1">character:<br /> any printing character (including space) except for  <code class="T1.Text1">'  or  \<br /> \</code></i> escape-character</p>
 <p class="T1.Text1"><em class="T1.Text1">string<i class="T1.Text1">:<br /><code class="T1.Text1"> &quot;  more-string</code></i></em></p>
@@ -113,7 +113,7 @@
 <p class="T1.Text1"><i class="italics T1.Text1">string-character:<br /> any printing character (including space) except for</i>  <code class="T1.Text1">&quot;</code>  or  <code class="T1.Text1">\<br /> \<i class="T1.Text1">  escape-character</i></code></p>
 <p class="T1.Text1"><i class="italics T1.Text1">escape-character:<br /> one of  <code class="italics T1.Text1">\ ' &quot; a b e f n r t 0<br /><strong class="italics T1.Text1"> &lt;  hex-digits   &gt;</strong></code></i></p>
 <a name="HEADING117-45"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-2104"></a><a name="MARKER-9-2105"></a>Numbers</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-2104"></a><a name="MARKER-9-2105"></a>Numbers</h2>
 <p class="T1.Text1"><em class="T1.Text1">number</em>:<br /> <i class="italics T1.Text1">integer<br /> ratio<br /> floating-point</i></p>
 <p class="T1.Text1"><i class="T1.Text1">integer:<br /> binary-integer<br /> octal-integer<br /> sign<em class="Subscript T1.Text1"><sub>opt</sub>  decimal-integer<br /> hex-integer</em></i></p>
 <p class="T1.Text1"><i class="italics T1.Text1">binary-integer:<br /><code class="italics T1.Text1"> #b  binary-digit<br /></code></i> <i class="italics T1.Text1">binary-integer  binary-digit</i></p>

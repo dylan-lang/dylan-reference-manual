@@ -61,10 +61,10 @@
 </div>
 <a name="HEADING106-0"></a>
 <a name="UID-Built-In_Functions-20449"></a>
-<h1 class="H1.Heading1"> <a name="MARKER-9-1892"></a>Reflective Operations on Functions</h1>
+<h1 class="H1.Heading1"><a name="MARKER-9-1892"></a>Reflective Operations on Functions</h1>
 <p class="T0.Text0">The following functions provide information on and manipulate other functions.</p>
 <a name="HEADING106-2"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1893"></a><a name="MARKER-2-1894"></a>generic-function-methods</code> <span class="attributes-summary">[Function]</span> </h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1893"></a><a name="MARKER-2-1894"></a>generic-function-methods</code> <span class="attributes-summary">[Function]</span> </h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1895"></a>Returns the methods of a generic function.</p>
 <dl class="Cliche">
@@ -79,7 +79,7 @@
 <p class="T1.Text1">If <i class="T1.Text1">generic-function</i> is sealed, an implementation may choose not to return a sequence of methods, but instead signal an error of type <code class="T1.Text1">&lt;sealed-object-error&gt;</code>.</p></dd>
 </dl>
 <a name="HEADING106-9"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1896"></a>add-method</code>   <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1896"></a>add-method</code>   <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1897"></a>Adds a method to a generic function.</p>
 <dl class="Cliche">
@@ -107,7 +107,7 @@
 <p class="T1.Text1">If <i class="T1.Text1">generic-function</i> is sealed, or if <i class="T1.Text1">method</i>  is in a sealed domain of <i class="T1.Text1">generic-function</i>, then an error of type <code class="T1.Text1">&lt;sealed-object-error&gt;</code> is signaled.</p></dd>
 </dl>
 <a name="HEADING106-23"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1898"></a>generic-function-mandatory-keywords</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1898"></a>generic-function-mandatory-keywords</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1899"></a>Returns the mandatory keywords of a generic function, if any.</p>
 <dl class="Cliche">
@@ -122,7 +122,7 @@
 <p class="T1.Text1">The collection returned should never be destructively modified. Doing so may cause unpredictable behavior.</p></dd>
 </dl>
 <a name="HEADING106-30"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1900"></a>function-specializers</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1900"></a>function-specializers</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1901"></a>Returns the specializers of a function.</p>
 <dl class="Cliche">
@@ -137,7 +137,7 @@
 <p class="T1.Text1">The sequence returned should never be destructively modified. Doing so may cause unpredictable behavior.</p></dd>
 </dl>
 <a name="HEADING106-37"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1902"></a>function-arguments</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1902"></a>function-arguments</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1903"></a>Returns information about the arguments accepted by a function.</p>
 <dl class="Cliche">
@@ -164,7 +164,7 @@
   </dd>
 </dl>
 <a name="HEADING106-49"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1904"></a>function-return-values</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1904"></a>function-return-values</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1905"></a>Returns information about the values returned by a function.</p>
 <dl class="Cliche">
@@ -187,7 +187,7 @@
   </dd>
 </dl>
 <a name="HEADING106-58"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1906"></a>applicable-method?</code>    <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1906"></a>applicable-method?</code>    <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1907"></a>Tests if a function is applicable to sample arguments.</p>
 <dl class="Cliche">
@@ -207,7 +207,7 @@
 <p class="T1.Text1">If <i class="T1.Text1">function</i> is a sealed generic function, <code class="cv T1.Text1">applicable-method?</code> may signal an error of type <code class="T1.Text1">&lt;sealed-object-error&gt;</code>.</p></dd>
 </dl>
 <a name="HEADING106-67"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1908"></a>sorted-applicable-methods</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1908"></a>sorted-applicable-methods</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1909"></a>Returns all the methods in a generic function that are applicable to sample arguments, sorted in order of specificity.</p>
 <dl class="Cliche">
@@ -231,7 +231,7 @@
 <p class="T1.Text1">If <i class="T1.Text1">generic-function</i> is sealed, an implementation may choose not to return two sequences of methods, but instead signal an error of type <code class="T1.Text1">&lt;sealed-object-error&gt;</code>.</p></dd>
 </dl>
 <a name="HEADING106-77"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1910"></a>find-method</code>    <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1910"></a>find-method</code>    <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1911"></a>Returns the method in a generic function that has particular specializers.</p>
 <dl class="Cliche">
@@ -250,7 +250,7 @@
 <p class="T1.Text1">If <i class="T1.Text1">generic-function</i> is sealed, an implementation may choose to signal an error of type <code class="T1.Text1">&lt;sealed-object-error&gt;</code> rather than return a value.</p></dd>
 </dl>
 <a name="HEADING106-85"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1912"></a>remove-method</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1912"></a>remove-method</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1913"></a>Removes a method from a generic function.</p>
 <dl class="Cliche">

@@ -61,13 +61,13 @@
 </div>
 <a name="HEADING98-0"></a>
 <a name="UID-Built-In_Functions-20431"></a>
-<h1 class="H1.Heading1"> Constructing and Initializing Instances</h1>
+<h1 class="H1.Heading1">Constructing and Initializing Instances</h1>
 <p class="T0.Text0">Instance creation and initialization is performed by the open generic functions <code class="cv T0.Text0">make</code> and <code class="cv T0.Text0">initialize</code>. For an overview of the allocation and initialization process, see <a href="drm_43.html#MARKER-9-658" class="T0.Text0">"Instance Creation and Initialization" beginning on page 64</a>.</p>
 <a name="HEADING98-2"></a>
 <a name="UID-Built-In_Functions-32090"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-1536"></a><a name="MARKER-2-1537"></a>General Constructor</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-1536"></a><a name="MARKER-2-1537"></a>General Constructor</h2>
 <a name="HEADING98-3"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1538"></a>make</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1538"></a>make</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1539"></a>Returns a general instance of its first argument.</p>
 <dl class="Cliche">
@@ -88,34 +88,34 @@
     <p class="T1.Text1">Programmers may customize <code class="T1.Text1">make</code> for particular classes by defining methods specialized by singleton specializers. These methods may obtain the default <code class="T1.Text1">make</code> behavior, if desired, by calling next-method.</p>
     <p class="T1.Text1">Note that the <code class="cv T1.Text1">&lt;class&gt;</code> method on <code class="cv T1.Text1">make</code> returns a newly allocated direct instance of its first argument.</p>
     <a name="HEADING98-14"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">make</code> class <code class="H5.Heading5">#rest supplied-init-args #key &rArr;  object</code> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">make</code> class <code class="H5.Heading5">#rest supplied-init-args #key &rArr;  object</code> <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="SD.ShortDescription"><a name="MARKER-9-1541"></a>The method on <code class="SD.ShortDescription">&lt;class&gt;</code> creates an instance of <i class="Parameter SD.ShortDescription">class</i>, calls <code class="cv SD.ShortDescription">initialize</code> on the instance, and then returns the instance. An error is signaled if <i class="Parameter SD.ShortDescription">class</i> is abstract.</p>
     <p class="T1.Text1">A complete description of this method and its role in the initialization protocol is given in <a href="drm_43.html#MARKER-9-658" class="T1.Text1">"Instance Creation and Initialization" on page 64</a>.</p>
     <a name="HEADING98-17"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">make (singleton (&lt;array&gt;))<br /> #key dimensions fill  &rArr;  array</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">make (singleton (&lt;array&gt;))<br /> #key dimensions fill  &rArr;  array</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="SD.ShortDescription">The method on <code class="SD.ShortDescription">singleton(&lt;array&gt;)</code> accepts <i class="Parameter SD.ShortDescription">dimensions</i> and <i class="Parameter SD.ShortDescription">fill</i> keyword arguments, and instantiates a concrete subclass of <code class="cv SD.ShortDescription">&lt;array&gt;</code>. These arguments are described with the &lt;array&gt; class on <a href="drm_93.html#MARKER-9-1426" class="SD.ShortDescription">page 218</a>.</p>
     <a name="HEADING98-19"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">make (singleton (&lt;deque&gt;))<br /> #key size fill  &rArr;  deque</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">make (singleton (&lt;deque&gt;))<br /> #key size fill  &rArr;  deque</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="SD.ShortDescription">The method on <code class="SD.ShortDescription">singleton(&lt;deque&gt;)</code> accepts <i class="Parameter SD.ShortDescription">size</i> and <i class="Parameter SD.ShortDescription">fill</i> keyword arguments, and instantiates a concrete subclass of <code class="cv SD.ShortDescription">&lt;deque&gt;</code>. These arguments are described with the &lt;deque&gt; class on <a href="drm_93.html#MARKER-9-1442" class="SD.ShortDescription">page 225</a>.</p>
     <a name="HEADING98-21"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">make (singleton (&lt;range&gt;))<br /> #key from by to above below size  &rArr;  deque</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">make (singleton (&lt;range&gt;))<br /> #key from by to above below size  &rArr;  deque</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="SD.ShortDescription">The method on <code class="SD.ShortDescription">singleton(&lt;range&gt;)</code> accepts a number of keyword arguments, and instantiates a concrete subclass of <code class="cv SD.ShortDescription">&lt;range&gt;</code>. These arguments are described with the <code class="cv SD.ShortDescription">&lt;range&gt;</code> class on <a href="drm_93.html#MARKER-9-1454" class="SD.ShortDescription">page 230</a>.</p>
     <a name="HEADING98-23"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">make (singleton (&lt;table&gt;))<br /> #key size  &rArr;  object-table</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">make (singleton (&lt;table&gt;))<br /> #key size  &rArr;  object-table</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="SD.ShortDescription">The method on <code class="SD.ShortDescription">singleton(&lt;table&gt;)</code> accepts <i class="Parameter SD.ShortDescription">size</i> keyword argument, and instantiates <code class="cv SD.ShortDescription">&lt;object-table&gt;</code>. The size argument is described with the &lt;table&gt; class on <a href="drm_93.html#MARKER-9-1462" class="SD.ShortDescription">page 235</a>.</p>
     <a name="HEADING98-25"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">make (singleton (&lt;vector&gt;))<br /> #key size fill  &rArr;  simple-object-vector</code> <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">make (singleton (&lt;simple-vector&gt;))<br /> #key size fill  &rArr;  simple-object-vector</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">make (singleton (&lt;vector&gt;))<br /> #key size fill  &rArr;  simple-object-vector</code> <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">make (singleton (&lt;simple-vector&gt;))<br /> #key size fill  &rArr;  simple-object-vector</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">Methods on <code class="T1.Text1">singleton(&lt;vector&gt;)</code> and <code class="T1.Text1">singleton(&lt;simple-vector&gt;)</code> accept <i class="Parameter T1.Text1">size</i> and <i class="Parameter T1.Text1">fill</i> keyword arguments, and return an instance of <code class="cv T1.Text1">&lt;simple-object-vector&gt;</code>. These arguments are described with the <code class="cv T1.Text1">&lt;vector&gt;</code> class on <a href="drm_93.html#MARKER-9-1432" class="T1.Text1">page 221</a> and with the <code class="cv T1.Text1">&lt;simple-vector&gt;</code> class on <a href="drm_93.html#MARKER-9-1435" class="T1.Text1">page 222</a>.</p>
     <a name="HEADING98-27"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">make (singleton (&lt;list&gt;))<br /> #key size fill  &rArr;  list</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">make (singleton (&lt;list&gt;))<br /> #key size fill  &rArr;  list</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">A method on <code class="T1.Text1">singleton(&lt;list&gt;)</code> accepts <i class="Parameter T1.Text1">size</i> and <i class="Parameter T1.Text1">fill</i> keyword arguments. These arguments are described with the <code class="cv T1.Text1">&lt;list&gt;</code> class on <a href="drm_93.html#MARKER-9-1449" class="T1.Text1">page 227</a>.</p>
   </dd>
 </dl>
 <a name="HEADING98-29"></a>
 <a name="UID-Built-In_Functions-2323"></a>
-<h2 class="H2.Heading2"> Initialization</h2>
+<h2 class="H2.Heading2">Initialization</h2>
 <a name="HEADING98-30"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1542"></a>initialize</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1542"></a>initialize</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1543"></a>Performs instance initialization that cannot be specified declaratively by a class definition.</p>
 <dl class="Cliche">
@@ -130,12 +130,12 @@
     <p class="T1.Text1">By convention, all <code class="T1.Text1">initialize</code> methods should call next-method very early, to make sure that any initializations from less specific classes are performed first.</p>
     <p class="T1.Text1">The <code class="T1.Text1">initialize</code> generic function permits all keywords and requires none. It does this because the keyword argument checking is performed by the default method on <code class="T1.Text1">make</code>.</p>
     <a name="HEADING98-38"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">initialize</code> object <code class="H5.Heading5">#key &rArr;  object</code> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">initialize</code> object <code class="H5.Heading5">#key &rArr;  object</code> <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="SD.ShortDescription">This method does nothing. It is present so that it is always safe for <code class="SD.ShortDescription">initialize</code> methods to call next method, and so that it is safe for the default <code class="cv SD.ShortDescription">make</code> method to call <code class="cv SD.ShortDescription">initialize</code>.</p>
   </dd>
 </dl>
 <a name="HEADING98-40"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1544"></a>slot-initialized?</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1544"></a>slot-initialized?</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-2-1545"></a><a name="MARKER-9-1546"></a>Tests whether a slot has been initialized</p>
 <dl class="Cliche">
@@ -156,9 +156,9 @@
 </dl>
 <a name="HEADING98-49"></a>
 <a name="UID-Built-In_Functions-25322"></a>
-<h2 class="H2.Heading2"> Specific Constructors</h2>
+<h2 class="H2.Heading2">Specific Constructors</h2>
 <a name="HEADING98-50"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1548"></a><a name="MARKER-2-1549"></a>list</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1548"></a><a name="MARKER-2-1549"></a>list</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1550"></a>Creates and returns a freshly allocated list.</p>
 <dl class="Cliche">
@@ -172,7 +172,7 @@
   <dd class="Cliche"><p class="Cliche"> Returns a freshly allocated list containing the <i class="Cliche">arguments</i>, in order.</p></dd>
 </dl>
 <a name="HEADING98-56"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1551"></a>pair</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1551"></a>pair</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1552"></a><a name="MARKER-2-1553"></a>Creates and returns a freshly allocated pair.</p>
 <dl class="Cliche">
@@ -208,7 +208,7 @@ third(*new-list*) := 'x'
   &rArr;<code class="cv Cv.Code">  </code>#(2, x, 4)</pre>
   </dd>
 </dl><a name="HEADING98-66"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1554"></a>range</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1554"></a>range</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-2-1555"></a>Creates and returns a range.</p>
 <dl class="Cliche">
@@ -234,7 +234,7 @@ third(*new-list*) := 'x'
   <dd class="Cliche"><p class="Cliche"> Creates an instance of <code class="cv Cliche">&lt;range&gt;</code>. The arguments correspond to the initialization arguments of <code class="cv Cliche">&lt;range&gt;</code>, described on <a href="drm_93.html#MARKER-9-1454" class="Cliche">page 230</a>.</p></dd>
 </dl>
 <a name="HEADING98-77"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1556"></a>singleton</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1556"></a>singleton</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-2-1557"></a>Creates and returns a singleton.</p>
 <dl class="Cliche">
@@ -248,7 +248,7 @@ third(*new-list*) := 'x'
   <dd class="Cliche"><p class="Cliche"> Returns a singleton for <i class="Cliche">object</i>. <code class="Cliche">singleton(<i class="Cliche">object)</i></code> is equivalent to <code class="Cliche">make(&lt;singleton&gt;, object: <i class="Cliche">object)</i></code>. If a singleton for the specified object already exists, implementations are free to return it rather than allocate a new singleton.</p></dd>
 </dl>
 <a name="HEADING98-83"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1558"></a>limited</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1558"></a>limited</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1559"></a><a name="MARKER-2-1560"></a>Returns a limited subtype of a class.</p>
 <dl class="Cliche">
@@ -262,36 +262,36 @@ third(*new-list*) := 'x'
   <dd class="Cliche"><p class="Cliche"> Returns a limited subtype of <i class="Cliche">class</i>. The available keyword arguments depend on the <i class="Parameter Cliche">class</i>. Not all classes support <code class="Cliche">limited</code>; those that do are documented in the method descriptions below.</p>
     <p class="T1.Text1">Note that an implementation is not required to implement <code class="cv T1.Text1">limited</code> as a generic function, and so the behavior embodied in the following method descriptions need not actually be implemented by separate methods. The behavior is described as a set of methods for convenience of presentation only. </p>
     <a name="HEADING98-90"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;integer&gt;)) #key</em></code>  <i class="variable H5.Heading5">min max &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;integer&gt;)) #key</em></code>  <i class="variable H5.Heading5">min max &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">Returns a limited integer type, which is a subtype of <code class="cv T1.Text1">&lt;integer&gt;</code> whose instances are integers greater than or equal to <i class="Parameter T1.Text1">min</i> (if <code class="cv T1.Text1">min:</code> is specified) and less than or equal to <i class="Parameter T1.Text1">max</i> (if <code class="cv T1.Text1">max:</code> is specified). If no keyword arguments are specified, the result type is equivalent to <code class="cv T1.Text1">&lt;integer&gt;</code>. Limited integer types are not instantiable.</p>
     <a name="HEADING98-92"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5"><a name="MARKER-9-1561"></a>limited<em class="definition H5.Heading5"> (singleton (&lt;collection&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;explicit-key-collection&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;mutable-collection&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;stretchy-collection&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;mutable-explicit-key-collection&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;sequence&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;mutable-sequence&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5"><a name="MARKER-9-1561"></a>limited<em class="definition H5.Heading5"> (singleton (&lt;collection&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;explicit-key-collection&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;mutable-collection&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;stretchy-collection&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;mutable-explicit-key-collection&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;sequence&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;mutable-sequence&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">These methods return uninstantiable limited collection types.</p>
     <a name="HEADING98-94"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;table&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;object-table&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;table&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;object-table&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">These two methods return types that support a <code class="cv T1.Text1">size:</code> initialization keyword with the same behavior as <code class="cv T1.Text1">&lt;table&gt;</code>.</p>
     <a name="HEADING98-96"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;array&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size dimensions &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;array&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size dimensions &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">This method returns a type that supports <code class="cv T1.Text1">dimensions:</code> and <code class="cv T1.Text1">fill:</code> initialization keywords with the same behavior as <code class="cv T1.Text1">&lt;array&gt;</code>. The default for fill is <code class="cv T1.Text1">#f</code> so if <code class="cv T1.Text1">instance?(#f, <i class="Parameter cv T1.Text1">of)</i></code> is not true and the product of the <i class="Parameter T1.Text1">dimensions</i> is nonzero, the <code class="cv T1.Text1">fill:</code> initialization keyword is required because the default would cause a type error.</p>
     <p class="T1.Text1">Instantiating <i class="Parameter T1.Text1">type</i> with a value of <i class="Parameter T1.Text1">dimensions</i>  that has one element will return an instance of <code class="cv T1.Text1">limited(&lt;simple-vector&gt;, of: <i class="Parameter cv T1.Text1">of)</i></code>.</p>
     <a name="HEADING98-99"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;vector&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;vector&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">This method returns the same types as the method on <code class="cv T1.Text1">singleton(&lt;simple-vector&gt;)</code>.</p>
     <a name="HEADING98-101"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;simple-vector&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;stretchy-vector&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of  &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;deque&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of  &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;simple-vector&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;stretchy-vector&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of  &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span><br /><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;deque&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of  &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">These three methods return types that support <code class="cv T1.Text1">size:</code> and <code class="cv T1.Text1">fill:</code> initialization keywords with the same behavior as the collection-class argument. The default for fill is <code class="cv T1.Text1">#f</code> so if <code class="cv T1.Text1">instance?(#f, <i class="Parameter cv T1.Text1">of)</i></code> is not true and <i class="Parameter T1.Text1">size</i> is nonzero, the <code class="cv T1.Text1">fill:</code> initialization keyword is required because the default would cause a type error.</p>
     <p class="T1.Text1">All general instances of <code class="cv T1.Text1">&lt;simple-vector&gt;</code> provide a constant time implementation of <code class="cv T1.Text1">element</code> and <code class="cv T1.Text1">element-setter</code>.</p>
     <a name="HEADING98-104"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;string&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size  &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;string&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of size  &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">The <i class="Parameter T1.Text1">of</i> argument must be a subtype of <code class="cv T1.Text1">&lt;character&gt;</code>. This method returns a type that supports <code class="cv T1.Text1">size:</code> and <code class="cv T1.Text1">fill:</code> initialization keywords with the same behavior as <code class="cv T1.Text1">&lt;string&gt;</code>. The default for <code class="cv T1.Text1">fill</code>: is <code class="cv T1.Text1">' '</code> so if <code class="cv T1.Text1">instance?(' ', <i class="Parameter cv T1.Text1">of)</i></code> is not true and <i class="Parameter T1.Text1">size</i> is nonzero, the <code class="cv T1.Text1">fill:</code> initialization keyword is required because the default would cause a type error.</p>
     <p class="T1.Text1">There are no specified subtypes of <code class="cv T1.Text1">&lt;character&gt;</code>, except for unions of singletons, which makes this method rather useless for portable programs. However, the method is provided because there might be useful subtypes of <code class="cv T1.Text1">&lt;character&gt;</code> in a particular implementation or in future versions of Dylan.</p>
     <a name="HEADING98-107"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;range&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of  &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">limited<em class="definition H5.Heading5"> (singleton (&lt;range&gt;))<br />        #key</em></code>  <i class="variable H5.Heading5">of  &rArr;</i> type <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">The <i class="Parameter T1.Text1">of</i> argument must be a subtype of <code class="cv T1.Text1">&lt;real&gt;</code>. This method returns a type that supports <code class="cv T1.Text1">from:</code>, <code class="cv T1.Text1">to:</code>, <code class="cv T1.Text1">below:</code>, <code class="cv T1.Text1">above:</code>, <code class="cv T1.Text1">by:</code>, and <code class="cv T1.Text1">size:</code> initialization keywords with the same behavior as <code class="cv T1.Text1">&lt;range&gt;</code>. Make of this type signals a <code class="cv T1.Text1">&lt;type-error&gt;</code> if any element of the range is not an instance of <i class="Parameter T1.Text1">of</i>.</p>
   </dd>
 </dl>
 <a name="HEADING98-109"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1562"></a><a name="MARKER-9-1563"></a>type-union</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1562"></a><a name="MARKER-9-1563"></a>type-union</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1564"></a><a name="MARKER-2-1565"></a>Returns the union of two or more types.</p>
 <dl class="Cliche">
@@ -317,7 +317,7 @@ define constant $my-enumerated-type =
   </dd>
 </dl>
 <a name="HEADING98-117"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1566"></a>vector</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1566"></a>vector</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1567"></a><a name="MARKER-2-1568"></a>Creates and returns a freshly allocated vector.</p>
 <dl class="Cliche">

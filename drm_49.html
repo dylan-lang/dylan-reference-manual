@@ -61,13 +61,13 @@
 </div>
 <a name="HEADING49-0"></a>
 <a name="UID-Functions-2254"></a>
-<h1 class="H1.Heading1"> <a name="MARKER-9-782"></a>Parameter Lists</h1>
+<h1 class="H1.Heading1"><a name="MARKER-9-782"></a>Parameter Lists</h1>
 <p class="T1.Text1"><a name="MARKER-2-783"></a>The parameter list of a function describes the number and types of the arguments that the function accepts, and the number and types of the values it returns.</p>
 <p class="T1.Text1"><a name="MARKER-2-784"></a>The parameter list of a generic function is used to define the overall protocol of the generic function. It constrains the methods that may be added to the generic function, through the parameter list congruency rules described on <a href="#MARKER-9-837" class="T1.Text1">page 93</a>. It may also specify that calls to the generic function may contain any keyword arguments.</p>
 <p class="T1.Text1"><a name="MARKER-2-785"></a>The parameter list of a method specifies the types of arguments to which the method is applicable, and declares local bindings to which those arguments will be bound during the execution of the body of the method. It may also declare the return value types of the method.</p>
 <a name="HEADING49-4"></a>
 <a name="UID-Functions-4841"></a>
-<h2 class="H2.Heading2"> Kinds of Parameters</h2>
+<h2 class="H2.Heading2">Kinds of Parameters</h2>
 <p class="T1.Text1"><a name="MARKER-2-786"></a>Dylan parameter lists support <strong class="T1.Text1"><a name="MARKER-2-787"></a>required parameters</strong>, <strong class="T1.Text1"><a name="MARKER-2-788"></a>rest parameters</strong>, <strong class="T1.Text1"><a name="MARKER-2-789"></a>keyword parameters</strong>, and sometimes a <strong class="T1.Text1"><a name="MARKER-2-790"></a>next-method parameter</strong>. They also may include <strong class="T1.Text1"><a name="MARKER-2-791"></a>return value declarations</strong>.</p>
 <p class="T1.Text1">The complete syntax of parameter lists is given in <a href="drm_118.html#MARKER-9-2115" class="T1.Text1">"Methods" on page 426</a>.</p>
 <p class="T1.Text1">Required parameters correspond to arguments that must be supplied when a function is called. The arguments are supplied in a fixed order and must appear before any other arguments.</p>
@@ -79,7 +79,7 @@
 <p class="T1.Text1"><a name="MARKER-2-798"></a>A next-method parameter is indicated by the token <code class="T1.Text1">#next</code>, followed by the name of the parameter. It is not normally necessary to specify a next-method parameter explicitly. If a next-method parameter is not specified by the programmer, <code class="T1.Text1">define method</code> inserts one with the name <code class="T1.Text1">next-method</code>. If an explicit next-method parameter is given, it must come after the required parameters and before the rest and keyword parameters. Details of using next-method are given in <a href="drm_50.html#MARKER-9-858" class="T1.Text1">"Calling Less Specific Methods" on page 98</a>.<a name="MARKER-2-799"></a></p>
 <a name="HEADING49-14"></a>
 <a name="UID-Functions-2273"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-9-800"></a>Kinds of Parameter Lists</h2>
+<h2 class="H2.Heading2"><a name="MARKER-9-800"></a>Kinds of Parameter Lists</h2>
 <p class="T1.Text1"><a name="MARKER-2-801"></a>Each function (generic function or method) has an argument passing protocol specified by its parameter list. The argument passing protocol for a method must be compatible with the argument passing protocol of any generic function to which it is added, as described in <a href="#MARKER-9-837" class="T1.Text1">"Parameter List Congruency" on page 93</a>.</p>
 <p class="T1.Text1">The argument passing protocol of a function can be described in one of the following ways:</p>
 <ul class="B1.Bullet1">
@@ -103,7 +103,7 @@
 <p class="T1.Text1"><a name="MARKER-2-815"></a>A call to a function may supply the same keyword argument more than once. When this is done, the leftmost keyword/value pair is used.<a name="MARKER-2-816"></a></p>
 <a name="HEADING49-32"></a>
 <a name="UID-Functions-2288"></a>
-<h2 class="H2.Heading2"> Specializing Required Parameters</h2>
+<h2 class="H2.Heading2">Specializing Required Parameters</h2>
 <p class="T1.Text1"><a name="MARKER-2-817"></a>When you define a generic function or method, you may specify the types of the arguments appropriate for the generic function or method. This is called <strong class="T1.Text1"><a name="MARKER-2-818"></a>specializing</strong> the generic function or method, or specializing the parameters of the generic function or method.</p>
 <p class="T1.Text1">The following example defines a method specialized on <code class="cv T1.Text1">&lt;number&gt;</code>. The method will be applicable when <code class="T1.Text1">double</code> is called on a general instance of <code class="T1.Text1">&lt;number&gt;</code>.</p>
 <pre class="Cv.Code">
@@ -123,7 +123,7 @@ end method;
 <p class="T1.Text1">There is a convenient syntax for singleton specializers, which is equivalent to explicitly calling <code class="Code T1.Text1">singleton</code> in the current lexical scope.<a name="MARKER-2-820"></a></p>
 <a name="HEADING49-44"></a>
 <a name="UID-Functions-2308"></a>
-<h2 class="H2.Heading2"> Keyword Parameters</h2>
+<h2 class="H2.Heading2">Keyword Parameters</h2>
 <p class="T1.Text1"><a name="MARKER-2-821"></a>The syntax of a keyword parameter is:</p>
 <pre class="Cv.Code">
 <code class="MetaSyntax Cv.Code">[ <i class="Parameter MetaSyntax Cv.Code">keyword  ] name [ :: operand ] [ = expression ]</i></code>
@@ -155,7 +155,7 @@ layout(my-widget, size: query-user-for-size() );
 <p class="T1.Text1">All required arguments must be supplied before any keyword arguments can be supplied. The following call to <code class="cv T1.Text1">layout</code> will signal an error:</p>
 <p class="T1.Text1"><code class="T1.Text1">layout(position: 100, size: 500);</code></p>
 <a name="HEADING49-59"></a>
-<h3 class="H3.Heading3"> Types for Keyword Parameters</h3>
+<h3 class="H3.Heading3">Types for Keyword Parameters</h3>
 <p class="T1.Text1"><a name="MARKER-2-827"></a>When a type is indicated for a keyword parameter in a method, it is the same as establishing a type for a local binding. Specifically, the types of any keyword parameters are not used for method dispatch. Keyword parameter types are not allowed in generic function definitions, and do not figure into parameter list congruency.</p>
 <p class="T1.Text1">The following two method definitions are equivalent:</p>
 <pre class="Cv.Code">
@@ -181,7 +181,7 @@ define method find-food (#key hint :: &lt;restaurant&gt;
 end method find-food;<a name="MARKER-2-828"></a><a name="MARKER-2-829"></a></pre>
 <a name="HEADING49-68"></a>
 <a name="UID-Functions-2324"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-830"></a>Return Value Declarations<a name="MARKER-2-831"></a></h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-830"></a>Return Value Declarations<a name="MARKER-2-831"></a></h2>
 <p class="T1.Text1">Parameter lists may include value declarations. Value declarations come at the end of the parameter list and are separated from the parameters by <code class="cv T1.Text1">=&gt;</code>. For each return value, a value declaration can specify a name and an operand or just a name<i class="T1.Text1"> </i>if the type is <code class="Code T1.Text1">&lt;object&gt;</code>. The complete syntax of value declarations is given in <a href="drm_118.html#MARKER-9-2115" class="T1.Text1">"Methods" on page 426</a>.</p>
 <p class="T1.Text1">The result of executing the operand at the time the function is defined is a type, called a <strong class="Bold T1.Text1"><a name="MARKER-2-832"></a>value type</strong>. The name<i class="T1.Text1"> </i> never comes into scope. It is included for documentation and for syntactic consistency with parameters. It is valid for the same name to be used in both one parameter and one value declaration in the same parameter list; this is useful as documentation that a function returns one of its arguments.</p>
 <p class="T1.Text1">The last value declaration can be preceded by <code class="Code T1.Text1">#rest</code> to indicate a variable number of return values. A value declaration preceded by <code class="Code T1.Text1">#rest</code> is called a <strong class="Bold T1.Text1"><a name="MARKER-2-833"></a>rest value declaration</strong>. A value declaration not preceded by <code class="Code T1.Text1">#rest</code> is called a <strong class="Bold T1.Text1"><a name="MARKER-2-834"></a>required value declaration</strong>. The value type in a rest value declaration is the type of each one of the remaining individual values, not the type of a conceptual sequence of multiple values.</p>
@@ -234,7 +234,7 @@ end method;
 </pre>
 <a name="HEADING49-84"></a>
 <a name="UID-Functions-2334"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-9-837"></a>Parameter List Congruency</h2>
+<h2 class="H2.Heading2"><a name="MARKER-9-837"></a>Parameter List Congruency</h2>
 <p class="T1.Text1"><a name="MARKER-2-838"></a>For any given generic function, the generic function and all methods for that function must have <strong class="T1.Text1">congruent parameter lists</strong>. Two parameter lists are congruent if they satisfy the following conditions:</p>
 <ul class="B1.Bullet1">
   <li class="B1.Bullet1">They have the same number of required arguments.</li>
@@ -267,7 +267,7 @@ end method;
 </ul>
 <a name="HEADING49-102"></a>
 <a name="UID-Functions-3556"></a>
-<h2 class="H2.Heading2"> Parameter Lists of Implicitly Defined Generic Functions</h2>
+<h2 class="H2.Heading2">Parameter Lists of Implicitly Defined Generic Functions</h2>
 <p class="T1.Text1"><a name="MARKER-2-841"></a>As a general principle, the parameter list of an implicitly defined generic function will impose as few constraints as possible on the methods that may be added. If a more constrained generic function definition is desired, an explicit definition should be used.</p>
 <p class="T1.Text1">The parameter list of an implicitly defined generic function is determined by its method definitions. These method definitions include both methods defined using <code class="Code T1.Text1">define method</code> and slot getter and setter methods defined using <code class="Code T1.Text1">define class</code>.</p>
 <ul class="B1.Bullet1">

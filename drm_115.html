@@ -61,7 +61,7 @@
 </div>
 <a name="HEADING115-0"></a>
 <a name="UID-Built-In_Macros-5344"></a>
-<h1 class="H1.Heading1"> <a name="MARKER-9-2068"></a>Function Macros</h1>
+<h1 class="H1.Heading1"><a name="MARKER-9-2068"></a>Function Macros</h1>
 <p class="T1.Text1"><a name="MARKER-2-2069"></a>Function macros provide syntax for assignment and for conditional execution. These three built-in function macros may be called using function-call syntax or operator syntax.</p>
 <table class="numbered"><caption class="Tb.Table"><strong>Table 14-4</strong>  Function Macros</caption>
   <tr><th class="primary"><p class="TbH.TblHd"> Macro</p>
@@ -82,9 +82,9 @@
     </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2079" class="TbT.TblText">412</a></p>
 </td></tr></table><a name="HEADING115-63"></a>
 <a name="UID-Built-In_Macros-5569"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-2070"></a>Assignment</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-2070"></a>Assignment</h2>
 <a name="HEADING115-64"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-2071"></a>:=</code> <span class="attributes-summary">[Function Macro]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-2071"></a>:=</code> <span class="attributes-summary">[Function Macro]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2072"></a>Stores a new value in a location.</p>
 <dl class="Cliche">
@@ -105,7 +105,7 @@
     <p class="T1.Text1">In all cases, <i class="Parameter T1.Text1">new-value</i> must be an appropriate type for <i class="Parameter T1.Text1">place</i> or an error is signaled.</p>
     <p class="T1.Text1">The <i class="Parameter T1.Text1">new-value</i> of an assignment statement is executed first, followed by the <i class="Parameter T1.Text1">place</i> (assuming the <i class="Parameter T1.Text1">place</i> requires any execution, which will only be true if it is not a binding name).</p>
     <a name="HEADING115-75"></a>
-    <h4 class="H5.Heading5"> Assignment to a binding</h4>
+    <h4 class="H5.Heading5">Assignment to a binding</h4>
     <p class="T1.Text1">If <i class="Parameter T1.Text1">place</i> is a binding name, then <i class="Parameter T1.Text1">new-value</i> is stored in the binding. It is an error if there is no binding corresponding to <i class="Parameter T1.Text1">place</i>. (<code class="Code T1.Text1">:=</code> cannot be used to create bindings, only to change their values.)  An error is also signaled if <i class="Parameter T1.Text1">place</i> is a binding specialized to a type and the <i class="Parameter T1.Text1">new-value</i> is not of that type.</p>
     <pre class="Cv.Code">
 define variable *number* = 10;
@@ -116,7 +116,7 @@ define variable *number* = 10;
 *number*
 <code class="cv Cv.Code"> &rArr;</code>  20 </pre>
     <a name="HEADING115-78"></a>
-    <h4 class="H5.Heading5"> Assignment to a function or function macro</h4>
+    <h4 class="H5.Heading5">Assignment to a function or function macro</h4>
     <p class="T1.Text1">If <i class="Parameter T1.Text1">place</i> has the syntax of a function call, then <code class="Code T1.Text1">:=</code> will invoke the corresponding setter function. Given a binding named <i class="Parameter T1.Text1">fun</i>, the corresponding setter is the binding named <i class="Parameter T1.Text1">fun<code class="cv Parameter T1.Text1">-setter</code></i> in the current environment.</p>
     <p class="T1.Text1"><code class="cv T1.Text1">:=</code> maps <i class="Parameter T1.Text1">place</i> to <i class="Parameter T1.Text1">place<code class="cv Parameter T1.Text1">-setter</code></i> without regard for whether <i class="Parameter T1.Text1">place</i> is a function or a macro. It does not expand a macro call on the left-hand side before determining the setter.</p>
     <p class="T1.Text1">With the exception of the order of execution and a guaranteed return value, the following three expressions are equivalent:</p>
@@ -137,7 +137,7 @@ begin
     <p class="T1.Text1">This is true regardless of whether <code class="cv T1.Text1">name</code> and <code class="cv T1.Text1">name-setter</code> are functions or macros. Here <i class="Parameter T1.Text1">temp</i> stands for a variable with a unique name. If <code class="cv T1.Text1">name-setter</code> is a macro, it  is responsible for the order of executation of <code class="cv T1.Text1">arg1,&hellip;argn</code>.</p>
     <p class="T1.Text1">The same considerations apply to <code class="cv T1.Text1">arg.name := new-value</code>.</p>
     <a name="HEADING115-89"></a>
-    <h4 class="H5.Heading5"> Assignment to element references</h4>
+    <h4 class="H5.Heading5">Assignment to element references</h4>
     <p class="T1.Text1">Just as <code class="Code T1.Text1">[]</code> can be used as syntax for <code class="Code T1.Text1">element</code> and <code class="Code T1.Text1">aref</code>, <code class="Code T1.Text1">[]</code> and <code class="Code T1.Text1">:=</code> can be used as syntax for <code class="Code T1.Text1">element-setter</code> and <code class="Code T1.Text1">aref-setter</code>. For example, the following three expressions are equivalent:</p>
     <pre class="Cv.Code">
 foo[2] := &quot;quux&quot;
@@ -147,9 +147,9 @@ element-setter (&quot;quux&quot;, foo, 2).<a name="MARKER-2-2073"></a> </pre>
 </dl>
 <a name="HEADING115-92"></a>
 <a name="UID-Built-In_Macros-5614"></a>
-<h2 class="H2.Heading2"> Conditional Execution</h2>
+<h2 class="H2.Heading2">Conditional Execution</h2>
 <a name="HEADING115-93"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-2074"></a>|</code> <span class="attributes-summary">[Function Macro]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-2074"></a>|</code> <span class="attributes-summary">[Function Macro]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2075"></a>Returns the value of the first of two operands that is true.<a name="MARKER-9-2076"></a></p>
 <dl class="Cliche">
@@ -167,7 +167,7 @@ element-setter (&quot;quux&quot;, foo, 2).<a name="MARKER-2-2073"></a> </pre>
 <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">|</code> (<a name="MARKER-2-2077"></a>logical or) executes <i class="Parameter Cliche">one</i>. If the first value of <i class="Parameter Cliche">one</i> is true, that value is returned and <i class="Parameter Cliche">another</i> is not executed. Otherwise <i class="Parameter Cliche">another</i> is executed and its values are returned.</p></dd>
 </dl>
 <a name="HEADING115-100"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-2078"></a>&amp;</code>  <span class="attributes-summary">[Function Macro]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-2078"></a>&amp;</code>  <span class="attributes-summary">[Function Macro]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2079"></a>If the value of a first operand is true, executes a second operand and returns its values.</p>
 <dl class="Cliche">

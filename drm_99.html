@@ -60,7 +60,7 @@
 </div>
 <a name="HEADING99-0"></a>
 <a name="UID-Built-In_Functions-2295"></a>
-<h1 class="H1.Heading1"> Equality and Comparison</h1>
+<h1 class="H1.Heading1">Equality and Comparison</h1>
 <p class="T1.Text1"><a name="MARKER-2-1570"></a>Dylan provides an identity function, as well as a group of equality and magnitude comparison functions that can be extended for user classes. The functions <code class="T1.Text1">~</code>=, ~==, <code class="T1.Text1">&gt;</code>, <code class="T1.Text1">&lt;</code>=, <code class="T1.Text1">&gt;</code>=, <code class="cv T1.Text1">min</code> and <code class="cv T1.Text1">max</code> are defined in terms of <code class="T1.Text1">==</code> or <code class="T1.Text1">=</code> and <code class="T1.Text1">&lt;</code>. By extending the behavior of <code class="T1.Text1">=</code> and <code class="T1.Text1">&lt;</code>, programs can extend the behavior of the other functions.</p>
 <p class="T1.Text1">For the protocol to work, user-defined methods on <code class="T1.Text1">=</code> and <code class="T1.Text1">&lt;</code> must preserve the following properties:</p>
 <dl class="RP.RoutineParam">
@@ -76,9 +76,9 @@
 </dl>
 <a name="HEADING99-8"></a>
 <a name="UID-Built-In_Functions-2809"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-1575"></a>Logical Negation</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-1575"></a>Logical Negation</h2>
 <a name="HEADING99-9"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4">~</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4">~</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1576"></a>Returns true if its argument is false; otherwise returns false.</p>
 <dl class="Cliche">
@@ -93,9 +93,9 @@
 </dl>
 <a name="HEADING99-15"></a>
 <a name="UID-Built-In_Functions-2806"></a>
-<h2 class="H2.Heading2"> Equality Comparisons</h2>
+<h2 class="H2.Heading2">Equality Comparisons</h2>
 <a name="HEADING99-16"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1577"></a>==</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1577"></a>==</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1578"></a>Compares two objects for identity.</p>
 <dl class="Cliche">
@@ -115,7 +115,7 @@
     <p class="T1.Text1">At an implementation level, this will usually mean that the objects are pointers to the same storage or are the same immediate value. An extension is made for built-in number classes and characters. Because these objects are not mutable (i.e., cannot be changed), two of the same class with the same value will always be the same (and will thus be indistinguishable to programs).</p></dd>
 </dl>
 <a name="HEADING99-25"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1581"></a>~==</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1581"></a>~==</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1582"></a>Compares two objects for nonidentity.</p>
 <dl class="Cliche">
@@ -134,7 +134,7 @@
     <p class="T1.Text1">If both arguments are instances of <code class="cv T1.Text1">&lt;complex&gt;</code> then the result is computed in an implementation-defined way. Otherwise, the result is computed by <code class="cv T1.Text1">~(object1 == object2)</code>.</p></dd>
 </dl>
 <a name="HEADING99-33"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1583"></a>=</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1583"></a>=</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1584"></a>Compares two objects for <a name="MARKER-2-1585"></a>equality.</p>
 <dl class="Cliche">
@@ -155,30 +155,30 @@
     <p class="T1.Text1">In addition to the sealed domains specified by the methods below, <code class="cv T1.Text1">=</code> is sealed over the following domains:</p>
     <p class="T1.Text1"><code class="T1.Text1">     &lt;object&gt;, &lt;symbol&gt;<br />     &lt;symbol&gt;, &lt;object&gt;<br />     &lt;object&gt;, &lt;character&gt;<br />     &lt;character&gt;, &lt;object&gt;<br />     &lt;object&gt;, &lt;boolean&gt;<br />     &lt;boolean&gt;, &lt;object&gt;</code></p>
     <a name="HEADING99-44"></a>
-    <h4 class="H5.Heading5"> object1 <code class="H5.Heading5">= object2 </code> &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5">object1 <code class="H5.Heading5">= object2 </code> &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">The default method on <code class="cv T1.Text1">=</code> calls <code class="cv T1.Text1">==</code> and returns the result returned by <code class="cv T1.Text1">==</code>.</p>
     <a name="HEADING99-46"></a>
-    <h4 class="H5.Heading5"> complex1 <code class="H5.Heading5">= complex2 </code> &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5">complex1 <code class="H5.Heading5">= complex2 </code> &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">Complex numbers are equal if they have the same mathematical value.</p>
     <a name="HEADING99-48"></a>
-    <h4 class="H5.Heading5"> collection1 <code class="H5.Heading5">= collection2 </code> &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5">collection1 <code class="H5.Heading5">= collection2 </code> &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">Two collections are equal if they have identical <code class="T1.Text1">key-test</code> functions, they have the same keys (as determined by their <code class="T1.Text1">key-test</code> functions), the elements at corresponding keys are =,  and neither collection is a dotted list.</p>
     <a name="HEADING99-50"></a>
-    <h4 class="H5.Heading5"> sequence1  <code class="H5.Heading5">= sequence2 </code> &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5">sequence1  <code class="H5.Heading5">= sequence2 </code> &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">For sequences, <code class="T1.Text1">=</code>  returns true if <i class="T1.Text1">sequence1</i> and <i class="T1.Text1">sequence2</i> have the same size and elements with = keys are =, and returns false otherwise.</p>
     <a name="HEADING99-52"></a>
-    <h4 class="H5.Heading5"> list1 <code class="H5.Heading5">=</code> list2 &rArr;  boolean  <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5">list1 <code class="H5.Heading5">=</code> list2 &rArr;  boolean  <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">For lists, <code class="T1.Text1">=</code>  returns true if the two lists are the same size, corresponding elements of <i class="T1.Text1">list1</i> and <i class="T1.Text1">list2</i> are <code class="T1.Text1">=</code> and the final tails are <code class="T1.Text1">=</code>. It returns false otherwise.</p>
     <a name="HEADING99-54"></a>
-    <h4 class="H5.Heading5"> list  <code class="H5.Heading5">=</code> sequence  &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span><br />sequence  <code class="H5.Heading5">=</code>  list  &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5">list  <code class="H5.Heading5">=</code> sequence  &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span><br />sequence  <code class="H5.Heading5">=</code>  list  &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">For mixed lists and sequences, <code class="T1.Text1">=</code> returns true if the <i class="T1.Text1">list</i> is not a dotted list, both have the same size, and elements with <code class="T1.Text1">=</code> keys are <code class="T1.Text1">=</code>. It returns false otherwise.</p>
     <a name="HEADING99-56"></a>
-    <h4 class="H5.Heading5"> range1 <code class="H5.Heading5">= range2 &rArr;</code>  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5">range1 <code class="H5.Heading5">= range2 &rArr;</code>  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">When called with two ranges, <code class="T1.Text1">=</code> always terminates, even if one or both ranges are unbounded in size.</p>
   </dd>
 </dl>
 <a name="HEADING99-58"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1586"></a>~=</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1586"></a>~=</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Compares two objects for <a name="MARKER-2-1587"></a>inequality.</p>
 <dl class="Cliche">
@@ -198,9 +198,9 @@
 </dl>
 <a name="HEADING99-66"></a>
 <a name="UID-Built-In_Functions-1309"></a>
-<h2 class="H2.Heading2"> Magnitude Comparisons</h2>
+<h2 class="H2.Heading2">Magnitude Comparisons</h2>
 <a name="HEADING99-67"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1588"></a>&lt;</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1588"></a>&lt;</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1589"></a>Returns true if its first operand is <a name="MARKER-2-1590"></a>less than its second operand.</p>
 <dl class="Cliche">
@@ -218,19 +218,19 @@
   <dd class="Cliche"><p class="Cliche"> Returns true if <i class="Parameter Cliche">object1</i> is less than <i class="Parameter Cliche">object2</i>.</p>
     <p class="T1.Text1">The generic function <code class="cv T1.Text1">&lt;</code> is sealed over the domain <code class="cv T1.Text1">(&lt;complex&gt;, &lt;complex&gt;)</code>.</p>
     <a name="HEADING99-75"></a>
-    <h4 class="H5.Heading5"> real1  <code class="H5.Heading5">&lt;</code> real2  &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5">real1  <code class="H5.Heading5">&lt;</code> real2  &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">Built-in real numbers are compared by mathematical value.</p>
     <a name="HEADING99-77"></a>
-    <h4 class="H5.Heading5"> character1  <code class="H5.Heading5">&lt;</code> character2  &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5">character1  <code class="H5.Heading5">&lt;</code> character2  &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">Characters are compared by the ordinal value of the underlying character set. Character case is significant.</p>
     <a name="HEADING99-79"></a>
-    <h4 class="H5.Heading5"> string1<code class="cv H5.Heading5"> <strong class="cv H5.Heading5">&lt; string2  &rArr;</strong></code>  <i class="Parameter H5.Heading5">boolean</i> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5">string1<code class="cv H5.Heading5"> <strong class="cv H5.Heading5">&lt; string2  &rArr;</strong></code>  <i class="Parameter H5.Heading5">boolean</i> <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">When both arguments are strings, <code class="T1.Text1">&lt;</code> compares strings by comparing elements from left to right, using <code class="T1.Text1">&lt;</code> and <code class="cv T1.Text1">=</code> on corresponding elements, and stopping when the elements are not <code class="cv T1.Text1">=</code>. If one string is a strict prefix of the other, the shorter string is considered the "smaller" one. </p>
     <p class="T1.Text1">For variations on string comparison (such as comparisons that ignore case), different comparison operators must be used.</p>
   </dd>
 </dl>
 <a name="HEADING99-82"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1591"></a>&gt;</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1591"></a>&gt;</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Returns true if its first operand is <a name="MARKER-2-1592"></a>greater than its second operand.</p>
 <dl class="Cliche">
@@ -249,7 +249,7 @@
     <p class="T1.Text1">If both arguments are instances of <code class="cv T1.Text1">&lt;complex&gt;</code> then the result is computed in an implementation-defined way. Otherwise, the result is computed by the expression <code class="cv T1.Text1">(<i class="Parameter cv T1.Text1">object2 &lt; object1)</i></code>.</p></dd>
 </dl>
 <a name="HEADING99-90"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1593"></a>&lt;=</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1593"></a>&lt;=</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Returns true if its first operand is <a name="MARKER-2-1594"></a>less than or equal to its second operand.</p>
 <dl class="Cliche">
@@ -268,7 +268,7 @@
     <p class="T1.Text1">If both arguments are instances of <code class="cv T1.Text1">&lt;complex&gt;</code> then the result is computed in an implementation-defined way. Otherwise, the result is computed by the expression <code class="cv T1.Text1">~(<i class="Parameter cv T1.Text1">object2 &lt; object1)</i></code>.</p></dd>
 </dl>
 <a name="HEADING99-98"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1595"></a>&gt;=</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1595"></a>&gt;=</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Returns true if its first operand is <a name="MARKER-2-1596"></a>greater than or equal to its second operand.</p>
 <dl class="Cliche">
@@ -287,7 +287,7 @@
     <p class="T1.Text1">If both arguments are instances of <code class="cv T1.Text1">&lt;complex&gt;</code> then the result is computed in an implementation-defined way. Otherwise, the result is computed by the expression <code class="cv T1.Text1">~(<i class="Parameter cv T1.Text1">object1 &lt; object2)</i></code>.</p></dd>
 </dl>
 <a name="HEADING99-106"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1597"></a>min</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1597"></a>min</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1598"></a>Returns the least of its arguments.</p>
 <dl class="Cliche">
@@ -306,7 +306,7 @@
     <p class="T1.Text1"><code class="cv T1.Text1">min</code> operates by calling <code class="cv T1.Text1">&lt;</code>, and therefore is applicable to any objects for which <code class="cv T1.Text1">&lt;</code> is defined.</p></dd>
 </dl>
 <a name="HEADING99-114"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1599"></a>max</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1599"></a>max</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1600"></a>Returns the greatest of its arguments.</p>
 <dl class="Cliche">

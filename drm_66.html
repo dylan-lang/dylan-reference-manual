@@ -61,7 +61,7 @@
 </div>
 <a name="HEADING66-0"></a>
 <a name="UID-Collections-3496"></a>
-<h1 class="H1.Heading1"> Defining a New Collection Class</h1>
+<h1 class="H1.Heading1">Defining a New Collection Class</h1>
 <p class="T1.Text1"><a name="MARKER-2-1026"></a>Every collection class must provide an implementation of the <a name="MARKER-2-1027"></a>iteration protocol. A method on <code class="Code T1.Text1"><a name="MARKER-2-1028"></a>forward-iteration-protocol</code> is required. A method on <code class="Code T1.Text1"><a name="MARKER-2-1029"></a>backward-iteration-protocol</code> is optional.</p>
 <p class="T1.Text1">Every collection must provide or inherit methods for <code class="Code T1.Text1"><a name="MARKER-2-1030"></a>element</code> and <code class="Code T1.Text1"><a name="MARKER-2-1031"></a>key-test</code>. If the collection is also a <a name="MARKER-2-1032"></a><code class="Code T1.Text1">&lt;mutable-collection&gt;</code>, it must provide or inherit a method for <code class="Code T1.Text1"><a name="MARKER-2-1033"></a>element-setter</code>. A collection that is not a <code class="Code T1.Text1">&lt;mutable-collection&gt;</code> must provide an implementation of <code class="Code T1.Text1"><a name="MARKER-2-1034"></a>type-for-copy</code>.</p>
 <p class="T1.Text1">Individual collection classes may impose further requirements on their subclasses. For example, concrete subclasses of <code class="Code T1.Text1">&lt;table&gt;</code> must provide or inherit a method for <code class="Code T1.Text1">table-protocol</code>.</p>

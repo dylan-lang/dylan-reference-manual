@@ -61,14 +61,14 @@
 </div>
 <a name="HEADING41-0"></a>
 <a name="UID-Types_and_Classes-361"></a>
-<h1 class="H1.Heading1"> <a name="MARKER-2-561"></a>Classes</h1>
+<h1 class="H1.Heading1"><a name="MARKER-2-561"></a>Classes</h1>
 <p class="T1.Text1"><a name="MARKER-2-562"></a>Classes are used to define the inheritance, structure, and initialization of objects.</p>
 <p class="T1.Text1">Every object is a <strong class="Bold T1.Text1"><a name="MARKER-2-563"></a>direct instance</strong> of exactly one class, and a general instance of  the <strong class="Bold T1.Text1"><a name="MARKER-2-564"></a>general superclasses</strong> of that class.</p>
 <p class="T1.Text1">A class determines which <strong class="T1.Text1"><a name="MARKER-2-565"></a>slots</strong> its instances have. Slots are the local storage available within instances. They are used to store the state of objects.</p>
 <p class="T1.Text1">Classes determine how their instances are initialized by using the <strong class="bold T1.Text1"><a name="MARKER-2-566"></a>initialization protocol</strong>.</p>
 <a name="HEADING41-5"></a>
 <a name="UID-Types_and_Classes-5438"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-567"></a>Features of Classes</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-567"></a>Features of Classes</h2>
 <p class="T1.Text1">There are four features of classes. These features relate to each other, but can be declared independently.</p>
 <ul class="B1.Bullet1">
 <li class="B1.Bullet1">A class can be <strong class="bold B1.Bullet1"><a name="MARKER-2-568"></a>abstract</strong> or <strong class="bold B1.Bullet1"><a name="MARKER-2-569"></a>concrete</strong>. If the class is concrete, it can have direct instances. If it is abstract, it cannot have direct instances, but only indirect instances.</li>
@@ -78,7 +78,7 @@
 </ul>
 <a name="HEADING41-11"></a>
 <a name="UID-Types_and_Classes-2532"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-577"></a>Creating Classes</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-577"></a>Creating Classes</h2>
 <p class="T1.Text1">New classes may be created by calling <a name="MARKER-2-578"></a><code class="Code T1.Text1">make</code> on <code class="Code T1.Text1">&lt;class&gt;</code>, or with the definition <a name="MARKER-2-579"></a><code class="T1.Text1">define class</code>. In most programs the latter is more commonly used.</p>
 <p class="T1.Text1">When a class is created with <code class="cv T1.Text1">make</code>, it is instantiated and returned just like any other object. The options available when creating a class with <code class="cv T1.Text1">make</code> are described on <a href="drm_90.html#MARKER-9-1372" class="T1.Text1">page 191</a>.</p>
 <p class="T1.Text1"><a name="MARKER-2-580"></a>When a class is created with <code class="Code T1.Text1">define class</code> it is used to initialize a new module binding. <code class="cv T1.Text1">define class</code> allows the specification of superclasses, slots, initialization behavior, and options related to sealing. The complete syntax of <code class="Code T1.Text1">define class</code> is given on <a href="drm_112.html#MARKER-9-2013" class="T1.Text1">page 378</a>.</p>
@@ -94,7 +94,7 @@ end class &lt;color-window&gt;;<a name="MARKER-2-581"></a>
 </pre>
 <a name="HEADING41-19"></a>
 <a name="UID-Types_and_Classes-5460"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-582"></a><a name="MARKER-9-583"></a>Class Inheritance</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-582"></a><a name="MARKER-9-583"></a>Class Inheritance</h2>
 <p class="T1.Text1">When a class is created, its <strong class="bold T1.Text1"><a name="MARKER-2-584"></a>direct superclasses</strong> are specified. The new class directly inherits from these classes; it is a <strong class="bold T1.Text1"><a name="MARKER-2-585"></a>direct subclass</strong> of each of these classes. There can be no duplicates in the direct superclasses of a class.</p>
 <p class="T1.Text1">The subclass relationship is transitive. If a class <i class="Parameter T1.Text1">C</i> is a direct subclass of <i class="Parameter T1.Text1">C<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i>,  <i class="Parameter T1.Text1">C<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> is a direct subclass of <i class="Parameter T1.Text1">C<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i>, and <i class="Parameter T1.Text1">C<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i> is a direct subclass of <i class="Parameter T1.Text1">C<em class="Subscript Parameter T1.Text1"><sub>3</sub></em></i>, then <i class="Parameter T1.Text1">C</i> is an <strong class="Bold T1.Text1"><a name="MARKER-2-586"></a>indirect subclass</strong> of <i class="Parameter T1.Text1">C<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i> and <i class="Parameter T1.Text1">C<em class="Subscript Parameter T1.Text1"><sub>3</sub></em></i>. A <strong class="Bold T1.Text1"><a name="MARKER-2-587"></a>general subclass</strong> is a direct or indirect subclass.</p>
 <p class="T1.Text1">Inheritance cannot be <a name="MARKER-2-588"></a>circular. A class cannot be its own general subclass.</p>
@@ -102,7 +102,7 @@ end class &lt;color-window&gt;;<a name="MARKER-2-581"></a>
 <p class="T1.Text1">Every class is a general subclass of <code class="Code T1.Text1">&lt;object&gt;</code>.<a name="MARKER-2-589"></a></p>
 <a name="HEADING41-25"></a>
 <a name="UID-Types_and_Classes-7969"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-9-590"></a><a name="MARKER-2-591"></a>Computing the Class Precedence List</h2>
+<h2 class="H2.Heading2"><a name="MARKER-9-590"></a><a name="MARKER-2-591"></a>Computing the Class Precedence List</h2>
 <p class="T1.Text1">The definition of a class specifies a <a name="MARKER-2-592"></a>total ordering on that class and its direct superclasses. This ordering is called the <strong class="T1.Text1"><a name="MARKER-2-593"></a>local precedence order</strong>. In the local precedence order:</p>
 <ul class="B1.Bullet1">
   <li class="B1.Bullet1">The class precedes its direct superclasses.</li>

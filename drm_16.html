@@ -61,7 +61,7 @@
 </div>
 <a name="HEADING16-0"></a>
 <a name="UID-Syntax-1450"></a>
-<h1 class="H1.Heading1"> Local Declarations</h1>
+<h1 class="H1.Heading1">Local Declarations</h1>
 <p class="T1.Text1">A <strong class="Bold T1.Text1"><a name="MARKER-2-238"></a>local declaration</strong> is a construct that establishes <a name="MARKER-2-239"></a>local bindings or <a name="MARKER-2-240"></a>condition handlers whose scope is the remainder of the body following the local declaration.</p>
 <p class="T1.Text1">Unlike module bindings, local bindings are established during program execution, each time the local declaration is executed. They persist for as long as code in their scope is active. Local bindings persist after the body containing them returns if they are referenced by a method created inside the body and a reference to the method escapes from the body, so that it could be called after the body returns. Unlike module bindings, local bindings are always variable. However, since a local binding has a limited scope, if there is no assignment within that scope, the local binding is effectively constant.</p>
 <p class="T1.Text1">A local binding shadows any module binding with the same name and any surrounding local binding with the same name. The innermost binding is the one referenced.</p>

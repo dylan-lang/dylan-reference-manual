@@ -61,14 +61,14 @@
 </div>
 <a name="HEADING102-0"></a>
 <a name="UID-Built-In_Functions-3130"></a>
-<h1 class="H1.Heading1"> <a name="MARKER-9-1696"></a>Collection Operations</h1>
+<h1 class="H1.Heading1"><a name="MARKER-9-1696"></a>Collection Operations</h1>
 <p class="T1.Text1"><a name="MARKER-2-1697"></a>The generic functions described in this section have predefined methods for the built-in collection classes (and sequence classes, where appropriate). The details of these predefined methods have not yet been specified.</p>
 <p class="T1.Text1">Note to implementors:  Functions such as <code class="cv T1.Text1">map</code>, <code class="cv T1.Text1">map-as</code> that return a new collection cannot rely on the type they instantiate having a valid default for <code class="cv T1.Text1">fill:</code>. Therefore, when the size of the result is nonzero, these functions should compute the first element of the result before making the collection and specify that element as the <code class="cv T1.Text1">fill:</code> value. Otherwise a spurious type error could occur when making the collection.</p>
 <a name="HEADING102-3"></a>
 <a name="UID-Built-In_Functions-21096"></a>
-<h2 class="H2.Heading2"> Collection Properties</h2>
+<h2 class="H2.Heading2">Collection Properties</h2>
 <a name="HEADING102-4"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1698"></a><a name="MARKER-2-1699"></a>empty?</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1698"></a><a name="MARKER-2-1699"></a>empty?</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1700"></a>Returns true if its argument is empty.</p>
 <dl class="Cliche">
@@ -81,12 +81,12 @@
   <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
   <dd class="Cliche"><p class="Cliche"> Returns true if <i class="Cliche">object</i> is empty. Otherwise returns <code class="Cliche">#f</code>.</p>
     <a name="HEADING102-10"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">empty?</code>   collection &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">empty?</code>   collection &rArr;  boolean <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">A set of methods defined for the class <code class="cv T1.Text1">&lt;collection&gt;</code> returns true if the collection has zero elements.</p>
   </dd>
 </dl>
 <a name="HEADING102-12"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1701"></a>size</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1701"></a>size</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><code class="SD.ShortDescription"><a name="MARKER-9-1702"></a></code>Returns the size of its argument.</p>
 <dl class="Cliche">
@@ -99,26 +99,26 @@
   <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
   <dd class="Cliche"><p class="Cliche"> Returns the size of <i class="Parameter Cliche">object</i>.</p>
     <a name="HEADING102-18"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">size</code> collection &rArr; integer-or-false <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">size</code> collection &rArr; integer-or-false <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">When called on a collection, <code class="cv T1.Text1">size</code> returns the numbers of keys in the collection. This default method simply counts while iterating through the collection. <code class="cv T1.Text1">size</code> may return <code class="cv T1.Text1">#f</code> for collections of unbounded size.</p>
     <a name="HEADING102-20"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">size</code> array &rArr; size  <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">size</code> array &rArr; size  <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">The method for <code class="T1.Text1">&lt;array&gt;</code> is equivalent to </p>
     <pre class="Cv.Code">
 <code class="cv Cv.Code">reduce(\*, 1, dimensions (array))</code></pre>
     <a name="HEADING102-23"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">size  list</code>  &rArr;  integer-or-false <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">size  list</code>  &rArr;  integer-or-false <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">For circular lists, <code class="T1.Text1">size</code> is guaranteed to terminate and return <code class="T1.Text1">#f</code>. For noncircular lists, <code class="T1.Text1">size</code> returns an integer size value.</p>
     <a name="HEADING102-25"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">size</code>   range &rArr;  size <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">size</code>   range &rArr;  size <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">For unbounded ranges, <code class="T1.Text1">size</code> always terminates and returns <code class="T1.Text1">#f</code>. For finite ranges, <code class="T1.Text1">size</code> returns an integer.</p>
     <a name="HEADING102-27"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">size</code>   table &rArr;  size <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">size</code>   table &rArr;  size <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">The class <code class="cv T1.Text1">&lt;table&gt;</code> provides an implementation of <code class="cv T1.Text1">size</code> for use by its subclasses. The method returns an instance of <code class="cv T1.Text1">&lt;integer&gt;</code>.</p>
   </dd>
 </dl>
 <a name="HEADING102-29"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1703"></a>size-setter</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1703"></a>size-setter</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1704"></a>Sets the size of an object.</p>
 <dl class="Cliche">
@@ -140,7 +140,7 @@
     <p class="T1.Text1">It is not specified how <code class="cv T1.Text1">size-setter</code> adds new elements to the stretchy sequence. In particular, it is not required to call <code class="cv T1.Text1">add!</code> or any other predefined function.</p></dd>
 </dl>
 <a name="HEADING102-40"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1705"></a>rank</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1705"></a>rank</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1706"></a>Returns the number of dimensions of an array.</p>
 <dl class="Cliche">
@@ -153,12 +153,12 @@
   <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
   <dd class="Cliche"><p class="Cliche"> Returns the number of dimensions (the rank) of <i class="Cliche">array</i>.</p>
     <a name="HEADING102-46"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">rank</code> array &rArr; rank <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">rank</code> array &rArr; rank <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">The method for <code class="T1.Text1">&lt;array&gt;</code> computes <code class="T1.Text1">rank</code> by calling <code class="T1.Text1">size</code> on the <code class="T1.Text1">dimensions</code> of <code class="T1.Text1">array</code>.</p>
   </dd>
 </dl>
 <a name="HEADING102-48"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1707"></a>row-major-index</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1707"></a>row-major-index</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1708"></a>Returns the row-major-index position of an array element.</p>
 <dl class="Cliche">
@@ -176,12 +176,12 @@
   <dd class="Cliche"><p class="Cliche"> Computes the position according to the row-major ordering of <code class="Cliche">array</code> for the   element that is specified by <code class="Cliche">subscripts</code>, and returns the position of that element.</p>
     <p class="T1.Text1">An error is signaled if the number of subscripts is not equal to the rank of the array. An error is signaled if any of the subscripts are out of bounds for array.</p>
     <a name="HEADING102-56"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">row-major-index</code> array <code class="H5.Heading5">#rest</code> subscripts &rArr; index  <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">row-major-index</code> array <code class="H5.Heading5">#rest</code> subscripts &rArr; index  <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">The method for <code class="T1.Text1">&lt;array&gt;</code> computes the <i class="Parameter T1.Text1">index</i> using the <i class="Parameter T1.Text1">subscripts</i> and the result of calling <code class="T1.Text1">dimensions</code> on the <i class="Parameter T1.Text1">array</i>.</p>
   </dd>
 </dl>
 <a name="HEADING102-58"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1709"></a>dimensions</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1709"></a>dimensions</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1710"></a>Returns the dimensions of an array.</p>
 <dl class="Cliche">
@@ -194,12 +194,12 @@
   <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
   <dd class="Cliche"><p class="Cliche"> Returns the dimensions <i class="Cliche"> </i>of <i class="Cliche">array</i>, as a sequence of integers. The consequences are undefined if the resulting sequence is modified. This function forms the basis for all the other array operations. Each concrete subclass of <code class="Cliche">&lt;array&gt;</code> must either provide or inherit an implementation of this function.</p>
     <a name="HEADING102-64"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">dimensions</code> vector &rArr;  sequence <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">dimensions</code> vector &rArr;  sequence <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">Returns a sequence whose single element is the size of the vector.</p>
   </dd>
 </dl>
 <a name="HEADING102-66"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1711"></a>dimension</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1711"></a>dimension</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1712"></a>Returns the size of a specified dimension of an array.</p>
 <dl class="Cliche">
@@ -217,12 +217,12 @@
   <dd class="Cliche"><p class="Cliche"> Returns the <i class="Parameter Cliche">axis</i> dimension of <code class="Cliche">array</code>.</p>
     <p class="T1.Text1"><i class="Parameter T1.Text1">axis</i> must be a non-negative integer less than the rank of <code class="T1.Text1">array</code>. An error is signaled if <i class="Parameter T1.Text1">axis</i> is out of bounds for <code class="T1.Text1">array</code>.</p>
     <a name="HEADING102-74"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">dimension</code> array axis &rArr; dimension   <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">dimension</code> array axis &rArr; dimension   <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">The method for <code class="T1.Text1">&lt;array&gt;</code> calls <code class="T1.Text1">element</code> on the result of calling <code class="T1.Text1">dimensions</code> on the <code class="T1.Text1">array</code>, using the <code class="T1.Text1">axis</code> number as the key.</p>
   </dd>
 </dl>
 <a name="HEADING102-76"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1713"></a>key-test</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1713"></a>key-test</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1714"></a>Returns the function used by its collection argument to compare keys.</p>
 <dl class="Cliche">
@@ -236,15 +236,15 @@
   <dd class="Cliche"><p class="Cliche"> Returns the function used by <i class="Parameter Cliche">collection</i> to compare keys.</p>
     <p class="T1.Text1">All collection classes must provide or inherit a method that returns a result consistent with their iteration protocol and <code class="T1.Text1">element</code> methods. A given method for <code class="T1.Text1">key-test</code> must return the same value (compared with <code class="T1.Text1">==</code>) each time it is called.</p>
     <a name="HEADING102-83"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">key-test</code> sequence  &rArr; test-function <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">key-test</code> sequence  &rArr; test-function <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">The method of <code class="T1.Text1">key-test</code> for sequences returns the function <code class="T1.Text1">==</code>.</p>
     <a name="HEADING102-85"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">key-test</code> table  &rArr; test-function <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">key-test</code> table  &rArr; test-function <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">The method of <code class="T1.Text1">key-test</code> for instances of <code class="cv T1.Text1">&lt;table&gt;</code> returns the first value of <code class="cv T1.Text1">table-protocol(<i class="Parameter cv T1.Text1">table)</i></code>.</p>
   </dd>
 </dl>
 <a name="HEADING102-87"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1715"></a>key-sequence</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1715"></a>key-sequence</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><code class="SD.ShortDescription"><a name="MARKER-9-1716"></a></code>Returns a sequence containing the keys of its collection argument.</p>
 <dl class="Cliche">
@@ -261,9 +261,9 @@
 </dl>
 <a name="HEADING102-95"></a>
 <a name="UID-Built-In_Functions-415"></a>
-<h2 class="H2.Heading2"> Selecting Elements</h2>
+<h2 class="H2.Heading2">Selecting Elements</h2>
 <a name="HEADING102-96"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1718"></a><a name="MARKER-2-1719"></a>element</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1718"></a><a name="MARKER-2-1719"></a>element</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><code class="SD.ShortDescription"><a name="MARKER-9-1720"></a></code>Returns the collection element associated with a particular key.</p>
 <dl class="Cliche">
@@ -283,21 +283,21 @@
   <dd class="Cliche"><p class="Cliche"> Returns the element associated with <i class="Cliche">key</i> in <i class="Cliche">collection</i>. If no element is associated with <i class="Cliche">key</i>, then the behavior of <code class="Cliche">element</code> depends on whether it was called with a <i class="Cliche">default</i> argument: if a <i class="Cliche">default</i> argument was passed, its value is returned; otherwise, an error is signaled.</p>
     <p class="T1.Text1">All collections are required to implement <code class="T1.Text1">element</code>.</p>
     <a name="HEADING102-105"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">element</code> simple-vector  index #key default &rArr;  element  <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">element</code> simple-vector  index #key default &rArr;  element  <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">There is a constant time implementation of <code class="cv T1.Text1">element</code> for all general instances of <code class="cv T1.Text1">&lt;simple-vector&gt;</code>.</p>
     <a name="HEADING102-107"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">element</code> unicode-string index #key default  &rArr;  character   <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">element</code> unicode-string index #key default  &rArr;  character   <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">The class <code class="T1.Text1">&lt;unicode-string&gt;</code> provides a constant time implementation for the <code class="T1.Text1">element</code> function.</p>
     <a name="HEADING102-109"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">element</code> byte-string index #key default  &rArr;  character       <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">element</code> byte-string index #key default  &rArr;  character       <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">The class <code class="T1.Text1">&lt;byte-string&gt;</code> provides a constant time implementation for the <code class="T1.Text1">element</code> function.</p>
     <a name="HEADING102-111"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">element</code> table key #key default  &rArr;  element       <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">element</code> table key #key default  &rArr;  element       <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">The class <code class="T1.Text1">&lt;table&gt;</code> provides a default implementation for the <code class="T1.Text1">element</code> function.</p>
   </dd>
 </dl>
 <a name="HEADING102-113"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1721"></a>element-setter</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1721"></a>element-setter</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1722"></a>Sets the collection element associated with a particular key.</p>
 <dl class="Cliche">
@@ -322,21 +322,21 @@
       <li class="B1.Bullet1"> If the class is a subclass of <code class="B1.Bullet1">&lt;sequence&gt;</code>, first calls <code class="B1.Bullet1">size-setter</code> on the key + 1 and the collection to expand the sequence. The key must be a non-negative integer.</li>
     </ul>
     <a name="HEADING102-125"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">element-setter</code>  new-element simple-vector  index  <span class="attributes-summary">[Sealed G.F. Method]</span><br />&rArr;  new-element </h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">element-setter</code>  new-element simple-vector  index  <span class="attributes-summary">[Sealed G.F. Method]</span><br />&rArr;  new-element </h4>
     <p class="T1.Text1">There is a constant time implementation of <code class="cv T1.Text1">element-setter</code> for all general instances of <code class="cv T1.Text1">&lt;simple-vector&gt;</code>.</p>
     <a name="HEADING102-127"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">element-setter   new-value table key </code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">element-setter   new-value table key </code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">The class <code class="cv T1.Text1">&lt;table&gt;</code> provides an implementation of <code class="cv T1.Text1">element-setter</code> for use by its subclasses. If no element with the given <i class="Parameter T1.Text1">key</i> exists, <code class="T1.Text1">element-setter</code> will add the <i class="Parameter T1.Text1">key</i> and <i class="Parameter T1.Text1">new-value</i> to the table.</p>
     <a name="HEADING102-129"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">element-setter</code>  character unicode-string index   <span class="attributes-summary">[Sealed G.F. Method]</span><br />&rArr;  character</h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">element-setter</code>  character unicode-string index   <span class="attributes-summary">[Sealed G.F. Method]</span><br />&rArr;  character</h4>
     <p class="T1.Text1">The class <code class="T1.Text1">&lt;unicode-string&gt;</code> provides a constant time implementation for the <code class="T1.Text1">element-setter</code> function.</p>
     <a name="HEADING102-131"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">element-setter</code>  character byte-string index &rArr;  character  <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">element-setter</code>  character byte-string index &rArr;  character  <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">The class <code class="T1.Text1">&lt;byte-string&gt;</code> provides a constant time implementation for the <code class="T1.Text1">element-setter</code> function.</p>
   </dd>
 </dl>
 <a name="HEADING102-133"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1723"></a>aref</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1723"></a>aref</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1724"></a>Returns the array element indicated by a set of indices.</p>
 <dl class="Cliche">
@@ -354,12 +354,12 @@
   <dd class="Cliche"><p class="Cliche"> Returns the element of <i class="Cliche">array</i> indicated by <i class="Cliche">indices</i>.</p>
     <p class="T1.Text1">An error is signaled if the number of <i class="T1.Text1">indices</i> is not equal to the rank of the <i class="T1.Text1">array</i>. An error is signaled if any of the <i class="T1.Text1">indices</i> are out of bounds for the <i class="T1.Text1">array</i>.</p>
     <a name="HEADING102-141"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">aref</code> array <code class="H5.Heading5">#rest</code> indices &rArr; element  <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">aref</code> array <code class="H5.Heading5">#rest</code> indices &rArr; element  <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">The method for <code class="T1.Text1">&lt;array&gt;</code> calls <code class="T1.Text1">element</code> on the <i class="T1.Text1">array</i>, using as the key the result of applying <code class="T1.Text1">row-major-index</code> to the <i class="T1.Text1">array </i>and <i class="T1.Text1">indices</i>.</p>
   </dd>
 </dl>
 <a name="HEADING102-143"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1725"></a>aref-setter </code>  <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1725"></a>aref-setter </code>  <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1726"></a>Sets the array element indicated by a set of indices.</p>
 <dl class="Cliche">
@@ -380,12 +380,12 @@
     <p class="T1.Text1">array is modified by this operation.</p>
     <p class="T1.Text1">An error is signaled if the number of <i class="T1.Text1">indices</i> is not equal to the rank of the <i class="T1.Text1">array</i>. An error is signaled if any of the <i class="T1.Text1">indices</i> are out of bounds for <i class="T1.Text1">array</i>. An error is signaled if the <i class="T1.Text1">array </i>is limited to hold objects of a particular type and the new value is not an instance of that type.</p>
     <a name="HEADING102-153"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">aref-setter</code> new-value   array <code class="H5.Heading5"> #rest</code> indices &rArr; new-value  <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">aref-setter</code> new-value   array <code class="H5.Heading5"> #rest</code> indices &rArr; new-value  <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">The method for <code class="T1.Text1">&lt;array&gt;</code> calls <code class="T1.Text1">element-setter</code> on the array and new value, using as the key the result of applying <code class="T1.Text1">row-major-index</code> to the <code class="T1.Text1">array</code> and <i class="Parameter T1.Text1">indices</i>.</p>
   </dd>
 </dl>
 <a name="HEADING102-155"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1727"></a>first</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1727"></a>first</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1728"></a>Returns the first element of a sequence.</p>
 <dl class="Cliche">
@@ -404,7 +404,7 @@
     <p class="T1.Text1">Note that because <code class="T1.Text1">element</code> is zero-based,  <code class="T1.Text1">first(seq)</code> is equivalent to <code class="T1.Text1">element(seq, 0)</code> and <code class="T1.Text1">seq[0]</code>.</p></dd>
 </dl>
 <a name="HEADING102-163"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1729"></a>second</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1729"></a>second</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1730"></a>Returns the second element of a sequence.</p>
 <dl class="Cliche">
@@ -422,7 +422,7 @@
   <dd class="Cliche"><p class="Cliche"> Returns the second element of the <i class="Cliche">sequence</i> by calling <code class="Cliche">element</code> with the supplied arguments and the corresponding index.</p></dd>
 </dl>
 <a name="HEADING102-170"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1731"></a>third</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1731"></a>third</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1732"></a>Returns the third element of a sequence.</p>
 <dl class="Cliche">
@@ -440,7 +440,7 @@
   <dd class="Cliche"><p class="Cliche"> Returns the third element of the <i class="Cliche">sequence</i> by calling <code class="Cliche">element</code> with the supplied arguments and the corresponding index.</p></dd>
 </dl>
 <a name="HEADING102-177"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-9-1637"></a>first-setter</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-9-1637"></a>first-setter</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1734"></a>Sets the first element of a mutable sequence.</p>
 <dl class="Cliche">
@@ -459,7 +459,7 @@
     <p class="T1.Text1">Note that because <code class="T1.Text1">element-setter</code> is zero-based, <code class="T1.Text1">first-setter(val, seq)</code> is equivalent to <code class="T1.Text1">element-setter(val, seq, 0)</code> and <code class="T1.Text1">seq[0] := val</code>.</p></dd>
 </dl>
 <a name="HEADING102-185"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1735"></a>second-setter</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1735"></a>second-setter</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1736"></a>Sets the second element of a mutable sequence.</p>
 <dl class="Cliche">
@@ -477,7 +477,7 @@
   <dd class="Cliche"><p class="Cliche"> Sets the second element of the <i class="Parameter Cliche">mutable-sequence</i> and returns the <i class="Cliche">new-value</i>, by calling <code class="Cliche">element-setter </code>with the supplied arguments and the corresponding index.</p></dd>
 </dl>
 <a name="HEADING102-192"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1737"></a>third-setter</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1737"></a>third-setter</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1738"></a>Sets the third element of a mutable sequence.</p>
 <dl class="Cliche">
@@ -495,7 +495,7 @@
   <dd class="Cliche"><p class="Cliche"> Sets the third element of the <i class="Parameter Cliche">mutable-sequence</i> and returns the <i class="Cliche">new-value</i>, by calling <code class="Cliche">element-setter </code>with the supplied arguments and the corresponding index.</p></dd>
 </dl>
 <a name="HEADING102-199"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1739"></a>last</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1739"></a>last</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><code class="SD.ShortDescription"><a name="MARKER-9-1740"></a></code>Returns the last element of a sequence.</p>
 <dl class="Cliche">
@@ -518,7 +518,7 @@ last (#(&quot;emperor&quot;, &quot;of&quot;, &quot;china&quot;))
   </dd>
 </dl>
 <a name="HEADING102-208"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1741"></a>last-setter</code>      <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1741"></a>last-setter</code>      <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1742"></a>Sets the last element of a mutable sequence.</p>
 <dl class="Cliche">
@@ -552,7 +552,7 @@ last (my-empty-vector) := 4
   </dd>
 </dl>
 <a name="HEADING102-219"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1743"></a>head</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1743"></a>head</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1744"></a>Returns the head of a list.</p>
 <dl class="Cliche">
@@ -573,7 +573,7 @@ head (#())
   </dd>
 </dl>
 <a name="HEADING102-227"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1745"></a>tail</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1745"></a>tail</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1746"></a>Returns the tail of a list.</p>
 <dl class="Cliche">
@@ -594,7 +594,7 @@ tail (#())
   </dd>
 </dl>
 <a name="HEADING102-235"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1747"></a>head-setter</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1747"></a>head-setter</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1748"></a>Sets the head of a pair.</p>
 <dl class="Cliche">
@@ -620,7 +620,7 @@ x
   </dd>
 </dl>
 <a name="HEADING102-244"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1749"></a>tail-setter</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1749"></a>tail-setter</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1750"></a>Sets the tail of a pair.</p>
 <dl class="Cliche">
@@ -651,9 +651,9 @@ x
 </dl>
 <a name="HEADING102-253"></a>
 <a name="UID-Built-In_Functions-29552"></a>
-<h2 class="H2.Heading2"> Adding and Removing Elements</h2>
+<h2 class="H2.Heading2">Adding and Removing Elements</h2>
 <a name="HEADING102-254"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1752"></a><a name="MARKER-2-1753"></a>add</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1752"></a><a name="MARKER-2-1753"></a>add</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1754"></a>Adds an element to a sequence.</p>
 <dl class="Cliche">
@@ -680,7 +680,7 @@ add (*numbers*, 1)
   </dd>
 </dl>
 <a name="HEADING102-264"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1755"></a>add!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1755"></a>add!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1756"></a>Adds an element to a sequence.</p>
 <dl class="Cliche">
@@ -705,18 +705,18 @@ add! (*numbers*, 1)
 *numbers*
   &rArr; {undefined}</pre>
     <a name="HEADING102-274"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">add!   deque new-value  &rArr;</code> deque <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">add!   deque new-value  &rArr;</code> deque <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">The result of <code class="T1.Text1">add!</code> on a deque is <code class="T1.Text1">==</code> to the <i class="T1.Text1">deque</i> argument, which is modified by this operation. <code class="T1.Text1">add!<i class="T1.Text1"> </i></code>adds <i class="T1.Text1">new-element</i> at the beginning of the <i class="T1.Text1">deque</i>.</p>
     <a name="HEADING102-276"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">add!   stretchy-vector new-element  &rArr;</code> stretchy-vector <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">add!   stretchy-vector new-element  &rArr;</code> stretchy-vector <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">The result of <code class="cv T1.Text1">add!</code> on a stretchy vector is <code class="T1.Text1">==</code> to the <i class="T1.Text1">stretchy-vector</i> argument, which is modified by this operation. <code class="T1.Text1">add!<i class="T1.Text1"> </i></code>adds <i class="T1.Text1">new-element</i> at the end of the <i class="T1.Text1">stretchy-vector</i>.</p>
     <a name="HEADING102-278"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">add!   list element &rArr;</code>  pair <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">add!   list element &rArr;</code>  pair <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">The result of <code class="cv T1.Text1">add!</code> on a list is equivalent to<code class="cv T1.Text1"> (pair <i class="Parameter cv T1.Text1">element list)</i></code>. The result will share structure with the <i class="Parameter T1.Text1">list</i> argument, but it will not be <code class="cv T1.Text1">==</code> to the argument, and the argument will not be modified.</p>
   </dd>
 </dl>
 <a name="HEADING102-280"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1757"></a>add-new</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1757"></a>add-new</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1758"></a>Adds a new element to a sequence.</p>
 <dl class="Cliche">
@@ -744,7 +744,7 @@ add-new (#(3, 4, 5), 4)
   </dd>
 </dl>
 <a name="HEADING102-291"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1759"></a>add-new!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1759"></a>add-new!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1760"></a>Adds a new element to a sequence.</p>
 <dl class="Cliche">
@@ -772,7 +772,7 @@ add-new! (list (3, 4, 5), 4)
   </dd>
 </dl>
 <a name="HEADING102-302"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1761"></a>remove</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1761"></a>remove</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-2-1762"></a><a name="MARKER-9-1763"></a>Removes an element from a sequence.</p>
 <dl class="Cliche">
@@ -804,7 +804,7 @@ define variable *new-list* = remove(*old-list*, 1)
   </dd>
 </dl>
 <a name="HEADING102-314"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1764"></a>remove!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1764"></a>remove!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1765"></a>Removes an element from a sequence.</p>
 <dl class="Cliche">
@@ -827,18 +827,18 @@ define variable *new-list* = remove(*old-list*, 1)
     <p class="T1.Text1"><i class="T1.Text1">test</i> is a function that determines whether an element is equal to <i class="T1.Text1">value</i>. The <i class="T1.Text1">test</i> function may be noncommutative: it is always called with an element from <i class="T1.Text1">source-sequence</i> as its first argument and <i class="T1.Text1">value</i>  as its second argument.</p>
     <p class="T1.Text1">If <i class="T1.Text1">count</i> is <code class="cv T1.Text1">#f</code>, then all copies of <i class="Parameter T1.Text1">value</i> are removed. Otherwise, no more than <i class="T1.Text1">count</i> copies of <i class="T1.Text1">value</i> are removed (so additional elements equal to <i class="T1.Text1">value</i> might remain in <i class="Parameter T1.Text1">result-sequence</i>).</p>
     <a name="HEADING102-325"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">remove!   deque value #key test count   &rArr;</code> deque <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">remove!   deque value #key test count   &rArr;</code> deque <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">The result of <code class="T1.Text1">remove!</code> on a deque is <code class="T1.Text1">==</code> to the <i class="T1.Text1">deque</i> argument. The argument is modified by this operation.</p>
     <a name="HEADING102-327"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">remove!   stretchy-vector element #key test count  </code> <span class="attributes-summary">[Sealed G.F. Method]</span><br />&rArr; stretchy-vector</h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">remove!   stretchy-vector element #key test count  </code> <span class="attributes-summary">[Sealed G.F. Method]</span><br />&rArr; stretchy-vector</h4>
     <p class="T1.Text1">The result of <code class="T1.Text1">remove!</code> on a stretchy vector is <code class="T1.Text1">==</code> to the <i class="T1.Text1">stretchy-vector</i> argument. The argument is modified by this operation.</p>
     <a name="HEADING102-329"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">remove!   list element #key test count  &rArr;</code>  list <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">remove!   list element #key test count  &rArr;</code>  list <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">The result of <code class="T1.Text1">remove!</code> on a list may or may not be <code class="T1.Text1">==</code> to the <i class="T1.Text1">list</i> argument. The argument may be modified by this operation.</p>
   </dd>
 </dl>
 <a name="HEADING102-331"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1766"></a>push</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1766"></a>push</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1767"></a>Adds an element to the front of a deque.</p>
 <dl class="Cliche">
@@ -857,7 +857,7 @@ define variable *new-list* = remove(*old-list*, 1)
     <p class="T1.Text1"><i class="Parameter T1.Text1">deque</i> is modified by this operation.</p></dd>
 </dl>
 <a name="HEADING102-339"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1768"></a>pop</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1768"></a>pop</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1769"></a>Removes and returns the first element of a deque.</p>
 <dl class="Cliche">
@@ -872,7 +872,7 @@ define variable *new-list* = remove(*old-list*, 1)
     <p class="T1.Text1"><i class="Parameter T1.Text1">deque</i> is modified by this operation. </p></dd>
 </dl>
 <a name="HEADING102-346"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1770"></a>push-last</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1770"></a>push-last</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1771"></a>Adds an element to the end of a deque.</p>
 <dl class="Cliche">
@@ -891,7 +891,7 @@ define variable *new-list* = remove(*old-list*, 1)
     <p class="T1.Text1"><i class="Parameter T1.Text1">deque</i> is modified by this operation. </p></dd>
 </dl>
 <a name="HEADING102-354"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1772"></a>pop-last</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1772"></a>pop-last</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1773"></a>Removes and returns an element from the end of a deque.</p>
 <dl class="Cliche">
@@ -907,9 +907,9 @@ define variable *new-list* = remove(*old-list*, 1)
 </dl>
 <a name="HEADING102-361"></a>
 <a name="UID-Built-In_Functions-9856"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-1776"></a>Reordering Elements</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-1776"></a>Reordering Elements</h2>
 <a name="HEADING102-362"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1777"></a>reverse</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1777"></a>reverse</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1778"></a>Returns a sequence with elements in the reverse order of its argument sequence.</p>
 <dl class="Cliche">
@@ -932,12 +932,12 @@ reverse(*x*)
 *x*
   &rArr;  #(&quot;bim&quot;, &quot;bam&quot;, &quot;boom&quot;)</pre>
     <a name="HEADING102-371"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">reverse   range &rArr;</code>  new-range <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">reverse   range &rArr;</code>  new-range <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">Reversing a range produces another range. An unbounded range cannot be reversed.</p>
   </dd>
 </dl>
 <a name="HEADING102-373"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1779"></a>reverse!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1779"></a>reverse!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1780"></a>Returns a sequence with elements in the reverse order of its argument sequence.</p>
 <dl class="Cliche">
@@ -953,12 +953,12 @@ reverse(*x*)
     <p class="T1.Text1">The consequences are undefined if the <i class="Parameter T1.Text1">source-sequence</i> is unbounded (circular or infinite).</p>
     <p class="T1.Text1"><code class="T1.Text1">define variable *x* = list(&quot;bim&quot;, &quot;bam&quot;, &quot;boom&quot;)<br />*x*<br />  &rArr;  #(&quot;bim&quot;, &quot;bam&quot;, &quot;boom&quot;)<br />reverse!(*x*)<br />  &rArr;  #(&quot;boom&quot;, &quot;bam&quot;, &quot;bim&quot;)<br />*x*<br />  &rArr; {undefined}</code></p>
     <a name="HEADING102-382"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">reverse!   range &rArr;</code>  range <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">reverse!   range &rArr;</code>  range <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">The result of <code class="T1.Text1">reverse!</code> on a range is <code class="T1.Text1">==</code> to the <i class="T1.Text1">range</i> argument. An unbounded range cannot be reversed.</p>
   </dd>
 </dl>
 <a name="HEADING102-384"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1781"></a>sort</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1781"></a>sort</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1782"></a>Returns a sequence containing the elements of its argument sequence, sorted.</p>
 <dl class="Cliche">
@@ -989,7 +989,7 @@ sort (*numbers*)
   </dd>
 </dl>
 <a name="HEADING102-395"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1783"></a>sort!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1783"></a>sort!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1784"></a>Returns a sequence containing the elements of its argument sequence, sorted.</p>
 <dl class="Cliche">
@@ -1014,9 +1014,9 @@ sort (*numbers*)
 </dl>
 <a name="HEADING102-407"></a>
 <a name="UID-Built-In_Functions-2737"></a>
-<h2 class="H2.Heading2"> <a name="MARKER-2-1786"></a>Set Operations</h2>
+<h2 class="H2.Heading2"><a name="MARKER-2-1786"></a>Set Operations</h2>
 <a name="HEADING102-408"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1787"></a>intersection</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1787"></a>intersection</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1788"></a>Returns the intersection of two sequences.</p>
 <dl class="Cliche">
@@ -1042,12 +1042,12 @@ sort (*numbers*)
                 test: \=)
 #(&quot;george&quot;)</pre>
     <a name="HEADING102-419"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">intersection   range1 range2 </code> <code class="H5.Heading5">#key</code> test &rArr;  range <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">intersection   range1 range2 </code> <code class="H5.Heading5">#key</code> test &rArr;  range <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1"><code class="T1.Text1">intersection</code> applied to two ranges and a test of <code class="T1.Text1">==</code> (the default) will produce another range as its result, even though the <code class="T1.Text1">type-for-copy</code> of a range is not <code class="T1.Text1">&lt;range&gt;</code>. If either <i class="T1.Text1">range1</i> or <i class="T1.Text1">range2</i> is unbounded, this method is guaranteed to terminate only if the <i class="T1.Text1">test</i> is <code class="T1.Text1">==</code>.</p>
   </dd>
 </dl>
 <a name="HEADING102-421"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1789"></a>union</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1789"></a>union</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1790"></a>Returns the union of two sequences.</p>
 <dl class="Cliche">
@@ -1077,7 +1077,7 @@ union (#(&quot;butter&quot;, &quot;flour&quot;, &quot;sugar&quot;, &quot;salt&qu
   </dd>
 </dl>
 <a name="HEADING102-433"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1791"></a>remove-duplicates</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1791"></a>remove-duplicates</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1792"></a>Returns a sequence without duplicates.</p>
 <dl class="Cliche">
@@ -1107,7 +1107,7 @@ or
   </dd>
 </dl>
 <a name="HEADING102-443"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1793"></a>remove-duplicates!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1793"></a>remove-duplicates!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1794"></a>Returns a sequence without duplicates.</p>
 <dl class="Cliche">
@@ -1140,9 +1140,9 @@ or
 </dl>
 <a name="HEADING102-453"></a>
 <a name="UID-Built-In_Functions-2699"></a>
-<h2 class="H2.Heading2"> Subsequence Operations</h2>
+<h2 class="H2.Heading2">Subsequence Operations</h2>
 <a name="HEADING102-454"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1796"></a>copy-sequence </code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1796"></a>copy-sequence </code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1797"></a><a name="MARKER-2-1798"></a>Returns a freshly allocated copy of some subsequence of a sequence.</p>
 <dl class="Cliche">
@@ -1167,12 +1167,12 @@ hamlet == copy-sequence (hamlet)
 copy-sequence (hamlet, start: 2, end: 4)
 <code class="cv Cv.Code"> &rArr;</code>  #(&quot;or&quot;, &quot;not&quot;)</pre>
     <a name="HEADING102-463"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">copy-sequence</code>   range <code class="H5.Heading5">#key start end &rArr;</code>  new-range <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">copy-sequence</code>   range <code class="H5.Heading5">#key start end &rArr;</code>  new-range <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">When applied to a range, <code class="T1.Text1">copy-sequence</code> returns another range, even though the <code class="T1.Text1">type-for-copy</code> of a range is the <code class="T1.Text1">&lt;list&gt;</code> class.</p>
   </dd>
 </dl>
 <a name="HEADING102-465"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1799"></a>concatenate</code>  <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1799"></a>concatenate</code>  <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1800"></a>Returns the concatenation of one or more sequences in a sequence of a type determined by the <code class="cv SD.ShortDescription">type-for-copy</code> of its first argument.</p>
 <dl class="Cliche">
@@ -1196,7 +1196,7 @@ concatenate (&quot;low-&quot;, &quot;calorie&quot;)
   </dd>
 </dl>
 <a name="HEADING102-475"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1801"></a>concatenate-as   </code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1801"></a>concatenate-as   </code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1802"></a>Returns the concatenation of one or more sequences in a sequence of a specified type.</p>
 <dl class="Cliche">
@@ -1222,7 +1222,7 @@ concatenate-as (&lt;string&gt;, #('n', 'o', 'n'), #('f', 'a', 't'))
   </dd>
 </dl>
 <a name="HEADING102-486"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1803"></a>replace-subsequence!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1803"></a>replace-subsequence!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1804"></a>Replaces a portion of a sequence with the elements of another sequence.</p>
 <dl class="Cliche">
@@ -1255,7 +1255,7 @@ define variable *original* = list (&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, 
   </dd>
 </dl>
 <a name="HEADING102-500"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1805"></a>subsequence-position</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1805"></a>subsequence-position</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1806"></a>Returns the position where a pattern appears in a sequence.</p>
 <dl class="Cliche">
@@ -1283,13 +1283,13 @@ subsequence-position (&quot;Ralph Waldo Emerson&quot;, &quot;Waldo&quot;)
 </dl>
 <a name="HEADING102-511"></a>
 <a name="UID-Built-In_Functions-3007"></a>
-<h2 class="H2.Heading2"> Mapping and Reducing</h2>
+<h2 class="H2.Heading2">Mapping and Reducing</h2>
 <a name="HEADING102-512"></a>
-<h3 class="H3.Heading3"> Simple Mapping</h3>
+<h3 class="H3.Heading3">Simple Mapping</h3>
 <p class="T0.Text0"><a name="MARKER-2-1807"></a><a name="MARKER-2-1808"></a>The following mapping functions (<code class="cv T0.Text0">do</code>, <code class="cv T0.Text0">map</code>, <code class="cv T0.Text0">map-as</code>, <code class="cv T0.Text0">map-into</code>, <code class="cv T0.Text0">any?</code>, <code class="cv T0.Text0">every?</code>) iterate over a number of source collections. Each time through the iteration, a function is applied to one element from each of the source collections. The number of arguments to the function is equal to the number of source collections.</p>
 <p class="T1.Text1">The functions vary in how they handle the results of each function application.</p>
 <a name="HEADING102-515"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1809"></a>do</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1809"></a>do</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1810"></a>Iterates over one or more collections for side effect.</p>
 <dl class="Cliche">
@@ -1319,7 +1319,7 @@ do (method (a b) print (a + b) end,
   </dd>
 </dl>
 <a name="HEADING102-524"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1811"></a>map</code>   <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1811"></a>map</code>   <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1812"></a>Iterates over one or more collections and collects the results in a freshly allocated collection.</p>
 <dl class="Cliche">
@@ -1346,7 +1346,7 @@ map (\+,
   </dd>
 </dl>
 <a name="HEADING102-534"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1813"></a>map-as</code> <span class="attributes-summary">[Function]</span> </h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1813"></a>map-as</code> <span class="attributes-summary">[Function]</span> </h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1814"></a>Iterates over one or more collections and collects the results in a freshly allocated collection of a specified type.</p>
 <dl class="Cliche">
@@ -1374,7 +1374,7 @@ map-as (&lt;vector&gt;, \+,
   </dd>
 </dl>
 <a name="HEADING102-544"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1815"></a>map-into</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1815"></a>map-into</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1816"></a>Iterates over one or more collections and collects the results in an existing mutable collection.</p>
 <dl class="Cliche">
@@ -1407,7 +1407,7 @@ x
   </dd>
 </dl>
 <a name="HEADING102-558"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1817"></a>any?  </code>  <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1817"></a>any?  </code>  <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1818"></a><a name="MARKER-2-1819"></a>Returns the first true value obtained by iterating over one or more collections.</p>
 <dl class="Cliche">
@@ -1434,7 +1434,7 @@ any? (even?, #(1, 3, 5, 7))
   </dd>
 </dl>
 <a name="HEADING102-568"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1820"></a>every? </code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1820"></a>every? </code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1821"></a><a name="MARKER-2-1822"></a>Returns true if a predicate returns true when applied to all corresponding elements of a set of collections.</p>
 <dl class="Cliche">
@@ -1461,9 +1461,9 @@ every? (odd?, #(1, 3, 5, 7))
   </dd>
 </dl>
 <a name="HEADING102-578"></a>
-<h3 class="H3.Heading3"> Extensible Mapping Functions</h3>
+<h3 class="H3.Heading3">Extensible Mapping Functions</h3>
 <a name="HEADING102-579"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1823"></a>reduce</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1823"></a>reduce</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1824"></a>Combines the elements of a collection and a seed value into a single value by repeatedly applying a binary function.</p>
 <dl class="Cliche">
@@ -1492,7 +1492,7 @@ reduce (max, high-score, #(3, 12, 9, 8, 8, 6))
   </dd>
 </dl>
 <a name="HEADING102-590"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1825"></a>reduce1</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1825"></a>reduce1</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1826"></a>Combines the elements of a collection into a single value by repeatedly applying a binary function, using the first element of the collection as the seed value.</p>
 <dl class="Cliche">
@@ -1517,7 +1517,7 @@ reduce1 (\+, #(1, 2, 3, 4, 5))
   </dd>
 </dl>
 <a name="HEADING102-601"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1827"></a>choose</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1827"></a>choose</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1828"></a><a name="MARKER-2-1829"></a>Returns those elements of a sequence that satisfy a predicate.</p>
 <dl class="Cliche">
@@ -1539,7 +1539,7 @@ choose (even?, #(3, 1, 4, 1, 5, 8, 9))
   </dd>
 </dl>
 <a name="HEADING102-609"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1830"></a>choose-by  </code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1830"></a>choose-by  </code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1831"></a><a name="MARKER-2-1832"></a>Returns those elements of a sequence that correspond to those in another sequence that satisfy a predicate.</p>
 <dl class="Cliche">
@@ -1564,9 +1564,9 @@ choose-by (even?, range (from: 1),
   </dd>
 </dl>
 <a name="HEADING102-618"></a>
-<h3 class="H3.Heading3"> Other Mapping Functions</h3>
+<h3 class="H3.Heading3">Other Mapping Functions</h3>
 <a name="HEADING102-619"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1833"></a>member?</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1833"></a>member?</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1834"></a>Returns true if a collection contains a particular value.</p>
 <dl class="Cliche">
@@ -1592,12 +1592,12 @@ member? (#&quot;vanilla&quot;, flavors)
 member? (#&quot;banana&quot;, flavors)
 <code class="cv Cv.Code"> &rArr;</code>  #f </pre>
     <a name="HEADING102-629"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">member?</code>  val range  <code class="H5.Heading5">#key</code> test &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">member?</code>  val range  <code class="H5.Heading5">#key</code> test &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1"><code class="T1.Text1">I</code>f <i class="T1.Text1">range</i> is unbounded, this method is guaranteed to terminate if <i class="T1.Text1">test</i> is <code class="cv T1.Text1">==</code>.</p>
   </dd>
 </dl>
 <a name="HEADING102-631"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-9-1794"></a>find-key</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-9-1794"></a>find-key</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1837"></a><a name="MARKER-2-1838"></a>Returns the key in a collection such that the corresponding collection element satisfies a predicate.</p>
 <dl class="Cliche">
@@ -1628,7 +1628,7 @@ flavors[1]
   </dd>
 </dl>
 <a name="HEADING102-642"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1839"></a>remove-key!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1839"></a>remove-key!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1840"></a>Modifies an explicit key collection so it no longer has a particular key.</p>
 <dl class="Cliche">
@@ -1646,12 +1646,12 @@ flavors[1]
   <dd class="Cliche"><p class="Cliche"> Modifies <i class="Cliche">collection</i> so that it no longer has a key equal to <i class="Cliche">key</i>. Equality is determined by <i class="Parameter Cliche">collection</i>'s key-test function.</p>
     <p class="T1.Text1">The <i class="Parameter T1.Text1">boolean</i> return value will be <code class="cv T1.Text1">#t</code> if the <i class="Parameter T1.Text1">key</i> was present and removed, or <code class="cv T1.Text1">#f</code> if the key was not present and hence not removed.</p>
     <a name="HEADING102-650"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">remove-key! table key </code>  &rArr; table <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">remove-key! table key </code>  &rArr; table <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="T1.Text1">There is a predefined method on <code class="cv T1.Text1">&lt;table&gt;</code>.</p>
   </dd>
 </dl>
 <a name="HEADING102-652"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1841"></a>replace-elements! </code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1841"></a>replace-elements! </code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1842"></a>Replaces those collection elements that satisfy a predicate.</p>
 <dl class="Cliche">
@@ -1679,7 +1679,7 @@ replace-elements! (numbers, odd?, double)
   </dd>
 </dl>
 <a name="HEADING102-663"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1843"></a>fill!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1843"></a>fill!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1844"></a>Fills a collection with a specified value.</p>
 <dl class="Cliche">
@@ -1708,9 +1708,9 @@ fill! (numbers, 3, start: 2)
 </dl>
 <a name="HEADING102-674"></a>
 <a name="UID-Built-In_Functions-418"></a>
-<h2 class="H2.Heading2"> The Iteration Protocol</h2>
+<h2 class="H2.Heading2">The Iteration Protocol</h2>
 <a name="HEADING102-675"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1846"></a><a name="MARKER-2-1847"></a>forward-iteration-protocol</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1846"></a><a name="MARKER-2-1847"></a>forward-iteration-protocol</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-2-1540"></a>Returns a group of functions used to iterate over the elements of a collection.</p>
 <dl class="Cliche">
@@ -1775,12 +1775,12 @@ fill! (numbers, 3, start: 2)
     <p class="T0.Text0">An example of the use of the iteration protocol is the following definition of a single-argument version of the <code class="T0.Text0">do</code> function:</p>
     <p class="T1.Text1"><pre class="Cv.Code">define method do1 (f :: &lt;function&gt;, c :: &lt;collection&gt;)<br />  let (init, limit, next, end?, key, elt) = <br />                     forward-iteration-protocol(c);<br />  for (state = init then next(c, state),<br />     until: end?(c, state, limit))<br />    f(elt(c, state));<br />  end for;<br />end method do1;</pre></p>
     <a name="HEADING102-703"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">forward-iteration-protocol table </code> <br /> &rArr;  initial-state limit next-state finished-state? current-key current-element current-element-setter copy-state  <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">forward-iteration-protocol table </code> <br /> &rArr;  initial-state limit next-state finished-state? current-key current-element current-element-setter copy-state  <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="SD.ShortDescription">The method for <code class="cv SD.ShortDescription">&lt;table&gt;</code> implements the iteration protocol in terms of the function <code class="cv SD.ShortDescription">table-protocol</code>.</p>
   </dd>
 </dl>
 <a name="HEADING102-705"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1849"></a>backward-iteration-protocol</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1849"></a>backward-iteration-protocol</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1850"></a>Returns a group of functions used to iterate over the elements of a collection in reverse order.</p>
 <dl class="Cliche">
@@ -1811,10 +1811,10 @@ fill! (numbers, 3, start: 2)
     <p class="T1.Text1">Some collection classes that are stable under iteration support the ability to iterate in the reverse of the natural order, by providing a method on the generic function <code class="T1.Text1">backward-iteration-protocol</code>. The eight values returned by this function are analogous to the corresponding values returned by <code class="T1.Text1">forward-iteration-protocol</code>.</p></dd>
 </dl>
 <a name="HEADING102-719"></a>
-<h3 class="H3.Heading3"> The Table Protocol</h3>
+<h3 class="H3.Heading3">The Table Protocol</h3>
 <p class="T0.Text0">The class <code class="T0.Text0">&lt;table&gt;</code> provides an implementation of the iteration protocol, using the function <code class="T0.Text0">table-protocol</code>. Every concrete subclass of <code class="T0.Text0">&lt;table&gt;</code> must provide or inherit a method for <code class="T0.Text0">table-protocol</code>. A complete description of the table protocol is given in <a href="drm_67.html#MARKER-9-1036" class="T0.Text0">"Tables" on page 122</a>.</p>
 <a name="HEADING102-721"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1851"></a>table-protocol</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1851"></a>table-protocol</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1852"></a>Returns functions used to implement the iteration protocol for tables.</p>
 <dl class="Cliche">
@@ -1843,7 +1843,7 @@ fill! (numbers, 3, start: 2)
   <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
   <dd class="Cliche"><p class="Cliche"> Returns the test-function and hash-function for the <code class="cv Cliche">&lt;table&gt;</code>. These functions are in turn used to implement the other collection operations on <code class="cv Cliche">&lt;table&gt;</code>.</p>
     <a name="HEADING102-732"></a>
-    <h4 class="H5.Heading5"> <code class="H5.Heading5">table-protocol object-table </code>  &rArr; test-function  hash-function <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code class="H5.Heading5">table-protocol object-table </code>  &rArr; test-function  hash-function <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="SD.ShortDescription">The method for <code class="cv SD.ShortDescription">&lt;object-table&gt;</code> returns <code class="cv SD.ShortDescription">==</code>  as the <i class="SD.ShortDescription">test-function</i> and <code class="SD.ShortDescription">object-hash</code> as the <i class="SD.ShortDescription">hash-function</i>.</p>
     <p class="T1.Text1">The method for <code class="cv T1.Text1">&lt;object-table&gt;</code> could be written as</p>
     <pre class="Cv.Code">
@@ -1855,7 +1855,7 @@ end method table-protocol; </pre>
   </dd>
 </dl>
 <a name="HEADING102-736"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1853"></a>merge-hash-codes</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1853"></a>merge-hash-codes</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Returns a hash-code created from the merging of two argument hash codes.</p>
 <dl class="Cliche">
@@ -1885,7 +1885,7 @@ end method table-protocol; </pre>
     <p class="T1.Text1"><i class="Parameter T1.Text1">state1</i> and <i class="Parameter T1.Text1">state2</i> should be the value of <code class="cv T1.Text1">$permanant-hash-state</code> or hash-states returned from previous calls to <code class="cv T1.Text1">merge-hash-codes</code> or <code class="cv T1.Text1">object-hash</code>.</p></dd>
 </dl>
 <a name="HEADING102-749"></a>
-<h3 class="H4.Heading4"> <code class="Code H4.Heading4"><a name="MARKER-2-1854"></a>object-hash</code> <span class="attributes-summary">[Function]</span></h3>
+<h3 class="H4.Heading4"><code class="Code H4.Heading4"><a name="MARKER-2-1854"></a>object-hash</code> <span class="attributes-summary">[Function]</span></h3>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1855"></a>The hash function for the equivalence predicate <code class="SD.ShortDescription">==</code>.</p>
 <dl class="Cliche">

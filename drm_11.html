@@ -61,7 +61,7 @@
 </div>
 <a name="HEADING11-0"></a>
 <a name="UID-Syntax-1428"></a>
-<h1 class="H1.Heading1"> Libraries and Modules</h1>
+<h1 class="H1.Heading1">Libraries and Modules</h1>
 <p class="T1.Text1">A complete Dylan <strong class="Bold T1.Text1">program</strong> consists of one or more <strong class="Bold T1.Text1"><a name="MARKER-2-221"></a>libraries</strong>. Some of these libraries are written by the programmer, others are supplied by other programmers or by the Dylan implementation. A library is Dylan's unit of separate compilation and optimization. The libraries that compose a program can be linked together as early as during compilation or as late as while the program is running. Program structure inside of a library is static and does not change after compilation. However, many Dylan implementations provide an <a name="MARKER-2-222"></a>incremental compilation feature that allows a library under development to be modified, while the program is running, by modifying and recompiling portions of the library.</p>
 <p class="T1.Text1">A library contains one or more <strong class="Bold T1.Text1"><a name="MARKER-2-223"></a>modules</strong>. A module is Dylan's unit of global name scoping, and thus of modularity and information hiding. A module can be exported from its library; otherwise it is internal to that library. A library can import modules from other libraries. Only an exported module can be imported.</p>
 <p class="T1.Text1">A module contains zero or more source records and a set of bindings.</p>

@@ -61,21 +61,21 @@
 </div>
 <a name="HEADING86-0"></a>
 <a name="UID-Macros-6935"></a>
-<h1 class="H1.Heading1"> Rewrite Rule Examples</h1>
+<h1 class="H1.Heading1">Rewrite Rule Examples</h1>
 <p class="T1.Text1"><a name="MARKER-2-1281"></a>The following definitions of all of the built-in macros are provided as examples. This section is not intended to be a tutorial on how to write macros, just a collection of demonstrations of some of the tricks.</p>
 <p class="T1.Text1">The built-in macros cannot really be implemented this way; for example <code class="cv T1.Text1">if</code> and <code class="cv T1.Text1">case</code> cannot really both be implemented by expanding to the other. Certain built-in macros cannot be implemented with rewrite rules or necessarily rewrite into implementation-dependent code; in these cases the right-hand sides are shown as <i class="Parameter T1.Text1">id</i>.</p>
 <a name="HEADING86-3"></a>
 <a name="UID-Macros-6941"></a>
-<h2 class="H2.Heading2"> Statement Macros</h2>
+<h2 class="H2.Heading2">Statement Macros</h2>
 <a name="HEADING86-4"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1282"></a>Begin</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1282"></a>Begin</h3>
 <pre class="Cv.Code">
 define macro begin
   { begin ?:body end } =&gt; { ?body }
 end;
 </pre>
 <a name="HEADING86-6"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1283"></a>Block</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1283"></a>Block</h3>
 <pre class="Cv.Code">
 define macro block
   { block () ?ebody end }
@@ -109,7 +109,7 @@ define macro block
 end;
 </pre>
 <a name="HEADING86-11"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1284"></a>Case</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1284"></a>Case</h3>
 <pre class="Cv.Code">
 define macro case
   { case ?:case-body end }            =&gt; { ?case-body }
@@ -121,7 +121,7 @@ define macro case
 end;
 </pre>
 <a name="HEADING86-13"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1285"></a>For</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1285"></a>For</h3>
 <pre class="Cv.Code">
 // This macro has three auxiliary macros, whose definitions follow
 define macro for
@@ -249,7 +249,7 @@ define macro for-aux2
 end;
 </pre>
 <a name="HEADING86-30"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1286"></a>If</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1286"></a>If</h3>
 <pre class="Cv.Code">
 define macro if
   { if (?test:expression) ?:body ?elses end }
@@ -264,7 +264,7 @@ define macro if
 end;
 </pre>
 <a name="HEADING86-32"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1287"></a>Method</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1287"></a>Method</h3>
 <pre class="Cv.Code">
 define macro method
   { method (?parameters:*) =&gt; (?results:*) ; ?:body end }     =&gt;  <i class="Parameter Cv.Code">id
@@ -275,7 +275,7 @@ define macro method
 </i>end;
 </pre>
 <a name="HEADING86-34"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1288"></a>Select</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1288"></a>Select</h3>
 <pre class="Cv.Code">
 define macro select
   { select (?what) ?:case-body end } =&gt; { ?what; ?case-body }
@@ -301,7 +301,7 @@ define macro select
 end;
 </pre>
 <a name="HEADING86-40"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1289"></a>Unless</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1289"></a>Unless</h3>
 <pre class="Cv.Code">
 define macro unless
   { unless (?test:expression) ?:body end }
@@ -309,7 +309,7 @@ define macro unless
 end;
 </pre>
 <a name="HEADING86-42"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1290"></a>Until</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1290"></a>Until</h3>
 <pre class="Cv.Code">
 define macro until
   { until (?test:expression) ?:body end }
@@ -323,7 +323,7 @@ define macro until
 end;
 </pre>
 <a name="HEADING86-44"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1291"></a>While</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1291"></a>While</h3>
 <pre class="Cv.Code">
 define macro while
   { while (?test:expression) ?:body end }
@@ -338,9 +338,9 @@ end;
 </pre>
 <a name="HEADING86-46"></a>
 <a name="UID-Macros-7223"></a>
-<h2 class="H2.Heading2"> Definition Macros</h2>
+<h2 class="H2.Heading2">Definition Macros</h2>
 <a name="HEADING86-47"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1292"></a>Define Class</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1292"></a>Define Class</h3>
 <pre class="Cv.Code">
 define macro class-definer
   { define ?mods:* class ?:name (?supers) ?slots end }  =&gt;  <i class="Parameter Cv.Code">id</i>
@@ -369,7 +369,7 @@ define macro class-definer
 </i>end;
 </pre>
 <a name="HEADING86-51"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1293"></a>Define Constant</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1293"></a>Define Constant</h3>
 <pre class="Cv.Code">
 define macro constant-definer
   { define ?modifiers:* constant
@@ -379,7 +379,7 @@ define macro constant-definer
 </i>end;
 </pre>
 <a name="HEADING86-53"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1294"></a>Define Domain</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1294"></a>Define Domain</h3>
 <pre class="Cv.Code">
 define macro domain-definer
   { define sealed domain ?:name ( ?types ) }            =&gt;  <i class="Parameter Cv.Code">id</i>
@@ -389,7 +389,7 @@ define macro domain-definer
 end;
 </pre>
 <a name="HEADING86-56"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1295"></a>Define Generic</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1295"></a>Define Generic</h3>
 <pre class="Cv.Code">
 define macro generic-definer
   { define ?mods:* generic ?:name ?rest:* }             =&gt;  <i class="Parameter Cv.Code">id</i>
@@ -400,7 +400,7 @@ define macro generic-definer
 </i>end;
 </pre>
 <a name="HEADING86-59"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1296"></a>Define Library</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1296"></a>Define Library</h3>
 <pre class="Cv.Code">
 define macro library-definer
   { define library ?:name ?items end }                  =&gt;  <i class="Parameter Cv.Code">id</i>
@@ -414,7 +414,7 @@ define macro library-definer
 </i>end;
 </pre>
 <a name="HEADING86-63"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1297"></a>Define Method</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1297"></a>Define Method</h3>
 <pre class="Cv.Code">
 define macro method-definer
   { define ?mods:* method ?:name ?rest end }            =&gt;  <i class="Parameter Cv.Code">id
@@ -427,7 +427,7 @@ define macro method-definer
 </i>end;
 </pre>
 <a name="HEADING86-65"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1298"></a>Define Module</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1298"></a>Define Module</h3>
 <pre class="Cv.Code">
 define macro module-definer
   { define module ?:name ?items end }                   =&gt;  <i class="Parameter Cv.Code">id</i>
@@ -442,7 +442,7 @@ define macro module-definer
 </i>end;
 </pre>
 <a name="HEADING86-69"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1299"></a>Define Variable</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1299"></a>Define Variable</h3>
 <pre class="Cv.Code">
 define macro variable-definer
   { define ?modifiers:* variable
@@ -453,9 +453,9 @@ define macro variable-definer
 </pre>
 <a name="HEADING86-71"></a>
 <a name="UID-Macros-7337"></a>
-<h2 class="H2.Heading2"> Operator Function Macros</h2>
+<h2 class="H2.Heading2">Operator Function Macros</h2>
 <a name="HEADING86-72"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1300"></a>&amp;</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1300"></a>&amp;</h3>
 <pre class="Cv.Code">
 define macro \&amp;
   { \&amp;(?first:expression, ?second:expression) }
@@ -463,7 +463,7 @@ define macro \&amp;
 end;
 </pre>
 <a name="HEADING86-74"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1301"></a>|</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1301"></a>|</h3>
 <pre class="Cv.Code">
 define macro \|
   { \|(?first:expression, ?second:expression) }
@@ -472,7 +472,7 @@ define macro \|
 end;
 </pre>
 <a name="HEADING86-76"></a>
-<h3 class="H3.Heading3"> <a name="MARKER-2-1302"></a>:=</h3>
+<h3 class="H3.Heading3"><a name="MARKER-2-1302"></a>:=</h3>
 <pre class="Cv.Code">
 define macro \:=
   { \:=(?place:macro, ?value:expression) }              =&gt;  <i class="Parameter Cv.Code">id
@@ -481,10 +481,10 @@ define macro \:=
 </pre>
 <a name="HEADING86-78"></a>
 <a name="UID-Macros-7361"></a>
-<h2 class="H2.Heading2"> Additional Examples</h2>
+<h2 class="H2.Heading2">Additional Examples</h2>
 <p class="T1.Text1">The following macros are not built-in, but are simply supplied as examples. Each is shown as a definition followed by a sample call.</p>
 <a name="HEADING86-80"></a>
-<h3 class="H3.Heading3"> Test and Test-setter</h3>
+<h3 class="H3.Heading3">Test and Test-setter</h3>
 <pre class="Cv.Code">
 define macro test
   { test(?object:expression) }
@@ -497,7 +497,7 @@ end macro;
 test(foo.bar) := foo.baz;
 </pre>
 <a name="HEADING86-84"></a>
-<h3 class="H3.Heading3"> Transform!</h3>
+<h3 class="H3.Heading3">Transform!</h3>
 <pre class="Cv.Code">
 define macro transform!
  // base case
@@ -513,7 +513,7 @@ end macro;
 transform!(w.transformation, xvar, yvar, w.pos.x, w.pos.y);
 </pre>
 <a name="HEADING86-87"></a>
-<h3 class="H3.Heading3"> Formatting-table</h3>
+<h3 class="H3.Heading3">Formatting-table</h3>
 <pre class="Cv.Code">
 define macro formatting-table
   { formatting-table (?:expression,
@@ -529,7 +529,7 @@ formatting-table (stream, x-spacing: 10, y-spacing: 12)
 end;
 </pre>
 <a name="HEADING86-90"></a>
-<h3 class="H3.Heading3"> With-input-context</h3>
+<h3 class="H3.Heading3">With-input-context</h3>
 <pre class="Cv.Code">
 define macro with-input-context
   { with-input-context (?context-type:expression,
@@ -554,7 +554,7 @@ with-input-context (context-type, override: #t)
 end;
 </pre>
 <a name="HEADING86-95"></a>
-<h3 class="H3.Heading3"> Define Command</h3>
+<h3 class="H3.Heading3">Define Command</h3>
 <pre class="Cv.Code">
 define macro command-definer
  { define command ?:name (?arguments:*) (#rest ?options:expression)
@@ -619,7 +619,7 @@ define command com-show-home-directory
 end command com-show-home-directory;
 </pre>
 <a name="HEADING86-107"></a>
-<h3 class="H3.Heading3"> Get-resource</h3>
+<h3 class="H3.Heading3">Get-resource</h3>
 <pre class="Cv.Code">
 // The idea is that in this application each library has its own
 // variable named $library, which is accessible to modules in that
@@ -633,7 +633,7 @@ end macro;
 show-icon(get-resource(ResType(&quot;ICON&quot;), 1044));
 </pre>
 <a name="HEADING86-110"></a>
-<h3 class="H3.Heading3"> Completing-from-suggestions</h3>
+<h3 class="H3.Heading3">Completing-from-suggestions</h3>
 <pre class="Cv.Code">
 // The completing-from-suggestions macro defines a lexically visible
 // helper function called &quot;suggest,&quot; which is only meaningful inside
@@ -656,7 +656,7 @@ completing-from-suggestions (stream, partial-completers: #(' ', '-'))
 end completing-from-suggestions;
 </pre>
 <a name="HEADING86-113"></a>
-<h3 class="H3.Heading3"> Define Jump-instruction</h3>
+<h3 class="H3.Heading3">Define Jump-instruction</h3>
 <pre class="Cv.Code">
 define macro jump-instruction-definer
   { define jump-instruction ?:name ?options:* end }
