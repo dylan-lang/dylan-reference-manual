@@ -198,30 +198,33 @@ end method;
 <h2 class="H2.Heading2"> <a name="MARKER-9-837"></a>Parameter List Congruency</h2>
 <p class="T1.Text1"><a name="MARKER-2-838"></a>For any given generic function, the generic function and all methods for that function must have <strong class="T1.Text1">congruent parameter lists</strong>. Two parameter lists are congruent if they satisfy the following conditions:</p>
 <ul class="B1.Bullet1">
-<li class="B1.Bullet1">They have the same number of required arguments.</li>
-<li class="B1.Bullet1">Each of the method's parameter specializers is a subtype of the corresponding parameter specializer of the generic function.</li>
-<li class="B1.Bullet1">One of the following is true:</li>
-<ul class="B2.Bullet2">
-<li class="B2.Bullet2">both accept keyword arguments</li>
-<li class="B2.Bullet2">both accept a variable number of arguments</li>
-<li class="B2.Bullet2">both require a fixed number of arguments</li>
-</ul>
-<li class="B1.Bullet1">If the generic function accepts keyword arguments, each method must recognize the mandatory keywords of the generic function.</li>
+  <li class="B1.Bullet1">They have the same number of required arguments.</li>
+  <li class="B1.Bullet1">Each of the method's parameter specializers is a subtype of the corresponding parameter specializer of the generic function.</li>
+  <li class="B1.Bullet1">One of the following is true:
+    <ul class="B2.Bullet2">
+      <li class="B2.Bullet2">both accept keyword arguments</li>
+      <li class="B2.Bullet2">both accept a variable number of arguments</li>
+      <li class="B2.Bullet2">both require a fixed number of arguments</li>
+    </ul>
+  </li>
+  <li class="B1.Bullet1">If the generic function accepts keyword arguments, each method must recognize the mandatory keywords of the generic function.</li>
 </ul>
 <p class="T1.Text1">In addition, the value declarations must be congruent, defined as follows:</p>
 <ul>
-<li class="B1.Bullet1">If the generic function's parameter list does not contain a rest value declaration, then</li>
-<ul class="B2.Bullet2">
-<li class="B2.Bullet2">The method's parameter list must not contain a rest value declaration.</li>
-<li class="B2.Bullet2">The two parameter lists must contain the same number of required value declarations.</li>
-<li class="B2.Bullet2">Each value type in the method's parameter list must be a subtype of the corresponding value type in the generic function's parameter list.</li>
-</ul>
-<li class="B1.Bullet1"><a name="MARKER-2-839"></a>If the generic function's parameter list contains a rest value declaration, then:</li>
-<ul class="B2.Bullet2">
-<li class="B2.Bullet2">The method's parameter list is permitted, but not required, to contain a rest value declaration.</li>
-<li class="B2.Bullet2">The method's parameter list must contain at least as many required value declarations as the generic function's parameter list.</li>
-<li class="B2.Bullet2">Each value type in the method's parameter list must be a subtype of the corresponding value type in the generic function's parameter list. If the method has a rest value type, it corresponds to the generic function's rest value type. If the method has more required value types than the generic function, the extra ones must be subtypes of the generic function's rest value type.<a name="MARKER-2-840"></a></li>
-</ul>
+  <li class="B1.Bullet1">If the generic function's parameter list does not contain a rest value declaration, then
+    <ul class="B2.Bullet2">
+      <li class="B2.Bullet2">The method's parameter list must not contain a rest value declaration.</li>
+      <li class="B2.Bullet2">The two parameter lists must contain the same number of required value declarations.</li>
+      <li class="B2.Bullet2">Each value type in the method's parameter list must be a subtype of the corresponding value type in the generic function's parameter list.</li>
+    </ul>
+  </li>
+  <li class="B1.Bullet1"><a name="MARKER-2-839"></a>If the generic function's parameter list contains a rest value declaration, then:
+    <ul class="B2.Bullet2">
+      <li class="B2.Bullet2">The method's parameter list is permitted, but not required, to contain a rest value declaration.</li>
+      <li class="B2.Bullet2">The method's parameter list must contain at least as many required value declarations as the generic function's parameter list.</li>
+      <li class="B2.Bullet2">Each value type in the method's parameter list must be a subtype of the corresponding value type in the generic function's parameter list. If the method has a rest value type, it corresponds to the generic function's rest value type. If the method has more required value types than the generic function, the extra ones must be subtypes of the generic function's rest value type.<a name="MARKER-2-840"></a></li>
+    </ul>
+  </li>
 </ul>
 <a name="HEADING49-102"></a>
 <a name="UID-Functions-3556"></a>
