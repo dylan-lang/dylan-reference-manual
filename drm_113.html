@@ -46,31 +46,34 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2031"></a>Creates and initializes new local bindings within the smallest enclosing implicit body. </p>
 <dl class="Cliche">
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">let<i class="Code Cliche"> variables = init ;</i></code></p></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">variables <code class="BNF Parameter Cliche">variable<em class="BNF Parameter Cliche">bnf | ( variable-listbnf )</em></code></i></p></dd>
-<dd><dl class="RP.RoutineParam">
-<dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">init</i></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">expression<em class="BNF RP.RoutineParam">bnf</em></code></p></dd>
-</dl></dd>
-<dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">let</code> creates local bindings for the <i class="Parameter Cliche">variables</i>, and initializes them to the values returned by <i class="Parameter Cliche">init</i>. The bindings are visible for the remainder of the smallest enclosing implicit body.</p>
-<p class="T1.Text1"><a name="MARKER-2-2032"></a>The first value returned by the <i class="Parameter T1.Text1">init</i> is bound to the first <i class="Parameter T1.Text1">variable</i>, the second value to the second <i class="Parameter T1.Text1">variable</i>, etc. The last <i class="Parameter T1.Text1">variable</i> may be preceded by <code class="Code T1.Text1">#rest</code>, in which case it is bound to a sequence containing all the remaining values.</p>
-<p class="T1.Text1">Each <i class="Parameter T1.Text1">variable</i> is a variable-name or a variable-name followed by a specializer.</p>
-<p class="T1.Text1">If more than one binding is defined, the <i class="Parameter T1.Text1">variables</i> are enclosed in parentheses and separated by commas.</p></dd>
-</dl>
-<pre class="Cv.Code">
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Macro Call:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">let<i class="Code Cliche"> variables = init ;</i></code></p></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Arguments:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> <i class="Parameter Cliche">variables <code class="BNF Parameter Cliche">variable<em class="BNF Parameter Cliche">bnf | ( variable-listbnf )</em></code></i></p></dd>
+  <dd><dl class="RP.RoutineParam">
+      <dt class="RP.RoutineParam"><i class="Parameter RP.RoutineParam">init</i></dt>
+      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">expression<em class="BNF RP.RoutineParam">bnf</em></code></p></dd>
+  </dl></dd>
+  <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
+  <dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">let</code> creates local bindings for the <i class="Parameter Cliche">variables</i>, and initializes them to the values returned by <i class="Parameter Cliche">init</i>. The bindings are visible for the remainder of the smallest enclosing implicit body.</p>
+    <p class="T1.Text1"><a name="MARKER-2-2032"></a>The first value returned by the <i class="Parameter T1.Text1">init</i> is bound to the first <i class="Parameter T1.Text1">variable</i>, the second value to the second <i class="Parameter T1.Text1">variable</i>, etc. The last <i class="Parameter T1.Text1">variable</i> may be preceded by <code class="Code T1.Text1">#rest</code>, in which case it is bound to a sequence containing all the remaining values.</p>
+    <p class="T1.Text1">Each <i class="Parameter T1.Text1">variable</i> is a variable-name or a variable-name followed by a specializer.</p>
+    <p class="T1.Text1">If more than one binding is defined, the <i class="Parameter T1.Text1">variables</i> are enclosed in parentheses and separated by commas.</p>
+    <pre class="Cv.Code">
 let start = 0;
+
 let (whole-part, remainder) = truncate(amount);
-let (first-value, #rest rest-values) = get-initial-values();
-</pre>
-<p class="T1.Text1"><a name="MARKER-2-2033"></a>Local variables may be specialized. This ensures that their value will always be of a given type. An attempt to initialize or assign the variable to a value not of that type will signal an error of type <code class="Code T1.Text1">&lt;type-error&gt;</code>.</p>
-<pre class="Cv.Code">
+
+let (first-value, #rest rest-values) = get-initial-values();</pre>
+    <p class="T1.Text1"><a name="MARKER-2-2033"></a>Local variables may be specialized. This ensures that their value will always be of a given type. An attempt to initialize or assign the variable to a value not of that type will signal an error of type <code class="Code T1.Text1">&lt;type-error&gt;</code>.</p>
+    <pre class="Cv.Code">
 let elapsed-time :: &lt;integer&gt; = 0;
+
 let the-front-window :: &lt;window&gt; = front-window();
-let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount);
-</pre>
+
+let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount);</pre>
+  </dd>
+</dl>
 <a name="HEADING113-79"></a>
 <h3 class="H4.Heading4"> <code class="H4.Heading4"><a name="MARKER-2-2034"></a>local</code> [Local Declaration]</h3>
 <hr class="H4.Heading4" />
@@ -114,21 +117,22 @@ let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount)
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code class="BNF RP.RoutineParam">expression<em class="BNF RP.RoutineParam">bnf</em></code></p></dd>
 </dl></dd>
 <dt class="Cliche"><strong class="IMPORTANT Cliche">Description:</strong></dt>
-<dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">let handler</code> establishes a new condition handler that is in effect for the duration of the execution of the remainder of the smallest enclosing implicit body. Unlike the local declarations <code class="Code Cliche">let</code> and <code class="Code Cliche">local</code>, <code class="Code Cliche">let handler</code> does not create any bindings.</p></dd>
+<dd class="Cliche"><p class="Cliche"> <code class="Code Cliche">let handler</code> establishes a new condition handler that is in effect for the duration of the execution of the remainder of the smallest enclosing implicit body. Unlike the local declarations <code class="Code Cliche">let</code> and <code class="Code Cliche">local</code>, <code class="Code Cliche">let handler</code> does not create any bindings.</p>
+  <ul class="B1.Bullet1">
+    <li class="B1.Bullet1">The <i class="Parameter B1.Bullet1">condition</i> describes the conditions for which the handler is applicable.</li>
+    <ul class="B2.Bullet2">
+      <li class="B2.Bullet2">The <i class="Parameter B2.Bullet2">type</i> is the type of the applicable conditions. The handler will be applicable to conditions that are general instances of <i class="Parameter B2.Bullet2">type</i>.</li>
+      <li class="B2.Bullet2">The <i class="Parameter B2.Bullet2">test-option </i> is a function that is called to further test the applicability of the handler. When a condition of type <i class="Parameter B2.Bullet2">type</i> is signaled, the test function will be called with that condition as an argument. If the test returns true, the handler is considered applicable to the condition. If the test returns false, the handler is considered to be inapplicable to the condition. The default value of this option is a function that always returns true. There can be at most one <i class="Parameter B2.Bullet2">test-option</i>.<br /><br />An example use for this feature is a restart handler for restarting only from a particular condition object, for example restarting from an unbound-slot error by setting the slot and retrying the invocation of the accessor. The <code class="Code B2.Bullet2">&lt;set-and-continue&gt;</code> restart condition will have the signaled <code class="Code B2.Bullet2">&lt;unbound-slot&gt;</code> condition in a slot, and the handler's test will check for it. (These class names are invented for this example and are not part of the specification.)</li>
+      <li class="B2.Bullet2">The <i class="Parameter B2.Bullet2">init-option</i> is a sequence of alternating keywords and objects that can be used as initialization arguments to construct a condition to which the handler is applicable. For example, if the handler is a restart handler, a program could retrieve the <i class="Parameter B2.Bullet2">init-option</i> by calling <code class="cv B2.Bullet2">do-handlers</code>, and could then use them to construct a corresponding restart. There can be at most one <i class="Parameter B2.Bullet2">init-option</i>. <i class="Parameter B2.Bullet2">init-option</i> defaults to an empty sequence.</li>
+    </ul>
+    <li class="B1.Bullet1">The<i class="B1.Bullet1"> handler</i> is function called to handle a condition that matches <i class="Parameter B1.Bullet1">type</i> and passes <i class="Parameter B1.Bullet1">test-option</i>. The function should accept two arguments. The first argument will be the condition being signaled, and the second argument will be a next-handler function. The handler handles the condition by taking a nonlocal exit, returning values according to the condition's recovery protocol, or tail-recursively calling <code class="Code B1.Bullet1">signal</code> of a restart. The function can decline to handle the condition by tail-recursively calling the next-handler function with no arguments.</li>
+  </ul>
+  <p class="T1.Text1"><i class="Parameter T1.Text1">test-option</i> and <i class="Parameter T1.Text1">handler</i>  are distinct so that handler applicability can be tested without actually handling (which might take a nonlocal exit). One use for this is constructing a list of available restart handlers.</p>
+  <p class="T1.Text1">There is no "condition wall," i.e., when executing <i class="Parameter T1.Text1">handler </i> the set of available handlers is not reset to the handlers that were in effect when the <code class="Code T1.Text1">let handler</code> was entered.</p>
+  <p class="T1.Text1"> Implementations are encouraged to implement <code class="Code T1.Text1">let handler</code> in a way that optimizes establishing a handler for both speed and space, even if that increases the cost of signaling. The assumption is that most of the time a handler will never be used, because the exception it is looking for will never occur.</p>
+  <p class="T1.Text1"><i class="Parameter T1.Text1">type</i>, <i class="Parameter T1.Text1">handler</i>, <i class="Parameter T1.Text1">test-option</i>, and <i class="Parameter T1.Text1">init-option</i> are executed before execution of the rest of the enclosing body begins.<a name="MARKER-2-2040"></a></p>
+</dd>
 </dl>
-<ul class="B1.Bullet1">
-<li class="B1.Bullet1">The <i class="Parameter B1.Bullet1">condition</i> describes the conditions for which the handler is applicable.</li>
-<ul class="B2.Bullet2">
-<li class="B2.Bullet2">The <i class="Parameter B2.Bullet2">type</i> is the type of the applicable conditions. The handler will be applicable to conditions that are general instances of <i class="Parameter B2.Bullet2">type</i>.</li>
-<li class="B2.Bullet2">The <i class="Parameter B2.Bullet2">test-option </i> is a function that is called to further test the applicability of the handler. When a condition of type <i class="Parameter B2.Bullet2">type</i> is signaled, the test function will be called with that condition as an argument. If the test returns true, the handler is considered applicable to the condition. If the test returns false, the handler is considered to be inapplicable to the condition. The default value of this option is a function that always returns true. There can be at most one <i class="Parameter B2.Bullet2">test-option</i>.<br /><br />An example use for this feature is a restart handler for restarting only from a particular condition object, for example restarting from an unbound-slot error by setting the slot and retrying the invocation of the accessor. The <code class="Code B2.Bullet2">&lt;set-and-continue&gt;</code> restart condition will have the signaled <code class="Code B2.Bullet2">&lt;unbound-slot&gt;</code> condition in a slot, and the handler's test will check for it. (These class names are invented for this example and are not part of the specification.)</li>
-<li class="B2.Bullet2">The <i class="Parameter B2.Bullet2">init-option</i> is a sequence of alternating keywords and objects that can be used as initialization arguments to construct a condition to which the handler is applicable. For example, if the handler is a restart handler, a program could retrieve the <i class="Parameter B2.Bullet2">init-option</i> by calling <code class="cv B2.Bullet2">do-handlers</code>, and could then use them to construct a corresponding restart. There can be at most one <i class="Parameter B2.Bullet2">init-option</i>. <i class="Parameter B2.Bullet2">init-option</i> defaults to an empty sequence.</li>
-</ul>
-<li class="B1.Bullet1">The<i class="B1.Bullet1"> handler</i> is function called to handle a condition that matches <i class="Parameter B1.Bullet1">type</i> and passes <i class="Parameter B1.Bullet1">test-option</i>. The function should accept two arguments. The first argument will be the condition being signaled, and the second argument will be a next-handler function. The handler handles the condition by taking a nonlocal exit, returning values according to the condition's recovery protocol, or tail-recursively calling <code class="Code B1.Bullet1">signal</code> of a restart. The function can decline to handle the condition by tail-recursively calling the next-handler function with no arguments. 
-<p class="T1.Text1"><i class="Parameter T1.Text1">test-option</i> and <i class="Parameter T1.Text1">handler</i>  are distinct so that handler applicability can be tested without actually handling (which might take a nonlocal exit). One use for this is constructing a list of available restart handlers.</p>
-<p class="T1.Text1">There is no "condition wall," i.e., when executing <i class="Parameter T1.Text1">handler </i> the set of available handlers is not reset to the handlers that were in effect when the <code class="Code T1.Text1">let handler</code> was entered.</p>
-<p class="T1.Text1"> Implementations are encouraged to implement <code class="Code T1.Text1">let handler</code> in a way that optimizes establishing a handler for both speed and space, even if that increases the cost of signaling. The assumption is that most of the time a handler will never be used, because the exception it is looking for will never occur.</p>
-<p class="T1.Text1"><i class="Parameter T1.Text1">type</i>, <i class="Parameter T1.Text1">handler</i>, <i class="Parameter T1.Text1">test-option</i>, and <i class="Parameter T1.Text1">init-option</i> are executed before execution of the rest of the enclosing body begins.<a name="MARKER-2-2040"></a></p></li>
-</ul>
 
 </div>
 
