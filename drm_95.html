@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
   <head>
     
     <!-- Relative Navigation -->
@@ -114,7 +114,28 @@
       <p class="Fg.Figure"><strong>Figure</strong> <strong>11-6</strong>  <a name="MARKER-9-1474"></a>The Condition Classes<!-- img alt="dr95ima7" src="dr95ima7.gif" --></p>
       
       <div class="figure wide" style="min-width: 699px">
-	<img alt="Condition Class Hierarchy" src="drm_Figure_11-6_Condition_Classes.png" width="699" height="432" />
+	<map id="condition-classes-map" name="condition-classes-map">
+	  <!-- NAME is necessary for compatibility with some buggy user agents that don't
+	       work when there's just ID here. -->
+	  <!-- This map is adapted from drm_Figure_11-6_Condition_Classes.html,
+	       which is generated from the corresponding OmniGraffle file. If the
+	       .graffle file is updated, export to HTML and update the map areas here.
+	       Be sure to add " /" at the end of the AREA tags to make it valid XHTML. -->
+	  <area alt="<sealed-object-error>" coords="326,386,452,429" href="drm_95.html#HEADING95-358" />
+	  <area alt="<type-error>" coords="164,386,290,429" href="drm_95.html#HEADING95-302" />
+	  <area alt="<simple-error>" coords="2,386,128,429" href="drm_95.html#HEADING95-246" />
+	  <area alt="<abort>" coords="571,311,697,354" href="drm_95.html#HEADING95-595" />
+	  <area alt="<simple-restart>" coords="409,311,535,354" href="drm_95.html#HEADING95-538" />
+	  <area alt="<simple-warning>" coords="326,239,452,282" href="drm_95.html#HEADING95-406" />
+	  <area alt="<error>" coords="164,239,290,282" href="drm_95.html#HEADING95-239" />
+	  <area alt="<restart>" coords="488,160,614,203" href="drm_95.html#HEADING95-463" />
+	  <area alt="<warning>" coords="326,160,452,203" href="drm_95.html#HEADING95-365" />
+	  <area alt="<serious-condition>" coords="164,160,290,203" href="drm_95.html#HEADING95-198" />
+	  <area alt="<condition>" coords="274,81,400,124" href="drm_95.html#HEADING95-5" />
+	  <area alt="<object>" coords="274,2,400,45" href="drm_89.html#HEADING89-1" />
+	</map>
+	<img alt="Condition Class Hierarchy" src="drm_Figure_11-6_Condition_Classes.png"
+	     width="699" height="432" usemap="#condition-classes-map" />
 	
 	<table class="class-attributes-legend" style="clear: both">
 	  <tr>
@@ -347,10 +368,10 @@
 	<dd class="Cliche"><p class="Cliche"> <code>&lt;warning&gt;</code></p></dd>
 	<dt class="Cliche2">Init-keywords:</dt>
 	<dd><dl class="RP.RoutineParam">
-	    <dt class="Cliche2"> <code>format-string:</code></dd>
+	    <dt class="Cliche2"> <code>format-string:</code></dt>
 	    <dd class="Cliche2"><p class="Cliche2">An instance of <code>&lt;string&gt;</code>. A format string describing the warning.</p></dd>
 	    <dt class="RP.RoutineParam"><code>format-arguments:</code></dt>
-	    <dd class="Cliche2"><p>An instance of <code>&lt;sequence&gt;</code>. Format arguments to splice into the format string to describe the warning.</p></dt>
+	    <dd class="Cliche2"><p>An instance of <code>&lt;sequence&gt;</code>. Format arguments to splice into the format string to describe the warning.</p></dd>
 	</dl></dd>
 	<dt class="Cliche">Description:</dt>
 	<dd class="Cliche"><p class="Cliche"> The class of warnings described by a format string and arguments.</p>

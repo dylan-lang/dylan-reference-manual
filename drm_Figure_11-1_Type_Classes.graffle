@@ -28,10 +28,10 @@
 			<key>Head</key>
 			<dict>
 				<key>ID</key>
-				<integer>94</integer>
+				<integer>11</integer>
 			</dict>
 			<key>ID</key>
-			<integer>97</integer>
+			<integer>14</integer>
 			<key>OrthogonalBarAutomatic</key>
 			<true/>
 			<key>OrthogonalBarPosition</key>
@@ -56,7 +56,7 @@
 			<key>Tail</key>
 			<dict>
 				<key>ID</key>
-				<integer>92</integer>
+				<integer>9</integer>
 			</dict>
 		</dict>
 		<dict>
@@ -72,10 +72,10 @@
 			<key>Head</key>
 			<dict>
 				<key>ID</key>
-				<integer>93</integer>
+				<integer>10</integer>
 			</dict>
 			<key>ID</key>
-			<integer>96</integer>
+			<integer>13</integer>
 			<key>OrthogonalBarAutomatic</key>
 			<true/>
 			<key>OrthogonalBarPosition</key>
@@ -100,7 +100,7 @@
 			<key>Tail</key>
 			<dict>
 				<key>ID</key>
-				<integer>92</integer>
+				<integer>9</integer>
 			</dict>
 		</dict>
 		<dict>
@@ -116,10 +116,10 @@
 			<key>Head</key>
 			<dict>
 				<key>ID</key>
-				<integer>92</integer>
+				<integer>9</integer>
 			</dict>
 			<key>ID</key>
-			<integer>95</integer>
+			<integer>12</integer>
 			<key>OrthogonalBarAutomatic</key>
 			<true/>
 			<key>OrthogonalBarPosition</key>
@@ -144,7 +144,7 @@
 			<key>Tail</key>
 			<dict>
 				<key>ID</key>
-				<integer>91</integer>
+				<integer>8</integer>
 			</dict>
 		</dict>
 		<dict>
@@ -160,7 +160,12 @@
 				<real>12</real>
 			</dict>
 			<key>ID</key>
-			<integer>94</integer>
+			<integer>11</integer>
+			<key>Link</key>
+			<dict>
+				<key>url</key>
+				<string>drm_90.html#HEADING90-239</string>
+			</dict>
 			<key>Magnets</key>
 			<array>
 				<string>{0, 1}</string>
@@ -201,7 +206,12 @@ sfci}</string>
 				<real>12</real>
 			</dict>
 			<key>ID</key>
-			<integer>93</integer>
+			<integer>10</integer>
+			<key>Link</key>
+			<dict>
+				<key>url</key>
+				<string>drm_90.html#HEADING90-107</string>
+			</dict>
 			<key>Magnets</key>
 			<array>
 				<string>{0, 1}</string>
@@ -242,7 +252,12 @@ sfci}</string>
 				<real>12</real>
 			</dict>
 			<key>ID</key>
-			<integer>92</integer>
+			<integer>9</integer>
+			<key>Link</key>
+			<dict>
+				<key>url</key>
+				<string>drm_90.html#HEADING90-4</string>
+			</dict>
 			<key>Magnets</key>
 			<array>
 				<string>{0, 1}</string>
@@ -283,7 +298,12 @@ sfau}</string>
 				<real>12</real>
 			</dict>
 			<key>ID</key>
-			<integer>91</integer>
+			<integer>8</integer>
+			<key>Link</key>
+			<dict>
+				<key>url</key>
+				<string>drm_89.html#HEADING89-1</string>
+			</dict>
 			<key>Magnets</key>
 			<array>
 				<string>{0, 1}</string>
@@ -340,11 +360,18 @@ ofau}</string>
 		</dict>
 	</array>
 	<key>LayoutInfo</key>
-	<dict/>
+	<dict>
+		<key>ChildOrdering</key>
+		<integer>0</integer>
+	</dict>
 	<key>LinksVisible</key>
 	<string>NO</string>
 	<key>MagnetsVisible</key>
 	<string>NO</string>
+	<key>ModificationDate</key>
+	<string>2005-05-28 14:48:04 -0700</string>
+	<key>Modifier</key>
+	<string>Chris Page</string>
 	<key>Orientation</key>
 	<integer>0</integer>
 	<key>PageBreaks</key>
@@ -430,7 +457,7 @@ ofau}</string>
 	YWw+CgkJCQkJPC9hcnJheT4KCQkJCQk8a2V5PmNvbS5hcHBsZS5wcmludC50aWNrZXQu
 	Y2xpZW50PC9rZXk+CgkJCQkJPHN0cmluZz5jb20uYXBwbGUucHJpbnRpbmdtYW5hZ2Vy
 	PC9zdHJpbmc+CgkJCQkJPGtleT5jb20uYXBwbGUucHJpbnQudGlja2V0Lm1vZERhdGU8
-	L2tleT4KCQkJCQk8ZGF0ZT4yMDA0LTEwLTEyVDExOjM5OjA1WjwvZGF0ZT4KCQkJCQk8
+	L2tleT4KCQkJCQk8ZGF0ZT4yMDA1LTA1LTI4VDIxOjQ0OjMyWjwvZGF0ZT4KCQkJCQk8
 	a2V5PmNvbS5hcHBsZS5wcmludC50aWNrZXQuc3RhdGVGbGFnPC9rZXk+CgkJCQkJPGlu
 	dGVnZXI+MDwvaW50ZWdlcj4KCQkJCTwvZGljdD4KCQkJPC9hcnJheT4KCQk8L2RpY3Q+
 	CgkJPGtleT5jb20uYXBwbGUucHJpbnQuUGFnZUZvcm1hdC5QTUFkanVzdGVkUGFwZXJS
@@ -444,7 +471,7 @@ ofau}</string>
 	YXk+CgkJCQkJPGtleT5jb20uYXBwbGUucHJpbnQudGlja2V0LmNsaWVudDwva2V5PgoJ
 	CQkJCTxzdHJpbmc+Y29tLmFwcGxlLnByaW50aW5nbWFuYWdlcjwvc3RyaW5nPgoJCQkJ
 	CTxrZXk+Y29tLmFwcGxlLnByaW50LnRpY2tldC5tb2REYXRlPC9rZXk+CgkJCQkJPGRh
-	dGU+MjAwNC0xMC0xMlQxMTozOTowNVo8L2RhdGU+CgkJCQkJPGtleT5jb20uYXBwbGUu
+	dGU+MjAwNS0wNS0yOFQyMTo0NDozMlo8L2RhdGU+CgkJCQkJPGtleT5jb20uYXBwbGUu
 	cHJpbnQudGlja2V0LnN0YXRlRmxhZzwva2V5PgoJCQkJCTxpbnRlZ2VyPjA8L2ludGVn
 	ZXI+CgkJCQk8L2RpY3Q+CgkJCTwvYXJyYXk+CgkJPC9kaWN0PgoJCTxrZXk+Y29tLmFw
 	cGxlLnByaW50LlBhcGVySW5mby5QTVBhcGVyTmFtZTwva2V5PgoJCTxkaWN0PgoJCQk8
