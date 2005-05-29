@@ -2812,7 +2812,7 @@ member? (#&quot;banana&quot;, flavors)
   <dd class="Cliche">
     <p class="signature">
       <code>find-key <var>collection function</var> #key <var>skip failure</var> </code>
-      &rArr;<code> <var>key</var></strong></code>
+      &rArr;<code> <var>key</var></code>
     </p>
   </dd>
   <dt class="Cliche">Arguments:</dt>
@@ -3054,7 +3054,15 @@ fill! (numbers, 3, start: 2)
   <dd class="Cliche"><p class="Cliche"> Returns eight values used to implement iteration over the <var>collection</var> argument.</p>
     <p class="T1.Text1">Only the <var>collection</var> argument this function was called with may be used as the <var>collection</var> argument to functions returned by this function. Only the <var>initial-state</var> object and state objects returned by the <var>next-state</var> and <var>copy-state</var> functions may be used as the <var>state</var> argument to functions returned by this function. Only the <var>limit</var> object may be used as the <var>limit</var> argument to the <var>finished-state?</var> function.</p>
     <p class="T0.Text0">An example of the use of the iteration protocol is the following definition of a single-argument version of the <code>do</code> function:</p>
-    <p class="T1.Text1"><pre class="Cv.Code">define method do1 (f :: &lt;function&gt;, c :: &lt;collection&gt;)<br />  let (init, limit, next, end?, key, elt) = <br />                     forward-iteration-protocol(c);<br />  for (state = init then next(c, state),<br />     until: end?(c, state, limit))<br />    f(elt(c, state));<br />  end for;<br />end method do1;</pre></p>
+    <pre class="Cv.Code">
+define method do1 (f :: &lt;function&gt;, c :: &lt;collection&gt;)
+  let (init, limit, next, end?, key, elt) =
+                     forward-iteration-protocol(c);
+  for (state = init then next(c, state),
+     until: end?(c, state, limit))
+    f(elt(c, state));
+  end for;
+end method do1;</pre>
     <a name="HEADING102-703"></a>
     <h4 class="H5.Heading5"><code>forward-iteration-protocol table </code> <br /> &rArr;  initial-state limit next-state finished-state? current-key current-element current-element-setter copy-state  <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="SD.ShortDescription">The method for <code>&lt;table&gt;</code> implements the iteration protocol in terms of the function <code>table-protocol</code>.</p>
