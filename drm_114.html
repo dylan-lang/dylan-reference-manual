@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
@@ -14,8 +14,8 @@
   
   <link rel="top" href="drm_1.html" />
   <link rel="start first" href="index.html" />
-  <link rel="contents" href="drm_2.html" />
-  <link rel="copyright" href="drm_3.html" />
+  <link rel="copyright" href="drm_2.html" />
+  <link rel="contents" href="drm_3.html" />
   <link rel="glossary" href="drm_126.html" />
   <link rel="index" href="drm_127.html" />
   <link rel="last author" href="drm_128.html" />
@@ -55,40 +55,82 @@
 <a name="HEADING114"></a>
 
 <div class="wm-div-headers">
-<p id="navigation"><a href="drm_113.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_115.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_110.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+<div id="navigation-header">
+    <p id="book-title">The Dylan Reference Manual</p>
+    <p id="basic-navigation"><a class="previous" title="Go to previous page" href="drm_113.html"><img alt="Previous" src="prev.gif" /></a> <a class="next" title="Go to next page" href="drm_115.html"><img alt="Next" src="next.gif" /></a> <a class="up" title="Go to start of chapter" href="drm_110.html"><img alt="Up" src="up.gif" /></a> <a class="start" title="Go to start of book" href="drm_1.html"><img alt="Top" src="top.gif" /></a> <a class="contents" title="Go to table of contents" href="drm_3.html"><img alt="Contents" src="content.gif" /></a> <a class="index" title="Go to index" href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+  </div>
 
 <div id="section-header">
   <p id="section-prefix">Chapter 14</p>
   <p id="section-name">The Built-In Macros and Special Definitions</p>
 </div>
 
-<div class="wm-div-toc">
-  <ul class="page-toc">
-    <li><a href="drm_114.html#HEADING114-162">Conditionals</a>
+<div id="navigation-TOC">
+  <ul class="front-matter">
+    <li><a href="drm_1.html">Start</a></li>
+    <li><a href="drm_3.html">Contents</a></li>
+    <li><a href="drm_4.html">About This Book</a></li>
+  </ul>
+  <ol class="chapters">
+    <li><a href="drm_5.html">Introduction</a></li>
+    <li><a href="drm_9.html">Syntax</a></li>
+    <li><a href="drm_25.html">Program Structure</a></li>
+    <li><a href="drm_28.html">Program Control</a></li>
+    <li><a href="drm_38.html">Types and Classes</a></li>
+    <li><a href="drm_47.html">Functions</a></li>
+    <li><a href="drm_52.html">Conditions</a></li>
+    <li><a href="drm_59.html">Collections</a></li>
+    <li><a href="drm_70.html">Sealing</a></li>
+    <li><a href="drm_76.html">Macros</a></li>
+    <li><a href="drm_87.html">The Built-In Classes</a></li>
+    <li><a href="drm_96.html">The Built-In Functions</a></li>
+    <li><a href="drm_108.html">Other Built-In Objects</a></li>
+    <li><a href="drm_110.html">The Built-In Macros and Special Definitions</a>
       <ul>
-	<li><a href="drm_114.html#HEADING114-164"><code>if</code> <span class="attributes-summary">[Statement]</span></a></li>
-	<li><a href="drm_114.html#HEADING114-181"><code>unless</code> <span class="attributes-summary">[Statement]</span></a></li>
-	<li><a href="drm_114.html#HEADING114-190"><code>case</code> <span class="attributes-summary">[Statement]</span></a></li>
-	<li><a href="drm_114.html#HEADING114-201"><code>select</code> <span class="attributes-summary">[Statement]</span></a></li>
+	<li><a href="drm_111.html">Overview</a></li>
+	<li><a href="drm_112.html">Definitions</a></li>
+	<li><a href="drm_113.html">Local Declarations</a></li>
+	<li id="current">Statements
+	  <ul class="page-toc">
+	    <li><a href="#HEADING114-162">Conditionals</a>
+	      <ul>
+		<li><a href="#HEADING114-164"><code>if</code> <span class="attributes-summary">[Statement]</span></a></li>
+		<li><a href="#HEADING114-181"><code>unless</code> <span class="attributes-summary">[Statement]</span></a></li>
+		<li><a href="#HEADING114-190"><code>case</code> <span class="attributes-summary">[Statement]</span></a></li>
+		<li><a href="#HEADING114-201"><code>select</code> <span class="attributes-summary">[Statement]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="#HEADING114-220">Iteration Constructs</a>
+	      <ul>
+		<li><a href="#HEADING114-221"><code>while</code> <span class="attributes-summary">[Statement]</span></a></li>
+		<li><a href="#HEADING114-229"><code>until</code> <span class="attributes-summary">[Statement]</span></a></li>
+		<li><a href="#HEADING114-237"><code>for</code> <span class="attributes-summary">[Statement]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="#HEADING114-280">Other Statement Macros</a>
+	      <ul>
+		<li><a href="#HEADING114-281"><code>begin</code> <span class="attributes-summary">[Statement]</span></a></li>
+		<li><a href="#HEADING114-287"><code>block</code> <span class="attributes-summary">[Statement]</span></a></li>
+		<li><a href="#HEADING114-324"><code>method</code> <span class="attributes-summary">[Statement]</span></a></li>
+	      </ul>
+	    </li>
+	  </ul>
+	</li>
+	<li><a href="drm_115.html">Function Macros</a></li>
       </ul>
     </li>
-    <li><a href="drm_114.html#HEADING114-220">Iteration Constructs</a>
-      <ul>
-	<li><a href="drm_114.html#HEADING114-221"><code>while</code> <span class="attributes-summary">[Statement]</span></a></li>
-	<li><a href="drm_114.html#HEADING114-229"><code>until</code> <span class="attributes-summary">[Statement]</span></a></li>
-	<li><a href="drm_114.html#HEADING114-237"><code>for</code> <span class="attributes-summary">[Statement]</span></a></li>
-      </ul>
-    </li>
-    <li><a href="drm_114.html#HEADING114-280">Other Statement Macros</a>
-      <ul>
-	<li><a href="drm_114.html#HEADING114-281"><code>begin</code> <span class="attributes-summary">[Statement]</span></a></li>
-	<li><a href="drm_114.html#HEADING114-287"><code>block</code> <span class="attributes-summary">[Statement]</span></a></li>
-	<li><a href="drm_114.html#HEADING114-310">Dynamic Extent of Block Features</a></li>
-	<li><a href="drm_114.html#HEADING114-315">Intervening Cleanup Clauses</a></li>
-	<li><a href="drm_114.html#HEADING114-320">Restrictions on the use of exit procedures</a></li>
-	<li><a href="drm_114.html#HEADING114-324"><code>method</code> <span class="attributes-summary">[Statement]</span></a></li>
-      </ul>
-    </li>
+  </ol>
+  <ol class="appendices">
+    <li><a href="drm_116.html">BNF</a></li>
+    <li><a href="drm_119.html">Exported Names</a></li>
+  </ol>
+  <ul class="back-matter">
+    <li><a href="drm_126.html">Glossary</a></li>
+    <li><a href="drm_127.html">Index</a></li>
+    <li><a href="drm_128.html">Colophon</a></li>
+  </ul>
+  <ul class="errata">
+    <li><a href="drm_errata.html">Errata</a></li>
   </ul>
 </div>
 
@@ -144,7 +186,7 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><code><a name="MARKER-9-2044"></a></code>Executes an implicit body if the value of a test is true or an alternate if the test is false.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Macro Call:</dt>
+  <dt class="Cliche"><span>Macro Call:</span></dt>
   <dd class="Cliche">
     <p class="Cliche">
       <code>if (</code> <var>test</var> <code>)</code> <strong class="re">[</strong> <var>consequent</var> <strong class="re">]</strong><br />
@@ -153,7 +195,7 @@
       <code>end</code> <strong class="re">[</strong> <code>if</code> <strong class="re">]</strong>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>test</var></dt>
@@ -168,9 +210,9 @@
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">body<em class="BNF"><sub>bnf</sub></em></span></p></dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> <code>if</code> executes one or more expressions, executing and returning the values of a body following the first test that returns true.</p>
     <p class="T1.Text1"><var>test</var> is the first expression to be executed. If its value is true, <code>if</code> executes and returns the values of the <var>consequent</var>. If the value of <var>test</var> is false, <code>if</code> proceeds with the optional elseif-tests and alternate.</p>
     <p class="T1.Text1">First the elseif clauses are tried in order. The first <var>elseif-test</var> is executed. If its value is true, the corresponding <var>elseif-consequent</var> is executed and its values are returned as the value of the <code>if</code> statement. If its value is false, the next <var>elseif-test</var> is tried. This continues until a true <var>elseif-test</var> is found, or until there are no more elseif clauses.</p>
@@ -209,11 +251,11 @@ end if; </pre>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2046"></a>Executes an implicit body unless the value of a test is true.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Macro Call:</dt>
+  <dt class="Cliche"><span>Macro Call:</span></dt>
   <dd class="Cliche"><p class="Cliche"> <code>unless (</code> <var>test</var> <code>)</code><br />
       <strong class="re">[</strong> <var>body</var> <strong class="re">]</strong><br />
       <code>end</code> <strong class="re">[</strong> <code>unless</code> <strong class="re">]</strong></p></dd>
-  <dt class="Cliche2">Arguments:</dt>
+  <dt class="Cliche2"><span>Arguments:</span></dt>
   <dd class="Cliche2">
     <dl>
       <dt><var>test</var></dt>
@@ -222,9 +264,9 @@ end if; </pre>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">body<em class="BNF"><sub>bnf</sub></em></span></p></dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> <code>unless</code> executes <var>test</var>. If the value of <var>test</var> is false, then the <var>body</var> is executed and its values are returned by <code>unless</code>. If the value of <var>test</var> is true, the <var>body</var> is not executed and <code>unless</code> returns <code>#f</code>.</p>
     <p class="T1.Text1">If there are no expressions in the <var>body</var>, then <code>#f</code> is returned.</p>
     <pre class="Cv.Code">
@@ -238,7 +280,7 @@ end unless </pre>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2048"></a>Executes a number of tests until one is true, and then executes an implicit body associated with the true test.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Macro Call:</dt>
+  <dt class="Cliche"><span>Macro Call:</span></dt>
   <dd class="Cliche">
     <p class="Cliche">
       <code>case</code><br />
@@ -247,7 +289,7 @@ end unless </pre>
       <code>end</code> <strong class="re">[</strong> <code>case</code> <strong class="re">]</strong>
     </p>
   </dd>
-  <dt class="Cliche2">Arguments:</dt>
+  <dt class="Cliche2"><span>Arguments:</span></dt>
   <dd class="Cliche2">
     <dl>
       <dt><var>test</var></dt>
@@ -262,9 +304,9 @@ end unless </pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> <code>case</code> executes the <var>test</var> in order, until it reaches a test that returns true. When it reaches a test that returns true, it executes the corresponding <var>consequent</var> and returns its values. Subsequent tests are not executed. If the corresponding <var>consequent</var> is empty, the first value of the successful test is returned.</p>
     <p class="T1.Text1">As a special case, the name <code>otherwise</code> may appear as a <var>test</var>. This <var>test</var> always succeeds if there is no preceding successful <var>test</var>.</p>
     <p class="T1.Text1">If no <var>test</var> is true, then <code>case</code> returns <code>#f</code>.</p>
@@ -285,7 +327,7 @@ end case; </pre>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2050"></a>Compares a target object to a series of potential matches, and executes an implicit body associated with the first match found.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Macro Call:</dt>
+  <dt class="Cliche"><span>Macro Call:</span></dt>
   <dd class="Cliche">
     <p class="Cliche">
       <code>
@@ -296,7 +338,7 @@ end case; </pre>
       </code>
     </p>
   </dd>
-  <dt class="Cliche2">Arguments:</dt>
+  <dt class="Cliche2"><span>Arguments:</span></dt>
   <dd class="Cliche2">
     <dl>
       <dt><var>target</var></dt>
@@ -311,9 +353,9 @@ end case; </pre>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>[ constituents<em class="MetaSyntax"><sub>bnf</sub></em> ] ;</code></p></dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> <code>select</code> generates a target object and then compares it to a series of potential matches, in order. If it finds a match, it executes the corresponding <var>consequent</var> and returns the values of the <var>consequent</var>. If no match is found, an error is signaled.</p>
     <p class="T1.Text1">The <var>target</var> is executed to produce the match object.</p>
     <p class="T1.Text1">The <var>test</var>, if supplied, is a function used to compare the target object to the potential matches. The default <var>test</var> is <code>==</code>.</p>
@@ -348,9 +390,9 @@ end select<a name="MARKER-2-2051"></a> </pre>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2054"></a>Repeatedly executes a body until a test expression is false.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Macro Call:</dt>
-  <dd class="Cliche"><p class="Cliche"> <code>while ( <i class="parameter Code Cliche">test  )<br /></i></code>    <code>[ <var>body</var></code>  <code>]<br />end</code> <code>[ while ]<br />&rArr; <strong class="MetaSyntax Cliche"> #f</strong></code></p></dd>
-  <dt class="Cliche2">Arguments:</dt>
+  <dt class="Cliche"><span>Macro Call:</span></dt>
+  <dd class="Cliche"><p class="Cliche"> <code>while ( <i class="parameter Code Cliche">test  )<br /></i></code>    <code>[ <var>body</var></code>  <code>]<br />end</code> <code>[ while ]<br />&rArr;  #f</code></p></dd>
+  <dt class="Cliche2"><span>Arguments:</span></dt>
   <dd class="Cliche2">
     <dl>
       <dt><var>test</var></dt>
@@ -359,9 +401,9 @@ end select<a name="MARKER-2-2051"></a> </pre>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam">body<em class="BNF"><sub>bnf</sub></em></p></dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p class="Cliche"> <code>#f</code></p></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> <code>while</code> loops over <var>body</var> until <var>test</var> returns false.</p>
     <p class="T1.Text1">Each pass through the loop begins by executing <var>test</var>. If <var>test</var> returns a true value, the expressions in the <var>body</var> are executed and the looping continues. If <var>test</var> returns false, the loop terminates and <code>while</code> returns <code>#f</code>.</p></dd>
 </dl>
@@ -370,7 +412,7 @@ end select<a name="MARKER-2-2051"></a> </pre>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2056"></a>Repeatedly executes a body until a test expression is true.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Macro Call:</dt>
+  <dt class="Cliche"><span>Macro Call:</span></dt>
   <dd class="Cliche">
     <p class="Cliche">
       <code>until ( <var>test</var> )</code><br />
@@ -379,7 +421,7 @@ end select<a name="MARKER-2-2051"></a> </pre>
       &rArr; <code>#f</code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>test</var></dt>
@@ -388,9 +430,9 @@ end select<a name="MARKER-2-2051"></a> </pre>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam">body<em class="BNF"><sub>bnf</sub></em></p></dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p class="Cliche"> <code>#f</code></p></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> <code>until</code> loops over <var>body</var> until <var>test</var> returns true.</p>
     <p class="T1.Text1">Each pass through the loop begins by executing <var>test</var>. If <var>test</var> returns false, the expressions in the <var>body</var> are executed and the looping continues. If <var>test</var> returns true, the loop terminates and <code>until</code> returns <code>#f</code>.</p></dd>
 </dl>
@@ -399,7 +441,7 @@ end select<a name="MARKER-2-2051"></a> </pre>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2058"></a>Performs general iteration over a body, updating bindings and performing end tests on each iteration.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Macro Call:</dt>
+  <dt class="Cliche"><span>Macro Call:</span></dt>
   <dd class="Cliche">
     <p class="Cliche">
       <code>for (</code> { <var>for-clause</var> } <code>,</code>* |<br />
@@ -409,7 +451,7 @@ end select<a name="MARKER-2-2051"></a> </pre>
       <code>end</code> [ <code>for</code> ]
     </p>
   </dd>
-  <dt class="Cliche2">Arguments:</dt>
+  <dt class="Cliche2"><span>Arguments:</span></dt>
   <dd class="Cliche2">
     <dl>
       <dt><var>for-clause</var></dt>
@@ -450,9 +492,9 @@ end select<a name="MARKER-2-2051"></a> </pre>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> <code>for</code> iterates over <var>loop-body</var>, creating and updating iteration bindings on each iteration according to the <var>for-clauses</var>. Iteration ends when one of the <var>for-clauses</var> is exhausted, or when the optional <var>end-test</var> is satisfied.</p>
     <p class="T1.Text1">Each <var>for-clause</var> controls one iteration binding. The optional <var>end-test</var> does not control any iteration bindings.</p>
     <p class="T1.Text1">There are three kinds of for-clauses: <var>explicit-step-clauses</var>, <var>collection-clauses</var>, and <var>numeric-clauses</var>:  An <var>explicit-step-clause</var> creates bindings for the results of executing an expression. A <var>collection-clause</var> creates bindings for successive elements of a collection. A <var>numeric-clause</var> creates bindings for a series of numbers.</p>
@@ -518,22 +560,22 @@ end;<a name="MARKER-2-2059"></a> </pre>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2061"></a>Executes expressions in a body, in order.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Macro Call:</dt>
+  <dt class="Cliche"><span>Macro Call:</span></dt>
   <dd class="Cliche">
     <p class="Cliche">
       <code>begin</code> <strong class="re">[</strong> <var>body</var> <strong class="re">]</strong> <code>end</code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>body</var></dt>
       <dd><p class="Cliche">body<em class="BNF Cliche"><sub>bnf</sub></em></p></dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Begin executes the expressions in a body, in order. The values of the last expression are returned. If there are no expressions in the body, <code>#f</code> is returned.</p></dd>
 </dl>
 <a name="HEADING114-287"></a>
@@ -541,7 +583,7 @@ end;<a name="MARKER-2-2059"></a> </pre>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2063"></a>Executes a body with several options for nonstandard flow of control.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Macro Call:</dt>
+  <dt class="Cliche"><span>Macro Call:</span></dt>
   <dd class="Cliche">
     <p class="Cliche">
       <code>block (</code> <strong class="re">[</strong> <var>exit-variable</var> <strong class="re">]</strong> <code>)</code><br />
@@ -552,7 +594,7 @@ end;<a name="MARKER-2-2059"></a> </pre>
       <code>end</code> <strong class="re">[</strong> <code>block</code> <strong class="re">]</strong>
     </p>
   </dd>
-  <dt class="Cliche2">Arguments:</dt>
+  <dt class="Cliche2"><span>Arguments:</span></dt>
   <dd class="Cliche2">
     <dl>
       <dt><var>exit-variable</var></dt>
@@ -582,9 +624,9 @@ end;<a name="MARKER-2-2059"></a> </pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> <a name="MARKER-2-2064"></a><code>block</code> executes the expressions in the <var>block-body</var> in order, and then executes the optional <var>afterwards-clause</var> and <var>cleanup-clause</var>. Unless there is a nonlocal exit, block returns the values of the <var>block-body</var>, or <code>#f</code> if there is no <var>block-body</var>.</p>
     <p class="T1.Text1">If <var>exit-variable</var> is provided, it is bound to an exit procedure (an object of type <code>&lt;function&gt;</code>) that is valid during the execution of the block body and the clauses. At any point in time before the last clause returns, the exit procedure can be called. Calling the exit procedure has the effect of immediately terminating the execution of the block, and returning as values the arguments to the exit procedure.</p>
     <p class="T1.Text1">The body of the <var>afterwards-clause</var>, if provided, is executed after the <var>block-body</var>. The values produced by the <var>afterwards-clause</var> are ignored. This is useful when you want to execute an expression for side-effect after the <var>block-body</var> has executed, but still want to return the values of the last expression in the <var>block-body</var>.</p>
@@ -645,9 +687,9 @@ foo(5)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2066"></a>Creates and returns a method.</p>
 <dl class="Cliche">
-<dt class="Cliche">Macro Call:</dt>
+<dt class="Cliche"><span>Macro Call:</span></dt>
 <dd class="Cliche"><p class="Cliche"> <code>method <var>parameter-list</var> [ <var>body</var> ] <code>end</code> [ <code>method</code> ]</code></p></dd>
-<dt class="Cliche2">Arguments:</dt>
+<dt class="Cliche2"><span>Arguments:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>parameter-list</var></dt>
@@ -656,9 +698,9 @@ foo(5)
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam">body<em class="BNF"><sub>bnf</sub></em></p></dd>
     </dl>
 </dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche"><p class="Cliche"> An instance of <code>&lt;method&gt;</code>.</p></dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> <code>method</code> creates and returns a method specified by the <var>parameter-list</var> and <var>body</var>. For a complete description of methods, see <a href="drm_48.html#MARKER-9-762" class="Cliche">"Methods" on page 80</a>.<a name="MARKER-2-2067"></a></p></dd>
 </dl>
 
@@ -668,9 +710,9 @@ foo(5)
 
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_113.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_115.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_110.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+<p class="footer"><a class="previous" title="Go to previous page" href="drm_113.html"><img alt="Previous" src="prev.gif" /></a> <a class="next" title="Go to next page" href="drm_115.html"><img alt="Next" src="next.gif" /></a> <a class="up" title="Go to start of chapter" href="drm_110.html"><img alt="Up" src="up.gif" /></a> <a class="start" title="Go to start of book" href="drm_1.html"><img alt="Top" src="top.gif" /></a> <a class="contents" title="Go to table of contents" href="drm_3.html"><img alt="Contents" src="content.gif" /></a> <a class="index" title="Go to index" href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+<p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a>, subsequently revised.</p>
 
 </div>
 </body>

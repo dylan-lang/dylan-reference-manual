@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
@@ -14,8 +14,8 @@
   
   <link rel="top" href="drm_1.html" />
   <link rel="start first" href="index.html" />
-  <link rel="contents" href="drm_2.html" />
-  <link rel="copyright" href="drm_3.html" />
+  <link rel="copyright" href="drm_2.html" />
+  <link rel="contents" href="drm_3.html" />
   <link rel="glossary" href="drm_126.html" />
   <link rel="index" href="drm_127.html" />
   <link rel="last author" href="drm_128.html" />
@@ -55,22 +55,73 @@
 <a name="HEADING104"></a>
 
 <div class="wm-div-headers">
-<p id="navigation"><a href="drm_103.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_105.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+<div id="navigation-header">
+    <p id="book-title">The Dylan Reference Manual</p>
+    <p id="basic-navigation"><a class="previous" title="Go to previous page" href="drm_103.html"><img alt="Previous" src="prev.gif" /></a> <a class="next" title="Go to next page" href="drm_105.html"><img alt="Next" src="next.gif" /></a> <a class="up" title="Go to start of chapter" href="drm_96.html"><img alt="Up" src="up.gif" /></a> <a class="start" title="Go to start of book" href="drm_1.html"><img alt="Top" src="top.gif" /></a> <a class="contents" title="Go to table of contents" href="drm_3.html"><img alt="Contents" src="content.gif" /></a> <a class="index" title="Go to index" href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+  </div>
 
 <div id="section-header">
   <p id="section-prefix">Chapter 12</p>
   <p id="section-name">The Built-In Functions</p>
 </div>
 
-<div class="wm-div-toc">
-  <ul class="page-toc">
-    <li><a href="drm_104.html#HEADING104-2"><code>compose</code> <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_104.html#HEADING104-13"><code>complement</code> <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_104.html#HEADING104-20"><code>disjoin</code> <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_104.html#HEADING104-29"><code>conjoin</code> <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_104.html#HEADING104-38"><code>curry</code> <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_104.html#HEADING104-47"><code>rcurry</code> <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_104.html#HEADING104-57"><code>always</code> <span class="attributes-summary">[Function]</span></a></li>
+<div id="navigation-TOC">
+  <ul class="front-matter">
+    <li><a href="drm_1.html">Start</a></li>
+    <li><a href="drm_3.html">Contents</a></li>
+    <li><a href="drm_4.html">About This Book</a></li>
+  </ul>
+  <ol class="chapters">
+    <li><a href="drm_5.html">Introduction</a></li>
+    <li><a href="drm_9.html">Syntax</a></li>
+    <li><a href="drm_25.html">Program Structure</a></li>
+    <li><a href="drm_28.html">Program Control</a></li>
+    <li><a href="drm_38.html">Types and Classes</a></li>
+    <li><a href="drm_47.html">Functions</a></li>
+    <li><a href="drm_52.html">Conditions</a></li>
+    <li><a href="drm_59.html">Collections</a></li>
+    <li><a href="drm_70.html">Sealing</a></li>
+    <li><a href="drm_76.html">Macros</a></li>
+    <li><a href="drm_87.html">The Built-In Classes</a></li>
+    <li><a href="drm_96.html">The Built-In Functions</a>
+      <ul>
+	<li><a href="drm_97.html">Overview</a></li>
+	<li><a href="drm_98.html">Constructing and Initializing Instances</a></li>
+	<li><a href="drm_99.html">Equality and Comparison</a></li>
+	<li><a href="drm_100.html">Arithmetic Operations</a></li>
+	<li><a href="drm_101.html">Coercing and Copying Objects</a></li>
+	<li><a href="drm_102.html">Collection Operations</a></li>
+	<li><a href="drm_103.html">Reflective Operations on Types</a></li>
+	<li id="current">Functional Operations
+	  <ul class="page-toc">
+	    <li><a href="#HEADING104-2"><code>compose</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING104-13"><code>complement</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING104-20"><code>disjoin</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING104-29"><code>conjoin</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING104-38"><code>curry</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING104-47"><code>rcurry</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING104-57"><code>always</code> <span class="attributes-summary">[Function]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_105.html">Function Application</a></li>
+	<li><a href="drm_106.html">Reflective Operations on Functions</a></li>
+	<li><a href="drm_107.html">Operations on Conditions</a></li>
+      </ul>
+    </li>
+    <li><a href="drm_108.html">Other Built-In Objects</a></li>
+    <li><a href="drm_110.html">The Built-In Macros and Special Definitions</a></li>
+  </ol>
+  <ol class="appendices">
+    <li><a href="drm_116.html">BNF</a></li>
+    <li><a href="drm_119.html">Exported Names</a></li>
+  </ol>
+  <ul class="back-matter">
+    <li><a href="drm_126.html">Glossary</a></li>
+    <li><a href="drm_127.html">Index</a></li>
+    <li><a href="drm_128.html">Colophon</a></li>
+  </ul>
+  <ul class="errata">
+    <li><a href="drm_errata.html">Errata</a></li>
   </ul>
 </div>
 
@@ -87,14 +138,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-2-1755"></a>Returns the composition of one or more functions.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>compose <var>function1</var> #rest <var>more-functions</var> </code>
       &rArr;<code> <var>function</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>function1</var></dt>
@@ -103,7 +154,7 @@
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;function&gt;</code>.</p></dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>function</var></dt>
@@ -112,7 +163,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> When called with just a single argument, <code>compose</code> returns that argument.</p>
     <p class="T1.Text1">When called with two arguments, <code>compose</code> returns a function that applies the second function to its arguments and then applies the first function to the (single) result value.</p>
     <p class="T1.Text1">With three or more arguments, <code>compose</code> composes pairs of argument functions, until a single composite function is obtained. (It doesn't matter if the pairings are done from the left or from the right, as long as the order of application is preserved.)</p>
@@ -127,14 +178,14 @@ define constant root-position = compose(position, root-view) </pre>
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1878"></a>Returns a function that expresses the complement of a predicate.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>complement <var>predicate</var> </code>
       &rArr;<code> <var>function</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>predicate</var></dt>
@@ -143,7 +194,7 @@ define constant root-position = compose(position, root-view) </pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>function</var></dt>
@@ -152,7 +203,7 @@ define constant root-position = compose(position, root-view) </pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns a function that applies <var>predicate </var> to its arguments. If the <var>predicate </var>returns <code>#f</code>, the complement returns <code>#t</code>; otherwise, the complement returns <code>#f</code>. For example, <code>odd?</code> could be defined as <code>complement(even?)</code>.</p>
     <pre class="Cv.Code">
 choose(complement(zero?), #(1, 3, 0, 4, 0, 0, 3))
@@ -164,14 +215,14 @@ choose(complement(zero?), #(1, 3, 0, 4, 0, 0, 3))
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1880"></a>Returns a function that expresses the disjunction of one or more predicates.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>disjoin <var>predicate1</var> #rest <var>more-predicates</var> </code>
       &rArr;<code> <var>function</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>predicate1</var></dt>
@@ -180,7 +231,7 @@ choose(complement(zero?), #(1, 3, 0, 4, 0, 0, 3))
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam">  Functions.</p></dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>function</var></dt>
@@ -189,7 +240,7 @@ choose(complement(zero?), #(1, 3, 0, 4, 0, 0, 3))
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns a single function, termed the disjunction of its argument functions. The disjunction accepts any number of arguments and operates by applying the predicates, in order, to the arguments. If any of the predicates returns true, the remaining predicates (if any) are not applied, and the true result is returned. Otherwise, all the predicates will be applied, and <code>#f</code> returned.</p>
     <p class="T1.Text1">A disjunction is similar to an <code>|</code> expression of calls to the predicates.</p>
     <pre class="Cv.Code">
@@ -203,14 +254,14 @@ nonzero?(4)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1882"></a>Returns a function that expresses the conjunction of one or more predicates.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>conjoin <var>predicate1</var> #rest <var>more-predicates</var> </code>
       &rArr;<code> <var>function</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>predicate1</var></dt>
@@ -219,7 +270,7 @@ nonzero?(4)
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;function&gt;</code>.</p></dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>function</var></dt>
@@ -228,7 +279,7 @@ nonzero?(4)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns a single function, termed the conjunction of its argument functions. The conjunction accepts any number of arguments and operates by applying the predicates, in order, to the arguments. If any of the predicates returns <code>#f</code>, the remaining predicates (if any) are not applied and <code>#f</code> is immediately returned. Otherwise, all the predicates will be applied, and the result of the last application is returned.</p>
     <p class="T1.Text1">A conjunction is similar to an <code>&amp;</code> expression of calls to the predicates.</p>
     <pre class="Cv.Code">
@@ -241,14 +292,14 @@ choose(conjoin(positive?, integral?), #(-1, -3, 5, -3.7, 3.5, 7))
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1884"></a>Returns a function based on an existing function and a number of default initial arguments.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>curry <var>function</var> #rest <var>curried-args</var> </code>
       &rArr;<code> <var>new-function</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>function</var></dt>
@@ -257,7 +308,7 @@ choose(conjoin(positive?, integral?), #(-1, -3, 5, -3.7, 3.5, 7))
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;object&gt;</code>.</p></dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>new-function</var></dt>
@@ -266,7 +317,7 @@ choose(conjoin(positive?, integral?), #(-1, -3, 5, -3.7, 3.5, 7))
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns a function that applies <var>function</var> to <var>curried-args</var> plus its own arguments, in that order. For example <code>curry (\&gt;, 6)</code> is a predicate that returns true for values less than 6; <code>curry (\=, &quot;x&quot;)</code> is a predicate that tests for equality with the string <code>&quot;x&quot;</code>; <code>curry (\+, 1)</code> is an incrementing function; <code>curry (concatenate, &quot;set-&quot;)</code> is a function that concatenates the string <code>&quot;set-&quot;</code> to any additional sequences it is passed.</p>
     <pre class="Cv.Code">
 define constant all-odd? = curry(every?, odd?)
@@ -282,14 +333,14 @@ less-than-10?(4)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1886"></a>Returns a function based on an existing function and a number of default final arguments.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>rcurry <var>function</var> #rest <var>curried-args</var> </code>
       &rArr;<code> <var>new-function</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>function</var></dt>
@@ -298,7 +349,7 @@ less-than-10?(4)
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;object&gt;</code>.</p></dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>new-function</var></dt>
@@ -307,7 +358,7 @@ less-than-10?(4)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns a function that applies <var>function</var> to <var>curried-args</var> plus its own arguments, with the <var>curried-args</var> occurring last.</p>
     <p class="T1.Text1"><code>rcurry</code> ("right" curry) operates just like <code>curry</code>, except it allows the rightmlost arguments of <var>function </var>to be specified in advance, rather than the leftmost arguments. For example, <code>rcurry (\&gt;, 6)</code> is a predicate that returns true for values greater than 6.</p>
     <pre class="Cv.Code">
@@ -326,21 +377,21 @@ greater-than-10?(4)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Returns a function that always returns a particular object<a name="MARKER-9-1888"></a>.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>always <var>object</var> </code>
       &rArr;<code> <var>function</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>object</var></dt>
       <dd><p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p></dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>function</var></dt>
@@ -349,7 +400,7 @@ greater-than-10?(4)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns a function that can be called with any number of arguments. The function ignores its arguments and always returns <var>object</var>.</p>
     <pre class="Cv.Code">
 define constant menu = always(&quot;spam!&quot;)
@@ -368,9 +419,9 @@ menu(4, 5, 6)
 
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_103.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_105.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+<p class="footer"><a class="previous" title="Go to previous page" href="drm_103.html"><img alt="Previous" src="prev.gif" /></a> <a class="next" title="Go to next page" href="drm_105.html"><img alt="Next" src="next.gif" /></a> <a class="up" title="Go to start of chapter" href="drm_96.html"><img alt="Up" src="up.gif" /></a> <a class="start" title="Go to start of book" href="drm_1.html"><img alt="Top" src="top.gif" /></a> <a class="contents" title="Go to table of contents" href="drm_3.html"><img alt="Contents" src="content.gif" /></a> <a class="index" title="Go to index" href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+<p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a>, subsequently revised.</p>
 
 </div>
 </body>

@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
@@ -14,8 +14,8 @@
   
   <link rel="top" href="drm_1.html" />
   <link rel="start first" href="index.html" />
-  <link rel="contents" href="drm_2.html" />
-  <link rel="copyright" href="drm_3.html" />
+  <link rel="copyright" href="drm_2.html" />
+  <link rel="contents" href="drm_3.html" />
   <link rel="glossary" href="drm_126.html" />
   <link rel="index" href="drm_127.html" />
   <link rel="last author" href="drm_128.html" />
@@ -55,25 +55,76 @@
 <a name="HEADING106"></a>
 
 <div class="wm-div-headers">
-<p id="navigation"><a href="drm_105.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_107.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+<div id="navigation-header">
+    <p id="book-title">The Dylan Reference Manual</p>
+    <p id="basic-navigation"><a class="previous" title="Go to previous page" href="drm_105.html"><img alt="Previous" src="prev.gif" /></a> <a class="next" title="Go to next page" href="drm_107.html"><img alt="Next" src="next.gif" /></a> <a class="up" title="Go to start of chapter" href="drm_96.html"><img alt="Up" src="up.gif" /></a> <a class="start" title="Go to start of book" href="drm_1.html"><img alt="Top" src="top.gif" /></a> <a class="contents" title="Go to table of contents" href="drm_3.html"><img alt="Contents" src="content.gif" /></a> <a class="index" title="Go to index" href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+  </div>
 
 <div id="section-header">
   <p id="section-prefix">Chapter 12</p>
   <p id="section-name">The Built-In Functions</p>
 </div>
 
-<div class="wm-div-toc">
-  <ul class="page-toc">
-    <li><a href="drm_106.html#HEADING106-2"><code>generic-function-methods</code> <span class="attributes-summary">[Function]</span> </a></li>
-    <li><a href="drm_106.html#HEADING106-9"><code>add-method</code>   <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_106.html#HEADING106-23"><code>generic-function-mandatory-keywords</code> <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_106.html#HEADING106-30"><code>function-specializers</code> <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_106.html#HEADING106-37"><code>function-arguments</code> <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_106.html#HEADING106-49"><code>function-return-values</code> <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_106.html#HEADING106-58"><code>applicable-method?</code>    <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_106.html#HEADING106-67"><code>sorted-applicable-methods</code> <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_106.html#HEADING106-77"><code>find-method</code>    <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_106.html#HEADING106-85"><code>remove-method</code> <span class="attributes-summary">[Function]</span></a></li>
+<div id="navigation-TOC">
+  <ul class="front-matter">
+    <li><a href="drm_1.html">Start</a></li>
+    <li><a href="drm_3.html">Contents</a></li>
+    <li><a href="drm_4.html">About This Book</a></li>
+  </ul>
+  <ol class="chapters">
+    <li><a href="drm_5.html">Introduction</a></li>
+    <li><a href="drm_9.html">Syntax</a></li>
+    <li><a href="drm_25.html">Program Structure</a></li>
+    <li><a href="drm_28.html">Program Control</a></li>
+    <li><a href="drm_38.html">Types and Classes</a></li>
+    <li><a href="drm_47.html">Functions</a></li>
+    <li><a href="drm_52.html">Conditions</a></li>
+    <li><a href="drm_59.html">Collections</a></li>
+    <li><a href="drm_70.html">Sealing</a></li>
+    <li><a href="drm_76.html">Macros</a></li>
+    <li><a href="drm_87.html">The Built-In Classes</a></li>
+    <li><a href="drm_96.html">The Built-In Functions</a>
+      <ul>
+	<li><a href="drm_97.html">Overview</a></li>
+	<li><a href="drm_98.html">Constructing and Initializing Instances</a></li>
+	<li><a href="drm_99.html">Equality and Comparison</a></li>
+	<li><a href="drm_100.html">Arithmetic Operations</a></li>
+	<li><a href="drm_101.html">Coercing and Copying Objects</a></li>
+	<li><a href="drm_102.html">Collection Operations</a></li>
+	<li><a href="drm_103.html">Reflective Operations on Types</a></li>
+	<li><a href="drm_104.html">Functional Operations</a></li>
+	<li><a href="drm_105.html">Function Application</a></li>
+	<li id="current">Reflective Operations on Functions
+	  <ul class="page-toc">
+	    <li><a href="#HEADING106-2"><code>generic-function-methods</code> <span class="attributes-summary">[Function]</span> </a></li>
+	    <li><a href="#HEADING106-9"><code>add-method</code>   <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING106-23"><code>generic-function-mandatory-keywords</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING106-30"><code>function-specializers</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING106-37"><code>function-arguments</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING106-49"><code>function-return-values</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING106-58"><code>applicable-method?</code>    <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING106-67"><code>sorted-applicable-methods</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING106-77"><code>find-method</code>    <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING106-85"><code>remove-method</code> <span class="attributes-summary">[Function]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_107.html">Operations on Conditions</a></li>
+      </ul>
+    </li>
+    <li><a href="drm_108.html">Other Built-In Objects</a></li>
+    <li><a href="drm_110.html">The Built-In Macros and Special Definitions</a></li>
+  </ol>
+  <ol class="appendices">
+    <li><a href="drm_116.html">BNF</a></li>
+    <li><a href="drm_119.html">Exported Names</a></li>
+  </ol>
+  <ul class="back-matter">
+    <li><a href="drm_126.html">Glossary</a></li>
+    <li><a href="drm_127.html">Index</a></li>
+    <li><a href="drm_128.html">Colophon</a></li>
+  </ul>
+  <ul class="errata">
+    <li><a href="drm_errata.html">Errata</a></li>
   </ul>
 </div>
 
@@ -90,14 +141,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1895"></a>Returns the methods of a generic function.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>generic-function-methods <var>generic-function</var> </code>
       &rArr;<code> <var>sequence</var></code>
     </p>
   </dd>
-<dt class="Cliche2">Arguments:</dt>
+<dt class="Cliche2"><span>Arguments:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>generic-function </var></dt>
@@ -106,7 +157,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche2">Values:</dt>
+<dt class="Cliche2"><span>Values:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>sequence</var></dt>
@@ -115,7 +166,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Returns a sequence of all of the methods in <var>generic-function</var>. The order of the methods in the sequence is not significant. The sequence returned should never be destructively modified. Doing so may cause unpredictable behavior.</p>
 <p class="T1.Text1">If <var>generic-function</var> is sealed, an implementation may choose not to return a sequence of methods, but instead signal an error of type <code>&lt;sealed-object-error&gt;</code>.</p></dd>
 </dl>
@@ -124,14 +175,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1897"></a>Adds a method to a generic function.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>add-method <var>generic-function method</var> </code>
       &rArr;<code> <var>new-method old-method</var></code>
     </p>
   </dd>
-<dt class="Cliche2">Arguments:</dt>
+<dt class="Cliche2"><span>Arguments:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>generic-function </var></dt>
@@ -141,7 +192,7 @@
 <dt class="RP.RoutineParam"><var>method</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;method&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>new-method</var></dt>
@@ -151,7 +202,7 @@
 <dt class="RP.RoutineParam"><var>old-method</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>#f</code> or an instance of <code>&lt;method&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Adds <var>method</var> to <var>generic-function</var>, thereby modifying the <var>generic-function</var>.</p>
 <p class="T1.Text1">Programs do not commonly call <code>add-method</code> directly. It is called by <code>define method</code>.</p>
 <p class="T1.Text1">If you add a method to a generic function, and the generic function already has a method with the exact same specializers, then the old method is replaced with the new one.</p>
@@ -165,14 +216,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1899"></a>Returns the mandatory keywords of a generic function, if any.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>generic-function-mandatory-keywords <var>generic-function</var> </code>
       &rArr;<code> <var>keywords</var></code>
     </p>
   </dd>
-<dt class="Cliche2">Arguments:</dt>
+<dt class="Cliche2"><span>Arguments:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>generic-function </var></dt>
@@ -181,7 +232,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>keywords</var></dt>
@@ -190,7 +241,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> If <var>generic-function</var>  accepts keyword arguments, <code>generic-function-mandatory-keywords</code> returns a collection of the mandatory keywords for <var>generic-function. </var>This collection will be empty if the generic function accepts keywords but does not have any mandatory keywords.  <code>generic-function-mandatory-keywords</code> returns <code>#f</code> if <var>generic-function </var>does not accept keyword arguments.</p>
 <p class="T1.Text1">The collection returned should never be destructively modified. Doing so may cause unpredictable behavior.</p></dd>
 </dl>
@@ -199,14 +250,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1901"></a>Returns the specializers of a function.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>function-specializers <var>function</var> </code>
       &rArr;<code> <var>sequence</var></code>
     </p>
   </dd>
-<dt class="Cliche">Arguments:</dt>
+<dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>function</var></dt>
@@ -215,7 +266,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche2">Values:</dt>
+<dt class="Cliche2"><span>Values:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>sequence</var></dt>
@@ -224,7 +275,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Returns a sequence of the specializers for <var>function</var>. The length of the sequence will equal the number of required arguments of <var>function</var>. The first element of the sequence will be the specializer of the first argument of <var>function</var>, the second will be the specializer of the second argument, and so on.</p>
 <p class="T1.Text1">The sequence returned should never be destructively modified. Doing so may cause unpredictable behavior.</p></dd>
 </dl>
@@ -233,14 +284,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1903"></a>Returns information about the arguments accepted by a function.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="Cliche">
       <code>function-arguments <var>function</var> </code>
       &rArr;<code> <var>required-number rest-boolean kwd-sequence</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>function</var></dt>
@@ -249,7 +300,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche2">Values:</dt>
+  <dt class="Cliche2"><span>Values:</span></dt>
   <dd class="Cliche2">
     <dl>
       <dt><var>required-number</var></dt>
@@ -261,7 +312,7 @@
       <dt class="RP.RoutineParam"><var>kwd-sequence</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Either <code>#f</code> or the symbol <code>#"all"</code> or an instance of <code>&lt;collection&gt;</code> whose elements are instances of <code>&lt;keyword&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns three values:</p>
     <ul class="B1.Bullet1">
       <li class="B1.Bullet1"><var>required-number</var> is the number of required arguments accepted by the function.</li>
@@ -276,14 +327,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1905"></a>Returns information about the values returned by a function.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="Cliche">
       <code>function-return-values <var>function</var> </code>
       &rArr;<code> <var>return-value-types rest-return-value</var></code>
     </p>
   </dd>
-  <dt class="Cliche2">Arguments:</dt>
+  <dt class="Cliche2"><span>Arguments:</span></dt>
   <dd class="Cliche2">
     <dl>
       <dt><var>function</var></dt>
@@ -292,7 +343,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>return-value-types</var></dt>
@@ -302,7 +353,7 @@
       <dt class="RP.RoutineParam"><var>rest-return-value</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;type&gt;</code> or <code>#f</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns two values:</p>
     <ul class="B1.Bullet1">
       <li class="B1.Bullet1"><var>return-value-types</var> is a sequence of the types of values returned by the function. The length of the sequence equals the number of required return values of the function. The first element of the sequence is the type of the first return value, the second is the type of the second return value, etc. This sequence returned should never be destructively modified. Doing so may cause unpredictable behavior.</li>
@@ -315,14 +366,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1907"></a>Tests if a function is applicable to sample arguments.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>applicable-method? <var>function</var> #rest <var>sample-args</var> </code>
       &rArr;<code> <var>boolean</var></code>
     </p>
   </dd>
-<dt class="Cliche">Arguments:</dt>
+<dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>function</var></dt>
@@ -332,7 +383,7 @@
 <dt class="RP.RoutineParam"><var>sample-args</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;object&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>boolean</var></dt>
@@ -341,7 +392,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Returns true if <var>function</var> is a method that would be applicable to <var>sample-args</var> or if it is a generic function that contains a method that would be applicable to <var>sample-args</var>.</p>
 <p class="T1.Text1">Note that if <var>function</var> is a generic function, then calling it with the <var>sample-args</var> may still signal an error, even if <code>applicable-method?</code> returns true. This is because the generic function may contain methods that are ambiguous relative to the <var>sample-args</var>. See <a href="drm_50.html#MARKER-9-849" class="T1.Text1">"Method Specificity" on page 96</a> for a complete description of ambiguous methods.</p>
 <p class="T1.Text1">If <var>function</var> is a sealed generic function, <code>applicable-method?</code> may signal an error of type <code>&lt;sealed-object-error&gt;</code>.</p></dd>
@@ -351,14 +402,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1909"></a>Returns all the methods in a generic function that are applicable to sample arguments, sorted in order of specificity.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>sorted-applicable-methods <var>generic-function</var> #rest <var>sample-args</var></code><br />
       &rArr;<code> <var>sorted-methods unsorted-methods</var></code>
     </p>
   </dd>
-<dt class="Cliche2">Arguments:</dt>
+<dt class="Cliche2"><span>Arguments:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>generic-function </var></dt>
@@ -368,7 +419,7 @@
 <dt class="RP.RoutineParam"><var>sample-args</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;object&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche2">Values:</dt>
+<dt class="Cliche2"><span>Values:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>sorted-methods </var></dt>
@@ -378,7 +429,7 @@
 <dt class="RP.RoutineParam"><var>unsorted-methods</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;sequence&gt;</code>. Elements of the collection are instances of <code>&lt;method&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Returns two sequences that, taken together, contain the methods in <var>generic-function</var> that are applicable to the <var>sample-args</var>. <var>sorted-methods </var> contains methods that are more specific than every method that follows them. <var>unsorted-methods</var> begins at the first point of ambiguity; it contains the methods that cannot be sorted.</p>
 <p class="T1.Text1">The sequences returned should never be destructively modified. Doing so may cause unpredictable behavior.</p>
 <p class="T1.Text1">If <var>generic-function</var> is sealed, an implementation may choose not to return two sequences of methods, but instead signal an error of type <code>&lt;sealed-object-error&gt;</code>.</p></dd>
@@ -388,14 +439,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1911"></a>Returns the method in a generic function that has particular specializers.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>find-method <var>generic-function specializers</var> </code>
       &rArr;<code> <var>found-method</var></code>
     </p>
   </dd>
-<dt class="Cliche2">Arguments:</dt>
+<dt class="Cliche2"><span>Arguments:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>generic-function </var></dt>
@@ -405,7 +456,7 @@
 <dt class="RP.RoutineParam"><var>specializers</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;sequence&gt;</code>. Elements of the sequence are instances of <code>&lt;type&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>found-method</var></dt>
@@ -414,7 +465,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Returns the method in <var>generic-function</var> that has the specializers in <var>specializers</var> as its specializers. The specializers must match exactly for a method to be returned.</p>
 <p class="T1.Text1">If <var>generic-function</var> is sealed, an implementation may choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than return a value.</p></dd>
 </dl>
@@ -423,14 +474,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1913"></a>Removes a method from a generic function.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>remove-method <var>generic-function method</var> </code>
       &rArr;<code> <var>method</var></code>
     </p>
   </dd>
-<dt class="Cliche2">Arguments:</dt>
+<dt class="Cliche2"><span>Arguments:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>generic-function </var></dt>
@@ -440,7 +491,7 @@
 <dt class="RP.RoutineParam"><var>method</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;method&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>method</var></dt>
@@ -449,7 +500,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Removes <var>method</var> from <var>generic-function</var> and returns <var>method</var>.</p>
 <p class="T1.Text1">This operation modifies the <var>generic-function</var>.</p>
 <p class="T1.Text1">If <var>generic-function</var> is sealed, or if <var>method</var>  is in a sealed domain of <var>generic-function</var>, then an error of type <code>&lt;sealed-object-error&gt;</code> is signaled.<a name="MARKER-2-1914"></a><code><a name="MARKER-2-1915"></a></code>
@@ -463,9 +514,9 @@
 
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_105.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_107.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+<p class="footer"><a class="previous" title="Go to previous page" href="drm_105.html"><img alt="Previous" src="prev.gif" /></a> <a class="next" title="Go to next page" href="drm_107.html"><img alt="Next" src="next.gif" /></a> <a class="up" title="Go to start of chapter" href="drm_96.html"><img alt="Up" src="up.gif" /></a> <a class="start" title="Go to start of book" href="drm_1.html"><img alt="Top" src="top.gif" /></a> <a class="contents" title="Go to table of contents" href="drm_3.html"><img alt="Contents" src="content.gif" /></a> <a class="index" title="Go to index" href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+<p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a>, subsequently revised.</p>
 
 </div>
 </body>

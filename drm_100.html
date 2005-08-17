@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
@@ -14,8 +14,8 @@
   
   <link rel="top" href="drm_1.html" />
   <link rel="start first" href="index.html" />
-  <link rel="contents" href="drm_2.html" />
-  <link rel="copyright" href="drm_3.html" />
+  <link rel="copyright" href="drm_2.html" />
+  <link rel="contents" href="drm_3.html" />
   <link rel="glossary" href="drm_126.html" />
   <link rel="index" href="drm_127.html" />
   <link rel="last author" href="drm_128.html" />
@@ -55,107 +55,158 @@
 <a name="HEADING100"></a>
 
 <div class="wm-div-headers">
-<p id="navigation"><a href="drm_99.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_101.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+<div id="navigation-header">
+    <p id="book-title">The Dylan Reference Manual</p>
+    <p id="basic-navigation"><a class="previous" title="Go to previous page" href="drm_99.html"><img alt="Previous" src="prev.gif" /></a> <a class="next" title="Go to next page" href="drm_101.html"><img alt="Next" src="next.gif" /></a> <a class="up" title="Go to start of chapter" href="drm_96.html"><img alt="Up" src="up.gif" /></a> <a class="start" title="Go to start of book" href="drm_1.html"><img alt="Top" src="top.gif" /></a> <a class="contents" title="Go to table of contents" href="drm_3.html"><img alt="Contents" src="content.gif" /></a> <a class="index" title="Go to index" href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+  </div>
 
 <div id="section-header">
   <p id="section-prefix">Chapter 12</p>
   <p id="section-name">The Built-In Functions</p>
 </div>
 
-<div class="wm-div-toc">
-  <ul class="page-toc">
-    <li><a href="drm_100.html#HEADING100-2">Properties</a>
+<div id="navigation-TOC">
+  <ul class="front-matter">
+    <li><a href="drm_1.html">Start</a></li>
+    <li><a href="drm_3.html">Contents</a></li>
+    <li><a href="drm_4.html">About This Book</a></li>
+  </ul>
+  <ol class="chapters">
+    <li><a href="drm_5.html">Introduction</a></li>
+    <li><a href="drm_9.html">Syntax</a></li>
+    <li><a href="drm_25.html">Program Structure</a></li>
+    <li><a href="drm_28.html">Program Control</a></li>
+    <li><a href="drm_38.html">Types and Classes</a></li>
+    <li><a href="drm_47.html">Functions</a></li>
+    <li><a href="drm_52.html">Conditions</a></li>
+    <li><a href="drm_59.html">Collections</a></li>
+    <li><a href="drm_70.html">Sealing</a></li>
+    <li><a href="drm_76.html">Macros</a></li>
+    <li><a href="drm_87.html">The Built-In Classes</a></li>
+    <li><a href="drm_96.html">The Built-In Functions</a>
       <ul>
-	<li><a href="drm_100.html#HEADING100-3"><code>odd?</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-9"><code>even?</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-15"><code>zero?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-	  <ul>
-	    <li class="gf-method"><a href="drm_100.html#HEADING100-21"><code>zero?</code> complex &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	<li><a href="drm_97.html">Overview</a></li>
+	<li><a href="drm_98.html">Constructing and Initializing Instances</a></li>
+	<li><a href="drm_99.html">Equality and Comparison</a></li>
+	<li id="current">Arithmetic Operations
+	  <ul class="page-toc">
+	    <li><a href="#HEADING100-2">Properties</a>
+	      <ul>
+		<li><a href="#HEADING100-3"><code>odd?</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-9"><code>even?</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-15"><code>zero?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+		  <ul>
+		    <li class="gf-method"><a href="#HEADING100-21"><code>zero?</code> <var>complex</var> &rArr;  <var>boolean</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+		  </ul>
+		</li>
+		<li><a href="#HEADING100-23"><code>positive?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+		  <ul>
+		    <li class="gf-method"><a href="#HEADING100-29"><code>positive?</code>   <var>real</var> &rArr;  <var>boolean</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+		  </ul>
+		</li>
+		<li><a href="#HEADING100-31"><code>negative?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+		  <ul>
+		    <li class="gf-method"><a href="#HEADING100-37"><code>negative?</code>   <var>real</var> &rArr;  <var>boolean</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+		  </ul>
+		</li>
+		<li><a href="#HEADING100-39"><code>integral?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+		  <ul>
+		    <li class="gf-method"><a href="#HEADING100-45"><code>integral?</code>   <var>object</var> &rArr;  <var>false</var> <span class="attributes-summary">[G.F. Method]</span></a></li>
+		    <li class="gf-method"><a href="#HEADING100-47"><code>integral?</code>   <var>real</var> &rArr;  <var>boolean</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+		  </ul>
+		</li>
+	      </ul>
+	    </li>
+	    <li><a href="#HEADING100-49">Arithmetic Operations</a>
+	      <ul>
+		<li><a href="#HEADING100-50"><code>+</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+		  <ul>
+		    <li class="gf-method"><a href="#HEADING100-57">complex1  + complex2 &rArr;  complex <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+		  </ul>
+		</li>
+		<li><a href="#HEADING100-59"><code>*</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+		  <ul>
+		    <li class="gf-method"><a href="#HEADING100-66">complex1  * complex2 &rArr;  complex <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+		  </ul>
+		</li>
+		<li><a href="#HEADING100-68"><code>-</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+		  <ul>
+		    <li class="gf-method"><a href="#HEADING100-75">complex1  - complex2 &rArr;  complex <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+		  </ul>
+		</li>
+		<li><a href="#HEADING100-77"><code>/</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+		  <ul>
+		    <li class="gf-method"><a href="#HEADING100-84">complex1  / complex2 &rArr;  complex <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+		  </ul>
+		</li>
+		<li><a href="#HEADING100-88"><code>negative</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+		  <ul>
+		    <li class="gf-method"><a href="#HEADING100-94">negative real1  &rArr;  real2 <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+		  </ul>
+		</li>
+		<li><a href="#HEADING100-96"><code>floor</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-103"><code>ceiling</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-110"><code>round</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-117"><code>truncate</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-124"><code>floor/</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-132"><code>ceiling/</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-140"><code>round/</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-148"><code>truncate/</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-156"><code>modulo</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-163"><code>remainder</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-170"><code>^</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+		  <ul>
+		    <li class="gf-method"><a href="#HEADING100-177">complex  ^ integer &rArr;  number <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+		  </ul>
+		</li>
+		<li><a href="#HEADING100-179"><code>abs</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+		  <ul>
+		    <li class="gf-method"><a href="#HEADING100-185"><code>abs</code> <var>complex</var> &rArr;  <var>real</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+		  </ul>
+		</li>
+		<li><a href="#HEADING100-187"><code>logior</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-193"><code>logxor</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-199"><code>logand</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-205"><code>lognot</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-211"><code>logbit?</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-219"><code>ash</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING100-230"><code>lcm</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+		  <ul>
+		    <li class="gf-method"><a href="#HEADING100-237">lcm  integer1 integer2   &rArr;  integer3 <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+		  </ul>
+		</li>
+		<li><a href="#HEADING100-239"><code>gcd</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+		  <ul>
+		    <li class="gf-method"><a href="#HEADING100-246">gcd  integer1 integer2   &rArr;  integer3 <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+		  </ul>
+		</li>
+	      </ul>
+	    </li>
 	  </ul>
 	</li>
-	<li><a href="drm_100.html#HEADING100-23"><code>positive?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-	  <ul>
-	    <li class="gf-method"><a href="drm_100.html#HEADING100-29"><code>positive?</code>   real &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-	  </ul>
-	</li>
-	<li><a href="drm_100.html#HEADING100-31"><code>negative?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-	  <ul>
-	    <li class="gf-method"><a href="drm_100.html#HEADING100-37"><code>negative?</code>   real &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-	  </ul>
-	</li>
-	<li><a href="drm_100.html#HEADING100-39"><code>integral?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-	  <ul>
-	    <li class="gf-method"><a href="drm_100.html#HEADING100-45"><code>integral?</code>   object &rArr;  false <span class="attributes-summary">[G.F. Method]</span></a></li>
-	    <li class="gf-method"><a href="drm_100.html#HEADING100-47"><code>integral?</code>   real &rArr;  boolean <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-	  </ul>
-	</li>
+	<li><a href="drm_101.html">Coercing and Copying Objects</a></li>
+	<li><a href="drm_102.html">Collection Operations</a></li>
+	<li><a href="drm_103.html">Reflective Operations on Types</a></li>
+	<li><a href="drm_104.html">Functional Operations</a></li>
+	<li><a href="drm_105.html">Function Application</a></li>
+	<li><a href="drm_106.html">Reflective Operations on Functions</a></li>
+	<li><a href="drm_107.html">Operations on Conditions</a></li>
       </ul>
     </li>
-    <li><a href="drm_100.html#HEADING100-49">Arithmetic Operations</a>
-      <ul>
-	<li><a href="drm_100.html#HEADING100-50"><code>+</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-	  <ul>
-	    <li class="gf-method"><a href="drm_100.html#HEADING100-57">complex1  + complex2 &rArr;  complex <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-	  </ul>
-	</li>
-	<li><a href="drm_100.html#HEADING100-59"><code>*</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-	  <ul>
-	    <li class="gf-method"><a href="drm_100.html#HEADING100-66">complex1  * complex2 &rArr;  complex <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-	  </ul>
-	</li>
-	<li><a href="drm_100.html#HEADING100-68"><code>-</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-	  <ul>
-	    <li class="gf-method"><a href="drm_100.html#HEADING100-75">complex1  - complex2 &rArr;  complex <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-	  </ul>
-	</li>
-	<li><a href="drm_100.html#HEADING100-77"><code>/</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-	  <ul>
-	    <li class="gf-method"><a href="drm_100.html#HEADING100-84">complex1  / complex2 &rArr;  complex <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-	  </ul>
-	</li>
-	<li><a href="drm_100.html#HEADING100-88"><code>negative</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-	  <ul>
-	    <li class="gf-method"><a href="drm_100.html#HEADING100-94">negative real1  &rArr;  real2 <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-	  </ul>
-	</li>
-	<li><a href="drm_100.html#HEADING100-96"><code>floor</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-103"><code>ceiling</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-110"><code>round</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-117"><code>truncate</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-124"><code>floor/</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-132"><code>ceiling/</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-140"><code>round/</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-148"><code>truncate/</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-156"><code>modulo</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-163"><code>remainder</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-170"><code>^</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-	  <ul>
-	    <li class="gf-method"><a href="drm_100.html#HEADING100-177">complex  ^ integer &rArr;  number <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-	  </ul>
-	</li>
-	<li><a href="drm_100.html#HEADING100-179"><code>abs</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-	  <ul>
-	    <li class="gf-method"><a href="drm_100.html#HEADING100-185"><code>abs</code> complex &rArr;  real <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-	  </ul>
-	</li>
-	<li><a href="drm_100.html#HEADING100-187"><code>logior</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-193"><code>logxor</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-199"><code>logand</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-205"><code>lognot</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-211"><code>logbit?</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-219"><code>ash</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_100.html#HEADING100-230"><code>lcm</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-	  <ul>
-	    <li class="gf-method"><a href="drm_100.html#HEADING100-237">lcm  integer1 integer2   &rArr;  integer3 <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-	  </ul>
-	</li>
-	<li><a href="drm_100.html#HEADING100-239"><code>gcd</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-	  <ul>
-	    <li class="gf-method"><a href="drm_100.html#HEADING100-246">gcd  integer1 integer2   &rArr;  integer3 <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-	  </ul>
-	</li>
-      </ul>
-    </li>
+    <li><a href="drm_108.html">Other Built-In Objects</a></li>
+    <li><a href="drm_110.html">The Built-In Macros and Special Definitions</a></li>
+  </ol>
+  <ol class="appendices">
+    <li><a href="drm_116.html">BNF</a></li>
+    <li><a href="drm_119.html">Exported Names</a></li>
+  </ol>
+  <ul class="back-matter">
+    <li><a href="drm_126.html">Glossary</a></li>
+    <li><a href="drm_127.html">Index</a></li>
+    <li><a href="drm_128.html">Colophon</a></li>
+  </ul>
+  <ul class="errata">
+    <li><a href="drm_errata.html">Errata</a></li>
   </ul>
 </div>
 
@@ -175,14 +226,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1606"></a>Tests for the property of being an odd number.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>odd? <var>integer</var> </code>
       &rArr;<code> <var>boolean</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer</var></dt>
@@ -191,7 +242,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>boolean</var></dt>
@@ -200,7 +251,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns true if its argument is an odd number.</p></dd>
 </dl>
 <a name="HEADING100-9"></a>
@@ -208,14 +259,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1608"></a>Tests for the property of being an even number.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>even? <var>integer</var> </code>
       &rArr;<code> <var>boolean</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer</var></dt>
@@ -224,7 +275,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>boolean</var></dt>
@@ -233,7 +284,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns true if its argument is an even number.</p></dd>
 </dl>
 <a name="HEADING100-15"></a>
@@ -241,14 +292,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1610"></a>Tests for the property of being equal to zero.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>zero? <var>object</var> </code>
       &rArr;<code> <var>boolean</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>object</var></dt>
@@ -257,7 +308,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>boolean</var></dt>
@@ -266,7 +317,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns true if its argument is equal to zero.</p>
     <a name="HEADING100-21"></a>
     <h4 class="H5.Heading5"><code>zero? <var>complex</var> </code>
@@ -279,14 +330,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1612"></a>Tests for the property of being positive.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>positive? <var>object</var> </code>
       &rArr;<code> <var>boolean</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>object</var></dt>
@@ -295,7 +346,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>boolean</var></dt>
@@ -304,7 +355,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns true if its argument is positive.</p>
     <a name="HEADING100-29"></a>
     <h4 class="H5.Heading5"><code>positive? <var>real</var> </code>
@@ -317,14 +368,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1614"></a>Tests for the property of being negative.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>negative? <var>object</var> </code>
       &rArr;<code> <var>boolean</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>object</var></dt>
@@ -333,7 +384,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>boolean</var></dt>
@@ -342,7 +393,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns true if its argument is negative.</p>
     <a name="HEADING100-37"></a>
     <h4 class="H5.Heading5"><code>negative? <var>real</var> </code>
@@ -355,14 +406,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1616"></a>Tests for the property of being integral.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>integral? <var>object</var> </code>
       &rArr;<code> <var>boolean</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>object</var></dt>
@@ -371,7 +422,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>boolean</var></dt>
@@ -380,7 +431,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns true if its argument is an integer.</p>
     <a name="HEADING100-45"></a>
     <h4 class="H5.Heading5"><code>integral? <var>object</var> </code>
@@ -400,14 +451,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1619"></a>Returns the sum of its arguments.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code><var>object1</var> + <var>object2</var> </code>
       &rArr;<code> #rest <var>objects</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>object1</var></dt>
@@ -417,7 +468,7 @@
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>objects</var></dt>
@@ -426,7 +477,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Adds two objects and returns the sum.</p>
     <a name="HEADING100-57"></a>
     <h4 class="H5.Heading5"><code><var>complex1</var> + <var>complex2</var> </code>
@@ -439,14 +490,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1621"></a>Returns the product of its arguments.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code><var>object1</var> * <var>object2</var> </code>
       &rArr;<code> #rest <var>objects</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>object1</var></dt>
@@ -456,7 +507,7 @@
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>objects</var></dt>
@@ -465,7 +516,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Multiplies two objects and returns the product.</p>
     <a name="HEADING100-66"></a>
     <h4 class="H5.Heading5"><code><var>complex1</var> * <var>complex2</var> </code>
@@ -478,14 +529,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1623"></a>Returns the difference of its arguments.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code><var>object1</var> - <var>object2</var> </code>
       &rArr;<code> #rest <var>objects</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>object1</var></dt>
@@ -495,7 +546,7 @@
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>objects</var></dt>
@@ -504,7 +555,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Subtracts <var>object2</var> from <var>object1</var> and returns the difference.</p>
     <a name="HEADING100-75"></a>
     <h4 class="H5.Heading5"><code><var>complex1</var> - <var>complex2</var> </code>
@@ -517,14 +568,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1625"></a>Returns the quotient of its arguments.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code><var>object1</var> / <var>object2</var> </code>
       &rArr;<code> #rest <var>objects</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>object1</var></dt>
@@ -534,7 +585,7 @@
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>objects</var></dt>
@@ -543,7 +594,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Divides <var>object2</var> into <var>object1</var> and returns the quotient.</p>
     <a name="HEADING100-84"></a>
     <h4 class="H5.Heading5"><code><var>complex1</var> / <var>complex2</var> </code>
@@ -558,14 +609,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1629"></a>Returns the negation of an object.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>negative <var>object1</var> </code>
       &rArr;<code> #rest <var>objects</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>object1</var></dt>
@@ -574,7 +625,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>objects</var></dt>
@@ -583,7 +634,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns the negation of its argument. The unary minus operator is equivalent to a call to the <code>negative</code> in the current binding environment.</p>
     <a name="HEADING100-94"></a>
     <h4 class="H5.Heading5"><code>negative <var>real1</var> </code>
@@ -596,14 +647,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1631"></a>Truncates a real number toward negative infinity.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>floor <var>real1</var> </code>
       &rArr;<code> <var>integer real2</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>real1</var></dt>
@@ -612,7 +663,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer</var></dt>
@@ -622,7 +673,7 @@
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Truncates <var>real1</var> toward negative infinity. The integer part is returned as <var>integer</var>, the remainder is returned as <var>real2</var>.</p></dd>
 </dl>
 <a name="HEADING100-103"></a>
@@ -630,14 +681,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1633"></a>Truncates a real number toward positive infinity.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>ceiling <var>real1</var> </code>
       &rArr;<code> <var>integer real2</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>real1</var></dt>
@@ -646,7 +697,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer</var></dt>
@@ -656,7 +707,7 @@
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Truncates <var>real1</var> toward positive infinity. The integer part is returned as <var>integer</var>, the remainder is returned as <var>real2</var>.</p></dd>
 </dl>
 <a name="HEADING100-110"></a>
@@ -664,14 +715,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1635"></a>Rounds a real number toward the nearest mathematical integer.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>round <var>real1</var> </code>
       &rArr;<code> <var>integer real2</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>real1</var></dt>
@@ -680,7 +731,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer</var></dt>
@@ -690,7 +741,7 @@
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Rounds <var>real1</var> toward the nearest mathematical integer. The integer part is returned as <var>integer</var>, the remainder is returned as <var>real2</var>. If <var>real1</var> is exactly between two integers, then the result <var>integer</var> will be a multiple of two.</p></dd>
 </dl>
 <a name="HEADING100-117"></a>
@@ -698,14 +749,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1637"></a>Truncates a real number toward zero.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>truncate <var>real1</var> </code>
       &rArr;<code> <var>integer real2</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>real1</var></dt>
@@ -714,7 +765,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer</var></dt>
@@ -724,7 +775,7 @@
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Truncates <var>real1</var> toward zero. The integer part is returned as <var>integer</var>, the remainder is returned as <var>real2</var>.</p></dd>
 </dl>
 <a name="HEADING100-124"></a>
@@ -732,14 +783,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1639"></a>Returns the floor of the quotient of two numbers.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>floor/ <var>real1 real2</var> </code>
       &rArr;<code> <var>integer real3</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>real1</var></dt>
@@ -749,7 +800,7 @@
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer</var></dt>
@@ -759,7 +810,7 @@
       <dt class="RP.RoutineParam"><var>real3</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Divides <var>real2</var> into <var>real1</var> and truncates the result toward negative infinity. The integer part of the result is returned as <var>integer</var>, the remainder is returned as <var>real3</var>.</p></dd>
 </dl>
 <a name="HEADING100-132"></a>
@@ -767,14 +818,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1641"></a>Returns the ceiling of the quotient of two numbers.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>ceiling/ <var>real1 real2</var> </code>
       &rArr;<code> <var>integer real3</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>real1</var></dt>
@@ -784,7 +835,7 @@
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer</var></dt>
@@ -794,7 +845,7 @@
       <dt class="RP.RoutineParam"><var>real3</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Divides <var>real2</var> into <var>real1</var> and truncates the result toward positive infinity. The integer part of the result is returned as <var>integer</var>, the remainder is returned as <var>real3</var>.</p></dd>
 </dl>
 <a name="HEADING100-140"></a>
@@ -802,14 +853,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1643"></a>Rounds off the quotient of two numbers.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>round/ <var>real1 real2</var> </code>
       &rArr;<code> <var>integer real3</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>real1</var></dt>
@@ -819,7 +870,7 @@
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer</var></dt>
@@ -829,7 +880,7 @@
       <dt class="RP.RoutineParam"><var>real3</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Divides <var>real2</var> into <var>real1</var> and rounds the result toward the nearest mathematical integer. The integer part of the result is returned as <var>integer</var>, the remainder is returned as <var>real3</var>. If the result of the division is exactly between two integers, then the result <var>integer</var> will be a multiple of two.</p></dd>
 </dl>
 <a name="HEADING100-148"></a>
@@ -837,14 +888,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1645"></a>Returns the truncated quotient of two numbers.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>truncate/ <var>real1 real2</var> </code>
       &rArr;<code> <var>integer real3</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>real1</var></dt>
@@ -854,7 +905,7 @@
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer</var></dt>
@@ -864,7 +915,7 @@
       <dt class="RP.RoutineParam"><var>real3</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Divides <var>real2</var> into <var>real1</var> and truncates the result toward zero. The integer part of the result is returned as <var>integer</var>, the remainder is returned as <var>real3</var>.</p></dd>
 </dl>
 <a name="HEADING100-156"></a>
@@ -872,14 +923,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1647"></a>Returns the second value of <code>floor/</code>.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>modulo <var>real1 real2</var> </code>
       &rArr;<code> <var>real3</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>real1</var></dt>
@@ -889,7 +940,7 @@
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>real3</var></dt>
@@ -898,7 +949,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns the second value of <code>floor/(<var>real1, real2)</var></code>.</p></dd>
 </dl>
 <a name="HEADING100-163"></a>
@@ -906,14 +957,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1649"></a>Returns the second value of <code>truncate/</code>.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>remainder <var>real1 real2</var> </code>
       &rArr;<code> <var>real3</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>real1</var></dt>
@@ -923,7 +974,7 @@
       <dt class="RP.RoutineParam"><var>real2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>real3</var></dt>
@@ -932,7 +983,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns the second value of <code>truncate/(<var>real1, real2)</var></code>.</p></dd>
 </dl>
 <a name="HEADING100-170"></a>
@@ -940,14 +991,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1651"></a><a name="MARKER-2-1652"></a>Raises an object to a specified power.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code><var>object1</var> ^ <var>object2</var> </code>
       &rArr;<code> #rest <var>objects</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>object1</var></dt>
@@ -957,7 +1008,7 @@
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>objects</var></dt>
@@ -966,7 +1017,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns <var>object1 </var> raised to the power <var>object2</var>. An error is signaled if both arguments are zero.</p>
     <a name="HEADING100-177"></a>
     <h4 class="H5.Heading5"><code><var>complex</var> ^ <var>integer</var> </code>
@@ -979,14 +1030,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1654"></a>Returns the absolute value of its argument.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>abs <var>object1</var> </code>
       &rArr;<code> #rest <var>objects</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>object1</var></dt>
@@ -995,7 +1046,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>objects</var></dt>
@@ -1004,7 +1055,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns the absolute value of <var>object1</var>.</p>
     <a name="HEADING100-185"></a>
     <h4 class="H5.Heading5"><code>abs <var>complex</var> </code>
@@ -1017,14 +1068,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1656"></a><a name="MARKER-2-1657"></a>Returns the bitwise inclusive or of its integer arguments.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>logior #rest <var>integers</var> </code>
       &rArr;<code> <var>integer</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integers</var></dt>
@@ -1033,7 +1084,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer</var></dt>
@@ -1042,7 +1093,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns the bitwise inclusive or of the <var>integers</var>.</p></dd>
 </dl>
 <a name="HEADING100-193"></a>
@@ -1050,14 +1101,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1659"></a>Returns the bitwise exclusive or of its integer arguments.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>logxor #rest <var>integers</var> </code>
       &rArr;<code> <var>integer</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integers</var></dt>
@@ -1066,7 +1117,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer</var></dt>
@@ -1075,7 +1126,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns the bitwise exclusive or of the <var>integers</var>.</p></dd>
 </dl>
 <a name="HEADING100-199"></a>
@@ -1083,14 +1134,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1661"></a>Returns the bitwise and of its integer arguments.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>logand #rest <var>integers</var> </code>
       &rArr;<code> <var>integer</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integers</var></dt>
@@ -1099,7 +1150,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer</var></dt>
@@ -1108,7 +1159,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns the bitwise and of the <var>integers</var>.</p></dd>
 </dl>
 <a name="HEADING100-205"></a>
@@ -1116,14 +1167,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1663"></a>Returns the bitwise not of its integer argument.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>lognot <var>integer1</var> </code>
       &rArr;<code> <var>integer2</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer1</var></dt>
@@ -1132,7 +1183,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer2</var></dt>
@@ -1141,7 +1192,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns the bitwise not of the <var>integer1</var>.</p></dd>
 </dl>
 <a name="HEADING100-211"></a>
@@ -1149,14 +1200,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1665"></a>Tests the value of a particular bit in its integer argument.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>logbit? <var>index integer</var> </code>
       &rArr;<code> <var>boolean</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>index</var></dt>
@@ -1166,7 +1217,7 @@
       <dt class="RP.RoutineParam"><var>integer</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;integer&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>boolean</var></dt>
@@ -1175,7 +1226,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns true if the <var>index</var>th bit in <var>integer</var>  is a one-bit; otherwise it returns false.</p>
     <p class="T1.Text1">Negative <var>integers</var> are treated as if they were in two's-complement notation.</p></dd>
 </dl>
@@ -1184,14 +1235,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1667"></a>Performs an arithmetic shift on its first argument.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>ash <var>integer1 count</var> </code>
       &rArr;<code> <var>integer2</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer1</var></dt>
@@ -1201,7 +1252,7 @@
       <dt class="RP.RoutineParam"><var>count</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;integer&gt;.</code></p></dd>
   </dl></dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>integer2</var></dt>
@@ -1210,7 +1261,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Performs an arithmetic shift on the binary representation of <var>integer1</var>.</p>
     <p class="T1.Text1"><code>ash</code> shifts <var>integer1</var> arithmetically left by <var>count</var> bit positions if <var>count</var> is positive, or right <var>count</var> bit positions if <var>count</var> is negative. The shifted value of the same sign as <var>integer1</var> is returned.</p>
     <p class="T1.Text1">When <code>ash</code> moves bits to the left, it adds zero-bits at the right. When it moves them to the right, it discards bits.</p>
@@ -1227,14 +1278,14 @@ ash(32, -1)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1670"></a>Returns the least common multiple of its two arguments.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>lcm <var>object1 object2</var> </code>
       &rArr;<code> <var>object3</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>object1</var></dt>
@@ -1244,7 +1295,7 @@ ash(32, -1)
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>object3</var></dt>
@@ -1253,7 +1304,7 @@ ash(32, -1)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns the least common multiple of <var>object1</var> and <var>object2.</var></p>
     <a name="HEADING100-237"></a>
     <h4 class="H5.Heading5"><code>lcm <var>integer1 integer2</var> </code>
@@ -1266,14 +1317,14 @@ ash(32, -1)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1672"></a>Returns the greatest common divisor of its two arguments.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>gcd <var>object1 object2</var> </code>
       &rArr;<code> <var>object3</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>object1</var></dt>
@@ -1283,7 +1334,7 @@ ash(32, -1)
       <dt class="RP.RoutineParam"><var>object2</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>object3</var></dt>
@@ -1292,7 +1343,7 @@ ash(32, -1)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns the greatest common divisor of <var>object1</var> and <var>object2</var>.</p>
     <a name="HEADING100-246"></a>
     <h4 class="H5.Heading5"><code>gcd <var>integer1 integer2</var> </code>
@@ -1307,9 +1358,9 @@ ash(32, -1)
 
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_99.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_101.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+<p class="footer"><a class="previous" title="Go to previous page" href="drm_99.html"><img alt="Previous" src="prev.gif" /></a> <a class="next" title="Go to next page" href="drm_101.html"><img alt="Next" src="next.gif" /></a> <a class="up" title="Go to start of chapter" href="drm_96.html"><img alt="Up" src="up.gif" /></a> <a class="start" title="Go to start of book" href="drm_1.html"><img alt="Top" src="top.gif" /></a> <a class="contents" title="Go to table of contents" href="drm_3.html"><img alt="Contents" src="content.gif" /></a> <a class="index" title="Go to index" href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+<p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a>, subsequently revised.</p>
 
 </div>
 </body>

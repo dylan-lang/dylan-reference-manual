@@ -1,164 +1,231 @@
+/*
+   Style sheet for the Dylan Reference Manual
+*/
+
 
 /* Debugging: Uncomment this to see all the boxes. */
 
 /* * { border: 1px solid red } */
 
 
-
 /*
   General Document Formatting
 */
 
-body {
-       padding-left: 8em;
-       max-width: 40em
-     }
+body { padding-left: 8em; max-width: 40em }
 
 
-/* On-screen, interactive navigation. */
+/*
+  Section prefix and name at the top of each page. Note that some
+  formatting applies to the prefix/name by id, and some to the first and
+  second paragraphs positionally. In most sections there's a prefix and a
+  name, but in some there is only the name and it should be formatted like
+  the prefix in that case.
+*/
+#section-header { font-size: smaller }
+#section-header p:first-child
+                {
+		  font-size: smaller;
+                  text-transform: uppercase;
+		  letter-spacing: 0.6em;
+                  font-family: serif;
+		}
+#section-header p:first-child + p
+                { font-family: sans-serif }
+
+/* section headers are bigger on section start pages */
+body.section-start #section-header p:first-child
+                {
+		  font-size: small;
+                  letter-spacing: 0.75em;
+		}
+
+/* the section name is redundant on section start pages, so hide it */
+body.section-start #section-name { display: none }
+
+
+/*
+   Hide horizontal rules that are in the page header. They're used to
+   provide separation in the absence of CSS.
+*/
+.wm-div-headers hr { display: none }
+
+
+
+/* On-screen, present interactive navigation elements. */
 
 @media screen {
 
-/* Leave room for navigation UI and margins inside a window. */
+  /* Leave room for navigation UI and margins inside a window */
 
-body {
-       margin-left: 205px; margin-right: 20px
-     }
+  body           { position: absolute; left: 17em; margin-right: 1pc }
 
-img#book-cover { 
-                 position: absolute; left: 250px; top: 50px;
-                 border: 2px solid
-               }
+  /* The book cover image */
+
+  img#book-cover { border: 2px solid; margin-top: 2pc }
+
+  /* Navigation header at the top/left of the viewport */
+
+  #navigation-header
+                 {
+                   position: fixed; top: 0; left: 0; height: 6em;
+                   font: medium sans-serif; width: 17em;
+                   margin: 0;
+		   border-right: 1px solid #ddd;
+                 }
+  #book-title
+                 {
+                   position: absolute; top: 0; left: 0; right: 0; height: 3em;
+                   margin: 0;
+                   /* place the book cover in the background to include some of
+                      the color of the printed DRM  */
+                   background: white url("drm-background.jpg") repeat-x 50% 45%;
+                   /* this variation fills the background with the cover logo;
+                      it has a certain appeal, but it's hard to make the title
+                      text readable over it */
+                   /*background: white url("drm-cover.jpg") repeat-x 90% 65%;*/
+                 }
+  #basic-navigation
+                 {
+                   position: absolute; top: 3em; left: 0; right: 0; height: 3em;
+                   margin: 0;
+                 }
+
+  /* "mini-TOC" navigation area at the left of the viewport */
+
+  #navigation-TOC
+                 {
+                   overflow: auto;
+                   position: fixed; top: 6em; left: 0; bottom: 0;
+                   font: medium sans-serif; width: 15.5em;
+                   margin: 0;
+                   padding-left: 1.5em; padding-top: 1em;
+		   border-right: 1px solid #ddd;
+                   background: #eee;
+                 }
+
+  /*
+    Basic Navigation
+    
+    The basic navigation links are placed at very specific positions in the
+    top/left navigation area. In addition, the HTML contains button images,
+    which are okay when viewing without a style sheet, but we replace them
+    with text here, which looks better, gives us more control over
+    appearance and is scalable.
+  */
+
+  /* general */
+  #navigation-header { text-align: center }
+
+  /* title */
+  #book-title        {
+                       white-space: nowrap; overflow: hidden; /* prevent line breaks */
+                       padding-top: 0.3em;
+                       /* Gill Sans isn't the same font as the printed DRM,
+                          but it's a good approximation */
+                       color: #606; font: bold 1em "Gill Sans";
+                     }
+
+  /*
+    I think this is supposed to affect the size of the "content:" text,
+    below, but it doesn't in Safari/OmniWeb/WebCore; it works in
+    FireFox. So instead, we explicitly specify the font size where the
+    content text is generated, below.
+  */
+/*  #basic-navigation *:first-line { font-size: smaller } */
+
+  /* links */
+  #basic-navigation a                  { text-decoration: none }
+  #basic-navigation a:hover            { text-decoration: underline }
+
+  #basic-navigation a.previous,
+  #basic-navigation a.next             { color: white }
+
+  #basic-navigation a.previous:active,
+  #basic-navigation a.next:active      { color: silver }
+
+  /*
+    the "start of section" button is somewhat redundant when using CSS,
+    since the chapter link is readily visible in the navigation area, so
+    let's hide it to reduce UI complexity
+  */
+  #basic-navigation .up                { display: none }
+
+  /* button layout */
+  #basic-navigation *                  { position: absolute }
+  #basic-navigation .previous          { top: 0;   bottom: 50%;  left: 0;   width: 51% }
+  #basic-navigation .next              { top: 0;   bottom: 50%; width: 51%; right: 0   }
+  #basic-navigation .start             { top: 50%; bottom: 0;    left: 0;   width: 34% }
+  #basic-navigation .contents          { top: 50%; bottom: 0;    left: 33%; right: 33% }
+  #basic-navigation .index             { top: 50%; bottom: 0;   width: 34%; right: 0   }
+
+  /* button appearance */
+  #basic-navigation .previous,
+  #basic-navigation .next              {
+                                         color: silver; background-color: gray;
+                                         border-top: 1px solid silver;
+                                         padding-top: 0.2em;
+                                       }
+  #basic-navigation .start,
+  #basic-navigation .contents,
+  #basic-navigation .index             {
+                                         background-color: #ddd;
+                                         border-top: 1px solid #444;
+                                         border-bottom: 1px solid silver;
+                                         padding-top: 0.2em;
+                                       }
+
+  /* replace button images with text */
+  #basic-navigation img                { display: none }
+  #basic-navigation .previous:before   { content: "\2190  Previous"; font-size: smaller }
+  #basic-navigation .next:before       { content: "Next Page \2192"; font-size: smaller }
+  #basic-navigation .start:before      { content: "Start"; font-size: smaller }
+  #basic-navigation .contents:before   { content: "Contents"; font-size: smaller }
+  #basic-navigation .index:before      { content: "Index"; font-size: smaller }
 
 
-/* Navigation header floats at left edge of viewport. */
+  /* TOC in the navigation area */
 
-.wm-div-headers {
-                  overflow: auto;
-                  position: fixed; top: 0; left: 0; bottom: 0;
-                  width: 175px;
-                  padding-left: 20px;
-                  background-color: #eee;
+  /* don't underline navigation links; keeps things readable */
+  #navigation-TOC a       { text-decoration: none }
+  #navigation-TOC a:hover { text-decoration: underline }
+
+
+  /*
+     Some example code to place a block at the bottom of the viewport, with
+     a highlight background color. I intend to add something like this in
+     the future to use for meta comments, such as errata.
+  */
 /*
-   Alternative color scheme that brings in the colors from the cover of the printed DRM.
-   Disabled for now because I'm not sure whether it looks nicer or just noisier.
-*/
-/*
-                  background-color: orange;
-                  border-top: 10px dotted purple;
-                  border-bottom: 10px dotted red;
-                  color: purple; font-family: sans-serif; font-weight: bold
-*/
-                }
-
-/*
-   Layout navigation buttons to exact locations. These selectors are a little wonky
-   because some buttons have links around them and some don't, and we need to position
-   both the button image and the surrounding link. So, we pick all the first-level
-   entities regardless of type. An alternative which is less brittle is to either add id
-   attributes to the A and IMG tags as appropriate, or to wrap them inside some other
-   entity which has the id assigned. However, I didn't want to take the time to add ids
-   everywhere. Feel free to do it someday and use #id selectors instead.
+  p[class~="Modelsw/Sub"] { position: fixed; bottom: 0; left: 15.5em; right: 0; margin: 0 0 0 1px; padding: 0.5em 2em; background-color: #ffa; border-top: 1px solid #dd8 }
+  p[class~="Modelsw/Sub"]:before { float: left; content: "Note:" url("some-image"); margin-right: 1em; font-variant: small-caps   }
 */
 
-#navigation                                    { height: 30px; line-height: 0 }
-#navigation img                                { border: none }
-#navigation > :first-child + * + *             { position: absolute; top: 10px; left:  10px }
-#navigation > :first-child                     { position: absolute; top: 10px; left:  66px }
-#navigation > :first-child + *                 { position: absolute; top: 10px; left: 122px }
-#navigation > :first-child + * + * + *         { position: absolute; top: 26px; left:  10px }
-#navigation > :first-child + * + * + * + *     { position: absolute; top: 26px; left:  66px }
-#navigation > :first-child + * + * + * + * + * { position: absolute; top: 26px; left: 122px }
-
-/* Name of section this page belongs to. */
-
-#section-header {
-                  margin-left: -10px; padding-left: 10px;
-                  padding-top: 0.25em; padding-bottom: 0.25em;
-                  background-color: #FA0;
-                  border: 3px dotted;
-                  border-top-color: red;
-                  border-right: none;
-                  border-bottom-color: purple;
-                  border-left-color: teal;
-                }
-#section-header p:first-child
-                {
-                  text-transform: uppercase;
-                  font-family: serif;
-                  font-size: smaller;
-                  letter-spacing: 0.5em;
-                  margin: 0.25em auto;
-                }
-#section-header p:first-child + p
-                {
-                  margin: 0.25em auto
-                }
-
-/* TOC in the navigation area. */
-
-.wm-div-toc:before
-                {
-                  display: block;
-                  color: black;
-                  content: "On this page:";
-                }
-/* "mini-TOC" links to other pages: hide "On this page:" */
-.wm-div-toc.pages:before
-                {
-                  display: none
-                }
-
-.wm-div-toc     {
-                  margin-top: 0.5em; padding-top: 0.5em; padding-bottom: 0.5em;
-                  padding-right: 5px;
-                  margin-left: -10px; padding-left: 10px;
-                  color: gray;
-                  font-family: sans-serif;
-                }
-
-/* don't underline navigation links; keeps things readable */
-.wm-div-toc a       { text-decoration: none }
-.wm-div-toc a:hover { text-decoration: underline }
+} /* @media screen */
 
 
-/*
-   Hide horizontal rules that are in the page header. They're used to provide separation
-   in the absence of CSS.
-*/
 
-.wm-div-headers hr { display: none }
-
-}
-
-
-/* When printing, hide on-screen navigation elements. */
+/* When printing, hide navigation elements. */
 
 @media print {
 
-/* the section name is redundant on section start pages, so hide it */
-body.section-start #section-name, 
+  /* hide navigation elements */
+  #navigation-header, #navigation-TOC { display: none }
 
-.wm-div-headers p#navigation,
-.wm-div-headers hr,
-.wm-div-toc                         { display: none }
+  /* print links like plain text */
+  a { text-decoration: none; color: inherit }
 
-/* print the section prefix and name at top of page */
-#section-prefix { text-transform: uppercase; letter-spacing: 0.75em }
-#section-name   { font-family: sans-serif }
+} /* @media print */
 
-/* print links like plain text */
-a { text-decoration: none; color: inherit; }
 
-}
 
-/* Page Footer Format */
+/* Page Footer */
 
-.wm-div-footers { font-size: smaller; margin-top: 10em }
+.wm-div-footers { clear: both; padding-top: 10em; font-size: smaller  }
 
 /*
-   Hide navigation footer; it is only useful when floating navigation buttons via CSS are
-   not available.
+   Hide navigation footer; it is only useful when floating navigation
+   buttons via CSS are not available.
 */
 
 #navigation-footer, /* migrate tags to use this id, then delete the second selector */
@@ -167,15 +234,15 @@ a { text-decoration: none; color: inherit; }
 
 
 /*
-  Always use bold for defining instance text (DFN tags), to match the printed DRM, since
-  it specifically says they are set in bold. Two notes:
+  Always use bold for defining instance text (DFN tags), to match the
+  printed DRM, since it specifically says they are set in bold. Two notes:
 
-  1. As it happens, the HTML was originally generated with STRONG tags (and no DFNs), so
-     it usually renders in bold, but now that we have a stylesheet, use it to ensure the
-     formatting is as desired.
+  1. As it happens, the HTML was originally generated with STRONG tags (and
+     no DFNs), so it usually renders in bold, but now that we have a
+     style sheet, use it to ensure the formatting is as desired.
      
-  2. Some browsers apply italics to DFN (in addition to bold), so be sure to suppress
-     that.
+  2. Some browsers apply italics to DFN (in addition to bold), so be sure
+     to suppress that.
 */
 
 dfn  { font-weight: bold; font-style: normal }
@@ -185,44 +252,48 @@ dfn  { font-weight: bold; font-style: normal }
 /*
   Headings
 
-  Add some whitespace above headings and a rule below to make them stand out more from
-  preceding text, and, for definition sections, float the "[Open Abstract Foo]" tag on the
-  right.
+  Add some whitespace above headings and a rule below to make them stand
+  out more from preceding text, and, for definition sections, float the
+  "[Open Abstract Foo]" tag on the right.
 */
 
-/* non-chapter sections often have custom page headings */
 h1.BookTitle,
 h1.WWW-TOC,
 h1[class~="PrT.PrefaceTitle"],
 h1[class~="ChT.ChapterTitle"],
 h1[class~="ApT.ApdxTitle"],
 h1[class~="BackT.BackTitle"],
-h1.WWW-IX                        { font-size: 24pt }
+h1.WWW-IX                        { font-size: 250% }
 
 h1.BookTitle                     {
                                    margin-top: 3em;
                                    border-top: 1px solid black;
-                                   padding-top: 0.25em
+                                   padding-top: 0.25em;
+                                 }
+
+h1[class~="PrT.PrefaceTitle"],
+h1[class~="ChT.ChapterTitle"],
+h1[class~="ApT.ApdxTitle"]       { margin-top: 1em }
+
+h1.WWW-TOC,
+h1[class~="BackT.BackTitle"],
+h1.WWW-IX                        { margin-top: 2em }
+
+h1[class~="PrT.PrefaceTitle"],
+h1[class~="ChT.ChapterTitle"],
+h1[class~="ApT.ApdxTitle"],
+h1[class~="BackT.BackTitle"],
+h1.WWW-IX                        {
+                                   margin-left: -3em; padding-left: 3em;
+                                   padding-bottom: 3em;
+                                   border-bottom: 1px solid;
                                  }
 
 h1.WWW-TOC,
 h1[class~="PrT.PrefaceTitle"],
-h1[class~="ChT.ChapterTitle"],
-h1[class~="ApT.ApdxTitle"],
 h1[class~="BackT.BackTitle"],
-h1.WWW-IX
-                                 { margin-top: 2em }
+h1.WWW-IX                        { padding-bottom: 2em }
 
-h1[class~="PrT.PrefaceTitle"],
-h1[class~="ChT.ChapterTitle"],
-h1[class~="ApT.ApdxTitle"],
-h1[class~="BackT.BackTitle"],
-h1.WWW-IX
-                                 {
-                                   margin-left: -3em; padding-left: 3em;
-                                   padding-bottom: 2em;
-                                   border-bottom: 1px solid
-                                 }
 h1[class~="H1.Heading1"]         { margin-left: -3.5em }
 h1[class~="H1.Heading1"], h2, h3 { padding-top: 1em; padding-bottom: 3px; border-bottom: 1px solid }
 h2, h3, h4                       { font-family: sans-serif }
@@ -234,15 +305,21 @@ h2[class~="ChT.ChapterTitle"]    {
                                    font-family: inherit
                                  }
 
-/* h4 is used for method signatures; indent if a line break occurs in the signature */
-h4 { margin-top: 2em; margin-bottom: 1em; text-indent: -1em; margin-left: 1em }
-/* consecutive method signatures should not have space between them */
+/* h4 is used for method signatures */
+
+/* group with the descriptive text that follows */
+h4      { margin-top: 2em; margin-bottom: 1em; }
 h4 + h4 { margin-top: -1em }
+/* treat all CODE in signatures as pre-formatted; some of them have line breaks and indenting */
+h4 code { white-space: pre }
+/* italic VAR in method signatures is sans-serif */
+h4 var  { font-family: sans-serif }
 
 /*
-   Hide these headings, which aren't in the printed DRM. I'm I'm hiding them rather than
-   deleting them from the HTML in case they prove useful in the future. No sense deleting
-   information you can just hide from view with CSS.
+   Hide these headings, which aren't in the printed DRM. I'm hiding them
+   rather than deleting them from the HTML in case they prove useful in the
+   future. No sense deleting information you can just hide from view with
+   CSS.
 */
 
 h1.Colophon-title,
@@ -253,34 +330,108 @@ hr.WWW-TOC,
 hr.Colophon-title     { display: none }
 hr.Colophon-title + * { border-top: 1px solid black; padding-top: 0.5em }
 
+/* no vertical space between colophon titles and the corresponding names */
+p[class~="CT.ColophonTitle"] { margin-bottom: 0 }
+p[class~="CN.ColophonName"]  { margin-top: 0 }
+
 
 /*
-   Definition section headings. Hide HRs and use CSS bottom borders instead.  Right-align
-   attributes summaries.
+   Definition section headings. Hide HRs and use CSS bottom borders
+   instead. Right-align attributes summaries.
+
+   Ideally, we'd probably use 'float: right', but Firefox (1.0.6) /
+   Mozilla / Netscape end up placing them below the horizontal rule instead
+   of directly to the right. Using 'position: absolute' lays out as desired
+   on Firefox and Safari, though if you make the window too narrow, the
+   attributes summary ends up overlapping the signature; if we used
+   'float', the summary would move down when necessary (just not all the
+   time, as in Firefox).
 */
-h3[class~="H4.Heading4"] var             { font-family: sans-serif }
-h3[class~="H4.Heading4"]                 { float: left; width: 100% }
-h3[class~="H4.Heading4"] > :first-child  { float: left }
-span.attributes-summary                  { float: right; margin-right: 1em }
-h3[class~="H4.Heading4"] + hr            { display: none }
+span.attributes-summary   { position: absolute; right: 1em; top: inherit }
+
+/*
+   When printing, Firefox (1.0.6) places all the absolutely positioned
+   elements on pages two and later on top of each other on the first
+   page. As a workaround, use a float instead. Unfortunately, Firefox
+   places these floats below the horizontal rule, but it's better than
+   putting them all on the first page, and it lays out correctly in
+   Safari/OmniWeb.
+*/
+@media print {
+  span.attributes-summary { position: static; float: right; margin-right: 1em }
+}
+
+h3[class~="H4.Heading4"] + hr { display: none }
+h3[class~="H4.Heading4"] var  { font-family: sans-serif }
+
+
+
+/*
+  Title page
+*/
+
+/* big book title */
+h1.BookTitle + p        { font-size: larger }
+
+/* big author's name */
+p.WWW-Author            { font-size: x-large; margin-top: 3em; margin-bottom: 2em  }
+
+/* move the "[This HTML....in 1996]" notice down */
+p[class~="Modelsw/Sub"] { margin-top: 10em }
+
+
+/*
+  Copyrights page
+*/
+
+/* the copyrights page goes out to the left edge of the paper and has a small font */
+div#body { margin-left: -8em; font-size: smaller }
+
+/* Warranty */
+div#warranty { padding-top: 1em; padding-bottom: 1em; font-weight: bold } 
+
+/* ISBN and Library of Congress information */
+div#ISBN-LOC { border-top: 1px solid }
+
+/* layout LOC info without space between paragraphs, and with proper indenting */
+p[class~="0LOC"] { margin-bottom: 0.5em; font-weight: bold }
+p[class~="1LOC"], p[class~="2LOC"] { margin: 0 auto }
+
+/* float ISBN and LOC info left-to-right */
+p[class~="0ISBN/LC"] { float: left; margin-right: 4em }
+div#LOC { float: left; max-width: 28em; margin-right: 1em }
+p[class~="3LOC"] { clear: both; float: right; text-align: center; margin-top: -1em }
+
+/*
+  A work-around for an apparent Safari/OmniWeb/WebCore bug in which the
+  horizontal rule is rendered at the same (very narrow) width as the "CIP" float
+  above it, despite the fact that we have a "clear: both" on the surrounding DIV.
+*/
+div.wm-div-footers > hr:first-child { clear:both; width: 100%  }
+
 
 /*
   Contents
-  
-  The Contents chapter has some unique formatting.
 */
 
+/* bring the first item up closer to the bottom of the section heading */
+h1.WWW-TOC { margin-bottom: 0 }
+h2#about   { margin-top: 0; padding-top: 0 }
+
+/* out-dent the number/name of each section to the left, along with the horizontal rule */
 body.contents h2 {
-                   margin-left: -4.5em; padding-left: 4.5em;
-                   margin-bottom: 0.25em
+                   margin-left: -5em; padding-left: 5em;
+                   margin-bottom: 0.25em;
                  }
-body.contents h2 > span:first-child
+body.contents h2 > span
                  {
-                   float: left;
-                   margin-left: -5.5em;
-                   padding-top: 0.25em;
-                   font-weight: normal;
-                   font-size: smaller;
+                   float: left; margin-left: -5em;
+                 }
+/* make the section label smaller/lighter;
+   doing this with a nested SPAN keeps the baselines aligned */
+body.contents h2 > span > span
+                 {
+                   font-weight: normal; font-size: smaller;
                  }
 
 /*
@@ -293,18 +444,42 @@ body.contents h2 > span:first-child
 body.contents ul.TOC ul { display: none }
 
 
+/*
+  Glossary
+*/
+
+/* bring the first item up closer to the bottom of the section heading */
+h1[class~="BackT.BackTitle"] { margin-bottom: 0 }
+dl.Glossary > dt:first-child { margin-top: 0.5em }
+dl.Glossary  { margin-top: 0.5em }
+
+
+/*
+  Index
+
+  The index is a series of nested lists. There are no bullets, and the
+  items are compactly spaced vertically.
+*/
+
+div.wm-div-index ul { list-style-type: none }
+div.wm-div-index li { margin: 0 }
+
+/* bring the first item up closer to the bottom of the section heading */
+h1.WWW-IX { margin-bottom: 0 }
+h2#symbols { margin-top: 0.2em; padding-top: 0 }
+
+
 
 /*
   Lists
 
   To match the printed DRM, left-align bullets near/at the left margin
-  instead of indenting, use larger vertical margins than the default
-  (which is about zero), and use squares for the first level bullets.
-
+  instead of indenting, use larger vertical margins than the default (which
+  is about zero), and use squares for the first level bullets.
 */
 
-ul                 { padding-left: 1.25em }
-ol                 { padding-left: 1.5em  }
+ul                 { padding-left: 1.25em; margin-left: 0 }
+ol                 { padding-left: 1.5em;  margin-left: 0 }
 
 ul                 { list-style-type: square }
 ul ul,    ol ul    { list-style-type: circle }
@@ -313,35 +488,66 @@ ul ul ul, ol ul ul { list-style-type: disc   }
 li                 { margin-top: 0.75em }
 li li              { margin-top: 0.5em  }
 
-/* TOC Lists are formatted more compactly. */
+
+/* Contents, Index and navigation lists are formatted more compactly. */
 
 /* no space between items */
 ul.TOC li,
 ul.index li        { margin-top: 0 }
 
 /* little space between items */
-.wm-div-toc.pages li
+#navigation-TOC > ul > li,
+#navigation-TOC > ol > li
                    { margin: 0.25em auto }
-.wm-div-toc.pages ol
+#navigation-TOC > ol
                    { margin: 0 auto }
 
-/* use bullets, numbers, letters for "mini-TOC" */
-.wm-div-toc.pages ul.page-toc
-                   {
-                     list-style-type: square; padding-left: 1em;
-                     margin: 0 auto
+/* somewhat shallow indents to maximize horizontal space and minimize line wrapping */
+#navigation-TOC > ul ul,
+#navigation-TOC > ol ul
+                   { padding-left: 0.5em }
+
+/* use bullets, numbers, letters for different groups of the navigation "mini-TOC" */
+ul.front-matter,
+ul.back-matter     {
+                     list-style-type: square;
+                     padding-left: 1em;
+                     margin: 0;
                    }
-.wm-div-toc.pages ol.page-toc
-                   { padding-left: 1em }
-/* these rules apply to the ""mini-TOC"" and the interior nav. links on, e.g., the Contents page */
-ol.page-toc.appendices
-                   { list-style-type: upper-latin }
-ul.page-toc.errata
-                   { list-style-type: circle }
+#navigation-TOC ol { padding-left: 1em }
+
+#navigation-TOC > ul > li > ul,
+#navigation-TOC > ol > li > ul
+                   {
+                     list-style-type: none;
+                     font-size: smaller
+                   }
+#navigation-TOC > ul > li ul > li > ul,
+#navigation-TOC > ol > li ul > li > ul,
+#navigation-TOC > ul > li ul > li > ul > li > ul,
+#navigation-TOC > ol > li ul > li > ul > li > ul
+                   { list-style-type: none }
+
+/* appendices are labeled with letters; the errata section has a distinguishing bullet */
+ol.appendices      { list-style-type: upper-latin }
+ul.errata          {
+                     list-style-type: circle; padding-left: 1em;
+                     margin-top: 0;
+                     /* this is a little kludgey, since it depends on ul.errata being at
+                        the bottom of the list, but this gets us some padding at the
+                        bottom of the navigation area -- padding-bottom on
+                        #navigation-TOC seems to be ignored, even though top, left and
+                        right all work as expected */
+                     padding-bottom: 1em;
+                   }
+
+/* highlight the current page in the navigation area */
+li#current         { font-weight: bold   }
+li#current li      { font-weight: normal }
 
 
-/* no space between wrapped lines; helps group them together */
-ul.page-toc li     { line-height: 100% }
+/* no space between wrapped lines; helps group them together visually */
+ul.page-toc li ul li { line-height: 100% }
 
 /* no margin above lists, no bullets */
 ul.TOC,      ul.TOC ul,
@@ -352,28 +558,28 @@ ul.page-toc, ul.page-toc ul
                      list-style-type: none;
                    }
 ul.TOC,
-ul.index,
-ul.page-toc        { padding-left: 0 }
-
-/* shallower indents and smaller fonts to provide more horizontal room */
-ul.page-toc ul        { padding-left: 0.5em }
-ul.page-toc > li > ul { font-size: smaller }
+ul.index           { padding-left: 0 }
 
 /* hide GF method entries and attributes summaries */
 ul.page-toc li.gf-method,
 ul.page-toc span.attributes-summary { display: none }
 
-/* some are layed out horizontally (e.g., Index) */
-ul.page-toc.vertical + ul.page-toc.horizontal li
-                               { margin-top: 0; padding-top: 0 }
-ul.page-toc.horizontal li      { float: left; width: 1em; text-align: center }
-ul.page-toc.horizontal li + li { margin-left: 1em }
-ul.page-toc.horizontal + *     { clear: left }
+/* grid layout for Index letters */
+ul.horizontal,
+ul.vertical           { list-style-type: none }
+ul.horizontal li      { margin-top: 0 }
+ul.horizontal a       { float: left; width: 1.5em; text-align: center }
+ul.horizontal + *     { clear: left }
+/* make it easier to target and click the letters by putting them in light boxes */
+ul.horizontal a       { background-color: #ddd; margin: 1px }
+
+
 
 /*
   Definitions
 
-  Definition labels (e.g., "Signature:") are bold and set off in the left margin.
+  Definition labels (e.g., "Signature:") are bold and set off in the left
+  margin.
 
   Terms and definitions are positioned side-by-side.
 
@@ -390,13 +596,13 @@ dl p { border-left: 2px solid red }
 /* top-level DT outdent/small/bold */
 .wm-div-body > dl.Cliche > dt
                {
-                 float: left; margin-left: -8em;
-                 font-family: sans-serif;
-                 font-weight: bold;
-                 font-size: smaller;
-                 /* this margin-top is kinda kludgey, but necessary to line up baselines;
-                    feel free to come up with a better way */
-                 margin-top: 0.2em;
+                 float: left; margin-left: -7em;
+               }
+/* make the section label smaller/bold;
+   doing this with a nested SPAN keeps the baselines aligned */
+.wm-div-body > dl.Cliche > dt > span
+               {
+                 font: bold smaller sans-serif;
                }
 .wm-div-body > dl.Cliche > dd      { margin-left: 0 }
 .wm-div-body > dl.Cliche > dd > p  {  margin-top: 0 }
@@ -404,8 +610,7 @@ dl p { border-left: 2px solid red }
 /* second-level DTs outdent and have a fixed width */
 .wm-div-body > dl.Cliche > dd > dl > dt
                {
-                 float: left;
-                 padding-right: 1em;
+                 float: left; padding-right: 1em;
                }
 .wm-div-body > dl.Cliche > dd > dl > dd
                {
@@ -416,18 +621,24 @@ dl p { border-left: 2px solid red }
 .wm-div-body > dl.Cliche > dd > dl > dd > p { margin: 0.5em auto; }
 
 
+/* Glossary definitions place the term and definition close together, flush left */
+
+dt.Glossary { margin-top: 1em }
+dd.Glossary { margin-left: 0 }
+
+
 
 /*
-  Table Formatting
+  Tables
 
-  All tables should have some additional padding between the columns
-  so they don't run together, captions and column headings are
-  left-aligned, and cell text is vertically aligned at the top.
+  All tables should have some additional padding between the columns so
+  they don't run together, captions and column headings are left-aligned,
+  and cell text is vertically aligned at the top.
   
-  For tables labled with "Table ##-## Title", left-align the caption
-  and column headings and put a rule under the caption. Also, some
-  additional space is placed between the table number and the
-  title. (table class="numbered")
+  For tables labled with "Table ##-## Title", left-align the caption and
+  column headings and put a rule under the caption. Also, some additional
+  space is placed between the table number and the title. (table
+  class="numbered")
 
   For "index" tables that consist of three columns (an identifier, a
   Description, and a Page number), provide a minimum width for the
@@ -436,17 +647,16 @@ dl p { border-left: 2px solid red }
 */
 
 /*
+   NOTE: On Mac OS X, Safari and Omniweb don't handle the margin-top of
+   captions correctly. Those browsers behave as though the caption
+   margin-top is for the table and put space between the caption and the
+   table, instead of above the caption.
 
-   NOTE: On Mac OS X, Safari and Omniweb don't handle the margin-top
-   of captions correctly. Those browsers behave as though the caption
-   margin-top is for the table and put space between the caption and
-   the table, instead of above the caption.
-
-   As a workaround, we use the caption's padding-top. The drawback is
-   that adjacent margins don't collapse and you can end up with a lot
-   of extra space. One common case is consecutive tables, which we
-   work around with a special rule to eliminate the padding when a
-   table immediately follows another table.
+   As a workaround, we use the caption's padding-top. The drawback is that
+   adjacent margins don't collapse and you can end up with a lot of extra
+   space. One common case is consecutive tables, which we work around with
+   a special rule to eliminate the padding when a table immediately follows
+   another table.
 
    Change this to use margin-top when those browsers (the WebCore
    framework, actually) are fixed.
@@ -464,15 +674,15 @@ table.numbered + table.numbered caption /* caption margin-top workaround */
 table.numbered caption {
                       /* margin-top */ padding-top: 2em;
                          padding-bottom: 0.25em;
-                         border-bottom: 1px solid black
+                         border-bottom: 1px solid black;
                        }
 table.numbered tr > th { padding-top: 1em; padding-bottom: 0 } 
 
 /*
-  Add some space between the "Table ##-##" number and the table title.
-  The number label should have some kind of tag around it. This will
-  actually add space around any and all elements within the caption,
-  so we don't have to care exactly what tag or tags are used.
+  Add some space between the "Table ##-##" number and the table title.  The
+  number label should have some kind of tag around it. This will actually
+  add space around any and all elements within the caption, so we don't
+  have to care exactly what tag or tags are used.
 */
 
 table.numbered caption * { padding-right: 2em }
@@ -480,11 +690,11 @@ table.numbered caption * { padding-right: 2em }
 table td { vertical-align: top }
 
 /*
-  For tables with thead/tbody groups, put lines between groups. This
-  is primarily for the DRM Operators table (4-1). We only do this for
-  tables specifically designed for this and marked with the "grouped"
-  class, because other tables have an implicit tbody group around the
-  entire table and display undesired lines on some browsers.
+  For tables with thead/tbody groups, put lines between groups. This is
+  primarily for the DRM Operators table (4-1). We only do this for tables
+  specifically designed for this and marked with the "grouped" class,
+  because other tables have an implicit tbody group around the entire table
+  and display undesired lines on some browsers.
 */
 
 table.grouped thead	{ border-bottom: hidden } /* no line below the header */
@@ -492,15 +702,17 @@ table.grouped tbody	{ border-top: 1px solid } /* put a line between row groups *
 
 caption, th		{ text-align: left; font-family: sans-serif }
 
-th, td 	      	  	{ padding-top: 0.5em; padding-bottom: 0.5em }	/* space rows about a line height */
-th + th, td + td 	{ padding-left: 2em; vertical-align: baseline }
+th, td 	      	  { padding-top: 0.5em; padding-bottom: 0.5em }	/* space rows about a line height */
+th + th, td + td  { padding-left: 2em; vertical-align: baseline }
 
-th.primary, td.primary	{ width: 12em } /* the "primary" column should avoid wrapping */
-table.numbered th.primary + th + th { width: 2em } /* fix the width of the last column so that the middle column gets any additional space allocated to it */
+th.primary, td.primary	            { width: 12em } /* the "primary" column should avoid wrapping */
+table.numbered th.primary + th + th { width:  2em } /* fix the width of the last column so
+                                                       that the middle column gets any
+                                                       additional space allocated to it */
 
 /*
-   Don't underline links in the Description column, because it's a lot of text and makes
-   it harder to read.
+   Don't underline links in the Description column, because it's a lot of
+   text and makes it harder to read.
 */
 
 table.numbered td:first-child + td a       { text-decoration: none }
@@ -508,9 +720,10 @@ table.numbered td:first-child + td a:hover { text-decoration: underline }
 
 
 /*
-  The generated table contents wrap each cell with a paragraph tag (which we should
-  probably remove at some point), causing ridiculous amounts of vertical whitespace. Make
-  sure Paragraphs within tables don't add any of their own top/bottom margins.
+  The generated table contents wrap each cell with a paragraph tag (which
+  we should probably remove at some point), causing ridiculous amounts of
+  vertical whitespace. Make sure Paragraphs within tables don't add any of
+  their own top/bottom margins.
 */
 
 table tr p { margin-top: 0; margin-bottom: 0 }
@@ -559,129 +772,74 @@ table.class-attributes-legend td.description + td { padding-left: 2em }
 
 
 /*
-  Code Formatting
+  Code
 
-  Italicized text inside of CODE is not literal code and should be
-  rendered in a body font instead of the code font. Additionally,
-  references in documentation to any of those non-literals should be
-  rendered using the same font (class="parameter" or VAR).
+  CODE normally collapses consecutive whitespace. The DRM, however,
+  contains a number of places where code inside a sentence is also
+  pre-formatted with line breaks and indenting, so we define a class that
+  is used to make those cases honor whitespace.
+
+  Italicized text inside of CODE is not literal code and should be rendered
+  in a body font instead of the code font. Additionally, references in
+  documentation to any of those non-literals should be rendered using the
+  same font (class="parameter" or VAR).
 
   NOTE: The HTML originally used I and class="parameter" to identify
-  variables, parameters, and arguments, but we're slowly migrating
-  them to use VAR. Eventually, we should be able to remove the
-  patterns for them and just use VAR.
+  variables, parameters, and arguments, but we're slowly migrating them to
+  use VAR. Eventually, we should be able to remove the patterns for them
+  and just use VAR.
 */
+
+code.pre { white-space: pre }
 
 code i, i.parameter, var { font-family: serif }
 
-/* Some segments of "code" are not literal and are contrasted by not using bold. */
+/* some segments of "code" are not literal and are contrasted by not using bold */
 h4 > code em { font-weight: normal; font-style: normal }
-
-/* Italic text in bold code (predefined method signatures) is sans-serif. */
-h4 > code var { font-family: sans-serif }
 
 
 
 /*
-  Regular Expression Meta-Syntax Formatting
+  Regular Expression Meta-Syntax
 
   Regular expression meta-syntax is used to define some parts of the
-  grammar outside of the formal BNF grammar. Regular expression
-  markers like {, and }* should be bold and in the code font.
+  grammar outside of the formal BNF grammar. Regular expression markers
+  like {, and }* should be bold and in the code font.
 */
 
 strong.MetaSyntax,
-strong.re { font-family: monospace }
+strong.re               { font-family: monospace }
 code strong.MetaSyntax,
-code strong.re { font-family: inherit }
+code strong.re          { font-family: inherit }
 
 
 
 /*
-  BNF Formatting
+  BNF
   
-  Some words are set in all-caps, others in italics. (I have yet to
-  figure out the meaning of one vs. the other, so, unfortunately, I
-  haven't been able to give these classes very meaningful names.)
-  These appear both within the BNF chapters and elsewhere.
+  Some words are set in all-caps, others in italics. (I have yet to figure
+  out the meaning of one vs. the other, so, unfortunately, I haven't been
+  able to give these classes very meaningful names.)  These appear both
+  within the BNF chapters and elsewhere.
   
   Set paragraphs close together vertically.
 
-  Specify a serif font for italics, to match the printed DRM, and
-  because I think it looks better.
+  Specify a serif font for italics, to match the printed DRM, and because I
+  think it looks better.
   
   Literal code in the BNF is set in bold.
 
-  The phrase "one of" has some extra padding to visually separate it
-  from what follows.
-
+  The phrase "one of" has some extra padding to visually separate it from
+  what follows.
 */
 
-.BNFCaps          { font-variant: small-caps; font-style: normal; /*font-size: larger*/ }
-.BNF dd p         { margin: 0.25em 0 0 0 }
+.BNFCaps          { font-variant: small-caps; font-style: normal; }
 .BNF dt           { margin-top: 1em }
+.BNF dd p         { margin: 0.25em 0 0 0 }
 .BNF i,
 .BNF em, em.BNF   { font-family: serif }
 .BNF code         { font-weight: bolder }
 .BNF code sub     { font-weight: normal }  /* don't make subscripted suffixes bold */
 .BNF .BNFCaps sub { font-variant: normal } /* don't make subscripted suffixes small-caps */
 .BNF .one-of      { padding-right: 1em }
-.BNF dd p>*       { margin-right: 0.25em } /* a little extra space between tokens */
-
-
-
-/*
-  Index Formatting
-
-  The index is a series of nested lists. There are no bullets, and the
-  items are compactly spaced vertically.
-
-*/
-
-div.wm-div-index ul { list-style-type: none }
-div.wm-div-index li { margin: 0 }
-
-
-
-/*
-img { border-width: 0px; }
-ul { list-style-type: square }
-li > ul { list-style-type: disc; }
-
-
-div.wm-div-body {
-	margin: 20px;
-	padding: 10px;
-	background-color: #dddddd;
-}
-*/
-
-
-/*
-div.wm-div-footnotes {
-	margin: 20px;
-	padding: 10px;
-	background-color: red;
-}
-
-div.wm-div-footers {
-	margin: 20px;
-	padding: 10px;
-	background-color: #dddddd;
-}
-
-div.wm-div-index {
-	margin: 20px;
-	padding: 10px;
-	background-color: green;
-}
-
-*/
-
-
-/*
-div.wm-div-footers {
-	border-top: thin solid;
-	margin-top: 2em
-}
-*/
+.BNF dd p > *     { margin-right: 0.25em } /* a little extra space between tokens */

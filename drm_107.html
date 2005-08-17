@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
@@ -14,8 +14,8 @@
   
   <link rel="top" href="drm_1.html" />
   <link rel="start first" href="index.html" />
-  <link rel="contents" href="drm_2.html" />
-  <link rel="copyright" href="drm_3.html" />
+  <link rel="copyright" href="drm_2.html" />
+  <link rel="contents" href="drm_3.html" />
   <link rel="glossary" href="drm_126.html" />
   <link rel="index" href="drm_127.html" />
   <link rel="last author" href="drm_128.html" />
@@ -55,58 +55,109 @@
 <a name="HEADING107"></a>
 
 <div class="wm-div-headers">
-<p id="navigation"><a href="drm_106.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_108.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+<div id="navigation-header">
+    <p id="book-title">The Dylan Reference Manual</p>
+    <p id="basic-navigation"><a class="previous" title="Go to previous page" href="drm_106.html"><img alt="Previous" src="prev.gif" /></a> <a class="next" title="Go to next page" href="drm_108.html"><img alt="Next" src="next.gif" /></a> <a class="up" title="Go to start of chapter" href="drm_96.html"><img alt="Up" src="up.gif" /></a> <a class="start" title="Go to start of book" href="drm_1.html"><img alt="Top" src="top.gif" /></a> <a class="contents" title="Go to table of contents" href="drm_3.html"><img alt="Contents" src="content.gif" /></a> <a class="index" title="Go to index" href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+  </div>
 
 <div id="section-header">
   <p id="section-prefix">Chapter 12</p>
   <p id="section-name">The Built-In Functions</p>
 </div>
 
-<div class="wm-div-toc">
-  <ul class="page-toc">
-    <li><a href="drm_107.html#HEADING107-2">Signaling Conditions</a>
+<div id="navigation-TOC">
+  <ul class="front-matter">
+    <li><a href="drm_1.html">Start</a></li>
+    <li><a href="drm_3.html">Contents</a></li>
+    <li><a href="drm_4.html">About This Book</a></li>
+  </ul>
+  <ol class="chapters">
+    <li><a href="drm_5.html">Introduction</a></li>
+    <li><a href="drm_9.html">Syntax</a></li>
+    <li><a href="drm_25.html">Program Structure</a></li>
+    <li><a href="drm_28.html">Program Control</a></li>
+    <li><a href="drm_38.html">Types and Classes</a></li>
+    <li><a href="drm_47.html">Functions</a></li>
+    <li><a href="drm_52.html">Conditions</a></li>
+    <li><a href="drm_59.html">Collections</a></li>
+    <li><a href="drm_70.html">Sealing</a></li>
+    <li><a href="drm_76.html">Macros</a></li>
+    <li><a href="drm_87.html">The Built-In Classes</a></li>
+    <li><a href="drm_96.html">The Built-In Functions</a>
       <ul>
-	<li><a href="drm_107.html#HEADING107-3"><code>signal</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_107.html#HEADING107-12"><code>error</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_107.html#HEADING107-21"><code>cerror</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_107.html#HEADING107-32"><code>break</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_107.html#HEADING107-42"><code>check-type</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_107.html#HEADING107-49"><code>abort</code> <span class="attributes-summary">[Function]</span></a></li>
-      </ul>
-    </li>
-    <li><a href="drm_107.html#HEADING107-56">Handling Conditions</a>
-      <ul>
-	<li><a href="drm_107.html#HEADING107-57"><code>default-handler</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-	  <ul>
-	    <li class="gf-method"><a href="drm_107.html#HEADING107-63"><code>default-handler</code> condition &rArr;  false <span class="attributes-summary">[G.F. Method]</span></a></li>
-	    <li class="gf-method"><a href="drm_107.html#HEADING107-65"><code>default-handler</code> serious-condition &rArr;  {does not return} <span class="attributes-summary">[G.F. Method]</span></a></li>
-	    <li class="gf-method"><a href="drm_107.html#HEADING107-67"><code>default-handler</code> warning &rArr;  false <span class="attributes-summary">[G.F. Method]</span></a></li>
-	    <li class="gf-method"><a href="drm_107.html#HEADING107-69"><code>default-handler</code> restart &rArr;  {does not return} <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+	<li><a href="drm_97.html">Overview</a></li>
+	<li><a href="drm_98.html">Constructing and Initializing Instances</a></li>
+	<li><a href="drm_99.html">Equality and Comparison</a></li>
+	<li><a href="drm_100.html">Arithmetic Operations</a></li>
+	<li><a href="drm_101.html">Coercing and Copying Objects</a></li>
+	<li><a href="drm_102.html">Collection Operations</a></li>
+	<li><a href="drm_103.html">Reflective Operations on Types</a></li>
+	<li><a href="drm_104.html">Functional Operations</a></li>
+	<li><a href="drm_105.html">Function Application</a></li>
+	<li><a href="drm_106.html">Reflective Operations on Functions</a></li>
+	<li id="current">Operations on Conditions
+	  <ul class="page-toc">
+	    <li><a href="#HEADING107-2">Signaling Conditions</a>
+	      <ul>
+		<li><a href="#HEADING107-3"><code>signal</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING107-12"><code>error</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING107-21"><code>cerror</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING107-32"><code>break</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING107-42"><code>check-type</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING107-49"><code>abort</code> <span class="attributes-summary">[Function]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="#HEADING107-56">Handling Conditions</a>
+	      <ul>
+		<li><a href="#HEADING107-57"><code>default-handler</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+		  <ul>
+		    <li class="gf-method"><a href="#HEADING107-63"><code>default-handler</code> <var>condition</var> &rArr;  <var>false</var> <span class="attributes-summary">[G.F. Method]</span></a></li>
+		    <li class="gf-method"><a href="#HEADING107-65"><code>default-handler</code> <var>serious-condition</var> &rArr;  {does not return} <span class="attributes-summary">[G.F. Method]</span></a></li>
+		    <li class="gf-method"><a href="#HEADING107-67"><code>default-handler</code> <var>warning</var> &rArr;  <var>false</var> <span class="attributes-summary">[G.F. Method]</span></a></li>
+		    <li class="gf-method"><a href="#HEADING107-69"><code>default-handler</code> <var>restart</var> &rArr;  {does not return} <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+		  </ul>
+		</li>
+		<li><a href="#HEADING107-71"><code>restart-query</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+		  <ul>
+		    <li class="gf-method"><a href="#HEADING107-78"><code>restart-query</code> <var>restart</var> &rArr; <var>object</var> <span class="attributes-summary">[G.F. Method]</span></a></li>
+		  </ul>
+		</li>
+		<li><a href="#HEADING107-80"><code>return-query</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+	      </ul>
+	    </li>
+	    <li><a href="#HEADING107-87">Introspection on Conditions</a>
+	      <ul>
+		<li><a href="#HEADING107-88"><code>do-handlers</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING107-94"><code>return-allowed?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
+		  <ul>
+		    <li class="gf-method"><a href="#HEADING107-101"><code>return-allowed?</code> <var>condition</var> &rArr; <var>false</var> <span class="attributes-summary">[G.F. Method]</span></a></li>
+		  </ul>
+		</li>
+		<li><a href="#HEADING107-103"><code>return-description</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
+		<li><a href="#HEADING107-110"><code>condition-format-string</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING107-116"><code>condition-format-arguments</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING107-122"><code>type-error-value</code> <span class="attributes-summary">[Function]</span></a></li>
+		<li><a href="#HEADING107-128"><code>type-error-expected-type</code> <span class="attributes-summary">[Function]</span></a></li>
+	      </ul>
+	    </li>
 	  </ul>
 	</li>
-	<li><a href="drm_107.html#HEADING107-71"><code>restart-query</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-	  <ul>
-	    <li class="gf-method"><a href="drm_107.html#HEADING107-78"><code>restart-query</code> restart &rArr; object <span class="attributes-summary">[G.F. Method]</span></a></li>
-	  </ul>
-	</li>
-	<li><a href="drm_107.html#HEADING107-80"><code>return-query</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
       </ul>
     </li>
-    <li><a href="drm_107.html#HEADING107-87">Introspection on Conditions</a>
-      <ul>
-	<li><a href="drm_107.html#HEADING107-88"><code>do-handlers</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_107.html#HEADING107-94"><code>return-allowed?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-	  <ul>
-	    <li class="gf-method"><a href="drm_107.html#HEADING107-101"><code>return-allowed?</code> condition &rArr; false <span class="attributes-summary">[G.F. Method]</span></a></li>
-	  </ul>
-	</li>
-	<li><a href="drm_107.html#HEADING107-103"><code>return-description</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-	<li><a href="drm_107.html#HEADING107-110"><code>condition-format-string</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_107.html#HEADING107-116"><code>condition-format-arguments</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_107.html#HEADING107-122"><code>type-error-value</code> <span class="attributes-summary">[Function]</span></a></li>
-	<li><a href="drm_107.html#HEADING107-128"><code>type-error-expected-type</code> <span class="attributes-summary">[Function]</span></a></li>
-      </ul>
-    </li>
+    <li><a href="drm_108.html">Other Built-In Objects</a></li>
+    <li><a href="drm_110.html">The Built-In Macros and Special Definitions</a></li>
+  </ol>
+  <ol class="appendices">
+    <li><a href="drm_116.html">BNF</a></li>
+    <li><a href="drm_119.html">Exported Names</a></li>
+  </ol>
+  <ul class="back-matter">
+    <li><a href="drm_126.html">Glossary</a></li>
+    <li><a href="drm_127.html">Index</a></li>
+    <li><a href="drm_128.html">Colophon</a></li>
+  </ul>
+  <ul class="errata">
+    <li><a href="drm_errata.html">Errata</a></li>
   </ul>
 </div>
 
@@ -126,7 +177,7 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1919"></a>Signals a condition.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signatures:</dt>
+  <dt class="Cliche"><span>Signatures:</span></dt>
   <dd class="Cliche">
     <p class="Cliche">
       <code>signal <var>condition</var> </code>
@@ -135,7 +186,7 @@
       &rArr;<code> #rest <var>values</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments (1):</dt>
+  <dt class="Cliche"><span>Arguments (1):</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>condition</var></dt>
@@ -144,7 +195,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Arguments (2):</dt>
+  <dt class="Cliche"><span>Arguments (2):</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>string</var></dt>
@@ -154,7 +205,7 @@
       <dt class="RP.RoutineParam"><var>arguments</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>values</var></dt>
@@ -163,7 +214,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Signals the <var>condition</var>, trying each active dynamic handler, the most recent first. If all dynamic handlers decline, <code>signal</code> calls <code>default-handler(<var>condition</var>)</code>. If a handler returns, all the values that it returned are returned from <code>signal</code>. If <code>signal</code> returns when <var>condition</var>'s recovery protocol does not allow returning, some handler has violated protocol; <code>signal</code> does not check for this error. If <var>condition</var> is a restart, the caller of <code>signal</code> should always assume that it might return.</p>
     <p class="T1.Text1">The second form signals a condition of type <code>&lt;simple-warning&gt;</code>.</p></dd>
 </dl>
@@ -172,7 +223,7 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1921"></a>Signals a nonrecoverable error.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signatures:</dt>
+<dt class="Cliche"><span>Signatures:</span></dt>
 <dd class="Cliche">
   <p class="Cliche">
     <code>error <var>condition</var> </code>
@@ -181,7 +232,7 @@
     &rArr;<code> <var>{will never return}</var></code>
   </p>
 </dd>
-<dt class="Cliche">Arguments (1):</dt>
+<dt class="Cliche"><span>Arguments (1):</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>condition</var></dt>
@@ -190,7 +241,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Arguments (2):</dt>
+<dt class="Cliche"><span>Arguments (2):</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>string</var></dt>
@@ -200,9 +251,9 @@
 <dt class="RP.RoutineParam"><var>arguments</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;object&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche"><p class="Cliche"> None. <code>error</code> will never return.</p></dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> <code>error</code> is similar to <code>signal</code> but never returns; if a handler returns, <code>error</code> invokes the debugger immediately. <code>error</code> is used to make it clear that a program does not expect to receive control again after signaling a condition and might enable the compiler to generate slightly more compact code.</p>
 <p class="T1.Text1">The second form signals a condition of type <code>&lt;simple-error&gt;</code>.</p></dd>
 </dl>
@@ -211,7 +262,7 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1923"></a>Signals a correctable error.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signatures:</dt>
+<dt class="Cliche"><span>Signatures:</span></dt>
 <dd class="Cliche">
   <p class="Cliche">
     <code>cerror <var>restart-description condition</var> </code>
@@ -220,7 +271,7 @@
     &rArr;<code> <var>false</var></code>
   </p>
 </dd>
-<dt class="Cliche2">Arguments (1):</dt>
+<dt class="Cliche2"><span>Arguments (1):</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>restart-description</var></dt>
@@ -230,7 +281,7 @@
 <dt class="RP.RoutineParam"><var>condition</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;condition&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche2">Arguments (2):</dt>
+<dt class="Cliche2"><span>Arguments (2):</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>restart-description </var></dt>
@@ -242,7 +293,7 @@
 <dt class="RP.RoutineParam"><var>arguments</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;object&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>false</var></dt>
@@ -251,7 +302,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> <code>cerror</code> is the same as <code>error</code> but first establishes a handler for<code> &lt;simple-restart&gt;</code>, with a format string of <var>restart-description</var> and format arguments of a sequence containing the <var>arguments</var>.</p>
 <p class="T1.Text1">If the restart handler is invoked, <code>cerror</code> returns <code>#f</code>; otherwise, <code>cerror</code> never returns. If <code>cerror</code> returns, the program should take the corrective actions promised in the <var>restart-description</var>. <code>cerror</code> is the standard way to signal correctable errors when no special class of restart condition is required.</p></dd>
 </dl>
@@ -260,7 +311,7 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Invokes the debugger<a name="MARKER-9-1925"></a>.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signatures:</dt>
+<dt class="Cliche"><span>Signatures:</span></dt>
 <dd class="Cliche">
   <p class="Cliche">
     <code>break <var>condition</var> </code>
@@ -271,7 +322,7 @@
     &rArr;<code> <var>false</var></code>
   </p>
 </dd>
-<dt class="Cliche">Arguments (1):</dt>
+<dt class="Cliche"><span>Arguments (1):</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>condition</var></dt>
@@ -280,7 +331,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Arguments (2):</dt>
+<dt class="Cliche"><span>Arguments (2):</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>string</var></dt>
@@ -290,9 +341,9 @@
 <dt class="RP.RoutineParam"><var>arguments</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> Instances of <code>&lt;object&gt;</code>, interpreted as format arguments.</p></dd>
 </dl></dd>
-<dt class="Cliche">Arguments (3):</dt>
+<dt class="Cliche"><span>Arguments (3):</span></dt>
 <dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>false</var></dt>
@@ -301,7 +352,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Obtains a condition in the same way as <code>signal</code> but then invokes the debugger immediately without signaling first. <code>break</code> establishes a <code>&lt;simple-restart&gt;</code> so the debugger can continue execution. This is useful for breakpoints. <code>break</code> always returns <code>#f</code>. With no arguments, a default message string is used.</p>
 <p class="T1.Text1">The behavior of the debugger is implementation-defined.</p></dd>
 </dl>
@@ -310,14 +361,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Checks an object to ensure that it is an instance of a specified type.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
 <dd class="Cliche">
   <p class="signature">
     <code>check-type <var>value type</var> </code>
     &rArr;<code> <var>value</var></code>
   </p>
 </dd>
-<dt class="Cliche">Arguments:</dt>
+<dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>value</var></dt>
@@ -327,7 +378,7 @@
 <dt class="RP.RoutineParam"><var>type</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;type&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>value</var></dt>
@@ -336,7 +387,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Checks <var>value</var> to ensure that it is an instance of <var>type</var>, and signal an error of type <code>&lt;type-error&gt;</code> if it is not.</p></dd>
 </dl>
 <a name="HEADING107-49"></a>
@@ -344,17 +395,17 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription">Aborts and never returns.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>abort</code>
     </p>
   </dd>
-<dt class="Cliche">Arguments:</dt>
+<dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche"><p class="Cliche"> None.</p></dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche"><p class="Cliche"> None. <code>abort</code> will never return.</p></dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Performs <code>error(make (&lt;abort&gt;))</code>.</p>
 <p class="T1.Text1">This function is provided as a convenient shortcut. The call is to <code>error</code>, rather than to <code>signal</code>, to guarantee that <code>abort</code> will never return.</p></dd>
 </dl>
@@ -366,14 +417,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1929"></a>Called if no dynamic handler handles a condition.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>default-handler <var>condition</var> </code>
       &rArr;<code> #rest <var>values</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>condition</var></dt>
@@ -382,7 +433,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>values</var></dt>
@@ -391,19 +442,19 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Called if no dynamic handler handles a condition.</p>
     <a name="HEADING107-63"></a>
-    <h4 class="H5.Heading5"><code>default-handler</code> condition<code> &rArr;  false</code> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code>default-handler</code> <var>condition</var> &rArr; <var>false</var> <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="SD.ShortDescription">A predefined method on <code>&lt;condition&gt;</code> simply returns <code>#f</code>.</p>
     <a name="HEADING107-65"></a>
-    <h4 class="H5.Heading5"><code>default-handler</code> serious-condition<code> &rArr;  </code>{does not return} <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code>default-handler</code> <var>serious-condition</var> &rArr; {does not return} <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="SD.ShortDescription">A predefined method on <code>&lt;serious-condition&gt;</code> invokes an implementation-defined debugger.</p>
     <a name="HEADING107-67"></a>
-    <h4 class="H5.Heading5"><code>default-handler</code> warning<code> &rArr;  false</code> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code>default-handler</code> <var>warning</var> &rArr; <var>false</var> <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="SD.ShortDescription">A predefined method on <code>&lt;warning&gt;</code> prints the warning's message in an implementation-defined way and then returns <code>#f</code>.</p>
     <a name="HEADING107-69"></a>
-    <h4 class="H5.Heading5"><code>default-handler</code> restart<code> &rArr;  </code>{does not return} <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code>default-handler</code> <var>restart</var> &rArr; {does not return} <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
     <p class="SD.ShortDescription">A predefined method on <code>&lt;restart&gt;</code> signals an error.</p>
   </dd>
 </dl>
@@ -412,14 +463,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1637"></a>Called to query the user and restart.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>restart-query <var>restart</var> </code>
       &rArr;<code> #rest <var>values</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>restart</var></dt>
@@ -428,7 +479,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>values</var></dt>
@@ -437,11 +488,11 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Engages the interactive user in a dialog and stores the results in slots of <var>restart</var>.</p>
     <p class="T1.Text1">This function is designed to be called from a handler, after making a restart and before signaling it. The debugger uses <code>restart-query</code>, for example.</p>
     <a name="HEADING107-78"></a>
-    <h4 class="H5.Heading5"><code>restart-query</code> restart &rArr; object <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code>restart-query</code> <var>restart</var> &rArr; <var>object</var> <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">There is a default method for <code>&lt;restart&gt;</code> that does nothing.</p>
   </dd>
 </dl>
@@ -450,14 +501,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1933"></a>Queries the user for values to return.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>return-query <var>condition</var> </code>
       &rArr;<code> #rest <var>values</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>condition</var></dt>
@@ -466,7 +517,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>values</var></dt>
@@ -475,7 +526,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> If the recovery protocol of <var>condition</var> allows returning values, this engages the program user in a dialog and returns the results as any number of values, which the handler should return.</p>
     <p class="T1.Text1"><code>return-query</code> should not be called if <code>return-allowed?</code> returns <code>#f</code>. Programs that define condition classes whose recovery protocol allows returning values should ensure that there is an appropriate method for this function defined on or inherited by the condition class.</p></dd>
 </dl>
@@ -487,14 +538,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1937"></a>Applies a function to all dynamically active handlers.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>do-handlers <var>function</var> </code>
       &rArr;<code> <var>false</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>function</var></dt>
@@ -503,7 +554,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>false</var></dt>
@@ -512,7 +563,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Applies<var> function</var> to all dynamically active handlers, the most recently established first. <var>function</var> receives four arguments: <var>type</var>, <var>test</var>, <var>function</var>, and <var>init-arguments</var>. The arguments describe a dynamically active handler. All arguments have dynamic extent and must not be modified. <var>test</var> defaults to a function that always returns <code>#t</code>. <var>init-arguments</var> will be an empty sequence if it was not supplied by the handler.</p></dd>
 </dl>
 <a name="HEADING107-94"></a>
@@ -520,14 +571,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1939"></a>Returns true if a condition's recovery protocol allows returning values.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Signature:</dt>
+  <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>return-allowed? <var>condition</var> </code>
       &rArr;<code> <var>boolean</var></code>
     </p>
   </dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>condition</var></dt>
@@ -536,7 +587,7 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Values:</dt>
+  <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>boolean</var></dt>
@@ -545,11 +596,11 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Returns <code>#t</code> if the recovery protocol of <var>condition</var> allows returning values, or <code>#f</code> if it does not.</p>
     <p class="T1.Text1">There is a default method for <code>&lt;condition&gt;</code> that returns <code>#f</code>. Programs which define condition classes whose recovery protocol allows returning values should ensure that there is an appropriate method for this function defined on or inherited by the condition class.</p>
     <a name="HEADING107-101"></a>
-    <h4 class="H5.Heading5"><code>return-allowed?</code> condition &rArr; false <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h4 class="H5.Heading5"><code>return-allowed?</code> <var>condition</var> &rArr; <var>false</var> <span class="attributes-summary">[G.F. Method]</span></h4>
     <p class="T1.Text1">There is a default method for <code>&lt;condition&gt;</code> that returns <code>#f</code>.</p>
   </dd>
 </dl>
@@ -558,14 +609,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1941"></a>Returns a description of a condition's returned values.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>return-description <var>condition</var> </code>
       &rArr;<code> <var>description</var></code>
     </p>
   </dd>
-<dt class="Cliche">Arguments:</dt>
+<dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>condition</var></dt>
@@ -574,7 +625,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>description</var></dt>
@@ -583,7 +634,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> If the recovery protocol of this condition allows returning values, <code>return-description</code> returns a description of the meaning of returning values.</p>
 <p class="T1.Text1">This <var>description</var> can be a restart, a string, or <code>#f</code>. <code>return-description</code> should not be called if <code>return-allowed?</code> returns <code>#f</code>. If you define your own condition class whose recovery protocol allows returning values, you need to define a method for <code>return-description</code> unless the inherited method is suitable.</p></dd>
 </dl>
@@ -592,14 +643,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-2-1681"></a>Returns the format string of a simple condition.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>condition-format-string <var>simple-condition</var> </code>
       &rArr;<code> <var>format-string</var></code>
     </p>
   </dd>
-<dt class="Cliche2">Arguments:</dt>
+<dt class="Cliche2"><span>Arguments:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>simple-condition </var></dt>
@@ -608,7 +659,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>format-string</var></dt>
@@ -617,7 +668,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Returns the format string that was supplied as an initialization argument when the <var>simple-condition</var> was created.</p></dd>
 </dl>
 <a name="HEADING107-116"></a>
@@ -625,14 +676,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1945"></a>Returns the format arguments of a simple condition.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>condition-format-arguments <var>simple-condition</var> </code>
       &rArr;<code> <var>format-args</var></code>
     </p>
   </dd>
-<dt class="Cliche2">Arguments:</dt>
+<dt class="Cliche2"><span>Arguments:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>simple-condition </var></dt>
@@ -641,7 +692,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>format-args</var></dt>
@@ -650,7 +701,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Returns the sequence of format arguments that was supplied as an initialization argument when the <var>simple-condition</var> was created.</p></dd>
 </dl>
 <a name="HEADING107-122"></a>
@@ -658,14 +709,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1947"></a>Returns the value that was not of the expected type.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>type-error-value <var>type-error</var> </code>
       &rArr;<code> <var>object</var></code>
     </p>
   </dd>
-<dt class="Cliche2">Arguments:</dt>
+<dt class="Cliche2"><span>Arguments:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>type-error</var></dt>
@@ -674,7 +725,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>object</var></dt>
@@ -683,7 +734,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Returns the value that was not of the expected type, and thereby led to the type error.</p></dd>
 </dl>
 <a name="HEADING107-128"></a>
@@ -691,14 +742,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1949"></a>Returns the expected type of the type check that led to the type error.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>type-error-expected-type <var>type-error</var> </code>
       &rArr;<code> <var>type</var></code>
     </p>
   </dd>
-<dt class="Cliche2">Arguments:</dt>
+<dt class="Cliche2"><span>Arguments:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>type-error</var></dt>
@@ -707,7 +758,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>type</var></dt>
@@ -716,7 +767,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Returns the expected type of the type check that led to the type error.<a name="MARKER-2-1950"></a><a name="MARKER-2-1951"></a><a name="MARKER-2-1952"></a></p>
 <p class="T1.Text1"></p>
 <a name="LINK-Built-In_Functions-lastpage"></a><a name="LINK-Built-In_ObjectsTOC-firstpage"></a></dd>
@@ -729,9 +780,9 @@
 
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_106.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_108.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+<p class="footer"><a class="previous" title="Go to previous page" href="drm_106.html"><img alt="Previous" src="prev.gif" /></a> <a class="next" title="Go to next page" href="drm_108.html"><img alt="Next" src="next.gif" /></a> <a class="up" title="Go to start of chapter" href="drm_96.html"><img alt="Up" src="up.gif" /></a> <a class="start" title="Go to start of book" href="drm_1.html"><img alt="Top" src="top.gif" /></a> <a class="contents" title="Go to table of contents" href="drm_3.html"><img alt="Contents" src="content.gif" /></a> <a class="index" title="Go to index" href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+<p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a>, subsequently revised.</p>
 
 </div>
 </body>

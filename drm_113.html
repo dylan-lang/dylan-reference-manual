@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
@@ -14,8 +14,8 @@
   
   <link rel="top" href="drm_1.html" />
   <link rel="start first" href="index.html" />
-  <link rel="contents" href="drm_2.html" />
-  <link rel="copyright" href="drm_3.html" />
+  <link rel="copyright" href="drm_2.html" />
+  <link rel="contents" href="drm_3.html" />
   <link rel="glossary" href="drm_126.html" />
   <link rel="index" href="drm_127.html" />
   <link rel="last author" href="drm_128.html" />
@@ -55,18 +55,63 @@
 <a name="HEADING113"></a>
 
 <div class="wm-div-headers">
-<p id="navigation"><a href="drm_112.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_114.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_110.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+<div id="navigation-header">
+    <p id="book-title">The Dylan Reference Manual</p>
+    <p id="basic-navigation"><a class="previous" title="Go to previous page" href="drm_112.html"><img alt="Previous" src="prev.gif" /></a> <a class="next" title="Go to next page" href="drm_114.html"><img alt="Next" src="next.gif" /></a> <a class="up" title="Go to start of chapter" href="drm_110.html"><img alt="Up" src="up.gif" /></a> <a class="start" title="Go to start of book" href="drm_1.html"><img alt="Top" src="top.gif" /></a> <a class="contents" title="Go to table of contents" href="drm_3.html"><img alt="Contents" src="content.gif" /></a> <a class="index" title="Go to index" href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+  </div>
 
 <div id="section-header">
   <p id="section-prefix">Chapter 14</p>
   <p id="section-name">The Built-In Macros and Special Definitions</p>
 </div>
 
-<div class="wm-div-toc">
-  <ul class="page-toc">
-    <li><a href="drm_113.html#HEADING113-63"><code>let</code> <span class="attributes-summary">[Local Declaration]</span></a></li>
-    <li><a href="drm_113.html#HEADING113-79"><code>local</code> <span class="attributes-summary">[Local Declaration]</span></a></li>
-    <li><a href="drm_113.html#HEADING113-89"><code>let handler</code> <span class="attributes-summary">[Local Declaration]</span></a></li>
+<div id="navigation-TOC">
+  <ul class="front-matter">
+    <li><a href="drm_1.html">Start</a></li>
+    <li><a href="drm_3.html">Contents</a></li>
+    <li><a href="drm_4.html">About This Book</a></li>
+  </ul>
+  <ol class="chapters">
+    <li><a href="drm_5.html">Introduction</a></li>
+    <li><a href="drm_9.html">Syntax</a></li>
+    <li><a href="drm_25.html">Program Structure</a></li>
+    <li><a href="drm_28.html">Program Control</a></li>
+    <li><a href="drm_38.html">Types and Classes</a></li>
+    <li><a href="drm_47.html">Functions</a></li>
+    <li><a href="drm_52.html">Conditions</a></li>
+    <li><a href="drm_59.html">Collections</a></li>
+    <li><a href="drm_70.html">Sealing</a></li>
+    <li><a href="drm_76.html">Macros</a></li>
+    <li><a href="drm_87.html">The Built-In Classes</a></li>
+    <li><a href="drm_96.html">The Built-In Functions</a></li>
+    <li><a href="drm_108.html">Other Built-In Objects</a></li>
+    <li><a href="drm_110.html">The Built-In Macros and Special Definitions</a>
+      <ul>
+	<li><a href="drm_111.html">Overview</a></li>
+	<li><a href="drm_112.html">Definitions</a></li>
+	<li id="current">Local Declarations
+	  <ul class="page-toc">
+	    <li><a href="#HEADING113-63"><code>let</code> <span class="attributes-summary">[Local Declaration]</span></a></li>
+	    <li><a href="#HEADING113-79"><code>local</code> <span class="attributes-summary">[Local Declaration]</span></a></li>
+	    <li><a href="#HEADING113-89"><code>let handler</code> <span class="attributes-summary">[Local Declaration]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_114.html">Statements</a></li>
+	<li><a href="drm_115.html">Function Macros</a></li>
+      </ul>
+    </li>
+  </ol>
+  <ol class="appendices">
+    <li><a href="drm_116.html">BNF</a></li>
+    <li><a href="drm_119.html">Exported Names</a></li>
+  </ol>
+  <ul class="back-matter">
+    <li><a href="drm_126.html">Glossary</a></li>
+    <li><a href="drm_127.html">Index</a></li>
+    <li><a href="drm_128.html">Colophon</a></li>
+  </ul>
+  <ul class="errata">
+    <li><a href="drm_errata.html">Errata</a></li>
   </ul>
 </div>
 
@@ -96,9 +141,9 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2031"></a>Creates and initializes new local bindings within the smallest enclosing implicit body.</p>
 <dl class="Cliche">
-  <dt class="Cliche">Macro Call:</dt>
+  <dt class="Cliche"><span>Macro Call:</span></dt>
   <dd class="Cliche"><p class="Cliche"> <code>let <var>variables</var> = <var>init</var> ;</code></p></dd>
-  <dt class="Cliche">Arguments:</dt>
+  <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>variables</var></dt>
@@ -108,7 +153,7 @@
       <dt class="RP.RoutineParam"><var>init</var></dt>
       <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
   </dl></dd>
-  <dt class="Cliche">Description:</dt>
+  <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> <code>let</code> creates local bindings for the <var>variables</var>, and initializes them to the values returned by <var>init</var>. The bindings are visible for the remainder of the smallest enclosing implicit body.</p>
     <p class="T1.Text1"><a name="MARKER-2-2032"></a>The first value returned by the <var>init</var> is bound to the first <var>variable</var>, the second value to the second <var>variable</var>, etc. The last <var>variable</var> may be preceded by <code>#rest</code>, in which case it is bound to a sequence containing all the remaining values.</p>
     <p class="T1.Text1">Each <var>variable</var> is a variable-name or a variable-name followed by a specializer.</p>
@@ -133,9 +178,9 @@ let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-2035"></a><a name="MARKER-2-2036"></a>Creates new local bindings within the smallest enclosing implicit body and initializes them to local methods that can be self-recursive and mutually recursive.</p>
 <dl class="Cliche">
-<dt class="Cliche">Macro Call:</dt>
+<dt class="Cliche"><span>Macro Call:</span></dt>
 <dd class="Cliche"><p class="Cliche"> <code>local</code> <strong class="re">{ [</strong> <code>method</code> <strong class="re">]</strong> <var>name parameter-list</var> <strong class="re">[</strong> <var>body</var> <strong class="re">]</strong> <code>end</code> <strong class="re">[</strong> <code>method</code> <strong class="re">] [</strong> <var>name</var> <strong class="re">] }</strong> <code>,</code><strong class="re"><sup>+</sup></strong></p></dd>
-<dt class="Cliche">Arguments:</dt>
+<dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>name</var></dt>
@@ -147,7 +192,7 @@ let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount)
 <dt class="RP.RoutineParam"><var>body</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">body<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 </dl></dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> <code>local</code> creates local methods that may be mutually recursive and self-recursive.</p>
 <p class="T1.Text1">Each <var>name</var> creates a new local binding. The binding is initialized to a new method specified by the <var>parameter-list</var> and <var>body</var>. In addition to being visible for the remainder of the smallest enclosing implicit body, the bindings created for the <var>names</var> are visible to the <var>parameter-lists</var> and <var>bodies</var> of all the methods created by the <code>local</code> declaration.</p>
 <p class="T1.Text1">The <var>parameter-list</var> is a standard method parameter list. A complete description of parameter lists is given in <a href="drm_49.html#MARKER-9-782" class="T1.Text1">"Parameter Lists" on page 84</a>.</p>
@@ -158,9 +203,9 @@ let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount)
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><code><a name="MARKER-9-2038"></a><a name="MARKER-2-2039"></a></code>Establishes a condition handler for the duration of the execution of smallest enclosing implicit body.</p>
 <dl class="Cliche">
-<dt class="Cliche">Macro Call:</dt>
+<dt class="Cliche"><span>Macro Call:</span></dt>
 <dd class="Cliche"><p class="Cliche"> <code>let handler</code> <i class="parameter Cliche">condition<code> = handler</code></i></p></dd>
-<dt class="Cliche">Arguments:</dt>
+<dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>condition</var></dt>
@@ -178,7 +223,7 @@ let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount)
 <dt class="RP.RoutineParam"><var>handler</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 </dl></dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> <code>let handler</code> establishes a new condition handler that is in effect for the duration of the execution of the remainder of the smallest enclosing implicit body. Unlike the local declarations <code>let</code> and <code>local</code>, <code>let handler</code> does not create any bindings.</p>
   <ul class="B1.Bullet1">
     <li class="B1.Bullet1">The <var>condition</var> describes the conditions for which the handler is applicable.
@@ -203,9 +248,9 @@ let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount)
 
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_112.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_114.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_110.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+<p class="footer"><a class="previous" title="Go to previous page" href="drm_112.html"><img alt="Previous" src="prev.gif" /></a> <a class="next" title="Go to next page" href="drm_114.html"><img alt="Next" src="next.gif" /></a> <a class="up" title="Go to start of chapter" href="drm_110.html"><img alt="Up" src="up.gif" /></a> <a class="start" title="Go to start of book" href="drm_1.html"><img alt="Top" src="top.gif" /></a> <a class="contents" title="Go to table of contents" href="drm_3.html"><img alt="Contents" src="content.gif" /></a> <a class="index" title="Go to index" href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+<p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a>, subsequently revised.</p>
 
 </div>
 </body>

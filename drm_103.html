@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
@@ -14,8 +14,8 @@
   
   <link rel="top" href="drm_1.html" />
   <link rel="start first" href="index.html" />
-  <link rel="contents" href="drm_2.html" />
-  <link rel="copyright" href="drm_3.html" />
+  <link rel="copyright" href="drm_2.html" />
+  <link rel="contents" href="drm_3.html" />
   <link rel="glossary" href="drm_126.html" />
   <link rel="index" href="drm_127.html" />
   <link rel="last author" href="drm_128.html" />
@@ -55,21 +55,72 @@
 <a name="HEADING103"></a>
 
 <div class="wm-div-headers">
-<p id="navigation"><a href="drm_102.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_104.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+<div id="navigation-header">
+    <p id="book-title">The Dylan Reference Manual</p>
+    <p id="basic-navigation"><a class="previous" title="Go to previous page" href="drm_102.html"><img alt="Previous" src="prev.gif" /></a> <a class="next" title="Go to next page" href="drm_104.html"><img alt="Next" src="next.gif" /></a> <a class="up" title="Go to start of chapter" href="drm_96.html"><img alt="Up" src="up.gif" /></a> <a class="start" title="Go to start of book" href="drm_1.html"><img alt="Top" src="top.gif" /></a> <a class="contents" title="Go to table of contents" href="drm_3.html"><img alt="Contents" src="content.gif" /></a> <a class="index" title="Go to index" href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+  </div>
 
 <div id="section-header">
   <p id="section-prefix">Chapter 12</p>
   <p id="section-name">The Built-In Functions</p>
 </div>
 
-<div class="wm-div-toc">
-  <ul class="page-toc">
-    <li><a href="drm_103.html#HEADING103-2"><code>instance?</code> <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_103.html#HEADING103-9"><code>subtype?</code> <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_103.html#HEADING103-16"><code>object-class</code> <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_103.html#HEADING103-22"><code>all-superclasses</code> <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_103.html#HEADING103-29"><code>direct-superclasses</code> <span class="attributes-summary">[Function]</span></a></li>
-    <li><a href="drm_103.html#HEADING103-36"><code>direct-subclasses</code> <span class="attributes-summary">[Function]</span></a></li>
+<div id="navigation-TOC">
+  <ul class="front-matter">
+    <li><a href="drm_1.html">Start</a></li>
+    <li><a href="drm_3.html">Contents</a></li>
+    <li><a href="drm_4.html">About This Book</a></li>
+  </ul>
+  <ol class="chapters">
+    <li><a href="drm_5.html">Introduction</a></li>
+    <li><a href="drm_9.html">Syntax</a></li>
+    <li><a href="drm_25.html">Program Structure</a></li>
+    <li><a href="drm_28.html">Program Control</a></li>
+    <li><a href="drm_38.html">Types and Classes</a></li>
+    <li><a href="drm_47.html">Functions</a></li>
+    <li><a href="drm_52.html">Conditions</a></li>
+    <li><a href="drm_59.html">Collections</a></li>
+    <li><a href="drm_70.html">Sealing</a></li>
+    <li><a href="drm_76.html">Macros</a></li>
+    <li><a href="drm_87.html">The Built-In Classes</a></li>
+    <li><a href="drm_96.html">The Built-In Functions</a>
+      <ul>
+	<li><a href="drm_97.html">Overview</a></li>
+	<li><a href="drm_98.html">Constructing and Initializing Instances</a></li>
+	<li><a href="drm_99.html">Equality and Comparison</a></li>
+	<li><a href="drm_100.html">Arithmetic Operations</a></li>
+	<li><a href="drm_101.html">Coercing and Copying Objects</a></li>
+	<li><a href="drm_102.html">Collection Operations</a></li>
+	<li id="current">Reflective Operations on Types
+	  <ul class="page-toc">
+	    <li><a href="#HEADING103-2"><code>instance?</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING103-9"><code>subtype?</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING103-16"><code>object-class</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING103-22"><code>all-superclasses</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING103-29"><code>direct-superclasses</code> <span class="attributes-summary">[Function]</span></a></li>
+	    <li><a href="#HEADING103-36"><code>direct-subclasses</code> <span class="attributes-summary">[Function]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="drm_104.html">Functional Operations</a></li>
+	<li><a href="drm_105.html">Function Application</a></li>
+	<li><a href="drm_106.html">Reflective Operations on Functions</a></li>
+	<li><a href="drm_107.html">Operations on Conditions</a></li>
+      </ul>
+    </li>
+    <li><a href="drm_108.html">Other Built-In Objects</a></li>
+    <li><a href="drm_110.html">The Built-In Macros and Special Definitions</a></li>
+  </ol>
+  <ol class="appendices">
+    <li><a href="drm_116.html">BNF</a></li>
+    <li><a href="drm_119.html">Exported Names</a></li>
+  </ol>
+  <ul class="back-matter">
+    <li><a href="drm_126.html">Glossary</a></li>
+    <li><a href="drm_127.html">Index</a></li>
+    <li><a href="drm_128.html">Colophon</a></li>
+  </ul>
+  <ul class="errata">
+    <li><a href="drm_errata.html">Errata</a></li>
   </ul>
 </div>
 
@@ -86,14 +137,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1861"></a>Tests whether an object is an instance of a type.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>instance? <var>object type</var> </code>
       &rArr;<code> <var>boolean</var></code>
     </p>
   </dd>
-<dt class="Cliche">Arguments:</dt>
+<dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>object</var></dt>
@@ -103,7 +154,7 @@
 <dt class="RP.RoutineParam"><var>type</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;type&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>boolean</var></dt>
@@ -112,7 +163,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Returns true if <var>object</var> is a general instance of <var>type</var>.</p></dd>
 </dl>
 <a name="HEADING103-9"></a>
@@ -120,14 +171,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1863"></a>Tests whether a type is a subtype of another type.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>subtype? <var>type1 type2</var> </code>
       &rArr;<code> <var>boolean</var></code>
     </p>
   </dd>
-<dt class="Cliche">Arguments:</dt>
+<dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>type1</var></dt>
@@ -137,7 +188,7 @@
 <dt class="RP.RoutineParam"><var>type2</var></dt>
 <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;type&gt;</code>.</p></dd>
 </dl></dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>boolean</var></dt>
@@ -146,7 +197,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Returns true if <var>type1 </var> is a subtype of <var>type2</var>. Subtype rules are given in <a href="drm_40.html#MARKER-9-536" class="Cliche">"The Type Protocol" on page 49</a>.</p></dd>
 </dl>
 <a name="HEADING103-16"></a>
@@ -154,14 +205,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1865"></a>Returns the class of an object.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>object-class <var>object</var> </code>
       &rArr;<code> <var>class</var></code>
     </p>
   </dd>
-<dt class="Cliche">Arguments:</dt>
+<dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>object</var></dt>
@@ -170,7 +221,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Values:</dt>
+<dt class="Cliche"><span>Values:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>class</var></dt>
@@ -179,7 +230,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Returns the class of which <var>object</var>  is a direct instance.</p></dd>
 </dl>
 <a name="HEADING103-22"></a>
@@ -187,14 +238,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1867"></a>Returns the class precedence list a class.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>all-superclasses <var>class</var> </code>
       &rArr;<code> <var>sequence</var></code>
     </p>
   </dd>
-<dt class="Cliche">Arguments:</dt>
+<dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>class</var></dt>
@@ -203,7 +254,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche2">Values:</dt>
+<dt class="Cliche2"><span>Values:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>sequence</var></dt>
@@ -212,7 +263,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Returns the class precedence list of <var>class</var>. This is an ordered sequence of<var>class</var> and all its superclasses, as described in <a href="drm_41.html#MARKER-9-590" class="Cliche">"Computing the Class Precedence List" on page 54</a>.</p>
 <p class="T1.Text1">The result <var>sequence</var> should never be destructively modified. Doing so may cause unpredictable behavior. If <var>class</var> is sealed, an implementation may choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than returning the sequence of all superclasses.</p></dd>
 </dl>
@@ -221,14 +272,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1869"></a>Returns the direct superclasses of a class.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>direct-superclasses <var>class</var> </code>
       &rArr;<code> <var>sequence</var></code>
     </p>
   </dd>
-<dt class="Cliche">Arguments:</dt>
+<dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>class</var></dt>
@@ -237,7 +288,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche2">Values:</dt>
+<dt class="Cliche2"><span>Values:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>sequence</var></dt>
@@ -246,7 +297,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Returns the direct superclasses of <var>class</var>  in a sequence. These are the classes that were passed as arguments to <code>make</code> or <code>define class</code> when the <var>class</var> was created. The order of the classes in the sequence is the same as the order in which they were passed to <code>define class</code> or <code>make</code> when <var>class</var> was created.</p>
 <p class="T1.Text1">The result <var>sequence</var> should never be destructively modified. Doing so may cause unpredictable behavior. If <var>class</var> is sealed, an implementation may choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than returning the direct superclasses.</p></dd>
 </dl>
@@ -255,14 +306,14 @@
 <hr class="H4.Heading4" />
 <p class="SD.ShortDescription"><a name="MARKER-9-1871"></a>Returns the direct subclasses of a class.</p>
 <dl class="Cliche">
-<dt class="Cliche">Signature:</dt>
+<dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
     <p class="signature">
       <code>direct-subclasses <var>class</var> </code>
       &rArr;<code> <var>sequence</var></code>
     </p>
   </dd>
-<dt class="Cliche">Arguments:</dt>
+<dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
     <dl>
       <dt><var>class</var></dt>
@@ -271,7 +322,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche2">Values:</dt>
+<dt class="Cliche2"><span>Values:</span></dt>
 <dd class="Cliche2">
     <dl>
       <dt><var>sequence</var></dt>
@@ -280,7 +331,7 @@
       </dd>
     </dl>
   </dd>
-<dt class="Cliche">Description:</dt>
+<dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p class="Cliche"> Returns the direct subclasses of  <var>class</var>  in a sequence. These are the classes that have <var>class</var> as a direct superclass. The order of the classes in the sequence is not significant.</p>
 <p class="T1.Text1">The result <var>sequence</var> should never be destructively modified. Doing so may cause unpredictable behavior. If <var>class</var> is sealed, an implementation may choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than returning the direct subclasses.<a name="MARKER-2-1872"></a></p></dd>
 </dl>
@@ -291,9 +342,9 @@
 
 <hr class="footer" />
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a href="drm_102.html"><img alt="prev" src="prev.gif" title="Go to previous page" /></a> <a href="drm_104.html"><img alt="next" src="next.gif" title="Go to next page" /></a> <a href="drm_96.html"><img alt="up" src="up.gif" /></a> <a href="drm_1.html"><img alt="top" src="top.gif" /></a> <a href="drm_2.html"><img alt="Contents" src="content.gif" /></a> <a href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
+<p class="footer"><a class="previous" title="Go to previous page" href="drm_102.html"><img alt="Previous" src="prev.gif" /></a> <a class="next" title="Go to next page" href="drm_104.html"><img alt="Next" src="next.gif" /></a> <a class="up" title="Go to start of chapter" href="drm_96.html"><img alt="Up" src="up.gif" /></a> <a class="start" title="Go to start of book" href="drm_1.html"><img alt="Top" src="top.gif" /></a> <a class="contents" title="Go to table of contents" href="drm_3.html"><img alt="Contents" src="content.gif" /></a> <a class="index" title="Go to index" href="drm_127.html"><img alt="index" src="index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-<p class="footer">Generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a></p>
+<p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a>, subsequently revised.</p>
 
 </div>
 </body>
