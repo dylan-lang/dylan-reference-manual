@@ -16,6 +16,37 @@ body { padding-left: 8em; max-width: 40em }
 
 
 /*
+  Errata Notes
+
+  They can be displayed inline, within the left margin, or floating within
+  the right of the body content.
+*/
+
+p.errata {
+	 padding: 0 0.5em 0.5em 0.5em;
+	 background-color: #ffa; border: 1px solid #dd8;
+	 font-size: smaller; font-family: sans-serif;
+	 }
+p.errata.left {
+	 float: left; position: absolute; left: 0;
+	 width: 8em;
+	 }
+p.errata.right {
+	 float: right;
+	 width: 20em;
+	 }
+/* hide the "Errata:" tag in the text and replace it */
+p.errata em { display: none }
+p.errata:before {
+	content: "Errata";
+	display: block; margin: 0 -0.5em 0.5em -0.5em; padding: 0.25em 0.5em;
+	background-color: #dd8;
+	font-weight: bold;
+	}
+
+
+
+/*
   Section prefix and name at the top of each page. Note that some
   formatting applies to the prefix/name by id, and some to the first and
   second paragraphs positionally. In most sections there's a prefix and a
