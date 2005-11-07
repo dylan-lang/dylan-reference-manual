@@ -161,6 +161,8 @@
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Calls <var>function</var> and returns the values that <var>function</var> returns. The <var>argument</var> and <var>more-arguments</var> supply the arguments to <var>function</var>. All but the last of <var>argument</var> and <var>more-arguments</var> are passed to <var>function</var> individually. The last of <var>argument</var> and <var>more-arguments</var> must be a sequence. This sequence is not passed as a single argument to <var>function</var>. Instead, its elements are taken individually as arguments to <var>function</var>.</p>
+    <p class="errata right"><em>Errata:</em> Missing commas. Should be: <br />
+      <code>apply(min, 5, 7, list(3, 1, 4))</code></p>
     <pre class="Cv.Code">
 apply(max, list(3, 1, 4, 1, 5, 9))
   &rArr;  9

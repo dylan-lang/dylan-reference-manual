@@ -306,6 +306,10 @@ define constant $start-time :: &lt;integer&gt; = get-current-time(); </pre>
 define generic cut-hair (subject :: &lt;animal&gt;, new-length :: &lt;number&gt;)
                           =&gt; (new-length :: &lt;number&gt;) </pre>
     <p class="T1.Text1">The use of the same name for a parameter and return value indicates that the parameter is returned as the value. This is only a convention;  it is not enforced by the language.</p>
+    <p class="errata left"><em>Errata:</em>
+      <q><a href="drm_49.html#MARKER-2-813" title="Definition of permit">permit</a></q>
+      should be
+      <q><a href="drm_49.html#MARKER-2-808" title="Definition of recognize">recognize</a></q>.</p>
     <p class="T1.Text1">The following example defines a generic function with one required parameter and one mandatory keyword parameter, <code>strength:</code>. Methods added to the generic function must have one required parameter, they must accept keyword arguments, and they must permit the keyword argument <code>strength:</code>.</p>
     <pre class="Cv.Code">
 define generic brew (brand :: &lt;coffee-brand&gt;, #key strength)

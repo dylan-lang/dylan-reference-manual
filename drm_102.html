@@ -1339,6 +1339,8 @@ x
   <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Sets the tail of <var>pair</var> to contain <var>object</var> and returns <var>object</var>.</p>
     <p class="T1.Text1"><var>pair</var> is modified by this operation.</p>
+    <p class="errata right"><em>Errata:</em> The final value
+      of <code>x</code> should be: <br /><code>#(4 . "dot")</code></p>
     <pre class="Cv.Code">
 define variable x = list (4, 5, 6)
 tail (x) := #(9, 8, 7)
@@ -2308,6 +2310,8 @@ concatenate-as (&lt;string&gt;, #('n', 'o', 'n'), #('f', 'a', 't'))
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> <code>replace-subsequence!</code> returns a sequence with the same elements as <var>target-sequence</var>, except that elements of the indicated subsequence of <var>target-sequence</var> are replaced by all the elements of  <var>insert-sequence</var>. The subsequence to be overridden begins at index <var>start</var> and ends at index <var>end</var>.</p>
+    <p class="errata left"><em>Errata:</em> <var>source-sequence</var>
+    should be <var>target-sequence</var>.</p>
     <p class="T1.Text1"><var>result-sequence</var>  may or may not share structure with <var>source-sequence</var> or <var>insert-sequence</var>, and it may or may not be <code>==</code> to <var>source-sequence</var> or <var>insert-sequence</var>. <var>source-sequence</var>  may or may not be modified by the operation. <var>insert-sequence</var> will not be modified by this operation.</p>
     <pre class="Cv.Code">
 define variable *original* = list (&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;)
@@ -2496,6 +2500,8 @@ map (\+,
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p class="Cliche"> Creates a freshly allocated collection of type <var>type</var> whose elements are obtained by applying <var>function</var> to corresponding elements of the <var>collection</var> arguments. <var>type</var>  must be acceptable as the first argument to <code>make</code>. <code>size:</code> with a non-negative integer value must be an acceptable initarg for <code>make</code> of <var>type</var>. <var>new-collection</var> is created by calling <code>make</code> on <var>type</var>, with a <code>size:</code> initialization argument whose value is the number of corresponding elements in the <var>collections</var>. If all the <var>collections</var> are sequences (including <var>new-collection</var>), processing is done in the natural order.</p>
+    <p class="errata right"><em>Errata:</em> The result should be a vector:
+      <br /><code>#[101, 102, 203, 204]</code></p>
     <pre class="Cv.Code">
 map-as (&lt;vector&gt;, \+,
         #(100, 100, 200, 200),

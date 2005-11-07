@@ -210,6 +210,8 @@ sort(person-list,
 <h3 class="H3.Heading3">Closures</h3>
 <p class="T1.Text1"><a name="MARKER-2-777"></a>Methods created with <code>method</code> or <code>local</code> can be passed to functions and returned from functions. In both cases, the methods retain access to the lexical context in which they were created. Such methods are called <strong class="Bold T1.Text1"><dfn>closures</dfn></strong>.</p>
 <p class="T1.Text1"><a name="MARKER-2-778"></a>The following example defines a function that returns score-card methods. The method that is returned is <strong class="Bold T1.Text1"><a name="MARKER-2-779"></a><dfn>closed over</dfn></strong> the <code>score</code> parameter. Each time this method is called, it updates the <code>score</code> parameter and returns its new value.</p>
+<p class="errata right"><em>Errata:</em> <code>points</code> should be
+  named <code>score</code>.</p>
 <pre class="Cv.Code">
 define method make-score (points :: &lt;number&gt;)
   method (increase :: &lt;number&gt;)
