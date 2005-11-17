@@ -286,7 +286,9 @@ define method family (kid :: &lt;person&gt;)
   end case
 end method family;
 </pre>
-<p class="T1.Text1">Note that the following example does not declare a return value of type <code>&lt;number&gt;</code>. It declares a return value of type <code>&lt;object&gt;</code>. To specify a type, both the name and the type must be specified. If only one is given, it is taken as the name.<code></code></p>
+<p class="T1.Text1">Note that the following example does not declare a return value of type <code>&lt;number&gt;</code>. It declares a return value of type <code>&lt;object&gt;</code>. To specify a type, both the name and the type must be specified. If only one is given, it is taken as the name.</p>
+<p class="errata left"><em>Errata:</em> The return value declaration should be:<br />
+<code>=&gt; &lt;number&gt;;</code></p>
 <pre class="Cv.Code">
 define method average (x :: &lt;number&gt;, y :: &lt;number&gt;)
  =&gt; avg :: &lt;number&gt;;

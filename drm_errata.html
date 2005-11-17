@@ -68,6 +68,25 @@ subtype?(type-union*(s<sub>1</sub>...s<sub>m</sub>), type-union*(t<sub>1</sub>..
   <li>p. 83, "Closures". The second paragraph in this section talks
     about the <tt>score</tt> parameter, while the code actually uses a
     parameter called <tt>points</tt>.</li>
+
+  <li>p. 93, in the second definition of method <tt>average</tt>, the
+    return value declaration is incorrect; it contains both a binding name
+    and a type
+    
+    <ul>
+      <li><tt> => avg :: &lt;number&gt;;</tt></li>
+    </ul>
+
+    <p>but the example is meant to illustrate how, if you do not provide
+      both, the first word is parsed as the binding name even if it appears
+      to be the name of a type. The return value declaration should
+      read</p>
+    
+    <ul>
+      <li><tt> => &lt;number&gt;;</tt></li>
+    </ul>
+    
+  </li>
   
   <li>p. 136, the illustration of the third constraint implied by
     <tt>define sealed domain</tt> should include open declarations for
