@@ -137,8 +137,9 @@
   </li>
 </ol>
 <p class="T1.Text1">The third constraint is illustrated by the following example:</p>
-<p class="errata left"><em>Errata:</em> Missing <code>open</code> in
-  generic and class definitions.</p>
+<p class="errata left"><a href="drm_errata.html#p136_1"
+			  name="errata_p136_1"><strong>Errata:</strong></a>
+  Missing <code>open</code> in generic and class definitions.</p>
 <pre class="Cv.Code">
 define generic m (x);
 define class &lt;t&gt; (&lt;object&gt;) end class &lt;t&gt;;
@@ -210,8 +211,9 @@ define sealed domain sides-setter (&lt;integer&gt;, &lt;polygon&gt;);<a name="MA
 </ul>
 <p class="T1.Text1">The following example illustrates why this condition is necessary.</p>
 <p class="T1.Text1">Library <i class="parameter T1.Text1">L<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> defines and exports the following:</p>
-<p class="errata left"><em>Errata:</em> Missing <code>open</code> in
-  generic and class definitions.</p>
+<p class="errata left"><a href="drm_errata.html#p140_1"
+			  name="errata_p140_1"><strong>Errata:</strong></a>
+  Missing <code>open</code> in generic and class definitions.</p>
 <pre class="Cv.Code">
 define generic g (x)
 define class &lt;c1&gt; (&lt;object&gt;) end class &lt;c1&gt;;
@@ -223,7 +225,9 @@ define method g (x :: &lt;c2&gt;) end method;
 define sealed domain g (&lt;c2&gt;)
 </pre>
 <p class="T1.Text1">Library <i class="parameter T1.Text1">L<em class="Subscript Parameter T1.Text1"><sub>3</sub></em></i> uses <i class="parameter T1.Text1">L<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> and defines the following</p>
-<p class="errata left"><em>Errata:</em> <code>&lt;c&gt;</code> should be <code>&lt;c1&gt;</code>.</p>
+<p class="errata left"><a href="drm_errata.html#p140_2"
+			  name="errata_p140_2"><strong>Errata:</strong></a>
+  <code>&lt;c&gt;</code> should be <code>&lt;c1&gt;</code>.</p>
 <pre class="Cv.Code">
 define method g (x :: &lt;c&gt;) end method;
 </pre>

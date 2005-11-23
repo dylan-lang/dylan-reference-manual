@@ -27,13 +27,15 @@
 <h2>Semantically Significant Errors</h2>
 
 <ul>
-  <li>p. 37 should include a horizontal rule immediately above the
-    entry for <tt>:=</tt>. In other words, the precedence of
+  <li><a href="drm_31.html#errata_p37_1" name="p37_1">p. 37</a> should include
+    a horizontal rule immediately above the entry for <tt>:=</tt>. In other
+    words, the precedence of
     <tt>:=</tt> is lower than that of <tt>|</tt> and
     <tt>&amp;</tt>.</li>
   
-  <li>p. 73, the last paragraph explaining the subtype relationships
-    of <tt>type-union</tt> reads
+  <li><a href="drm_45.html#errata_p73_1" name="p73_1">p. 73</a>, the last
+    paragraph explaining the subtype relationships of <tt>type-union</tt>
+    reads
 
     <ul>
       <li><pre>
@@ -51,7 +53,8 @@ subtype?(type-union*(s<sub>1</sub>...s<sub>m</sub>), type-union*(t<sub>1</sub>..
     
   </li>
     
-  <li>p. 73, the example code illustrating limited types reads
+  <li><a href="drm_46.html#errata_p73_2" name="p73_2">p. 73</a>, the example
+    code illustrating limited types reads
 
     <ul>
       <li><tt>limited(&lt;integer&gt; ,min: 0 max: 255)</tt></li>
@@ -65,13 +68,14 @@ subtype?(type-union*(s<sub>1</sub>...s<sub>m</sub>), type-union*(t<sub>1</sub>..
     
   </li>
     
-  <li>p. 83, "Closures". The second paragraph in this section talks
-    about the <tt>score</tt> parameter, while the code actually uses a
-    parameter called <tt>points</tt>.</li>
+  <li><a href="drm_48.html#errata_p83_1" name="p83_1">p. 83</a>,
+    "Closures". The second paragraph in this section talks about
+    the <tt>score</tt> parameter, while the code actually uses a parameter
+    called <tt>points</tt>.</li>
 
-  <li>p. 93, in the second definition of method <tt>average</tt>, the
-    return value declaration is incorrect; it contains both a binding name
-    and a type
+  <li><a href="drm_49.html#errata_p93_1" name="p93_1">p. 93</a>, in the
+    second definition of method <tt>average</tt>, the return value
+    declaration is incorrect; it contains both a binding name and a type
     
     <ul>
       <li><tt> => avg :: &lt;number&gt;;</tt></li>
@@ -88,9 +92,10 @@ subtype?(type-union*(s<sub>1</sub>...s<sub>m</sub>), type-union*(t<sub>1</sub>..
     
   </li>
   
-  <li>p. 136, the illustration of the third constraint implied by
-    <tt>define sealed domain</tt> should include open declarations for
-    the initial classes and the generic function, as follows
+  <li><a href="drm_75.html#errata_p136_1" name="p136_1">p. 136</a>, the
+    illustration of the third constraint implied by <tt>define sealed
+    domain</tt> should include open declarations for the initial classes
+    and the generic function, as follows
     
    <ul>
      <li><tt>define open generic m ( x ) ;<br />
@@ -132,36 +137,42 @@ subtype?(type-union*(s<sub>1</sub>...s<sub>m</sub>), type-union*(t<sub>1</sub>..
       (directly or indirectly) L2, and therefore has access to the class
       <tt>&lt;c&gt;</tt> before the domain is sealed.</p></li>
   
-  <li>p. 140, The classes and generic function should be declared
-    <tt>open</tt>, and the final method should be defined on
-    <tt>&lt;c1&gt;</tt>, not on <tt>&lt;c&gt;</tt>.</li>
+  <li><a href="drm_75.html#errata_p140_1" name="p140_1">p. 140</a>, the
+    classes and generic function should be declared <tt>open</tt>.</li>
   
-  <li>p. 198, the number classes diagram shows a
-    <tt>&lt;complex-number&gt;</tt> class. This class is actually
-    named <tt>&lt;complex&gt;</tt>.</li>
+  <li><a href="drm_75.html#errata_p140_2" name="p140_2">p. 140</a>, the
+    final method should be defined on <tt>&lt;c1&gt;</tt>, not
+    on <tt>&lt;c&gt;</tt>.</li>
   
-  <li>p. 207, the collection classes diagram has an arrow leading to
-    various vector &amp; string classes from
-    <tt>&lt;empty-list&gt;</tt>. It should actually lead from
-    <tt>&lt;vector&gt;</tt>.</li>
+  <li><a href="drm_92.html#errata_p198_1" name="p198_1">p. 198</a>, the
+    number classes diagram shows a <tt>&lt;complex-number&gt;</tt>
+    class. This class is actually named <tt>&lt;complex&gt;</tt>.</li>
   
-  <li>p. 263, the default value for the <i>by</i> argument to
-    <tt>make</tt> of <tt>&lt;range&gt;</tt> should be <tt>1</tt>, not
-    <tt>0</tt>.</li>
+  <li><a href="drm_93.html#errata_p207_1" name="p207_1">p. 207</a>, the
+    collection classes diagram has an arrow leading to various vector &amp;
+    string classes from <tt>&lt;empty-list&gt;</tt>. It should actually
+    lead from <tt>&lt;vector&gt;</tt>.</li>
   
-  <li>p. 309, in the example for tail-setter, the final value of
-    <tt>x</tt> should be <tt>#(4&nbsp;.&nbsp;"dot")</tt>, not
-    <tt>#(4,&nbsp;9,&nbsp;8, . "dot")</tt>.</li>
+  <li><a href="drm_98.html#errata_p263_1" name="p263_1">p. 263</a>, the
+    default value for the <i>by</i> argument to <tt>make</tt>
+    of <tt>&lt;range&gt;</tt> should be <tt>1</tt>, not <tt>0</tt>.</li>
   
-  <li>p. 325, in the description of <tt>replace-subsequence!</tt>,
-    the parameter <i>target-sequence</i> is erroneously refered to as
-    <i>source-sequence</i> in the last paragraph.</li>
+  <li><a href="drm_102.html#errata_p309_1" name="p309_1">p. 309</a>, in the
+    example for tail-setter, the final value of <tt>x</tt> should
+    be <tt>#(4&nbsp;.&nbsp;"dot")</tt>, not <tt>#(4,&nbsp;9,&nbsp;8, .
+    "dot")</tt>.</li>
   
-  <li>p. 329, in the example for <tt>map-as</tt>, the return value
-    should be <tt>#[101, 102, 203, 204]</tt> rather than
-    <tt>#(101, 102, 203, 204)</tt>.</li>
+  <li><a href="drm_102.html#errata_p325_1" name="p325_1">p. 325</a>, in the
+    description of <tt>replace-subsequence!</tt>, the
+    parameter <i>target-sequence</i> is erroneously refered to
+    as <i>source-sequence</i> in the last paragraph.</li>
   
-  <li>p. 351, the second use of <tt>apply</tt> reads
+  <li><a href="drm_102.html#errata_p329_1" name="p329_1">p. 329</a>, in the
+    example for <tt>map-as</tt>, the return value should be <tt>#[101, 102,
+    203, 204]</tt> rather than <tt>#(101, 102, 203, 204)</tt>.</li>
+  
+  <li><a href="drm_105.html#errata_p351_1" name="p351_1">p. 351</a>, the
+    second use of <tt>apply</tt> reads
     
     <ul>
       <li><tt>apply(min 5, 7 list(3, 1, 4))</tt></li>
@@ -176,14 +187,16 @@ subtype?(type-union*(s<sub>1</sub>...s<sub>m</sub>), type-union*(t<sub>1</sub>..
     <p>(Note the additional comma after the number <tt>7</tt> in the
       correct version.)</p></li>
   
-  <li>p. 354, in the description of the third value returned by
-    <tt>function-arguments</tt>, the obsolete binding name
-    <tt>&lt;keyword&gt;</tt> is used. The name <tt>&lt;symbol&gt;</tt>
-    should be substituted for the name <tt>&lt;keyword&gt;</tt>.</li>
+  <li><a href="drm_106.html#errata_p354_1" name="p354_1">p. 354</a>, in the
+    description of the third value returned by <tt>function-arguments</tt>,
+    the obsolete binding name <tt>&lt;keyword&gt;</tt> is used. The
+    name <tt>&lt;symbol&gt;</tt> should be substituted for the
+    name <tt>&lt;keyword&gt;</tt>.</li>
   
-  <li>p. 377, the use of the word "permit" in the last sentence
-    describing the final example is incorrect. The word "recognize"
-    should be used instead, yielding
+  <li><a href="drm_112.html#errata_p377_1" name="p377_1">p. 377</a>, the
+    use of the word "permit" in the last sentence describing the final
+    example is incorrect. The word "recognize" should be used instead,
+    yielding
     
     <ul>
       <li>Methods added to the generic function must have one
@@ -197,9 +210,10 @@ subtype?(type-union*(s<sub>1</sub>...s<sub>m</sub>), type-union*(t<sub>1</sub>..
       list congruency.</p>
   </li>
 
-  <li>p. 406, in the second code example of the <tt>block</tt> statement,
-    the <tt>cleanup</tt> and <tt>exception</tt> clauses are incorrectly ordered.
-    <tt>cleanup</tt> must come before <tt>exception</tt> clauses.
+  <li><a href="drm_114.html#errata_p406_1" name="p406_1">p. 406</a>, in the
+    second code example of the <tt>block</tt> statement,
+    the <tt>cleanup</tt> and <tt>exception</tt> clauses are incorrectly
+    ordered. <tt>cleanup</tt> must come before <tt>exception</tt> clauses.
   </li>
 </ul>
 

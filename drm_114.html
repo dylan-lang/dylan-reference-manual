@@ -646,9 +646,11 @@ end block </pre>
     <p class="T1.Text1">The <var>type</var> and <var>exception-options</var> are as for <code>let handler</code>. If present, <var>name</var> is bound to the condition during the execution of the handler's body.</p>
     <p class="T1.Text1">The exception clauses are checked in the order in which they appear. That is, the first handler will take precedence over the second, the second over the third, etc.</p>
     <p class="T1.Text1">The following is a trivial use of an exception clause.</p>
-    <p class="errata right"><em>Errata:</em> In this example, the <code>cleanup</code> and
-      <code>exception</code> clauses are incorrectly ordered. <code>cleanup</code> must
-      come before <code>exception</code> clauses.</p>
+    <p class="errata right"><a href="drm_errata.html#p406_1"
+			       name="errata_p406_1"><strong>Errata:</strong></a>
+      In this example, the <code>cleanup</code> and <code>exception</code>
+      clauses are incorrectly ordered. <code>cleanup</code> must come
+      before <code>exception</code> clauses.</p>
     <pre class="Cv.Code">
 block ()
   open-files();
