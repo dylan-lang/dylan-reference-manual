@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Declaring Characteristics of Classes</title>
 </head>
@@ -115,13 +115,13 @@
 
 <a name="HEADING73-0"></a>
 <a name="UID-Sealing-1209"></a>
-<h1 class="H1.Heading1"><a name="MARKER-9-1106"></a>Declaring Characteristics of Classes</h1>
+<h1 class="section-title"><a name="MARKER-9-1106"></a>Declaring Characteristics of Classes</h1>
 <p class="T1.Text1"><a name="MARKER-2-1107"></a>A class definition may include the adjectives <code>sealed</code>, <code>open</code>, <code>primary</code>, <code>free</code>, <code>abstract</code>, or <code>concrete</code>. These <a name="MARKER-2-1108"></a>adjectives declare characteristics of the class.</p>
 <p class="T1.Text1">Additional restrictions on the ability to subclass classes may be imposed by <code>define sealed domain</code>.</p>
-<ul class="B1.Bullet1">
-<li class="B1.Bullet1"><a name="MARKER-2-1109"></a>An explicitly defined class can be declared to be either sealed or open. If a class is sealed then no additional direct subclasses other than those explicitly known in the same library may be created. Thus, it is an error to define a direct subclass of a sealed class in some library other than the one that defined the sealed class, or to use <code>make</code> of <code>&lt;class&gt;</code> with a sealed class included in the direct superclasses specified by the <code>superclasses:</code> initialization argument. An open class does not prohibit such operations.<br />When explicitly defining a class, the default is for the class to be sealed. This may be overriden by explicitly specifying that it is open. A class created using <code><a name="MARKER-2-1110"></a>make</code> of <code>&lt;class&gt;</code> is open. There is no specified way to create a sealed class using <code>make</code>.</li>
-<li class="B1.Bullet1"><a name="MARKER-2-1111"></a>An explicitly defined class may be declared to be either primary or free. The default is free. Each primary superclass of a class must be either a subclass or a superclass of all the other primary superclasses of the class. (This essentially restricts primary classes to forming a <a name="MARKER-2-1112"></a><a name="MARKER-2-1113"></a>single inheritance chain.) Slots defined in a primary class may be accessed more efficiently than slots defined in a free class. </li>
-<li class="B1.Bullet1"><a name="MARKER-2-1114"></a>An explicitly defined class may be defined to be either abstract or concrete. The default is concrete. The superclasses of an abstract class must be abstract. The default method on <code>make</code> will signal an error if passed an abstract class. For an abstract class to be instantiable, it must define a method on <code>make</code> that delegates to a concrete subclass.<a name="MARKER-2-1115"></a></li>
+<ul>
+<li><a name="MARKER-2-1109"></a>An explicitly defined class can be declared to be either sealed or open. If a class is sealed then no additional direct subclasses other than those explicitly known in the same library may be created. Thus, it is an error to define a direct subclass of a sealed class in some library other than the one that defined the sealed class, or to use <code>make</code> of <code>&lt;class&gt;</code> with a sealed class included in the direct superclasses specified by the <code>superclasses:</code> initialization argument. An open class does not prohibit such operations.<br />When explicitly defining a class, the default is for the class to be sealed. This may be overriden by explicitly specifying that it is open. A class created using <code><a name="MARKER-2-1110"></a>make</code> of <code>&lt;class&gt;</code> is open. There is no specified way to create a sealed class using <code>make</code>.</li>
+<li><a name="MARKER-2-1111"></a>An explicitly defined class may be declared to be either primary or free. The default is free. Each primary superclass of a class must be either a subclass or a superclass of all the other primary superclasses of the class. (This essentially restricts primary classes to forming a <a name="MARKER-2-1112"></a><a name="MARKER-2-1113"></a>single inheritance chain.) Slots defined in a primary class may be accessed more efficiently than slots defined in a free class. </li>
+<li><a name="MARKER-2-1114"></a>An explicitly defined class may be defined to be either abstract or concrete. The default is concrete. The superclasses of an abstract class must be abstract. The default method on <code>make</code> will signal an error if passed an abstract class. For an abstract class to be instantiable, it must define a method on <code>make</code> that delegates to a concrete subclass.<a name="MARKER-2-1115"></a></li>
 </ul>
 
 </div>

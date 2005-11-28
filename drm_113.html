@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Local Declarations</title>
 </head>
@@ -121,7 +121,7 @@
 
 <a name="HEADING113-0"></a>
 <a name="UID-Built-In_Macros-7985"></a>
-<h1 class="H1.Heading1">Local Declarations</h1>
+<h1 class="section-title">Local Declarations</h1>
 <p class="T1.Text1"><a name="MARKER-2-2029"></a>Local declarations are used to create bindings or install handlers that are active for the remainder of the innermost body containing the declaration. Bindings created by local declarations can be referenced only in the remaining program text of the body. Handlers installed are active while the execution of the remainder of the body is active, which includes the time during which any functions called from the remainder of the body are active.</p>
 <table class="numbered"><caption><strong>Table 14-2</strong>  Local Declarations</caption>
 <tr><th class="primary"><p class="TbH.TblHd"> Macro</p>
@@ -137,35 +137,35 @@
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2038" class="TbT.TblText">Establishes a condition handler for the duration of the execution of smallest enclosing implicit body.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2038" class="TbT.TblText">392</a></p>
 </td></tr></table><a name="HEADING113-63"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-2030"></a>let</code> <span class="attributes-summary">[Local Declaration]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-9-2031"></a>Creates and initializes new local bindings within the smallest enclosing implicit body.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2030"></a>let</code> </span><span class="attributes-summary">[Local Declaration]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-9-2031"></a>Creates and initializes new local bindings within the smallest enclosing implicit body.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Macro Call:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> <code>let <var>variables</var> = <var>init</var> ;</code></p></dd>
+  <dd class="Cliche"><p><code>let</code> <var>variables</var> <code>=</code> <var>init</var> <code>;</code></p></dd>
   <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>variables</var></dt>
       <dd>
-        <p class="Cliche"><span class="BNF">variable<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>(</code> <span class="BNF">variable-list<em class="BNF"><sub>bnf</sub></em></span> <code>)</code></p>
+        <p><span class="BNF">variable<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>(</code> <span class="BNF">variable-list<em class="BNF"><sub>bnf</sub></em></span> <code>)</code></p>
       </dd>
-      <dt class="RP.RoutineParam"><var>init</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt class="routine-param"><var>init</var></dt>
+      <dd class="routine-param"><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> <code>let</code> creates local bindings for the <var>variables</var>, and initializes them to the values returned by <var>init</var>. The bindings are visible for the remainder of the smallest enclosing implicit body.</p>
+  <dd class="Cliche"><p><code>let</code> creates local bindings for the <var>variables</var>, and initializes them to the values returned by <var>init</var>. The bindings are visible for the remainder of the smallest enclosing implicit body.</p>
     <p class="T1.Text1"><a name="MARKER-2-2032"></a>The first value returned by the <var>init</var> is bound to the first <var>variable</var>, the second value to the second <var>variable</var>, etc. The last <var>variable</var> may be preceded by <code>#rest</code>, in which case it is bound to a sequence containing all the remaining values.</p>
     <p class="T1.Text1">Each <var>variable</var> is a variable-name or a variable-name followed by a specializer.</p>
     <p class="T1.Text1">If more than one binding is defined, the <var>variables</var> are enclosed in parentheses and separated by commas.</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 let start = 0;
 
 let (whole-part, remainder) = truncate(amount);
 
 let (first-value, #rest rest-values) = get-initial-values();</pre>
     <p class="T1.Text1"><a name="MARKER-2-2033"></a>Local variables may be specialized. This ensures that their value will always be of a given type. An attempt to initialize or assign the variable to a value not of that type will signal an error of type <code>&lt;type-error&gt;</code>.</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 let elapsed-time :: &lt;integer&gt; = 0;
 
 let the-front-window :: &lt;window&gt; = front-window();
@@ -174,66 +174,62 @@ let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount)
   </dd>
 </dl>
 <a name="HEADING113-79"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-2034"></a>local</code> <span class="attributes-summary">[Local Declaration]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-9-2035"></a><a name="MARKER-2-2036"></a>Creates new local bindings within the smallest enclosing implicit body and initializes them to local methods that can be self-recursive and mutually recursive.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2034"></a>local</code> </span><span class="attributes-summary">[Local Declaration]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-9-2035"></a><a name="MARKER-2-2036"></a>Creates new local bindings within the smallest enclosing implicit body and initializes them to local methods that can be self-recursive and mutually recursive.</p>
 <dl class="Cliche">
 <dt class="Cliche"><span>Macro Call:</span></dt>
-<dd class="Cliche"><p class="Cliche"> <code>local</code> <strong class="re">{ [</strong> <code>method</code> <strong class="re">]</strong> <var>name parameter-list</var> <strong class="re">[</strong> <var>body</var> <strong class="re">]</strong> <code>end</code> <strong class="re">[</strong> <code>method</code> <strong class="re">] [</strong> <var>name</var> <strong class="re">] }</strong> <code>,</code><strong class="re"><sup>+</sup></strong></p></dd>
+<dd class="Cliche"><p><code>local</code> <strong class="re">{ [</strong> <code>method</code> <strong class="re">]</strong> <var>name parameter-list</var> <strong class="re">[</strong> <var>body</var> <strong class="re">]</strong> <code>end</code> <strong class="re">[</strong> <code>method</code> <strong class="re">] [</strong> <var>name</var> <strong class="re">] }</strong> <code>,</code><strong class="re"><sup>+</sup></strong></p></dd>
 <dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
     <dl>
-      <dt><var>name</var></dt>
-      <dd>
-        <p class="Cliche"><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p>
-      </dd>
-<dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">parameter-list<code></code></i></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> parameter-list<em class="RP.RoutineParam"><sub>bnf</sub></em></p></dd>
-<dt class="RP.RoutineParam"><var>body</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">body<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt class="routine-param"><var>name</var></dt>
+      <dd class="routine-param"><p><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt class="routine-param"><var>parameter-list</var></dt>
+      <dd class="routine-param"><p>parameter-list<em class="routine-param"><sub>bnf</sub></em></p></dd>
+      <dt class="routine-param"><var>body</var></dt>
+      <dd class="routine-param"><p><span class="BNF">body<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 </dl></dd>
 <dt class="Cliche"><span>Description:</span></dt>
-<dd class="Cliche"><p class="Cliche"> <code>local</code> creates local methods that may be mutually recursive and self-recursive.</p>
+<dd class="Cliche"><p><code>local</code> creates local methods that may be mutually recursive and self-recursive.</p>
 <p class="T1.Text1">Each <var>name</var> creates a new local binding. The binding is initialized to a new method specified by the <var>parameter-list</var> and <var>body</var>. In addition to being visible for the remainder of the smallest enclosing implicit body, the bindings created for the <var>names</var> are visible to the <var>parameter-lists</var> and <var>bodies</var> of all the methods created by the <code>local</code> declaration.</p>
 <p class="T1.Text1">The <var>parameter-list</var> is a standard method parameter list. A complete description of parameter lists is given in <a href="drm_49.html#MARKER-9-782" class="T1.Text1">"Parameter Lists" on page 84</a>.</p>
 <p class="T1.Text1">The <var>body</var> is an implicit body.</p></dd>
 </dl>
 <a name="HEADING113-89"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-2037"></a>let handler</code> <span class="attributes-summary">[Local Declaration]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><code><a name="MARKER-9-2038"></a><a name="MARKER-2-2039"></a></code>Establishes a condition handler for the duration of the execution of smallest enclosing implicit body.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2037"></a>let handler</code> </span><span class="attributes-summary">[Local Declaration]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-9-2038"></a><a name="MARKER-2-2039"></a>Establishes a condition handler for the duration of the execution of smallest enclosing implicit body.</p>
 <dl class="Cliche">
 <dt class="Cliche"><span>Macro Call:</span></dt>
-<dd class="Cliche"><p class="Cliche"> <code>let handler</code> <i class="parameter Cliche">condition<code> = handler</code></i></p></dd>
+<dd class="Cliche"><p><code>let handler</code> <var>condition</var> <code>=</code> <var>handler</var></p></dd>
 <dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
     <dl>
-      <dt><var>condition</var></dt>
-      <dd>
-        <p class="Cliche"><var>type</var> <strong class="re">|</strong> <code>(</code> <var>type</var> <strong class="re">{</strong> <code>,</code> <var>option</var> <strong class="re">}*</strong> <code>)</code></p>
-      </dd>
-<dt class="RP.RoutineParam"><var>type</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-<dt class="RP.RoutineParam"><var>option</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <var>test-option</var> <strong class="re">|</strong> <var>init-option</var></p></dd>
-<dt class="RP.RoutineParam"><var>test-option</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>test:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-<dt class="RP.RoutineParam"><var>init-option</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>init-arguments:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-<dt class="RP.RoutineParam"><var>handler</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt class="routine-param"><var>condition</var></dt>
+      <dd class="routine-param"><p><var>type</var> <strong class="re">|</strong> <code>(</code> <var>type</var> <strong class="re">{</strong> <code>,</code> <var>option</var> <strong class="re">}*</strong> <code>)</code></p></dd>
+      <dt class="routine-param"><var>type</var></dt>
+      <dd class="routine-param"><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt class="routine-param"><var>option</var></dt>
+      <dd class="routine-param"><p><var>test-option</var> <strong class="re">|</strong> <var>init-option</var></p></dd>
+      <dt class="routine-param"><var>test-option</var></dt>
+      <dd class="routine-param"><p><code>test:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt class="routine-param"><var>init-option</var></dt>
+      <dd class="routine-param"><p><code>init-arguments:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt class="routine-param"><var>handler</var></dt>
+      <dd class="routine-param"><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 </dl></dd>
 <dt class="Cliche"><span>Description:</span></dt>
-<dd class="Cliche"><p class="Cliche"> <code>let handler</code> establishes a new condition handler that is in effect for the duration of the execution of the remainder of the smallest enclosing implicit body. Unlike the local declarations <code>let</code> and <code>local</code>, <code>let handler</code> does not create any bindings.</p>
-  <ul class="B1.Bullet1">
-    <li class="B1.Bullet1">The <var>condition</var> describes the conditions for which the handler is applicable.
-      <ul class="B2.Bullet2">
-	<li class="B2.Bullet2">The <var>type</var> is the type of the applicable conditions. The handler will be applicable to conditions that are general instances of <var>type</var>.</li>
-	<li class="B2.Bullet2">The <var>test-option </var> is a function that is called to further test the applicability of the handler. When a condition of type <var>type</var> is signaled, the test function will be called with that condition as an argument. If the test returns true, the handler is considered applicable to the condition. If the test returns false, the handler is considered to be inapplicable to the condition. The default value of this option is a function that always returns true. There can be at most one <var>test-option</var>.<br /><br />An example use for this feature is a restart handler for restarting only from a particular condition object, for example restarting from an unbound-slot error by setting the slot and retrying the invocation of the accessor. The <code>&lt;set-and-continue&gt;</code> restart condition will have the signaled <code>&lt;unbound-slot&gt;</code> condition in a slot, and the handler's test will check for it. (These class names are invented for this example and are not part of the specification.)</li>
-	<li class="B2.Bullet2">The <var>init-option</var> is a sequence of alternating keywords and objects that can be used as initialization arguments to construct a condition to which the handler is applicable. For example, if the handler is a restart handler, a program could retrieve the <var>init-option</var> by calling <code>do-handlers</code>, and could then use them to construct a corresponding restart. There can be at most one <var>init-option</var>. <var>init-option</var> defaults to an empty sequence.</li>
+<dd class="Cliche"><p><code>let handler</code> establishes a new condition handler that is in effect for the duration of the execution of the remainder of the smallest enclosing implicit body. Unlike the local declarations <code>let</code> and <code>local</code>, <code>let handler</code> does not create any bindings.</p>
+  <ul>
+    <li>The <var>condition</var> describes the conditions for which the handler is applicable.
+      <ul>
+	<li>The <var>type</var> is the type of the applicable conditions. The handler will be applicable to conditions that are general instances of <var>type</var>.</li>
+	<li>The <var>test-option </var> is a function that is called to further test the applicability of the handler. When a condition of type <var>type</var> is signaled, the test function will be called with that condition as an argument. If the test returns true, the handler is considered applicable to the condition. If the test returns false, the handler is considered to be inapplicable to the condition. The default value of this option is a function that always returns true. There can be at most one <var>test-option</var>.<br /><br />An example use for this feature is a restart handler for restarting only from a particular condition object, for example restarting from an unbound-slot error by setting the slot and retrying the invocation of the accessor. The <code>&lt;set-and-continue&gt;</code> restart condition will have the signaled <code>&lt;unbound-slot&gt;</code> condition in a slot, and the handler's test will check for it. (These class names are invented for this example and are not part of the specification.)</li>
+	<li>The <var>init-option</var> is a sequence of alternating keywords and objects that can be used as initialization arguments to construct a condition to which the handler is applicable. For example, if the handler is a restart handler, a program could retrieve the <var>init-option</var> by calling <code>do-handlers</code>, and could then use them to construct a corresponding restart. There can be at most one <var>init-option</var>. <var>init-option</var> defaults to an empty sequence.</li>
       </ul>
     </li>
-    <li class="B1.Bullet1">The<var> handler</var> is function called to handle a condition that matches <var>type</var> and passes <var>test-option</var>. The function should accept two arguments. The first argument will be the condition being signaled, and the second argument will be a next-handler function. The handler handles the condition by taking a nonlocal exit, returning values according to the condition's recovery protocol, or tail-recursively calling <code>signal</code> of a restart. The function can decline to handle the condition by tail-recursively calling the next-handler function with no arguments.</li>
+    <li>The<var> handler</var> is function called to handle a condition that matches <var>type</var> and passes <var>test-option</var>. The function should accept two arguments. The first argument will be the condition being signaled, and the second argument will be a next-handler function. The handler handles the condition by taking a nonlocal exit, returning values according to the condition's recovery protocol, or tail-recursively calling <code>signal</code> of a restart. The function can decline to handle the condition by tail-recursively calling the next-handler function with no arguments.</li>
   </ul>
   <p class="T1.Text1"><var>test-option</var> and <var>handler</var>  are distinct so that handler applicability can be tested without actually handling (which might take a nonlocal exit). One use for this is constructing a list of available restart handlers.</p>
   <p class="T1.Text1">There is no "condition wall," i.e., when executing <var>handler </var> the set of available handlers is not reset to the handlers that were in effect when the <code>let handler</code> was entered.</p>

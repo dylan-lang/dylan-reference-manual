@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Limited Collection Types</title>
 </head>
@@ -124,85 +124,85 @@
 
 <a name="HEADING69-0"></a>
 <a name="UID-Collections-3802"></a>
-<h1 class="H1.Heading1"><a name="MARKER-9-1060"></a>Limited Collection Types</h1>
+<h1 class="section-title"><a name="MARKER-9-1060"></a>Limited Collection Types</h1>
 <p class="T0.Text0"><a name="MARKER-2-1061"></a>Limited collections are subtypes of <code>&lt;collection&gt;</code> that are constrained to have a particular size or dimensions and that are constrained to hold elements of a particular type.</p>
-<p class="T1.Text1">If <var>C</var> is a subclass of <code>&lt;collection&gt;</code> whose element type is indefinite <code>&lArr;</code> <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i>, then it is possible to create any number of limited collection types that can be described as <code>limited(<var>C</var>, of: <i class="parameter cv T1.Text1">T<em class="Subscript Parameter cv T1.Text1"><sub>2</sub></em></i>, size: <var>S</var>)</code>.</p>
-<p class="T1.Text1">Like a collection class, a limited collection type has a conceptual element type. The element type of <code>limited(<var>C</var>, of: <i class="parameter cv T1.Text1">T<em class="Subscript Parameter cv T1.Text1"><sub>2</sub></em></i>, size: <var>S</var>)</code> is <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i>. <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i> must be an instance of <code>&lt;type&gt;</code> and a subtype of <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i>. <var>C</var> is the base class of the new limited collection type.</p>
+<p class="T1.Text1">If <var>C</var> is a subclass of <code>&lt;collection&gt;</code> whose element type is indefinite <code>&lArr;</code> <var>T<em><sub>1</sub></em></var>, then it is possible to create any number of limited collection types that can be described as <code>limited(<var>C</var>, of: <var>T<em><sub>2</sub></em></var>, size: <var>S</var>)</code>.</p>
+<p class="T1.Text1">Like a collection class, a limited collection type has a conceptual element type. The element type of <code>limited(<var>C</var>, of: <var>T<em><sub>2</sub></em></var>, size: <var>S</var>)</code> is <var>T<em><sub>2</sub></em></var>. <var>T<em><sub>2</sub></em></var> must be an instance of <code>&lt;type&gt;</code> and a subtype of <var>T<em><sub>1</sub></em></var>. <var>C</var> is the base class of the new limited collection type.</p>
 <p class="T1.Text1"><var>S</var> limits the size of instances of a limited collection type. <var>S</var> can be <code>#f</code>, which means no limitation, or a non-negative integer, which means that every instance of the limited collection type has exactly that many elements.</p>
 <p class="T1.Text1"><var>S</var> must be <code>#f</code> if <var>C</var> is stretchy (e.g. <code>&lt;table&gt;</code>, <code>&lt;stretchy-vector&gt;</code>, or <code>&lt;deque&gt;</code>).</p>
 <p class="T1.Text1">If <var>C</var> is <code>&lt;array&gt;</code> then it is also possible to create any number of limited collection types, which can be described as <code>limited(&lt;array&gt;, of: <var>T</var>, dimensions: <var>D</var>)</code>. <var>D</var> must be a sequence of non-negative integers; the rank of each instance is <code>size(<var>D)</var></code> and the dimensions of each instance are the elements of <var>D</var>. You cannot specify both <code>size:</code> and <code>dimensions:</code> in the same type.</p>
 <p class="T1.Text1">Some limited collection types are instantiable. <code>make(limited(<var>C</var>, <var>&hellip;</var>), <var>&hellip;</var>)</code> returns a direct instance of some subclass of <var>C</var>. Typically this class is not standardized and its name is not exported, but it is valid for this class to be <var>C</var> itself. There is nothing special about this class; it is simply a class known to the applicable <code>limited</code> method and its creation is subject to all the usual sealing restrictions.</p>
-<p class="T1.Text1"><a name="MARKER-2-1062"></a>An object <var>X</var> is an instance of a limited collection type <code>limited(<var>C</var>, of: <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i>, size: <var>S</var>)</code> if and only if all of the following are true:</p>
-<ul class="B1.Bullet1">
-<li class="B1.Bullet1"><code>object-class(<var>X</var>)</code> is a subclass of <var>C</var>.</li>
-<li class="B1.Bullet1"><var>X</var>'s size matches <var>S</var>, as described above.</li>
-<li class="B1.Bullet1">If <var>X</var> is an instance of <code>&lt;stretchy-collection&gt;</code> then <var>S</var> must be <code>#f</code>.</li>
-<li class="B1.Bullet1">The element type of <var>X</var> is equivalent to <i class="parameter B1.Bullet1">T<em class="Subscript Parameter B1.Bullet1"><sub>2</sub></em></i>.</li>
-</ul>
-<p class="T1.Text1">An object <var>X</var> is an instance of a type <code>limited(<var>C</var>, of: <i class="parameter cv T1.Text1">T<em class="Subscript Parameter cv T1.Text1"><sub>2</sub></em></i>, dimensions: <var>D</var>)</code> if and only if all of the following are true:</p>
+<p class="T1.Text1"><a name="MARKER-2-1062"></a>An object <var>X</var> is an instance of a limited collection type <code>limited(<var>C</var>, of: <var>T<em><sub>2</sub></em></var>, size: <var>S</var>)</code> if and only if all of the following are true:</p>
 <ul>
-<li class="B1.Bullet1"><code>object-class(<var>X</var>)</code> is a subclass of <var>C</var>.</li>
-<li class="B1.Bullet1"><code>dimensions(<var>X</var>)</code> <code>=</code> <var>D</var>.</li>
-<li class="B1.Bullet1"><var>X</var> is not an instance of <code>&lt;stretchy-collection&gt;</code>.</li>
-<li class="B1.Bullet1">The element type of <var>X</var> is equivalent to <i class="parameter B1.Bullet1">T<em class="Subscript Parameter B1.Bullet1"><sub>2</sub></em></i>.<a name="MARKER-2-1063"></a></li>
+<li><code>object-class(<var>X</var>)</code> is a subclass of <var>C</var>.</li>
+<li><var>X</var>'s size matches <var>S</var>, as described above.</li>
+<li>If <var>X</var> is an instance of <code>&lt;stretchy-collection&gt;</code> then <var>S</var> must be <code>#f</code>.</li>
+<li>The element type of <var>X</var> is equivalent to <var>T<em><sub>2</sub></em></var>.</li>
+</ul>
+<p class="T1.Text1">An object <var>X</var> is an instance of a type <code>limited(<var>C</var>, of: <var>T<em><sub>2</sub></em></var>, dimensions: <var>D</var>)</code> if and only if all of the following are true:</p>
+<ul>
+<li><code>object-class(<var>X</var>)</code> is a subclass of <var>C</var>.</li>
+<li><code>dimensions(<var>X</var>)</code> <code>=</code> <var>D</var>.</li>
+<li><var>X</var> is not an instance of <code>&lt;stretchy-collection&gt;</code>.</li>
+<li>The element type of <var>X</var> is equivalent to <var>T<em><sub>2</sub></em></var>.<a name="MARKER-2-1063"></a></li>
 </ul>
 <p class="T1.Text1">Each element of an instance of a limited collection type must be an instance of the element type. Fetching an element of the collection is guaranteed to return an instance of the element type. Setting or initializing an element will check that the new element is an instance of the element type and signal an error of type <code>&lt;type-error&gt;</code> if it is not.</p>
-<p class="T1.Text1"><a name="MARKER-2-1064"></a>If <i class="parameter T1.Text1">L<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> is a subtype of <i class="parameter T1.Text1">L<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i> and <i class="parameter T1.Text1">L<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i> is a limited collection type, then <i class="parameter T1.Text1">L<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> is either a singleton of an instance of <i class="parameter T1.Text1">L<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i> or a limited collection type that satisfies one of the following sets of rules:</p>
+<p class="T1.Text1"><a name="MARKER-2-1064"></a>If <var>L<em><sub>1</sub></em></var> is a subtype of <var>L<em><sub>2</sub></em></var> and <var>L<em><sub>2</sub></em></var> is a limited collection type, then <var>L<em><sub>1</sub></em></var> is either a singleton of an instance of <var>L<em><sub>2</sub></em></var> or a limited collection type that satisfies one of the following sets of rules:</p>
 <ol>
-  <li>If neither <i class="parameter N.NList">L<em class="Subscript Parameter N.NList"><sub>1</sub></em></i> nor <i class="parameter N.NList">L<em class="Subscript Parameter N.NList"><sub>2</sub></em></i> specifies a <code>dimensions:</code> attribute, let <i class="parameter N.NList">L<em class="Subscript Parameter N.NList"><sub>1</sub></em></i> be <code>limited(<i class="parameter cv N.NList">C<em class="Subscript Parameter cv N.NList"><sub>1</sub></em></i>, of: <i class="parameter cv N.NList">T<em class="Subscript Parameter cv N.NList"><sub>1</sub></em></i>, size: <i class="parameter cv N.NList">S<em class="Subscript Parameter cv N.NList"><sub>1</sub></em></i>)</code>, and <i class="parameter N.NList">L<em class="Subscript Parameter N.NList"><sub>2</sub></em></i> be <code>limited(<i class="parameter cv N.NList">C<em class="Subscript Parameter cv N.NList"><sub>2</sub></em></i>, of: <i class="parameter cv N.NList">T<em class="Subscript Parameter cv N.NList"><sub>2</sub></em></i>, size: <i class="parameter cv N.NList">S<em class="Subscript Parameter cv N.NList"><sub>2</sub></em></i>)</code>. All of the following must be true:
-    <ul class="B2.Bullet2">
-      <li class="B2.Bullet2"><i class="parameter B2.Bullet2">C<em class="Subscript Parameter B2.Bullet2"><sub>1</sub></em></i> is a subclass of <i class="parameter B2.Bullet2">C<em class="Subscript Parameter B2.Bullet2"><sub>2</sub></em></i>.</li>
-      <li class="B2.Bullet2">If <i class="parameter B2.Bullet2">S<em class="Subscript Parameter B2.Bullet2"><sub>2</sub></em></i> is not #<code>f</code>, <i class="parameter B2.Bullet2">S<em class="Subscript Parameter B2.Bullet2"><sub>1</sub></em></i> = <i class="parameter B2.Bullet2">S<em class="Subscript Parameter B2.Bullet2"><sub>2</sub></em></i>.</li>
-      <li class="B2.Bullet2"><i class="parameter B2.Bullet2">T<em class="Subscript Parameter B2.Bullet2"><sub>1</sub></em></i> and <i class="parameter B2.Bullet2">T<em class="Subscript Parameter B2.Bullet2"><sub>2</sub></em></i> are equivalent types.</li>
+  <li>If neither <var>L<em><sub>1</sub></em></var> nor <var>L<em><sub>2</sub></em></var> specifies a <code>dimensions:</code> attribute, let <var>L<em><sub>1</sub></em></var> be <code>limited(<var>C<em><sub>1</sub></em></var>, of: <var>T<em><sub>1</sub></em></var>, size: <var>S<em><sub>1</sub></em></var>)</code>, and <var>L<em><sub>2</sub></em></var> be <code>limited(<var>C<em><sub>2</sub></em></var>, of: <var>T<em><sub>2</sub></em></var>, size: <var>S<em><sub>2</sub></em></var>)</code>. All of the following must be true:
+    <ul>
+      <li><var>C<em><sub>1</sub></em></var> is a subclass of <var>C<em><sub>2</sub></em></var>.</li>
+      <li>If <var>S<em><sub>2</sub></em></var> is not #<code>f</code>, <var>S<em><sub>1</sub></em></var> = <var>S<em><sub>2</sub></em></var>.</li>
+      <li><var>T<em><sub>1</sub></em></var> and <var>T<em><sub>2</sub></em></var> are equivalent types.</li>
     </ul>
   </li>
-  <li>If either <i class="parameter N.NList">L<em class="Subscript Parameter N.NList"><sub>1</sub></em></i> or <i class="parameter N.NList">L<em class="Subscript Parameter N.NList"><sub>2</sub></em></i>, specifies a <code>dimensions:</code> attribute, then all of the following must be true. Let <i class="parameter N.NList">L<em class="Subscript Parameter N.NList"><sub>1</sub></em></i> be <code>limited(<i class="parameter cv N.NList">C<em class="Subscript Parameter cv N.NList"><sub>1</sub></em></i>, of: <i class="parameter cv N.NList">T<em class="Subscript Parameter cv N.NList"><sub>1</sub></em></i>, dimensions: <i class="parameter cv N.NList">D<em class="Subscript Parameter cv N.NList"><sub>1</sub></em></i>)</code>, and <i class="parameter N.NList">L<em class="Subscript Parameter N.NList"><sub>2</sub></em></i> be either <code>limited(<i class="parameter cv N.NList">C<em class="Subscript Parameter cv N.NList"><sub>2</sub></em></i>, of: <i class="parameter cv N.NList">T<em class="Subscript Parameter cv N.NList"><sub>2</sub></em></i>, dimensions: <i class="parameter cv N.NList">D<em class="Subscript Parameter cv N.NList"><sub>2</sub></em></i>)</code> or <code>limited(<i class="parameter cv N.NList">C<em class="Subscript Parameter cv N.NList"><sub>2</sub></em></i>, of: <i class="parameter cv N.NList">T<em class="Subscript Parameter cv N.NList"><sub>2</sub></em></i>, size: <i class="parameter cv N.NList">S<em class="Subscript Parameter cv N.NList"><sub>2</sub></em></i>)</code>.
+  <li>If either <var>L<em><sub>1</sub></em></var> or <var>L<em><sub>2</sub></em></var>, specifies a <code>dimensions:</code> attribute, then all of the following must be true. Let <var>L<em><sub>1</sub></em></var> be <code>limited(<var>C<em><sub>1</sub></em></var>, of: <var>T<em><sub>1</sub></em></var>, dimensions: <var>D<em><sub>1</sub></em></var>)</code>, and <var>L<em><sub>2</sub></em></var> be either <code>limited(<var>C<em><sub>2</sub></em></var>, of: <var>T<em><sub>2</sub></em></var>, dimensions: <var>D<em><sub>2</sub></em></var>)</code> or <code>limited(<var>C<em><sub>2</sub></em></var>, of: <var>T<em><sub>2</sub></em></var>, size: <var>S<em><sub>2</sub></em></var>)</code>.
     <ul>
-      <li class="B2.Bullet2"><i class="parameter B2.Bullet2">C<em class="Subscript Parameter B2.Bullet2"><sub>1</sub></em></i> is a subclass of <i class="parameter B2.Bullet2">C<em class="Subscript Parameter B2.Bullet2"><sub>2</sub></em></i>.</li>
-      <li class="B2.Bullet2"><i class="parameter B2.Bullet2">D<em class="Subscript Parameter B2.Bullet2"><sub>1</sub></em></i> is present (i.e. <i class="parameter B2.Bullet2">L<em class="Subscript Parameter B2.Bullet2"><sub>1</sub></em></i> must specify a dimensions attribute).</li>
-      <li class="B2.Bullet2">If <i class="parameter B2.Bullet2">D<em class="Subscript Parameter B2.Bullet2"><sub>2</sub></em></i> is present, <i class="parameter B2.Bullet2">D<em class="Subscript Parameter B2.Bullet2"><sub>1</sub></em></i> <code>=</code> <i class="parameter B2.Bullet2">D<em class="Subscript Parameter B2.Bullet2"><sub>2</sub></em></i>.</li>
-      <li class="B2.Bullet2">If <i class="parameter B2.Bullet2">S<em class="Subscript Parameter B2.Bullet2"><sub>2</sub></em></i> is not <code>#f</code>, <code>reduce1(\*, <i class="parameter cv B2.Bullet2">D<em class="Subscript Parameter cv B2.Bullet2"><sub>1</sub></em></i>) = <i class="parameter cv B2.Bullet2">S<em class="Subscript Parameter cv B2.Bullet2"><sub>2</sub></em></i></code>.</li>
-      <li class="B2.Bullet2"><i class="parameter B2.Bullet2">T<em class="Subscript Parameter B2.Bullet2"><sub>1</sub></em></i> and <i class="parameter B2.Bullet2">T<em class="Subscript Parameter B2.Bullet2"><sub>2</sub></em></i> are equivalent types.</li>
+      <li><var>C<em><sub>1</sub></em></var> is a subclass of <var>C<em><sub>2</sub></em></var>.</li>
+      <li><var>D<em><sub>1</sub></em></var> is present (i.e. <var>L<em><sub>1</sub></em></var> must specify a dimensions attribute).</li>
+      <li>If <var>D<em><sub>2</sub></em></var> is present, <var>D<em><sub>1</sub></em></var> <code>=</code> <var>D<em><sub>2</sub></em></var>.</li>
+      <li>If <var>S<em><sub>2</sub></em></var> is not <code>#f</code>, <code>reduce1(\*, <var>D<em><sub>1</sub></em></var>) = <var>S<em><sub>2</sub></em></var></code>.</li>
+      <li><var>T<em><sub>1</sub></em></var> and <var>T<em><sub>2</sub></em></var> are equivalent types.</li>
     </ul>
   </li>
 </ol>
 <p class="T1.Text1">The limited collection type <code>limited(<var>C</var>, of: <var>T</var>, size: <var>S</var>)</code> is a subtype of <var>C</var>. The limited collection type <code>limited(<var>C</var>, of: <var>T</var>, dimensions: <var>D</var>)</code> is a subtype of <var>C</var>.<a name="MARKER-2-1065"></a></p>
 <a name="HEADING69-31"></a>
-<h3 class="H3.Heading3">Element Type Subclassing</h3>
+<h3 class="sub-subsection-title">Element Type Subclassing</h3>
 <p class="T1.Text1"><a name="MARKER-2-1066"></a>The element type subclassing rules are generalized to limited collection types as follows (this is implied by the preceding and is included here for explanatory purposes only):</p>
-<p class="T1.Text1">If the element type of a limited collection type <i class="parameter T1.Text1">L<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> is <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i>, each instance of <i class="parameter T1.Text1">L<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> stores elements of type <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i>. The <code>element</code> method will always return an instance of <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> and the <code>element-setter</code> method will accept any instance of <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i>. Each limited collection type that is a subtype of <i class="parameter T1.Text1">L<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> must have an element type <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i> that is equivalent to <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i>.</p>
-<p class="T1.Text1">If the element type of a class <i class="parameter T1.Text1">C<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> is indefinite <code>&lArr;</code> <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i>,  each limited collection type that is a subtype of <i class="parameter T1.Text1">C<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> has an element type <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i> and <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i> must be a subtype of <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i>. Thus <code>element</code> on any instance of <i class="parameter T1.Text1">C<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> will return an instance of <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> (and will not return all possible instances of <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> if <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i> is a proper subtype of <i class="parameter T1.Text1">T<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i>), and it is not determined by <i class="parameter T1.Text1">C<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> what the applicable <code>element-setter</code> method will accept (hence the term "indefinite").</p>
+<p class="T1.Text1">If the element type of a limited collection type <var>L<em><sub>1</sub></em></var> is <var>T<em><sub>1</sub></em></var>, each instance of <var>L<em><sub>1</sub></em></var> stores elements of type <var>T<em><sub>1</sub></em></var>. The <code>element</code> method will always return an instance of <var>T<em><sub>1</sub></em></var> and the <code>element-setter</code> method will accept any instance of <var>T<em><sub>1</sub></em></var>. Each limited collection type that is a subtype of <var>L<em><sub>1</sub></em></var> must have an element type <var>T<em><sub>2</sub></em></var> that is equivalent to <var>T<em><sub>1</sub></em></var>.</p>
+<p class="T1.Text1">If the element type of a class <var>C<em><sub>1</sub></em></var> is indefinite <code>&lArr;</code> <var>T<em><sub>1</sub></em></var>,  each limited collection type that is a subtype of <var>C<em><sub>1</sub></em></var> has an element type <var>T<em><sub>2</sub></em></var> and <var>T<em><sub>2</sub></em></var> must be a subtype of <var>T<em><sub>1</sub></em></var>. Thus <code>element</code> on any instance of <var>C<em><sub>1</sub></em></var> will return an instance of <var>T<em><sub>1</sub></em></var> (and will not return all possible instances of <var>T<em><sub>1</sub></em></var> if <var>T<em><sub>2</sub></em></var> is a proper subtype of <var>T<em><sub>1</sub></em></var>), and it is not determined by <var>C<em><sub>1</sub></em></var> what the applicable <code>element-setter</code> method will accept (hence the term "indefinite").</p>
 <p class="T1.Text1">The above statements about the value returned by <code>element</code> only apply when no <code>default:</code> keyword argument is specified.<a name="MARKER-2-1067"></a></p>
 <a name="HEADING69-36"></a>
 <a name="UID-Collections-3838"></a>
-<h2 class="H2.Heading2">Creating Limited Collection Types</h2>
+<h2 class="subsection-title">Creating Limited Collection Types</h2>
 <p class="T1.Text1"><a name="MARKER-2-1068"></a>You obtain a type object for a limited collection type by calling the <code>limited</code> generic function on a collection class. There are several built-in methods for <code>limited</code> specialized for specific subclasses of <code>&lt;collection&gt;</code>. Each of these methods accepts a required keyword argument <code>of:</code> and also accepts an optional keyword argument <code>size:</code> if the class is not stretchy. If the class is <code>&lt;array&gt;</code> the optional keyword argument <code>dimensions:</code> is also accepted. Each method returns a type. The returned type  is never a class. If the <code>size:</code> keyword argument is accepted but not supplied, it defaults to <code>#f</code>.</p>
 <p class="T1.Text1">Users cannot write portable methods for <code>limited</code>. There are no built-in methods for <code>limited</code> applicable to user-defined classes.</p>
 <a name="HEADING69-39"></a>
-<h3 class="H3.Heading3">Uninstantiable Limited Collection Types</h3>
+<h3 class="sub-subsection-title">Uninstantiable Limited Collection Types</h3>
 <p class="T1.Text1"><a name="MARKER-2-1069"></a>Methods on <code>limited</code> support the creation of uninstantiable limited types for the following classes:</p>
-<ul class="B1.Bullet1">
-<li class="B1.Bullet1"><code>&lt;collection&gt;</code></li>
-<li class="B1.Bullet1"><code>&lt;explicit-key-collection&gt;</code></li>
-<li class="B1.Bullet1"><code>&lt;mutable-collection&gt;</code></li>
-<li class="B1.Bullet1"><code>&lt;stretchy-collection&gt;</code></li>
-<li class="B1.Bullet1"><code>&lt;mutable-explicit-key-collection&gt;</code></li>
-<li class="B1.Bullet1"><code>&lt;sequence&gt;</code></li>
-<li class="B1.Bullet1"><code>&lt;mutable-sequence&gt;</code></li>
+<ul>
+<li><code>&lt;collection&gt;</code></li>
+<li><code>&lt;explicit-key-collection&gt;</code></li>
+<li><code>&lt;mutable-collection&gt;</code></li>
+<li><code>&lt;stretchy-collection&gt;</code></li>
+<li><code>&lt;mutable-explicit-key-collection&gt;</code></li>
+<li><code>&lt;sequence&gt;</code></li>
+<li><code>&lt;mutable-sequence&gt;</code></li>
 </ul>
 <p class="T1.Text1">Although limited types created from these classes cannot be instantiated, they are still useful as specializers.<a name="MARKER-2-1070"></a></p>
 <a name="HEADING69-49"></a>
-<h3 class="H3.Heading3">Instantiable Limited Collection Types</h3>
+<h3 class="sub-subsection-title">Instantiable Limited Collection Types</h3>
 <p class="T1.Text1"><a name="MARKER-2-1071"></a>Methods on <code>limited</code> support the creation of instantiable limited types for the following classes:</p>
-<ul class="B1.Bullet1">
-<li class="B1.Bullet1"><code>&lt;table&gt;</code></li>
-<li class="B1.Bullet1"><code>&lt;object-table&gt;</code></li>
-<li class="B1.Bullet1"><code>&lt;array&gt;</code></li>
-<li class="B1.Bullet1"><code>&lt;vector&gt;</code></li>
-<li class="B1.Bullet1"><code>&lt;simple-vector&gt;</code></li>
-<li class="B1.Bullet1"><code>&lt;stretchy-vector&gt;</code></li>
-<li class="B1.Bullet1"><code>&lt;string&gt;</code></li>
-<li class="B1.Bullet1"><code>&lt;range&gt;</code></li>
+<ul>
+<li><code>&lt;table&gt;</code></li>
+<li><code>&lt;object-table&gt;</code></li>
+<li><code>&lt;array&gt;</code></li>
+<li><code>&lt;vector&gt;</code></li>
+<li><code>&lt;simple-vector&gt;</code></li>
+<li><code>&lt;stretchy-vector&gt;</code></li>
+<li><code>&lt;string&gt;</code></li>
+<li><code>&lt;range&gt;</code></li>
 </ul>
 <p class="T1.Text1">These methods are described in <a href="drm_96.html" class="T1.Text1">Chapter 12, "The Built-In Functions,"</a> on <a href="drm_98.html#MARKER-9-1559" class="T1.Text1">page 263</a>.<a name="MARKER-2-1072"></a><a name="MARKER-2-1073"></a><a name="MARKER-2-1074"></a></p>
 <a name="LINK-Collections-lastpage"></a><a name="LINK-SealingTOC-firstpage"></a>

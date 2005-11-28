@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Statements</title>
 </head>
@@ -125,11 +125,11 @@
 
 <a name="HEADING18-0"></a>
 <a name="UID-Syntax-1509"></a>
-<h1 class="H1.Heading1">Statements</h1>
-<p class="T1.Text1"><a name="MARKER-9-269"></a>A <strong class="Bold T1.Text1"><a name="MARKER-2-270"></a><dfn>statement</dfn></strong> is a call to a statement macro. It begins with the name of a visible binding whose value is a statement macro. The statement ends with the word <code>end</code> optionally followed by the same name that began the statement. In between is a program fragment whose syntax is determined by the macro definition. Typically this fragment includes an optional body; for example, <code>if (ship.ready?) embark(passenger, ship) end if</code>.</p>
-<p class="T1.Text1">A <strong class="Bold T1.Text1"><a name="MARKER-2-271"></a><dfn>statement macro</dfn></strong> can be built-in or user-defined.</p>
-<p class="T1.Text1">A <strong class="Bold T1.Text1"><a name="MARKER-2-272"></a><dfn>user-defined statement macro</dfn></strong> is a macro that defines how to implement a statement in terms of other constructs. Advanced programmers often define new statement macros as part of structuring a program in a readable and modular way.</p>
-<p class="T1.Text1">A <strong class="Bold T1.Text1"><a name="MARKER-2-273"></a><dfn>built-in statement macro</dfn></strong> is like a user-defined statement macro but is specified as part of the Dylan language. There are nine built-in statement macros: <code>begin</code>, <code>block</code>, <code>case</code>, <code>for</code>, <code>if</code>, <code>select</code>, <code>unless</code>, <code>until</code>, and <code>while</code>.</p>
+<h1 class="section-title">Statements</h1>
+<p class="T1.Text1"><a name="MARKER-9-269"></a>A <strong class="Bold"><a name="MARKER-2-270"></a><dfn>statement</dfn></strong> is a call to a statement macro. It begins with the name of a visible binding whose value is a statement macro. The statement ends with the word <code>end</code> optionally followed by the same name that began the statement. In between is a program fragment whose syntax is determined by the macro definition. Typically this fragment includes an optional body; for example, <code>if (ship.ready?) embark(passenger, ship) end if</code>.</p>
+<p class="T1.Text1">A <strong class="Bold"><a name="MARKER-2-271"></a><dfn>statement macro</dfn></strong> can be built-in or user-defined.</p>
+<p class="T1.Text1">A <strong class="Bold"><a name="MARKER-2-272"></a><dfn>user-defined statement macro</dfn></strong> is a macro that defines how to implement a statement in terms of other constructs. Advanced programmers often define new statement macros as part of structuring a program in a readable and modular way.</p>
+<p class="T1.Text1">A <strong class="Bold"><a name="MARKER-2-273"></a><dfn>built-in statement macro</dfn></strong> is like a user-defined statement macro but is specified as part of the Dylan language. There are nine built-in statement macros: <code>begin</code>, <code>block</code>, <code>case</code>, <code>for</code>, <code>if</code>, <code>select</code>, <code>unless</code>, <code>until</code>, and <code>while</code>.</p>
 <p class="T1.Text1">An implementation can add new kinds of statements as language extensions. Such a statement takes the form of a user-defined statement macro that is the value of a binding exported by an implementation-defined module.</p>
 
 </div>

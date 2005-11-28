@@ -28,9 +28,24 @@ p.errata {
 	 font-size: smaller; font-family: sans-serif;
 	 }
 p.errata.left {
-	 position: absolute; left: 0;
+  	 position: absolute; left: 0;
 	 width: 7.5em;
 	 }
+/*
+   When printing, Firefox (as of 1.5 RC2) places all the absolutely
+   positioned elements on pages two and later on top of each other on the
+   first page. As a workaround, use a float instead.
+
+   NOTE: We could simplify things and just use 'float: left' for the
+   onscreen display, as well; however, in Safari (as of 2.0.2) the links in
+   errata boxes aren't clickable if we use a float.
+*/
+@media print {
+  p.errata.left {
+                float: left; position: static; margin-left: -9.5em;
+                }
+}
+
 p.errata.right {
 	 float: right; margin-top: 0; margin-left: 1em;
 	 max-width: 20em;
@@ -291,63 +306,85 @@ dfn  { font-weight: bold; font-style: normal }
   "[Open Abstract Foo]" tag on the right.
 */
 
-h1.BookTitle,
-h1.WWW-TOC,
-h1[class~="PrT.PrefaceTitle"],
-h1[class~="ChT.ChapterTitle"],
-h1[class~="ApT.ApdxTitle"],
-h1[class~="BackT.BackTitle"],
-h1.WWW-IX                        { font-size: 250% }
+h1.book-title,
+h1.contents-title,
+h1.preface-title,
+h1.chapter-title,
+h1.appendix-title,
+h1.back-title,
+h1.index-title           { font-size: 250% }
 
-h1.BookTitle                     {
-                                   margin-top: 3em;
-                                   border-top: 1px solid black;
-                                   padding-top: 0.25em;
-                                 }
+h1.book-title            {
+                           margin-top: 3em;
+                           border-top: 1px solid black;
+                           padding-top: 0.25em;
+                         }
 
-h1[class~="PrT.PrefaceTitle"],
-h1[class~="ChT.ChapterTitle"],
-h1[class~="ApT.ApdxTitle"]       { margin-top: 1em }
+h1.preface-title,
+h1.chapter-title,
+h1.appendix-title        { margin-top: 1em }
 
-h1.WWW-TOC,
-h1[class~="BackT.BackTitle"],
-h1.WWW-IX                        { margin-top: 2em }
+h1.contents-title,
+h1.back-title,
+h1.index-title           { margin-top: 2em }
 
-h1[class~="PrT.PrefaceTitle"],
-h1[class~="ChT.ChapterTitle"],
-h1[class~="ApT.ApdxTitle"],
-h1[class~="BackT.BackTitle"],
-h1.WWW-IX                        {
-                                   margin-left: -3em; padding-left: 3em;
-                                   padding-bottom: 3em;
-                                   border-bottom: 1px solid;
-                                 }
+h1.preface-title,
+h1.chapter-title,
+h1.appendix-title,
+h1.back-title,
+h1.index-title           {
+                           margin-left: -3em; padding-left: 3em;
+                           padding-bottom: 3em;
+                           border-bottom: 1px solid;
+                         }
 
-h1.WWW-TOC,
-h1[class~="PrT.PrefaceTitle"],
-h1[class~="BackT.BackTitle"],
-h1.WWW-IX                        { padding-bottom: 2em }
+h1.contents-title,
+h1.preface-title,
+h1.back-title,
+h1.index-title           { padding-bottom: 2em }
 
-h1[class~="H1.Heading1"]         { margin-left: -3.5em }
-h1[class~="H1.Heading1"], h2, h3 { padding-top: 1em; padding-bottom: 3px; border-bottom: 1px solid }
-h2, h3, h4                       { font-family: sans-serif }
+h1.section-title             { margin-left: -3.5em }
+h1.section-title, h2, h3, h4 {
+                               padding-top: 1em; padding-bottom: 3px;
+                               border-bottom: 1px solid
+                             }
+h2, h3, h4, h5, h6           { font-family: sans-serif }
 
 /* chapter start pages have some custom heading styles */
-h1[class~="ChT.ChapterTitle"]    { margin-bottom: 0 }
-h2[class~="ChT.ChapterTitle"]    {
-                                   margin-top: 0.25em; padding-top: 0; border: none;
-                                   font-family: inherit
-                                 }
+h1.chapter-title         { margin-bottom: 0 }
+h2.chapter-title         {
+		           margin-top: 0.25em; padding-top: 0; border: none;
+                           font-family: inherit
+		         }
 
-/* h4 is used for method signatures */
+/*
+  h4, h5 and h6 text may be smaller than body text by default; let's make
+  them the same size.
+*/
+h4, h5, h6               { font-size: 1em }
+h5                       { margin-top: 2em; margin-bottom: 1em }
 
-/* group with the descriptive text that follows */
-h4      { margin-top: 2em; margin-bottom: 1em; }
-h4 + h4 { margin-top: -1em }
-/* treat all CODE in signatures as pre-formatted; some of them have line breaks and indenting */
-h4 code { white-space: pre }
+/* h4 and h5 contain attributes summaries that are right-justified */
+
+h4.item-title,
+h5.method-signature      { float: left; width: 100%; }
+span.signature           { float: left  }
+span.attributes-summary  { float: right; margin-right: 1em }
+
+/* h5 is used for method signatures */
+
+/* consecutive signatures should not have extra space between them */
+h5.method-signature + h5.method-signature
+                         { margin-top: -1em }
+/* treat all CODE in signatures as pre-formatted; some of them have line
+   breaks and indenting */
+h5.method-signature code { white-space: pre }
 /* italic VAR in method signatures is sans-serif */
-h4 var  { font-family: sans-serif }
+h5.method-signature var  { font-family: sans-serif }
+/* some segments of "code" are not literal and are contrasted by not using
+   bold or italic */
+h5.method-signature code em { font-weight: normal; font-style: normal }
+
 
 /*
    Hide these headings, which aren't in the printed DRM. I'm hiding them
@@ -356,47 +393,26 @@ h4 var  { font-family: sans-serif }
    CSS.
 */
 
-h1.Colophon-title,
-h1[class~="CT.copyrightTitle"] { visibility: hidden; height: 0 }
+h1.colophon-title,
+h1.copyright-title { visibility: hidden; height: 0 }
 
 /* replace the top rule with a border */
-hr.WWW-TOC,
-hr.Colophon-title     { display: none }
-hr.Colophon-title + * { border-top: 1px solid black; padding-top: 0.5em }
+hr.contents-title,
+hr.colophon-title     { display: none }
+hr.colophon-title + * { border-top: 1px solid black; padding-top: 0.5em }
 
 /* no vertical space between colophon titles and the corresponding names */
-p[class~="CT.ColophonTitle"] { margin-bottom: 0 }
-p[class~="CN.ColophonName"]  { margin-top: 0 }
+p.colophon-title { margin-bottom: 0 }
+p.colophon-name  {    margin-top: 0 }
 
 
 /*
    Definition section headings. Hide HRs and use CSS bottom borders
-   instead. Right-align attributes summaries.
-
-   Ideally, we'd probably use 'float: right', but Firefox (1.0.6) /
-   Mozilla / Netscape end up placing them below the horizontal rule instead
-   of directly to the right. Using 'position: absolute' lays out as desired
-   on Firefox and Safari, though if you make the window too narrow, the
-   attributes summary ends up overlapping the signature; if we used
-   'float', the summary would move down when necessary (just not all the
-   time, as in Firefox).
+   instead.
 */
-span.attributes-summary   { position: absolute; right: 1em; top: inherit }
 
-/*
-   When printing, Firefox (1.0.6) places all the absolutely positioned
-   elements on pages two and later on top of each other on the first
-   page. As a workaround, use a float instead. Unfortunately, Firefox
-   places these floats below the horizontal rule, but it's better than
-   putting them all on the first page, and it lays out correctly in
-   Safari/OmniWeb.
-*/
-@media print {
-  span.attributes-summary { position: static; float: right; margin-right: 1em }
-}
-
-h3[class~="H4.Heading4"] + hr { display: none }
-h3[class~="H4.Heading4"] var  { font-family: sans-serif }
+h4.item-title + hr { display: none }
+h4.item-title var  { font-family: sans-serif }
 
 
 
@@ -405,10 +421,10 @@ h3[class~="H4.Heading4"] var  { font-family: sans-serif }
 */
 
 /* big book title */
-h1.BookTitle + p        { font-size: larger }
+h1.book-title + p       { font-size: larger }
 
 /* big author's name */
-p.WWW-Author            { font-size: x-large; margin-top: 3em; margin-bottom: 2em  }
+p.author                { font-size: x-large; margin-top: 3em; margin-bottom: 2em  }
 
 /* move the "[This HTML....in 1996]" notice down */
 p[class~="Modelsw/Sub"] { margin-top: 10em }
@@ -449,7 +465,7 @@ div.wm-div-footers > hr:first-child { clear:both; width: 100%  }
 */
 
 /* bring the first item up closer to the bottom of the section heading */
-h1.WWW-TOC { margin-bottom: 0 }
+h1.contents-title { margin-bottom: 0 }
 h2#about   { margin-top: 0; padding-top: 0 }
 
 /* out-dent the number/name of each section to the left, along with the horizontal rule */
@@ -483,7 +499,7 @@ body.contents ul.TOC ul { display: none }
 */
 
 /* bring the first item up closer to the bottom of the section heading */
-h1[class~="BackT.BackTitle"] { margin-bottom: 0 }
+h1.back-title { margin-bottom: 0 }
 dl.Glossary > dt:first-child { margin-top: 0.5em }
 dl.Glossary  { margin-top: 0.5em }
 
@@ -499,7 +515,7 @@ div.wm-div-index ul { list-style-type: none }
 div.wm-div-index li { margin: 0 }
 
 /* bring the first item up closer to the bottom of the section heading */
-h1.WWW-IX { margin-bottom: 0 }
+h1.index-title { margin-bottom: 0 }
 h2#symbols { margin-top: 0.2em; padding-top: 0 }
 
 
@@ -616,7 +632,6 @@ ul.horizontal a       { background-color: #ddd; margin: 1px }
   margin.
 
   Terms and definitions are positioned side-by-side.
-
 */
 
 /* some useful debugging code for visualizing definition list nesting */
@@ -638,17 +653,28 @@ dl p { border-left: 2px solid red }
                {
                  font: bold smaller sans-serif;
                }
-.wm-div-body > dl.Cliche > dd      { margin-left: 0 }
+.wm-div-body > dl.Cliche > dd      { margin-left: 0; margin: 1em auto }
+/* Why is this here? It causes some paragraphs to abut the text above. */
 .wm-div-body > dl.Cliche > dd > p  {  margin-top: 0 }
 
 /* second-level DTs outdent and have a fixed width */
 .wm-div-body > dl.Cliche > dd > dl > dt
                {
-                 float: left; padding-right: 1em;
+                 float: left; padding-right: 0.5em;
                }
 .wm-div-body > dl.Cliche > dd > dl > dd
                {
                  margin-left: 9em;
+               }
+
+/* third-level DTs */
+.wm-div-body > dl.Cliche > dd > dl > dd > dl > dt
+               {
+                 float: left; padding-right: 0.5em;
+               }
+.wm-div-body > dl.Cliche > dd > dl > dd > dl > dd
+               {
+                 margin-left: 6em;
                }
 
 /* less space between lines within lower-level definition lists */
@@ -768,20 +794,20 @@ table tr p { margin-top: 0; margin-bottom: 0 }
   Figures
 */
 
-p[class~="Fg.Figure"]
+p.figure
            {
              font-family: sans-serif;
              margin-top: 3em;
              margin-bottom: 2em
            }
 
-p[class~="Fg.Figure"] :first-child
+p.figure :first-child
            {
              border-bottom: 1px solid;
              padding-bottom: 3px;
              padding-left: 7em; margin-left: -7em;
 	   }
-p[class~="Fg.Figure"] :first-child + *
+p.figure :first-child + *
            {
              margin-right: 2em;
 	   }
@@ -828,9 +854,6 @@ code.pre { white-space: pre }
 
 code i, i.parameter, var { font-family: serif }
 
-/* some segments of "code" are not literal and are contrasted by not using bold */
-h4 > code em { font-weight: normal; font-style: normal }
-
 
 
 /*
@@ -838,13 +861,19 @@ h4 > code em { font-weight: normal; font-style: normal }
 
   Regular expression meta-syntax is used to define some parts of the
   grammar outside of the formal BNF grammar. Regular expression markers
-  like {, and }* should be bold and in the code font.
+  like {, and }* should be bold.
 */
 
+/*
+  I'm not sure what these rules were for; we shouldn't use the code font
+  for meta-syntax. I've commented these rules out; consider removing them.
+*/
+/*
 strong.MetaSyntax,
 strong.re               { font-family: monospace }
 code strong.MetaSyntax,
 code strong.re          { font-family: inherit }
+*/
 
 
 
@@ -877,3 +906,6 @@ code strong.re          { font-family: inherit }
 .BNF .BNFCaps sub { font-variant: normal } /* don't make subscripted suffixes small-caps */
 .BNF .one-of      { padding-right: 1em }
 .BNF dd p > *     { margin-right: 0.25em } /* a little extra space between tokens */
+
+/* BNF text inside of CODE should use a serif font instead of the code font */
+code span.BNF     { font-family: serif }

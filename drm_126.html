@@ -44,7 +44,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Glossary</title>
 </head>
@@ -111,7 +111,7 @@
 </div>
 <a name="LINK-Glossary-firstpage"></a><a name="HEADING126-0"></a>
 <a name="UID-Glossary-52"></a>
-<h1 class="BackT.BackTitle">Glossary</h1>
+<h1 class="back-title">Glossary</h1>
 <dl class="Glossary">
 <dt class="Glossary"><strong><a name="MARKER-9-2146"></a>abstract class</strong></dt>
 <dd class="Glossary">A class that cannot have <strong><a href="#MARKER-9-2164" class="GB.Glossary Body">direct instances</a></strong>. The opposite of an abstract class is a <a href="#MARKER-9-2157" class="GB.Glossary Body"><strong>concrete class</strong></a>.</dd>
@@ -172,7 +172,7 @@
 <dt class="Glossary"><strong><a name="MARKER-9-2154"></a>closure</strong></dt>
 <dd class="Glossary">A function which references local variables created by a local declaration surrounding the function definition.</dd>
 <dt class="Glossary"><strong>code body</strong></dt>
-<dd class="Glossary">That portion of a source code file in <a href="#MARKER-9-2168" class="GB.Glossary Body"><strong>Dylan interchange format</strong></a> which follows the <a href="#MARKER-9-2178" class="GB.Glossary Body"><strong>file header</strong></a> and consists of program <a href="#MARKER-9-2160" class="GB.Glossary Body"><strong>constituent</strong></a><strong>s</strong>.<strong></strong></dd>
+<dd class="Glossary">That portion of a source code file in <a href="#MARKER-9-2168" class="GB.Glossary Body"><strong>Dylan interchange format</strong></a> which follows the <a href="#MARKER-9-2178" class="GB.Glossary Body"><strong>file header</strong></a> and consists of program <a href="#MARKER-9-2160" class="GB.Glossary Body"><strong>constituent</strong></a><strong>s</strong>.</dd>
 <dt class="Glossary"><strong>coerce</strong></dt>
 <dd class="Glossary">(an object to a type) To produce a new object of the specified type, without modifying the original object. The intent is to produce an object that preserves the meaning of the original object, but is an instance of the specified type.</dd>
 <dt class="Glossary"><strong>collection</strong></dt>
@@ -210,9 +210,9 @@
 <dt class="Glossary"><strong><a name="MARKER-9-2164"></a>direct instance</strong></dt>
 <dd class="Glossary">(of a class C) An object whose class is C itself, rather than some subclass of C.</dd>
 <dt class="Glossary"><strong><a name="MARKER-9-2165"></a>direct subclass</strong></dt>
-<dd class="Glossary">(of a class C<em class="Subscript GB.Glossary Body"><sub>1</sub></em>) A class C<em class="Subscript GB.Glossary Body"><sub>2</sub></em> such that C<em class="Subscript GB.Glossary Body"><sub>1</sub></em> is a direct superclass of C<em class="Subscript GB.Glossary Body"><sub>2</sub></em>.</dd>
+<dd class="Glossary">(of a class C<em><sub>1</sub></em>) A class C<em><sub>2</sub></em> such that C<em><sub>1</sub></em> is a direct superclass of C<em><sub>2</sub></em>.</dd>
 <dt class="Glossary"><strong><a name="MARKER-9-2166"></a>direct superclass</strong></dt>
-<dd class="Glossary">(of a class C<em class="Subscript GB.Glossary Body"><sub>1</sub></em>) A class C<em class="Subscript GB.Glossary Body"><sub>2</sub></em> that is listed as a superclass of C<em class="Subscript GB.Glossary Body"><sub>1</sub></em> in the definition of C<em class="Subscript GB.Glossary Body"><sub>1</sub></em>, or that was passed as one of the <code>superclass:</code> arguments to <code>make</code> when C<em class="Subscript GB.Glossary Body"><sub>1</sub></em> was created.</dd>
+<dd class="Glossary">(of a class C<em><sub>1</sub></em>) A class C<em><sub>2</sub></em> that is listed as a superclass of C<em><sub>1</sub></em> in the definition of C<em><sub>1</sub></em>, or that was passed as one of the <code>superclass:</code> arguments to <code>make</code> when C<em><sub>1</sub></em> was created.</dd>
 <dt class="Glossary"><strong>disjoint</strong></dt>
 <dd class="Glossary">(of types): Informally, two types are disjoint if there can be no object that is an instance of both types. A formal definition is given in <a href="drm_40.html#MARKER-9-553" class="GB.Glossary Body">"Type Disjointness" on page 51</a>.</dd>
 <dt class="Glossary"><strong><a name="MARKER-9-2167"></a>dotted list</strong></dt>
@@ -224,7 +224,7 @@
 <dt class="Glossary"><strong>element reference syntax</strong></dt>
 <dd class="Glossary">The shorthand syntax for accessing an element of an array or of any other collection. <code>x[y], x[y, z]</code>.</dd>
 <dt class="Glossary"><strong>element type</strong></dt>
-<dd class="Glossary">(of a collection) A specification of the <a href="#MARKER-9-2246" class="GB.Glossary Body"><strong>type</strong></a><strong>s</strong> of objects which may be stored in the collection, as described in <a href="drm_68.html#MARKER-9-1051" class="GB.Glossary Body">"Element Types" on page 124</a>.<strong></strong></dd>
+<dd class="Glossary">(of a collection) A specification of the <a href="#MARKER-9-2246" class="GB.Glossary Body"><strong>type</strong></a><strong>s</strong> of objects which may be stored in the collection, as described in <a href="drm_68.html#MARKER-9-1051" class="GB.Glossary Body">"Element Types" on page 124</a>.</dd>
 <dt class="Glossary"><strong><a name="MARKER-9-2170"></a>empty list</strong></dt>
 <dd class="Glossary">The list that contains no elements. It is the unique instance of the class <code>&lt;empty-list&gt;</code>.</dd>
 <dt class="Glossary"><strong>environment</strong></dt>
@@ -448,7 +448,7 @@
 <dt class="Glossary"><strong>protocol</strong></dt>
 <dd class="Glossary">1. (of a class) The methods that all subclasses of the class either implement or inherit. 2. (of a function, esp. a generic function) The <a href="#MARKER-9-2239" class="GB.Glossary Body"><strong>signature</strong></a> of the function.</dd>
 <dt class="Glossary"><strong>pseudosubtype</strong></dt>
-<dd class="Glossary">A relation between types. The type <i class="parameter GB.Glossary Body">T<em class="Subscript Parameter GB.Glossary Body"><sub>1</sub></em></i> is a pseudosubtype of the type <i class="parameter GB.Glossary Body">T<em class="Subscript Parameter GB.Glossary Body"><sub>2</sub></em></i> if <i class="parameter GB.Glossary Body">T<em class="Subscript Parameter GB.Glossary Body"><sub>1</sub></em></i> is a subtype of the base type of <i class="parameter GB.Glossary Body">T<em class="Subscript Parameter GB.Glossary Body"><sub>2</sub></em></i> and <i class="parameter GB.Glossary Body">T<em class="Subscript Parameter GB.Glossary Body"><sub>1</sub></em></i> and <i class="parameter GB.Glossary Body">T<em class="Subscript Parameter GB.Glossary Body"><sub>2</sub></em></i> are not disjoint.</dd>
+<dd class="Glossary">A relation between types. The type <var>T<em><sub>1</sub></em></var> is a pseudosubtype of the type <var>T<em><sub>2</sub></em></var> if <var>T<em><sub>1</sub></em></var> is a subtype of the base type of <var>T<em><sub>2</sub></em></var> and <var>T<em><sub>1</sub></em></var> and <var>T<em><sub>2</sub></em></var> are not disjoint.</dd>
 <dt class="Glossary"><strong>required parameter</strong></dt>
 <dd class="Glossary">(of a function) A parameter that corresponds to an argument that must be supplied when the function is called. Required parameters are specified in a fixed order before other parameters, and their corresponding arguments must be supplied in the same order. Required parameters may be specialized or unspecialized. Compare <a href="#MARKER-9-2231" class="GB.Glossary Body"><strong>rest parameter</strong></a>, <a href="#MARKER-9-2210" class="GB.Glossary Body"><strong>keyword parameter</strong></a>, and <a href="#MARKER-9-2220" class="GB.Glossary Body"><strong>next-method parameter</strong></a>.</dd>
 <dt class="Glossary"><strong>requires a fixed number of arguments</strong></dt>

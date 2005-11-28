@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Bindings</title>
 </head>
@@ -125,10 +125,10 @@
 
 <a name="HEADING12-0"></a>
 <a name="UID-Syntax-1434"></a>
-<h1 class="H1.Heading1">Bindings</h1>
-<p class="T1.Text1">A <strong class="Bold T1.Text1"><a name="MARKER-2-225"></a><dfn>binding</dfn></strong> is an association of a name with a value. The bindings in a module persist for the life of the program execution. The scope of such a binding is its module. That is, the binding is visible to all source-records in the module. A module can export bindings and can import bindings from other modules. Only an exported binding can be imported. A binding is visible to all source-records in a module that imports it.</p>
-<p class="T1.Text1">A binding may be <strong class="bold T1.Text1"><a name="MARKER-2-226"></a><dfn>specialized</dfn></strong>. This restricts the types of values that may be held in the binding. An error will be signaled on any attempt to initialize or assign the binding to a value that is not of the correct type.</p>
-<p class="T1.Text1">A binding is either <strong class="Bold T1.Text1"><a name="MARKER-2-227"></a><dfn>constant</dfn></strong> or <strong class="Bold T1.Text1"><a name="MARKER-2-228"></a><dfn>variable</dfn></strong>. A constant (or <a name="MARKER-2-229"></a>read-only) binding always has the same value. In contrast, a variable (or writable) binding can have its value changed, using the assignment operator <code>:=</code>. Most bindings in a typical Dylan module are constant.</p>
+<h1 class="section-title">Bindings</h1>
+<p class="T1.Text1">A <strong class="Bold"><a name="MARKER-2-225"></a><dfn>binding</dfn></strong> is an association of a name with a value. The bindings in a module persist for the life of the program execution. The scope of such a binding is its module. That is, the binding is visible to all source-records in the module. A module can export bindings and can import bindings from other modules. Only an exported binding can be imported. A binding is visible to all source-records in a module that imports it.</p>
+<p class="T1.Text1">A binding may be <strong class="bold"><a name="MARKER-2-226"></a><dfn>specialized</dfn></strong>. This restricts the types of values that may be held in the binding. An error will be signaled on any attempt to initialize or assign the binding to a value that is not of the correct type.</p>
+<p class="T1.Text1">A binding is either <strong class="Bold"><a name="MARKER-2-227"></a><dfn>constant</dfn></strong> or <strong class="Bold"><a name="MARKER-2-228"></a><dfn>variable</dfn></strong>. A constant (or <a name="MARKER-2-229"></a>read-only) binding always has the same value. In contrast, a variable (or writable) binding can have its value changed, using the assignment operator <code>:=</code>. Most bindings in a typical Dylan module are constant.</p>
 
 </div>
 

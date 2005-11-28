@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Coercing and Copying Objects</title>
 </head>
@@ -183,12 +183,12 @@
 
 <a name="HEADING101-0"></a>
 <a name="UID-Built-In_Functions-19913"></a>
-<h1 class="H1.Heading1"><a name="MARKER-2-1674"></a>Coercing and Copying Objects</h1>
+<h1 class="section-title"><a name="MARKER-2-1674"></a>Coercing and Copying Objects</h1>
 <p class="T0.Text0">The following functions are used to coerce, copy, or simply return objects.</p>
 <a name="HEADING101-2"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-1675"></a>identity</code> <span class="attributes-summary">[Function]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><code><a name="MARKER-9-1676"></a></code>Returns its argument.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1675"></a>identity</code> </span><span class="attributes-summary">[Function]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><code><a name="MARKER-9-1676"></a></code>Returns its argument.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
@@ -202,7 +202,7 @@
     <dl>
       <dt><var>object</var></dt>
       <dd>
-        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+        <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
     </dl>
   </dd>
@@ -211,17 +211,17 @@
     <dl>
       <dt><var>object</var></dt>
       <dd>
-        <p class="Cliche2">An instance of <code>&lt;object&gt;</code>; the same object that was passed in as an argument.</p>
+        <p>An instance of <code>&lt;object&gt;</code>; the same object that was passed in as an argument.</p>
       </dd>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns <var>object</var> unaltered.</p></dd>
+  <dd class="Cliche"><p>Returns <var>object</var> unaltered.</p></dd>
 </dl>
 <a name="HEADING101-8"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-1677"></a>values</code> <span class="attributes-summary">[Function]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-2-1678"></a>Returns its arguments as multiple values.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1677"></a>values</code> </span><span class="attributes-summary">[Function]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-2-1678"></a>Returns its arguments as multiple values.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
@@ -235,7 +235,7 @@
     <dl>
       <dt><var>the-values</var></dt>
       <dd>
-        <p class="Cliche">Zero or more instances of <code>&lt;object&gt;</code>.</p>
+        <p>Zero or more instances of <code>&lt;object&gt;</code>.</p>
       </dd>
     </dl>
   </dd>
@@ -244,13 +244,13 @@
     <dl>
       <dt><var>the-values</var></dt>
       <dd>
-        <p class="Cliche2">Zero or more instances of <code>&lt;object&gt;</code>; the objects that were passed as arguments.</p>
+        <p>Zero or more instances of <code>&lt;object&gt;</code>; the objects that were passed as arguments.</p>
       </dd>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns <var>the-values</var> as multiple values.</p>
-    <pre class="Cv.Code">
+  <dd class="Cliche"><p>Returns <var>the-values</var> as multiple values.</p>
+    <pre class="code">
 values(1, 2, 3);
 <code> &rArr; 1    </code>// first value returned
     2    // second value returned
@@ -259,11 +259,11 @@ values(1, 2, 3);
 </dl>
 <a name="HEADING101-15"></a>
 <a name="UID-Built-In_Functions-25384"></a>
-<h2 class="H2.Heading2">General Coercion Function</h2>
+<h2 class="subsection-title">General Coercion Function</h2>
 <a name="HEADING101-16"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-1679"></a>as</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><code><a name="MARKER-9-1680"></a></code>Coerces an object to a type.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1679"></a>as</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><code><a name="MARKER-9-1680"></a></code>Coerces an object to a type.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
@@ -277,40 +277,40 @@ values(1, 2, 3);
     <dl>
       <dt><var>type</var></dt>
       <dd>
-        <p class="Cliche">An instance of <code>&lt;type&gt;</code>.</p>
+        <p>An instance of <code>&lt;type&gt;</code>.</p>
       </dd>
-      <dt class="RP.RoutineParam"><var>object</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code>.</p></dd>
+      <dt class="routine-param"><var>object</var></dt>
+      <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>instance</var></dt>
       <dd>
-        <p class="Cliche">An instance of <code>&lt;object&gt;</code>. It must be an instance of <var>type</var>.</p>
+        <p>An instance of <code>&lt;object&gt;</code>. It must be an instance of <var>type</var>.</p>
       </dd>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> Coerces <var>object</var> to <var>type</var>. That is, it returns an instance of <var>type</var> that has the same contents as <var>object</var>. If <var>object</var> is already an instance of <var>type</var>, it is returned unchanged. In general, the value returned may or may not be freshly allocated.</p>
+  <dd class="Cliche"><p>Coerces <var>object</var> to <var>type</var>. That is, it returns an instance of <var>type</var> that has the same contents as <var>object</var>. If <var>object</var> is already an instance of <var>type</var>, it is returned unchanged. In general, the value returned may or may not be freshly allocated.</p>
     <p class="T1.Text1">Predefined methods allow coercion between integers and characters, between strings and symbols, and between collection types. No methods are predefined for other classes. Programs may define additional methods.</p>
     <a name="HEADING101-24"></a>
-    <h4 class="H5.Heading5"><code>as <var>collection-type collection</var> </code>
-      &rArr;<code> <var>instance-of-collection-type</var></code> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h5 class="method-signature"><span class="signature"><code>as <var>collection-type collection</var> </code>
+      &rArr;<code> <var>instance-of-collection-type</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
     <p class="T1.Text1">When converting between collection types, the return value will have the same number of elements as <var>collection</var>. If the <var>collection</var> is an instance of <code>&lt;sequence&gt;</code> and the <var>collection-type</var> is a subtype of <code>&lt;sequence&gt;</code>, the elements will be in the same order. The individual elements may also undergo some conversion. The specific collection types for which <code>as</code> is defined is implementation defined.</p>
     <a name="HEADING101-26"></a>
-    <h4 class="H5.Heading5"><code>as <em>(singleton (&lt;integer&gt;))</em> <var>character</var> </code>
-      &rArr;<code> <var>integer</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h5 class="method-signature"><span class="signature"><code>as <em>(singleton (&lt;integer&gt;))</em> <var>character</var> </code>
+      &rArr;<code> <var>integer</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <p class="T1.Text1">This method on <code>as</code> returns a numeric equivalent for <var>character</var>. The integer returned is implementation dependent.</p>
     <a name="HEADING101-28"></a>
-    <h4 class="H5.Heading5"><code>as <em>(singleton (&lt;character&gt;))</em> <var>integer</var> </code>
-      &rArr;<code> <var>character</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h5 class="method-signature"><span class="signature"><code>as <em>(singleton (&lt;character&gt;))</em> <var>integer</var> </code>
+      &rArr;<code> <var>character</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <p class="T1.Text1">This method on <code>as</code> returns the character equivalent to <var>integer</var>. The meaning of <var>integer</var> is implementation dependent.</p>
     <a name="HEADING101-30"></a>
-    <h4 class="H5.Heading5"><code>as <em>(singleton (&lt;symbol&gt;))</em> <var>string</var> </code>
-      &rArr;<code> <var>symbol</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h5 class="method-signature"><span class="signature"><code>as <em>(singleton (&lt;symbol&gt;))</em> <var>string</var> </code>
+      &rArr;<code> <var>symbol</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <p class="T1.Text1">This method on <code>as</code> returns the symbol that has the name <var>string</var>. If the symbol does not yet exist, it is created. This method on <code>as</code> will always return the same symbol for strings of the same characters, without regard to alphabetic case.</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 as (&lt;symbol&gt;, &quot;foo&quot;)
 <code> &rArr;</code>  #&quot;foo&quot;
 #&quot;FOO&quot; == as (&lt;symbol&gt;, &quot;foo&quot;)
@@ -318,21 +318,21 @@ as (&lt;symbol&gt;, &quot;foo&quot;)
 #&quot;Foo&quot;
 <code> &rArr;</code>  #&quot;foo&quot;</pre>
     <a name="HEADING101-33"></a>
-    <h4 class="H5.Heading5"><code>as <em>(singleton (&lt;string&gt;))</em> <var>symbol</var> </code>
-      &rArr;<code> <var>string</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h5 class="method-signature"><span class="signature"><code>as <em>(singleton (&lt;string&gt;))</em> <var>symbol</var> </code>
+      &rArr;<code> <var>string</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <p class="T1.Text1">This method on <code>as</code> returns the name of the symbol, which will be a string.</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 as (&lt;string&gt;, #&quot;Foo&quot;)
 <code> &rArr;</code>  &quot;Foo&quot;</pre>
   </dd>
 </dl>
 <a name="HEADING101-36"></a>
 <a name="UID-Built-In_Functions-2983"></a>
-<h2 class="H2.Heading2">Coercing Case</h2>
+<h2 class="subsection-title">Coercing Case</h2>
 <a name="HEADING101-37"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-1681"></a><a name="MARKER-2-1682"></a>as-uppercase</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-9-1683"></a>Coerces an object to uppercase.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1681"></a><a name="MARKER-2-1682"></a>as-uppercase</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-9-1683"></a>Coerces an object to uppercase.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
@@ -346,7 +346,7 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
     <dl>
       <dt><var>object1</var></dt>
       <dd>
-        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+        <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
     </dl>
   </dd>
@@ -355,27 +355,27 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
     <dl>
       <dt><var>object2</var></dt>
       <dd>
-        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+        <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> Coerces an object to uppercase and returns the resulting new object.</p>
+  <dd class="Cliche"><p>Coerces an object to uppercase and returns the resulting new object.</p>
     <p class="T1.Text1"><var>object1</var> is not modified by this operation.</p>
     <a name="HEADING101-44"></a>
-    <h4 class="H5.Heading5"><code>as-uppercase <var>character</var> </code>
-      &rArr;<code> <var>uppercase-character</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h5 class="method-signature"><span class="signature"><code>as-uppercase <var>character</var> </code>
+      &rArr;<code> <var>uppercase-character</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <p class="T1.Text1">This method returns the uppercase equivalent for <var>character</var>. If <var>character</var> already is uppercase or does not exist in two cases, it is returned unchanged.</p>
     <a name="HEADING101-46"></a>
-    <h4 class="H5.Heading5"><code>as-uppercase <var>string</var> </code>
-      &rArr;<code> <var>new-string</var></code> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h5 class="method-signature"><span class="signature"><code>as-uppercase <var>string</var> </code>
+      &rArr;<code> <var>new-string</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
     <p class="T1.Text1">This method is equivalent to <code>map(as-uppercase, <var>string</var>)</code>.</p>
   </dd>
 </dl>
 <a name="HEADING101-48"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-1684"></a>as-uppercase!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-9-1685"></a>Coerces an object to uppercase in place.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1684"></a>as-uppercase!</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-9-1685"></a>Coerces an object to uppercase in place.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
@@ -389,7 +389,7 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
     <dl>
       <dt><var>object</var></dt>
       <dd>
-        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+        <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
     </dl>
   </dd>
@@ -398,23 +398,23 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
     <dl>
       <dt><var>object</var></dt>
       <dd>
-        <p class="Cliche2">An instance of <code>&lt;object&gt;</code>; the same object that was passed in as an argument.</p>
+        <p>An instance of <code>&lt;object&gt;</code>; the same object that was passed in as an argument.</p>
       </dd>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> Coerces an object to uppercase in place and returns the modified object.</p>
+  <dd class="Cliche"><p>Coerces an object to uppercase in place and returns the modified object.</p>
     <p class="T1.Text1"><var>object</var> may be modified by this operation, and the result will be <code>==</code> to the <var>object</var>.</p>
     <a name="HEADING101-55"></a>
-    <h4 class="H5.Heading5"><code>as-uppercase! <var>string</var> </code>
-    &rArr;<code> <var>string</var></code> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h5 class="method-signature"><span class="signature"><code>as-uppercase! <var>string</var> </code>
+    &rArr;<code> <var>string</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
     <p class="T1.Text1">This method is equivalent to <code>map-into(<var>string</var>, as-uppercase, <var>string</var>)</code>.</p>
   </dd>
 </dl>
 <a name="HEADING101-57"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-1686"></a>as-lowercase</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-9-1687"></a>Coerces an object to lowercase.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1686"></a>as-lowercase</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-9-1687"></a>Coerces an object to lowercase.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
@@ -428,7 +428,7 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
     <dl>
       <dt><var>object1</var></dt>
       <dd>
-        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+        <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
     </dl>
   </dd>
@@ -437,27 +437,27 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
     <dl>
       <dt><var>object2</var></dt>
       <dd>
-        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+        <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> Coerces an object to lowercase and returns the resulting new object.</p>
+  <dd class="Cliche"><p>Coerces an object to lowercase and returns the resulting new object.</p>
     <p class="T1.Text1"><var>object1</var> will not be modified by this operation.</p>
     <a name="HEADING101-64"></a>
-    <h4 class="H5.Heading5"><code>as-lowercase <var>character</var> </code>
-      &rArr;<code> <var>lowercase-character</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h5 class="method-signature"><span class="signature"><code>as-lowercase <var>character</var> </code>
+      &rArr;<code> <var>lowercase-character</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <p class="T1.Text1">The <code>&lt;character&gt;</code> method on <code>as-lowercase</code> returns the lowercase equivalent for <var>character</var>. If <var>character</var> already is lowercase or does not exist in two cases, it is returned unchanged.</p>
     <a name="HEADING101-66"></a>
-    <h4 class="H5.Heading5"><code>as-lowercase <var>string</var> </code>
-      &rArr;<code> <var>new-string</var></code> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h5 class="method-signature"><span class="signature"><code>as-lowercase <var>string</var> </code>
+      &rArr;<code> <var>new-string</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
     <p class="T1.Text1">This method is equivalent to <code>map(as-lowercase, <var>string</var>)</code>.</p>
   </dd>
 </dl>
 <a name="HEADING101-68"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-1688"></a>as-lowercase!</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-2-1671"></a>Coerces an object to lowercase in place.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1688"></a>as-lowercase!</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-2-1671"></a>Coerces an object to lowercase in place.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
@@ -471,7 +471,7 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
     <dl>
       <dt><var>object</var></dt>
       <dd>
-        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+        <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
     </dl>
   </dd>
@@ -480,26 +480,26 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
     <dl>
       <dt><var>object</var></dt>
       <dd>
-        <p class="Cliche2">An instance of <code>&lt;object&gt;</code>; the same object that was passed in as an argument.</p>
+        <p>An instance of <code>&lt;object&gt;</code>; the same object that was passed in as an argument.</p>
       </dd>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> Coerces an object to lowercase in place and returns the modified object.</p>
+  <dd class="Cliche"><p>Coerces an object to lowercase in place and returns the modified object.</p>
     <p class="T1.Text1"><var>object</var> may be modified by this operation, and the result will be <code>==</code> to the <var>object</var>.</p>
     <a name="HEADING101-75"></a>
-    <h4 class="H5.Heading5"><code>as-lowercase! <var>string</var> </code>
-      &rArr;<code> <var>string</var></code> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h5 class="method-signature"><span class="signature"><code>as-lowercase! <var>string</var> </code>
+      &rArr;<code> <var>string</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
     <p class="T1.Text1">This method is equivalent to <code>map-into(<var>string</var>, as-lowercase, <var>string</var>)</code>.<a name="MARKER-2-1690"></a></p>
   </dd>
 </dl>
 <a name="HEADING101-77"></a>
 <a name="UID-Built-In_Functions-2996"></a>
-<h2 class="H2.Heading2">Copying Objects</h2>
+<h2 class="subsection-title">Copying Objects</h2>
 <a name="HEADING101-78"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-1691"></a>shallow-copy</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><code><a name="MARKER-9-1692"></a></code>Returns a copy of its argument.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1691"></a>shallow-copy</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><code><a name="MARKER-9-1692"></a></code>Returns a copy of its argument.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
@@ -513,7 +513,7 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
     <dl>
       <dt><var>object1</var></dt>
       <dd>
-        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+        <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
     </dl>
   </dd>
@@ -522,23 +522,23 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
     <dl>
       <dt><var>objects</var></dt>
       <dd>
-        <p class="Cliche">Instances of <code>&lt;object&gt;</code>.</p>
+        <p>Instances of <code>&lt;object&gt;</code>.</p>
       </dd>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns a new object that has the same contents as  <var>object1</var>. The contents are not copied but are the same objects contained in <var>object1</var>.</p>
+  <dd class="Cliche"><p>Returns a new object that has the same contents as  <var>object1</var>. The contents are not copied but are the same objects contained in <var>object1</var>.</p>
     <p class="T1.Text1">There is a predefined method for instances of <code>&lt;collection&gt;</code>. For other classes, the programmer must provide a method.</p>
     <a name="HEADING101-85"></a>
-    <h4 class="H5.Heading5"><code>shallow-copy <var>collection</var> </code>
-      &rArr;<code> <var>new-collection</var></code> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h5 class="method-signature"><span class="signature"><code>shallow-copy <var>collection</var> </code>
+      &rArr;<code> <var>new-collection</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
     <p class="T1.Text1">The method for <code>&lt;collection&gt;</code> creates a new object by calling <code>make</code> on the <code>type-for-copy</code> of  <var>collection</var> and filling it with the same elements as <var>collection</var>.</p>
   </dd>
 </dl>
 <a name="HEADING101-87"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-1693"></a>type-for-copy</code> <span class="attributes-summary">[Open Generic Function]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><code><a name="MARKER-9-1694"></a></code>Returns an appropriate type for creating mutable copies of its argument.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1693"></a>type-for-copy</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><code><a name="MARKER-9-1694"></a></code>Returns an appropriate type for creating mutable copies of its argument.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
@@ -552,7 +552,7 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
     <dl>
       <dt><var>object</var></dt>
       <dd>
-        <p class="Cliche">An instance of <code>&lt;object&gt;</code>.</p>
+        <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
     </dl>
   </dd>
@@ -561,38 +561,38 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
     <dl>
       <dt><var>type</var></dt>
       <dd>
-        <p class="Cliche2">An instance of <code>&lt;type&gt;.</code></p>
+        <p>An instance of <code>&lt;type&gt;.</code></p>
       </dd>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> Returns an appropriate type for creating mutable copies of <var>object</var>.</p>
+  <dd class="Cliche"><p>Returns an appropriate type for creating mutable copies of <var>object</var>.</p>
     <p class="T1.Text1">The <code>type-for-copy</code> value of a collection must be an instantiable subtype of <code>&lt;mutable-collection&gt;</code>. For collections that are themselves mutable, the collection's actual class is generally the most appropriate (assuming it is instantiable). The <code>type-for-copy</code> value for a sequence should be a subtype of <code>&lt;sequence&gt;</code>, and the <code>type-for-copy</code> value of an explicit-key-collection should be a subtype of <code>&lt;explicit-key-collection&gt;</code>.</p>
     <a name="HEADING101-94"></a>
-    <h4 class="H5.Heading5"><code>type-for-copy <var>object</var> </code>
-      &rArr;<code> <var>type</var></code> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h5 class="method-signature"><span class="signature"><code>type-for-copy <var>object</var> </code>
+      &rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
     <p class="T1.Text1">The method on <code>&lt;object&gt;</code> returns the result of calling <code>object-class</code> on the <var>object</var>.</p>
     <a name="HEADING101-96"></a>
-    <h4 class="H5.Heading5"><code>type-for-copy <var>mutable-collection</var> </code>
-      &rArr;<code> <var>type</var></code> <span class="attributes-summary">[G.F. Method]</span></h4>
+    <h5 class="method-signature"><span class="signature"><code>type-for-copy <var>mutable-collection</var> </code>
+      &rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
     <p class="T1.Text1">The method on <code>&lt;mutable-collection&gt;</code> returns the result of calling <code>object-class</code> on the <var>mutable-collection</var>.</p>
     <a name="HEADING101-98"></a>
-    <h4 class="H5.Heading5"><code>type-for-copy <var>limited-collection</var> </code>
-      &rArr;<code> <var>type</var></code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
-    <p class="T1.Text1">For a type <var>L<em class="Subscript Parameter"><sub>1</sub></em></var> created by <code>limited(<var>C</var>, of: <var>T</var>, size: <var>S</var>)</code> where <var>C</var> is not <code>&lt;range&gt;</code>, <code>type-for-copy</code> of an object made by instantiating <var>L<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></var> returns a type <var>L<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></var> that satisfies each of the following:</p>
-    <ul class="B1.Bullet1">
-      <li class="B1.Bullet1"><var>L<em class="Subscript Parameter B1.Bullet1"><sub>2</sub></em></var> is either a class or a limited collection type.</li>
-      <li class="B1.Bullet1"><var>L<em class="Subscript Parameter B1.Bullet1"><sub>2</sub></em></var> is a subtype of <var>C</var>.</li>
-      <li class="B1.Bullet1"><var>L<em class="Subscript Parameter B1.Bullet1"><sub>2</sub></em></var>'s element type is equivalent to <var>T</var>.</li>
-      <li class="B1.Bullet1">If <var>L<em class="Subscript Parameter B1.Bullet1"><sub>2</sub></em></var> is a limited collection type, its size attribute is <code>#f</code>.</li>
+    <h5 class="method-signature"><span class="signature"><code>type-for-copy <var>limited-collection</var> </code>
+      &rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
+    <p class="T1.Text1">For a type <var>L<em><sub>1</sub></em></var> created by <code>limited(<var>C</var>, of: <var>T</var>, size: <var>S</var>)</code> where <var>C</var> is not <code>&lt;range&gt;</code>, <code>type-for-copy</code> of an object made by instantiating <var>L<em><sub>1</sub></em></var> returns a type <var>L<em><sub>2</sub></em></var> that satisfies each of the following:</p>
+    <ul>
+      <li><var>L<em><sub>2</sub></em></var> is either a class or a limited collection type.</li>
+      <li><var>L<em><sub>2</sub></em></var> is a subtype of <var>C</var>.</li>
+      <li><var>L<em><sub>2</sub></em></var>'s element type is equivalent to <var>T</var>.</li>
+      <li>If <var>L<em><sub>2</sub></em></var> is a limited collection type, its size attribute is <code>#f</code>.</li>
     </ul>
     <a name="HEADING101-104"></a>
-    <h4 class="H5.Heading5"><code>type-for-copy <var>range</var> </code>
-      &rArr;<code> &lt;list&gt;</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h5 class="method-signature"><span class="signature"><code>type-for-copy <var>range</var> </code>
+      &rArr;<code> &lt;list&gt;</code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <p class="T1.Text1">The method on <code>&lt;range&gt;</code> returns <code>&lt;list&gt;</code>.</p>
     <a name="HEADING101-106"></a>
-    <h4 class="H5.Heading5"><code>type-for-copy <var>limited-range</var> </code>
-      &rArr;<code> &lt;list&gt;</code> <span class="attributes-summary">[Sealed G.F. Method]</span></h4>
+    <h5 class="method-signature"><span class="signature"><code>type-for-copy <var>limited-range</var> </code>
+      &rArr;<code> &lt;list&gt;</code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <p class="T1.Text1">The method on instances of <code>limited(singleton(&lt;range&gt;)</code>&hellip;<code>)</code>  returns <code>&lt;list&gt;</code>, the same as for any instance of <code>&lt;range&gt;</code>.<a name="MARKER-2-1695"></a></p>
   </dd>
 </dl>

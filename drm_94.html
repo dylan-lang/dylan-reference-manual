@@ -45,7 +45,7 @@
     
     <!-- Stylesheet -->
     
-    <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+    <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
     <title>The Dylan Reference Manual: Functions</title>
   </head>
@@ -136,10 +136,10 @@
 
       <a name="HEADING94-0"></a>
       <a name="UID-Built-In_Classes-15102"></a>
-      <h1 class="H1.Heading1"><a name="MARKER-2-1466"></a>Functions</h1>
+      <h1 class="section-title"><a name="MARKER-2-1466"></a>Functions</h1>
       <p class="T0.Text0">Functions are the objects that accept arguments, perform computations, and return values.</p>
       <p class="T1.Text1"><a href="#MARKER-9-1467" class="T1.Text1">Figure 11-5</a> shows the built-in function classes and some of their characteristics.</p>
-      <p class="Fg.Figure"><strong>Figure</strong> <strong>11-5</strong>  <a name="MARKER-9-1467"></a>The Function Classes<!-- img alt="dr94ima6" src="dr94ima6.gif" --></p>
+      <p class="figure"><strong>Figure</strong> <strong>11-5</strong>  <a name="MARKER-9-1467"></a>The Function Classes<!-- img alt="dr94ima6" src="dr94ima6.gif" --></p>
       
       <div class="figure" style="min-width: 292px">
 	<map id="function-classes-map" name="function-classes-map">
@@ -175,20 +175,20 @@
       
       <a name="HEADING94-4"></a>
       <a name="UID-Built-In_Classes-436"></a>
-      <h2 class="H2.Heading2">General Functions</h2>
+      <h2 class="subsection-title">General Functions</h2>
       <a name="HEADING94-5"></a>
-      <h3 class="H4.Heading4"><code><a name="MARKER-2-1468"></a>&lt;function&gt;</code> <span class="attributes-summary">[Sealed Abstract Class]</span></h3>
-      <hr class="H4.Heading4" />
+      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1468"></a>&lt;function&gt;</code> </span><span class="attributes-summary">[Sealed Abstract Class]</span></h4>
+      <hr class="item-title" />
       <p class="T1.Text1">The class of objects that can be applied to arguments.</p>
       <dl class="Cliche">
 	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> <code>&lt;object&gt;</code></p></dd>
+	<dd class="Cliche"><p><code>&lt;object&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> None.</p></dd>
+	<dd class="Cliche"><p>None.</p></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> All functions are instances of <code>&lt;function&gt;</code>. Functions are described in <a href="drm_47.html" class="Cliche">Chapter 6, "Functions."</a></p></dd>
+	<dd class="Cliche"><p>All functions are instances of <code>&lt;function&gt;</code>. Functions are described in <a href="drm_47.html" class="Cliche">Chapter 6, "Functions."</a></p></dd>
 	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;function&gt;</code> provides the following operations:</p>
+	<dd class="Cliche"><p>The class <code>&lt;function&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-65</strong>  Functions on &lt;function&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
@@ -270,32 +270,32 @@
       </dl>
       <a name="HEADING94-367"></a>
       <a name="UID-Built-In_Classes-15434"></a>
-      <h2 class="H2.Heading2">Generic Functions</h2>
+      <h2 class="subsection-title">Generic Functions</h2>
       <a name="HEADING94-368"></a>
-      <h3 class="H4.Heading4"><code><a name="MARKER-2-1469"></a>&lt;generic-function&gt;</code> <span class="attributes-summary">[Sealed Instantiable Class]</span></h3>
-      <hr class="H4.Heading4" />
+      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1469"></a>&lt;generic-function&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
+      <hr class="item-title" />
       <p class="T1.Text1">The class of functions that are made up of a number of individual methods.</p>
       <dl class="Cliche">
 	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> <code>&lt;function&gt;</code></p></dd>
+	<dd class="Cliche"><p><code>&lt;function&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;generic-function&gt;</code> supports the following init-keywords:</p></dd>
-	<dd><dl class="RP.RoutineParam">
-	    <dt class="RP.RoutineParam"><code>required:</code></dt>
-	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;number&gt;</code> or <code>&lt;sequence&gt;</code>.</p></dd>
-	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> This argument represents the required arguments that the generic function accepts. If a sequence is supplied, the size of the sequence is the number of required arguments, and the elements of the sequence are the specializers. If a number is supplied, it is the number of required arguments, and the specializers default to <code>&lt;object&gt;</code>. If the argument is not supplied, or the supplied argument is neither a sequence nor a non-negative integer, an error is signaled.</p></dd>
-	    <dt class="RP.RoutineParam"><code>rest?:</code></dt>
-	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;boolean&gt;</code>.</p></dd>
-	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> A true value indicates that the generic function accepts a variable number of arguments. The default value is <code>#f</code>.</p></dd>
-	    <dt class="RP.RoutineParam"><code>key:</code></dt>
-	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>#f</code> or an instance of <code>&lt;collection&gt;</code> whose elements are keywords.</p></dd>
-	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> If the value is a collection, then the generic function accepts keyword arguments, and the collection specifies the set of mandatory keywords for the generic function. A value of <code>#f</code> indicates that the generic function does not accept keyword arguments. The default value is <code>#f</code>.</p></dd>
-	    <dt class="RP.RoutineParam"><code>all-keys?:</code></dt>
-	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;boolean&gt;</code>.</p></dd>
-	    <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> A true value indicates that the generic function accepts all keyword arguments. The default value is <code>#f.</code></p></dd>
+	<dd class="Cliche"><p>The class <code>&lt;generic-function&gt;</code> supports the following init-keywords:</p></dd>
+	<dd><dl class="routine-param">
+	    <dt class="routine-param"><code>required:</code></dt>
+	    <dd class="routine-param"><p>An instance of <code>&lt;number&gt;</code> or <code>&lt;sequence&gt;</code>.</p></dd>
+	    <dd class="routine-param"><p>This argument represents the required arguments that the generic function accepts. If a sequence is supplied, the size of the sequence is the number of required arguments, and the elements of the sequence are the specializers. If a number is supplied, it is the number of required arguments, and the specializers default to <code>&lt;object&gt;</code>. If the argument is not supplied, or the supplied argument is neither a sequence nor a non-negative integer, an error is signaled.</p></dd>
+	    <dt class="routine-param"><code>rest?:</code></dt>
+	    <dd class="routine-param"><p>An instance of <code>&lt;boolean&gt;</code>.</p></dd>
+	    <dd class="routine-param"><p>A true value indicates that the generic function accepts a variable number of arguments. The default value is <code>#f</code>.</p></dd>
+	    <dt class="routine-param"><code>key:</code></dt>
+	    <dd class="routine-param"><p><code>#f</code> or an instance of <code>&lt;collection&gt;</code> whose elements are keywords.</p></dd>
+	    <dd class="routine-param"><p>If the value is a collection, then the generic function accepts keyword arguments, and the collection specifies the set of mandatory keywords for the generic function. A value of <code>#f</code> indicates that the generic function does not accept keyword arguments. The default value is <code>#f</code>.</p></dd>
+	    <dt class="routine-param"><code>all-keys?:</code></dt>
+	    <dd class="routine-param"><p>An instance of <code>&lt;boolean&gt;</code>.</p></dd>
+	    <dd class="routine-param"><p>A true value indicates that the generic function accepts all keyword arguments. The default value is <code>#f.</code></p></dd>
 	</dl></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> The class of generic functions. Generic functions are described in <a href="drm_47.html" class="Cliche">Chapter 6, "Functions."</a></p>
+	<dd class="Cliche"><p>The class of generic functions. Generic functions are described in <a href="drm_47.html" class="Cliche">Chapter 6, "Functions."</a></p>
 	  <p class="T1.Text1">The arguments describe the shape of the generic function's parameter list, and thereby control which methods can be added to the generic function. See the section <a href="drm_49.html#MARKER-9-800" class="T1.Text1">"Kinds of Parameter Lists" on page 86</a> and the section <a href="drm_49.html#MARKER-9-837" class="T1.Text1">"Parameter List Congruency" on page 93</a> for the implications of these choices.</p>
 	  <p class="T1.Text1">An error is signaled if the value of <code>rest?:</code> is true and the value of <code>key:</code> is a collection. While a method parameter list may specify both <code>#rest</code> and <code>#key</code>, a generic function parameter list cannot.</p>
 	  <p class="T1.Text1">An error is signaled if the value of <code>all-keys?:</code> is true and the value of <code>key:</code> is <code>#f</code>.</p>
@@ -303,7 +303,7 @@
 	  <p class="T1.Text1">Generic functions are not usually created by calling <code>make</code> directly. Most often they are created by <code>define generic</code> or implicitly by <code>define method</code>.</p>
 	</dd>
 	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p class="Cliche">The class <code>&lt;generic-function&gt;</code> provides the following operations:</p>
+	<dd class="Cliche"><p>The class <code>&lt;generic-function&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-66</strong>  Functions on &lt;generic-function&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
@@ -331,20 +331,20 @@
       </dl>
       <a name="HEADING94-490"></a>
       <a name="UID-Built-In_Classes-3217"></a>
-      <h2 class="H2.Heading2">Methods</h2>
+      <h2 class="subsection-title">Methods</h2>
       <a name="HEADING94-491"></a>
-      <h3 class="H4.Heading4"><code><a name="MARKER-2-1470"></a>&lt;method&gt;</code> <span class="attributes-summary">[Sealed Class]</span></h3>
-      <hr class="H4.Heading4" />
+      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1470"></a>&lt;method&gt;</code> </span><span class="attributes-summary">[Sealed Class]</span></h4>
+      <hr class="item-title" />
       <p class="T1.Text1">The class of functions that are applicable to arguments of a specified type.</p>
       <dl class="Cliche">
 	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> <code>&lt;function&gt;</code></p></dd>
+	<dd class="Cliche"><p><code>&lt;function&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> None.</p></dd>
+	<dd class="Cliche"><p>None.</p></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> The class of methods. Methods are described in <a href="drm_47.html" class="Cliche">Chapter 6, "Functions."</a></p></dd>
+	<dd class="Cliche"><p>The class of methods. Methods are described in <a href="drm_47.html" class="Cliche">Chapter 6, "Functions."</a></p></dd>
 	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;method&gt;</code> provides the following operations:</p>
+	<dd class="Cliche"><p>The class <code>&lt;method&gt;</code> provides the following operations:</p>
 	  <p class="Anchor"> <a name="MARKER-2-1471"></a></p>
 	  <table class="numbered"><caption><strong>Table 11-67</strong>  Functions on &lt;method&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>

@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Function Macros</title>
 </head>
@@ -129,7 +129,7 @@
 
 <a name="HEADING115-0"></a>
 <a name="UID-Built-In_Macros-5344"></a>
-<h1 class="H1.Heading1"><a name="MARKER-9-2068"></a>Function Macros</h1>
+<h1 class="section-title"><a name="MARKER-9-2068"></a>Function Macros</h1>
 <p class="T1.Text1"><a name="MARKER-2-2069"></a>Function macros provide syntax for assignment and for conditional execution. These three built-in function macros may be called using function-call syntax or operator syntax.</p>
 <table class="numbered"><caption class="Tb.Table"><strong>Table 14-4</strong>  Function Macros</caption>
   <tr><th class="primary"><p class="TbH.TblHd"> Macro</p>
@@ -146,37 +146,37 @@
     </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2079" class="TbT.TblText">412</a></p>
 </td></tr></table><a name="HEADING115-63"></a>
 <a name="UID-Built-In_Macros-5569"></a>
-<h2 class="H2.Heading2"><a name="MARKER-2-2070"></a>Assignment</h2>
+<h2 class="subsection-title"><a name="MARKER-2-2070"></a>Assignment</h2>
 <a name="HEADING115-64"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-2071"></a>:=</code> <span class="attributes-summary">[Function Macro]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-9-2072"></a>Stores a new value in a location.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2071"></a>:=</code> </span><span class="attributes-summary">[Function Macro]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-9-2072"></a>Stores a new value in a location.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Macro Call:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> <var>place</var> <code>:=</code> <var>new-value</var></p></dd>
+  <dd class="Cliche"><p><var>place</var> <code>:=</code> <var>new-value</var></p></dd>
   <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
-      <dt><var>place</var></dt>
-      <dd><p class="Cliche">expression<em class="BNF Cliche"><sub>bnf</sub></em></p></dd>
-      <dt class="RP.RoutineParam"><var>new-value</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
+      <dt class="routine-param"><var>place</var></dt>
+      <dd class="routine-param"><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt class="routine-param"><var>new-value</var></dt>
+      <dd class="routine-param"><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
     </dl>
   </dd>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
-    <p class="Cliche"><var>new-value</var>, an instance of <code>&lt;object&gt;</code>.</p>
+    <p><var>new-value</var>, an instance of <code>&lt;object&gt;</code>.</p>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> <code>:=</code> stores <var>new-value</var> in <var>place</var> and returns <var>new-value</var>.</p>
+  <dd class="Cliche"><p><code>:=</code> stores <var>new-value</var> in <var>place</var> and returns <var>new-value</var>.</p>
     <p class="T1.Text1"><var>place</var> may be a variable, a getter function or macro call with a corresponding setter, a slot access, or an element reference.</p>
     <p class="T1.Text1"><var>new-value</var> may be any operand. It is executed, and its value is stored in <var>place</var>.</p>
     <p class="T1.Text1">In all cases, <var>new-value</var> must be an appropriate type for <var>place</var> or an error is signaled.</p>
     <p class="T1.Text1">The <var>new-value</var> of an assignment statement is executed first, followed by the <var>place</var> (assuming the <var>place</var> requires any execution, which will only be true if it is not a binding name).</p>
     <a name="HEADING115-75"></a>
-    <h4 class="H5.Heading5">Assignment to a binding</h4>
+    <h5 class="description-subsection-title">Assignment to a binding</h5>
     <p class="T1.Text1">If <var>place</var> is a binding name, then <var>new-value</var> is stored in the binding. It is an error if there is no binding corresponding to <var>place</var>. (<code>:=</code> cannot be used to create bindings, only to change their values.)  An error is also signaled if <var>place</var> is a binding specialized to a type and the <var>new-value</var> is not of that type.</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 define variable *number* = 10;
 *number*
 <code> &rArr;</code>  10
@@ -185,30 +185,30 @@ define variable *number* = 10;
 *number*
 <code> &rArr;</code>  20 </pre>
     <a name="HEADING115-78"></a>
-    <h4 class="H5.Heading5">Assignment to a function or function macro</h4>
-    <p class="T1.Text1">If <var>place</var> has the syntax of a function call, then <code>:=</code> will invoke the corresponding setter function. Given a binding named <var>fun</var>, the corresponding setter is the binding named <i class="parameter T1.Text1">fun<code>-setter</code></i> in the current environment.</p>
-    <p class="T1.Text1"><code>:=</code> maps <var>place</var> to <i class="parameter T1.Text1">place<code>-setter</code></i> without regard for whether <var>place</var> is a function or a macro. It does not expand a macro call on the left-hand side before determining the setter.</p>
+    <h5 class="description-subsection-title">Assignment to a function or function macro</h5>
+    <p class="T1.Text1">If <var>place</var> has the syntax of a function call, then <code>:=</code> will invoke the corresponding setter function. Given a binding named <var>fun</var>, the corresponding setter is the binding named <code><var>fun</var>-setter</code></i> in the current environment.</p>
+  <p class="T1.Text1"><code>:=</code> maps <var>place</var> to <code><var>place</var>-setter</code></i> without regard for whether <var>place</var> is a function or a macro. It does not expand a macro call on the left-hand side before determining the setter.</p>
     <p class="T1.Text1">With the exception of the order of execution and a guaranteed return value, the following three expressions are equivalent:</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 *top-view*.subviews := generate-subviews()
 subviews(*top-view*) := generate-subviews()
 subviews-setter(generate-subviews(), *top-view*) </pre>
     <p class="T1.Text1">(The differences are as follows: the execution time of <code>subviews-setter</code> is undefined in the first two expressions but defined in the last; the first two expressions will return the value of the call to <code>generate-subviews</code> while the last will return the value of the call to <code>subviews-setter</code>.)</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 name(arg1,&hellip;argn ) := new-value </pre>
     <p class="T1.Text1">behaves exactly the same as</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 begin
   let <var>temp</var> = new-value;
   name-setter(temp, arg1,&hellip;argn );
-  <var>temp
-</var>end </pre>
+  <var>temp</var>
+end</pre>
     <p class="T1.Text1">This is true regardless of whether <code>name</code> and <code>name-setter</code> are functions or macros. Here <var>temp</var> stands for a variable with a unique name. If <code>name-setter</code> is a macro, it  is responsible for the order of executation of <code>arg1,&hellip;argn</code>.</p>
     <p class="T1.Text1">The same considerations apply to <code>arg.name := new-value</code>.</p>
     <a name="HEADING115-89"></a>
-    <h4 class="H5.Heading5">Assignment to element references</h4>
+    <h5 class="description-subsection-title">Assignment to element references</h5>
     <p class="T1.Text1">Just as <code>[]</code> can be used as syntax for <code>element</code> and <code>aref</code>, <code>[]</code> and <code>:=</code> can be used as syntax for <code>element-setter</code> and <code>aref-setter</code>. For example, the following three expressions are equivalent:</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 foo[2] := &quot;quux&quot;
 element (foo, 2) := &quot;quux&quot;
 element-setter (&quot;quux&quot;, foo, 2).<a name="MARKER-2-2073"></a> </pre>
@@ -216,32 +216,32 @@ element-setter (&quot;quux&quot;, foo, 2).<a name="MARKER-2-2073"></a> </pre>
 </dl>
 <a name="HEADING115-92"></a>
 <a name="UID-Built-In_Macros-5614"></a>
-<h2 class="H2.Heading2">Conditional Execution</h2>
+<h2 class="subsection-title">Conditional Execution</h2>
 <a name="HEADING115-93"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-2074"></a>|</code> <span class="attributes-summary">[Function Macro]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-9-2075"></a>Returns the value of the first of two operands that is true.<a name="MARKER-9-2076"></a></p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2074"></a>|</code> </span><span class="attributes-summary">[Function Macro]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-9-2075"></a>Returns the value of the first of two operands that is true.<a name="MARKER-9-2076"></a></p>
 <dl class="Cliche">
 <dt class="Cliche"><span>Macro Call:</span></dt>
-<dd class="Cliche"><p class="Cliche"> <var>one</var> <code>|</code> <var>another</var></p></dd>
+<dd class="Cliche"><p><var>one</var> <code>|</code> <var>another</var></p></dd>
 <dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
   <dl>
-    <dt><var>one</var></dt>
-    <dd><p class="Cliche">expression<em class="BNF Cliche"><sub>bnf</sub></em></p></dd>
-    <dt class="RP.RoutineParam"><var>another</var></dt>
-    <dd class="RP.RoutineParam"><p class="RP.RoutineParam">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
+    <dt class="routine-param"><var>one</var></dt>
+    <dd class="routine-param"><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+    <dt class="routine-param"><var>another</var></dt>
+    <dd class="routine-param"><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
   </dl>
 </dd>
 <dt class="Cliche"><span>Values:</span></dt>
-<dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
+<dd class="Cliche"><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
 <dt class="Cliche"><span>Description:</span></dt>
-<dd class="Cliche"><p class="Cliche"> <code>|</code> (<a name="MARKER-2-2077"></a>logical or) executes <var>one</var>. If the first value of <var>one</var> is true, that value is returned and <var>another</var> is not executed. Otherwise <var>another</var> is executed and its values are returned.</p></dd>
+<dd class="Cliche"><p><code>|</code> (<a name="MARKER-2-2077"></a>logical or) executes <var>one</var>. If the first value of <var>one</var> is true, that value is returned and <var>another</var> is not executed. Otherwise <var>another</var> is executed and its values are returned.</p></dd>
 </dl>
 <a name="HEADING115-100"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-2078"></a>&amp;</code>  <span class="attributes-summary">[Function Macro]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-9-2079"></a>If the value of a first operand is true, executes a second operand and returns its values.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2078"></a>&amp;</code>  </span><span class="attributes-summary">[Function Macro]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-9-2079"></a>If the value of a first operand is true, executes a second operand and returns its values.</p>
 <dl class="Cliche">
 <dt class="Cliche"><span>Macro Call:</span></dt>
 <dd class="Cliche">
@@ -253,15 +253,15 @@ element-setter (&quot;quux&quot;, foo, 2).<a name="MARKER-2-2073"></a> </pre>
 <dd class="Cliche">
   <dl>
     <dt><var>one</var></dt>
-    <dd><p class="Cliche">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
-    <dt class="RP.RoutineParam"><var>another</var></dt>
-    <dd class="RP.RoutineParam"><p class="RP.RoutineParam">expression<em class="BNF"><sub>bnf</sub></em></p></dd>
+    <dd><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+    <dt class="routine-param"><var>another</var></dt>
+    <dd class="routine-param"><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
   </dl>
 </dd>
 <dt class="Cliche"><span>Values:</span></dt>
-<dd class="Cliche"><p class="Cliche"> Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
+<dd class="Cliche"><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
 <dt class="Cliche"><span>Description:</span></dt>
-<dd class="Cliche"><p class="Cliche"> <code>&amp;</code> (<a name="MARKER-2-2080"></a>logical and) executes <var>one</var>. If the first value returned by <var>one</var> is false, <code>#f</code> is returned and <var>another</var> is not executed. Otherwise, <var>another</var> is executed and its values are returned.<a name="MARKER-2-2081"></a></p>
+<dd class="Cliche"><p><code>&amp;</code> (<a name="MARKER-2-2080"></a>logical and) executes <var>one</var>. If the first value returned by <var>one</var> is false, <code>#f</code> is returned and <var>another</var> is not executed. Otherwise, <var>another</var> is executed and its values are returned.<a name="MARKER-2-2081"></a></p>
 <a name="LINK-Built-In_Macros-lastpage"></a></dd>
 </dl>
 

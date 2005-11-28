@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Dylan Interchange Format</title>
 </head>
@@ -125,37 +125,39 @@
 
 <a name="HEADING23-0"></a>
 <a name="UID-Syntax-1728"></a>
-<h1 class="H1.Heading1"><a name="MARKER-9-317"></a>Dylan Interchange Format</h1>
-<p class="T1.Text1">The <strong class="T1.Text1"><a name="MARKER-2-318"></a>Dylan interchange format</strong> is a standard file format for publishing Dylan <a name="MARKER-2-319"></a>source code. Such a file has two parts, the <strong class="Bold T1.Text1"><a name="MARKER-2-320"></a><dfn>file header</dfn></strong> and the <strong class="Bold T1.Text1"><a name="MARKER-2-321"></a><dfn>code body</dfn></strong>. The file header comes before the code body.</p>
+<h1 class="section-title"><a name="MARKER-9-317"></a>Dylan Interchange Format</h1>
+<p class="T1.Text1">The <strong class="T1.Text1"><a name="MARKER-2-318"></a>Dylan interchange format</strong> is a standard file format for publishing Dylan <a name="MARKER-2-319"></a>source code. Such a file has two parts, the <strong class="Bold"><a name="MARKER-2-320"></a><dfn>file header</dfn></strong> and the <strong class="Bold"><a name="MARKER-2-321"></a><dfn>code body</dfn></strong>. The file header comes before the code body.</p>
 <p class="T1.Text1">The code body consists of a <a name="MARKER-2-322"></a>source record.</p>
 <p class="T1.Text1">The  file header consists of one or more keyword-value pairs, as follows:</p>
-<ul class="B1.Bullet1">
-<li class="B1.Bullet1">A <a name="MARKER-2-323"></a>keyword is a letter, followed by zero or more letters, digits, and hyphens, followed by a colon. It contains only characters from the ISO 646 7-bit character set, and is case-independent.</li>
-<li class="B1.Bullet1">A keyword begins on a new line, and cannot be preceded by whitespace.</li>
-<li class="B1.Bullet1">All text (excluding whitespace) between the keyword and the next newline is considered to be the value. Additional lines can be added by having the additional lines start with whitespace. Leading whitespace is ignored on all lines.</li>
-<li class="B1.Bullet1">The meaning of the value is determined by the keyword.</li>
-<li class="B1.Bullet1">Implementations must recognize and handle standardized keywords properly, unless the specification for a keyword explicitly states that it can be ignored.</li>
-<li class="B1.Bullet1">When importing a file, implementations are free to ignore any nonstandard keyword-value pairs that they do not recognize.</li>
-<li class="B1.Bullet1">When exporting a file, implementations must use standard keywords properly. Implementations are free to use nonstandard keywords. </li>
-<li class="B1.Bullet1">The definition of a keyword may specify that the keyword may occur more than once in a single file header. If it does not, then it is an error for the keyword to occur more than once. If it does, it should specify the meaning of multiple occurrences. </li>
+<ul>
+<li>A <a name="MARKER-2-323"></a>keyword is a letter, followed by zero or more letters, digits, and hyphens, followed by a colon. It contains only characters from the ISO 646 7-bit character set, and is case-independent.</li>
+<li>A keyword begins on a new line, and cannot be preceded by whitespace.</li>
+<li>All text (excluding whitespace) between the keyword and the next newline is considered to be the value. Additional lines can be added by having the additional lines start with whitespace. Leading whitespace is ignored on all lines.</li>
+<li>The meaning of the value is determined by the keyword.</li>
+<li>Implementations must recognize and handle standardized keywords properly, unless the specification for a keyword explicitly states that it can be ignored.</li>
+<li>When importing a file, implementations are free to ignore any nonstandard keyword-value pairs that they do not recognize.</li>
+<li>When exporting a file, implementations must use standard keywords properly. Implementations are free to use nonstandard keywords. </li>
+<li>The definition of a keyword may specify that the keyword may occur more than once in a single file header. If it does not, then it is an error for the keyword to occur more than once. If it does, it should specify the meaning of multiple occurrences. </li>
 </ul>
 <p class="Default"> The file header cannot contain comments, or other Dylan source code.</p>
 <p class="T1.Text1"><a name="MARKER-2-324"></a>Blank lines may not appear in the file header. A blank line defines the end of the file header and the beginning of the code body. The blank line is not part of the code body. (A "blank line" is a line consisting of zero or more space or tab characters, ending in a newline character.)</p>
 <p class="T1.Text1">The following standard keywords are defined:</p>
 <a name="HEADING23-15"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-325">language:</a></code> <var>language-name</var> <span class="attributes-summary">[Header keyword]</span> </h3>
-<hr class="H4.Heading4" />
-<p class="T1.Text1">The source record in the file is written in the named language. The only portable value for this keyword is <code>infix-dylan</code>.<code></code></p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-325">language:</a></code> <var>language-name</var> </span><span class="attributes-summary">[Header keyword]</span></h4>
+<hr class="item-title" />
+<p class="T1.Text1">The source record in the file is written in the named language. The only portable value for this keyword is <code>infix-dylan</code>.</p>
 <a name="HEADING23-17"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-326"></a>module:</code> <var>module-name</var> <span class="attributes-summary">[Header keyword]</span> </h3>
-<hr class="H4.Heading4" />
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-326"></a>module:</code> <var>module-name</var> </span><span class="attributes-summary">[Header keyword]</span></h4>
+<hr class="item-title" />
 <p class="T1.Text1">The source record in the file is associated with the named module. This keyword is required.</p>
 <a name="HEADING23-19"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-327"></a>author:</code> <var>text</var> <span class="attributes-summary">[Header keyword]</span><br /><code><a name="MARKER-2-328"></a>copyright:</code> <var>text</var> <span class="attributes-summary">[Header keyword]</span><br /><code><a name="MARKER-2-329"></a>version:</code> <var>text</var> <span class="attributes-summary">[Header keyword]</span></h3>
-<hr class="H4.Heading4" />
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-327"></a>author:</code> <var>text</var> </span><span class="attributes-summary">[Header keyword]</span><br />
+  <span class="signature"><code><a name="MARKER-2-328"></a>copyright:</code> <var>text</var> </span><span class="attributes-summary">[Header keyword]</span><br />
+  <span class="signature"><code><a name="MARKER-2-329"></a>version:</code> <var>text</var> </span><span class="attributes-summary">[Header keyword]</span></h4>
+<hr class="item-title" />
 <p class="T1.Text1">These are provided for standardization. They are optional, and can be ignored by the implementation.</p>
 <p class="T1.Text1">A typical Dylan source file might look like this:</p>
-<pre class="Cv.Code">
+<pre class="code">
 module: quickdraw
 author: J. Random Rect
         Linear Wheels, Inc., "Where quality is a slogan!"

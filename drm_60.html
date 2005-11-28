@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: 8 Collections</title>
 </head>
@@ -124,13 +124,13 @@
 
 <a name="HEADING60-0"></a>
 <a name="UID-Collections-2757"></a>
-<h1 class="H1.Heading1">Overview</h1>
-<p class="T0.Text0"><a name="MARKER-2-983"></a>Collections are aggregate <a name="MARKER-2-984"></a>data structures that map from <strong class="Bold T0.Text0"><a name="MARKER-2-985"></a><dfn>keys</dfn></strong> to <strong class="Bold T0.Text0"><a name="MARKER-2-986"></a><dfn>elements</dfn></strong>. All collections are instances of the class <code><a name="MARKER-2-987"></a>&lt;collection&gt;</code>.</p>
-<p class="T1.Text1"><code>&lt;collection&gt;</code> has two covering subclasses:  <code><a name="MARKER-2-988"></a>&lt;sequence&gt;</code> and <a name="MARKER-2-989"></a><code>&lt;explicit-key-collection&gt;</code>. Every concrete subclass of <code>&lt;collection&gt;</code> must also be a subclass of <code>&lt;sequence&gt;</code> or <code>&lt;explicit-key-collection&gt;</code>. <strong class="Bold T1.Text1"><a name="MARKER-2-990"></a><dfn>Sequences</dfn></strong> use successive non-negative integers as keys;  <strong class="Bold T1.Text1"><a name="MARKER-2-991"></a><dfn>explicit key collections</dfn></strong> may use any object as a key. Both of these classes have predefined subclasses and may be additionally subclassed by programmers. See <a href="drm_93.html#MARKER-9-1398" class="T1.Text1">"Collections" on page 206</a> for a complete description of these classes.</p>
+<h1 class="section-title">Overview</h1>
+<p class="T0.Text0"><a name="MARKER-2-983"></a>Collections are aggregate <a name="MARKER-2-984"></a>data structures that map from <strong class="Bold"><a name="MARKER-2-985"></a><dfn>keys</dfn></strong> to <strong class="Bold"><a name="MARKER-2-986"></a><dfn>elements</dfn></strong>. All collections are instances of the class <code><a name="MARKER-2-987"></a>&lt;collection&gt;</code>.</p>
+<p class="T1.Text1"><code>&lt;collection&gt;</code> has two covering subclasses:  <code><a name="MARKER-2-988"></a>&lt;sequence&gt;</code> and <a name="MARKER-2-989"></a><code>&lt;explicit-key-collection&gt;</code>. Every concrete subclass of <code>&lt;collection&gt;</code> must also be a subclass of <code>&lt;sequence&gt;</code> or <code>&lt;explicit-key-collection&gt;</code>. <strong class="Bold"><a name="MARKER-2-990"></a><dfn>Sequences</dfn></strong> use successive non-negative integers as keys;  <strong class="Bold"><a name="MARKER-2-991"></a><dfn>explicit key collections</dfn></strong> may use any object as a key. Both of these classes have predefined subclasses and may be additionally subclassed by programmers. See <a href="drm_93.html#MARKER-9-1398" class="T1.Text1">"Collections" on page 206</a> for a complete description of these classes.</p>
 <p class="T1.Text1">A large number of functions are available on collections, including functions for iteration, mapping, random access of elements, sorting, filtering, etc. See <a href="drm_102.html#MARKER-9-1696" class="T1.Text1">"Collection Operations" on page 294</a> for a complete description of these functions.</p>
 <a name="HEADING60-4"></a>
 <a name="UID-Collections-6197"></a>
-<h2 class="H2.Heading2">The Iteration Protocol</h2>
+<h2 class="subsection-title">The Iteration Protocol</h2>
 <p class="T1.Text1"><a name="MARKER-2-992"></a>All collections implement an <strong class="T1.Text1">iteration protocol </strong>that allows iteration to be specified abstractly. Many higher level operations on collections can be defined in terms of only the iteration protocol. For many programs these higher level operations are sufficient; they will not need to use the iteration protocol directly. The iteration protocol is used by programs defining new collection types, and for certain types of iteration that cannot be handled by the built-in higher level operations.</p>
 <p class="T1.Text1">The iteration protocol centers on the notion of a "<a name="MARKER-2-993"></a>state" object for an iteration. Each collection class chooses its own most appropriate representation for an iteration state, and only the functions of the iteration protocol are affected by this choice.</p>
 <p class="T1.Text1"><a name="MARKER-2-994"></a>Use of the iteration protocol is based on the assumption that the collection over which iteration occurs remains static for the duration of the iteration. That is, arbitrary changes to a mutable collection while an iteration is in progress may cause the iteration to produce unpredictable results.</p>

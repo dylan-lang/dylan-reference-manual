@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Exception Handling</title>
 </head>
@@ -123,20 +123,20 @@
 
 <a name="HEADING56-0"></a>
 <a name="UID-Conditions-1884"></a>
-<h1 class="H1.Heading1">Exception Handling</h1>
+<h1 class="section-title">Exception Handling</h1>
 <p class="T0.Text0">A set of classes, functions, and associated conventions extend the underlying condition handling capabilities to provide a complete exception handling facility.</p>
 <p class="T1.Text1">The classes are described in <a href="drm_95.html#MARKER-9-1472" class="T1.Text1">"Conditions" on page 244</a>, and the functions are described in <a href="drm_107.html#MARKER-9-1917" class="T1.Text1">"Signaling Conditions" on page 357</a>.</p>
 <a name="HEADING56-3"></a>
 <a name="UID-Conditions-2155"></a>
-<h2 class="H2.Heading2">Stack Model</h2>
+<h2 class="subsection-title">Stack Model</h2>
 <p class="T1.Text1"><a name="MARKER-2-925"></a>Condition handlers are installed dynamically, with more recent handlers shadowing previously installed handlers. In addition, exception handling often involves the use of <a name="MARKER-2-926"></a>nonlocal exits. For these reasons it is useful to describe the behavior of the exception system using the following terms from the stack model of function calling.</p>
-<ul class="B1.Bullet1">
-  <li class="B1.Bullet1"><strong class="B1.Bullet1"><a name="MARKER-2-927"></a>outside stack<br /></strong>The state existing just before the handler was established.</li>
-  <li class="B1.Bullet1"><strong class="B1.Bullet1"><a name="MARKER-2-928"></a>signaling unit <br /></strong>The conceptual program component that includes the expression that signaled the condition and does not include the expression that established the handler. This informal concept provides a notion of where the interface boundary between the signaler and the handler lies.</li>
-  <li class="B1.Bullet1"><strong class="B1.Bullet1"><a name="MARKER-2-929"></a>middle stack<br /></strong>The state existing just before the signaling unit was called, minus the outside stack. In other words, the state between the handler and the signaling unit.</li>
-  <li class="B1.Bullet1"><strong class="B1.Bullet1"><a name="MARKER-2-930"></a>inside stack<br /></strong>The state existing just before signaling occurred, minus the middle stack and outside stack. In other words, the portion of the signaling unit prior to the call to <code>signal</code>.</li>
+<ul>
+  <li><strong><a name="MARKER-2-927"></a>outside stack<br /></strong>The state existing just before the handler was established.</li>
+  <li><strong><a name="MARKER-2-928"></a>signaling unit <br /></strong>The conceptual program component that includes the expression that signaled the condition and does not include the expression that established the handler. This informal concept provides a notion of where the interface boundary between the signaler and the handler lies.</li>
+  <li><strong><a name="MARKER-2-929"></a>middle stack<br /></strong>The state existing just before the signaling unit was called, minus the outside stack. In other words, the state between the handler and the signaling unit.</li>
+  <li><strong><a name="MARKER-2-930"></a>inside stack<br /></strong>The state existing just before signaling occurred, minus the middle stack and outside stack. In other words, the portion of the signaling unit prior to the call to <code>signal</code>.</li>
 </ul>
-<p class="Fg.Figure"><strong>Figure</strong> <strong>7-1</strong>  <a name="MARKER-9-931"></a><!-- img alt="dr56ima1" src="dr56ima1.gif" -->The Stack Model</p>
+<p class="figure"><strong>Figure</strong> <strong>7-1</strong>  <a name="MARKER-9-931"></a><!-- img alt="dr56ima1" src="dr56ima1.gif" -->The Stack Model</p>
 
 <div class="figure" style="min-width: 399px">
   <img alt="Stack Model Diagram" src="drm_Figure_7-1_Stack_Model.png" width="399" height="337" />
@@ -145,13 +145,13 @@
 <p class="T1.Text1">The handler in <a href="#MARKER-9-931" class="T1.Text1">Figure 7-1</a> may either return normally, in which case execution resumes as the call to <code>signal</code> returns normally, or the handler may make a nonlocal exit, such as calling the exit function from a dynamically active <code>block</code> statement.<a name="MARKER-2-932"></a></p>
 <a name="HEADING56-11"></a>
 <a name="UID-Conditions-2820"></a>
-<h2 class="H2.Heading2">Recovery and Exits</h2>
+<h2 class="subsection-title">Recovery and Exits</h2>
 <p class="T1.Text1"><a name="MARKER-2-933"></a>There are two ways to handle an exception: by recovery or by exit. Recovery involves making some repair to the program state and leaving control in the signaling unit. Exit involves <a name="MARKER-2-934"></a>transferring control outside of the signaling unit through the use of a <a name="MARKER-2-935"></a>nonlocal exit.</p>
 <p class="T1.Text1">The simplest way to handle an exception is to exit the signaling unit by taking a nonlocal exit to a target established in the outside stack. The <code>exception</code> clause of the <code><a name="MARKER-2-936"></a>block</code> statement provides a convenient mechanism for accomplishing this.</p>
 <p class="T1.Text1">A less common handling style is to exit the signaling unit by taking a nonlocal exit to a target established in the middle stack, thus leaving the handler in force.</p>
 <p class="T1.Text1">Instead of exiting, a handler can recover by returning control to the signaling unit. This can be done either by returning values that the signaling unit will understand or by taking a nonlocal exit to a target established in the inside stack.</p>
 <p class="T1.Text1">The following examples show three ways of handling a copy-protection violation while copying a series of files. Note that the signaling code does not need to know how the condition will be handled. The only changes are in the code that handles the condition.</p>
-<pre class="Cv.Code">
+<pre class="code">
 // Assume there is a class for file-system errors.
 // We are interested in a special kind of file-system error
 // that occurs when attempting to copy a copy-protected file,
@@ -223,17 +223,17 @@ end method;<a name="MARKER-2-937"></a>
 </pre>
 <a name="HEADING56-22"></a>
 <a name="UID-Conditions-2199"></a>
-<h2 class="H2.Heading2">Restarts</h2>
-<p class="T1.Text1"><a name="MARKER-2-938"></a><a name="MARKER-2-939"></a>Recovering or exiting can be accomplished directly, or a more formal mechanism called <strong class="Bold T1.Text1"><dfn>restarting</dfn></strong> can be used. Using restarts provides more assurance that the handler and the signaling unit agree on the meaning of what they are doing and provides some isolation of the handler from names and data representations internal to the signaling unit.</p>
+<h2 class="subsection-title">Restarts</h2>
+<p class="T1.Text1"><a name="MARKER-2-938"></a><a name="MARKER-2-939"></a>Recovering or exiting can be accomplished directly, or a more formal mechanism called <strong class="Bold"><dfn>restarting</dfn></strong> can be used. Using restarts provides more assurance that the handler and the signaling unit agree on the meaning of what they are doing and provides some isolation of the handler from names and data representations internal to the signaling unit.</p>
 <p class="T1.Text1">A handler restarts by signaling a restart. All restarts are instances of <code><a name="MARKER-2-940"></a>&lt;restart&gt;</code>. Any values needed for recovery are passed in the restart (that is, in initialization arguments that the restart remembers, typically in slots). The restart is handled by a <a name="MARKER-2-941"></a>restart handler that either <a name="MARKER-2-942"></a>returns or takes a <a name="MARKER-2-943"></a>nonlocal exit. If the restart handler returns some values, <code>signal</code> returns those values and the handler that called <code>signal</code> also returns them. The call to <code>signal</code> from the signaling unit that signaled the original condition returns the same values, and the signaling unit recovers as directed by those values.<a name="MARKER-2-944"></a></p>
 <a name="HEADING56-25"></a>
 <a name="UID-Conditions-1894"></a>
-<h2 class="H2.Heading2">Recovery Protocols</h2>
-<p class="T1.Text1"><a name="MARKER-2-945"></a>For every condition class there should be a <strong class="Bold T1.Text1"><dfn>recovery protocol</dfn></strong> that defines the meaning of <a name="MARKER-2-946"></a>handling by returning, the meaning of the <a name="MARKER-2-947"></a>values returned, and which <a name="MARKER-2-948"></a>restart handlers are supposed to be established by the signaling unit. The recovery protocol tells the handler what to expect from the signaler. For many condition classes, this is the empty protocol: handling by returning isn't allowed, and no particular restart handlers are provided. In this case only handling by exiting is possible. (Exiting might be accomplished by signaling a restart whose handler was established in the outside or middle stack and does a nonlocal exit back to where it was established, or by an ordinary nonlocal exit.)  The recovery protocol for a subclass should be compatible with the recovery protocol of a superclass. That is, a handler that applies a class's recovery protocol should operate correctly when the condition is an instance of some subclass of that class.</p>
+<h2 class="subsection-title">Recovery Protocols</h2>
+<p class="T1.Text1"><a name="MARKER-2-945"></a>For every condition class there should be a <strong class="Bold"><dfn>recovery protocol</dfn></strong> that defines the meaning of <a name="MARKER-2-946"></a>handling by returning, the meaning of the <a name="MARKER-2-947"></a>values returned, and which <a name="MARKER-2-948"></a>restart handlers are supposed to be established by the signaling unit. The recovery protocol tells the handler what to expect from the signaler. For many condition classes, this is the empty protocol: handling by returning isn't allowed, and no particular restart handlers are provided. In this case only handling by exiting is possible. (Exiting might be accomplished by signaling a restart whose handler was established in the outside or middle stack and does a nonlocal exit back to where it was established, or by an ordinary nonlocal exit.)  The recovery protocol for a subclass should be compatible with the recovery protocol of a superclass. That is, a handler that applies a class's recovery protocol should operate correctly when the condition is an instance of some subclass of that class.</p>
 <p class="T1.Text1">An example recovery protocol for a hypothetical <code>&lt;unbound-slot&gt;</code> condition could include the following:</p>
-<ul class="B1.Bullet1">
-  <li class="B1.Bullet1">Returning is allowed. Returning a value uses that value as if it had been the contents of the slot.</li>
-  <li class="B1.Bullet1">A restart handler for <code>&lt;new-value&gt;</code> is available. <code>&lt;new-value&gt;</code> has initialization arguments <code>value:</code>, the value to use, and <code>permanent:</code>, which indicates whether to store the value into the slot or leave the slot unbound.</li>
+<ul>
+  <li>Returning is allowed. Returning a value uses that value as if it had been the contents of the slot.</li>
+  <li>A restart handler for <code>&lt;new-value&gt;</code> is available. <code>&lt;new-value&gt;</code> has initialization arguments <code>value:</code>, the value to use, and <code>permanent:</code>, which indicates whether to store the value into the slot or leave the slot unbound.</li>
 </ul>
 <p class="T1.Text1">No formal mechanism is provided for describing recovery protocols; they are left to the documentation of a condition class. Introspective functions are provided for discovering which recovery facilities are actually available, but this is different from (and sometimes is a superset of) the recovery facilities guaranteed by a recovery protocol always to be available.</p>
 <p class="T1.Text1">The <a name="MARKER-2-949"></a>debugger is the condition handler of last resort. It receives control if no program-provided handler handles a serious condition. (This is true even if the debugger provided cannot analyze or intervene in the execution of programs but can only abort or restart them. The debugger might be merely a "core dumper," a "bomb box," or something similar.)  An interactive debugger ought to offer the user the ability to signal any restart for which a restart handler is applicable and to return if the condition's recovery protocol allows it. This could, for example, be done with a menu titled "Recovery."<a name="MARKER-2-950"></a></p>

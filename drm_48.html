@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: 6 Functions</title>
 </head>
@@ -119,42 +119,42 @@
 
 <a name="HEADING48-0"></a>
 <a name="UID-Functions-2150"></a>
-<h1 class="H1.Heading1"><a name="MARKER-2-745"></a>Overview</h1>
+<h1 class="section-title"><a name="MARKER-2-745"></a>Overview</h1>
 <p class="T1.Text1">All operations in Dylan are functions.</p>
-<p class="T1.Text1"><a name="MARKER-2-746"></a>Functions accept zero or more arguments, and return zero or more values. The <strong class="Bold T1.Text1"><a name="MARKER-2-747"></a><dfn>parameter list</dfn></strong> of the function describes the number and types of the arguments that the function accepts, and the number and types of the values it returns.</p>
+<p class="T1.Text1"><a name="MARKER-2-746"></a>Functions accept zero or more arguments, and return zero or more values. The <strong class="Bold"><a name="MARKER-2-747"></a><dfn>parameter list</dfn></strong> of the function describes the number and types of the arguments that the function accepts, and the number and types of the values it returns.</p>
 <p class="T1.Text1">There are two kinds of functions, methods and generic functions. Both are invoked in the same way. The caller does not need to know whether the function it is calling is a method or a generic function.</p>
 <p class="T1.Text1"><a name="MARKER-2-748"></a>A method is the basic unit of executable code. A method accepts a number of arguments, creates local bindings for them, executes an implicit body in the scope of these bindings, and then returns a number of values.</p>
-<p class="T1.Text1"><a name="MARKER-2-749"></a>A generic function contains a number of methods. When a generic function is called, it compares the arguments it received with the parameter lists of the methods it contains. It selects the most appropriate method and invokes it on the arguments. This technique of <strong class="Bold T1.Text1"><a name="MARKER-2-750"></a><dfn>method dispatch</dfn></strong> is the  basic mechanism of polymorphism in Dylan.</p>
+<p class="T1.Text1"><a name="MARKER-2-749"></a>A generic function contains a number of methods. When a generic function is called, it compares the arguments it received with the parameter lists of the methods it contains. It selects the most appropriate method and invokes it on the arguments. This technique of <strong class="Bold"><a name="MARKER-2-750"></a><dfn>method dispatch</dfn></strong> is the  basic mechanism of polymorphism in Dylan.</p>
 <p class="T1.Text1">All Dylan functions are objects, instances of <code><a name="MARKER-2-751"></a>&lt;function&gt;</code>. Generic functions are instances of <code><a name="MARKER-2-752"></a>&lt;generic-function&gt;</code> and methods are instances of <a name="MARKER-2-753"></a><code>&lt;method&gt;</code>.</p>
 <a name="HEADING48-7"></a>
 <a name="UID-Functions-2158"></a>
-<h2 class="H2.Heading2">Generic Functions</h2>
+<h2 class="subsection-title">Generic Functions</h2>
 <p class="T1.Text1"><a name="MARKER-2-754"></a><a name="MARKER-2-755"></a>Generic functions can be created with <code>define generic</code> or by calling <code><a name="MARKER-2-756"></a>make</code> on the class <code>&lt;generic-function&gt;</code>. They are most often created with <code>define generic</code>.</p>
 <p class="T1.Text1"><a name="MARKER-2-757"></a>Generic functions may also be created implicitly by <code><a name="MARKER-2-758"></a>define method</code> or by <a name="MARKER-2-759"></a>slot specifications in class definitions.</p>
 <p class="T1.Text1"><a name="MARKER-2-760"></a>A generic function definition includes a parameter list, which constrains the methods that can be added to the generic function; some aspects of the parameter must be matched by any method added. In addition, a generic function parameter list may specify that all keyword arguments are permitted in a call to the generic function.</p>
 <p class="T1.Text1">Parameter list congruency is described on <a href="drm_49.html#MARKER-9-837" class="T1.Text1">page 93</a>. The complete syntax of <code>define generic</code> is given on <a href="drm_112.html#MARKER-9-2007" class="T1.Text1">page 376</a>.</p>
 <p class="T1.Text1">The following definition defines a generic function that accepts a single required argument. All methods added to this generic function must also accept a single required argument.</p>
-<pre class="Cv.Code">
+<pre class="code">
 define generic double (thing)
 </pre>
 <p class="T1.Text1">The following definition defines a generic function that accepts two arguments of type <code>&lt;number&gt;</code>. All methods added to the generic function must accept two required arguments of type <code>&lt;number&gt;</code> or subtype of <code>&lt;number&gt;</code>.</p>
-<pre class="Cv.Code">
+<pre class="code">
 define generic average (n1 :: &lt;number&gt;, n2 :: &lt;number&gt;)
 </pre>
 <p class="T1.Text1">Generic functions created with <code>define generic</code> may be sealed or open. For details of this option, see <a href="drm_74.html#MARKER-9-1116" class="T1.Text1">"Declaring Characteristics of Generic Functions" on page 135</a>.<a name="MARKER-2-761"></a></p>
 <a name="HEADING48-17"></a>
 <a name="UID-Functions-2162"></a>
-<h2 class="H2.Heading2"><a name="MARKER-9-762"></a>Methods</h2>
+<h2 class="subsection-title"><a name="MARKER-9-762"></a>Methods</h2>
 <p class="T1.Text1"><a name="MARKER-2-763"></a>Methods can be created with <code><a name="MARKER-2-764"></a>define method</code>,  <a name="MARKER-2-765"></a><code>local</code>, and <a name="MARKER-2-766"></a><code>method</code> program constituents. <code>define method</code> is used to define a method and add it to a generic function in a module binding. <code>local</code> is used to create local bindings that contain self-recursive and mutually recursive methods. <code>method</code> is used to create and return methods for immediate application, for use as function arguments, or for storage in a variable or other data structure. Methods are also created for slot getters and setters when a class is created.</p>
 <p class="T1.Text1">Methods cannot be created with <code>make</code>.</p>
 <p class="T1.Text1"><a name="MARKER-2-767"></a>The parameters and return values of a method are described in its parameter list. The specializers in the parameter list declare the types of the arguments acceptable to the method. The method can be called only with arguments that match the specializers of the parameters. A complete description of parameter lists is given in <a href="drm_49.html#MARKER-9-782" class="T1.Text1">"Parameter Lists" on page 84</a>.</p>
 <p class="T1.Text1">When the method is invoked, it executes its implicit body. Statements in the implicit body are executed in order, in an environment that contains the parameters bound to the arguments.</p>
 <p class="T1.Text1">Methods may be invoked directly (used as functions), or indirectly through the invocation of a generic function.</p>
 <a name="HEADING48-23"></a>
-<h3 class="H3.Heading3">Methods in Generic Functions</h3>
+<h3 class="sub-subsection-title">Methods in Generic Functions</h3>
 <p class="T1.Text1"><code><a name="MARKER-2-768"></a>define method</code> creates a method and adds it to a generic function in a module variable. If the module variable indicated is not already defined, it is defined as with <code>define generic</code>. Thus,  <code>define method</code> will create a new generic function or extend an old one, as needed. Methods added to a generic function must have parameter lists that are congruent with the generic function's parameter list.</p>
 <p class="T1.Text1">The following method accepts a single argument of type <code>&lt;number&gt;</code>, and returns the number doubled. The method will be added to the generic function in the module binding <code>double</code>.</p>
-<pre class="Cv.Code">
+<pre class="code">
 define method double (thing :: &lt;number&gt;)
   =&gt; another-thing :: &lt;number&gt;;
   thing + thing;
@@ -164,11 +164,11 @@ end method;
 <p class="T1.Text1"><a name="MARKER-2-769"></a>A generic function with no required parameters can contain a single method. Adding a new method has the effect of replacing the existing method.</p>
 <p class="T1.Text1">The complete syntax of <code>define method</code> is given on <a href="drm_112.html#MARKER-9-2010" class="T1.Text1">page 377</a>.<a name="MARKER-2-770"></a></p>
 <a name="HEADING48-30"></a>
-<h3 class="H3.Heading3">Local Methods</h3>
+<h3 class="sub-subsection-title">Local Methods</h3>
 <p class="T1.Text1"><code><a name="MARKER-2-771"></a>local</code> is used for creating methods in local bindings. A single <code>local</code> declaration may create one or more such methods. These methods may be self-recursive and they may be mutually recursive with other methods created by the same <code>local</code> declaration.</p>
 <p class="T1.Text1"><code>local</code>  is similar to <code>let</code> in that it creates local bindings in the current body. The parameters and the bodies of the methods are within the scope of the bindings. In this way, the methods can refer to themselves and to other methods created by the same <code>local</code> declaration.</p>
 <p class="T1.Text1">The complete syntax of <code>local</code> is given on <a href="drm_113.html#MARKER-9-2035" class="T1.Text1">page 391</a>.</p>
-<pre class="Cv.Code">
+<pre class="code">
 define method newtons-sqrt (x :: &lt;number&gt;)
    local method sqrt1 (guess)
            // note call to other local method
@@ -188,17 +188,17 @@ define method newtons-sqrt (x :: &lt;number&gt;)
 end method newtons-sqrt;<a name="MARKER-2-772"></a>
 </pre>
 <a name="HEADING48-35"></a>
-<h3 class="H3.Heading3">Bare Methods</h3>
+<h3 class="sub-subsection-title">Bare Methods</h3>
 <p class="T1.Text1"><a name="MARKER-2-773"></a><a name="MARKER-2-774"></a>Methods can also be created and used directly with the <code><a name="MARKER-2-775"></a>method</code> statement.</p>
 <p class="T1.Text1">Methods created directly can be stored in module variables, passed as arguments to generic functions, stored in data structures, or immediately invoked.</p>
 <p class="T1.Text1">The following example creates a method and stores it in the module variable square. It is appropriate to define a method in this way (rather than with define method) when the protocol of the function being defined does not require multiple methods.</p>
-<pre class="Cv.Code">
+<pre class="code">
 define constant square = method (n :: &lt;number&gt;)
                            n * n;
                            end method;
 </pre>
 <p class="T1.Text1">It is sometimes useful to create a method inline and pass it directly to another function that accepts a method as an argument, as in the following example.</p>
-<pre class="Cv.Code">
+<pre class="code">
 // sort accepts a test argument, which defaults to \&lt;
 sort(person-list,
      test: method(person1, person2)
@@ -207,34 +207,37 @@ sort(person-list,
 </pre>
 <p class="T1.Text1">Methods created directly with the <code>method</code> statement may be called directly or they may be added to generic functions. Usually, however, when you want to add a method to a generic function, you create and add the method in a single declarative step, with <code>define method</code>.<a name="MARKER-2-776"></a></p>
 <a name="HEADING48-43"></a>
-<h3 class="H3.Heading3">Closures</h3>
-<p class="T1.Text1"><a name="MARKER-2-777"></a>Methods created with <code>method</code> or <code>local</code> can be passed to functions and returned from functions. In both cases, the methods retain access to the lexical context in which they were created. Such methods are called <strong class="Bold T1.Text1"><dfn>closures</dfn></strong>.</p>
-<p class="T1.Text1"><a name="MARKER-2-778"></a>The following example defines a function that returns score-card methods. The method that is returned is <strong class="Bold T1.Text1"><a name="MARKER-2-779"></a><dfn>closed over</dfn></strong> the <code>score</code> parameter. Each time this method is called, it updates the <code>score</code> parameter and returns its new value.</p>
-<p class="errata right"><a href="drm_errata.html#p83_1"
-			   name="errata_p83_1"><strong>Errata:</strong></a>
+<h3 class="sub-subsection-title">Closures</h3>
+<p class="T1.Text1"><a name="MARKER-2-777"></a>Methods created with <code>method</code> or <code>local</code> can be passed to functions and returned from functions. In both cases, the methods retain access to the lexical context in which they were created. Such methods are called <strong class="Bold"><dfn>closures</dfn></strong>.</p>
+<p class="T1.Text1"><a name="MARKER-2-778"></a>The following example defines a function that returns score-card methods. The method that is returned is <strong class="Bold"><a name="MARKER-2-779"></a><dfn>closed over</dfn></strong> the <code>score</code> parameter. Each time this method is called, it updates the <code>score</code> parameter and returns its new value.</p>
+<p class="errata left"><a href="drm_errata.html#p83_1"
+			  name="errata_p83_1"><strong>Errata:</strong></a>
   <code>points</code> should be named <code>score</code>.</p>
-<pre class="Cv.Code">
+<pre class="code">
 define method make-score (points :: &lt;number&gt;)
   method (increase :: &lt;number&gt;)
     points := points + increase;
   end method;
 end method make-score;
+
 define constant score-david = make-score(100)
+
 define constant score-diane = make-score(400)
+
 score-david(0)
-<code> &rArr;</code>  100
+ &rArr;  100
 score-david(10)
-<code> &rArr;</code>  110
+ &rArr;  110
 score-david(10)
-<code> &rArr;</code>  120
+ &rArr;  120
 score-diane(10)
-<code> &rArr;</code>  410
+ &rArr;  410
 score-david(0)
-<code> &rArr;</code>  120
+ &rArr;  120
 </pre>
 <p class="T1.Text1">Each invocation of <code>make-score</code> creates a new binding for <code>score</code>, so each closure returned by <code>make-score</code> refers to a different binding. In this way, assignments to the variable made by one closure do not affect the value of the variable visible to other closures.</p>
 <p class="T1.Text1">The following example defines a method for <code>double</code> that works on functions. When you double a function, you get back a method that accepts arguments and calls the function twice, passing the same arguments both times. The method that is returned is closed over the function that was passed in as an argument.</p>
-<pre class="Cv.Code">
+<pre class="code">
 define method double (internal-method :: &lt;function&gt;)
   method (#rest args)
     apply (internal-method, args);
@@ -242,13 +245,15 @@ define method double (internal-method :: &lt;function&gt;)
     #f
   end method
 end method;
-<code>define constant double-david = double(score-david);</code>
-<code>score-david(0)
- &rArr;</code>  <code>120
-double-david(10)
- &rArr;</code>  <code>140
+
+define constant double-david = double(score-david);
+
 score-david(0)
- &rArr;</code>  <code>140<a name="MARKER-2-780"></a><a name="MARKER-2-781"></a></code>
+ &rArr;  120
+double-david(10)
+ &rArr;  140
+score-david(0)
+ &rArr;  140<a name="MARKER-2-780"></a><a name="MARKER-2-781"></a>
 </pre>
 
 </div>

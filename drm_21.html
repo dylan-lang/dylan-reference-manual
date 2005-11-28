@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Special Treatment of Names</title>
 </head>
@@ -130,17 +130,17 @@
 
 <a name="HEADING21-0"></a>
 <a name="UID-Syntax-2883"></a>
-<h1 class="H1.Heading1"><a name="MARKER-2-306"></a>Special Treatment of Names</h1>
+<h1 class="section-title"><a name="MARKER-2-306"></a>Special Treatment of Names</h1>
 <a name="HEADING21-1"></a>
 <a name="UID-Syntax-2972"></a>
-<h2 class="H2.Heading2"><a name="MARKER-2-307"></a>Escaping Names</h2>
+<h2 class="subsection-title"><a name="MARKER-2-307"></a>Escaping Names</h2>
 <p class="T1.Text1"><code><a name="MARKER-2-308"></a></code>The escape character ( <code>\</code> ) followed by any name or operator-name has the same meaning as that name or operator-name, except that it is stripped of special syntactic properties. If it would otherwise be a reserved word or operator, it is not recognized as such.</p>
 <p class="T1.Text1">For example, <code>\if</code> and <code>if</code> are names for the same binding, but <code>\if</code> is treated syntactically as a named value reference, while <code>if</code> is the beginning of a statement. Similarly, <code>\+</code> and <code>+</code> refer to the same binding, but the former is treated syntactically as a named value reference, and the latter as an operator.</p>
 <p class="T1.Text1"><a name="MARKER-2-309"></a>For reserved words, this allows the names of statement macros to be exported and imported from modules. It does not allow them to be used as the names of local bindings, nor does it allow them to be executed. (That is, they cannot be used as bindings to runtime values.)</p>
 <p class="T1.Text1">For operators, it allows the operator to be used where a named value reference is required, for example as the name in a method definition, as an argument to a function, or in a <code>define module</code> export clause.</p>
 <a name="HEADING21-6"></a>
 <a name="UID-Syntax-2978"></a>
-<h2 class="H2.Heading2"><a name="MARKER-2-310"></a>Function Call Shorthand</h2>
+<h2 class="subsection-title"><a name="MARKER-2-310"></a>Function Call Shorthand</h2>
 <p class="T1.Text1">Dylan provides convenient syntax for calling a number of functions. These include the operators, the <a name="MARKER-2-311"></a>array reference syntax, and the <a name="MARKER-2-312"></a>singleton syntax.</p>
 <p class="T1.Text1">In all cases, the syntax is equivalent to a function call (which can be a function macro call) whose function is a named value reference to the name of the function in the current environment. The syntax does not automatically refer to a binding in the Dylan module.<a name="MARKER-2-313"></a></p>
 

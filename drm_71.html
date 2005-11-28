@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: 9 Sealing</title>
 </head>
@@ -115,15 +115,15 @@
 
 <a name="HEADING71-0"></a>
 <a name="UID-Sealing-1202"></a>
-<h1 class="H1.Heading1">Overview</h1>
-<p class="T1.Text1"><a name="MARKER-2-1095"></a><a name="MARKER-2-1096"></a>This chapter describes techniques for <strong class="Bold T1.Text1"><dfn>sealing</dfn></strong> portions of a Dylan program by declaring that classes or functions will never be used in particular ways, or will never be extended in particular ways. These <strong class="Bold T1.Text1"><a name="MARKER-2-1097"></a><dfn>sealing directives</dfn></strong> enable a range of compiler optimizations, and also clarify the programmer's intent.</p>
+<h1 class="section-title">Overview</h1>
+<p class="T1.Text1"><a name="MARKER-2-1095"></a><a name="MARKER-2-1096"></a>This chapter describes techniques for <strong class="Bold"><dfn>sealing</dfn></strong> portions of a Dylan program by declaring that classes or functions will never be used in particular ways, or will never be extended in particular ways. These <strong class="Bold"><a name="MARKER-2-1097"></a><dfn>sealing directives</dfn></strong> enable a range of compiler optimizations, and also clarify the programmer's intent.</p>
 <p class="T1.Text1"><a name="MARKER-2-1098"></a>The sealing directives include:</p>
-<ul class="B1.Bullet1">
-  <li class="B1.Bullet1"> Declaring a class to be <code>sealed</code> or <code>open</code>. This controls whether a class can be directly subclassed outside the library in which it is defined.</li>
-  <li class="B1.Bullet1">Declaring a class to be <code>abstract</code> or <code>concrete</code>. This controls whether a class can have direct instances.</li>
-  <li class="B1.Bullet1">Declaring a class to be <code>primary</code> or <code>free</code>. This controls how a class can be used for multiple inheritance.</li>
-  <li class="B1.Bullet1">Declaring a generic function to be <code>sealed</code> or <code>open</code>. This controls whether methods can be added to the generic function from outside the library in which the generic function is defined.</li>
-  <li class="B1.Bullet1">Using <code>define sealed domain</code>, or using the abbreviations <code>define sealed method</code> and <code>sealed slot</code>. These disallow the addition of some methods from outside the library in which the generic function is defined.</li>
+<ul>
+  <li> Declaring a class to be <code>sealed</code> or <code>open</code>. This controls whether a class can be directly subclassed outside the library in which it is defined.</li>
+  <li>Declaring a class to be <code>abstract</code> or <code>concrete</code>. This controls whether a class can have direct instances.</li>
+  <li>Declaring a class to be <code>primary</code> or <code>free</code>. This controls how a class can be used for multiple inheritance.</li>
+  <li>Declaring a generic function to be <code>sealed</code> or <code>open</code>. This controls whether methods can be added to the generic function from outside the library in which the generic function is defined.</li>
+  <li>Using <code>define sealed domain</code>, or using the abbreviations <code>define sealed method</code> and <code>sealed slot</code>. These disallow the addition of some methods from outside the library in which the generic function is defined.</li>
 </ul>
 <p class="T1.Text1">With the exception of <code>define sealed domain</code>, these directives are expressed as <a name="MARKER-2-1099"></a>adjectives on the generic function definition, class definition, method definition, or slot specification.<a name="MARKER-2-1100"></a></p>
 

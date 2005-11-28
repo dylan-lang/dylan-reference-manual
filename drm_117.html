@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Lexical Grammar</title>
 </head>
@@ -125,9 +125,9 @@
 <div class="BNF">
 <a name="HEADING117-0"></a>
 <a name="UID-BNF_Appendix-327"></a>
-<h1 class="H1.Heading1"><a name="MARKER-9-2096"></a><a name="MARKER-2-2097"></a>Lexical Grammar</h1>
+<h1 class="section-title"><a name="MARKER-9-2096"></a><a name="MARKER-2-2097"></a>Lexical Grammar</h1>
 <a name="HEADING117-1"></a>
-<h2 class="H2.Heading2"><a name="MARKER-2-2098"></a>Comments</h2>
+<h2 class="subsection-title"><a name="MARKER-2-2098"></a>Comments</h2>
 <dl>
   <dt><var>comment:</var></dt>
   <dd>
@@ -136,17 +136,17 @@
   </dd>
 </dl>
 <a name="HEADING117-3"></a>
-<h2 class="H2.Heading2"><a name="MARKER-2-2099"></a>Tokens</h2>
+<h2 class="subsection-title"><a name="MARKER-2-2099"></a>Tokens</h2>
 <dl>
-  <dt><em class="BNFCaps T1.Text1">token:</em></dt>
+  <dt><em class="BNFCaps">token:</em></dt>
   <dd>
-    <p><em class="BNFCaps T1.Text1">name</em></p>
-    <p><em class="BNFCaps T1.Text1">symbol</em></p>
-    <p><em class="BNFCaps T1.Text1">number</em></p>
-    <p><em class="BNFCaps T1.Text1">character-literal</em></p>
-    <p><em class="BNFCaps T1.Text1">string</em></p>
-    <p><em class="BNFCaps T1.Text1">unary-operator</em></p>
-    <p><em class="BNFCaps T1.Text1">binary-operator</em></p>
+    <p><em class="BNFCaps">name</em></p>
+    <p><em class="BNFCaps">symbol</em></p>
+    <p><em class="BNFCaps">number</em></p>
+    <p><em class="BNFCaps">character-literal</em></p>
+    <p><em class="BNFCaps">string</em></p>
+    <p><em class="BNFCaps">unary-operator</em></p>
+    <p><em class="BNFCaps">binary-operator</em></p>
     <p><var>punctuation</var></p>
     <p><var>#-word</var></p>
   </dd>
@@ -161,15 +161,15 @@
   </dd>
 </dl>
 <a name="HEADING117-7"></a>
-<h2 class="H2.Heading2"><a name="MARKER-2-2100"></a>Reserved Words</h2>
+<h2 class="subsection-title"><a name="MARKER-2-2100"></a>Reserved Words</h2>
 <dl>
   <dt><var>reserved-word:</var></dt>
   <dd>
     <p><var>core-word</var></p>
-    <p><em class="BNFCaps T1.Text1">begin-word</em></p>
-    <p><em class="BNFCaps T1.Text1">function-word</em></p>
-    <p><em class="BNFCaps T1.Text1">define-body-word</em></p>
-    <p><em class="BNFCaps T1.Text1">define-list-word</em></p>
+    <p><em class="BNFCaps">begin-word</em></p>
+    <p><em class="BNFCaps">function-word</em></p>
+    <p><em class="BNFCaps">define-body-word</em></p>
+    <p><em class="BNFCaps">define-list-word</em></p>
   </dd>
   <dt><var>core-word:</var></dt>
   <dd>
@@ -178,71 +178,71 @@
 </dl>
 <p class="T1.Text1">The following reserved words are exported by the Dylan module:</p>
 <dl>
-  <dt><em class="BNFCaps T1.Text1">begin-word:</em></dt>
+  <dt><em class="BNFCaps">begin-word:</em></dt>
   <dd>
     <p><span class="one-of">one of</span> <code>begin block case for if method</code></p>
     <p><span class="one-of">one of</span> <code>select unless until while</code></p>
   </dd>
-  <dt><em class="BNFCaps T1.Text1">function-word:</em></dt>
+  <dt><em class="BNFCaps">function-word:</em></dt>
   <dd>
     <p>(none)</p>
   </dd>
-  <dt><em class="BNFCaps T1.Text1">define-body-word:</em></dt>
+  <dt><em class="BNFCaps">define-body-word:</em></dt>
   <dd>
     <p><span class="one-of">one of</span> <code>class library method module</code></p>
   </dd>
-  <dt><em class="BNFCaps T1.Text1">define-list-word:</em></dt>
+  <dt><em class="BNFCaps">define-list-word:</em></dt>
   <dd>
     <p><span class="one-of">one of</span> <code>constant variable domain</code></p>
   </dd>
 </dl>
 <a name="HEADING117-15"></a>
-<h2 class="H2.Heading2"><a name="MARKER-2-2101"></a>Names, Symbols and Keywords</h2>
+<h2 class="subsection-title"><a name="MARKER-2-2101"></a>Names, Symbols and Keywords</h2>
 <dl>
-  <dt><em class="BNFCaps T1.Text1">name:</em></dt>
+  <dt><em class="BNFCaps">name:</em></dt>
   <dd>
     <p><var>word</var></p>
-    <p><i class="T1.Text1"><code>\</code> word</i></p>
+    <p><i><code>\</code> word</i></p>
     <p><var>operator-name</var></p>
   </dd>
-  <dt><em class="BNFCaps T1.Text1">unreserved-name:</em></dt>
+  <dt><em class="BNFCaps">unreserved-name:</em></dt>
   <dd>
     <p>any <var>word</var> that is not also a <var>reserved-word</var></p>
     <p><code>\</code> <var>word</var></p>
     <p><var>operator-name</var></p>
   </dd>
-  <dt><em class="BNFCaps T1.Text1">ordinary-name:</em></dt>
+  <dt><em class="BNFCaps">ordinary-name:</em></dt>
   <dd>
-    <p><em class="BNFCaps T1.Text1">unreserved-name</em></p>
-    <p><em class="BNFCaps T1.Text1">define-body-word</em></p>
-    <p><em class="BNFCaps T1.Text1">define-list-word</em></p>
+    <p><em class="BNFCaps">unreserved-name</em></p>
+    <p><em class="BNFCaps">define-body-word</em></p>
+    <p><em class="BNFCaps">define-list-word</em></p>
   </dd>
-  <dt><em class="BNFCaps T1.Text1">constrained-name:</em></dt>
+  <dt><em class="BNFCaps">constrained-name:</em></dt>
   <dd>
-    <p><em class="BNFCaps T1.Text1">name</em> <code>:</code> <var>word</var></p>
-    <p><em class="BNFCaps T1.Text1">name</em> <code>:</code> <em class="BNFCaps T1.Text1">binary-operator</em></p>
+    <p><em class="BNFCaps">name</em> <code>:</code> <var>word</var></p>
+    <p><em class="BNFCaps">name</em> <code>:</code> <em class="BNFCaps">binary-operator</em></p>
     <p><code>:</code> <var>word</var></p>
   </dd>
   <dt><var>operator-name:</var></dt>
   <dd>
-    <p><code>\</code> <em class="BNFCaps T1.Text1">unary-operator</em></p>
-    <p><code>\</code> <em class="BNFCaps T1.Text1">binary-operator</em></p>
+    <p><code>\</code> <em class="BNFCaps">unary-operator</em></p>
+    <p><code>\</code> <em class="BNFCaps">binary-operator</em></p>
   </dd>
-  <dt><em class="BNFCaps T1.Text1">macro-name:</em></dt>
+  <dt><em class="BNFCaps">macro-name:</em></dt>
   <dd>
-    <p><em class="BNFCaps T1.Text1">ordinary-name</em></p>
-    <p><em class="BNFCaps T1.Text1">begin-word</em></p>
-    <p><em class="BNFCaps T1.Text1">function-word</em></p>
+    <p><em class="BNFCaps">ordinary-name</em></p>
+    <p><em class="BNFCaps">begin-word</em></p>
+    <p><em class="BNFCaps">function-word</em></p>
   </dd>
-  <dt><em class="BNFCaps T1.Text1">name-not-end:</em></dt>
+  <dt><em class="BNFCaps">name-not-end:</em></dt>
   <dd>
-    <p><em class="BNFCaps T1.Text1">macro-name</em></p>
+    <p><em class="BNFCaps">macro-name</em></p>
     <p><span class="one-of">one of</span> <code>define handler let local macro otherwise</code></p>
   </dd>
-  <dt><em class="BNFCaps T1.Text1">symbol:</em></dt>
+  <dt><em class="BNFCaps">symbol:</em></dt>
   <dd>
     <p><var>word</var> <code>:</code></p>
-    <p><code>#</code> <em class="BNFCaps T1.Text1">string</em></p>
+    <p><code>#</code> <em class="BNFCaps">string</em></p>
   </dd>
   <dt><var>word:</var></dt>
   <dd>
@@ -303,21 +303,21 @@
   </dd>
 </dl>
 <a name="HEADING117-35"></a>
-<h2 class="H2.Heading2"><a name="MARKER-2-2102"></a>Operators</h2>
+<h2 class="subsection-title"><a name="MARKER-2-2102"></a>Operators</h2>
 <dl>
-  <dt><em class="BNFCaps T1.Text1">unary-operator:</em></dt>
+  <dt><em class="BNFCaps">unary-operator:</em></dt>
   <dd>
     <p><span class="one-of">one of</span>  <code>- ~</code></p>
   </dd>
-  <dt><em class="BNFCaps T1.Text1">binary-operator:</em></dt>
+  <dt><em class="BNFCaps">binary-operator:</em></dt>
   <dd>
     <p><span class="one-of">one of</span>  <code>+ - * / ^ = == ~= ~== &lt; &lt;= &gt; &gt;= &amp; | :=</code></p>
   </dd>
 </dl>
 <a name="HEADING117-38"></a>
-<h2 class="H2.Heading2"><a name="MARKER-2-2103"></a>Character and String Literals</h2>
+<h2 class="subsection-title"><a name="MARKER-2-2103"></a>Character and String Literals</h2>
 <dl>
-  <dt><em class="BNFCaps T1.Text1">character-literal:</em></dt>
+  <dt><em class="BNFCaps">character-literal:</em></dt>
   <dd>
     <p><code>'</code> <var>character</var> <code>'</code></p>
   </dd>
@@ -326,7 +326,7 @@
     <p>any printing character (including space) except for <code>'</code> or <code>\</code></p>
     <p><code>\</code> <var>escape-character</var></p>
   </dd>
-  <dt><em class="BNFCaps T1.Text1">string:</em></dt>
+  <dt><em class="BNFCaps">string:</em></dt>
   <dd>
     <p><code>&quot;</code> <var>more-string</var></p>
   </dd>
@@ -347,9 +347,9 @@
   </dd>
 </dl>
 <a name="HEADING117-45"></a>
-<h2 class="H2.Heading2"><a name="MARKER-2-2104"></a><a name="MARKER-9-2105"></a>Numbers</h2>
+<h2 class="subsection-title"><a name="MARKER-2-2104"></a><a name="MARKER-9-2105"></a>Numbers</h2>
 <dl>
-  <dt><em class="BNFCaps T1.Text1">number:</em></dt>
+  <dt><em class="BNFCaps">number:</em></dt>
   <dd>
     <p><var>integer</var></p>
     <p><var>ratio</var></p>
@@ -359,7 +359,7 @@
   <dd>
     <p><var>binary-integer</var></p>
     <p><var>octal-integer</var></p>
-    <p><i class="T1.Text1">sign<em class="Subscript T1.Text1"><sub>opt</sub></em></i> <var>decimal-integer</var></p>
+    <p><i>sign<em><sub>opt</sub></em></i> <var>decimal-integer</var></p>
     <p><var>hex-integer</var></p>
   </dd>
   <dt><var>binary-integer:</var></dt>
@@ -404,17 +404,17 @@
   </dd>
   <dt><var>ratio:</var></dt>
   <dd>
-    <p><i class="T1.Text1">sign<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <var>decimal-integer</var> <code>/</code> <var>decimal-integer</var></p>
+    <p><i>sign<em><sub>opt</sub></em></i> <var>decimal-integer</var> <code>/</code> <var>decimal-integer</var></p>
   </dd>
   <dt><var>floating-point:</var></dt>
   <dd>
-    <p><i class="T1.Text1">sign<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <i class="T1.Text1">decimal-integer<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <code>.</code> <var>decimal-integer</var> <i class="T1.Text1">exponent<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></p>
-    <p><i class="T1.Text1">sign<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <var>decimal-integer</var> <code>.</code> <i class="T1.Text1">decimal-integer<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <i class="T1.Text1">exponent<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i></p>
-    <p><i class="T1.Text1">sign<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <var>decimal-integer</var> <var>exponent</var></p>
+    <p><i>sign<em><sub>opt</sub></em></i> <i>decimal-integer<em><sub>opt</sub></em></i> <code>.</code> <var>decimal-integer</var> <i>exponent<em><sub>opt</sub></em></i></p>
+    <p><i>sign<em><sub>opt</sub></em></i> <var>decimal-integer</var> <code>.</code> <i>decimal-integer<em><sub>opt</sub></em></i> <i>exponent<em><sub>opt</sub></em></i></p>
+    <p><i>sign<em><sub>opt</sub></em></i> <var>decimal-integer</var> <var>exponent</var></p>
   </dd>
   <dt><var>exponent:</var></dt>
   <dd>
-    <p><code>E</code> <i class="T1.Text1">sign<em class="Subscript italics T1.Text1"><sub>opt</sub></em></i> <var>decimal-integer</var></p>
+    <p><code>E</code> <i>sign<em><sub>opt</sub></em></i> <var>decimal-integer</var></p>
   </dd>
   <dt><var>sign:</var></dt>
   <dd>

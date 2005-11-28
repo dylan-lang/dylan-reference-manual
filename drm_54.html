@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: 7 Conditions</title>
 </head>
@@ -116,10 +116,10 @@
 
 <a name="HEADING54-0"></a>
 <a name="UID-Conditions-2645"></a>
-<h1 class="H1.Heading1">Overview</h1>
+<h1 class="section-title">Overview</h1>
 <p class="T1.Text1">The Dylan <a name="MARKER-2-905"></a>exception system is built on top of an underlying signal system. Together, the <a name="MARKER-2-906"></a>signal system and the exception system comprise the Dylan <a name="MARKER-2-907"></a>condition system.</p>
-<p class="T1.Text1">At the signal layer, the condition system provides a way of establishing a run-time connection between a <strong class="Bold T1.Text1"><a name="MARKER-2-908"></a><dfn>signaler</dfn></strong> and a <strong class="Bold T1.Text1"><a name="MARKER-2-909"></a><dfn>handler</dfn></strong> through a <strong class="Bold T1.Text1"><dfn>condition</dfn></strong>. This is essentially a run-time analog to the more usual fixed connection between a caller and a callee established through function-name matching. This layer of the condition system is little more than a way to locate and call a function. The function call does not necessarily involve any exceptional situation or nonlocal flow of control.</p>
-<p class="T1.Text1">At the exception layer, the condition system specifies a set of protocols for categorizing and handling exceptional situations through <strong class="bold T1.Text1"><a name="MARKER-2-910"></a><dfn>recovery</dfn></strong> or <strong class="bold T1.Text1"><a name="MARKER-2-911"></a><dfn>exit</dfn></strong>. This higher layer provides overall structure, eliminates the possibility of failing to notice an exceptional situation, and provides a clean separation between "normal code" and "code for dealing with exceptions."</p>
+<p class="T1.Text1">At the signal layer, the condition system provides a way of establishing a run-time connection between a <strong class="Bold"><a name="MARKER-2-908"></a><dfn>signaler</dfn></strong> and a <strong class="Bold"><a name="MARKER-2-909"></a><dfn>handler</dfn></strong> through a <strong class="Bold"><dfn>condition</dfn></strong>. This is essentially a run-time analog to the more usual fixed connection between a caller and a callee established through function-name matching. This layer of the condition system is little more than a way to locate and call a function. The function call does not necessarily involve any exceptional situation or nonlocal flow of control.</p>
+<p class="T1.Text1">At the exception layer, the condition system specifies a set of protocols for categorizing and handling exceptional situations through <strong class="bold"><a name="MARKER-2-910"></a><dfn>recovery</dfn></strong> or <strong class="bold"><a name="MARKER-2-911"></a><dfn>exit</dfn></strong>. This higher layer provides overall structure, eliminates the possibility of failing to notice an exceptional situation, and provides a clean separation between "normal code" and "code for dealing with exceptions."</p>
 <p class="T1.Text1">The nonlocal exit and clean-up features of the <code>block</code> statement are often used in conjunction with the facilities described in this chapter. <code>block</code> is described on <a href="drm_114.html#MARKER-9-2063" class="T1.Text1">page 404</a>.</p>
 
 </div>

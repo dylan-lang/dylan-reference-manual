@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Iteration</title>
 </head>
@@ -124,11 +124,11 @@
 
 <a name="HEADING34-0"></a>
 <a name="UID-Program_Control-363"></a>
-<h1 class="H1.Heading1"><a name="MARKER-2-466"></a>Iteration</h1>
+<h1 class="section-title"><a name="MARKER-2-466"></a>Iteration</h1>
 <p class="T0.Text0">Iteration is supported through a number of statements, as well as through recursive functions.</p>
 <a name="HEADING34-2"></a>
 <a name="UID-Program_Control-2858"></a>
-<h2 class="H2.Heading2">Iteration Statements</h2>
+<h2 class="subsection-title">Iteration Statements</h2>
 <p class="T0.Text0">The statements supporting iteration are described in detail in <a href="drm_110.html" class="T0.Text0">Chapter 14, "The Built-In Macros and Special Definitions."</a></p>
 <table class="numbered"><caption><strong>Table 4-3</strong>  Iteration Statements</caption>
 <tr><th class="primary"><p class="TbH.TblHd"> Macro</p>
@@ -145,10 +145,10 @@
 </td><td><p class="TbT.TblText"> <a href="drm_114.html#MARKER-9-2058" class="TbT.TblText">400</a></p>
 </td></tr></table><a name="HEADING34-65"></a>
 <a name="UID-Program_Control-5136"></a>
-<h2 class="H2.Heading2"><a name="MARKER-2-467"></a>Tail Recursion</h2>
-<p class="T1.Text1">Implementations are encouraged to optimize tail recursive function calls whenever possible. Tail recursion occurs when a function <i class="parameter T1.Text1">F<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> returns the values of a call to another function <i class="parameter T1.Text1">F<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i>. In many cases, this can be used to create loops using self-recursive or mutually recursive functions. (Among the cases that cannot be optimized are those in which the return value types of <i class="parameter T1.Text1">F<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> and <i class="parameter T1.Text1">F<em class="Subscript Parameter T1.Text1"><sub>2</sub></em></i> differ, requiring the <i class="parameter T1.Text1">F<em class="Subscript Parameter T1.Text1"><sub>1</sub></em></i> to check the types of the values before returning them.)</p>
+<h2 class="subsection-title"><a name="MARKER-2-467"></a>Tail Recursion</h2>
+<p class="T1.Text1">Implementations are encouraged to optimize tail recursive function calls whenever possible. Tail recursion occurs when a function <var>F<em><sub>1</sub></em></var> returns the values of a call to another function <var>F<em><sub>2</sub></em></var>. In many cases, this can be used to create loops using self-recursive or mutually recursive functions. (Among the cases that cannot be optimized are those in which the return value types of <var>F<em><sub>1</sub></em></var> and <var>F<em><sub>2</sub></em></var> differ, requiring the <var>F<em><sub>1</sub></em></var> to check the types of the values before returning them.)</p>
 <p class="T1.Text1">The following example uses tail recursion to compute the name of the root volume on which a given file system object is stored.</p>
-<pre class="Cv.Code">
+<pre class="code">
 define method root-volume-name (f :: &lt;file-or-directory&gt;)
   if ( root-volume?(f) ) 
     f.name

@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Signalers, Conditions, and Handlers</title>
 </head>
@@ -116,7 +116,7 @@
 
 <a name="HEADING55-0"></a>
 <a name="UID-Conditions-1987"></a>
-<h1 class="H1.Heading1">Signalers, Conditions, and Handlers</h1>
+<h1 class="section-title">Signalers, Conditions, and Handlers</h1>
 <p class="T1.Text1">A condition is an object used to locate and provide information to a handler. A condition represents a situation that needs to be handled. Examples are <a name="MARKER-2-912"></a>errors, <a name="MARKER-2-913"></a>warnings, and attempts to <a name="MARKER-2-914"></a>recover from errors. All conditions are instances of <code><a name="MARKER-2-915"></a>&lt;condition&gt;</code>. Several subclasses of <code>&lt;condition&gt;</code> are provided for additional behavior. These are described in <a href="drm_95.html#MARKER-9-1472" class="T1.Text1">"Conditions" on page 244</a>.</p>
 <p class="T1.Text1"><a name="MARKER-2-916"></a>A handler is a function for handling conditions of a particular type. Handlers may be installed dynamically with the local declaration <code><a name="MARKER-2-917"></a>let handler</code>, and with the <code><a name="MARKER-2-918"></a>exception</code> clause of the <code>block</code> statement. Dynamically installed handlers are active for the duration of the execution of a body. More recently installed handlers take precedence over less recently installed handlers. If no dynamically installed handler handles a condition, the generic function <code><a name="MARKER-2-919"></a>default-handler</code> is called. <code>default-handler</code> has predefined methods and may also have program-defined methods.<a name="MARKER-2-920"></a></p>
 <p class="T1.Text1">Signaling is the mechanism for locating the most recently installed handler for a condition. The basic mechanism for signaling is the function <code><a name="MARKER-2-921"></a>signal</code>. Several functions built on <code>signal</code> are provided for additional behavior. These are described in <a href="drm_107.html#MARKER-9-1917" class="T1.Text1">"Signaling Conditions" on page 357</a>.</p>

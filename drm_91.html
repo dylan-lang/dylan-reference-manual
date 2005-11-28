@@ -45,7 +45,7 @@
     
     <!-- Stylesheet -->
     
-    <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+    <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
     <title>The Dylan Reference Manual: Simple Objects</title>
   </head>
@@ -136,9 +136,9 @@
 
       <a name="HEADING91-0"></a>
       <a name="UID-Built-In_Classes-373"></a>
-      <h1 class="H1.Heading1"><a name="MARKER-2-1375"></a>Simple Objects</h1>
+      <h1 class="section-title"><a name="MARKER-2-1375"></a>Simple Objects</h1>
       <p class="T0.Text0">Simple objects are sealed, uninstantiable, and concrete. They are often represented by program literals. <a href="#MARKER-9-1376" class="T0.Text0">Figure 11-2</a> shows the built-in classes of simple objects.</p>
-      <p class="Fg.Figure"><strong>Figure</strong> <strong>11-2</strong>  <a name="MARKER-9-1376"></a>The Simple Object Classes<!-- img alt="dr91ima3.gif" src="dr91ima3.gif" --></p>
+      <p class="figure"><strong>Figure</strong> <strong>11-2</strong>  <a name="MARKER-9-1376"></a>The Simple Object Classes<!-- img alt="dr91ima3.gif" src="dr91ima3.gif" --></p>
       
       <div class="figure" style="min-width: 454px">
 	<map id="simple-object-classes-map" name="simple-object-classes-map">
@@ -174,20 +174,20 @@
       
       <a name="HEADING91-3"></a>
       <a name="UID-Built-In_Classes-403"></a>
-      <h2 class="H2.Heading2">Characters</h2>
+      <h2 class="subsection-title">Characters</h2>
       <a name="HEADING91-4"></a>
-      <h3 class="H4.Heading4"><code><a name="MARKER-2-1377"></a>&lt;character&gt;</code> <span class="attributes-summary">[Sealed Class]</span></h3>
-      <hr class="H4.Heading4" />
+      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1377"></a>&lt;character&gt;</code> </span><span class="attributes-summary">[Sealed Class]</span></h4>
+      <hr class="item-title" />
       <p class="T0.Text0">The class of characters.</p>
       <dl class="Cliche">
 	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> <code>&lt;object&gt;</code></p></dd>
+	<dd class="Cliche"><p><code>&lt;object&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> None.</p></dd>
+	<dd class="Cliche"><p>None.</p></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> The class of characters. All characters are instances of <code>&lt;character&gt;</code>.</p></dd>
+	<dd class="Cliche"><p>The class of characters. All characters are instances of <code>&lt;character&gt;</code>.</p></dd>
 	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;character&gt;</code> provides the following operations:</p>
+	<dd class="Cliche"><p>The class <code>&lt;character&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption class="Tb.Table"><strong>Table 11-8</strong>  Methods on &lt;character&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
@@ -208,20 +208,20 @@
 	</dd>
       </dl>
       <a name="UID-Built-In_Classes-404"></a>
-      <h2 class="H2.Heading2">Symbols</h2>
+      <h2 class="subsection-title">Symbols</h2>
       <a name="HEADING91-87"></a>
-      <h3 class="H4.Heading4"><code><a name="MARKER-2-1378"></a>&lt;symbol&gt;</code> <span class="attributes-summary">[Sealed Class]</span></h3>
-      <hr class="H4.Heading4" />
+      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1378"></a>&lt;symbol&gt;</code> </span><span class="attributes-summary">[Sealed Class]</span></h4>
+      <hr class="item-title" />
       <p class="T1.Text1">The class of symbols.</p>
       <dl class="Cliche">
 	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> <code>&lt;object&gt;</code></p></dd>
+	<dd class="Cliche"><p><code>&lt;object&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> None.</p></dd>
+	<dd class="Cliche"><p>None.</p></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> The <code>&lt;symbol&gt;</code> class provides a built-in, non-case-sensitive dictionary that associates a string with a unique immutable object that can be compared with <code>==</code> (which should be faster than calling a string-comparison routine). This dictionary is accessed through the <code>as</code> function:<code> as(&lt;symbol&gt;, <var>string)</var></code> and <code>as(&lt;string&gt;, <var>symbol)</var></code>. Any string can be used.</p></dd>
+	<dd class="Cliche"><p>The <code>&lt;symbol&gt;</code> class provides a built-in, non-case-sensitive dictionary that associates a string with a unique immutable object that can be compared with <code>==</code> (which should be faster than calling a string-comparison routine). This dictionary is accessed through the <code>as</code> function:<code> as(&lt;symbol&gt;, <var>string)</var></code> and <code>as(&lt;string&gt;, <var>symbol)</var></code>. Any string can be used.</p></dd>
 	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> The class <code>&lt;symbol&gt;</code> provides the following operation:</p>
+	<dd class="Cliche"><p>The class <code>&lt;symbol&gt;</code> provides the following operation:</p>
 	  <table class="numbered"><caption class="Tb.Table"><strong>Table 11-9</strong>  Methods on &lt;symbol&gt;</caption>
 	    <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
 	      </th><th><p class="TbH.TblHd"> Description</p>
@@ -234,20 +234,20 @@
       </dl>
       <a name="HEADING91-127"></a>
       <a name="UID-Built-In_Classes-13474"></a>
-      <h2 class="H2.Heading2">Booleans</h2>
+      <h2 class="subsection-title">Booleans</h2>
       <a name="HEADING91-128"></a>
-      <h3 class="H4.Heading4"><code><a name="MARKER-2-1379"></a>&lt;boolean&gt;</code> <span class="attributes-summary">[Sealed Class]</span></h3>
-      <hr class="H4.Heading4" />
+      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1379"></a>&lt;boolean&gt;</code> </span><span class="attributes-summary">[Sealed Class]</span></h4>
+      <hr class="item-title" />
       <p class="T1.Text1">The class of boolean values.</p>
       <dl class="Cliche">
 	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> <code>&lt;object&gt;</code></p></dd>
+	<dd class="Cliche"><p><code>&lt;object&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> None.</p></dd>
+	<dd class="Cliche"><p>None.</p></dd>
 	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> None.</p></dd>
+	<dd class="Cliche"><p>None.</p></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p class="Cliche"> The class of boolean values. The literal constants <code>#t</code> and <code>#f</code> are general instances of <code>&lt;boolean&gt;</code>. Note that for the purposes of conditional expressions, all objects besides <code>#f</code> count as true. (This does not imply any other objects are instances of <code>&lt;boolean&gt;</code>.)<a name="MARKER-2-1380"></a></p></dd>
+	<dd class="Cliche"><p>The class of boolean values. The literal constants <code>#t</code> and <code>#f</code> are general instances of <code>&lt;boolean&gt;</code>. Note that for the purposes of conditional expressions, all objects besides <code>#f</code> count as true. (This does not imply any other objects are instances of <code>&lt;boolean&gt;</code>.)<a name="MARKER-2-1380"></a></p></dd>
       </dl>
 
     </div>

@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Definitions</title>
 </head>
@@ -127,7 +127,7 @@
 
 <a name="HEADING112-0"></a>
 <a name="UID-Built-In_Macros-12290"></a>
-<h1 class="H1.Heading1">Definitions</h1>
+<h1 class="section-title">Definitions</h1>
 <p class="T1.Text1"><a name="MARKER-2-1996"></a>Definitions are used to declare the overall structure of a program. They often define one or more module bindings, but do not always do so. Definitions can only appear at top level in a program. Definitions do not return values.</p>
 <table class="numbered"><caption><strong>Table 14-1</strong>  Definitions</caption>
 <tr><th class="primary"><p class="TbH.TblHd"> Macro</p>
@@ -160,14 +160,15 @@
 </td></tr><tr><td><p class="TbT.TblText"> <code>define macro</code></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2027" class="TbT.TblText">Defines a constant module binding containing a macro.</a></p>
 </td><td><p class="TbT.TblText"> <a href="#MARKER-9-2027" class="TbT.TblText">389</a></p>
-</td></tr></table><a name="HEADING112-147"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-1997"></a><a name="MARKER-9-1998"></a>define variable</code> <span class="attributes-summary">[Definition]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-2-1999"></a><a name="MARKER-9-2000"></a>Defines and initializes a variable binding in the current module.</p>
+</td></tr></table>
+<a name="HEADING112-147"></a>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1997"></a><a name="MARKER-9-1998"></a>define variable</code> </span><span class="attributes-summary">[Definition]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-2-1999"></a><a name="MARKER-9-2000"></a>Defines and initializes a variable binding in the current module.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Macro Call:</span></dt>
   <dd class="Cliche">
-    <p class="Cliche">
+    <p>
       <code>define</code> <strong class="re">{</strong> <var>adjective</var> <strong class="re">}*</strong> <code>variable</code> <var>variables</var> <code>=</code> <var>init</var>
     </p>
   </dd>
@@ -176,46 +177,50 @@
     <dl>
       <dt><var>adjective</var></dt>
       <dd>
-        <p class="Cliche2"><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The adjectives allowed are implementation dependent.</p>
+        <p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The adjectives allowed are implementation dependent.</p>
       </dd>
-      <dt class="RP.RoutineParam"><var>variables</var></dt>
-      <dd class="RP.RoutineParam">
-	<p class="RP.RoutineParam"> <span class="BNF">variable<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>(</code> <span class="BNF">variable-list<em class="BNF"><sub>bnf</sub></em></span> <code>)</code>
+      <dt class="routine-param"><var>variables</var></dt>
+      <dd class="routine-param">
+	<p class="routine-param"> <span class="BNF">variable<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>(</code> <span class="BNF">variable-list<em class="BNF"><sub>bnf</sub></em></span> <code>)</code>
 	</p>
       </dd>
-      <dt class="RP.RoutineParam"><var>init</var></dt>
-      <dd class="RP.RoutineParam">
-	<p class="RP.RoutineParam">
+      <dt class="routine-param"><var>init</var></dt>
+      <dd class="routine-param">
+	<p class="routine-param">
 	  <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span>
 	</p>
       </dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> <code>define variable</code> defines variable bindings in the current module.</p>
+  <dd class="Cliche"><p><code>define variable</code> defines variable bindings in the current module.</p>
     <p class="T1.Text1">The values returned by <var>init</var> are used to initialize the bindings. The first value returned is bound to the first <var>variable</var>, the second value to the second <var>variable</var>, etc. The last <var>variable</var> may be preceded by <code>#rest</code>, in which case it is bound to a sequence containing all the remaining values.</p>
     <p class="T1.Text1">If more than one binding is defined, the <var>variables</var> are enclosed in parentheses and separated by commas.</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 define variable *elapsed-time* = 0;
+
 define variable (*whole-part*, *remainder*) = truncate(*amount*);
+
 define variable (*first-value*, #rest *rest-values*)
                  = get-initial-orders(); </pre>
     <p class="T1.Text1"><a name="MARKER-2-2001"></a>Module bindings may be specialized. This ensures that their value will always be of a given type. An attempt to initialize or assign the binding to a value not of that type will signal an error of type <code>&lt;type-error&gt;</code>.</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 define variable *elapsed-time* :: &lt;integer&gt; = 0;
+
 define variable *front-window* :: type-union (&lt;window&gt;, singleton(#f))
                  = initial-front-window();
+
 define variable (*whole-part* :: &lt;integer&gt;, *remainder* :: &lt;real&gt;)
                  = truncate(*amount*); </pre>
   </dd>
 </dl>
 <a name="HEADING112-163"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-2002"></a>define constant</code> <span class="attributes-summary">[Definition]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-9-2003"></a>Defines and initializes a constant binding in the current module.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2002"></a>define constant</code> </span><span class="attributes-summary">[Definition]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-9-2003"></a>Defines and initializes a constant binding in the current module.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Macro Call:</span></dt>
   <dd class="Cliche">
-    <p class="Cliche">
+    <p>
       <code>define</code> <strong class="re">{</strong> <var>adjective</var> <strong class="re">}*</strong> <code>constant</code> <var>constants</var> <code>=</code> <var>init</var>
     </p>
   </dd>
@@ -224,85 +229,87 @@ define variable (*whole-part* :: &lt;integer&gt;, *remainder* :: &lt;real&gt;)
     <dl>
       <dt><var>adjective</var></dt>
       <dd>
-        <p class="Cliche2"><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The adjectives allowed are implementation dependent.</p>
+        <p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The adjectives allowed are implementation dependent.</p>
       </dd>
-      <dt class="RP.RoutineParam"><var>constants</var></dt>
-      <dd class="RP.RoutineParam">
-	<p class="RP.RoutineParam">
+      <dt class="routine-param"><var>constants</var></dt>
+      <dd class="routine-param">
+	<p class="routine-param">
 	  <span class="BNF">variable<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>(</code> <span class="BNF">variable-list<em class="BNF"><sub>bnf</sub></em></span> <code>)</code>
 	  </p>
 	</dd>
-      <dt class="RP.RoutineParam"><var>init</var></dt>
-      <dd class="RP.RoutineParam">
-	<p class="RP.RoutineParam">
+      <dt class="routine-param"><var>init</var></dt>
+      <dd class="routine-param">
+	<p class="routine-param">
 	  <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span>
 	</p>
       </dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> <a name="MARKER-2-2004"></a><code>define constant</code> defines constant bindings in the current module.</p>
+  <dd class="Cliche"><p><a name="MARKER-2-2004"></a><code>define constant</code> defines constant bindings in the current module.</p>
     <p class="T1.Text1">The values returned by <var>init</var> are used to initialize the constant bindings. The first value returned is bound to the first <var>constant</var>, the second value to the second <var>constant</var>, etc. The last <var>constant</var> may be preceded by <code>#rest</code>, in which case it is bound to a sequence containing all the remaining values.</p>
     <p class="T1.Text1">If more than one <var>constant</var> is defined, the <var>constants</var> are enclosed in parentheses and separated by commas.</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 define constant $start-time = get-current-time();
+
 define constant $pi = 3.14159;
+
 define constant ($whole-pie, $piece-pie) = truncate($pi); </pre>
     <p class="T1.Text1"><a name="MARKER-2-2005"></a>Module constants may be specialized. This ensures that their value is of a given type. An attempt to initialize the constant to a value not of that type will signal an error of type <code>&lt;type-error&gt;</code>.</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 define constant $start-time :: &lt;integer&gt; = get-current-time(); </pre>
     <p class="T1.Text1">A constant binding cannot be assigned a new value. However, the object that is the value of the constant binding is not necessarily itself immutable. For example, if a constant binding contains a sequence, the elements of the sequence may be settable.</p>
   </dd>
 </dl>
 <a name="HEADING112-178"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-2006"></a>define generic</code> <span class="attributes-summary">[Definition]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-9-2007"></a>Defines a constant binding in the current module and initializes it to a new generic function.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2006"></a>define generic</code> </span><span class="attributes-summary">[Definition]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-9-2007"></a>Defines a constant binding in the current module and initializes it to a new generic function.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Macro Call:</span></dt>
   <dd class="Cliche">
-    <p class="Cliche">
+    <p>
       <code>define</code> <strong class="re">{</strong> <var>adjective</var> <strong class="re">}*</strong> <code>generic</code> <var>name parameter-list</var> <strong class="re">[</strong> <var>options</var> <strong class="re">]</strong>
     </p>
   </dd>
   <dt class="Cliche2"><span>Arguments:</span></dt>
   <dd class="Cliche2">
-    <dl class="RP.RoutineParam">
-      <dt class="RP.RoutineParam"><var>adjective</var></dt>
+    <dl class="routine-param">
+      <dt class="routine-param"><var>adjective</var></dt>
       <dd><p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The allowed adjectives are <code>sealed</code> and <code>open</code>. These adjectives are mutually exclusive. The default is <code>sealed</code>. Additional implementation-defined adjectives may be supported.</p>
       </dd>
-      <dt class="RP.RoutineParam"><var>name</var></dt>
-      <dd class="RP.RoutineParam">
-	<p class="RP.RoutineParam">
+      <dt class="routine-param"><var>name</var></dt>
+      <dd class="routine-param">
+	<p class="routine-param">
 	  <span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span>
 	</p>
       </dd>
-      <dt class="RP.RoutineParam"><var>parameter-list</var></dt>
-      <dd class="RP.RoutineParam">
-	<p class="RP.RoutineParam">
+      <dt class="routine-param"><var>parameter-list</var></dt>
+      <dd class="routine-param">
+	<p class="routine-param">
 	  <code>(</code> <strong class="re">[</strong> <span class="BNF">parameters<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">]</strong> <code>)</code> <strong class="re">[</strong> <code>=&gt;</code> <var>values</var> <strong class="re">]</strong>
 	</p>
       </dd>
-      <dt class="RP.RoutineParam"><var>options</var></dt>
-      <dd class="RP.RoutineParam">
-	<p class="RP.RoutineParam">
+      <dt class="routine-param"><var>options</var></dt>
+      <dd class="routine-param">
+	<p class="routine-param">
 	  <span class="BNF">comma-property-list<em class="BNF"><sub>bnf</sub></em></span>
 	</p>
       </dd>
-      <dt class="RP.RoutineParam"><var>values</var></dt>
-      <dd class="RP.RoutineParam">
-	<p class="RP.RoutineParam">
+      <dt class="routine-param"><var>values</var></dt>
+      <dd class="routine-param">
+	<p class="routine-param">
 	  <span class="BNF">variable<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>(</code> <strong class="re">[</strong> <span class="BNF">values-list<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">]</strong> <code>)</code>
 	</p>
       </dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> <code>define generic</code> is used to define generic functions.</p>
+  <dd class="Cliche"><p><code>define generic</code> is used to define generic functions.</p>
     <p class="T1.Text1"><a name="MARKER-2-2008"></a>It defines a constant module binding with the name <var>name</var>, and initializes it to a new generic function described by the <var>adjectives</var>, <var>parameter-list</var> and <var>options</var>.</p>
     <p class="T1.Text1">The <var>adjectives</var> specify whether the generic function is sealed. A complete description of generic function sealing is given in <a href="drm_74.html#MARKER-9-1116" class="T1.Text1">"Declaring Characteristics of Generic Functions" on page 135</a>.</p>
     <p class="T1.Text1">The <var>parameter-list</var> specifies the parameters and return values of the generic function and thereby constrains which methods may be added to it. For a complete description of these constraints, see <a href="drm_49.html#MARKER-9-837" class="T1.Text1">"Parameter List Congruency" on page 93</a>. A generic function parameter list may not include a next-method parameter, and its keyword parameters may include neither type specializers nor default initial values.</p>
     <p class="T1.Text1">The <var>options </var>are alternating keywords and values. No options are defined by the language. They may be supplied by individual implementations.</p>
     <p class="T1.Text1">The following example defines a generic function of two required arguments and one return value. All methods added to the generic function must also take two arguments and return one value. The first argument will always <br />be specialized to a subtype of <code>&lt;animal&gt;</code>, the second argument will always be specialized to a subtype of <code>&lt;number&gt;</code>, and the return value will always <br />be specialized to a subtype of <code>&lt;number&gt;</code>.</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 define generic cut-hair (subject :: &lt;animal&gt;, new-length :: &lt;number&gt;)
                           =&gt; (new-length :: &lt;number&gt;) </pre>
     <p class="T1.Text1">The use of the same name for a parameter and return value indicates that the parameter is returned as the value. This is only a convention;  it is not enforced by the language.</p>
@@ -312,21 +319,21 @@ define generic cut-hair (subject :: &lt;animal&gt;, new-length :: &lt;number&gt;
       should be
       <q><a href="drm_49.html#MARKER-2-808" title="Definition of recognize">recognize</a></q>.</p>
     <p class="T1.Text1">The following example defines a generic function with one required parameter and one mandatory keyword parameter, <code>strength:</code>. Methods added to the generic function must have one required parameter, they must accept keyword arguments, and they must permit the keyword argument <code>strength:</code>.</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 define generic brew (brand :: &lt;coffee-brand&gt;, #key strength)
                              =&gt; (coffee :: &lt;coffee&gt;) </pre>
   </dd>
 </dl>
 <a name="HEADING112-196"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-2009"></a>define method</code> <span class="attributes-summary">[Definition]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-9-2010"></a>Adds a method to a generic function, and potentially defines a constant binding in the current module containing a new generic function.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2009"></a>define method</code> </span><span class="attributes-summary">[Definition]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-9-2010"></a>Adds a method to a generic function, and potentially defines a constant binding in the current module containing a new generic function.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Macro Call:</span></dt>
   <dd class="Cliche">
-    <p class="Cliche">
+    <p>
       <code>define</code> <strong class="re">{</strong> <var>adjective</var> <strong class="re">}*</strong> <code>method</code> <var>name</var> <var>parameter-list</var><br />
-      <strong class="re">[</strong> <var>body</var> <strong class="re">]</strong><br />
+      &nbsp;&nbsp;&nbsp;<strong class="re">[</strong> <var>body</var> <strong class="re">]</strong><br />
       <code>end</code> <strong class="re">[</strong> <code>method</code> <strong class="re">]</strong> <strong class="re">[</strong> <var>name</var> <strong class="re">]</strong>
     </p>
   </dd>
@@ -335,99 +342,115 @@ define generic brew (brand :: &lt;coffee-brand&gt;, #key strength)
     <dl>
       <dt><var>adjective</var></dt>
       <dd>
-        <p class="Cliche"><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The allowed adjective is <code>sealed</code>. Additional implementation-defined <var>adjectives</var> may be supported.</p>
+        <p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The allowed adjective is <code>sealed</code>. Additional implementation-defined <var>adjectives</var> may be supported.</p>
       </dd>
-      <dt class="RP.RoutineParam"><var>name</var></dt>
-      <dd class="RP.RoutineParam">
-	<p class="RP.RoutineParam">
+      <dt class="routine-param"><var>name</var></dt>
+      <dd class="routine-param">
+	<p class="routine-param">
 	  <span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span>
 	</p>
       </dd>
-      <dt class="RP.RoutineParam"><var>parameter-list</var></dt>
-      <dd class="RP.RoutineParam">
-	<p class="RP.RoutineParam">
+      <dt class="routine-param"><var>parameter-list</var></dt>
+      <dd class="routine-param">
+	<p class="routine-param">
 	  <span class="BNF">parameter-list<em class="BNF"><sub>bnf</sub></em></span>
 	</p>
       </dd>
-      <dt class="RP.RoutineParam"><var>body</var></dt>
-      <dd class="RP.RoutineParam">
-	<p class="RP.RoutineParam">
+      <dt class="routine-param"><var>body</var></dt>
+      <dd class="routine-param">
+	<p class="routine-param">
 	  <span class="BNF">body<em class="BNF"><sub>bnf</sub></em></span>
 	</p>
       </dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> <a name="MARKER-2-2011"></a><code>define method</code> creates a method and adds it to the generic function in <var>name</var>. If the module binding <var>name</var>  is not already defined, it is defined as with <code>define generic</code>. Thus,  <code>define method</code> will create a new generic function or extend an old one, as needed.</p>
-    <p class="T1.Text1">The <var>adjective</var> allows a sealing declaration to be made about the generic function to which the method is added. The effect of this adjective is described in <a href="drm_75.html#MARKER-9-1131" class="T1.Text1">"Abbreviations for Define Sealed Domain" on page 138</a>.</p>
+  <dd class="Cliche"><p><a name="MARKER-2-2011"></a><code>define method</code> creates a method and adds it to the generic function in <var>name</var>. If the module binding <var>name</var> is not already defined, it is defined as with <code>define generic</code>. Thus, <code>define method</code> will create a new generic function or extend an old one, as needed.</p>
+    <p class="T1.Text1">The <var>adjective</var> allows a sealing declaration to be made about the generic function to which the method is added. The effect of this adjective is described in <a href="drm_75.html#MARKER-9-1131">"Abbreviations for Define Sealed Domain" on page 138</a>.</p>
     <p class="T1.Text1">The <var>parameter-list</var>  describes the parameters and return values of the method, including their number and type. The method can be called only with arguments that match the types of the parameters, and the method will always return values in the quantity and typed declared. Methods added to a generic function must have parameter lists that are congruent with the generic function's parameter list. A complete description of parameter lists is given in <a href="drm_49.html#MARKER-9-782" class="T1.Text1">"Parameter Lists" on page 84</a>.</p>
     <p class="T1.Text1">When the method is called, new local bindings are created for the parameters,  initialized to the arguments of the call. The <var>body</var>  is then executed in the environment containing these bindings.</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 define method tune (device :: &lt;radio&gt;) =&gt; (station :: &lt;station&gt;)
   // method body goes here
 end method tune </pre>
   </dd>
 </dl>
 <a name="HEADING112-209"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-2012"></a>define class</code> <span class="attributes-summary">[Definition]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-9-2013"></a>Defines a constant binding in the current module and initializes it to a new class.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2012"></a>define class</code> </span><span class="attributes-summary">[Definition]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-9-2013"></a>Defines a constant binding in the current module and initializes it to a new class.</p>
 <dl class="Cliche">
-<dt class="Cliche"><span>Macro Call:</span></dt>
-<dd class="Cliche"><p class="Cliche"> <code>define { class-adjective }* class name ( { superclass } ,+ )<br />   { slot-spec | init-arg-spec | inherited-slot-spec } ;*<br />end [ class ] [ name ]</code></p></dd>
+  <dt class="Cliche"><span>Macro Call:</span></dt>
+  <dd class="Cliche">
+    <p>
+      <code>define</code> <strong class="re">{</strong> <var>class-adjective</var> <strong class="re">}*</strong> <code>class</code> <var>name</var> <code>(</code>
+      <strong class="re">{</strong> <var>superclass</var> <strong class="re">}</strong> <code>,</code><strong class="re">+</strong> <code>)</code><br />
+      &nbsp;&nbsp;&nbsp;<strong class="re">{</strong> <var>slot-spec</var> <strong class="re">|</strong> <var>init-arg-spec</var> <strong class="re">|</strong> <var>inherited-slot-spec</var> <strong class="re">}</strong> <code>;</code><strong class="re">*</strong><br />
+      <code>end</code> <strong class="re">[</strong> <code>class</code> <strong class="re">]</strong> <strong class="re">[</strong> <var>name</var> <strong class="re">]</strong></p></dd>
 <dt class="Cliche2"><span>Arguments:</span></dt>
 <dd class="Cliche2">
-    <dl>
-      <dt><var>class-adjective</var></dt>
-      <dd>
-        <p class="Cliche2"><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The allowed adjectives are <code>abstract</code>, <code>concrete</code>, <code>primary</code>, <code>free</code>, <code>sealed</code>, and <code>open</code>. Additional implementation-dependent class-adjectives may be supported.</p>
-      </dd>
-<dt class="RP.RoutineParam"><var>name</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-<dt class="RP.RoutineParam"><var>superclass</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-<dt class="RP.RoutineParam"><var>slot-spec</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>{ <i class="parameter MetaSyntax RP.RoutineParam">slot-adjective }* [ allocation ]<br />slot getter-name [ :: type ] [ init-expression ]<br />{ , slot-option  }*</i></code></p></dd>
-<dt class="RP.RoutineParam"><i class="parameter RP.RoutineParam">init-arg-spec<code></code></i></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>[ required ] keyword symbol<em class="MetaSyntax"><sub>bnf</sub> [ <i class="parameter MetaSyntax RP.RoutineParam">init-expression ]<br />{ , init-arg-option  }*</i></em></code></p></dd>
-<dt class="RP3.RoutineParam"><i class="parameter RP3.RoutineParam">inherited-slot-spec<code></code></i></dt>
-<dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> inherited slot<code> <i class="parameter MetaSyntax RP3.RoutineParam">getter-name [ init-expression ]<br />{ , inherited-option  }*</i></code></p></dd>
-<dt class="RP.RoutineParam"><var>slot-adjective</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. Supported slot-adjectives are <code>constant</code> and <code>sealed</code>. Additional implementation-dependent slot-adjectives may be supported.</p></dd>
-<dt class="RP.RoutineParam"><var>allocation</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. Supported allocations are <code>instance</code>, <code>class</code>, <code>each-subclass</code>, and <code>virtual</code>. Additional implementation-defined allocations may be supported.</p></dd>
-<dt class="RP.RoutineParam"><var>getter-name</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-<dt class="RP.RoutineParam"><var>type</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">operand<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-<dt class="RP.RoutineParam"><var>init-expression</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>=</code> <span class="MetaSyntax">expression<em class="MetaSyntax"><sub>bnf</sub></em></span></p></dd>
-<dt class="RP.RoutineParam"><var>slot-option</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam">
-    <code><i class="parameter MetaSyntax RP.RoutineParam">setter-option  |<br />
-	init-keyword-option  |<br />
-	required-init-keyword-option  |<br />
-	init-value-option  |<br />
-	init-function-option  |<br />
-	type-option</i></code></p></dd>
-<dt class="RP.RoutineParam"><var>init-arg-option</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code><i class="parameter MetaSyntax RP.RoutineParam">type-option  |<br />init-value-option  |<br />init-function-option</i></code></p></dd>
-<dt class="RP3.RoutineParam"><var>inherited-option</var></dt>
-<dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> <code><var>init-value-option  |<br />init-function-option</var></code></p></dd>
-<dt class="RP.RoutineParam"><var>setter-option</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>setter: { variable-name<em class="BNF"><sub>bnf</sub> | #f }</em></code></p></dd>
-<dt class="RP3.RoutineParam"><i class="parameter RP3.RoutineParam">init-keyword-option<code></code></i></dt>
-<dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> <code>init-keyword: symbol<em class="MetaSyntax RP3.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-<dt class="RP3.RoutineParam"><i class="parameter RP3.RoutineParam">required-init-keyword-option</i></dt>
-<dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> <code>required-init-keyword: symbol<em class="MetaSyntax RP3.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-<dt class="RP3.RoutineParam"><var>init-value-option</var></dt>
-<dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> <code>init-value: expression<em class="Code RP3.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-<dt class="RP3.RoutineParam"><var>init-function-option</var></dt>
-<dd class="RP3.RoutineParam"><p class="RP3.RoutineParam"> <code>init-function: expression<em class="Code RP3.RoutineParam"><sub>bnf</sub></em></code></p></dd>
-<dt class="RP.RoutineParam"><var>type-option</var></dt>
-<dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>type: expression<em class="BNF"><sub>bnf</sub></em></code></p></dd>
+  <dl>
+    <dt><var>class-adjective</var></dt>
+    <dd>
+      <p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The allowed adjectives are <code>abstract</code>, <code>concrete</code>, <code>primary</code>, <code>free</code>, <code>sealed</code>, and <code>open</code>. Additional implementation-dependent class-adjectives may be supported.</p>
+    </dd>
+    <dt class="routine-param"><var>name</var></dt>
+    <dd class="routine-param"><p><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+    <dt class="routine-param"><var>superclass</var></dt>
+    <dd class="routine-param"><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+    <dt class="routine-param"><var>slot-spec</var></dt>
+    <dd class="routine-param"><p><strong class="re">{</strong> <var>slot-adjective</var> <strong class="re">}*</strong> <strong class="re">[</strong> <var>allocation</var> <strong class="re">]</strong><br />
+	<code>slot</code> <var>getter-name</var> <strong class="re">[</strong> <code>::</code> <var>type</var> <strong class="re">]</strong> <strong class="re">[</strong> <var>init-expression</var> <strong class="re">]</strong><br />
+	<strong class="re">{</strong> <code>,</code> <var>slot-option</var> <strong class="re">}*</strong></p></dd>
+    <dt class="routine-param"><var>init-arg-spec</var></dt>
+    <dd class="routine-param"><p><strong class="re">[</strong> <code>required</code> <strong class="re">]</strong> <code>keyword</code> <span class="BNF">symbol<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">[</strong> <var>init-expression</var> <strong class="re">]</strong><br />
+	<strong class="re">{</strong> <code>,</code> <var>init-arg-option</var> <strong class="re">}*</strong></p></dd>
+    <dt class="RP3.RoutineParam"><var>inherited-slot-spec</var></dt>
+    <dd class="RP3.RoutineParam"><p><code>inherited slot</code> <var>getter-name</var> <strong class="re">[</strong> <var>init-expression</var> <strong class="re">]</strong><br />
+	<strong class="re">{</strong> <code>,</code> <var>inherited-option</var> <strong class="re">}*</strong></p></dd>
+    <dt class="routine-param"><var>slot-adjective</var></dt>
+    <dd class="routine-param"><p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. Supported slot-adjectives are <code>constant</code> and <code>sealed</code>. Additional implementation-dependent slot-adjectives may be supported.</p></dd>
+    <dt class="routine-param"><var>allocation</var></dt>
+    <dd class="routine-param"><p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. Supported allocations are <code>instance</code>, <code>class</code>, <code>each-subclass</code>, and <code>virtual</code>. Additional implementation-defined allocations may be supported.</p></dd>
+    <dt class="routine-param"><var>getter-name</var></dt>
+    <dd class="routine-param"><p><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+    <dt class="routine-param"><var>type</var></dt>
+    <dd class="routine-param"><p><span class="BNF">operand<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+    <dt class="routine-param"><var>init-expression</var></dt>
+    <dd class="routine-param"><p><code>=</code> <span class="MetaSyntax">expression<em class="MetaSyntax"><sub>bnf</sub></em></span></p></dd>
+    <dt class="routine-param"><var>slot-option</var></dt>
+    <dd class="routine-param"><p>
+	<var>setter-option</var> <strong class="re">|</strong><br />
+	<var>init-keyword-option</var> <strong class="re">|</strong><br />
+	<var>required-init-keyword-option</var> <strong class="re">|</strong><br />
+	<var>init-value-option</var> <strong class="re">|</strong><br />
+	<var>init-function-option</var> <strong class="re">|</strong><br />
+	<var>type-option</var></p></dd>
+    <dt class="routine-param"><var>init-arg-option</var></dt>
+    <dd class="routine-param"><p>
+	<var>type-option</var> <strong class="re">|</strong><br />
+	<var>init-value-option</var> <strong class="re">|</strong><br />
+	<var>init-function-option</var></p></dd>
+    <dt class="RP3.RoutineParam"><var>inherited-option</var></dt>
+    <dd class="RP3.RoutineParam"><p>
+	<var>init-value-option</var> <strong class="re">|</strong><br />
+	<var>init-function-option</var></p></dd>
+    <dt class="routine-param"><var>setter-option</var></dt>
+    <dd class="routine-param"><p><code>setter:</code> <strong class="re">{</strong> <span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>#f</code> <strong class="re">}</strong></p></dd>
+    <dt class="RP3.RoutineParam"><var>init-keyword-option</var></dt>
+    <dd class="RP3.RoutineParam"><p>
+	<code>init-keyword:</code> <span class="BNF">symbol<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+    <dt class="RP3.RoutineParam"><var>required-init-keyword-option</var></dt>
+    <dd class="RP3.RoutineParam"><p><br />
+	<code>required-init-keyword:</code> <span class="BNF">symbol<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+    <dt class="RP3.RoutineParam"><var>init-value-option</var></dt>
+    <dd class="RP3.RoutineParam"><p><code>init-value:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+    <dt class="RP3.RoutineParam"><var>init-function-option</var></dt>
+    <dd class="RP3.RoutineParam"><p><code>init-function:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+    <dt class="routine-param"><var>type-option</var></dt>
+    <dd class="routine-param"><p><code>type:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 </dl></dd>
 <dt class="Cliche"><span>Description:</span></dt>
-<dd class="Cliche"><p class="Cliche"> <a name="MARKER-2-2014"></a><code>define class</code> is used to define classes.</p>
+<dd class="Cliche"><p><a name="MARKER-2-2014"></a><code>define class</code> is used to define classes.</p>
 <p class="T1.Text1">It defines a constant module binding with the name <var>name</var>, and initializes it to a new class.</p>
 <p class="T1.Text1">The <var>class-adjectives</var> provide sealing information about the class. Among the adjectives, <code>abstract</code> and <code>concrete</code> are mutually exclusive, <code>primary</code> and <code>free</code> are mutually exclusive, and <code>sealed</code> and <code>open</code> are mutually exclusive. Additional implementation-defined adjectives may be supported. See <a href="drm_73.html#MARKER-9-1106" class="T1.Text1">"Declaring Characteristics of Classes" on page 134</a> for a complete description of these adjectives.</p>
 <p class="T1.Text1">The <var>superclasses</var> are the classes from which the new class directly inherits. The rules of inheritance are described in <a href="drm_41.html#MARKER-9-583" class="T1.Text1">"Class Inheritance" on page 53</a> and <a href="drm_41.html#MARKER-9-590" class="T1.Text1">"Computing the Class Precedence List" on page 54</a>.</p>
@@ -437,67 +460,70 @@ end method tune </pre>
 <p class="T1.Text1">Each <var>inherited-slot-spec</var> describes an inherited slot specification of the class. Inherited slot specifications are described in  <a href="drm_43.html#MARKER-9-677" class="T1.Text1">"Inherited Slot Specifications" on page 67</a>.</p></dd>
 </dl>
 <a name="HEADING112-240"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-2015"></a>define module</code>   <span class="attributes-summary">[Definition]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-9-2016"></a>Defines and names a module, describing the imports and exports of the module.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2015"></a>define module</code> </span><span class="attributes-summary">[Definition]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-9-2016"></a>Defines and names a module, describing the imports and exports of the module.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Macro Call:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> <code>define module <i class="parameter Code Cliche">module-name<br />    { export-clause | create-clause |use-clause  } ;*<br /></i></code> <code>end [ module ] [ <var>module-name ]</var></code></p></dd>
+  <dd class="Cliche"><p><code>define module</code> <var>module-name</var><br />
+      &nbsp;&nbsp;&nbsp;<strong class="re">{</strong> <var>export-clause</var> <strong class="re">|</strong> <var>create-clause</var> <strong class="re">|</strong> <var>use-clause</var> <strong class="re">}</strong> <code>;</code><strong class="re">*</strong><br />
+      <code>end</code> <strong class="re">[</strong> <code>module</code> <strong class="re">]</strong> <strong class="re">[</strong> <var>module-name</var> <strong class="re">]</strong></p></dd>
   <dt class="Cliche2"><span>Arguments:</span></dt>
   <dd class="Cliche2">
     <dl>
       <dt><var>module-name</var></dt>
       <dd>
-        <p class="Cliche2"><span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span></p>
+        <p><span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span></p>
       </dd>
-      <dt class="RP.RoutineParam"><var>export-clause</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>export { ordinary-name<em class="BNF"><sub>bnf</sub> } ,*</em></code></p></dd>
-      <dt class="RP.RoutineParam"><var>create-clause</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>create { ordinary-name<em class="BNF"><sub>bnf</sub> } ,*</em></code> </p></dd>
-      <dt class="RP.RoutineParam"><var>use-clause</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>use <var>used-module { ,option }*</var></code></p></dd>
-      <dt class="RP.RoutineParam"><var>used-module</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-      <dt class="RP.RoutineParam"><var>option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">import-option</i> <strong class="re">|</strong></p></dd>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">exclude-option</i> <strong class="re">|</strong></p></dd>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">prefix-option</i> <strong class="re">|</strong></p></dd>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">rename-option</i> <strong class="re">|</strong></p></dd>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <var>export-option</var> </p></dd>
-      <dt class="RP.RoutineParam"><var>import-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>import: all | { { <var>variable-spec</var> } ,* }</code></p></dd>
-      <dt class="RP.RoutineParam"><var>variable-spec</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>name<em class="BNF"><sub>bnf</sub></em> [ =&gt; name<em class="BNF"><sub>bnf</sub></em> ]</code></p></dd>
-      <dt class="RP.RoutineParam"><var>exclude-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>exclude: { { name<em class="BNF"><sub>bnf</sub></em> } ,* }</code></p></dd>
-      <dt class="RP.RoutineParam"><var>prefix-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>prefix: string-literal<em class="BNF"><sub>bnf</sub></em></code></p></dd>
-      <dt class="RP.RoutineParam"><var>rename-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>rename: { { name<em class="BNF"><sub>bnf</sub></em> =&gt; name<em class="BNF"><sub>bnf</sub></em> } ,* }</code></p></dd>
-      <dt class="RP.RoutineParam"><var>export-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>export: all | { { name<em class="BNF"><sub>bnf</sub></em> } ,* }</code></p></dd>
+      <dt class="routine-param"><var>export-clause</var></dt>
+      <dd class="routine-param"><p><code>export</code> <strong class="re">{</strong> <span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong></p></dd>
+      <dt class="routine-param"><var>create-clause</var></dt>
+      <dd class="routine-param"><p><code>create</code> <strong class="re">{</strong> <span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong></p></dd>
+      <dt class="routine-param"><var>use-clause</var></dt>
+      <dd class="routine-param"><p><code>use</code> <var>used-module</var> <strong class="re">{</strong> <code>,</code> <var>option</var> <strong class="re">}*</strong></p></dd>
+      <dt class="routine-param"><var>used-module</var></dt>
+      <dd class="routine-param"><p><span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt class="routine-param"><var>option</var></dt>
+      <dd class="routine-param"><p>
+	  <var>import-option</var> <strong class="re">|</strong><br />
+	  <var>exclude-option</var> <strong class="re">|</strong><br />
+	  <var>prefix-option</var> <strong class="re">|</strong><br />
+	  <var>rename-option</var> <strong class="re">|</strong><br />
+	  <var>export-option</var></p></dd>
+      <dt class="routine-param"><var>import-option</var></dt>
+      <dd class="routine-param"><p><code>import: all</code> <strong class="re">|</strong> <code>{</code> <strong class="re">{</strong> <var>variable-spec</var> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
+      <dt class="routine-param"><var>variable-spec</var></dt>
+      <dd class="routine-param"><p><span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">[</strong> <code>=&gt;</code> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">]</strong></p></dd>
+      <dt class="routine-param"><var>exclude-option</var></dt>
+      <dd class="routine-param"><p><code>exclude: {</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
+      <dt class="routine-param"><var>prefix-option</var></dt>
+      <dd class="routine-param"><p><code>prefix:</code> <span class="BNF">string-literal<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt class="routine-param"><var>rename-option</var></dt>
+      <dd class="routine-param"><p><code>rename: {</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <code>=&gt;</code> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
+      <dt class="routine-param"><var>export-option</var></dt>
+      <dd class="routine-param"><p><code>export: all</code> <strong class="re">|</strong> <code>{</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> <a name="MARKER-2-2017"></a><code><a name="MARKER-9-2018"></a>define module</code> defines a module with the given name. It describes which modules are used by the module being defined, which bindings are imported from the used modules, and which bindings are exported by the module being defined.</p>
+  <dd class="Cliche"><p><a name="MARKER-2-2017"></a><code><a name="MARKER-9-2018"></a>define module</code> defines a module with the given name. It describes which modules are used by the module being defined, which bindings are imported from the used modules, and which bindings are exported by the module being defined.</p>
     <p class="T1.Text1">Circular use relationships among modules are not allowed. The graph of the module-uses-module relation must be directed and acyclic.</p>
     <p class="T1.Text1">Like other definitions, module definitions are only allowed at top level. Like all constituents, module definitions are contained in a module. The names of bindings being imported and exported in a module definition refer to bindings in the module being defined and the modules being used. These are not affected by the module that contains the module definition.</p>
     <p class="T1.Text1">There is no prohibition against macros that expand into module definitions.</p>
-    <ul class="B1.Bullet1">
-      <li class="B1.Bullet1"><var>module-name</var> is the name of the module being defined. Note that no binding is created for this name. The namespaces of modules, libraries, and bindings are distinct. The module name is scoped within the library containing the module.</li>
-      <li class="B1.Bullet1">An <var>export-clause</var>  specifies bindings that are to be exported from the module being defined. Each name is the name of one such binding. These bindings must be defined by a definition in the module being defined. It is an error if any of the bindings were imported from other modules. It is allowed for the same name to appear more than once, since this is sometimes useful for documentation purposes.</li>
-      <li class="B1.Bullet1">A <var>create-clause</var> specifies that the named bindings are to be declared owned by and exported from the module being defined. Each name is the name of a binding to declare and export. These bindings must not be defined by a definition in the module being defined, and they must not be imported from another module. They must be defined by a definition in a module that uses the module being defined. It is allowed for the same name to appear more than once, since this is sometimes useful for documentation purposes.</li>
-      <li class="B1.Bullet1">Each <var>use-clause</var> describes a set of bindings to be imported from another module. There may be multiple use clauses and there may even be multiple use clauses importing from the same module. If there are multiple use clauses importing from the same module, the bindings imported are the sum of the binding imported by each use clause. Because of renaming, it is possible for the same binding to imported multiple times under different names. This is not an error.<br /><br />Within a use clause, the <var>used-module</var> is the name of the module being used, and the options control which bindings are to be imported from that module, whether and how they should be renamed, and whether they should be reexported from the module being defined. Each of these options applies within the scope of the particular use clause, and does not affect the behavior of other use clauses (even if the other use clauses indicate the same module). The various options  may each appear no more than once in a single use clause. They may appear in any order.
-	<ul class="B2.Bullet2">
-	  <li class="B2.Bullet2">An <var>import-option</var> describes which bindings should be imported. It can be the name <code>all</code>, or a series of comma-delimited <var>variable-specs</var> enclosed in curly braces. The default is <code>all</code>, indicating that all bindings should be imported. If a series of <var>variable-specs</var> is specified, only the indicated variables are imported.</li>
-	  <li class="B2.Bullet2">A <var>variable-spec</var> is a name, or two names separated by an arrow. In the first form, the binding has the same name in the module being used and the module being defined. In the second form the binding is renamed as it is imported. The name preceding the arrow is the name of the binding in the module being used, and the name following the arrow is the name of the binding in the module being defined.</li>
-	  <li class="B2.Bullet2"> An <var>exclude-option</var> indicates bindings that should not be imported from the module being used. The default is the empty set. This option may only specify a nonempty set if the import option is <code>all</code>.</li>
-	  <li class="B2.Bullet2">A <var>prefix-option</var> indicates a prefix to be given to all binding names as they are imported. This option can be overriden for individual bindings by supplying a renaming in a rename option or import option. The default prefix option is the empty string.</li>
-	  <li class="B2.Bullet2">A <var>rename-option</var> indicates how individual bindings should be renamed as they are imported. It is a comma-delimited series of entries surrounded by curly braces. Each entry is a pair of names separated by an arrow. The name preceding the arrow is the name of the binding in the module being used, and the name following the arrow is the name of the binding in the module being defined. The default for this option is the empty set.</li>
-	  <li class="B2.Bullet2">An <var>export-option</var> indicates which imported bindings should be reexported from the module being defined. It can be the name <code>all</code>, or a series of comma-delimited names enclosed in curly braces. Each name is the name of the binding in the module being defined as well as the name under which it will be exported. (There is no option to rename on export)  Each binding indicated must have been imported by this use clause. It is allowed for the same name  to appear more than once, as this is sometimes useful for documentation purposes. <code>all </code>indicates that all the bindings imported by this use clause should be exported. The default value for this option is the empty set.</li>
+    <ul>
+      <li><var>module-name</var> is the name of the module being defined. Note that no binding is created for this name. The namespaces of modules, libraries, and bindings are distinct. The module name is scoped within the library containing the module.</li>
+      <li>An <var>export-clause</var>  specifies bindings that are to be exported from the module being defined. Each name is the name of one such binding. These bindings must be defined by a definition in the module being defined. It is an error if any of the bindings were imported from other modules. It is allowed for the same name to appear more than once, since this is sometimes useful for documentation purposes.</li>
+      <li>A <var>create-clause</var> specifies that the named bindings are to be declared owned by and exported from the module being defined. Each name is the name of a binding to declare and export. These bindings must not be defined by a definition in the module being defined, and they must not be imported from another module. They must be defined by a definition in a module that uses the module being defined. It is allowed for the same name to appear more than once, since this is sometimes useful for documentation purposes.</li>
+      <li>Each <var>use-clause</var> describes a set of bindings to be imported from another module. There may be multiple use clauses and there may even be multiple use clauses importing from the same module. If there are multiple use clauses importing from the same module, the bindings imported are the sum of the binding imported by each use clause. Because of renaming, it is possible for the same binding to imported multiple times under different names. This is not an error.<br /><br />Within a use clause, the <var>used-module</var> is the name of the module being used, and the options control which bindings are to be imported from that module, whether and how they should be renamed, and whether they should be reexported from the module being defined. Each of these options applies within the scope of the particular use clause, and does not affect the behavior of other use clauses (even if the other use clauses indicate the same module). The various options  may each appear no more than once in a single use clause. They may appear in any order.
+	<ul>
+	  <li>An <var>import-option</var> describes which bindings should be imported. It can be the name <code>all</code>, or a series of comma-delimited <var>variable-specs</var> enclosed in curly braces. The default is <code>all</code>, indicating that all bindings should be imported. If a series of <var>variable-specs</var> is specified, only the indicated variables are imported.</li>
+	  <li>A <var>variable-spec</var> is a name, or two names separated by an arrow. In the first form, the binding has the same name in the module being used and the module being defined. In the second form the binding is renamed as it is imported. The name preceding the arrow is the name of the binding in the module being used, and the name following the arrow is the name of the binding in the module being defined.</li>
+	  <li> An <var>exclude-option</var> indicates bindings that should not be imported from the module being used. The default is the empty set. This option may only specify a nonempty set if the import option is <code>all</code>.</li>
+	  <li>A <var>prefix-option</var> indicates a prefix to be given to all binding names as they are imported. This option can be overriden for individual bindings by supplying a renaming in a rename option or import option. The default prefix option is the empty string.</li>
+	  <li>A <var>rename-option</var> indicates how individual bindings should be renamed as they are imported. It is a comma-delimited series of entries surrounded by curly braces. Each entry is a pair of names separated by an arrow. The name preceding the arrow is the name of the binding in the module being used, and the name following the arrow is the name of the binding in the module being defined. The default for this option is the empty set.</li>
+	  <li>An <var>export-option</var> indicates which imported bindings should be reexported from the module being defined. It can be the name <code>all</code>, or a series of comma-delimited names enclosed in curly braces. Each name is the name of the binding in the module being defined as well as the name under which it will be exported. (There is no option to rename on export)  Each binding indicated must have been imported by this use clause. It is allowed for the same name  to appear more than once, as this is sometimes useful for documentation purposes. <code>all </code>indicates that all the bindings imported by this use clause should be exported. The default value for this option is the empty set.</li>
 	</ul>
       </li>
     </ul>
-    <pre class="Cv.Code">
+    <pre class="code">
        define module graphics
          use dylan;
          create draw-line,
@@ -533,7 +559,7 @@ end method tune </pre>
              export: all;
        end module dylan-gx; </pre>
     <p class="T1.Text1">The modules created by these module declarations would have access to bindings with the following names:</p>
-    <pre class="Cv.Code">
+    <pre class="code">
 graphics	
        draw-line
        erase-line
@@ -576,108 +602,109 @@ dylan-gx
   </dd>
 </dl>
 <a name="HEADING112-282"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-2019"></a>define library</code>   <span class="attributes-summary">[Definition]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-9-2020"></a><a name="MARKER-2-2021"></a>Defines and names a library, describing the imports and exports of the library.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2019"></a>define library</code>   </span><span class="attributes-summary">[Definition]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-9-2020"></a><a name="MARKER-2-2021"></a>Defines and names a library, describing the imports and exports of the library.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Macro Call:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> <code>define library <i class="parameter Code Cliche">library-name<br />    { export-clause | use-clause } ;*<br />end [ library ] [ library-name ]</i></code></p></dd>
+  <dd class="Cliche"><p><code>define library</code> <var>library-name</var><br />
+      &nbsp;&nbsp;&nbsp;<strong class="re">{</strong> <var>export-clause</var> <strong class="re">|</strong> <var>use-clause</var> <strong class="re">}</strong> <code>;</code><strong class="re">*</strong><br />
+      <code>end</code> <strong class="re">[</strong> <code>library</code> <strong class="re">]</strong> <strong class="re">[</strong> <var>library-name</var> <strong class="re">]</strong></p></dd>
   <dt class="Cliche2"><span>Arguments:</span></dt>
   <dd class="Cliche2">
     <dl>
       <dt><var>library-name</var></dt>
       <dd>
-        <p class="Cliche2"><span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span></p>
+        <p><span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span></p>
       </dd>
-      <dt class="RP.RoutineParam"><var>use-clause</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>use <var>used-library { ,option }*</var></code></p></dd>
-      <dt class="RP.RoutineParam"><var>export-clause</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>export { ordinary-name<em class="BNF"><sub>bnf</sub> } ,*</em></code></p></dd>
-      <dt class="RP.RoutineParam"><var>used-library</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-      <dt class="RP.RoutineParam"><var>option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">import-option<code> |</code></i></p></dd>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">exclude-option<code> |</code></i></p></dd>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">prefix-option<code> |</code></i></p></dd>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <i class="parameter RP.RoutineParam">rename-option<code> |</code></i></p></dd>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <var>export-option</var> </p></dd>
-      <dt class="RP.RoutineParam"><var>import-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>import: all | { { <var>module-spec } ,* }</var></code></p></dd>
-      <dt class="RP.RoutineParam"><var>module-spec</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>name<em class="BNF"><sub>bnf</sub> [ =&gt; name<sub>bnf</sub> ]</em></code></p></dd>
-      <dt class="RP.RoutineParam"><var>exclude-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>exclude: { { name<em class="BNF"><sub>bnf</sub> } ,* }</em></code></p></dd>
-      <dt class="RP.RoutineParam"><var>prefix-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>prefix: string-literal<em class="BNF"><sub>bnf</sub></em></code></p></dd>
-      <dt class="RP.RoutineParam"><var>rename-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>rename: { { name<em class="BNF"><sub>bnf</sub> =&gt; name<sub>bnf</sub> } ,* }</em></code></p></dd>
-      <dt class="RP.RoutineParam"><var>export-option</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <code>export: all | { { name<em class="BNF"><sub>bnf</sub> } ,* }</em></code></p></dd>
+      <dt class="routine-param"><var>use-clause</var></dt>
+      <dd class="routine-param"><p><code>use</code> <var>used-library</var> <strong class="re">{</strong> <code>,</code> <var>option</var> <strong class="re">}*</strong></p></dd>
+      <dt class="routine-param"><var>export-clause</var></dt>
+      <dd class="routine-param"><p><code>export</code> <strong class="re">{</strong> <span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong></p></dd>
+      <dt class="routine-param"><var>used-library</var></dt>
+      <dd class="routine-param"><p><span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt class="routine-param"><var>option</var></dt>
+      <dd class="routine-param"><p>
+	  <var>import-option</var> <strong class="re">|</strong><br />
+	  <var>exclude-option</var> <strong class="re">|</strong><br />
+	  <var>prefix-option</var> <strong class="re">|</strong><br />
+	  <var>rename-option</var> <strong class="re">|</strong><br />
+	  <var>export-option</var></p></dd>
+      <dt class="routine-param"><var>import-option</var></dt>
+      <dd class="routine-param"><p><code>import: all</code> <strong class="re">|</strong> <code>{</code> <strong class="re">{</strong> <var>module-spec</var> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
+      <dt class="routine-param"><var>module-spec</var></dt>
+      <dd class="routine-param"><p><span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">[</strong> <code>=&gt;</code> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">]</strong></p></dd>
+      <dt class="routine-param"><var>exclude-option</var></dt>
+      <dd class="routine-param"><p><code>exclude: {</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
+      <dt class="routine-param"><var>prefix-option</var></dt>
+      <dd class="routine-param"><p><code>prefix:</code> <span class="BNF">string-literal<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt class="routine-param"><var>rename-option</var></dt>
+      <dd class="routine-param"><p><code>rename: {</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <code>=&gt;</code> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
+      <dt class="routine-param"><var>export-option</var></dt>
+      <dd class="routine-param"><p><code>export: all</code> <strong class="re">|</strong> <code>{</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> <code>define library</code> defines a library with the given name. It describes which libraries are used by the library being defined, which modules are imported from the used libraries, and which modules are exported by the library being defined.</p>
+  <dd class="Cliche"><p><code>define library</code> defines a library with the given name. It describes which libraries are used by the library being defined, which modules are imported from the used libraries, and which modules are exported by the library being defined.</p>
     <p class="T1.Text1">Circular use relationships among libraries are not allowed. The graph of the library-uses-library relation must be directed and acyclic.</p>
     <p class="T1.Text1">Like other definitions, library definitions are only allowed at top level. Like all constituents, library definitions are contained in a module. The names of modules being imported and exported by a library definition do not refer to bindings, and are not affected by the environment in which the library definition occurs.</p>
     <p class="T1.Text1">There is no prohibition against macros that expand into library definitions.</p>
-    <ul class="B1.Bullet1">
-      <li class="B1.Bullet1"><var>library-name</var> is the name of the library being defined. Note that no binding is created for this name. The namespaces of libraries, modules, and bindings are distinct. The library name is scoped along with the other library names in the program.</li>
-      <li class="B1.Bullet1">An <var>export-clause</var> specifies modules that are to be exported from the library being defined. Each name is the name of one such module. It is an error if any of the modules were imported from other libraries. It is allowed for the same name to appear more than once, since this is sometimes useful for documentation purposes.</li>
-      <li class="B1.Bullet1">Each <var>use-clause</var> describes a set of modules to be imported from another library. There may be multiple use clauses and there may even be multiple use clauses importing from the same library. If there are multiple use clauses importing from the same library, the modules imported are the sum of the modules imported by each use clause. Because of renaming, it is possible for the same module to imported multiple times under different names. This is not an error.<br /><br />Within a use clause, the <var>used-library</var> is the name of the library being used. The mechanism by which this name is associated with another library is implementation defined.<br /><br />The <var>options</var> control which modules are to be imported from that library, whether and how they should be renamed, and whether they should be reexported from the library being defined. Each of these options applies within the scope of the particular use clause, and does not affect the behavior of other use clauses (even if the other use clauses indicate the same library). The various options  may each appear no more than once in a single use clause. They may appear in any order.
-	<ul class="B2.Bullet2">
-	  <li class="B2.Bullet2">An <var>import-option</var> describes which modules should be imported. It can be the name <code>all</code>, or a series of comma-delimited <var>module-specs</var> enclosed in curly braces. The default is <code>all</code>, indicating that all modules should be imported. If a series of <var>module-specs</var> is specified, only the indicated modules are imported.</li>
-	  <li class="B2.Bullet2">A <var>module-spec</var> is a name, or two names separated by an arrow. In the first form, the module has the same name in the library being used and the library being defined. In the second form the module is renamed as it is imported. The name preceding the arrow is the name of the module in the library being used, and the name following the arrow is the name of the module in the library being defined.</li>
-	  <li class="B2.Bullet2"> An <var>exclude-option</var> indicates modules that should not be imported from the library being used. The default is the empty set. This option may only specify a nonempty set if the import option is <code>all</code>.</li>
-	  <li class="B2.Bullet2">A <var>prefix-option</var> indicates a prefix to be given to all module names as they are imported. This option can be overriden for individual modules by supplying a renaming in the rename option or import option. The default prefix option is the empty string.</li>
-	  <li class="B2.Bullet2">A <var>rename-option</var> indicates how individual modules should be renamed as they are imported. It is a comma-delimited series of entries surrounded by curly braces. Each entry is a pair of names separated by an arrow. The name preceding the arrow is the name of the module in the library being used, and the name following the arrow is the name of the module in the library being defined. The default for this option is the empty set.</li>
-	  <li class="B2.Bullet2">An <var>export-option</var> indicates which imported modules should be reexported from the library being defined. It can be the name <code>all</code>, or a series of comma-delimited names enclosed in curly braces. Each name is the name of the module in the library being defined as well as the name under which it will be exported. (There is no option to rename on export)  Each module indicated must have been imported by this use clause. It is allowed for the same name  to appear more than once, as this is sometimes useful for documentation purposes. <code>all </code>indicates that all the modules imported by this use clause should be exported. The default value for this option is the empty set.</li>
+    <ul>
+      <li><var>library-name</var> is the name of the library being defined. Note that no binding is created for this name. The namespaces of libraries, modules, and bindings are distinct. The library name is scoped along with the other library names in the program.</li>
+      <li>An <var>export-clause</var> specifies modules that are to be exported from the library being defined. Each name is the name of one such module. It is an error if any of the modules were imported from other libraries. It is allowed for the same name to appear more than once, since this is sometimes useful for documentation purposes.</li>
+      <li>Each <var>use-clause</var> describes a set of modules to be imported from another library. There may be multiple use clauses and there may even be multiple use clauses importing from the same library. If there are multiple use clauses importing from the same library, the modules imported are the sum of the modules imported by each use clause. Because of renaming, it is possible for the same module to imported multiple times under different names. This is not an error.<br /><br />Within a use clause, the <var>used-library</var> is the name of the library being used. The mechanism by which this name is associated with another library is implementation defined.<br /><br />The <var>options</var> control which modules are to be imported from that library, whether and how they should be renamed, and whether they should be reexported from the library being defined. Each of these options applies within the scope of the particular use clause, and does not affect the behavior of other use clauses (even if the other use clauses indicate the same library). The various options  may each appear no more than once in a single use clause. They may appear in any order.
+	<ul>
+	  <li>An <var>import-option</var> describes which modules should be imported. It can be the name <code>all</code>, or a series of comma-delimited <var>module-specs</var> enclosed in curly braces. The default is <code>all</code>, indicating that all modules should be imported. If a series of <var>module-specs</var> is specified, only the indicated modules are imported.</li>
+	  <li>A <var>module-spec</var> is a name, or two names separated by an arrow. In the first form, the module has the same name in the library being used and the library being defined. In the second form the module is renamed as it is imported. The name preceding the arrow is the name of the module in the library being used, and the name following the arrow is the name of the module in the library being defined.</li>
+	  <li> An <var>exclude-option</var> indicates modules that should not be imported from the library being used. The default is the empty set. This option may only specify a nonempty set if the import option is <code>all</code>.</li>
+	  <li>A <var>prefix-option</var> indicates a prefix to be given to all module names as they are imported. This option can be overriden for individual modules by supplying a renaming in the rename option or import option. The default prefix option is the empty string.</li>
+	  <li>A <var>rename-option</var> indicates how individual modules should be renamed as they are imported. It is a comma-delimited series of entries surrounded by curly braces. Each entry is a pair of names separated by an arrow. The name preceding the arrow is the name of the module in the library being used, and the name following the arrow is the name of the module in the library being defined. The default for this option is the empty set.</li>
+	  <li>An <var>export-option</var> indicates which imported modules should be reexported from the library being defined. It can be the name <code>all</code>, or a series of comma-delimited names enclosed in curly braces. Each name is the name of the module in the library being defined as well as the name under which it will be exported. (There is no option to rename on export)  Each module indicated must have been imported by this use clause. It is allowed for the same name  to appear more than once, as this is sometimes useful for documentation purposes. <code>all </code>indicates that all the modules imported by this use clause should be exported. The default value for this option is the empty set.</li>
 	</ul>
       </li>
     </ul>
   </dd>
 </dl>
 <a name="HEADING112-313"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-2022"></a>define sealed domain</code>  <span class="attributes-summary">[Definition]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-2-2023"></a><a name="MARKER-9-2024"></a>Restricts the ways in which a generic function and set of types can be extended, thereby enabling additional error checking and compiler optimization.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2022"></a>define sealed domain</code>  </span><span class="attributes-summary">[Definition]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-2-2023"></a><a name="MARKER-9-2024"></a>Restricts the ways in which a generic function and set of types can be extended, thereby enabling additional error checking and compiler optimization.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Macro Call:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> <code>define sealed domain</code> <i class="parameter Cliche">generic-function<code>  ( { type } ,* )</code></i></p></dd>
+  <dd class="Cliche"><p><code>define sealed domain</code> <var>generic-function</var> <code>(</code> <strong class="re">{</strong> <var>type</var> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>)</code></p></dd>
   <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
-      <dt><var>generic-function</var></dt>
-      <dd>
-        <p class="Cliche"><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p>
-      </dd>
-      <dt class="RP.RoutineParam"><var>type</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt class="routine-param"><var>generic-function</var></dt>
+      <dd class="routine-param"><p><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt class="routine-param"><var>type</var></dt>
+      <dd class="routine-param"><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> <code>define sealed domain</code> seals the specified <var>generic-function</var> over the domain indicated by the <var>types</var>. For a complete description of the rules governing <code>define sealed domain</code> and the implications of a <code>define sealed domain</code> definition, see <a href="drm_75.html#MARKER-9-1123" class="Cliche">"Define Sealed Domain" on page 135</a>.</p>
-    <ul class="B1.Bullet1">
-      <li class="B1.Bullet1"><var>generic-function</var> is the name of a module binding containing an explicitly defined generic function.</li>
-      <li class="B1.Bullet1">Each <var>type</var> is an expression, the value of which must be a type. The number of <var>types  </var>must be the same as the number of required arguments accepted by <var>generic-function.</var></li>
+  <dd class="Cliche"><p><code>define sealed domain</code> seals the specified <var>generic-function</var> over the domain indicated by the <var>types</var>. For a complete description of the rules governing <code>define sealed domain</code> and the implications of a <code>define sealed domain</code> definition, see <a href="drm_75.html#MARKER-9-1123" class="Cliche">"Define Sealed Domain" on page 135</a>.</p>
+    <ul>
+      <li><var>generic-function</var> is the name of a module binding containing an explicitly defined generic function.</li>
+      <li>Each <var>type</var> is an expression, the value of which must be a type. The number of <var>types  </var>must be the same as the number of required arguments accepted by <var>generic-function.</var></li>
     </ul>
   </dd>
 </dl>
 <a name="HEADING112-321"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-2-2025"></a>define macro</code> <span class="attributes-summary">[Special Definition]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-2-2026"></a><a name="MARKER-9-2027"></a>Defines a constant module binding containing a macro.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2025"></a>define macro</code> </span><span class="attributes-summary">[Special Definition]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-2-2026"></a><a name="MARKER-9-2027"></a>Defines a constant module binding containing a macro.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Macro Call:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> <code>define macro <var>macro-definition</var></code></p></dd>
+  <dd class="Cliche"><p><code>define macro</code> <var>macro-definition</var></p></dd>
   <dt class="Cliche2"><span>Arguments:</span></dt>
   <dd class="Cliche2">
     <dl>
       <dt><var>macro-definition</var></dt>
       <dd>
-        <p class="Cliche2"><span class="BNF">macro-definition<em class="BNF"><sub>bnf</sub></em></span></p>
+        <p><span class="BNF">macro-definition<em class="BNF"><sub>bnf</sub></em></span></p>
       </dd>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> See <a href="drm_76.html" class="Cliche">Chapter 10, "Macros,"</a> for a complete description of the macro system.</p>
+  <dd class="Cliche"><p>See <a href="drm_76.html" class="Cliche">Chapter 10, "Macros,"</a> for a complete description of the macro system.</p>
     <p class="T1.Text1">Note that <code>define macro</code> is not a defining macro but a special definition. It is not named by a binding, and so it cannot being excluded or renamed using module operations.<a name="MARKER-2-2028"></a></p></dd>
 </dl>
 

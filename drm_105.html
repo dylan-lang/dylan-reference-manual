@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Function Application</title>
 </head>
@@ -125,11 +125,11 @@
 
 <a name="HEADING105-0"></a>
 <a name="UID-Built-In_Functions-421"></a>
-<h1 class="H1.Heading1">Function Application</h1>
+<h1 class="section-title">Function Application</h1>
 <a name="HEADING105-1"></a>
-<h3 class="H4.Heading4"><code><a name="MARKER-9-1680"></a><a name="MARKER-2-1890"></a>apply</code> <span class="attributes-summary">[Function]</span></h3>
-<hr class="H4.Heading4" />
-<p class="SD.ShortDescription"><a name="MARKER-9-1891"></a>Applies a function to arguments.</p>
+<h4 class="item-title"><span class="signature"><code><a name="MARKER-9-1680"></a><a name="MARKER-2-1890"></a>apply</code> </span><span class="attributes-summary">[Function]</span></h4>
+<hr class="item-title" />
+<p class="short-description"><a name="MARKER-9-1891"></a>Applies a function to arguments.</p>
 <dl class="Cliche">
   <dt class="Cliche"><span>Signature:</span></dt>
   <dd class="Cliche">
@@ -143,29 +143,29 @@
     <dl>
       <dt><var>function</var></dt>
       <dd>
-        <p class="Cliche">An instance of <code>&lt;function&gt;</code>.</p>
+        <p>An instance of <code>&lt;function&gt;</code>.</p>
       </dd>
-      <dt class="RP.RoutineParam"><var>argument</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam"> An instance of <code>&lt;object&gt;</code> or, if there are no <var>more-arguments</var>, an instance of <code>&lt;sequence&gt;</code>.</p></dd>
-      <dt class="RP.RoutineParam"><var>more-arguments</var></dt>
-      <dd class="RP.RoutineParam"><p class="RP.RoutineParam">  Instances of <code>&lt;object&gt;</code>. The last <var>more-arguments</var> must be an instance of <code>&lt;sequence&gt;</code>.</p></dd>
+      <dt class="routine-param"><var>argument</var></dt>
+      <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code> or, if there are no <var>more-arguments</var>, an instance of <code>&lt;sequence&gt;</code>.</p></dd>
+      <dt class="routine-param"><var>more-arguments</var></dt>
+      <dd class="routine-param"><p>Instances of <code>&lt;object&gt;</code>. The last <var>more-arguments</var> must be an instance of <code>&lt;sequence&gt;</code>.</p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
     <dl>
       <dt><var>values </var></dt>
       <dd>
-        <p class="Cliche">Instances of <code>&lt;object&gt;</code>.</p>
+        <p>Instances of <code>&lt;object&gt;</code>.</p>
       </dd>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p class="Cliche"> Calls <var>function</var> and returns the values that <var>function</var> returns. The <var>argument</var> and <var>more-arguments</var> supply the arguments to <var>function</var>. All but the last of <var>argument</var> and <var>more-arguments</var> are passed to <var>function</var> individually. The last of <var>argument</var> and <var>more-arguments</var> must be a sequence. This sequence is not passed as a single argument to <var>function</var>. Instead, its elements are taken individually as arguments to <var>function</var>.</p>
+  <dd class="Cliche"><p>Calls <var>function</var> and returns the values that <var>function</var> returns. The <var>argument</var> and <var>more-arguments</var> supply the arguments to <var>function</var>. All but the last of <var>argument</var> and <var>more-arguments</var> are passed to <var>function</var> individually. The last of <var>argument</var> and <var>more-arguments</var> must be a sequence. This sequence is not passed as a single argument to <var>function</var>. Instead, its elements are taken individually as arguments to <var>function</var>.</p>
     <p class="errata right"><a href="drm_errata.html#p351_1"
 			       name="errata_p351_1"><strong>Errata:</strong></a>
       Missing commas. Should be:<br />
       <code>apply(min, 5, 7, list(3, 1, 4))</code></p>
-    <pre class="Cv.Code">
+    <pre class="code">
 apply(max, list(3, 1, 4, 1, 5, 9))
   &rArr;  9
 apply(min 5, 7 list(3, 1, 4))

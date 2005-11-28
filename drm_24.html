@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Naming Conventions</title>
 </head>
@@ -125,12 +125,12 @@
 
 <a name="HEADING24-0"></a>
 <a name="UID-Syntax-1171"></a>
-<h1 class="H1.Heading1"><a name="MARKER-2-330"></a>Naming Conventions</h1>
+<h1 class="section-title"><a name="MARKER-2-330"></a>Naming Conventions</h1>
 <p class="T1.Text1">Several conventions for naming module bindings help programmers identify the purposes of bindings. In general, the names of <a name="MARKER-2-331"></a>bindings do not affect the semantics of a program, but are simply used to improve <a name="MARKER-2-332"></a>readability. (The exceptions to this rule are the "<code>-definer</code>" suffix used by definition macros, and the "<code>-setter</code>" suffix, described later in this section.)</p>
-<ul class="B1.Bullet1">
-<li class="B1.Bullet1">Module bindings used to hold <a name="MARKER-2-333"></a>types begin and end with <a name="MARKER-2-334"></a>angle brackets.</li>
+<ul>
+<li>Module bindings used to hold <a name="MARKER-2-333"></a>types begin and end with <a name="MARKER-2-334"></a>angle brackets.</li>
 </ul>
-<pre class="Cv.Code">
+<pre class="code">
 &lt;window&gt;
 &lt;object&gt;
 &lt;character&gt;
@@ -138,41 +138,41 @@
 &lt;stream&gt;
 &lt;list&gt;
 </pre>
-<ul class="B1.Bullet1">
-<li class="B1.Bullet1"><a name="MARKER-2-335"></a>Variable module bindings begin and end with <a name="MARKER-2-336"></a>asterisks. </li>
+<ul>
+<li><a name="MARKER-2-335"></a>Variable module bindings begin and end with <a name="MARKER-2-336"></a>asterisks. </li>
 </ul>
-<pre class="Cv.Code">
+<pre class="code">
 *parse-level*
 *incremental-search-string*
 *machine-state*
 *window-count*
 </pre>
-<ul class="B1.Bullet1">
-<li class="B1.Bullet1">Program <a name="MARKER-2-337"></a>constants begin with a <a name="MARKER-2-338"></a>dollar sign.</li>
+<ul>
+<li>Program <a name="MARKER-2-337"></a>constants begin with a <a name="MARKER-2-338"></a>dollar sign.</li>
 </ul>
-<pre class="Cv.Code">
+<pre class="code">
 $pi
 $end-of-file
 </pre>
-<ul class="B1.Bullet1">
-<li class="B1.Bullet1">The names of most <a name="MARKER-2-339"></a>predicate functions end with a <a name="MARKER-2-340"></a>question mark. Predicates are functions that return a true or false value.</li>
+<ul>
+<li>The names of most <a name="MARKER-2-339"></a>predicate functions end with a <a name="MARKER-2-340"></a>question mark. Predicates are functions that return a true or false value.</li>
 </ul>
-<pre class="Cv.Code">
+<pre class="code">
 subclass?	
 even?
 instance?	
 </pre>
-<ul class="B1.Bullet1">
-<li class="B1.Bullet1"><a name="MARKER-2-341"></a><a name="MARKER-9-342"></a>Operations that return a value similar to one of their arguments and that also destructively modify the argument end in a <code><a name="MARKER-2-343"></a>!</code>. (It will often also be the case that destructive and non-destructive variations of the function exist.) <code>!</code> isn't a universal warning that an operation is destructive. Destructive functions that return other values (like <code>-setter</code> functions and <code>pop</code>) don't need to use the <code>!</code> convention.</li>
+<ul>
+<li><a name="MARKER-2-341"></a><a name="MARKER-9-342"></a>Operations that return a value similar to one of their arguments and that also destructively modify the argument end in a <code><a name="MARKER-2-343"></a>!</code>. (It will often also be the case that destructive and non-destructive variations of the function exist.) <code>!</code> isn't a universal warning that an operation is destructive. Destructive functions that return other values (like <code>-setter</code> functions and <code>pop</code>) don't need to use the <code>!</code> convention.</li>
 </ul>
-<pre class="Cv.Code">
+<pre class="code">
 reverse!
 sort!
 </pre>
-<ul class="B1.Bullet1">
-<li class="B1.Bullet1"><a name="MARKER-2-344"></a><a name="MARKER-2-345"></a>Operations that retrieve a value from a location are called <strong class="B1.Bullet1"><a name="MARKER-2-346"></a>getters</strong>. Operations that store into a location are called <strong class="B1.Bullet1"><a name="MARKER-2-347"></a>setters</strong>. In general, getters and setters come in pairs. Setter binding names are derived by appending "<code>-setter</code>" to the corresponding getter binding name. This convention is used to generate setter names automatically, and it is used by <code>:=</code>, the assignment operator, to find the setter that corresponds to a given getter.</li>
+<ul>
+<li><a name="MARKER-2-344"></a><a name="MARKER-2-345"></a>Operations that retrieve a value from a location are called <strong><a name="MARKER-2-346"></a>getters</strong>. Operations that store into a location are called <strong><a name="MARKER-2-347"></a>setters</strong>. In general, getters and setters come in pairs. Setter binding names are derived by appending "<code>-setter</code>" to the corresponding getter binding name. This convention is used to generate setter names automatically, and it is used by <code>:=</code>, the assignment operator, to find the setter that corresponds to a given getter.</li>
 </ul>
-<pre class="Cv.Code">
+<pre class="code">
 element      element-setter
 size         size-setter
 color        color-setter

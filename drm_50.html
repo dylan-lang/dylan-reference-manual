@@ -45,7 +45,7 @@
   
   <!-- Stylesheet -->
   
-  <link title="main style sheet" rel="stylesheet" href="drm.css" type="text/css" />
+  <link title="Normal" rel="stylesheet" href="drm.css" type="text/css" />
 
   <title>The Dylan Reference Manual: Method Dispatch</title>
 </head>
@@ -118,58 +118,76 @@
 
 <a name="HEADING50-0"></a>
 <a name="UID-Functions-2196"></a>
-<h1 class="H1.Heading1"><a name="MARKER-9-844"></a>Method Dispatch</h1>
-<p class="T1.Text1"><a name="MARKER-2-845"></a>When a <a name="MARKER-2-846"></a>generic function is called, the generic function uses the types of the arguments to determine which methods to call. This process is called <strong class="Bold T1.Text1"><dfn>method dispatch</dfn></strong>.</p>
+<h1 class="section-title"><a name="MARKER-9-844"></a>Method Dispatch</h1>
+<p class="T1.Text1"><a name="MARKER-2-845"></a>When a <a name="MARKER-2-846"></a>generic function is called, the generic function uses the types of the arguments to determine which methods to call. This process is called <strong class="Bold"><dfn>method dispatch</dfn></strong>.</p>
 <p class="T1.Text1">Method dispatch occurs in three phases. First, all the <a name="MARKER-2-847"></a><a name="MARKER-2-848"></a>applicable methods are selected. Next, the applicable methods are sorted by specificity. Finally, the most specific method is called.</p>
 <a name="HEADING50-3"></a>
-<h3 class="H3.Heading3"><a name="MARKER-9-849"></a>Method Specificity<strong class="H3.Heading3"></strong></h3>
+<h3 class="sub-subsection-title"><a name="MARKER-9-849"></a>Method Specificity<strong class="H3.Heading3"></strong></h3>
 <p class="T1.Text1"><a name="MARKER-2-850"></a>For any two methods <var>A</var> and <var>B</var> that are applicable to a given generic function call, one method may be <strong class="T1.Text1">more specific than</strong> the other, or the methods may be <strong class="T1.Text1"><a name="MARKER-2-851"></a>ambiguous methods</strong>.</p>
 <p class="T1.Text1">To order two methods <var>A</var> and <var>B</var> with respect to a particular set of arguments, compare each of <var>A</var>'s specializers with <var>B</var>'s specializer in the corresponding position using the argument that was supplied for that position. The comparison works in the following way.</p>
-<ul class="B1.Bullet1">
-  <li class="B1.Bullet1"><a name="MARKER-2-852"></a><a name="MARKER-2-853"></a>If the specializers are type equivalent, then <var>A</var> and <var>B</var> are unordered at the current argument position. That is, this argument position provides no information about the order of the two methods.</li>
-  <li class="B1.Bullet1">Otherwise, if the specializer of <var>A</var> is a subtype of the specializer of <var>B</var>, then <var>A</var> precedes <var>B</var> at the current argument position.</li>
-  <li class="B1.Bullet1">Otherwise, if both specializers are classes, then their order in the class precedence list of the argument's class is used to determine which is more specific. If <var>A</var>'s specializer precedes <var>B</var>'s specializer in the class precedence list of the argument's class, then <var>A</var> precedes <var>B</var> at the current argument position.</li>
-  <li class="B1.Bullet1">Otherwise, the methods are unordered in the current argument position.</li>
+<ul>
+  <li><a name="MARKER-2-852"></a><a name="MARKER-2-853"></a>If the specializers are type equivalent, then <var>A</var> and <var>B</var> are unordered at the current argument position. That is, this argument position provides no information about the order of the two methods.</li>
+  <li>Otherwise, if the specializer of <var>A</var> is a subtype of the specializer of <var>B</var>, then <var>A</var> precedes <var>B</var> at the current argument position.</li>
+  <li>Otherwise, if both specializers are classes, then their order in the class precedence list of the argument's class is used to determine which is more specific. If <var>A</var>'s specializer precedes <var>B</var>'s specializer in the class precedence list of the argument's class, then <var>A</var> precedes <var>B</var> at the current argument position.</li>
+  <li>Otherwise, the methods are unordered in the current argument position.</li>
 </ul>
-<p class="T1.Text1"><a name="MARKER-2-854"></a>The method <var>A</var> is more specific than the method <var>B</var> if and only if <var>A</var> precedes <var>B </var> in at least one argument position, and <var>B</var> does not precede <var>A</var> in any argument position. Similarly, <var>B</var> is more specific than <var>A</var> if and only if <var>B</var> precedes<var> A </var> in at least one argument position, and <var>A</var> does not precede <var>B</var> in any argument position. If neither of these cases apply then <var>A</var> and <var>B</var> are ambiguous methods.</p>
-<p class="T1.Text1"><a name="MARKER-2-855"></a>When the applicable methods are sorted by specificity, the sorted list is divided into two parts, each possibly empty. The first part contains methods that are more specific than every method that follows them. The second part (which cannot itself be sorted) begins at the first point of ambiguity; there are at least two methods that could equally well go first in the second part. When a generic function is called, if the first part of the sorted applicable methods is empty then an error is signaled. Similarly, if the last method in the first part attempts to call next-method, an error is signaled.</p>
+<p class="T1.Text1"><a name="MARKER-2-854"></a>The method <var>A</var> is more specific than the
+  method <var>B</var> if and only if <var>A</var> precedes <var>B</var> in at least one argument
+  position, and <var>B</var> does not precede <var>A</var> in any argument
+  position. Similarly, <var>B</var> is more specific than <var>A</var> if and only if <var>B</var>
+  precedes <var>A</var> in at least one argument position, and <var>A</var> does not
+  precede <var>B</var> in any argument position. If neither of these cases apply then <var>A</var>
+  and <var>B</var> are ambiguous methods.</p>
+<p class="T1.Text1"><a name="MARKER-2-855"></a>When the applicable methods are sorted by
+  specificity, the sorted list is divided into two parts, each possibly empty. The first part
+  contains methods that are more specific than every method that follows them. The second part
+  (which cannot itself be sorted) begins at the first point of ambiguity; there are at least two
+  methods that could equally well go first in the second part. When a generic function is called, if
+  the first part of the sorted applicable methods is empty then an error is signaled. Similarly, if
+  the last method in the first part attempts to call next-method, an error is signaled.</p>
 <p class="T1.Text1">Consider the following class definitions:</p>
-<pre class="Cv.Code">
+<pre class="code">
 define class &lt;sentient&gt; (&lt;life-form&gt;) end class;
+
 define class &lt;bipedal&gt; (&lt;life-form&gt;) end class;
+
 define class &lt;intelligent&gt; (&lt;sentient&gt;) end class;
+
 define class &lt;humanoid&gt; (&lt;bipedal&gt;) end class;
+
 define class &lt;vulcan&gt; (&lt;intelligent&gt;, &lt;humanoid&gt;) end class; 
 </pre>
 <p class="T1.Text1">Computing the class precedence list for <code>&lt;vulcan&gt; </code>yields </p>
-<pre class="Cv.Code">
+<pre class="code">
 #(&lt;vulcan&gt;,&lt;intelligent&gt;,&lt;sentient&gt;,&lt;humanoid&gt;,&lt;bipedal&gt;,&lt;life-form&gt;)
 </pre>
 <p class="T1.Text1">The class precedence lists computed for two different classes may have different precedence orders for some intermediate superclasses. This is not a problem as long as there is no class that inherits from both classes. For example, we could define a class <code>&lt;human&gt; </code>as follows:</p>
-<pre class="Cv.Code">
+<pre class="code">
 define class &lt;human&gt; (&lt;humanoid&gt;, &lt;intelligent&gt;) end class;
 </pre>
 <p class="T1.Text1">For the class <code>&lt;human&gt;</code> defined as above, the class precedence list would be</p>
-<pre class="Cv.Code">
+<pre class="code">
 #(&lt;human&gt;,&lt;humanoid&gt;,&lt;bipedal&gt;,&lt;intelligent&gt;,&lt;sentient&gt;,&lt;life-form&gt;)
 </pre>
 <p class="T1.Text1">It is not a problem that the two class precedence lists give different orders to some of the intermediate superclasses such as<code> &lt;bipedal&gt;</code> and <code>&lt;sentient&gt;</code>  as long as no class is added that inherits from both <code>&lt;vulcan&gt;</code> and <code>&lt;human&gt;</code>.</p>
 <p class="T1.Text1">When sorting the applicable methods, each specializer needs to be viewed with respect to the class precedence list for the class of the argument passed to the generic function in that argument position. For example, given the following definitions</p>
-<pre class="Cv.Code">
+<pre class="code">
 define method psychoanalyze (being :: &lt;intelligent&gt;)
   &hellip;
 end method;
+
 define method psychoanalyze (being :: &lt;humanoid&gt;) 
   &hellip;
 end method;
 </pre>
 <p class="T1.Text1">calling the generic function <code>psychoanalyze </code>on a being of type <code>&lt;human&gt;</code> would cause the method for <code>&lt;humanoid&gt;</code> to be called first, while calling the generic function on a being of type <code>&lt;vulcan&gt;</code> would cause the method for <code>&lt;intelligent&gt;</code> to be called first.</p>
 <p class="T1.Text1"><a name="MARKER-2-856"></a>The order of arguments is not significant when computing method specificity. Given the above class definitions, the following methods are unambiguous when their generic function is called on two beings of type <code>&lt;vulcan&gt; </code>or two beings of type <code>&lt;human&gt;</code>, but the methods are ambiguous when the call includes one being of type <code>&lt;vulcan&gt; </code>and one of type <code>&lt;human&gt;</code>.</p>
-<pre class="Cv.Code">
+<pre class="code">
 define method superior-being (a :: &lt;intelligent&gt;,
                               b :: &lt;intelligent&gt;) 
   most-intelligent-being (a, b)
   end method;
+
 define method superior-being (a :: &lt;humanoid&gt;,
                               b :: &lt;humanoid&gt;)
   best-looking-being (a, b)
@@ -177,18 +195,18 @@ define method superior-being (a :: &lt;humanoid&gt;,
 </pre>
 <a name="HEADING50-32"></a>
 <a name="UID-Functions-2171"></a>
-<h2 class="H2.Heading2"><a name="MARKER-9-858"></a>Calling Less Specific Methods</h2>
-<p class="T1.Text1"><a name="MARKER-2-859"></a>In many situations, a subtype wants to modify the behavior of a method, rather than replace it completely; it wants to perform some work but also use the inherited behavior. This can be accomplished with <strong class="bold T1.Text1"><dfn>next-method</dfn></strong>. Next-method is a function that, when called, invokes the next most specific method applicable in the generic function. The next-method is the value of the <code>#next</code> parameter. Normally this parameter is named <code>next-method</code>, though it can have other names at the programmer's discretion.</p>
+<h2 class="subsection-title"><a name="MARKER-9-858"></a>Calling Less Specific Methods</h2>
+<p class="T1.Text1"><a name="MARKER-2-859"></a>In many situations, a subtype wants to modify the behavior of a method, rather than replace it completely; it wants to perform some work but also use the inherited behavior. This can be accomplished with <strong class="bold"><dfn>next-method</dfn></strong>. Next-method is a function that, when called, invokes the next most specific method applicable in the generic function. The next-method is the value of the <code>#next</code> parameter. Normally this parameter is named <code>next-method</code>, though it can have other names at the programmer's discretion.</p>
 <p class="T1.Text1">One can think of next-method as invoking the method that would have been called if the current method did not exist.</p>
 <p class="T1.Text1">If there are no more methods available, the next-method parameter will be bound to the value <code>#f</code> instead of to a method.</p>
 <a name="HEADING50-36"></a>
-<h3 class="H3.Heading3">Passing Different Arguments to Next-Method</h3>
+<h3 class="sub-subsection-title">Passing Different Arguments to Next-Method</h3>
 <p class="T1.Text1">In the usual case, next-method is called with no arguments. This indicates that the next-method should be passed the same arguments that were supplied to the current method.</p>
 <p class="T1.Text1">It is valid to supply arguments, including different arguments, when calling next-method. However, if you pass different arguments, the new arguments must result in the same ordered sequence of applicable methods as the original arguments. Otherwise, the program behavior is undefined.</p>
 <p class="T1.Text1"><a name="MARKER-2-860"></a>In some cases, the methods in a generic function accept different keyword arguments. In such cases, it's convenient for the methods also to accept a rest parameter. That way, all the keyword/value pairs passed to the generic function are captured in the rest parameter. By using <code>apply</code>, the next-method can be invoked with the complete set of arguments. (This technique is only necessary, of course, when the method calls next-method and passes arguments explicitly.)</p>
 <p class="T1.Text1"><a name="MARKER-2-861"></a>As usual, if there are duplicates of a given keyword argument, the leftmost occurrence is used. This allows keyword arguments to be easily overridden.</p>
 <a name="HEADING50-41"></a>
-<h3 class="H3.Heading3">The Next-Method Parameter</h3>
+<h3 class="sub-subsection-title">The Next-Method Parameter</h3>
 <p class="T1.Text1">The value of the next-method parameter is supplied by the generic function dispatch mechanism. When a method is called by its generic function, the generic function dispatch mechanism automatically passes the appropriate value for next-method. There is no way for a user program to specify the next-method argument when calling a method.</p>
 <p class="T1.Text1">If you create a method directly (i.e., with <code>method</code> rather than with <code>define method</code>) and you want this method to accept a next-method parameter, then you should insert a <code>#next</code> into the parameter list explicitly. You would do this if you are creating a method that you plan to add to a generic function, and you want this method to be able to call next-method. You can also supply the next-method parameter when using <code>define method</code>, in cases where you want to give the parameter a different name.<a name="MARKER-2-862"></a><a name="MARKER-2-863"></a></p>
 
