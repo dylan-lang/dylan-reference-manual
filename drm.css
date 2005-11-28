@@ -97,7 +97,7 @@ body.section-start #section-name { display: none }
    Hide horizontal rules that are in the page header. They're used to
    provide separation in the absence of CSS.
 */
-.wm-div-headers hr { display: none }
+#header hr { display: none }
 
 
 
@@ -268,9 +268,16 @@ body.section-start #section-name { display: none }
 
 
 
+/* Footnotes */
+
+#footnotes { margin-top: 4em; margin-left: -5em; font-size: smaller }
+#footnotes hr { display: none }
+
+
+
 /* Page Footer */
 
-.wm-div-footers { clear: both; padding-top: 10em; font-size: smaller  }
+#footer { clear: both; padding-top: 10em; font-size: smaller  }
 
 /*
    Hide navigation footer; it is only useful when floating navigation
@@ -278,7 +285,7 @@ body.section-start #section-name { display: none }
 */
 
 #navigation-footer, /* migrate tags to use this id, then delete the second selector */
-.wm-div-footers > address + p.footer { display: none }
+#footer > address + p.footer { display: none }
 
 
 
@@ -435,7 +442,7 @@ p[class~="Modelsw/Sub"] { margin-top: 10em }
 */
 
 /* the copyrights page goes out to the left edge of the paper and has a small font */
-div#body { margin-left: -8em; font-size: smaller }
+div#content.copyrights { margin-left: -8em; font-size: smaller }
 
 /* Warranty */
 div#warranty { padding-top: 1em; padding-bottom: 1em; font-weight: bold } 
@@ -457,7 +464,7 @@ p[class~="3LOC"] { clear: both; float: right; text-align: center; margin-top: -1
   horizontal rule is rendered at the same (very narrow) width as the "CIP" float
   above it, despite the fact that we have a "clear: both" on the surrounding DIV.
 */
-div.wm-div-footers > hr:first-child { clear:both; width: 100%  }
+div#footer > hr:first-child { clear:both; width: 100%  }
 
 
 /*
@@ -533,11 +540,24 @@ ol                 { padding-left: 1.5em;  margin-left: 0 }
 
 ul                 { list-style-type: square }
 ul ul,    ol ul    { list-style-type: circle }
-ul ul ul, ol ul ul { list-style-type: disc   }
 
 li                 { margin-top: 0.75em }
 li li              { margin-top: 0.5em  }
 
+/* The DRM uses hollow squares for second level lists. Do this by replacing
+   the item marker with a Unicode "square" character. */
+ul ul,
+ol ul
+                   {
+                     list-style-type: none
+                   }
+ul ul li:before,
+ol ul li:before
+                   {
+                     float: left;
+                     margin-left: -1.15em;
+                     content: "\25A1";
+                   }
 
 /* Contents, Index and navigation lists are formatted more compactly. */
 
@@ -572,11 +592,19 @@ ul.back-matter     {
                      list-style-type: none;
                      font-size: smaller
                    }
+#navigation-TOC > ul > li > ul li:before,
+#navigation-TOC > ol > li > ul li:before
+                   { content: "" }
 #navigation-TOC > ul > li ul > li > ul,
 #navigation-TOC > ol > li ul > li > ul,
 #navigation-TOC > ul > li ul > li > ul > li > ul,
 #navigation-TOC > ol > li ul > li > ul > li > ul
                    { list-style-type: none }
+#navigation-TOC > ul > li ul > li > ul li:before,
+#navigation-TOC > ol > li ul > li > ul li:before,
+#navigation-TOC > ul > li ul > li > ul > li > ul li:before,
+#navigation-TOC > ol > li ul > li > ul > li > ul li:before
+                   { content: "" }
 
 /* appendices are labeled with letters; the errata section has a distinguishing bullet */
 ol.appendices      { list-style-type: upper-latin }
@@ -607,6 +635,12 @@ ul.page-toc, ul.page-toc ul
                      margin-top: 0;
                      list-style-type: none;
                    }
+ul.TOC li:before,      ul.TOC ul li:before,
+ul.index li:before,    ul.index ul li:before,
+ul.page-toc li:before, ul.page-toc ul li:before
+                   { content: ""; }
+
+/* Don't indent the first level of TOC and index lists */
 ul.TOC,
 ul.index           { padding-left: 0 }
 
@@ -643,42 +677,42 @@ dl p { border-left: 2px solid red }
 */
 
 /* top-level DT outdent/small/bold */
-.wm-div-body > dl.Cliche > dt
+#content > dl.Cliche > dt
                {
                  float: left; margin-left: -7em;
                }
 /* make the section label smaller/bold;
    doing this with a nested SPAN keeps the baselines aligned */
-.wm-div-body > dl.Cliche > dt > span
+#content > dl.Cliche > dt > span
                {
                  font: bold smaller sans-serif;
                }
-.wm-div-body > dl.Cliche > dd      { margin-left: 0; margin: 1em auto }
+#content > dl.Cliche > dd      { margin-left: 0; margin: 1em auto }
 /* Why is this here? It causes some paragraphs to abut the text above. */
-.wm-div-body > dl.Cliche > dd > p  {  margin-top: 0 }
+#content > dl.Cliche > dd > p  {  margin-top: 0 }
 
 /* second-level DTs outdent and have a fixed width */
-.wm-div-body > dl.Cliche > dd > dl > dt
+#content > dl.Cliche > dd > dl > dt
                {
                  float: left; padding-right: 0.5em;
                }
-.wm-div-body > dl.Cliche > dd > dl > dd
+#content > dl.Cliche > dd > dl > dd
                {
                  margin-left: 9em;
                }
 
 /* third-level DTs */
-.wm-div-body > dl.Cliche > dd > dl > dd > dl > dt
+#content > dl.Cliche > dd > dl > dd > dl > dt
                {
                  float: left; padding-right: 0.5em;
                }
-.wm-div-body > dl.Cliche > dd > dl > dd > dl > dd
+#content > dl.Cliche > dd > dl > dd > dl > dd
                {
                  margin-left: 6em;
                }
 
 /* less space between lines within lower-level definition lists */
-.wm-div-body > dl.Cliche > dd > dl > dd > p { margin: 0.5em auto; }
+#content > dl.Cliche > dd > dl > dd > p { margin: 0.5em auto; }
 
 
 /* Glossary definitions place the term and definition close together, flush left */
