@@ -32,9 +32,9 @@ p.errata.left {
 	 width: 7.5em;
 	 }
 /*
-   When printing, Firefox (as of 1.5 RC2) places all the absolutely
-   positioned elements on pages two and later on top of each other on the
-   first page. As a workaround, use a float instead.
+   When printing, Firefox (as of 1.5) places all the absolutely positioned
+   elements on pages two and later on top of each other on the first
+   page. As a workaround, use a float instead.
 
    NOTE: We could simplify things and just use 'float: left' for the
    onscreen display, as well; however, in Safari (as of 2.0.2) the links in
@@ -175,12 +175,12 @@ body.section-start #section-name { display: none }
                        color: #606; font: bold 1em "Gill Sans";
                      }
 
-  /*
-    I think this is supposed to affect the size of the "content:" text,
-    below, but it doesn't in Safari/OmniWeb/WebCore; it works in
-    FireFox. So instead, we explicitly specify the font size where the
-    content text is generated, below.
-  */
+/*
+   I think this is supposed to affect the size of the "content:" text,
+   below, but it doesn't in Safari/OmniWeb/WebCore; it works in FireFox. So
+   instead, we explicitly specify the font size where the content text is
+   generated, below.
+*/
 /*  #basic-navigation *:first-line { font-size: smaller } */
 
   /* links */
@@ -551,12 +551,22 @@ ol ul
                    {
                      list-style-type: none
                    }
-ul ul li:before,
-ol ul li:before
+#content ul ul li:before,
+#content ol ul li:before
                    {
                      float: left;
-                     margin-left: -1.15em;
-                     content: "\25A1";
+                     margin-left: -1.15em; /* The exact offset used by Safari (as of 2.0.2) */
+                     content: "\25AB"; /* U+25AB WHITE SMALL SQUARE */
+
+		     /*
+                        Firefox (as of 1.5) ignores 'float: left', so we
+                        need to add a right margin to separate the marker
+                        from the text. This margin is only an
+                        approximation; browsers that implement float will
+                        position the text precisely.
+                     */
+                     
+                     margin-right: 0.6em;
                    }
 
 /* Contents, Index and navigation lists are formatted more compactly. */
@@ -635,10 +645,20 @@ ul.page-toc, ul.page-toc ul
                      margin-top: 0;
                      list-style-type: none;
                    }
-ul.TOC li:before,      ul.TOC ul li:before,
-ul.index li:before,    ul.index ul li:before,
-ul.page-toc li:before, ul.page-toc ul li:before
-                   { content: ""; }
+/* "#content" is necessary for these selectors in order for ul.TOC and
+   ul.index to override the global "#content ul" settings in Firefox (1.5);
+   "#content" can be omitted in Safari (as of 2.0.2). I don't know which is
+   correct, but it's not a big deal to include the id in the selector; it
+   just would have been nice to simplify these selectors and make them
+   match the surrounding ones. */
+#content ul.TOC li:before,   #content ul.TOC ul li:before,
+#content ul.index li:before, #content ul.index ul li:before,
+ul.page-toc li:before,       ul.page-toc ul li:before
+                   {
+                     float: none;
+                     margin: 0;
+                     content: "";
+                   }
 
 /* Don't indent the first level of TOC and index lists */
 ul.TOC,
