@@ -505,7 +505,7 @@ end select<a name="MARKER-2-2051"></a> </pre>
       <li>Execute the expressions that are executed just once, in left to right order as they appear in the <code>for</code> statement. These expressions include the types of all the bindings, and the expressions <var>init-value</var>, <var>collection</var>, <var>start</var>, <var>bound</var>, and <var>increment</var>. If the value of <var>collection</var> is not a collection, an error is signaled. The default value for <var>increment</var> is <code>1</code>.</li>
       <li>Create the iteration bindings of explicit step and numeric clauses.
 	<ul>
-	  <li> For each explicit step clause, create the binding for the value of <var>init-value</var>. If the binding is typed and the value is not of the specified type, signal an error.</li>
+	  <li>For each explicit step clause, create the binding for the value of <var>init-value</var>. If the binding is typed and the value is not of the specified type, signal an error.</li>
 	  <li>For each numeric clause, create the binding for the value of <var>start</var>. If the binding is typed and the value is not of the specified type, signal an error.</li>
 	</ul>
       </li>
@@ -521,7 +521,7 @@ end select<a name="MARKER-2-2051"></a> </pre>
       <li>Obtain the next values for explicit step and numeric clauses. Values are obtained in left to right order, in the environment produced by step 6.
 	<ul>
 	  <li>For each explicit step clause, execute <var>next-value</var>.</li>
-	  <li> For each numeric clause, add the <var>increment</var> to the current value of the binding, using <code>+</code>.</li>
+	  <li>For each numeric clause, add the <var>increment</var> to the current value of the binding, using <code>+</code>.</li>
 	</ul>
       </li>
       <li>Create the iteration bindings of explicit step and numeric clauses for the values obtained in step 7. For each clause, if a binding type is supplied and the next value for that clause is not of the specified type, signal an error. Fresh bindings are created each time through the loop (i.e., the binding is not assigned the new value). After the bindings have been created, go to step 3.</li>
