@@ -547,10 +547,7 @@ li li              { margin-top: 0.5em  }
 /* The DRM uses hollow squares for second level lists. Do this by replacing
    the item marker with a Unicode "square" character. */
 ul ul,
-ol ul
-                   {
-                     list-style-type: none
-                   }
+ol ul              { list-style-type: none }
 #content ul ul li:before,
 #content ol ul li:before
                    {
@@ -568,6 +565,13 @@ ol ul
                      
                      margin-right: 0.6em;
                    }
+
+/* There's a second-level list in the Macros chapter on pages 164-165 that
+   has no first-level items. I'm not sure whether this is intentional or a
+   layout error, but for now, we'll maintain parity with the printed
+   DRM. We do this by not marking the first-level list item with a
+   bullet. */
+ul.no-bullet       { list-style-type: none }
 
 /* Contents, Index and navigation lists are formatted more compactly. */
 
