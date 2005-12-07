@@ -124,17 +124,17 @@
 <p class="T1.Text1"><a name="MARKER-2-1263"></a>Note that using unparsed token sequences as templates allows a macro expansion to contain macro calls without creating any inter-dependencies between macros. Since the template is not parsed at macro definition time, any macros called in the template do not have to be defined first, and macros can be compiled independently of each other. This simplifies the implementation at the minor cost of deferring some error checking from when a macro is defined until the time when the macro is called.</p>
 <p class="T1.Text1">The grammar for templates is the definition of <var>template </var> in <a href="drm_118.html#MARKER-9-2119" class="T1.Text1">"Templates" on page 429</a>.</p>
 <p class="T1.Text1">All <var>template-elements</var>  other than <var>substitution</var>  are copied directly into the macro expansion. The various kinds of <var>substitution</var>  insert something else into the macro expansion, as follows:</p>
-<dl class="routine-param">
-  <dt class="routine-param"><code>?</code> <em class="BNFCaps">name</em></dt>
-  <dd class="routine-param"><p>The fragment bound to the pattern variable named <em class="BNFCaps">name</em>.</p></dd>
-  <dt class="routine-param"><var>name-prefix<em><sub>opt</sub></em></var> <code>?</code> <var>name-string-or-symbol</var> <var>name-suffix<em><sub>opt</sub></em></var></dt>
-  <dd class="routine-param"><p>The fragment bound to the pattern variable named <var>name-string-or-symbol</var>, converted to a <em class="BNFCaps">string</em> or <em class="BNFCaps">symbol</em> and/or concatenated with a prefix and/or suffix. Note that this rule applies only when the first rule does not. The fragment must be a <em class="BNFCaps">name</em>. Concatenate the prefix, if any, the characters of the fragment, and the suffix, if any. The alphabetic case of the characters of the fragment is unspecified. Convert this to the same grammatical type (<em class="BNFCaps">name</em>, <em class="BNFCaps">string</em>, or <em class="BNFCaps">symbol</em>) as <var>name-string-or-symbol</var>. When the result is a <em class="BNFCaps">name</em>, its hygiene context is the same as that of the fragment.</p></dd>
-  <dt class="routine-param"><code>??</code> <em class="BNFCaps">name</em> <var>separator<em><sub>opt</sub></em></var> <code>...</code></dt>
-  <dd class="routine-param"><p>The sequence of fragments bound to the pattern variable named <em class="BNFCaps">name</em>, with <var>separator</var> inserted between each pair of fragments. The pattern variable must have been bound by a <code>??</code> <var>pattern-keyword.</var> <var>Separator</var> can be a binary operator, comma, or semicolon. If the size of the sequence is 1 or <var>separator</var> is omitted, no separator is inserted. If the sequence is empty, nothing is inserted.</p></dd>
-  <dt class="routine-param"><code>...</code></dt>
-  <dd class="routine-param"><p>The fragment bound to the pattern variable that names this rule set; this is only valid in an auxiliary rule set.</p></dd>
-  <dt class="routine-param"><code>?=</code> <em class="BNFCaps">name</em></dt>
-  <dd class="routine-param"><p>A reference to <em class="BNFCaps">NAME</em>, in the lexical context where the macro was called.</p></dd>
+<dl>
+  <dt><code>?</code> <em class="BNFCaps">name</em></dt>
+  <dd><p>The fragment bound to the pattern variable named <em class="BNFCaps">name</em>.</p></dd>
+  <dt><var>name-prefix<em><sub>opt</sub></em></var> <code>?</code> <var>name-string-or-symbol</var> <var>name-suffix<em><sub>opt</sub></em></var></dt>
+  <dd><p>The fragment bound to the pattern variable named <var>name-string-or-symbol</var>, converted to a <em class="BNFCaps">string</em> or <em class="BNFCaps">symbol</em> and/or concatenated with a prefix and/or suffix. Note that this rule applies only when the first rule does not. The fragment must be a <em class="BNFCaps">name</em>. Concatenate the prefix, if any, the characters of the fragment, and the suffix, if any. The alphabetic case of the characters of the fragment is unspecified. Convert this to the same grammatical type (<em class="BNFCaps">name</em>, <em class="BNFCaps">string</em>, or <em class="BNFCaps">symbol</em>) as <var>name-string-or-symbol</var>. When the result is a <em class="BNFCaps">name</em>, its hygiene context is the same as that of the fragment.</p></dd>
+  <dt><code>??</code> <em class="BNFCaps">name</em> <var>separator<em><sub>opt</sub></em></var> <code>...</code></dt>
+  <dd><p>The sequence of fragments bound to the pattern variable named <em class="BNFCaps">name</em>, with <var>separator</var> inserted between each pair of fragments. The pattern variable must have been bound by a <code>??</code> <var>pattern-keyword.</var> <var>Separator</var> can be a binary operator, comma, or semicolon. If the size of the sequence is 1 or <var>separator</var> is omitted, no separator is inserted. If the sequence is empty, nothing is inserted.</p></dd>
+  <dt><code>...</code></dt>
+  <dd><p>The fragment bound to the pattern variable that names this rule set; this is only valid in an auxiliary rule set.</p></dd>
+  <dt><code>?=</code> <em class="BNFCaps">name</em></dt>
+  <dd><p>A reference to <em class="BNFCaps">NAME</em>, in the lexical context where the macro was called.</p></dd>
 </dl>
 <p class="T1.Text1">It is an error for a single question-mark <var>substitution</var>  to use a pattern variable that was bound by a double question-mark <var>pattern-keyword.</var> </p>
 <p class="T1.Text1">It is an error for a double question-mark <var>substitution</var>  to use a pattern variable that was bound by a single question-mark <var>pattern-variable</var> or <var>pattern-keyword.</var> </p>

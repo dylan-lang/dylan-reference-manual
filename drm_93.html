@@ -686,11 +686,11 @@
 	<dd class="Cliche"><p><code>&lt;mutable-sequence&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
 	<dd class="Cliche"><p>The make method on <code>singleton(&lt;array&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code>&lt;array&gt;</code>.</p></dd>
-	<dd><dl class="routine-param">
-	    <dt class="routine-param"><code>dimensions:</code></dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;sequence&gt;</code> with elements that are instances of <code>&lt;integer&gt;</code>. This argument specifies the dimensions of the array. The size of the sequence specifies the rank (number of dimensions) of the array, and each integer in the sequence specifies the size of a dimension. This argument is required.</p></dd>
-	    <dt class="routine-param"><code>fill:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code> specifying an initial value for each element of the array. The default value is <code>#f</code>.</p></dd>
+	<dd><dl>
+	    <dt><code>dimensions:</code></dt>
+	    <dd><p>An instance of <code>&lt;sequence&gt;</code> with elements that are instances of <code>&lt;integer&gt;</code>. This argument specifies the dimensions of the array. The size of the sequence specifies the rank (number of dimensions) of the array, and each integer in the sequence specifies the size of a dimension. This argument is required.</p></dd>
+	    <dt><code>fill:</code> </dt>
+	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying an initial value for each element of the array. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>The class of collections whose elements are arranged according to a Cartesian coordinate system.</p>
@@ -773,11 +773,11 @@
 	<dd class="Cliche"><p><code>&lt;array&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
 	<dd class="Cliche"><p>The make method on <code>singleton(&lt;vector&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code>&lt;vector&gt;</code>.</p></dd>
-	<dd><dl class="routine-param">
-	    <dt class="routine-param"><code>size:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the vector. The default value is <code>0</code>.</p></dd>
-	    <dt class="routine-param"><code>fill:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code> specifying an initial value for each element of the vector. The default value is <code>#f</code>.</p></dd>
+	<dd><dl>
+	    <dt><code>size:</code> </dt>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the vector. The default value is <code>0</code>.</p></dd>
+	    <dt><code>fill:</code> </dt>
+	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying an initial value for each element of the vector. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>The class of one-dimensional arrays.</p>
@@ -827,11 +827,11 @@
 	<dd class="Cliche"><p><code>&lt;vector&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
 	<dd class="Cliche"><p>The make method on <code>singleton(&lt;simple-vector&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code>&lt;simple-vector&gt;</code>.</p></dd>
-	<dd><dl class="routine-param">
-	    <dt class="routine-param"><code>size:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the vector. The default value is <code>0</code>.</p></dd>
-	    <dt class="routine-param"><code>fill:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code> specifying an initial value for each element of the vector. The default value is <code>#f</code>.</p></dd>
+	<dd><dl>
+	    <dt><code>size:</code> </dt>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the vector. The default value is <code>0</code>.</p></dd>
+	    <dt><code>fill:</code> </dt>
+	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying an initial value for each element of the vector. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>The class of simple and efficient vectors.</p>
@@ -875,11 +875,11 @@
 	<dd class="Cliche"><p><code>&lt;simple-vector&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;simple-object-vector&gt;</code> supports the following init-keywords: </p></dd>
-	<dd><dl class="routine-param">
-	    <dt class="routine-param"><code>size:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the vector. The default value is <code>0</code>.</p></dd>
-	    <dt class="routine-param"><code>fill:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each element. The default value is <code>#f</code>.</p></dd>
+	<dd><dl>
+	    <dt><code>size:</code> </dt>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the vector. The default value is <code>0</code>.</p></dd>
+	    <dt><code>fill:</code> </dt>
+	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each element. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;simple-object-vector&gt;</code> represents vectors that may have elements of any type. It provides a constant time implementation for the <code>element</code>  and <code>element-setter </code>functions.</p>
@@ -896,11 +896,11 @@
 	<dd class="Cliche"><p><code>&lt;vector&gt; &lt;stretchy-collection&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;stretchy-vector&gt;</code> supports the following init-keywords:</p></dd>
-	<dd><dl class="routine-param">
-	    <dt class="routine-param"><code>size:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;integer&gt;</code> specifying the initial size of the stretchy vector. The default value is <code>0</code>.</p></dd>
-	    <dt class="routine-param"><code>fill:</code></dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each element. The default value is <code>#f</code>.</p></dd>
+	<dd><dl>
+	    <dt><code>size:</code> </dt>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the initial size of the stretchy vector. The default value is <code>0</code>.</p></dd>
+	    <dt><code>fill:</code></dt>
+	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each element. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>The class of vectors that are stretchy.</p>
@@ -941,11 +941,11 @@
 	<dd class="Cliche"><p><code>&lt;mutable-sequence&gt; &lt;stretchy-collection&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;deque&gt;</code> supports the following init-keywords: </p></dd>
-	<dd><dl class="routine-param">
-	    <dt class="routine-param"><code>size:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;integer&gt;</code> specifying the initial size of the deque. The default value is <code>0</code>.</p></dd>
-	    <dt class="routine-param"><code>fill:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each element. The default value is <code>#f</code>.</p></dd>
+	<dd><dl>
+	    <dt><code>size:</code> </dt>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the initial size of the deque. The default value is <code>0</code>.</p></dd>
+	    <dt><code>fill:</code> </dt>
+	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each element. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>A subclass of sequence that supports efficient forward and backward iteration, and efficient addition and removal of elements from the beginning or end of the sequence.</p>
@@ -1010,11 +1010,11 @@
 	<dd class="Cliche"><p><code>&lt;mutable-sequence&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
 	<dd class="Cliche"><p>The make method on <code>singleton(&lt;list&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code>&lt;list&gt;</code>.</p></dd>
-	<dd><dl class="routine-param">
-	    <dt class="routine-param"><code>size:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the list. The default value is <code>0</code>.</p></dd>
-	    <dt class="routine-param"><code>fill:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each element. The default value is <code>#f</code>.</p></dd>
+	<dd><dl>
+	    <dt><code>size:</code> </dt>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the list. The default value is <code>0</code>.</p></dd>
+	    <dt><code>fill:</code> </dt>
+	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each element. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>The class of linked lists.</p>
@@ -1136,19 +1136,19 @@
 	<dd class="Cliche"><p><code>&lt;sequence&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;range&gt;</code> supports the following init-keywords:</p></dd>
-	<dd><dl class="routine-param">
-	    <dt class="routine-param"><code>from:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;real&gt;</code> specifying the first value in the range. The default value is <code>0</code>.</p></dd>
-	    <dt class="routine-param"><code>by:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;real&gt;</code> specifying the step between consecutive elements of the range. The default value is <code>1</code>.</p></dd>
-	    <dt class="routine-param"><code>to: </code></dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;real&gt;</code> specifying an inclusive bound for the range. If <code>by:</code> is positive, the range will include numbers up to and including this value. If <code>by:</code> is negative, the range will include numbers down to to and including this value. <br /><code>to:</code> cannot be specified with <code>above:</code> or <code>below:</code>.</p></dd>
-	    <dt class="routine-param"><code>above: </code></dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;real&gt;</code> specifying an exclusive lower bound for the range. The range will only include numbers above this value, regardless of the sign of <code>by:</code>.<br /><code>above:</code> cannot be specified with <code>to:</code> or <code>below:</code>.</p></dd>
-	    <dt class="routine-param"><code>below: </code></dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;real&gt;</code> specifying an exclusive upper bound for the range. The range will only include numbers below this value, regardless of the sign of <code>by:</code>.<br /><code>below:</code> cannot be specified with <code>to:</code> or <code>above:</code>.</p></dd>
-	    <dt class="routine-param"><code>size:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the range.</p></dd>
+	<dd><dl>
+	    <dt><code>from:</code> </dt>
+	    <dd><p>An instance of <code>&lt;real&gt;</code> specifying the first value in the range. The default value is <code>0</code>.</p></dd>
+	    <dt><code>by:</code> </dt>
+	    <dd><p>An instance of <code>&lt;real&gt;</code> specifying the step between consecutive elements of the range. The default value is <code>1</code>.</p></dd>
+	    <dt><code>to: </code></dt>
+	    <dd><p>An instance of <code>&lt;real&gt;</code> specifying an inclusive bound for the range. If <code>by:</code> is positive, the range will include numbers up to and including this value. If <code>by:</code> is negative, the range will include numbers down to to and including this value. <br /><code>to:</code> cannot be specified with <code>above:</code> or <code>below:</code>.</p></dd>
+	    <dt><code>above: </code></dt>
+	    <dd><p>An instance of <code>&lt;real&gt;</code> specifying an exclusive lower bound for the range. The range will only include numbers above this value, regardless of the sign of <code>by:</code>.<br /><code>above:</code> cannot be specified with <code>to:</code> or <code>below:</code>.</p></dd>
+	    <dt><code>below: </code></dt>
+	    <dd><p>An instance of <code>&lt;real&gt;</code> specifying an exclusive upper bound for the range. The range will only include numbers below this value, regardless of the sign of <code>by:</code>.<br /><code>below:</code> cannot be specified with <code>to:</code> or <code>above:</code>.</p></dd>
+	    <dt><code>size:</code> </dt>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the range.</p></dd>
 	</dl></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;range&gt;</code> is used for creating sequences of numbers. Ranges may be infinite in size, and may run from higher numbers to lower numbers.</p>
@@ -1213,11 +1213,11 @@
 	<dd class="Cliche"><p><code>&lt;mutable-sequence&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;string&gt;</code> supports the following init-keywords: </p></dd>
-	<dd><dl class="routine-param">
-	    <dt class="routine-param"><code>size:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the string. The default value is <code>0</code>.</p></dd>
-	    <dt class="routine-param"><code>fill:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;character&gt;</code> specifying the initial value for each element. The default value is <code>' ' </code>(space).</p></dd>
+	<dd><dl>
+	    <dt><code>size:</code> </dt>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the string. The default value is <code>0</code>.</p></dd>
+	    <dt><code>fill:</code> </dt>
+	    <dd><p>An instance of <code>&lt;character&gt;</code> specifying the initial value for each element. The default value is <code>' ' </code>(space).</p></dd>
 	</dl></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;string&gt;</code> is used for holding sequences of characters.</p>
@@ -1264,11 +1264,11 @@
 	<dd class="Cliche"><p><code>&lt;string&gt;</code>  <code>&lt;vector&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;byte-string&gt;</code> supports the following init-keywords: </p></dd>
-	<dd><dl class="routine-param">
-	    <dt class="routine-param"><code>size:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the byte string. The default value is <code>0</code>.</p></dd>
-	    <dt class="routine-param"><code>fill:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;character&gt;</code> specifying the initial value for each element. The default value is <code>' ' </code>(space).</p></dd>
+	<dd><dl>
+	    <dt><code>size:</code> </dt>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the byte string. The default value is <code>0</code>.</p></dd>
+	    <dt><code>fill:</code> </dt>
+	    <dd><p>An instance of <code>&lt;character&gt;</code> specifying the initial value for each element. The default value is <code>' ' </code>(space).</p></dd>
 	</dl></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;byte-string&gt;</code> represents strings with elements that are eight bit characters. It provides constant time <code>element</code> and <code>element-setter</code> methods.</p>
@@ -1297,11 +1297,11 @@
 	<dd class="Cliche"><p><code>&lt;string&gt;</code>  <code>&lt;vector&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;unicode-string&gt;</code> supports the following init-keywords: </p></dd>
-	<dd><dl class="routine-param">
-	    <dt class="routine-param"><code>size:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the unicode string. The default value is <code>0</code>.</p></dd>
-	    <dt class="routine-param"><code>fill:</code> </dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;character&gt;</code> specifying the initial value for each element. The default value is <code>' ' </code>(space).</p></dd>
+	<dd><dl>
+	    <dt><code>size:</code> </dt>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the unicode string. The default value is <code>0</code>.</p></dd>
+	    <dt><code>fill:</code> </dt>
+	    <dd><p>An instance of <code>&lt;character&gt;</code> specifying the initial value for each element. The default value is <code>' ' </code>(space).</p></dd>
 	</dl></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;unicode-string&gt;</code> represents strings with elements that are sixteen bit Unicode characters. It provides constant time <code>element</code> and <code>element-setter</code> methods.</p>
@@ -1337,9 +1337,9 @@
 	<dd class="Cliche"><p><code>&lt;mutable-explicit-key-collection&gt; &lt;stretchy-collection&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;table&gt;</code> supports the following init-keyword: </p></dd>
-	<dd><dl class="routine-param">
-	    <dt class="routine-param"><code>size:</code> </dt>
-	    <dd class="routine-param"><p>An instance of &lt;integer&gt;. If specified, this value provides a hint to the implementation as to the expected number of elements to be stored in the table, which might be used to control how much space to initially allocate for the table. The default value is unspecified.</p></dd>
+	<dd><dl>
+	    <dt><code>size:</code> </dt>
+	    <dd><p>An instance of &lt;integer&gt;. If specified, this value provides a hint to the implementation as to the expected number of elements to be stored in the table, which might be used to control how much space to initially allocate for the table. The default value is unspecified.</p></dd>
 	</dl></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;table&gt;</code> is the only predefined instantiable subclass of <code>&lt;explicit-key-collection&gt;</code>.</p>

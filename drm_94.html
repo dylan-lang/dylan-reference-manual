@@ -278,19 +278,19 @@
 	<dd class="Cliche"><p><code>&lt;function&gt;</code></p></dd>
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;generic-function&gt;</code> supports the following init-keywords:</p></dd>
-	<dd><dl class="routine-param">
-	    <dt class="routine-param"><code>required:</code></dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;number&gt;</code> or <code>&lt;sequence&gt;</code>.</p></dd>
-	    <dd class="routine-param"><p>This argument represents the required arguments that the generic function accepts. If a sequence is supplied, the size of the sequence is the number of required arguments, and the elements of the sequence are the specializers. If a number is supplied, it is the number of required arguments, and the specializers default to <code>&lt;object&gt;</code>. If the argument is not supplied, or the supplied argument is neither a sequence nor a non-negative integer, an error is signaled.</p></dd>
-	    <dt class="routine-param"><code>rest?:</code></dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;boolean&gt;</code>.</p></dd>
-	    <dd class="routine-param"><p>A true value indicates that the generic function accepts a variable number of arguments. The default value is <code>#f</code>.</p></dd>
-	    <dt class="routine-param"><code>key:</code></dt>
-	    <dd class="routine-param"><p><code>#f</code> or an instance of <code>&lt;collection&gt;</code> whose elements are keywords.</p></dd>
-	    <dd class="routine-param"><p>If the value is a collection, then the generic function accepts keyword arguments, and the collection specifies the set of mandatory keywords for the generic function. A value of <code>#f</code> indicates that the generic function does not accept keyword arguments. The default value is <code>#f</code>.</p></dd>
-	    <dt class="routine-param"><code>all-keys?:</code></dt>
-	    <dd class="routine-param"><p>An instance of <code>&lt;boolean&gt;</code>.</p></dd>
-	    <dd class="routine-param"><p>A true value indicates that the generic function accepts all keyword arguments. The default value is <code>#f.</code></p></dd>
+	<dd><dl>
+	    <dt><code>required:</code></dt>
+	    <dd><p>An instance of <code>&lt;number&gt;</code> or <code>&lt;sequence&gt;</code>.</p></dd>
+	    <dd><p>This argument represents the required arguments that the generic function accepts. If a sequence is supplied, the size of the sequence is the number of required arguments, and the elements of the sequence are the specializers. If a number is supplied, it is the number of required arguments, and the specializers default to <code>&lt;object&gt;</code>. If the argument is not supplied, or the supplied argument is neither a sequence nor a non-negative integer, an error is signaled.</p></dd>
+	    <dt><code>rest?:</code></dt>
+	    <dd><p>An instance of <code>&lt;boolean&gt;</code>.</p></dd>
+	    <dd><p>A true value indicates that the generic function accepts a variable number of arguments. The default value is <code>#f</code>.</p></dd>
+	    <dt><code>key:</code></dt>
+	    <dd><p><code>#f</code> or an instance of <code>&lt;collection&gt;</code> whose elements are keywords.</p></dd>
+	    <dd><p>If the value is a collection, then the generic function accepts keyword arguments, and the collection specifies the set of mandatory keywords for the generic function. A value of <code>#f</code> indicates that the generic function does not accept keyword arguments. The default value is <code>#f</code>.</p></dd>
+	    <dt><code>all-keys?:</code></dt>
+	    <dd><p>An instance of <code>&lt;boolean&gt;</code>.</p></dd>
+	    <dd><p>A true value indicates that the generic function accepts all keyword arguments. The default value is <code>#f.</code></p></dd>
 	</dl></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>The class of generic functions. Generic functions are described in <a href="drm_47.html" class="Cliche">Chapter 6, "Functions."</a></p>

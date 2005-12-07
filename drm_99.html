@@ -171,14 +171,14 @@
 <h1 class="section-title">Equality and Comparison</h1>
 <p class="T1.Text1"><a name="MARKER-2-1570"></a>Dylan provides an identity function, as well as a group of equality and magnitude comparison functions that can be extended for user classes. The functions <code>~=</code>, <code>~==</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>min</code> and <code>max</code> are defined in terms of <code>==</code> or <code>=</code> and <code>&lt;</code>. By extending the behavior of <code>=</code> and <code>&lt;</code>, programs can extend the behavior of the other functions.</p>
 <p class="T1.Text1">For the protocol to work, user-defined methods on <code>=</code> and <code>&lt;</code> must preserve the following properties:</p>
-<dl class="routine-param">
-  <dt class="routine-param"><a name="MARKER-2-1571"></a>Identity:</dt>
-  <dd class="routine-param"><p>If (a <code>=</code> b), then (b <code>=</code> a).</p></dd>
-  <dt class="routine-param"><a name="MARKER-2-1572"></a>Transitivity: </dt>
-  <dd class="routine-param"><p>If (a <code>&lt;</code>  b) and (b <code>&lt;</code> c), then (a <code>&lt;</code>  c).</p></dd>
-  <dd class="routine-param"><p>If (a <code>=</code>  b) and (b <code>=</code>  c), then (a <code>=</code> c).</p></dd>
-  <dt class="routine-param"><a name="MARKER-2-1573"></a>Trichotomy: </dt>
-  <dd class="routine-param"><p>Exactly one of: (a <code>&lt;</code>  b), (a <code>=</code> b), (b <code>&lt;</code>  a) always holds (on the assumption that these two operations are defined for the objects in question).</p>
+<dl>
+  <dt><a name="MARKER-2-1571"></a>Identity:</dt>
+  <dd><p>If (a <code>=</code> b), then (b <code>=</code> a).</p></dd>
+  <dt><a name="MARKER-2-1572"></a>Transitivity: </dt>
+  <dd><p>If (a <code>&lt;</code>  b) and (b <code>&lt;</code> c), then (a <code>&lt;</code>  c).</p></dd>
+  <dd><p>If (a <code>=</code>  b) and (b <code>=</code>  c), then (a <code>=</code> c).</p></dd>
+  <dt><a name="MARKER-2-1573"></a>Trichotomy: </dt>
+  <dd><p>Exactly one of: (a <code>&lt;</code>  b), (a <code>=</code> b), (b <code>&lt;</code>  a) always holds (on the assumption that these two operations are defined for the objects in question).</p>
     <p class="T1.Text1">In the general case, the behavior of comparison operators when applied to instances of <code>&lt;complex&gt;</code> is implementation defined. This is to allow implementations to support <a name="MARKER-2-1574"></a>IEEE floating point when comparing NaNs. However, when instances of <code>&lt;rational&gt;</code> and instances of <code>&lt;float&gt;</code> are compared, it is defined that  the instance of <code>&lt;float&gt;</code> is first converted to a rational and then an exact comparison is performed.</p></dd>
 </dl>
 <a name="HEADING99-8"></a>
@@ -239,8 +239,8 @@
       <dd>
         <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-      <dt class="routine-param"><var>object2</var></dt>
-      <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
+      <dt><var>object2</var></dt>
+      <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
@@ -275,8 +275,8 @@
       <dd>
         <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-      <dt class="routine-param"><var>object2</var></dt>
-      <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
+      <dt><var>object2</var></dt>
+      <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
@@ -310,8 +310,8 @@
       <dd>
         <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-      <dt class="routine-param"><var>object2</var></dt>
-      <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
+      <dt><var>object2</var></dt>
+      <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
@@ -394,8 +394,8 @@
       <dd>
         <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-      <dt class="routine-param"><var>object2</var></dt>
-      <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
+      <dt><var>object2</var></dt>
+      <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
@@ -432,8 +432,8 @@
       <dd>
         <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-      <dt class="routine-param"><var>object2</var></dt>
-      <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
+      <dt><var>object2</var></dt>
+      <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
@@ -481,8 +481,8 @@
       <dd>
         <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-      <dt class="routine-param"><var>object2</var></dt>
-      <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
+      <dt><var>object2</var></dt>
+      <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
@@ -516,8 +516,8 @@
       <dd>
         <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-      <dt class="routine-param"><var>object2</var></dt>
-      <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
+      <dt><var>object2</var></dt>
+      <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
@@ -551,8 +551,8 @@
       <dd>
         <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-      <dt class="routine-param"><var>object2</var></dt>
-      <dd class="routine-param"><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
+      <dt><var>object2</var></dt>
+      <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
@@ -586,8 +586,8 @@
       <dd>
         <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-      <dt class="routine-param"><var>objects</var></dt>
-      <dd class="routine-param"><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
+      <dt><var>objects</var></dt>
+      <dd><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">
@@ -621,8 +621,8 @@
       <dd>
         <p>An instance of <code>&lt;object&gt;</code>.</p>
       </dd>
-      <dt class="routine-param"><var>objects</var></dt>
-      <dd class="routine-param"><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
+      <dt><var>objects</var></dt>
+      <dd><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche">

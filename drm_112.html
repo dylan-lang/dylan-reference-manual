@@ -177,14 +177,19 @@
       <dd>
         <p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The adjectives allowed are implementation dependent.</p>
       </dd>
-      <dt class="routine-param"><var>variables</var></dt>
-      <dd class="routine-param">
-	<p class="routine-param"> <span class="BNF">variable<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>(</code> <span class="BNF">variable-list<em class="BNF"><sub>bnf</sub></em></span> <code>)</code>
+      <dt><var>variables</var></dt>
+      <dd>
+	<p>
+	  <span class="BNF">variable<em class="BNF"><sub>bnf</sub></em></span>
+	  <strong class="re">|</strong>
+	  <code>(</code>
+	  <span class="BNF">variable-list<em class="BNF"><sub>bnf</sub></em></span>
+	  <code>)</code>
 	</p>
       </dd>
-      <dt class="routine-param"><var>init</var></dt>
-      <dd class="routine-param">
-	<p class="routine-param">
+      <dt><var>init</var></dt>
+      <dd>
+	<p>
 	  <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span>
 	</p>
       </dd>
@@ -229,15 +234,15 @@ define variable (*whole-part* :: &lt;integer&gt;, *remainder* :: &lt;real&gt;)
       <dd>
         <p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The adjectives allowed are implementation dependent.</p>
       </dd>
-      <dt class="routine-param"><var>constants</var></dt>
-      <dd class="routine-param">
-	<p class="routine-param">
+      <dt><var>constants</var></dt>
+      <dd>
+	<p>
 	  <span class="BNF">variable<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>(</code> <span class="BNF">variable-list<em class="BNF"><sub>bnf</sub></em></span> <code>)</code>
 	  </p>
 	</dd>
-      <dt class="routine-param"><var>init</var></dt>
-      <dd class="routine-param">
-	<p class="routine-param">
+      <dt><var>init</var></dt>
+      <dd>
+	<p>
 	  <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span>
 	</p>
       </dd>
@@ -271,31 +276,31 @@ define constant $start-time :: &lt;integer&gt; = get-current-time(); </pre>
   </dd>
   <dt class="Cliche2"><span>Arguments:</span></dt>
   <dd class="Cliche2">
-    <dl class="routine-param">
-      <dt class="routine-param"><var>adjective</var></dt>
+    <dl>
+      <dt><var>adjective</var></dt>
       <dd><p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The allowed adjectives are <code>sealed</code> and <code>open</code>. These adjectives are mutually exclusive. The default is <code>sealed</code>. Additional implementation-defined adjectives may be supported.</p>
       </dd>
-      <dt class="routine-param"><var>name</var></dt>
-      <dd class="routine-param">
-	<p class="routine-param">
+      <dt><var>name</var></dt>
+      <dd>
+	<p>
 	  <span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span>
 	</p>
       </dd>
-      <dt class="routine-param"><var>parameter-list</var></dt>
-      <dd class="routine-param">
-	<p class="routine-param">
+      <dt><var>parameter-list</var></dt>
+      <dd>
+	<p>
 	  <code>(</code> <strong class="re">[</strong> <span class="BNF">parameters<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">]</strong> <code>)</code> <strong class="re">[</strong> <code>=&gt;</code> <var>values</var> <strong class="re">]</strong>
 	</p>
       </dd>
-      <dt class="routine-param"><var>options</var></dt>
-      <dd class="routine-param">
-	<p class="routine-param">
+      <dt><var>options</var></dt>
+      <dd>
+	<p>
 	  <span class="BNF">comma-property-list<em class="BNF"><sub>bnf</sub></em></span>
 	</p>
       </dd>
-      <dt class="routine-param"><var>values</var></dt>
-      <dd class="routine-param">
-	<p class="routine-param">
+      <dt><var>values</var></dt>
+      <dd>
+	<p>
 	  <span class="BNF">variable<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>(</code> <strong class="re">[</strong> <span class="BNF">values-list<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">]</strong> <code>)</code>
 	</p>
       </dd>
@@ -342,21 +347,21 @@ define generic brew (brand :: &lt;coffee-brand&gt;, #key strength)
       <dd>
         <p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The allowed adjective is <code>sealed</code>. Additional implementation-defined <var>adjectives</var> may be supported.</p>
       </dd>
-      <dt class="routine-param"><var>name</var></dt>
-      <dd class="routine-param">
-	<p class="routine-param">
+      <dt><var>name</var></dt>
+      <dd>
+	<p>
 	  <span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span>
 	</p>
       </dd>
-      <dt class="routine-param"><var>parameter-list</var></dt>
-      <dd class="routine-param">
-	<p class="routine-param">
+      <dt><var>parameter-list</var></dt>
+      <dd>
+	<p>
 	  <span class="BNF">parameter-list<em class="BNF"><sub>bnf</sub></em></span>
 	</p>
       </dd>
-      <dt class="routine-param"><var>body</var></dt>
-      <dd class="routine-param">
-	<p class="routine-param">
+      <dt><var>body</var></dt>
+      <dd>
+	<p>
 	  <span class="BNF">body<em class="BNF"><sub>bnf</sub></em></span>
 	</p>
       </dd>
@@ -391,40 +396,40 @@ end method tune </pre>
     <dd>
       <p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. The allowed adjectives are <code>abstract</code>, <code>concrete</code>, <code>primary</code>, <code>free</code>, <code>sealed</code>, and <code>open</code>. Additional implementation-dependent class-adjectives may be supported.</p>
     </dd>
-    <dt class="routine-param"><var>name</var></dt>
-    <dd class="routine-param"><p><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-    <dt class="routine-param"><var>superclass</var></dt>
-    <dd class="routine-param"><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-    <dt class="routine-param"><var>slot-spec</var></dt>
-    <dd class="routine-param"><p><strong class="re">{</strong> <var>slot-adjective</var> <strong class="re">}*</strong> <strong class="re">[</strong> <var>allocation</var> <strong class="re">]</strong><br />
+    <dt><var>name</var></dt>
+    <dd><p><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+    <dt><var>superclass</var></dt>
+    <dd><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+    <dt><var>slot-spec</var></dt>
+    <dd><p><strong class="re">{</strong> <var>slot-adjective</var> <strong class="re">}*</strong> <strong class="re">[</strong> <var>allocation</var> <strong class="re">]</strong><br />
 	<code>slot</code> <var>getter-name</var> <strong class="re">[</strong> <code>::</code> <var>type</var> <strong class="re">]</strong> <strong class="re">[</strong> <var>init-expression</var> <strong class="re">]</strong><br />
 	<strong class="re">{</strong> <code>,</code> <var>slot-option</var> <strong class="re">}*</strong></p></dd>
-    <dt class="routine-param"><var>init-arg-spec</var></dt>
-    <dd class="routine-param"><p><strong class="re">[</strong> <code>required</code> <strong class="re">]</strong> <code>keyword</code> <span class="BNF">symbol<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">[</strong> <var>init-expression</var> <strong class="re">]</strong><br />
+    <dt><var>init-arg-spec</var></dt>
+    <dd><p><strong class="re">[</strong> <code>required</code> <strong class="re">]</strong> <code>keyword</code> <span class="BNF">symbol<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">[</strong> <var>init-expression</var> <strong class="re">]</strong><br />
 	<strong class="re">{</strong> <code>,</code> <var>init-arg-option</var> <strong class="re">}*</strong></p></dd>
     <dt class="RP3.RoutineParam"><var>inherited-slot-spec</var></dt>
     <dd class="RP3.RoutineParam"><p><code>inherited slot</code> <var>getter-name</var> <strong class="re">[</strong> <var>init-expression</var> <strong class="re">]</strong><br />
 	<strong class="re">{</strong> <code>,</code> <var>inherited-option</var> <strong class="re">}*</strong></p></dd>
-    <dt class="routine-param"><var>slot-adjective</var></dt>
-    <dd class="routine-param"><p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. Supported slot-adjectives are <code>constant</code> and <code>sealed</code>. Additional implementation-dependent slot-adjectives may be supported.</p></dd>
-    <dt class="routine-param"><var>allocation</var></dt>
-    <dd class="routine-param"><p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. Supported allocations are <code>instance</code>, <code>class</code>, <code>each-subclass</code>, and <code>virtual</code>. Additional implementation-defined allocations may be supported.</p></dd>
-    <dt class="routine-param"><var>getter-name</var></dt>
-    <dd class="routine-param"><p><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-    <dt class="routine-param"><var>type</var></dt>
-    <dd class="routine-param"><p><span class="BNF">operand<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-    <dt class="routine-param"><var>init-expression</var></dt>
-    <dd class="routine-param"><p><code>=</code> <span class="MetaSyntax">expression<em class="MetaSyntax"><sub>bnf</sub></em></span></p></dd>
-    <dt class="routine-param"><var>slot-option</var></dt>
-    <dd class="routine-param"><p>
+    <dt><var>slot-adjective</var></dt>
+    <dd><p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. Supported slot-adjectives are <code>constant</code> and <code>sealed</code>. Additional implementation-dependent slot-adjectives may be supported.</p></dd>
+    <dt><var>allocation</var></dt>
+    <dd><p><span class="BNF">unreserved-name<em class="BNF"><sub>bnf</sub></em></span>. Supported allocations are <code>instance</code>, <code>class</code>, <code>each-subclass</code>, and <code>virtual</code>. Additional implementation-defined allocations may be supported.</p></dd>
+    <dt><var>getter-name</var></dt>
+    <dd><p><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+    <dt><var>type</var></dt>
+    <dd><p><span class="BNF">operand<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+    <dt><var>init-expression</var></dt>
+    <dd><p><code>=</code> <span class="MetaSyntax">expression<em class="MetaSyntax"><sub>bnf</sub></em></span></p></dd>
+    <dt><var>slot-option</var></dt>
+    <dd><p>
 	<var>setter-option</var> <strong class="re">|</strong><br />
 	<var>init-keyword-option</var> <strong class="re">|</strong><br />
 	<var>required-init-keyword-option</var> <strong class="re">|</strong><br />
 	<var>init-value-option</var> <strong class="re">|</strong><br />
 	<var>init-function-option</var> <strong class="re">|</strong><br />
 	<var>type-option</var></p></dd>
-    <dt class="routine-param"><var>init-arg-option</var></dt>
-    <dd class="routine-param"><p>
+    <dt><var>init-arg-option</var></dt>
+    <dd><p>
 	<var>type-option</var> <strong class="re">|</strong><br />
 	<var>init-value-option</var> <strong class="re">|</strong><br />
 	<var>init-function-option</var></p></dd>
@@ -432,8 +437,8 @@ end method tune </pre>
     <dd class="RP3.RoutineParam"><p>
 	<var>init-value-option</var> <strong class="re">|</strong><br />
 	<var>init-function-option</var></p></dd>
-    <dt class="routine-param"><var>setter-option</var></dt>
-    <dd class="routine-param"><p><code>setter:</code> <strong class="re">{</strong> <span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>#f</code> <strong class="re">}</strong></p></dd>
+    <dt><var>setter-option</var></dt>
+    <dd><p><code>setter:</code> <strong class="re">{</strong> <span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>#f</code> <strong class="re">}</strong></p></dd>
     <dt class="RP3.RoutineParam"><var>init-keyword-option</var></dt>
     <dd class="RP3.RoutineParam"><p>
 	<code>init-keyword:</code> <span class="BNF">symbol<em class="BNF"><sub>bnf</sub></em></span></p></dd>
@@ -444,8 +449,8 @@ end method tune </pre>
     <dd class="RP3.RoutineParam"><p><code>init-value:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
     <dt class="RP3.RoutineParam"><var>init-function-option</var></dt>
     <dd class="RP3.RoutineParam"><p><code>init-function:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-    <dt class="routine-param"><var>type-option</var></dt>
-    <dd class="routine-param"><p><code>type:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+    <dt><var>type-option</var></dt>
+    <dd><p><code>type:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 </dl></dd>
 <dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p><a name="MARKER-2-2014"></a><code>define class</code> is used to define classes.</p>
@@ -473,33 +478,33 @@ end method tune </pre>
       <dd>
         <p><span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span></p>
       </dd>
-      <dt class="routine-param"><var>export-clause</var></dt>
-      <dd class="routine-param"><p><code>export</code> <strong class="re">{</strong> <span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong></p></dd>
-      <dt class="routine-param"><var>create-clause</var></dt>
-      <dd class="routine-param"><p><code>create</code> <strong class="re">{</strong> <span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong></p></dd>
-      <dt class="routine-param"><var>use-clause</var></dt>
-      <dd class="routine-param"><p><code>use</code> <var>used-module</var> <strong class="re">{</strong> <code>,</code> <var>option</var> <strong class="re">}*</strong></p></dd>
-      <dt class="routine-param"><var>used-module</var></dt>
-      <dd class="routine-param"><p><span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-      <dt class="routine-param"><var>option</var></dt>
-      <dd class="routine-param"><p>
+      <dt><var>export-clause</var></dt>
+      <dd><p><code>export</code> <strong class="re">{</strong> <span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong></p></dd>
+      <dt><var>create-clause</var></dt>
+      <dd><p><code>create</code> <strong class="re">{</strong> <span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong></p></dd>
+      <dt><var>use-clause</var></dt>
+      <dd><p><code>use</code> <var>used-module</var> <strong class="re">{</strong> <code>,</code> <var>option</var> <strong class="re">}*</strong></p></dd>
+      <dt><var>used-module</var></dt>
+      <dd><p><span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt><var>option</var></dt>
+      <dd><p>
 	  <var>import-option</var> <strong class="re">|</strong><br />
 	  <var>exclude-option</var> <strong class="re">|</strong><br />
 	  <var>prefix-option</var> <strong class="re">|</strong><br />
 	  <var>rename-option</var> <strong class="re">|</strong><br />
 	  <var>export-option</var></p></dd>
-      <dt class="routine-param"><var>import-option</var></dt>
-      <dd class="routine-param"><p><code>import: all</code> <strong class="re">|</strong> <code>{</code> <strong class="re">{</strong> <var>variable-spec</var> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
-      <dt class="routine-param"><var>variable-spec</var></dt>
-      <dd class="routine-param"><p><span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">[</strong> <code>=&gt;</code> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">]</strong></p></dd>
-      <dt class="routine-param"><var>exclude-option</var></dt>
-      <dd class="routine-param"><p><code>exclude: {</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
-      <dt class="routine-param"><var>prefix-option</var></dt>
-      <dd class="routine-param"><p><code>prefix:</code> <span class="BNF">string-literal<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-      <dt class="routine-param"><var>rename-option</var></dt>
-      <dd class="routine-param"><p><code>rename: {</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <code>=&gt;</code> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
-      <dt class="routine-param"><var>export-option</var></dt>
-      <dd class="routine-param"><p><code>export: all</code> <strong class="re">|</strong> <code>{</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
+      <dt><var>import-option</var></dt>
+      <dd><p><code>import: all</code> <strong class="re">|</strong> <code>{</code> <strong class="re">{</strong> <var>variable-spec</var> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
+      <dt><var>variable-spec</var></dt>
+      <dd><p><span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">[</strong> <code>=&gt;</code> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">]</strong></p></dd>
+      <dt><var>exclude-option</var></dt>
+      <dd><p><code>exclude: {</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
+      <dt><var>prefix-option</var></dt>
+      <dd><p><code>prefix:</code> <span class="BNF">string-literal<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt><var>rename-option</var></dt>
+      <dd><p><code>rename: {</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <code>=&gt;</code> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
+      <dt><var>export-option</var></dt>
+      <dd><p><code>export: all</code> <strong class="re">|</strong> <code>{</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p><a name="MARKER-2-2017"></a><code><a name="MARKER-9-2018"></a>define module</code> defines a module with the given name. It describes which modules are used by the module being defined, which bindings are imported from the used modules, and which bindings are exported by the module being defined.</p>
@@ -615,31 +620,31 @@ dylan-gx
       <dd>
         <p><span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span></p>
       </dd>
-      <dt class="routine-param"><var>use-clause</var></dt>
-      <dd class="routine-param"><p><code>use</code> <var>used-library</var> <strong class="re">{</strong> <code>,</code> <var>option</var> <strong class="re">}*</strong></p></dd>
-      <dt class="routine-param"><var>export-clause</var></dt>
-      <dd class="routine-param"><p><code>export</code> <strong class="re">{</strong> <span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong></p></dd>
-      <dt class="routine-param"><var>used-library</var></dt>
-      <dd class="routine-param"><p><span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-      <dt class="routine-param"><var>option</var></dt>
-      <dd class="routine-param"><p>
+      <dt><var>use-clause</var></dt>
+      <dd><p><code>use</code> <var>used-library</var> <strong class="re">{</strong> <code>,</code> <var>option</var> <strong class="re">}*</strong></p></dd>
+      <dt><var>export-clause</var></dt>
+      <dd><p><code>export</code> <strong class="re">{</strong> <span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong></p></dd>
+      <dt><var>used-library</var></dt>
+      <dd><p><span class="BNF">ordinary-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt><var>option</var></dt>
+      <dd><p>
 	  <var>import-option</var> <strong class="re">|</strong><br />
 	  <var>exclude-option</var> <strong class="re">|</strong><br />
 	  <var>prefix-option</var> <strong class="re">|</strong><br />
 	  <var>rename-option</var> <strong class="re">|</strong><br />
 	  <var>export-option</var></p></dd>
-      <dt class="routine-param"><var>import-option</var></dt>
-      <dd class="routine-param"><p><code>import: all</code> <strong class="re">|</strong> <code>{</code> <strong class="re">{</strong> <var>module-spec</var> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
-      <dt class="routine-param"><var>module-spec</var></dt>
-      <dd class="routine-param"><p><span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">[</strong> <code>=&gt;</code> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">]</strong></p></dd>
-      <dt class="routine-param"><var>exclude-option</var></dt>
-      <dd class="routine-param"><p><code>exclude: {</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
-      <dt class="routine-param"><var>prefix-option</var></dt>
-      <dd class="routine-param"><p><code>prefix:</code> <span class="BNF">string-literal<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-      <dt class="routine-param"><var>rename-option</var></dt>
-      <dd class="routine-param"><p><code>rename: {</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <code>=&gt;</code> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
-      <dt class="routine-param"><var>export-option</var></dt>
-      <dd class="routine-param"><p><code>export: all</code> <strong class="re">|</strong> <code>{</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
+      <dt><var>import-option</var></dt>
+      <dd><p><code>import: all</code> <strong class="re">|</strong> <code>{</code> <strong class="re">{</strong> <var>module-spec</var> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
+      <dt><var>module-spec</var></dt>
+      <dd><p><span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">[</strong> <code>=&gt;</code> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">]</strong></p></dd>
+      <dt><var>exclude-option</var></dt>
+      <dd><p><code>exclude: {</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
+      <dt><var>prefix-option</var></dt>
+      <dd><p><code>prefix:</code> <span class="BNF">string-literal<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt><var>rename-option</var></dt>
+      <dd><p><code>rename: {</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <code>=&gt;</code> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
+      <dt><var>export-option</var></dt>
+      <dd><p><code>export: all</code> <strong class="re">|</strong> <code>{</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p><code>define library</code> defines a library with the given name. It describes which libraries are used by the library being defined, which modules are imported from the used libraries, and which modules are exported by the library being defined.</p>
@@ -672,10 +677,10 @@ dylan-gx
   <dt class="Cliche"><span>Arguments:</span></dt>
   <dd class="Cliche">
     <dl>
-      <dt class="routine-param"><var>generic-function</var></dt>
-      <dd class="routine-param"><p><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-      <dt class="routine-param"><var>type</var></dt>
-      <dd class="routine-param"><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt><var>generic-function</var></dt>
+      <dd><p><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt><var>type</var></dt>
+      <dd><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p><code>define sealed domain</code> seals the specified <var>generic-function</var> over the domain indicated by the <var>types</var>. For a complete description of the rules governing <code>define sealed domain</code> and the implications of a <code>define sealed domain</code> definition, see <a href="drm_75.html#MARKER-9-1123" class="Cliche">"Define Sealed Domain" on page 135</a>.</p>

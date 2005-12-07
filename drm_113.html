@@ -148,8 +148,8 @@
       <dd>
         <p><span class="BNF">variable<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">|</strong> <code>(</code> <span class="BNF">variable-list<em class="BNF"><sub>bnf</sub></em></span> <code>)</code></p>
       </dd>
-      <dt class="routine-param"><var>init</var></dt>
-      <dd class="routine-param"><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt><var>init</var></dt>
+      <dd><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p><code>let</code> creates local bindings for the <var>variables</var>, and initializes them to the values returned by <var>init</var>. The bindings are visible for the remainder of the smallest enclosing implicit body.</p>
@@ -181,12 +181,12 @@ let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount)
 <dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
     <dl>
-      <dt class="routine-param"><var>name</var></dt>
-      <dd class="routine-param"><p><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-      <dt class="routine-param"><var>parameter-list</var></dt>
-      <dd class="routine-param"><p>parameter-list<em class="routine-param"><sub>bnf</sub></em></p></dd>
-      <dt class="routine-param"><var>body</var></dt>
-      <dd class="routine-param"><p><span class="BNF">body<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt><var>name</var></dt>
+      <dd><p><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt><var>parameter-list</var></dt>
+      <dd><p>parameter-list<em><sub>bnf</sub></em></p></dd>
+      <dt><var>body</var></dt>
+      <dd><p><span class="BNF">body<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 </dl></dd>
 <dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p><code>local</code> creates local methods that may be mutually recursive and self-recursive.</p>
@@ -204,18 +204,18 @@ let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount)
 <dt class="Cliche"><span>Arguments:</span></dt>
 <dd class="Cliche">
     <dl>
-      <dt class="routine-param"><var>condition</var></dt>
-      <dd class="routine-param"><p><var>type</var> <strong class="re">|</strong> <code>(</code> <var>type</var> <strong class="re">{</strong> <code>,</code> <var>option</var> <strong class="re">}*</strong> <code>)</code></p></dd>
-      <dt class="routine-param"><var>type</var></dt>
-      <dd class="routine-param"><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-      <dt class="routine-param"><var>option</var></dt>
-      <dd class="routine-param"><p><var>test-option</var> <strong class="re">|</strong> <var>init-option</var></p></dd>
-      <dt class="routine-param"><var>test-option</var></dt>
-      <dd class="routine-param"><p><code>test:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-      <dt class="routine-param"><var>init-option</var></dt>
-      <dd class="routine-param"><p><code>init-arguments:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
-      <dt class="routine-param"><var>handler</var></dt>
-      <dd class="routine-param"><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt><var>condition</var></dt>
+      <dd><p><var>type</var> <strong class="re">|</strong> <code>(</code> <var>type</var> <strong class="re">{</strong> <code>,</code> <var>option</var> <strong class="re">}*</strong> <code>)</code></p></dd>
+      <dt><var>type</var></dt>
+      <dd><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt><var>option</var></dt>
+      <dd><p><var>test-option</var> <strong class="re">|</strong> <var>init-option</var></p></dd>
+      <dt><var>test-option</var></dt>
+      <dd><p><code>test:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt><var>init-option</var></dt>
+      <dd><p><code>init-arguments:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
+      <dt><var>handler</var></dt>
+      <dd><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 </dl></dd>
 <dt class="Cliche"><span>Description:</span></dt>
 <dd class="Cliche"><p><code>let handler</code> establishes a new condition handler that is in effect for the duration of the execution of the remainder of the smallest enclosing implicit body. Unlike the local declarations <code>let</code> and <code>local</code>, <code>let handler</code> does not create any bindings.</p>
