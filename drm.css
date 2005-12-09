@@ -901,16 +901,11 @@ table.class-attributes-legend td.description + td { padding-left: 2em }
   in a body font instead of the code font. Additionally, references in
   documentation to any of those non-literals should be rendered using the
   same font (class="parameter" or VAR).
-
-  NOTE: The HTML originally used I and class="parameter" to identify
-  variables, parameters, and arguments, but we're slowly migrating them to
-  use VAR. Eventually, we should be able to remove the patterns for them
-  and just use VAR.
 */
 
 code.pre { white-space: pre }
 
-code i, i.parameter, var { font-family: serif }
+code i, var { font-family: serif }
 
 
 

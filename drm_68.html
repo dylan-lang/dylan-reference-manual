@@ -163,16 +163,16 @@
 </td></tr><tr><td><p class="TbT.TblText"> <code>&lt;simple-object-vector&gt;</code></p>
 </td><td><p class="TbT.TblText"> <code>&lt;object&gt;</code></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>&lt;unicode-string&gt;</code></p>
-</td><td><p class="TbT.TblText"> <code><i class="parameter TbT.TblText">K<em><sub>1</sub></em></i></code> (see note below)</p>
+  </td><td><p class="TbT.TblText"> <code><var>K<em><sub>1</sub></em></var></code> (see note below)</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>&lt;byte-string&gt;</code></p>
-</td><td><p class="TbT.TblText"> <code><i class="parameter TbT.TblText">K<em><sub>2</sub></em></i></code> (see note below)</p>
+  </td><td><p class="TbT.TblText"> <code><var>K<em><sub>2</sub></em></var></code> (see note below)</p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>&lt;list&gt;</code></p>
 </td><td><p class="TbT.TblText"> <code>&lt;object&gt;</code></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>&lt;pair&gt;</code></p>
 </td><td><p class="TbT.TblText"> <code>&lt;object&gt;</code></p>
 </td></tr><tr><td><p class="TbT.TblText"> <code>&lt;empty-list&gt;</code></p>
 </td><td><p class="TbT.TblText"> <code>&lt;object&gt;</code></p>
-</td></tr></table><p class="T1.Text1">Note: <var>K<em><sub>1</sub></em></var> and <var>K<em><sub>2</sub></em></var> are subtypes of <code><a name="MARKER-2-1057"></a>&lt;character&gt;</code> that have not been given standardized  names.</p>
+</td></tr></table><p class="T1.Text1">Note: <var>K<em><sub>1</sub></em></var> and <var>K<em><sub>2</sub></em></var> are subtypes of <code><a name="MARKER-2-1057"></a>&lt;character&gt;</code> that have not been given standardized names.</p>
 <p class="T1.Text1">By convention, if <var>C</var> is an instantiable subtype of <code>&lt;collection&gt;</code> and <var>C</var>'s element-type is indefinite <code>&lArr;</code> <code>&lt;object&gt;</code>, then instantiating <var>C</var> produces a collection whose element type is <code>&lt;object&gt;</code>.</p>
 <p class="T1.Text1">Instantiating <code>&lt;range&gt;</code> produces a collection whose element-type is unspecified except that it is a subtype of <code>&lt;real&gt;</code> and every element of the range is an instance of the element type.</p>
 <p class="T1.Text1">The preceding section describes the element type of every object that is created by <code>make</code> of an instantiable built-in collection class. <a name="MARKER-2-1058"></a>The element type of an instance of a user-defined collection class is unspecified, but should follow the rules given here in order to preserve the property that any operation that works on an instance of a supertype must work on an instance of a subtype.<a name="MARKER-2-1059"></a></p>
