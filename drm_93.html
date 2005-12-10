@@ -998,8 +998,16 @@
       <a name="UID-Built-In_Classes-423"></a>
       <h2 class="subsection-title"><a name="MARKER-2-1443"></a>Lists</h2>
       <p class="T1.Text1">Lists are constructed by linking together instances of <code>&lt;pair&gt;</code>. The <a name="MARKER-2-1444"></a>head of a list contains an element, and the <a name="MARKER-2-1445"></a>tail of the list contains a pointer to the next pair in the list. The list ends when the tail of a pair contains something besides another pair.</p>
-      <p class="T1.Text1">A <strong class="bold"><a name="MARKER-2-1446"></a>proper list</strong> has a final pair with a tail containing the empty list.</p>
-      <p class="T1.Text1">An <strong class="T1.Text1"><a name="MARKER-2-1447"></a>improper list</strong> does not have a final pair with a tail containing the empty list, either because the tail of its final pair is not the empty list, or because the list is circular and thus does not have a final pair. Except when their behavior on improper lists is documented explicitly, collection or sequence functions are not guaranteed to return an answer when an improper list is used as a collection or a sequence. At the implementation's option, these functions may return the correct result, signal a <code>&lt;type-error&gt;</code>, or  (in the case of a circular list) fail to return.</p>
+      <p class="T1.Text1">A <a name="MARKER-2-1446"></a><dfn>proper list</dfn> has a final pair with
+      a tail containing the empty list.</p>
+      <p class="T1.Text1">An <a name="MARKER-2-1447"></a><dfn>improper list</dfn> does not have a
+      final pair with a tail containing the empty list, either because the tail of its final pair is
+      not the empty list, or because the list is circular and thus does not have a final
+      pair. Except when their behavior on improper lists is documented explicitly, collection or
+      sequence functions are not guaranteed to return an answer when an improper list is used as a
+      collection or a sequence. At the implementation's option, these functions may return the
+      correct result, signal a <code>&lt;type-error&gt;</code>, or (in the case of a circular list)
+      fail to return.</p>
       <p class="T1.Text1">When treated as a collection, the elements of a list are the heads of successive pairs in the list.</p>
       <a name="HEADING93-2050"></a>
       <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1448"></a><a name="MARKER-9-1449"></a>&lt;list&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Abstract Class]</span></h4>

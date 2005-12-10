@@ -127,12 +127,12 @@
       <p class="T1.Text1">Dylan's built-in defining macros and special definitons can only be used at top
       level. When the expansion of a user-defined macro includes a call to a built-in defining macro or
       special definition, the user-defined macro also can only be used at top level.</p>
-      <p class="T1.Text1"><a name="MARKER-2-315"></a>A constituent is at <strong class="Bold"><dfn>top
-      level</dfn></strong> if and only if it is a direct constituent of a body, no preceding constituent of
-      that body is a local declaration, and the body is either the body of a source record or the body of
-      a <code>begin</code> statement that is itself a constituent at top level. When a constituent appears
-      inside a call to a macro, whether that constituent is at top level must be determined after macro
-      expansion.</p>
+      <p class="T1.Text1"><a name="MARKER-2-315"></a>A constituent is at <dfn>top level</dfn> if and
+      only if it is a direct constituent of a body, no preceding constituent of that body is a local
+      declaration, and the body is either the body of a source record or the body of
+      a <code>begin</code> statement that is itself a constituent at top level. When a constituent
+      appears inside a call to a macro, whether that constituent is at top level must be determined
+      after macro expansion.</p>
       <p class="T1.Text1">The effect of the above rule is that a constituent at top level is not in the scope
       of any local declarations, is not subject to any condition handlers other than default handlers, and is
       not affected by any flow of control constructs such as conditionals and iterations. This restriction

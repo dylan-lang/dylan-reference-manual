@@ -119,10 +119,10 @@
 <a name="UID-Functions-2150"></a>
 <h1 class="section-title"><a name="MARKER-2-745"></a>Overview</h1>
 <p class="T1.Text1">All operations in Dylan are functions.</p>
-<p class="T1.Text1"><a name="MARKER-2-746"></a>Functions accept zero or more arguments, and return zero or more values. The <strong class="Bold"><a name="MARKER-2-747"></a><dfn>parameter list</dfn></strong> of the function describes the number and types of the arguments that the function accepts, and the number and types of the values it returns.</p>
+<p class="T1.Text1"><a name="MARKER-2-746"></a>Functions accept zero or more arguments, and return zero or more values. The <a name="MARKER-2-747"></a><dfn>parameter list</dfn> of the function describes the number and types of the arguments that the function accepts, and the number and types of the values it returns.</p>
 <p class="T1.Text1">There are two kinds of functions, methods and generic functions. Both are invoked in the same way. The caller does not need to know whether the function it is calling is a method or a generic function.</p>
 <p class="T1.Text1"><a name="MARKER-2-748"></a>A method is the basic unit of executable code. A method accepts a number of arguments, creates local bindings for them, executes an implicit body in the scope of these bindings, and then returns a number of values.</p>
-<p class="T1.Text1"><a name="MARKER-2-749"></a>A generic function contains a number of methods. When a generic function is called, it compares the arguments it received with the parameter lists of the methods it contains. It selects the most appropriate method and invokes it on the arguments. This technique of <strong class="Bold"><a name="MARKER-2-750"></a><dfn>method dispatch</dfn></strong> is the  basic mechanism of polymorphism in Dylan.</p>
+<p class="T1.Text1"><a name="MARKER-2-749"></a>A generic function contains a number of methods. When a generic function is called, it compares the arguments it received with the parameter lists of the methods it contains. It selects the most appropriate method and invokes it on the arguments. This technique of <a name="MARKER-2-750"></a><dfn>method dispatch</dfn> is the  basic mechanism of polymorphism in Dylan.</p>
 <p class="T1.Text1">All Dylan functions are objects, instances of <code><a name="MARKER-2-751"></a>&lt;function&gt;</code>. Generic functions are instances of <code><a name="MARKER-2-752"></a>&lt;generic-function&gt;</code> and methods are instances of <a name="MARKER-2-753"></a><code>&lt;method&gt;</code>.</p>
 <a name="HEADING48-7"></a>
 <a name="UID-Functions-2158"></a>
@@ -206,8 +206,8 @@ sort(person-list,
 <p class="T1.Text1">Methods created directly with the <code>method</code> statement may be called directly or they may be added to generic functions. Usually, however, when you want to add a method to a generic function, you create and add the method in a single declarative step, with <code>define method</code>.<a name="MARKER-2-776"></a></p>
 <a name="HEADING48-43"></a>
 <h3 class="sub-subsection-title">Closures</h3>
-<p class="T1.Text1"><a name="MARKER-2-777"></a>Methods created with <code>method</code> or <code>local</code> can be passed to functions and returned from functions. In both cases, the methods retain access to the lexical context in which they were created. Such methods are called <strong class="Bold"><dfn>closures</dfn></strong>.</p>
-<p class="T1.Text1"><a name="MARKER-2-778"></a>The following example defines a function that returns score-card methods. The method that is returned is <strong class="Bold"><a name="MARKER-2-779"></a><dfn>closed over</dfn></strong> the <code>score</code> parameter. Each time this method is called, it updates the <code>score</code> parameter and returns its new value.</p>
+<p class="T1.Text1"><a name="MARKER-2-777"></a>Methods created with <code>method</code> or <code>local</code> can be passed to functions and returned from functions. In both cases, the methods retain access to the lexical context in which they were created. Such methods are called <dfn>closures</dfn>.</p>
+<p class="T1.Text1"><a name="MARKER-2-778"></a>The following example defines a function that returns score-card methods. The method that is returned is <a name="MARKER-2-779"></a><dfn>closed over</dfn> the <code>score</code> parameter. Each time this method is called, it updates the <code>score</code> parameter and returns its new value.</p>
 <p class="errata left"><a href="drm_errata.html#p83_1"
 			  name="errata_p83_1"><strong>Errata:</strong></a>
   <code>points</code> should be named <code>score</code>.</p>

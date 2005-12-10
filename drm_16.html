@@ -124,10 +124,10 @@
       <a name="HEADING16-0"></a>
       <a name="UID-Syntax-1450"></a>
       <h1 class="section-title">Local Declarations</h1>
-      <p class="T1.Text1">A <strong class="Bold"><a name="MARKER-2-238"></a><dfn>local
-      declaration</dfn></strong> is a construct that establishes <a name="MARKER-2-239"></a>local
-      bindings or <a name="MARKER-2-240"></a>condition handlers whose scope is the remainder of the
-      body following the local declaration.</p>
+      <p class="T1.Text1">A <a name="MARKER-2-238"></a><dfn>local declaration</dfn> is a construct
+      that establishes <a name="MARKER-2-239"></a>local bindings
+      or <a name="MARKER-2-240"></a>condition handlers whose scope is the remainder of the body
+      following the local declaration.</p>
       <p class="T1.Text1">Unlike module bindings, local bindings are established during program
       execution, each time the local declaration is executed. They persist for as long as code in
       their scope is active. Local bindings persist after the body containing them returns if they
@@ -142,19 +142,17 @@
       <p class="T1.Text1">There are three kinds of local declaration: local value bindings
       (<code>let</code>), local method bindings (<code>local</code>), and condition handler
       establishment (<code>let handler</code>).</p>
-      <p class="T1.Text1">The <strong class="Bold"><a name="MARKER-2-242"></a><dfn>local value
-      bindings</dfn></strong> construct, <code>let</code>, executes an expression and locally binds
-      names to the values returned by that expression.</p>
-      <p class="T1.Text1">The <strong class="Bold"><a name="MARKER-2-243"></a><dfn>local method
-      bindings</dfn></strong> construct, <code>local</code>, locally binds names to bare
-      methods. These bindings are visible in the remainder of the body and also inside the methods,
-      permitting recursion.</p>
-      <p class="T1.Text1">The <strong class="Bold"><a name="MARKER-2-244"></a><dfn>condition handler
-      establishing</dfn></strong> construct, <code>let handler</code>, establishes a function to be
-      called if a condition of a given type is signaled during the execution of the remainder of the
-      body or anything the body calls. The handler is disestablished as soon as the body
-      returns. Unlike the other two kinds of local declaration, <code>let handler</code> does not
-      establish any bindings.</p>
+      <p class="T1.Text1">The <a name="MARKER-2-242"></a><dfn>local value bindings</dfn>
+      construct, <code>let</code>, executes an expression and locally binds names to the values
+      returned by that expression.</p>
+      <p class="T1.Text1">The <a name="MARKER-2-243"></a><dfn>local method bindings</dfn>
+      construct, <code>local</code>, locally binds names to bare methods. These bindings are visible
+      in the remainder of the body and also inside the methods, permitting recursion.</p>
+      <p class="T1.Text1">The <a name="MARKER-2-244"></a><dfn>condition handler establishing</dfn>
+      construct, <code>let handler</code>, establishes a function to be called if a condition of a
+      given type is signaled during the execution of the remainder of the body or anything the body
+      calls. The handler is disestablished as soon as the body returns. Unlike the other two kinds
+      of local declaration, <code>let handler</code> does not establish any bindings.</p>
 
     </div>
 

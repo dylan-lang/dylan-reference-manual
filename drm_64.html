@@ -119,16 +119,16 @@
 <a name="HEADING64-0"></a>
 <a name="UID-Collections-3519"></a>
 <h1 class="section-title"><a name="MARKER-9-1013"></a>Collection Alteration and Allocation</h1>
-<p class="T1.Text1"><a name="MARKER-2-1014"></a>The contents of a collection are the key/value pairs stored in the collection. The contents are said to be <strong class="bold">altered</strong> when:</p>
+<p class="T1.Text1"><a name="MARKER-2-1014"></a>The contents of a collection are the key/value pairs stored in the collection. The contents are said to be <dfn>altered</dfn> when:</p>
 <ul>
   <li><a name="MARKER-2-1015"></a>Keys are added or removed (according to the collection's key test).</li>
   <li>The value of a key (according to the key test) changes (as tested by <code>==</code>).</li>
   <li>The ordering of the key/value pairs changes. This type of alteration is only possible for explicit key collections that are stable under iteration.</li>
 </ul>
-<p class="T1.Text1">A function <strong class="bold"><a name="MARKER-2-1016"></a>destructively modifies</strong> its argument collection if calling the function could alter the contents of the argument collection. Unless explicitly documented to do so, functions do not destructively modify their arguments.</p>
+<p class="T1.Text1">A function <a name="MARKER-2-1016"></a><dfn>destructively modifies</dfn> its argument collection if calling the function could alter the contents of the argument collection. Unless explicitly documented to do so, functions do not destructively modify their arguments.</p>
 <p class="T1.Text1">The <code>!</code> convention, described on <a href="drm_24.html#MARKER-9-342" class="T1.Text1">page 24</a>, is used to indicate some destructive operations.</p>
 <p class="T1.Text1"><a name="MARKER-2-1017"></a>Unless explicity noted, destructive operations are not required to leave their arguments in a well-defined state. More particularly, a destructive operation does not in general turn the argument into the result. It may reuse components of the argument or alter the argument in some unpredictable way in order to produce the result. As a general rule, the return value of the function should be used.</p>
-<p class="T1.Text1">A collection <var>C </var>is <strong class="bold"><a name="MARKER-2-1018"></a>fresh</strong> if modification of any pre-existing collection's contents can never modify the contents of <var>C</var> and if modifications to <var>C</var> can never modify the contents of any pre-existing collection. <a name="MARKER-2-1019"></a>Immutable collections cannot be modified, so a fresh immutable collection can share structure with other immutable collections.</p>
+<p class="T1.Text1">A collection <var>C </var>is <a name="MARKER-2-1018"></a><dfn>fresh</dfn> if modification of any pre-existing collection's contents can never modify the contents of <var>C</var> and if modifications to <var>C</var> can never modify the contents of any pre-existing collection. <a name="MARKER-2-1019"></a>Immutable collections cannot be modified, so a fresh immutable collection can share structure with other immutable collections.</p>
 <p class="T1.Text1">For example, given that <code>&lt;pair&gt;</code> is mutable and the result of a call to <code>list</code> is a fresh instance of <code>&lt;pair&gt;</code>, we can guarantee that the following expression is always false:</p>
 <pre class="code">
 list(1) == list(1)<a name="MARKER-2-1020"></a>

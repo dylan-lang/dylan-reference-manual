@@ -114,7 +114,7 @@
 <a name="HEADING72-0"></a>
 <a name="UID-Sealing-2500"></a>
 <h1 class="section-title">Explicitly Known Objects</h1>
-<p class="T0.Text0"><a name="MARKER-2-1101"></a>A class, generic function, or method may or may not be <strong class="bold">explicitly known</strong> to a given library. A sealing restriction may limit the set of classes, generic functions, and methods to those that are explicitly known; others cannot be added.</p>
+<p class="T0.Text0"><a name="MARKER-2-1101"></a>A class, generic function, or method may or may not be <dfn>explicitly known</dfn> to a given library. A sealing restriction may limit the set of classes, generic functions, and methods to those that are explicitly known; others cannot be added.</p>
 <ul>
 <li>A <a name="MARKER-2-1102"></a>class <var>C</var> is explicitly known in a library <var>L</var>  if it is defined by <code>define class</code> in <var>L</var> or in a library used by <var>L</var>.</li>
 <li>A <a name="MARKER-2-1103"></a>generic function <var>G</var> is explicitly known in a library <var>L</var> if <var>G</var> is defined by <code>define generic</code> in the library or in one of the libraries <var>L</var> uses, or if <var>G</var> is implicitly defined by the definition of a method explicitly known in <var>L</var> or if <var>G</var> is implicitly defined by a slot specification for a class explicitly known in <var>L</var>.</li>

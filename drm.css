@@ -291,14 +291,8 @@ body.section-start #section-name { display: none }
 
 /*
   Always use bold for defining instance text (DFN tags), to match the
-  printed DRM, since it specifically says they are set in bold. Two notes:
-
-  1. As it happens, the HTML was originally generated with STRONG tags (and
-     no DFNs), so it usually renders in bold, but now that we have a
-     style sheet, use it to ensure the formatting is as desired.
-     
-  2. Some browsers apply italics to DFN (in addition to bold), so be sure
-     to suppress that.
+  printed DRM, since it specifically says they are set in bold. Some
+  browsers render DFN in italics, so be sure to suppress that.
 */
 
 dfn  { font-weight: bold; font-style: normal }
