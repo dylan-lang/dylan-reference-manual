@@ -398,6 +398,12 @@ h5.method-signature code em { font-weight: normal; font-style: normal }
    rather than deleting them from the HTML in case they prove useful in the
    future. No sense deleting information you can just hide from view with
    CSS.
+
+   I'm using visibility:hidden;height:0 rather than display:none because
+   the vertical spacing surrounding the h1's is still useful for getting
+   the right amount of margin between the top of the page and the
+   content. Feel free to come up with a cleaner way to get the desired top
+   margin (probably by adding some margin above the #content DIV).
 */
 
 h1.colophon-title,
