@@ -131,12 +131,12 @@
 <a name="HEADING46-3"></a>
 <a name="UID-Types_and_Classes-3852"></a>
 <h2 class="subsection-title">Limited Type Constructor</h2>
-<p class="T1.Text1"><a name="MARKER-2-708"></a>Limited types are created with the generic function <code><a name="MARKER-2-709"></a>limited</code>. The first argument to limited is a class. Depending on the class, additional keyword arguments are allowed to specify the constraints of the limited type.</p>
+<p class="T1.Text1"><a name="MARKER-2-708"></a>Limited types are created with the generic function <code id="MARKER-2-709">limited</code>. The first argument to limited is a class. Depending on the class, additional keyword arguments are allowed to specify the constraints of the limited type.</p>
 <p class="T1.Text1">Not all classes support <code>limited</code>; the methods for <code>limited</code> are documented individually beginning on <a href="drm_98.html#MARKER-9-1559" class="T1.Text1">page 263</a>.</p>
 <a name="HEADING46-6"></a>
 <a name="UID-Types_and_Classes-3861"></a>
 <h2 class="subsection-title"><a name="MARKER-9-710"></a>Limited Integer Types</h2>
-<p class="T1.Text1"><a name="MARKER-2-711"></a>Limited integer types are subtypes of <code><a name="MARKER-2-712"></a>&lt;integer&gt;</code> containing integers that fall within a specifed range. The range is specified by <code>min:</code> and <code>max:</code> keyword arguments to <code>limited</code>.</p>
+<p class="T1.Text1"><a name="MARKER-2-711"></a>Limited integer types are subtypes of <code id="MARKER-2-712">&lt;integer&gt;</code> containing integers that fall within a specifed range. The range is specified by <code>min:</code> and <code>max:</code> keyword arguments to <code>limited</code>.</p>
 <p class="T1.Text1">For example:</p>
 <pre>
 // accepts integers between -1000 and 1000 inclusive.
@@ -163,7 +163,7 @@ define method f (x :: limited(&lt;integer&gt;, min: 1))
 <a name="HEADING46-19"></a>
 <a name="UID-Types_and_Classes-3901"></a>
 <h2 class="subsection-title">Limited Collection Types</h2>
-<p class="T1.Text1"><a name="MARKER-2-716"></a>Limited collection types are subtypes of <code><a name="MARKER-2-717"></a>&lt;collection&gt;</code> (and of subclasses of <code>&lt;collection&gt;</code>) that are constrained to be a specified size and/or to contain elements of a specified type.</p>
+<p class="T1.Text1"><a name="MARKER-2-716"></a>Limited collection types are subtypes of <code id="MARKER-2-717">&lt;collection&gt;</code> (and of subclasses of <code>&lt;collection&gt;</code>) that are constrained to be a specified size and/or to contain elements of a specified type.</p>
 <p class="T1.Text1">A complete description of limited collection types is given in <a href="drm_69.html#MARKER-9-1060" class="T1.Text1">"Limited Collection Types" on page 126</a> in <a href="drm_59.html" class="T1.Text1">Chapter 8, "Collections."</a><a name="MARKER-2-718"></a><a name="MARKER-2-719"></a></p>
 <a name="LINK-Types_and_Classes-lastpage"></a><a name="LINK-FunctionsTOC-firstpage"></a><a name="UID-FunctionsTOC-557"></a>
 <a name="LINK-FunctionsTOC-lastpage"></a>

@@ -260,7 +260,7 @@
       <a name="UID-Built-In_Classes-416"></a>
       <h2 class="subsection-title">General Collections</h2>
       <a name="HEADING93-6"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1401"></a>&lt;collection&gt;</code> </span><span class="attributes-summary">[Open Abstract  Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1401">&lt;collection&gt;</code> </span><span class="attributes-summary">[Open Abstract  Class]</span></h4>
       <hr class="item-title" />
       <p class="T1.Text1">The class of collections, aggregate data structures.</p>
       <dl class="Cliche">
@@ -359,7 +359,7 @@
       <a name="HEADING93-374"></a>
       <h2 class="subsection-title">Explicit Key Collections</h2>
       <a name="HEADING93-375"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1402"></a>&lt;explicit-key-collection&gt;</code> </span><span class="attributes-summary">[Open Abstract Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1402">&lt;explicit-key-collection&gt;</code> </span><span class="attributes-summary">[Open Abstract Class]</span></h4>
       <hr class="item-title" />
       <p class="T1.Text1">The class of all collections that are not sequences.</p>
       <dl class="Cliche">
@@ -387,7 +387,7 @@
       <a name="UID-Built-In_Classes-1533"></a>
       <h2 class="subsection-title">Sequences</h2>
       <a name="HEADING93-418"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1403"></a>&lt;sequence&gt;</code> </span><span class="attributes-summary">[Open Abstract Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1403">&lt;sequence&gt;</code> </span><span class="attributes-summary">[Open Abstract Class]</span></h4>
       <hr class="item-title" />
       <p class="T1.Text1">The class of collections whose keys are consecutive integers starting from zero.</p>
       <dl class="Cliche">
@@ -398,7 +398,7 @@
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>The class of collections whose keys are consecutive integers starting from zero.</p>
 	  <p class="T1.Text1"><a name="MARKER-2-1404"></a>Sequences must be stable under iteration, and the iteration order must match the order of keys. Thus, the key associated with a sequence's iteration state can be determined by keeping a counter in parallel with the iteration state.</p>
-	  <p class="T1.Text1"><code><a name="MARKER-2-1405"></a><a name="MARKER-2-1406"></a><a name="MARKER-2-1407"></a><a name="MARKER-2-1408"></a><a name="MARKER-2-1409"></a><a name="MARKER-2-1410"></a><a name="MARKER-2-1411"></a><a name="MARKER-2-1412"></a><a name="MARKER-2-1413"></a><a name="MARKER-2-1414"></a><a name="MARKER-2-1415"></a><a name="MARKER-2-1416"></a></code>The default methods for <code>add</code>, <code>add-new</code>, <code>remove</code>, <code>choose</code>, <code>choose-by</code>, <code>intersection</code>, <code>union</code>, <code>remove-duplicates</code>, <code>copy-sequence</code>, <code>concatenate</code>, <code>reverse</code>, and <code>sort</code> all return new sequences that are instances of the <code><a name="MARKER-2-1417"></a>type-for-copy</code> of their primary sequence argument. However, more specialized methods are permitted to choose a more appropriate result class; for example, <code>copy-sequence</code> of a range returns another range, even though the <code>type-for-copy</code> value of a range is the <code>&lt;list&gt;</code> class.</p>
+	  <p class="T1.Text1"><code><a name="MARKER-2-1405"></a><a name="MARKER-2-1406"></a><a name="MARKER-2-1407"></a><a name="MARKER-2-1408"></a><a name="MARKER-2-1409"></a><a name="MARKER-2-1410"></a><a name="MARKER-2-1411"></a><a name="MARKER-2-1412"></a><a name="MARKER-2-1413"></a><a name="MARKER-2-1414"></a><a name="MARKER-2-1415"></a><a name="MARKER-2-1416"></a></code>The default methods for <code>add</code>, <code>add-new</code>, <code>remove</code>, <code>choose</code>, <code>choose-by</code>, <code>intersection</code>, <code>union</code>, <code>remove-duplicates</code>, <code>copy-sequence</code>, <code>concatenate</code>, <code>reverse</code>, and <code>sort</code> all return new sequences that are instances of the <code id="MARKER-2-1417">type-for-copy</code> of their primary sequence argument. However, more specialized methods are permitted to choose a more appropriate result class; for example, <code>copy-sequence</code> of a range returns another range, even though the <code>type-for-copy</code> value of a range is the <code>&lt;list&gt;</code> class.</p>
 	  <p class="T1.Text1"><code>&lt;sequence&gt;</code> is disjoint from <code>&lt;explicit-key-collection&gt;</code> because of the sealed domain over the function <code>key-test</code> for <code>&lt;sequence&gt;</code>.</p>
 	  <p class="T1.Text1">The element type of <code>&lt;sequence&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
 	<dt class="Cliche"><span>Operations:</span></dt>
@@ -513,7 +513,7 @@
       <a name="UID-Built-In_Classes-2739"></a>
       <h2 class="subsection-title">Mutable Collections</h2>
       <a name="HEADING93-838"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1418"></a>&lt;mutable-collection&gt;</code> </span><span class="attributes-summary">[Open Abstract Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1418">&lt;mutable-collection&gt;</code> </span><span class="attributes-summary">[Open Abstract Class]</span></h4>
       <hr class="item-title" />
       <p class="T1.Text1">The class of collections that may be modified.</p>
       <dl class="Cliche">
@@ -523,7 +523,7 @@
 	<dd class="Cliche"><p>None.</p></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>The class of collections that may be modified.</p>
-	  <p class="T1.Text1">Every mutable collection is required to allow modification by implementing <code><a name="MARKER-2-1419"></a>element-setter</code>.</p>
+	  <p class="T1.Text1">Every mutable collection is required to allow modification by implementing <code id="MARKER-2-1419">element-setter</code>.</p>
 	  <p class="T1.Text1">The element type of <code>&lt;mutable-collection&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
 	<dt class="Cliche"><span>Operations:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;mutable-collection&gt;</code> provides the following operations:</p>
@@ -562,7 +562,7 @@
 	</dd>
       </dl>
       <a name="HEADING93-982"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1420"></a>&lt;mutable-explicit-key-collection&gt;</code> </span><span class="attributes-summary">[Open Abstract Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1420">&lt;mutable-explicit-key-collection&gt;</code> </span><span class="attributes-summary">[Open Abstract Class]</span></h4>
       <hr class="item-title" />
       <p class="T1.Text1">The class of explicit-key-collections that can have elements replaced.</p>
       <dl class="Cliche">
@@ -594,7 +594,7 @@
 	</dd>
       </dl>
       <a name="HEADING93-1057"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1421"></a>&lt;mutable-sequence&gt;</code> </span><span class="attributes-summary">[Open Abstract Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1421">&lt;mutable-sequence&gt;</code> </span><span class="attributes-summary">[Open Abstract Class]</span></h4>
       <hr class="item-title" />
       <p class="T1.Text1">The class of sequences that may be modified.</p>
       <dl class="Cliche">
@@ -643,7 +643,7 @@
       <a name="UID-Built-In_Classes-419"></a>
       <h2 class="subsection-title">Stretchy Collections</h2>
       <a name="HEADING93-1195"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1422"></a>&lt;stretchy-collection&gt;</code> </span><span class="attributes-summary">[Open Abstract Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1422">&lt;stretchy-collection&gt;</code> </span><span class="attributes-summary">[Open Abstract Class]</span></h4>
       <hr class="item-title" />
       <p class="T1.Text1">The class of collections that may grow or shrink to accommodate adding or removing elements.</p>
       <dl class="Cliche">
@@ -653,7 +653,7 @@
 	<dd class="Cliche"><p>None.</p></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>The class of collections that may grow or shrink to accommodate adding or removing elements.</p>
-	  <p class="T1.Text1"><a name="MARKER-2-1423"></a>Stretchy collections allow <code><a name="MARKER-2-1424"></a>element-setter </code>to be called with a key that is not present in the collection, expanding the collection as necessary to add a new element in that case. Each concrete subclass of <code>&lt;stretchy-collection&gt;</code> must provide or inherit a method for <code>element-setter </code>that behaves as follows when there is not already an element present for the indicated key:</p>
+	  <p class="T1.Text1"><a name="MARKER-2-1423"></a>Stretchy collections allow <code id="MARKER-2-1424">element-setter </code>to be called with a key that is not present in the collection, expanding the collection as necessary to add a new element in that case. Each concrete subclass of <code>&lt;stretchy-collection&gt;</code> must provide or inherit a method for <code>element-setter </code>that behaves as follows when there is not already an element present for the indicated key:</p>
 	  <ul>
 	    <li> If the class is a subclass of <code>&lt;explicit-key-collection&gt;,</code> adds a new element to the collection with the indicated key.</li>
 	    <li>If the class is a subclass of <code>&lt;sequence&gt;,</code> first calls <code>size-setter</code> on the key + 1 and the collection to expand the sequence. The key must be a non-negative integer.</li>
@@ -698,7 +698,7 @@
 	  <p class="T1.Text1">Arrays typically use space efficient representations, and the average time required to access a randomly chosen element is typically sublinear to the number of elements.</p>
 	  <p class="T1.Text1">Whe a multi-dimensional array is created, the concrete class that is actually instantiated cannot be any of the specified subclasses of <code>&lt;array&gt;</code>, which are all one-dimensional. Every implementation must have one or more concrete subclasses of <code>&lt;array&gt;</code> that are used for this purpose. These concrete subclasses have no specified names, and their names are not exported by the Dylan module.</p>
 	  <p class="T1.Text1"><a name="MARKER-2-1428"></a>When a single-dimensional array is created, the array created will be an instance of <code>&lt;vector&gt;</code>.</p>
-	  <p class="T1.Text1">Each concrete subclass of <code>&lt;array&gt;</code> must either provide or inherit implementations of the functions <code><a name="MARKER-2-1429"></a>element</code>, <code>element-setter</code>, and <code>dimensions</code>.</p>
+	  <p class="T1.Text1">Each concrete subclass of <code>&lt;array&gt;</code> must either provide or inherit implementations of the functions <code id="MARKER-2-1429">element</code>, <code>element-setter</code>, and <code>dimensions</code>.</p>
 	  <p class="T1.Text1">The element type of <code>&lt;array&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
 	<dt class="Cliche"><span>Operations:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;array&gt;</code> provides the following operations:</p>
@@ -782,7 +782,7 @@
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche"><p>The class of one-dimensional arrays.</p>
 	  <p class="T1.Text1"><code>&lt;vector&gt;</code> has no direct instances; calling <code>make</code> on <code>&lt;vector&gt;</code> returns an instance of <code>&lt;simple-object-vector&gt;</code>.</p>
-	  <p class="T1.Text1">Each concrete subclass of <code>&lt;vector&gt;</code> must either provide or inherit an implementation of <a name="MARKER-2-1433"></a><code>size</code> that shadows the method provided by <code>&lt;array&gt;</code>.</p>
+	  <p class="T1.Text1">Each concrete subclass of <code>&lt;vector&gt;</code> must either provide or inherit an implementation of <code id="MARKER-2-1433">size</code> that shadows the method provided by <code>&lt;array&gt;</code>.</p>
 	  <p class="T1.Text1">The element type of <code>&lt;vector&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
 	<dt class="Cliche"><span>Operations:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;vector&gt;</code> provides the following operations:</p>
@@ -867,7 +867,7 @@
 	</dd>
       </dl>
       <a name="HEADING93-1761"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1438"></a>&lt;simple-object-vector&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1438">&lt;simple-object-vector&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
       <hr class="item-title" />
       <p class="T1.Text1">The class of simple vectors that may have elements of any type.</p>
       <dl class="Cliche">
@@ -888,7 +888,7 @@
 	<dd class="Cliche"><p>None.</p></dd>
       </dl>
       <a name="HEADING93-1770"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1439"></a>&lt;stretchy-vector&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Primary Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1439">&lt;stretchy-vector&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Primary Class]</span></h4>
       <hr class="item-title" />
       <p class="T1.Text1">The class of vectors that are stretchy.</p>
       <dl class="Cliche">
@@ -998,16 +998,16 @@
       <a name="UID-Built-In_Classes-423"></a>
       <h2 class="subsection-title"><a name="MARKER-2-1443"></a>Lists</h2>
       <p class="T1.Text1">Lists are constructed by linking together instances of <code>&lt;pair&gt;</code>. The <a name="MARKER-2-1444"></a>head of a list contains an element, and the <a name="MARKER-2-1445"></a>tail of the list contains a pointer to the next pair in the list. The list ends when the tail of a pair contains something besides another pair.</p>
-      <p class="T1.Text1">A <a name="MARKER-2-1446"></a><dfn>proper list</dfn> has a final pair with
-      a tail containing the empty list.</p>
-      <p class="T1.Text1">An <a name="MARKER-2-1447"></a><dfn>improper list</dfn> does not have a
-      final pair with a tail containing the empty list, either because the tail of its final pair is
-      not the empty list, or because the list is circular and thus does not have a final
-      pair. Except when their behavior on improper lists is documented explicitly, collection or
-      sequence functions are not guaranteed to return an answer when an improper list is used as a
-      collection or a sequence. At the implementation's option, these functions may return the
-      correct result, signal a <code>&lt;type-error&gt;</code>, or (in the case of a circular list)
-      fail to return.</p>
+      <p class="T1.Text1">A <dfn id="MARKER-2-1446">proper list</dfn> has a final pair with a tail
+      containing the empty list.</p>
+      <p class="T1.Text1">An <dfn id="MARKER-2-1447">improper list</dfn> does not have a final pair
+      with a tail containing the empty list, either because the tail of its final pair is not the
+      empty list, or because the list is circular and thus does not have a final pair. Except when
+      their behavior on improper lists is documented explicitly, collection or sequence functions
+      are not guaranteed to return an answer when an improper list is used as a collection or a
+      sequence. At the implementation's option, these functions may return the correct result,
+      signal a <code>&lt;type-error&gt;</code>, or (in the case of a circular list) fail to
+      return.</p>
       <p class="T1.Text1">When treated as a collection, the elements of a list are the heads of successive pairs in the list.</p>
       <a name="HEADING93-2050"></a>
       <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1448"></a><a name="MARKER-9-1449"></a>&lt;list&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Abstract Class]</span></h4>
@@ -1080,7 +1080,7 @@
 	</dd>
       </dl>
       <a name="HEADING93-2266"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1450"></a>&lt;pair&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1450">&lt;pair&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
       <hr class="item-title" />
       <p class="T0.Text0">The class of lists that can have new values assigned to their heads and tails.</p>
       <dl class="Cliche">
@@ -1118,7 +1118,7 @@
 	<dd class="Cliche"><p></p></dd>
       </dl>
       <a name="HEADING93-2356"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1451"></a>&lt;empty-list&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1451">&lt;empty-list&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
       <hr class="item-title" />
       <p class="T1.Text1">The class with only one instance, the empty list.</p>
       <dl class="Cliche">
@@ -1264,7 +1264,7 @@
 	</dd>
       </dl>
       <a name="HEADING93-2695"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1457"></a>&lt;byte-string&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1457">&lt;byte-string&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
       <hr class="item-title" />
       <p class="T1.Text1">The class of vectors with elements that are eight-bit characters.</p>
       <dl class="Cliche">
@@ -1297,7 +1297,7 @@
 	</dd>
       </dl>
       <a name="HEADING93-2752"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1458"></a>&lt;unicode-string&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1458">&lt;unicode-string&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
       <hr class="item-title" />
       <p class="T1.Text1">The class of vectors with elements that are sixteen-bit Unicode characters.</p>
       <dl class="Cliche">
@@ -1404,7 +1404,7 @@
 	</dd>
       </dl>
       <a name="HEADING93-3023"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1463"></a>&lt;object-table&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1463">&lt;object-table&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Class]</span></h4>
       <hr class="item-title" />
       <p class="T1.Text1">The class of tables that compare keys using <code>==.</code></p>
       <dl class="Cliche">

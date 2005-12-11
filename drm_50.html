@@ -121,7 +121,7 @@
 <p class="T1.Text1">Method dispatch occurs in three phases. First, all the <a name="MARKER-2-847"></a><a name="MARKER-2-848"></a>applicable methods are selected. Next, the applicable methods are sorted by specificity. Finally, the most specific method is called.</p>
 <a name="HEADING50-3"></a>
 <h3 class="sub-subsection-title"><a name="MARKER-9-849"></a>Method Specificity</h3>
-<p class="T1.Text1"><a name="MARKER-2-850"></a>For any two methods <var>A</var> and <var>B</var> that are applicable to a given generic function call, one method may be <dfn>more specific than</dfn> the other, or the methods may be <a name="MARKER-2-851"></a><dfn>ambiguous methods</dfn>.</p>
+<p class="T1.Text1"><a name="MARKER-2-850"></a>For any two methods <var>A</var> and <var>B</var> that are applicable to a given generic function call, one method may be <dfn>more specific than</dfn> the other, or the methods may be <dfn id="MARKER-2-851">ambiguous methods</dfn>.</p>
 <p class="T1.Text1">To order two methods <var>A</var> and <var>B</var> with respect to a particular set of arguments, compare each of <var>A</var>'s specializers with <var>B</var>'s specializer in the corresponding position using the argument that was supplied for that position. The comparison works in the following way.</p>
 <ul>
   <li><a name="MARKER-2-852"></a><a name="MARKER-2-853"></a>If the specializers are type equivalent, then <var>A</var> and <var>B</var> are unordered at the current argument position. That is, this argument position provides no information about the order of the two methods.</li>

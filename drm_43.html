@@ -123,7 +123,7 @@
 <a name="HEADING43-0"></a>
 <a name="UID-Types_and_Classes-1987"></a>
 <h1 class="section-title"><a name="MARKER-2-656"></a><a name="MARKER-2-657"></a><a name="MARKER-9-658"></a>Instance Creation and Initialization</h1>
-<p class="T1.Text1">The creation and initialization of instances is controlled by the generic functions <a name="MARKER-2-659"></a><code>initialize</code> and  <a name="MARKER-2-660"></a><code>make</code>, using initialization information supplied by the class definition and by keyword arguments in the call to <code>make</code>. Much of this behavior is supplied by the default <code>make</code> method defined on <code>&lt;class&gt;</code>.</p>
+<p class="T1.Text1">The creation and initialization of instances is controlled by the generic functions <code id="MARKER-2-659">initialize</code> and  <code id="MARKER-2-660">make</code>, using initialization information supplied by the class definition and by keyword arguments in the call to <code>make</code>. Much of this behavior is supplied by the default <code>make</code> method defined on <code>&lt;class&gt;</code>.</p>
 <a name="HEADING43-2"></a>
 <a name="UID-Types_and_Classes-1989"></a>
 <h2 class="subsection-title">Overview</h2>
@@ -177,7 +177,7 @@ end
 </ul>
 <a name="HEADING43-34"></a>
 <h3 class="sub-subsection-title">Testing the Initialization of a Slot</h3>
-<p class="T1.Text1"><a name="MARKER-2-673"></a>A program can test to see whether a slot has been initialized, using the <code><a name="MARKER-2-674"></a>slot-initialized?</code> function, described on <a href="drm_98.html#MARKER-9-1546" class="T1.Text1">page 261</a>. There is no portable mechanism for resetting a slot to the uninitialized state once it has been initialized.</p>
+<p class="T1.Text1"><a name="MARKER-2-673"></a>A program can test to see whether a slot has been initialized, using the <code id="MARKER-2-674">slot-initialized?</code> function, described on <a href="drm_98.html#MARKER-9-1546" class="T1.Text1">page 261</a>. There is no portable mechanism for resetting a slot to the uninitialized state once it has been initialized.</p>
 <p class="T1.Text1">To support the <code>slot-initialized?</code> protocol in a virtual slot, programmers must define a method for <code>slot-initialized?</code> that specializes on the getter of the slot and the class.<a name="MARKER-2-675"></a></p>
 <a name="HEADING43-37"></a>
 <a name="UID-Types_and_Classes-3606"></a>
@@ -222,13 +222,13 @@ end class &lt;astronaut&gt;;
 <h3 class="sub-subsection-title"><a name="MARKER-2-687"></a>Initialization Argument Inheritance</h3>
 <p class="T1.Text1">The inheritance of initialization argument specifications is defined as follows.</p>
 <ul>
-  <li> A slot specification that supplies an init-keyword <var>K</var> by using <code><a name="MARKER-2-688"></a>required-init-keyword:</code> is treated as if the initialization argument specification <code><a name="MARKER-2-689"></a>required keyword</code> <var>K</var> had been specified in the class definition.</li>
+  <li> A slot specification that supplies an init-keyword <var>K</var> by using <code id="MARKER-2-688">required-init-keyword:</code> is treated as if the initialization argument specification <code id="MARKER-2-689">required keyword</code> <var>K</var> had been specified in the class definition.</li>
   <li>A slot specification that supplies both an init-keyword and also an init specification is not equivalent to an initialization argument specification that includes both the init-keyword and an init specification. In the former case the init specification is used to default the value of the slot directly, but does not affect the defaulted initialization arguments; in the latter case the init specification is used to default the value of the slot indirectly, by affecting the defaulted initialization arguments.</li>
   <li>If the initialization argument is being specified for the first time (it is not inherited from any superclass) there are three factors to consider:
     <ul>
-      <li>The <code><a name="MARKER-2-690"></a>type:</code> argument, which defaults to <code>&lt;object&gt;</code>, specifies the required type of the initialization argument. (This does not specify the type of the slot.)</li>
-      <li>If the initialization argument is specified with <code><a name="MARKER-2-691"></a>required keyword</code> then it is required, otherwise it is optional.</li>
-      <li>If the initialization argument is specified with <code><a name="MARKER-2-692"></a>keyword</code>, then it can provide an init specification that is used by the default <code>make</code> method to provide a default value for the initialization argument in the defaulted initialization arguments.</li>
+      <li>The <code id="MARKER-2-690">type:</code> argument, which defaults to <code>&lt;object&gt;</code>, specifies the required type of the initialization argument. (This does not specify the type of the slot.)</li>
+      <li>If the initialization argument is specified with <code id="MARKER-2-691">required keyword</code> then it is required, otherwise it is optional.</li>
+      <li>If the initialization argument is specified with <code id="MARKER-2-692">keyword</code>, then it can provide an init specification that is used by the default <code>make</code> method to provide a default value for the initialization argument in the defaulted initialization arguments.</li>
     </ul>
   </li>
   <li>If an initialization argument specification is being specified for an initialization argument that is inherited from a single superclass, the following factors hold:

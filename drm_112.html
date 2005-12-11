@@ -217,7 +217,7 @@ define variable (*whole-part* :: &lt;integer&gt;, *remainder* :: &lt;real&gt;)
   </dd>
 </dl>
 <a name="HEADING112-163"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2002"></a>define constant</code> </span><span class="attributes-summary">[Definition]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2002">define constant</code> </span><span class="attributes-summary">[Definition]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2003"></a>Defines and initializes a constant binding in the current module.</p>
 <dl class="Cliche">
@@ -248,7 +248,7 @@ define variable (*whole-part* :: &lt;integer&gt;, *remainder* :: &lt;real&gt;)
       </dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><a name="MARKER-2-2004"></a><code>define constant</code> defines constant bindings in the current module.</p>
+  <dd class="Cliche"><p><code id="MARKER-2-2004">define constant</code> defines constant bindings in the current module.</p>
     <p class="T1.Text1">The values returned by <var>init</var> are used to initialize the constant bindings. The first value returned is bound to the first <var>constant</var>, the second value to the second <var>constant</var>, etc. The last <var>constant</var> may be preceded by <code>#rest</code>, in which case it is bound to a sequence containing all the remaining values.</p>
     <p class="T1.Text1">If more than one <var>constant</var> is defined, the <var>constants</var> are enclosed in parentheses and separated by commas.</p>
     <pre class="code">
@@ -264,7 +264,7 @@ define constant $start-time :: &lt;integer&gt; = get-current-time(); </pre>
   </dd>
 </dl>
 <a name="HEADING112-178"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2006"></a>define generic</code> </span><span class="attributes-summary">[Definition]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2006">define generic</code> </span><span class="attributes-summary">[Definition]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2007"></a>Defines a constant binding in the current module and initializes it to a new generic function.</p>
 <dl class="Cliche">
@@ -328,7 +328,7 @@ define generic brew (brand :: &lt;coffee-brand&gt;, #key strength)
   </dd>
 </dl>
 <a name="HEADING112-196"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2009"></a>define method</code> </span><span class="attributes-summary">[Definition]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2009">define method</code> </span><span class="attributes-summary">[Definition]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2010"></a>Adds a method to a generic function, and potentially defines a constant binding in the current module containing a new generic function.</p>
 <dl class="Cliche">
@@ -367,7 +367,7 @@ define generic brew (brand :: &lt;coffee-brand&gt;, #key strength)
       </dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><a name="MARKER-2-2011"></a><code>define method</code> creates a method and adds it to the generic function in <var>name</var>. If the module binding <var>name</var> is not already defined, it is defined as with <code>define generic</code>. Thus, <code>define method</code> will create a new generic function or extend an old one, as needed.</p>
+  <dd class="Cliche"><p><code id="MARKER-2-2011">define method</code> creates a method and adds it to the generic function in <var>name</var>. If the module binding <var>name</var> is not already defined, it is defined as with <code>define generic</code>. Thus, <code>define method</code> will create a new generic function or extend an old one, as needed.</p>
     <p class="T1.Text1">The <var>adjective</var> allows a sealing declaration to be made about the generic function to which the method is added. The effect of this adjective is described in <a href="drm_75.html#MARKER-9-1131">"Abbreviations for Define Sealed Domain" on page 138</a>.</p>
     <p class="T1.Text1">The <var>parameter-list</var>  describes the parameters and return values of the method, including their number and type. The method can be called only with arguments that match the types of the parameters, and the method will always return values in the quantity and typed declared. Methods added to a generic function must have parameter lists that are congruent with the generic function's parameter list. A complete description of parameter lists is given in <a href="drm_49.html#MARKER-9-782" class="T1.Text1">"Parameter Lists" on page 84</a>.</p>
     <p class="T1.Text1">When the method is called, new local bindings are created for the parameters,  initialized to the arguments of the call. The <var>body</var>  is then executed in the environment containing these bindings.</p>
@@ -378,7 +378,7 @@ end method tune </pre>
   </dd>
 </dl>
 <a name="HEADING112-209"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2012"></a>define class</code> </span><span class="attributes-summary">[Definition]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2012">define class</code> </span><span class="attributes-summary">[Definition]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2013"></a>Defines a constant binding in the current module and initializes it to a new class.</p>
 <dl class="Cliche">
@@ -453,7 +453,7 @@ end method tune </pre>
     <dd><p><code>type:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 </dl></dd>
 <dt class="Cliche"><span>Description:</span></dt>
-<dd class="Cliche"><p><a name="MARKER-2-2014"></a><code>define class</code> is used to define classes.</p>
+<dd class="Cliche"><p><code id="MARKER-2-2014">define class</code> is used to define classes.</p>
 <p class="T1.Text1">It defines a constant module binding with the name <var>name</var>, and initializes it to a new class.</p>
 <p class="T1.Text1">The <var>class-adjectives</var> provide sealing information about the class. Among the adjectives, <code>abstract</code> and <code>concrete</code> are mutually exclusive, <code>primary</code> and <code>free</code> are mutually exclusive, and <code>sealed</code> and <code>open</code> are mutually exclusive. Additional implementation-defined adjectives may be supported. See <a href="drm_73.html#MARKER-9-1106" class="T1.Text1">"Declaring Characteristics of Classes" on page 134</a> for a complete description of these adjectives.</p>
 <p class="T1.Text1">The <var>superclasses</var> are the classes from which the new class directly inherits. The rules of inheritance are described in <a href="drm_41.html#MARKER-9-583" class="T1.Text1">"Class Inheritance" on page 53</a> and <a href="drm_41.html#MARKER-9-590" class="T1.Text1">"Computing the Class Precedence List" on page 54</a>.</p>
@@ -463,7 +463,7 @@ end method tune </pre>
 <p class="T1.Text1">Each <var>inherited-slot-spec</var> describes an inherited slot specification of the class. Inherited slot specifications are described in  <a href="drm_43.html#MARKER-9-677" class="T1.Text1">"Inherited Slot Specifications" on page 67</a>.</p></dd>
 </dl>
 <a name="HEADING112-240"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2015"></a>define module</code> </span><span class="attributes-summary">[Definition]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2015">define module</code> </span><span class="attributes-summary">[Definition]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2016"></a>Defines and names a module, describing the imports and exports of the module.</p>
 <dl class="Cliche">
@@ -507,7 +507,7 @@ end method tune </pre>
       <dd><p><code>export: all</code> <strong class="re">|</strong> <code>{</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><a name="MARKER-2-2017"></a><code><a name="MARKER-9-2018"></a>define module</code> defines a module with the given name. It describes which modules are used by the module being defined, which bindings are imported from the used modules, and which bindings are exported by the module being defined.</p>
+  <dd class="Cliche"><p><code id="MARKER-2-2017"><a name="MARKER-9-2018"></a>define module</code> defines a module with the given name. It describes which modules are used by the module being defined, which bindings are imported from the used modules, and which bindings are exported by the module being defined.</p>
     <p class="T1.Text1">Circular use relationships among modules are not allowed. The graph of the module-uses-module relation must be directed and acyclic.</p>
     <p class="T1.Text1">Like other definitions, module definitions are only allowed at top level. Like all constituents, module definitions are contained in a module. The names of bindings being imported and exported in a module definition refer to bindings in the module being defined and the modules being used. These are not affected by the module that contains the module definition.</p>
     <p class="T1.Text1">There is no prohibition against macros that expand into module definitions.</p>
@@ -605,7 +605,7 @@ dylan-gx
   </dd>
 </dl>
 <a name="HEADING112-282"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2019"></a>define library</code>   </span><span class="attributes-summary">[Definition]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2019">define library</code>   </span><span class="attributes-summary">[Definition]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2020"></a><a name="MARKER-2-2021"></a>Defines and names a library, describing the imports and exports of the library.</p>
 <dl class="Cliche">
@@ -668,7 +668,7 @@ dylan-gx
   </dd>
 </dl>
 <a name="HEADING112-313"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2022"></a>define sealed domain</code>  </span><span class="attributes-summary">[Definition]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2022">define sealed domain</code>  </span><span class="attributes-summary">[Definition]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-2-2023"></a><a name="MARKER-9-2024"></a>Restricts the ways in which a generic function and set of types can be extended, thereby enabling additional error checking and compiler optimization.</p>
 <dl class="Cliche">
@@ -691,7 +691,7 @@ dylan-gx
   </dd>
 </dl>
 <a name="HEADING112-321"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2025"></a>define macro</code> </span><span class="attributes-summary">[Special Definition]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2025">define macro</code> </span><span class="attributes-summary">[Special Definition]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-2-2026"></a><a name="MARKER-9-2027"></a>Defines a constant module binding containing a macro.</p>
 <dl class="Cliche">

@@ -169,7 +169,7 @@ instance?</pre>
       <ul>
 	<li><a name="MARKER-2-341"></a><a name="MARKER-9-342"></a>Operations that return a value
 	similar to one of their arguments and that also destructively modify the argument end in
-	a <code><a name="MARKER-2-343"></a>!</code>. (It will often also be the case that
+	a <code id="MARKER-2-343">!</code>. (It will often also be the case that
 	destructive and non-destructive variations of the function exist.) <code>!</code> isn't a
 	universal warning that an operation is destructive. Destructive functions that return other
 	values (like <code>-setter</code> functions and <code>pop</code>) don't need to use
@@ -180,12 +180,12 @@ reverse!
 sort!</pre>
       <ul>
 	<li><a name="MARKER-2-344"></a><a name="MARKER-2-345"></a>Operations that retrieve a value
-	from a location are called <a name="MARKER-2-346"></a><dfn>getters</dfn>. Operations that
-	store into a location are called <a name="MARKER-2-347"></a><dfn>setters</dfn>. In general,
-	getters and setters come in pairs. Setter binding names are derived by appending
-	"<code>-setter</code>" to the corresponding getter binding name. This convention is used to
-	generate setter names automatically, and it is used by <code>:=</code>, the assignment
-	operator, to find the setter that corresponds to a given getter.</li>
+	from a location are called <dfn id="MARKER-2-346">getters</dfn>. Operations that store into
+	a location are called <dfn id="MARKER-2-347">setters</dfn>. In general, getters and setters
+	come in pairs. Setter binding names are derived by appending "<code>-setter</code>" to the
+	corresponding getter binding name. This convention is used to generate setter names
+	automatically, and it is used by <code>:=</code>, the assignment operator, to find the
+	setter that corresponds to a given getter.</li>
       </ul>
       <pre class="code">
 element      element-setter

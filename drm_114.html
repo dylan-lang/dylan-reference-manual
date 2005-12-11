@@ -180,7 +180,7 @@
 <h2 class="subsection-title">Conditionals</h2>
 <p class="T1.Text1"><a name="MARKER-2-2042"></a>The following statements are used to perform conditional execution.</p>
 <a name="HEADING114-164"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2043"></a>if</code> </span><span class="attributes-summary">[Statement]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2043">if</code> </span><span class="attributes-summary">[Statement]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><code><a name="MARKER-9-2044"></a></code>Executes an implicit body if the value of a test is true or an alternate if the test is false.</p>
 <dl class="Cliche">
@@ -245,7 +245,7 @@ end if; </pre>
   </dd>
 </dl>
 <a name="HEADING114-181"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2045"></a>unless</code> </span><span class="attributes-summary">[Statement]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2045">unless</code> </span><span class="attributes-summary">[Statement]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2046"></a>Executes an implicit body unless the value of a test is true.</p>
 <dl class="Cliche">
@@ -274,7 +274,7 @@ end unless </pre>
   </dd>
 </dl>
 <a name="HEADING114-190"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2047"></a>case              </code> </span><span class="attributes-summary">[Statement]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2047">case</code> </span><span class="attributes-summary">[Statement]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2048"></a>Executes a number of tests until one is true, and then executes an implicit body associated with the true test.</p>
 <dl class="Cliche">
@@ -321,7 +321,7 @@ end case; </pre>
   </dd>
 </dl>
 <a name="HEADING114-201"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2049"></a>select</code> </span><span class="attributes-summary">[Statement]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2049">select</code> </span><span class="attributes-summary">[Statement]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2050"></a>Compares a target object to a series of potential matches, and executes an implicit body associated with the first match found.</p>
 <dl class="Cliche">
@@ -382,7 +382,7 @@ end select<a name="MARKER-2-2051"></a> </pre>
 <a name="UID-Built-In_Macros-1898"></a>
 <h2 class="subsection-title"><a name="MARKER-2-2052"></a>Iteration Constructs</h2>
 <a name="HEADING114-221"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2053"></a>while</code>  </span><span class="attributes-summary">[Statement]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2053">while</code>  </span><span class="attributes-summary">[Statement]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2054"></a>Repeatedly executes a body until a test expression is false.</p>
 <dl class="Cliche">
@@ -407,7 +407,7 @@ end select<a name="MARKER-2-2051"></a> </pre>
     <p class="T1.Text1">Each pass through the loop begins by executing <var>test</var>. If <var>test</var> returns a true value, the expressions in the <var>body</var> are executed and the looping continues. If <var>test</var> returns false, the loop terminates and <code>while</code> returns <code>#f</code>.</p></dd>
 </dl>
 <a name="HEADING114-229"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2055"></a>until ( <var>test</var> )</code> </span><span class="attributes-summary">[Statement]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2055">until ( <var>test</var> )</code> </span><span class="attributes-summary">[Statement]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2056"></a>Repeatedly executes a body until a test expression is true.</p>
 <dl class="Cliche">
@@ -436,7 +436,7 @@ end select<a name="MARKER-2-2051"></a> </pre>
     <p class="T1.Text1">Each pass through the loop begins by executing <var>test</var>. If <var>test</var> returns false, the expressions in the <var>body</var> are executed and the looping continues. If <var>test</var> returns true, the loop terminates and <code>until</code> returns <code>#f</code>.</p></dd>
 </dl>
 <a name="HEADING114-237"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2057"></a>for</code> </span><span class="attributes-summary">[Statement]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2057">for</code> </span><span class="attributes-summary">[Statement]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2058"></a>Performs general iteration over a body, updating bindings and performing end tests on each iteration.</p>
 <dl class="Cliche">
@@ -556,7 +556,7 @@ end;<a name="MARKER-2-2059"></a> </pre>
 <a name="UID-Built-In_Macros-13876"></a>
 <h2 class="subsection-title">Other Statement Macros</h2>
 <a name="HEADING114-281"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2060"></a>begin</code> </span><span class="attributes-summary">[Statement]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2060">begin</code> </span><span class="attributes-summary">[Statement]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2061"></a>Executes expressions in a body, in order.</p>
 <dl class="Cliche">
@@ -579,7 +579,7 @@ end;<a name="MARKER-2-2059"></a> </pre>
   <dd class="Cliche"><p>Begin executes the expressions in a body, in order. The values of the last expression are returned. If there are no expressions in the body, <code>#f</code> is returned.</p></dd>
 </dl>
 <a name="HEADING114-287"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2062"></a>block</code> </span><span class="attributes-summary">[Statement]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2062">block</code> </span><span class="attributes-summary">[Statement]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2063"></a>Executes a body with several options for nonstandard flow of control.</p>
 <dl class="Cliche">
@@ -627,7 +627,7 @@ end;<a name="MARKER-2-2059"></a> </pre>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><a name="MARKER-2-2064"></a><code>block</code> executes the expressions in the <var>block-body</var> in order, and then executes the optional <var>afterwards-clause</var> and <var>cleanup-clause</var>. Unless there is a nonlocal exit, block returns the values of the <var>block-body</var>, or <code>#f</code> if there is no <var>block-body</var>.</p>
+  <dd class="Cliche"><p><code id="MARKER-2-2064">block</code> executes the expressions in the <var>block-body</var> in order, and then executes the optional <var>afterwards-clause</var> and <var>cleanup-clause</var>. Unless there is a nonlocal exit, block returns the values of the <var>block-body</var>, or <code>#f</code> if there is no <var>block-body</var>.</p>
     <p class="T1.Text1">If <var>exit-variable</var> is provided, it is bound to an exit procedure (an object of type <code>&lt;function&gt;</code>) that is valid during the execution of the block body and the clauses. At any point in time before the last clause returns, the exit procedure can be called. Calling the exit procedure has the effect of immediately terminating the execution of the block, and returning as values the arguments to the exit procedure.</p>
     <p class="T1.Text1">The body of the <var>afterwards-clause</var>, if provided, is executed after the <var>block-body</var>. The values produced by the <var>afterwards-clause</var> are ignored. This is useful when you want to execute an expression for side-effect after the <var>block-body</var> has executed, but still want to return the values of the last expression in the <var>block-body</var>.</p>
     <p class="T1.Text1">The body of the <var>cleanup-clause</var>, if provided, is executed after the <var>block-body</var> and <var>afterwards-clause</var>. Its values are also ignored. The cleanup clause differs from the afterwards clause in that its body is guaranteed to be executed, even if the execution of the block is interrupted by a nonlocal exit. There is no such guarantee for the <var>afterwards-clause</var>.</p>
@@ -688,7 +688,7 @@ foo(5)
   </dd>
 </dl>
 <a name="HEADING114-324"></a>
-<h4 class="item-title"><span class="signature"><code><a name="MARKER-2-2065"></a>method</code> </span><span class="attributes-summary">[Statement]</span></h4>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-2065">method</code> </span><span class="attributes-summary">[Statement]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2066"></a>Creates and returns a method.</p>
 <dl class="Cliche">
