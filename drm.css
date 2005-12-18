@@ -507,8 +507,13 @@ body.contents ul.TOC ul { display: none }
 
 /* bring the first item up closer to the bottom of the section heading */
 h1.back-title { margin-bottom: 0 }
-dl.Glossary > dt:first-child { margin-top: 0.5em }
-dl.Glossary  { margin-top: 0.5em }
+dl.Glossary dt:first-child { margin-top: 0.5em }
+dl.Glossary   { margin-top: 0.5em }
+
+/* Glossary definitions place the term and definition close together, flush left */
+
+dl.Glossary dt   { margin-top: 1em }
+dl.Glossary dd   { margin-left: 0 }
 
 
 /*
@@ -738,11 +743,6 @@ dl p { border-left: 2px solid red }
 /* less space between lines within lower-level definition lists */
 #content > dl.Cliche > dd > dl > dd > p { margin: 0.5em auto; }
 
-
-/* Glossary definitions place the term and definition close together, flush left */
-
-dt.Glossary { margin-top: 1em }
-dd.Glossary { margin-left: 0 }
 
 
 
