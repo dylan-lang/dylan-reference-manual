@@ -118,36 +118,36 @@
 <p class="T1.Text1"><a name="MARKER-2-952"></a>Some condition classes provide a message to communicate the meaning of the condition to the program user.</p>
 <p class="T1.Text1">Condition messages are constructed using <dfn id="MARKER-2-953">format strings</dfn>. A format string is a string template into which values can be inserted to construct a message. The two-character <dfn id="MARKER-2-954">format directives</dfn> <code>%d</code>, <code>%b</code>, <code>%o</code>, <code>%x</code>, <code>%c</code>, <code>%s</code>, and <code>%=</code> are replaced by the corresponding element of the associated sequence of <dfn id="MARKER-2-955">format arguments</dfn>. Upper and lower case letters are equivalent in these format directives. The inserted value is formatted according to the following table:<a rel="FOOTNOTE" href="#FOOTNOTE-4"><sup>[4]</sup></a></p>
 <table class="numbered"><caption><strong>Table 7-1</strong>  Format Directives</caption>
-<tr><th><p class="TbH.TblHd"> Directive</p>
-</th><th><p class="TbH.TblHd"> Argument Type</p>
-</th><th><p class="TbH.TblHd"> Textual Format</p>
-</th></tr><tr><td><p class="TbT.TblText"> <code id="MARKER-2-885">%d</code></p>
-</td><td><p class="TbT.TblText"> <code>&lt;integer&gt;</code></p>
-</td><td><p class="TbT.TblText"> decimal number</p>
-</td></tr><tr><td><p class="TbT.TblText"> <code>%b</code></p>
-</td><td><p class="TbT.TblText"> <code>&lt;integer&gt;</code></p>
-</td><td><p class="TbT.TblText"> binary number</p>
-</td></tr><tr><td><p class="TbT.TblText"> <code>%o</code></p>
-</td><td><p class="TbT.TblText"> <code>&lt;integer&gt;</code></p>
-</td><td><p class="TbT.TblText"> octal number</p>
-</td></tr><tr><td><p class="TbT.TblText"> <code>%x</code></p>
-</td><td><p class="TbT.TblText"> <code>&lt;integer&gt;</code></p>
-</td><td><p class="TbT.TblText"> hexadecimal number</p>
-</td></tr><tr><td><p class="TbT.TblText"> <code>%c</code></p>
-</td><td><p class="TbT.TblText"> <code>&lt;character&gt;</code></p>
-</td><td><p class="TbT.TblText"> character (with no quotes)</p>
-</td></tr><tr><td><p class="TbT.TblText"> <code>%s</code></p>
-</td><td><p class="TbT.TblText"> <code>&lt;string&gt;</code></p>
-</td><td><p class="TbT.TblText"> string (with no quotes)</p>
-</td></tr><tr><td><p class="TbT.TblText"> <code>%s</code></p>
-</td><td><p class="TbT.TblText"> <code>&lt;condition&gt;</code></p>
-</td><td><p class="TbT.TblText"> condition message (with no quotes)</p>
-</td></tr><tr><td><p class="TbT.TblText"> <code>%=</code></p>
-</td><td><p class="TbT.TblText"> <code>&lt;object&gt;</code></p>
-</td><td><p class="TbT.TblText"> unspecified, but works with any object</p>
-</td></tr><tr><td><p class="TbT.TblText"> <code>%%</code></p>
-</td><td><p class="TbT.TblText"> none</p>
-</td><td><p class="TbT.TblText"> literal <code>%</code></p>
+<tr><th><p> Directive</p>
+</th><th><p> Argument Type</p>
+</th><th><p> Textual Format</p>
+</th></tr><tr><td><p> <code id="MARKER-2-885">%d</code></p>
+</td><td><p> <code>&lt;integer&gt;</code></p>
+</td><td><p> decimal number</p>
+</td></tr><tr><td><p> <code>%b</code></p>
+</td><td><p> <code>&lt;integer&gt;</code></p>
+</td><td><p> binary number</p>
+</td></tr><tr><td><p> <code>%o</code></p>
+</td><td><p> <code>&lt;integer&gt;</code></p>
+</td><td><p> octal number</p>
+</td></tr><tr><td><p> <code>%x</code></p>
+</td><td><p> <code>&lt;integer&gt;</code></p>
+</td><td><p> hexadecimal number</p>
+</td></tr><tr><td><p> <code>%c</code></p>
+</td><td><p> <code>&lt;character&gt;</code></p>
+</td><td><p> character (with no quotes)</p>
+</td></tr><tr><td><p> <code>%s</code></p>
+</td><td><p> <code>&lt;string&gt;</code></p>
+</td><td><p> string (with no quotes)</p>
+</td></tr><tr><td><p> <code>%s</code></p>
+</td><td><p> <code>&lt;condition&gt;</code></p>
+</td><td><p> condition message (with no quotes)</p>
+</td></tr><tr><td><p> <code>%=</code></p>
+</td><td><p> <code>&lt;object&gt;</code></p>
+</td><td><p> unspecified, but works with any object</p>
+</td></tr><tr><td><p> <code>%%</code></p>
+</td><td><p> none</p>
+</td><td><p> literal <code>%</code></p>
 </td></tr></table><p class="T1.Text1">The text printed by the <code>%=</code> format directive for any given object is implementation-defined. The behavior when a format argument is not of the type specified in the table above is implementation-defined. The behavior when too many or too few format arguments are supplied is implementation-defined.</p>
 <p class="T1.Text1">The two-character sequence <code>%%</code> does not consume a format argument, but inserts a <code>%</code> character.</p>
 <p class="T1.Text1">All other uses of the <code>%</code> character in a format string are implementation-defined.</p>
