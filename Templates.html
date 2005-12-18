@@ -122,7 +122,7 @@
 <p class="T1.Text1"><a name="MARKER-2-1262"></a>Approximately speaking, a template has the same structure as what it constructs, but contains pattern variables that will be replaced by fragments extracted from the macro call. Thus a template in the <var>main-rule-set</var>  looks like the macro expansion.</p>
 <p class="T1.Text1">However, templates do not have a full grammar. A template is essentially any sequence of tokens and <var>substitutions</var> in which all of Dylan's brackets are balanced: <code>()</code>, <code>[]</code>, <code>{}</code>, <code>#()</code>, and <code>#[]</code>. Substitution for pattern variables produces a sequence of tokens and other elementary fragments.</p>
 <p class="T1.Text1"><a name="MARKER-2-1263"></a>Note that using unparsed token sequences as templates allows a macro expansion to contain macro calls without creating any inter-dependencies between macros. Since the template is not parsed at macro definition time, any macros called in the template do not have to be defined first, and macros can be compiled independently of each other. This simplifies the implementation at the minor cost of deferring some error checking from when a macro is defined until the time when the macro is called.</p>
-<p class="T1.Text1">The grammar for templates is the definition of <var>template </var> in <a href="Phrase_Grammar#MARKER-9-2119" class="T1.Text1">"Templates" on page 429</a>.</p>
+<p class="T1.Text1">The grammar for templates is the definition of <var>template </var> in <a href="Phrase_Grammar#MARKER-9-2119">"Templates" on page 429</a>.</p>
 <p class="T1.Text1">All <var>template-elements</var>  other than <var>substitution</var>  are copied directly into the macro expansion. The various kinds of <var>substitution</var>  insert something else into the macro expansion, as follows:</p>
 <dl>
   <dt><code>?</code> <em class="BNFCaps">name</em></dt>
@@ -149,7 +149,7 @@
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
 <p class="footer"><a class="previous" title="Go to previous page" href="Pattern_Variable_Constraints"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Auxiliary_Rule_Sets"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Macros"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-<p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&reg;</a>, subsequently revised.</p>
+<p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently revised.</p>
 
 </div>
 </body>

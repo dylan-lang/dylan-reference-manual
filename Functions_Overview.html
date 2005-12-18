@@ -130,7 +130,7 @@
 <p class="T1.Text1"><a name="MARKER-2-754"></a><a name="MARKER-2-755"></a>Generic functions can be created with <code>define generic</code> or by calling <code id="MARKER-2-756">make</code> on the class <code>&lt;generic-function&gt;</code>. They are most often created with <code>define generic</code>.</p>
 <p class="T1.Text1"><a name="MARKER-2-757"></a>Generic functions may also be created implicitly by <code id="MARKER-2-758">define method</code> or by <a name="MARKER-2-759"></a>slot specifications in class definitions.</p>
 <p class="T1.Text1"><a name="MARKER-2-760"></a>A generic function definition includes a parameter list, which constrains the methods that can be added to the generic function; some aspects of the parameter must be matched by any method added. In addition, a generic function parameter list may specify that all keyword arguments are permitted in a call to the generic function.</p>
-<p class="T1.Text1">Parameter list congruency is described on <a href="Parameter_Lists#MARKER-9-837" class="T1.Text1">page 93</a>. The complete syntax of <code>define generic</code> is given on <a href="Definition_Macros#MARKER-9-2007" class="T1.Text1">page 376</a>.</p>
+<p class="T1.Text1">Parameter list congruency is described on <a href="Parameter_Lists#MARKER-9-837">page 93</a>. The complete syntax of <code>define generic</code> is given on <a href="Definition_Macros#MARKER-9-2007">page 376</a>.</p>
 <p class="T1.Text1">The following definition defines a generic function that accepts a single required argument. All methods added to this generic function must also accept a single required argument.</p>
 <pre class="code">
 define generic double (thing)
@@ -139,13 +139,13 @@ define generic double (thing)
 <pre class="code">
 define generic average (n1 :: &lt;number&gt;, n2 :: &lt;number&gt;)
 </pre>
-<p class="T1.Text1">Generic functions created with <code>define generic</code> may be sealed or open. For details of this option, see <a href="Declaring_Characteristics_of_Generic_Functions#MARKER-9-1116" class="T1.Text1">"Declaring Characteristics of Generic Functions" on page 135</a>.<a name="MARKER-2-761"></a></p>
+<p class="T1.Text1">Generic functions created with <code>define generic</code> may be sealed or open. For details of this option, see <a href="Declaring_Characteristics_of_Generic_Functions#MARKER-9-1116">"Declaring Characteristics of Generic Functions" on page 135</a>.<a name="MARKER-2-761"></a></p>
 <a name="HEADING48-17"></a>
 <a name="UID-Functions-2162"></a>
 <h2 class="subsection-title"><a name="MARKER-9-762"></a>Methods</h2>
 <p class="T1.Text1"><a name="MARKER-2-763"></a>Methods can be created with <code id="MARKER-2-764">define method</code>,  <code id="MARKER-2-765">local</code>, and <code id="MARKER-2-766">method</code> program constituents. <code>define method</code> is used to define a method and add it to a generic function in a module binding. <code>local</code> is used to create local bindings that contain self-recursive and mutually recursive methods. <code>method</code> is used to create and return methods for immediate application, for use as function arguments, or for storage in a variable or other data structure. Methods are also created for slot getters and setters when a class is created.</p>
 <p class="T1.Text1">Methods cannot be created with <code>make</code>.</p>
-<p class="T1.Text1"><a name="MARKER-2-767"></a>The parameters and return values of a method are described in its parameter list. The specializers in the parameter list declare the types of the arguments acceptable to the method. The method can be called only with arguments that match the specializers of the parameters. A complete description of parameter lists is given in <a href="Parameter_Lists#MARKER-9-782" class="T1.Text1">"Parameter Lists" on page 84</a>.</p>
+<p class="T1.Text1"><a name="MARKER-2-767"></a>The parameters and return values of a method are described in its parameter list. The specializers in the parameter list declare the types of the arguments acceptable to the method. The method can be called only with arguments that match the specializers of the parameters. A complete description of parameter lists is given in <a href="Parameter_Lists#MARKER-9-782">"Parameter Lists" on page 84</a>.</p>
 <p class="T1.Text1">When the method is invoked, it executes its implicit body. Statements in the implicit body are executed in order, in an environment that contains the parameters bound to the arguments.</p>
 <p class="T1.Text1">Methods may be invoked directly (used as functions), or indirectly through the invocation of a generic function.</p>
 <a name="HEADING48-23"></a>
@@ -158,14 +158,14 @@ define method double (thing :: &lt;number&gt;)
   thing + thing;
 end method;
 </pre>
-<p class="T1.Text1"><code>define method</code> allows the programmer to control aspects of the sealing of the generic function to which the method is added. For more details, see <a href="Define_Sealed_Domain#MARKER-9-1131" class="T1.Text1">"Abbreviations for Define Sealed Domain" on page 138</a>.</p>
+<p class="T1.Text1"><code>define method</code> allows the programmer to control aspects of the sealing of the generic function to which the method is added. For more details, see <a href="Define_Sealed_Domain#MARKER-9-1131">"Abbreviations for Define Sealed Domain" on page 138</a>.</p>
 <p class="T1.Text1"><a name="MARKER-2-769"></a>A generic function with no required parameters can contain a single method. Adding a new method has the effect of replacing the existing method.</p>
-<p class="T1.Text1">The complete syntax of <code>define method</code> is given on <a href="Definition_Macros#MARKER-9-2010" class="T1.Text1">page 377</a>.<a name="MARKER-2-770"></a></p>
+<p class="T1.Text1">The complete syntax of <code>define method</code> is given on <a href="Definition_Macros#MARKER-9-2010">page 377</a>.<a name="MARKER-2-770"></a></p>
 <a name="HEADING48-30"></a>
 <h3 class="sub-subsection-title">Local Methods</h3>
 <p class="T1.Text1"><code id="MARKER-2-771">local</code> is used for creating methods in local bindings. A single <code>local</code> declaration may create one or more such methods. These methods may be self-recursive and they may be mutually recursive with other methods created by the same <code>local</code> declaration.</p>
 <p class="T1.Text1"><code>local</code>  is similar to <code>let</code> in that it creates local bindings in the current body. The parameters and the bodies of the methods are within the scope of the bindings. In this way, the methods can refer to themselves and to other methods created by the same <code>local</code> declaration.</p>
-<p class="T1.Text1">The complete syntax of <code>local</code> is given on <a href="Local_Declaration_Macros#MARKER-9-2035" class="T1.Text1">page 391</a>.</p>
+<p class="T1.Text1">The complete syntax of <code>local</code> is given on <a href="Local_Declaration_Macros#MARKER-9-2035">page 391</a>.</p>
 <pre class="code">
 define method newtons-sqrt (x :: &lt;number&gt;)
    local method sqrt1 (guess)
@@ -262,7 +262,7 @@ score-david(0)
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
 <p class="footer"><a class="previous" title="Go to previous page" href="Functions"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Parameter_Lists"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Functions"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-<p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&reg;</a>, subsequently revised.</p>
+<p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently revised.</p>
 
 </div>
 </body>

@@ -126,7 +126,7 @@
   <li>The ordering of the key/value pairs changes. This type of alteration is only possible for explicit key collections that are stable under iteration.</li>
 </ul>
 <p class="T1.Text1">A function <dfn id="MARKER-2-1016">destructively modifies</dfn> its argument collection if calling the function could alter the contents of the argument collection. Unless explicitly documented to do so, functions do not destructively modify their arguments.</p>
-<p class="T1.Text1">The <code>!</code> convention, described on <a href="Naming_Conventions#MARKER-9-342" class="T1.Text1">page 24</a>, is used to indicate some destructive operations.</p>
+<p class="T1.Text1">The <code>!</code> convention, described on <a href="Naming_Conventions#MARKER-9-342">page 24</a>, is used to indicate some destructive operations.</p>
 <p class="T1.Text1"><a name="MARKER-2-1017"></a>Unless explicity noted, destructive operations are not required to leave their arguments in a well-defined state. More particularly, a destructive operation does not in general turn the argument into the result. It may reuse components of the argument or alter the argument in some unpredictable way in order to produce the result. As a general rule, the return value of the function should be used.</p>
 <p class="T1.Text1">A collection <var>C </var>is <dfn id="MARKER-2-1018">fresh</dfn> if modification of any pre-existing collection's contents can never modify the contents of <var>C</var> and if modifications to <var>C</var> can never modify the contents of any pre-existing collection. <a name="MARKER-2-1019"></a>Immutable collections cannot be modified, so a fresh immutable collection can share structure with other immutable collections.</p>
 <p class="T1.Text1">For example, given that <code>&lt;pair&gt;</code> is mutable and the result of a call to <code>list</code> is a fresh instance of <code>&lt;pair&gt;</code>, we can guarantee that the following expression is always false:</p>
@@ -142,7 +142,7 @@ list(1) == list(1)<a name="MARKER-2-1020"></a>
 <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
 <p class="footer"><a class="previous" title="Go to previous page" href="Mutability"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Collection_Alignment"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Collections"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
 <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-<p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&reg;</a>, subsequently revised.</p>
+<p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently revised.</p>
 
 </div>
 </body>
