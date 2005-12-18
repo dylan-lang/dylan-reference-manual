@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  
+  <!-- Relative Navigation -->
+  
+  <link rel="up" href="Collections" />
+  <link rel="prev" href="Defining_a_New_Collection_Class" />
+  <link rel="next" href="Element_Types" />
+  
+  <!-- Absolute Navigation -->
+  
+  <link rel="top" href="Title" />
+  <link rel="start first" href="." />
+  <link rel="copyright" href="Copyrights" />
+  <link rel="contents" href="Contents" />
+  <link rel="glossary" href="Glossary" />
+  <link rel="index" href="Index" />
+  <link rel="last author" href="Colophon" />
+  
+  <!-- Chapters -->
+  
+  <link rel="chapter" title="About This Book" href="Preface" />
+  <link rel="chapter" title="1 Introduction" href="Introduction" />
+  <link rel="chapter" title="2 Syntax" href="Syntax" />
+  <link rel="chapter" title="3 Program Structure" href="Program_Structure" />
+  <link rel="chapter" title="4 Program Control" href="Program_Control" />
+  <link rel="chapter" title="5 Types and Classes" href="Types_and_Classes" />
+  <link rel="chapter" title="6 Functions" href="Functions" />
+  <link rel="chapter" title="7 Conditions" href="Conditions" />
+  <link rel="chapter" title="8 Collections" href="Collections" />
+  <link rel="chapter" title="9 Sealing" href="Sealing" />
+  <link rel="chapter" title="10 Macros" href="Macros" />
+  <link rel="chapter" title="11 The Built-In Classes" href="Built-In_Classes" />
+  <link rel="chapter" title="12 The Built-In Functions" href="Built-In_Functions" />
+  <link rel="chapter" title="13 Other Built-In Objects" href="Other_Built-In_Objects" />
+  <link rel="chapter" title="14 The Built-In Macros and Special Definitions" href="Built-In_Macros_and_Special_Definitions" />
+  
+  <!-- Appendices -->
+  
+  <link rel="appendix" title="A BNF" href="BNF" />
+  <link rel="appendix" title="B Exported Names" href="Exported_Names" />
+  
+  <!-- Stylesheet -->
+  
+  <link rel="stylesheet" href="drm.css" type="text/css" />
+
+  <title>Tables &mdash; 8. Collections &mdash; The DRM</title>
+</head>
+<body>
+
+<div id="header">
+<div id="navigation-header">
+    <p id="book-title">The Dylan Reference Manual</p>
+    <p id="basic-navigation"><a class="previous" title="Go to previous page" href="Defining_a_New_Collection_Class"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Element_Types"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Collections"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+  </div>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 8</p>
+  <p id="section-name">Collections</p>
+</div>
+
+<div id="navigation-TOC">
+  <ul class="front-matter">
+    <li><a href="Title">Start</a></li>
+    <li><a href="Contents">Contents</a></li>
+    <li><a href="Preface">About This Book</a></li>
+  </ul>
+  <ol class="chapters">
+    <li><a href="Introduction">Introduction</a></li>
+    <li><a href="Syntax">Syntax</a></li>
+    <li><a href="Program_Structure">Program Structure</a></li>
+    <li><a href="Program_Control">Program Control</a></li>
+    <li><a href="Types_and_Classes">Types and Classes</a></li>
+    <li><a href="Functions">Functions</a></li>
+    <li><a href="Conditions">Conditions</a></li>
+    <li><a href="Collections">Collections</a>
+      <ul>
+	<li><a href="Collections_Overview">Overview</a></li>
+	<li><a href="Collection_Keys">Collection Keys</a></li>
+	<li><a href="Iteration_Stability_and_Natural_Order">Iteration Stability and Natural Order</a></li>
+	<li><a href="Mutability">Mutability</a></li>
+	<li><a href="Collection_Alteration_and_Allocation">Collection Alteration and Allocation</a></li>
+	<li><a href="Collection_Alignment">Collection Alignment</a></li>
+	<li><a href="Defining_a_New_Collection_Class">Defining a New Collection Class</a></li>
+	<li id="current">Tables</li>
+	<li><a href="Element_Types">Element Types</a></li>
+	<li><a href="Limited_Collection_Types">Limited Collection Types</a></li>
+      </ul>
+    </li>
+    <li><a href="Sealing">Sealing</a></li>
+    <li><a href="Macros">Macros</a></li>
+    <li><a href="Built-In_Classes">The Built-In Classes</a></li>
+    <li><a href="Built-In_Functions">The Built-In Functions</a></li>
+    <li><a href="Other_Built-In_Objects">Other Built-In Objects</a></li>
+    <li><a href="Built-In_Macros_and_Special_Definitions">The Built-In Macros and Special Definitions</a></li>
+  </ol>
+  <ol class="appendices">
+    <li><a href="BNF">BNF</a></li>
+    <li><a href="Exported_Names">Exported Names</a></li>
+  </ol>
+  <ul class="back-matter">
+    <li><a href="Glossary">Glossary</a></li>
+    <li><a href="Index">Index</a></li>
+    <li><a href="Colophon">Colophon</a></li>
+  </ul>
+  <ul class="errata">
+    <li><a href="Errata">Errata</a></li>
+  </ul>
+</div>
+
+<hr />
+
+</div>
+
+<div id="content">
+<a name="HEADING67-0"></a>
+<a name="UID-Collections-2785"></a>
+<h1 class="section-title"><a name="MARKER-9-1036"></a>Tables</h1>
+<p class="T1.Text1"><a name="MARKER-2-1037"></a>Tables map arbitrary keys to elements. Table keys may be any object, including complex objects such as strings. All tables are instances of <code id="MARKER-2-1038">&lt;table&gt;</code>. <code>&lt;table&gt;</code> is the only instantiable subclass of <code>&lt;explicit-key-collection&gt;</code> defined by Dylan. Tables are unstable under iteration.</p>
+<p class="T1.Text1"><a name="MARKER-2-1039"></a>The iteration protocol for tables is implemented in terms of the function <code id="MARKER-2-1040">table-protocol</code>. Every concrete subclass of <code>&lt;table&gt;</code> must provide or inherit a method for <code>table-protocol</code>. This function accepts a table as an argument, and returns an equivalence predicate and hash-function, as described below.</p>
+<p class="T1.Text1">The <dfn id="MARKER-2-1041">equivalence predicate</dfn> of a table is used to compare keys. (It is the table's <a name="MARKER-2-1042"></a>key test.)  The table maps keys that are equivalent under the predicate to the same table element. An equivalence predicate is a boolean function of two arguments that returns true if and only if the arguments are considered to be the same according to some specified criteria. For a function to be used as an equivalence predicate, it must be reflexive, commutative, and transitive. That is, for a function <var>F</var> and any arguments <var>X</var>, <var>Y</var>, and <var>Z</var> in the domain of <var>F</var>, the following must be true:</p>
+<ul>
+  <li><var>F</var><code>(<var>X</var>,<var>X</var>)</code> must be true.</li>
+  <li><var>F</var><code>(<var>X</var>,<var>Y</var>)</code> must be true if and only if <var>F</var><code>(<var>Y</var>,<var>X</var>)</code> is true.</li>
+  <li>If both <var>F</var><code>(<var>X</var>,<var>Y</var>)</code> and <var>F</var><code>(<var>Y</var>,<var>Z</var>)</code> are true then <var>F</var><code>(<var>X</var>,<var>Z</var>)</code> must be true.</li>
+</ul>
+<p class="T1.Text1">An <dfn id="MARKER-2-1043">equivalence class</dfn> (for an equivalence predicate) is a set of objects, or potential objects, that are all the same under the specified equivalence predicate and different from all objects not in the class. (This use of the term "class" does not refer to Dylan classes.)</p>
+<p class="T1.Text1">An object is said to be <dfn id="MARKER-2-1044">visibly modified</dfn> with respect to an equivalence predicate if the modification changes the equivalence class of the object. The modifications that are visible to an equivalence predicate are determined by the definition of the predicate. (For example, changing a character in a string would be a visible modification with respect to an equivalence predicate that compared strings character by character, but it would not be a visible modification with respect to an equivalence predicate that compared objects by identity, without regard for their contents.)</p>
+<p class="T1.Text1">If an object <var>X</var> is a key in a table <var>T</var> and is visibly modified with regard to the test function of <var>T</var>, then the consequences are unspecified if any of the following objects are used as a key in any subsequent operations on <var>T</var>:</p>
+<ul>
+  <li>The original object, <var>X</var>.</li>
+  <li>Some object <var>Y</var> that is in the same equivalence class (as determined by the test function) as <var>X</var> prior to the modification of <var>X</var>.</li>
+  <li>Some object <var>Z</var> that is in the same equivalence class (as determined by the test function) as <var>X</var> after the modification of <var>X</var>.</li>
+</ul>
+<p class="T1.Text1">Each table also has an associated <dfn id="MARKER-2-1045">hash function</dfn>, which is a function that relates table keys and table elements by computing <dfn id="MARKER-2-1046">hash codes</dfn>. A hash code is a conceptual object consisting of a <dfn id="MARKER-2-1047">hash id</dfn> and its associated <dfn id="MARKER-2-1048">hash state</dfn>. (It is not an actual Dylan object.)  A hash id is an integer encoding of an object. A hash state is an object of implementation-dependent type that is associated with a particular hash id and can be used by the implementation to determine whether the hash id has been invalidated. A hash function accepts one argument, a key, and returns two values, a hash id and a hash state, which together represent the hash code.</p>
+<p class="T1.Text1">Each hash function is associated with a specific equivalence predicate, and must obey the following constraints:</p>
+<ul>
+  <li>The domain of the hash function must include the domain of valid arguments to the corresponding equivalence predicate. A hash function need not be defined for all Dylan objects, only those that are acceptable as arguments to the equivalence predicate.</li>
+  <li><a name="MARKER-9-1049"></a>All objects in a given equivalence class have the same (<code>=</code>) valid hash id, where validity is determined from the associated hash state.</li>
+</ul>
+<p class="T1.Text1">In addition, a hash function should have the property that the hash ids computed by it are well distributed over the range of possible values. That is, it should be unlikely that two randomly chosen equivalence classes have the same valid hash id.<a name="MARKER-2-1050"></a></p>
+
+</div>
+
+<div id="footer">
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a class="previous" title="Go to previous page" href="Defining_a_New_Collection_Class"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Element_Types"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Collections"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a>, subsequently revised.</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  
+  <!-- Relative Navigation -->
+  
+  <link rel="up" href="Built-In_Classes" />
+  <link rel="prev" href="Built-In_Classes_Overview" />
+  <link rel="next" href="Type_Classes" />
+  
+  <!-- Absolute Navigation -->
+  
+  <link rel="top" href="Title" />
+  <link rel="start first" href="." />
+  <link rel="copyright" href="Copyrights" />
+  <link rel="contents" href="Contents" />
+  <link rel="glossary" href="Glossary" />
+  <link rel="index" href="Index" />
+  <link rel="last author" href="Colophon" />
+  
+  <!-- Chapters -->
+  
+  <link rel="chapter" title="About This Book" href="Preface" />
+  <link rel="chapter" title="1 Introduction" href="Introduction" />
+  <link rel="chapter" title="2 Syntax" href="Syntax" />
+  <link rel="chapter" title="3 Program Structure" href="Program_Structure" />
+  <link rel="chapter" title="4 Program Control" href="Program_Control" />
+  <link rel="chapter" title="5 Types and Classes" href="Types_and_Classes" />
+  <link rel="chapter" title="6 Functions" href="Functions" />
+  <link rel="chapter" title="7 Conditions" href="Conditions" />
+  <link rel="chapter" title="8 Collections" href="Collections" />
+  <link rel="chapter" title="9 Sealing" href="Sealing" />
+  <link rel="chapter" title="10 Macros" href="Macros" />
+  <link rel="chapter" title="11 The Built-In Classes" href="Built-In_Classes" />
+  <link rel="chapter" title="12 The Built-In Functions" href="Built-In_Functions" />
+  <link rel="chapter" title="13 Other Built-In Objects" href="Other_Built-In_Objects" />
+  <link rel="chapter" title="14 The Built-In Macros and Special Definitions" href="Built-In_Macros_and_Special_Definitions" />
+  
+  <!-- Appendices -->
+  
+  <link rel="appendix" title="A BNF" href="BNF" />
+  <link rel="appendix" title="B Exported Names" href="Exported_Names" />
+  
+  <!-- Stylesheet -->
+  
+  <link rel="stylesheet" href="drm.css" type="text/css" />
+
+  <title>Objects &mdash; 11. The Built-In Classes &mdash; The DRM</title>
+</head>
+<body>
+
+<div id="header">
+<div id="navigation-header">
+    <p id="book-title">The Dylan Reference Manual</p>
+    <p id="basic-navigation"><a class="previous" title="Go to previous page" href="Built-In_Classes_Overview"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Type_Classes"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+  </div>
+
+<div id="section-header">
+  <p id="section-prefix">Chapter 11</p>
+  <p id="section-name">The Built-In Classes</p>
+</div>
+
+<div id="navigation-TOC">
+  <ul class="front-matter">
+    <li><a href="Title">Start</a></li>
+    <li><a href="Contents">Contents</a></li>
+    <li><a href="Preface">About This Book</a></li>
+  </ul>
+  <ol class="chapters">
+    <li><a href="Introduction">Introduction</a></li>
+    <li><a href="Syntax">Syntax</a></li>
+    <li><a href="Program_Structure">Program Structure</a></li>
+    <li><a href="Program_Control">Program Control</a></li>
+    <li><a href="Types_and_Classes">Types and Classes</a></li>
+    <li><a href="Functions">Functions</a></li>
+    <li><a href="Conditions">Conditions</a></li>
+    <li><a href="Collections">Collections</a></li>
+    <li><a href="Sealing">Sealing</a></li>
+    <li><a href="Macros">Macros</a></li>
+    <li><a href="Built-In_Classes">The Built-In Classes</a>
+      <ul>
+	<li><a href="Built-In_Classes_Overview">Overview</a></li>
+	<li id="current">Objects
+	  <ul class="page-toc">
+	    <li><a href="#HEADING89-1"><code>&lt;object&gt;</code> <span class="attributes-summary">[Open Abstract Class]</span></a></li>
+	  </ul>
+	</li>
+	<li><a href="Type_Classes">Types</a></li>
+	<li><a href="Simple_Object_Classes">Simple Objects</a></li>
+	<li><a href="Number_Classes">Numbers</a></li>
+	<li><a href="Collection_Classes">Collections</a></li>
+	<li><a href="Function_Classes">Functions</a></li>
+	<li><a href="Condition_Classes">Conditions</a></li>
+      </ul>
+    </li>
+    <li><a href="Built-In_Functions">The Built-In Functions</a></li>
+    <li><a href="Other_Built-In_Objects">Other Built-In Objects</a></li>
+    <li><a href="Built-In_Macros_and_Special_Definitions">The Built-In Macros and Special Definitions</a></li>
+  </ol>
+  <ol class="appendices">
+    <li><a href="BNF">BNF</a></li>
+    <li><a href="Exported_Names">Exported Names</a></li>
+  </ol>
+  <ul class="back-matter">
+    <li><a href="Glossary">Glossary</a></li>
+    <li><a href="Index">Index</a></li>
+    <li><a href="Colophon">Colophon</a></li>
+  </ul>
+  <ul class="errata">
+    <li><a href="Errata">Errata</a></li>
+  </ul>
+</div>
+
+<hr />
+
+</div>
+
+<div id="content">
+<a name="HEADING89-0"></a>
+<a name="UID-Built-In_Classes-12784"></a>
+<h1 class="section-title"><a name="MARKER-2-1364"></a>Objects</h1>
+<a name="HEADING89-1"></a>
+<h4 class="item-title"><span class="signature"><code id="MARKER-2-1365">&lt;object&gt;</code> </span><span class="attributes-summary">[Open Abstract Class]</span></h4>
+<hr class="item-title" />
+<p class="T0.Text0">The class of all Dylan objects.</p>
+<dl class="Cliche">
+  <dt class="Cliche"><span>Superclasses:</span></dt>
+  <dd class="Cliche"><p>None. <code>&lt;object&gt;</code> is the root of the Dylan class hierarchy.</p></dd>
+  <dt class="Cliche"><span>Init-keywords:</span></dt>
+  <dd class="Cliche"><p>None.</p></dd>
+  <dt class="Cliche"><span>Description:</span></dt>
+  <dd class="Cliche"><p><a name="MARKER-2-1366"></a>The class <code>&lt;object&gt;</code> is the root of the type system. All objects are general instances of <code>&lt;object&gt;</code>, all types are subtypes of <code>&lt;object&gt;</code>, and all classes are subclasses of <code>&lt;object&gt;</code>.</p></dd>
+  <dt class="Cliche"><span>Operations:</span></dt>
+  <dd class="Cliche"><p>The class <code>&lt;object&gt;</code> provides the following operations:</p>
+    <table class="numbered"><caption class="Tb.Table"><strong>Table 11-1</strong>  Functions on &lt;object&gt;</caption>
+      <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
+	</th><th><p class="TbH.TblHd"> Description</p>
+	</th><th><p class="TbH.TblHd"> Page</p>
+      </th></tr><tr><td><p class="TbT.TblText"> <code>identity</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Coercing_and_Copying_Objects#MARKER-9-1676" class="TbT.TblText">Returns its argument.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Coercing_and_Copying_Objects#MARKER-9-1676" class="TbT.TblText">287</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code>always</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Functional_Operations#MARKER-9-1888" class="TbT.TblText">Returns a function that always returns a particular object.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Functional_Operations#MARKER-9-1888" class="TbT.TblText">350</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code>instance?</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Reflective_Operations_on_Types#MARKER-9-1861" class="TbT.TblText">Tests whether an object is an instance of a type.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Reflective_Operations_on_Types#MARKER-9-1861" class="TbT.TblText">343</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code>object-class</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Reflective_Operations_on_Types#MARKER-9-1865" class="TbT.TblText">Returns the class of an object.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Reflective_Operations_on_Types#MARKER-9-1865" class="TbT.TblText">344</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code>==</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Equality_and_Comparison#MARKER-9-1578" class="TbT.TblText">Compares two objects for identity.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Equality_and_Comparison#MARKER-9-1578" class="TbT.TblText">268</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code>~==</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Equality_and_Comparison#MARKER-9-1582" class="TbT.TblText">Compares two objects for nonidentity.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Equality_and_Comparison#MARKER-9-1582" class="TbT.TblText">269</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code>~</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Equality_and_Comparison#MARKER-9-1576" class="TbT.TblText">Returns true if its argument is false; otherwise returns false.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Equality_and_Comparison#MARKER-9-1576" class="TbT.TblText">268</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code>object-hash</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Collection_Operations#MARKER-9-1855" class="TbT.TblText">The hash function for the equivalence predicate ==.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Collection_Operations#MARKER-9-1855" class="TbT.TblText">342</a></p>
+    </td></tr></table>
+    <table class="numbered"><caption class="Tb.Table"><strong>Table 11-2</strong>  Generic functions on &lt;object&gt;</caption>
+      <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
+	</th><th><p class="TbH.TblHd"> Description</p>
+	</th><th><p class="TbH.TblHd"> Page</p>
+      </th></tr><tr><td><p class="TbT.TblText"> <code>initialize</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Constructing_and_Initializing_Instances#MARKER-9-1543" class="TbT.TblText">Performs instance initialization that cannot be specified declaratively by a class definition.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Constructing_and_Initializing_Instances#MARKER-9-1543" class="TbT.TblText">260</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code>as</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Coercing_and_Copying_Objects#MARKER-9-1680" class="TbT.TblText">Coerces an object to a type.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Coercing_and_Copying_Objects#MARKER-9-1680" class="TbT.TblText">288</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code>shallow-copy</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Coercing_and_Copying_Objects#MARKER-9-1692" class="TbT.TblText">Returns a copy of its argument.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Coercing_and_Copying_Objects#MARKER-9-1692" class="TbT.TblText">292</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code>type-for-copy</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Coercing_and_Copying_Objects#MARKER-9-1694" class="TbT.TblText">Returns an appropriate type for creating mutable copies of its argument.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Coercing_and_Copying_Objects#MARKER-9-1694" class="TbT.TblText">292</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code>size</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Collection_Operations#MARKER-9-1702" class="TbT.TblText">Returns the size of its argument.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Collection_Operations#MARKER-9-1702" class="TbT.TblText">295</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code>empty?</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Collection_Operations#MARKER-9-1700" class="TbT.TblText">Returns true if its argument is empty.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Collection_Operations#MARKER-9-1700" class="TbT.TblText">294</a></p>
+    </td></tr></table>
+    <table class="numbered"><caption class="Tb.Table"><strong>Table 11-3</strong>  Methods on &lt;object&gt;</caption>
+      <tr><th class="primary"><p class="TbH.TblHd"> Function</p>
+</th><th><p class="TbH.TblHd"> Description</p>
+	</th><th><p class="TbH.TblHd"> Page</p>
+      </th></tr><tr><td><p class="TbT.TblText"> <code>initialize</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Constructing_and_Initializing_Instances#MARKER-9-1543" class="TbT.TblText">Performs instance initialization that cannot be specified declaratively by a class definition.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Constructing_and_Initializing_Instances#MARKER-9-1543" class="TbT.TblText">260</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code>type-for-copy</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Coercing_and_Copying_Objects#MARKER-9-1694" class="TbT.TblText">Returns an appropriate type for creating mutable copies of its argument.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Coercing_and_Copying_Objects#MARKER-9-1694" class="TbT.TblText">292</a></p>
+      </td></tr><tr><td><p class="TbT.TblText"> <code>=</code></p>
+	</td><td><p class="TbT.TblText"> <a href="Equality_and_Comparison#MARKER-9-1584" class="TbT.TblText">Compares two objects for equality.</a></p>
+	</td><td><p class="TbT.TblText"> <a href="Equality_and_Comparison#MARKER-9-1584" class="TbT.TblText">269</a></p>
+    </td></tr></table><p class="Anchor"> <a name="MARKER-2-1367"></a></p>
+  </dd>
+</dl>
+</div>
+
+<div id="footer">
+
+<hr class="footer" />
+<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+<p class="footer"><a class="previous" title="Go to previous page" href="Built-In_Classes_Overview"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Type_Classes"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&#174; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+<p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker" class="footer">Harlequin WebMaker&#174;</a>, subsequently revised.</p>
+
+</div>
+</body>
+</html>

@@ -128,11 +128,11 @@ body.section-start #section-name { display: none }
                    margin: 0;
                    /* place the book cover in the background to include some of
                       the color of the printed DRM  */
-                   background: white url("drm-background.jpg") repeat-x 50% 45%;
+                   background: white url("images/drm-background") repeat-x 50% 45%;
                    /* this variation fills the background with the cover logo;
                       it has a certain appeal, but it's hard to make the title
                       text readable over it */
-                   /*background: white url("drm-cover.jpg") repeat-x 90% 65%;*/
+                   /*background: white url("images/drm-cover") repeat-x 90% 65%;*/
                  }
   #basic-navigation
                  {
