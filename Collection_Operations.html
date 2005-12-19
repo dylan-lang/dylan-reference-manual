@@ -2411,7 +2411,7 @@ subsequence-position (&quot;Ralph Waldo Emerson&quot;, &quot;Waldo&quot;)
 <h2 class="subsection-title">Mapping and Reducing</h2>
 <a name="HEADING102-512"></a>
 <h3 class="sub-subsection-title">Simple Mapping</h3>
-<p class="T0.Text0"><a name="MARKER-2-1807"></a><a name="MARKER-2-1808"></a>The following mapping functions (<code>do</code>, <code>map</code>, <code>map-as</code>, <code>map-into</code>, <code>any?</code>, <code>every?</code>) iterate over a number of source collections. Each time through the iteration, a function is applied to one element from each of the source collections. The number of arguments to the function is equal to the number of source collections.</p>
+<p><a name="MARKER-2-1807"></a><a name="MARKER-2-1808"></a>The following mapping functions (<code>do</code>, <code>map</code>, <code>map-as</code>, <code>map-into</code>, <code>any?</code>, <code>every?</code>) iterate over a number of source collections. Each time through the iteration, a function is applied to one element from each of the source collections. The number of arguments to the function is equal to the number of source collections.</p>
 <p>The functions vary in how they handle the results of each function application.</p>
 <a name="HEADING102-515"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-1809">do</code> </span><span class="attributes-summary">[Function]</span></h4>
@@ -3178,8 +3178,8 @@ fill! (numbers, 3, start: 2)
       and <var>copy-state</var> functions may be used as the <var>state</var> argument to functions
       returned by this function. Only the <var>limit</var> object may be used as
       the <var>limit</var> argument to the <var>finished-state?</var> function.</p>
-    <p class="T0.Text0">An example of the use of the iteration protocol is the following definition
-      of a single-argument version of the <code>do</code> function:</p>
+    <p>An example of the use of the iteration protocol is the following definition of a
+      single-argument version of the <code>do</code> function:</p>
     <pre class="code">
 define method do1 (f :: &lt;function&gt;, c :: &lt;collection&gt;)
   let (init, limit, next, end?, key, elt) =
@@ -3244,7 +3244,7 @@ end method do1;</pre>
 </dl>
 <a name="HEADING102-719"></a>
 <h3 class="sub-subsection-title">The Table Protocol</h3>
-<p class="T0.Text0">The class <code>&lt;table&gt;</code> provides an implementation of the iteration protocol, using the function <code>table-protocol</code>. Every concrete subclass of <code>&lt;table&gt;</code> must provide or inherit a method for <code>table-protocol</code>. A complete description of the table protocol is given in <a href="Tables#MARKER-9-1036">"Tables" on page 122</a>.</p>
+<p>The class <code>&lt;table&gt;</code> provides an implementation of the iteration protocol, using the function <code>table-protocol</code>. Every concrete subclass of <code>&lt;table&gt;</code> must provide or inherit a method for <code>table-protocol</code>. A complete description of the table protocol is given in <a href="Tables#MARKER-9-1036">"Tables" on page 122</a>.</p>
 <a name="HEADING102-721"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-1851">table-protocol</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
 <hr class="item-title" />
