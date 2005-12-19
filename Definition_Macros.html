@@ -126,7 +126,7 @@
 <a name="HEADING112-0"></a>
 <a name="UID-Built-In_Macros-12290"></a>
 <h1 class="section-title">Definitions</h1>
-<p class="T1.Text1"><a name="MARKER-2-1996"></a>Definitions are used to declare the overall structure of a program. They often define one or more module bindings, but do not always do so. Definitions can only appear at top level in a program. Definitions do not return values.</p>
+<p><a name="MARKER-2-1996"></a>Definitions are used to declare the overall structure of a program. They often define one or more module bindings, but do not always do so. Definitions can only appear at top level in a program. Definitions do not return values.</p>
 <table class="numbered"><caption><strong>Table 14-1</strong>  Definitions</caption>
 <tr><th class="primary"><p> Macro</p>
 </th><th><p> Description</p>
@@ -195,9 +195,10 @@
       </dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><code>define variable</code> defines variable bindings in the current module.</p>
-    <p class="T1.Text1">The values returned by <var>init</var> are used to initialize the bindings. The first value returned is bound to the first <var>variable</var>, the second value to the second <var>variable</var>, etc. The last <var>variable</var> may be preceded by <code>#rest</code>, in which case it is bound to a sequence containing all the remaining values.</p>
-    <p class="T1.Text1">If more than one binding is defined, the <var>variables</var> are enclosed in parentheses and separated by commas.</p>
+  <dd class="Cliche">
+    <p><code>define variable</code> defines variable bindings in the current module.</p>
+    <p>The values returned by <var>init</var> are used to initialize the bindings. The first value returned is bound to the first <var>variable</var>, the second value to the second <var>variable</var>, etc. The last <var>variable</var> may be preceded by <code>#rest</code>, in which case it is bound to a sequence containing all the remaining values.</p>
+    <p>If more than one binding is defined, the <var>variables</var> are enclosed in parentheses and separated by commas.</p>
     <pre class="code">
 define variable *elapsed-time* = 0;
 
@@ -205,7 +206,7 @@ define variable (*whole-part*, *remainder*) = truncate(*amount*);
 
 define variable (*first-value*, #rest *rest-values*)
                  = get-initial-orders(); </pre>
-    <p class="T1.Text1"><a name="MARKER-2-2001"></a>Module bindings may be specialized. This ensures that their value will always be of a given type. An attempt to initialize or assign the binding to a value not of that type will signal an error of type <code>&lt;type-error&gt;</code>.</p>
+    <p><a name="MARKER-2-2001"></a>Module bindings may be specialized. This ensures that their value will always be of a given type. An attempt to initialize or assign the binding to a value not of that type will signal an error of type <code>&lt;type-error&gt;</code>.</p>
     <pre class="code">
 define variable *elapsed-time* :: &lt;integer&gt; = 0;
 
@@ -248,19 +249,20 @@ define variable (*whole-part* :: &lt;integer&gt;, *remainder* :: &lt;real&gt;)
       </dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><code id="MARKER-2-2004">define constant</code> defines constant bindings in the current module.</p>
-    <p class="T1.Text1">The values returned by <var>init</var> are used to initialize the constant bindings. The first value returned is bound to the first <var>constant</var>, the second value to the second <var>constant</var>, etc. The last <var>constant</var> may be preceded by <code>#rest</code>, in which case it is bound to a sequence containing all the remaining values.</p>
-    <p class="T1.Text1">If more than one <var>constant</var> is defined, the <var>constants</var> are enclosed in parentheses and separated by commas.</p>
+  <dd class="Cliche">
+    <p><code id="MARKER-2-2004">define constant</code> defines constant bindings in the current module.</p>
+    <p>The values returned by <var>init</var> are used to initialize the constant bindings. The first value returned is bound to the first <var>constant</var>, the second value to the second <var>constant</var>, etc. The last <var>constant</var> may be preceded by <code>#rest</code>, in which case it is bound to a sequence containing all the remaining values.</p>
+    <p>If more than one <var>constant</var> is defined, the <var>constants</var> are enclosed in parentheses and separated by commas.</p>
     <pre class="code">
 define constant $start-time = get-current-time();
 
 define constant $pi = 3.14159;
 
 define constant ($whole-pie, $piece-pie) = truncate($pi); </pre>
-    <p class="T1.Text1"><a name="MARKER-2-2005"></a>Module constants may be specialized. This ensures that their value is of a given type. An attempt to initialize the constant to a value not of that type will signal an error of type <code>&lt;type-error&gt;</code>.</p>
+    <p><a name="MARKER-2-2005"></a>Module constants may be specialized. This ensures that their value is of a given type. An attempt to initialize the constant to a value not of that type will signal an error of type <code>&lt;type-error&gt;</code>.</p>
     <pre class="code">
 define constant $start-time :: &lt;integer&gt; = get-current-time(); </pre>
-    <p class="T1.Text1">A constant binding cannot be assigned a new value. However, the object that is the value of the constant binding is not necessarily itself immutable. For example, if a constant binding contains a sequence, the elements of the sequence may be settable.</p>
+    <p>A constant binding cannot be assigned a new value. However, the object that is the value of the constant binding is not necessarily itself immutable. For example, if a constant binding contains a sequence, the elements of the sequence may be settable.</p>
   </dd>
 </dl>
 <a name="HEADING112-178"></a>
@@ -306,22 +308,23 @@ define constant $start-time :: &lt;integer&gt; = get-current-time(); </pre>
       </dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><code>define generic</code> is used to define generic functions.</p>
-    <p class="T1.Text1"><a name="MARKER-2-2008"></a>It defines a constant module binding with the name <var>name</var>, and initializes it to a new generic function described by the <var>adjectives</var>, <var>parameter-list</var> and <var>options</var>.</p>
-    <p class="T1.Text1">The <var>adjectives</var> specify whether the generic function is sealed. A complete description of generic function sealing is given in <a href="Declaring_Characteristics_of_Generic_Functions#MARKER-9-1116">"Declaring Characteristics of Generic Functions" on page 135</a>.</p>
-    <p class="T1.Text1">The <var>parameter-list</var> specifies the parameters and return values of the generic function and thereby constrains which methods may be added to it. For a complete description of these constraints, see <a href="Parameter_Lists#MARKER-9-837">"Parameter List Congruency" on page 93</a>. A generic function parameter list may not include a next-method parameter, and its keyword parameters may include neither type specializers nor default initial values.</p>
-    <p class="T1.Text1">The <var>options </var>are alternating keywords and values. No options are defined by the language. They may be supplied by individual implementations.</p>
-    <p class="T1.Text1">The following example defines a generic function of two required arguments and one return value. All methods added to the generic function must also take two arguments and return one value. The first argument will always <br />be specialized to a subtype of <code>&lt;animal&gt;</code>, the second argument will always be specialized to a subtype of <code>&lt;number&gt;</code>, and the return value will always <br />be specialized to a subtype of <code>&lt;number&gt;</code>.</p>
+  <dd class="Cliche">
+    <p><code>define generic</code> is used to define generic functions.</p>
+    <p><a name="MARKER-2-2008"></a>It defines a constant module binding with the name <var>name</var>, and initializes it to a new generic function described by the <var>adjectives</var>, <var>parameter-list</var> and <var>options</var>.</p>
+    <p>The <var>adjectives</var> specify whether the generic function is sealed. A complete description of generic function sealing is given in <a href="Declaring_Characteristics_of_Generic_Functions#MARKER-9-1116">"Declaring Characteristics of Generic Functions" on page 135</a>.</p>
+    <p>The <var>parameter-list</var> specifies the parameters and return values of the generic function and thereby constrains which methods may be added to it. For a complete description of these constraints, see <a href="Parameter_Lists#MARKER-9-837">"Parameter List Congruency" on page 93</a>. A generic function parameter list may not include a next-method parameter, and its keyword parameters may include neither type specializers nor default initial values.</p>
+    <p>The <var>options </var>are alternating keywords and values. No options are defined by the language. They may be supplied by individual implementations.</p>
+    <p>The following example defines a generic function of two required arguments and one return value. All methods added to the generic function must also take two arguments and return one value. The first argument will always <br />be specialized to a subtype of <code>&lt;animal&gt;</code>, the second argument will always be specialized to a subtype of <code>&lt;number&gt;</code>, and the return value will always <br />be specialized to a subtype of <code>&lt;number&gt;</code>.</p>
     <pre class="code">
 define generic cut-hair (subject :: &lt;animal&gt;, new-length :: &lt;number&gt;)
                           =&gt; (new-length :: &lt;number&gt;) </pre>
-    <p class="T1.Text1">The use of the same name for a parameter and return value indicates that the parameter is returned as the value. This is only a convention;  it is not enforced by the language.</p>
+    <p>The use of the same name for a parameter and return value indicates that the parameter is returned as the value. This is only a convention;  it is not enforced by the language.</p>
     <p class="errata left"><a href="Errata#p377_1"
 			      name="errata_p377_1"><strong>Errata:</strong></a>
       <q><a href="Parameter_Lists#MARKER-2-813" title="Definition of permit">permit</a></q>
       should be
       <q><a href="Parameter_Lists#MARKER-2-808" title="Definition of recognize">recognize</a></q>.</p>
-    <p class="T1.Text1">The following example defines a generic function with one required parameter and one mandatory keyword parameter, <code>strength:</code>. Methods added to the generic function must have one required parameter, they must accept keyword arguments, and they must permit the keyword argument <code>strength:</code>.</p>
+    <p>The following example defines a generic function with one required parameter and one mandatory keyword parameter, <code>strength:</code>. Methods added to the generic function must have one required parameter, they must accept keyword arguments, and they must permit the keyword argument <code>strength:</code>.</p>
     <pre class="code">
 define generic brew (brand :: &lt;coffee-brand&gt;, #key strength)
                              =&gt; (coffee :: &lt;coffee&gt;) </pre>
@@ -367,10 +370,11 @@ define generic brew (brand :: &lt;coffee-brand&gt;, #key strength)
       </dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><code id="MARKER-2-2011">define method</code> creates a method and adds it to the generic function in <var>name</var>. If the module binding <var>name</var> is not already defined, it is defined as with <code>define generic</code>. Thus, <code>define method</code> will create a new generic function or extend an old one, as needed.</p>
-    <p class="T1.Text1">The <var>adjective</var> allows a sealing declaration to be made about the generic function to which the method is added. The effect of this adjective is described in <a href="Define_Sealed_Domain#MARKER-9-1131">"Abbreviations for Define Sealed Domain" on page 138</a>.</p>
-    <p class="T1.Text1">The <var>parameter-list</var>  describes the parameters and return values of the method, including their number and type. The method can be called only with arguments that match the types of the parameters, and the method will always return values in the quantity and typed declared. Methods added to a generic function must have parameter lists that are congruent with the generic function's parameter list. A complete description of parameter lists is given in <a href="Parameter_Lists#MARKER-9-782">"Parameter Lists" on page 84</a>.</p>
-    <p class="T1.Text1">When the method is called, new local bindings are created for the parameters,  initialized to the arguments of the call. The <var>body</var>  is then executed in the environment containing these bindings.</p>
+  <dd class="Cliche">
+    <p><code id="MARKER-2-2011">define method</code> creates a method and adds it to the generic function in <var>name</var>. If the module binding <var>name</var> is not already defined, it is defined as with <code>define generic</code>. Thus, <code>define method</code> will create a new generic function or extend an old one, as needed.</p>
+    <p>The <var>adjective</var> allows a sealing declaration to be made about the generic function to which the method is added. The effect of this adjective is described in <a href="Define_Sealed_Domain#MARKER-9-1131">"Abbreviations for Define Sealed Domain" on page 138</a>.</p>
+    <p>The <var>parameter-list</var>  describes the parameters and return values of the method, including their number and type. The method can be called only with arguments that match the types of the parameters, and the method will always return values in the quantity and typed declared. Methods added to a generic function must have parameter lists that are congruent with the generic function's parameter list. A complete description of parameter lists is given in <a href="Parameter_Lists#MARKER-9-782">"Parameter Lists" on page 84</a>.</p>
+    <p>When the method is called, new local bindings are created for the parameters,  initialized to the arguments of the call. The <var>body</var>  is then executed in the environment containing these bindings.</p>
     <pre class="code">
 define method tune (device :: &lt;radio&gt;) =&gt; (station :: &lt;station&gt;)
   // method body goes here
@@ -453,14 +457,15 @@ end method tune </pre>
     <dd><p><code>type:</code> <span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 </dl></dd>
 <dt class="Cliche"><span>Description:</span></dt>
-<dd class="Cliche"><p><code id="MARKER-2-2014">define class</code> is used to define classes.</p>
-<p class="T1.Text1">It defines a constant module binding with the name <var>name</var>, and initializes it to a new class.</p>
-<p class="T1.Text1">The <var>class-adjectives</var> provide sealing information about the class. Among the adjectives, <code>abstract</code> and <code>concrete</code> are mutually exclusive, <code>primary</code> and <code>free</code> are mutually exclusive, and <code>sealed</code> and <code>open</code> are mutually exclusive. Additional implementation-defined adjectives may be supported. See <a href="Declaring_Characteristics_of_Classes#MARKER-9-1106">"Declaring Characteristics of Classes" on page 134</a> for a complete description of these adjectives.</p>
-<p class="T1.Text1">The <var>superclasses</var> are the classes from which the new class directly inherits. The rules of inheritance are described in <a href="Classes#MARKER-9-583">"Class Inheritance" on page 53</a> and <a href="Classes#MARKER-9-590">"Computing the Class Precedence List" on page 54</a>.</p>
-<p class="T1.Text1">The <var>init-expression</var>, <var>required-init-keyword-option</var>, <var>init-value-option</var>, and <var>init-function-option</var> are all mutually exclusive in a single <var>slot-spec</var>, <var>init-arg-spec</var>, or <var>inherited-slot-spec</var>.</p>
-<p class="T1.Text1">Each <var>slot-spec</var> describes a slot specification in the class. Slot specifications are described in <a href="Slots#MARKER-9-610">"Slot Specifications" on page 58</a></p>
-<p class="T1.Text1">Each <var>init-arg-spec</var> describes the handling of an initialization argument specification of the class. Initialization argument specifications are described in <a href="Instance_Creation_and_Initialization#MARKER-9-680">"Initialization Argument Specifications" on page 68</a>.</p>
-<p class="T1.Text1">Each <var>inherited-slot-spec</var> describes an inherited slot specification of the class. Inherited slot specifications are described in  <a href="Instance_Creation_and_Initialization#MARKER-9-677">"Inherited Slot Specifications" on page 67</a>.</p></dd>
+<dd class="Cliche">
+<p><code id="MARKER-2-2014">define class</code> is used to define classes.</p>
+<p>It defines a constant module binding with the name <var>name</var>, and initializes it to a new class.</p>
+<p>The <var>class-adjectives</var> provide sealing information about the class. Among the adjectives, <code>abstract</code> and <code>concrete</code> are mutually exclusive, <code>primary</code> and <code>free</code> are mutually exclusive, and <code>sealed</code> and <code>open</code> are mutually exclusive. Additional implementation-defined adjectives may be supported. See <a href="Declaring_Characteristics_of_Classes#MARKER-9-1106">"Declaring Characteristics of Classes" on page 134</a> for a complete description of these adjectives.</p>
+<p>The <var>superclasses</var> are the classes from which the new class directly inherits. The rules of inheritance are described in <a href="Classes#MARKER-9-583">"Class Inheritance" on page 53</a> and <a href="Classes#MARKER-9-590">"Computing the Class Precedence List" on page 54</a>.</p>
+<p>The <var>init-expression</var>, <var>required-init-keyword-option</var>, <var>init-value-option</var>, and <var>init-function-option</var> are all mutually exclusive in a single <var>slot-spec</var>, <var>init-arg-spec</var>, or <var>inherited-slot-spec</var>.</p>
+<p>Each <var>slot-spec</var> describes a slot specification in the class. Slot specifications are described in <a href="Slots#MARKER-9-610">"Slot Specifications" on page 58</a></p>
+<p>Each <var>init-arg-spec</var> describes the handling of an initialization argument specification of the class. Initialization argument specifications are described in <a href="Instance_Creation_and_Initialization#MARKER-9-680">"Initialization Argument Specifications" on page 68</a>.</p>
+<p>Each <var>inherited-slot-spec</var> describes an inherited slot specification of the class. Inherited slot specifications are described in  <a href="Instance_Creation_and_Initialization#MARKER-9-677">"Inherited Slot Specifications" on page 67</a>.</p></dd>
 </dl>
 <a name="HEADING112-240"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-2015">define module</code> </span><span class="attributes-summary">[Definition]</span></h4>
@@ -507,10 +512,11 @@ end method tune </pre>
       <dd><p><code>export: all</code> <strong class="re">|</strong> <code>{</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><code id="MARKER-2-2017"><a name="MARKER-9-2018"></a>define module</code> defines a module with the given name. It describes which modules are used by the module being defined, which bindings are imported from the used modules, and which bindings are exported by the module being defined.</p>
-    <p class="T1.Text1">Circular use relationships among modules are not allowed. The graph of the module-uses-module relation must be directed and acyclic.</p>
-    <p class="T1.Text1">Like other definitions, module definitions are only allowed at top level. Like all constituents, module definitions are contained in a module. The names of bindings being imported and exported in a module definition refer to bindings in the module being defined and the modules being used. These are not affected by the module that contains the module definition.</p>
-    <p class="T1.Text1">There is no prohibition against macros that expand into module definitions.</p>
+  <dd class="Cliche">
+    <p><code id="MARKER-2-2017"><a name="MARKER-9-2018"></a>define module</code> defines a module with the given name. It describes which modules are used by the module being defined, which bindings are imported from the used modules, and which bindings are exported by the module being defined.</p>
+    <p>Circular use relationships among modules are not allowed. The graph of the module-uses-module relation must be directed and acyclic.</p>
+    <p>Like other definitions, module definitions are only allowed at top level. Like all constituents, module definitions are contained in a module. The names of bindings being imported and exported in a module definition refer to bindings in the module being defined and the modules being used. These are not affected by the module that contains the module definition.</p>
+    <p>There is no prohibition against macros that expand into module definitions.</p>
     <ul>
       <li><var>module-name</var> is the name of the module being defined. Note that no binding is created for this name. The namespaces of modules, libraries, and bindings are distinct. The module name is scoped within the library containing the module.</li>
       <li>An <var>export-clause</var>  specifies bindings that are to be exported from the module being defined. Each name is the name of one such binding. These bindings must be defined by a definition in the module being defined. It is an error if any of the bindings were imported from other modules. It is allowed for the same name to appear more than once, since this is sometimes useful for documentation purposes.</li>
@@ -561,7 +567,7 @@ end method tune </pre>
            rename: {skew-line =&gt; warp-line},
              export: all;
        end module dylan-gx; </pre>
-    <p class="T1.Text1">The modules created by these module declarations would have access to bindings with the following names:</p>
+    <p>The modules created by these module declarations would have access to bindings with the following names:</p>
     <pre class="code">
 graphics	
        draw-line
@@ -601,7 +607,7 @@ dylan-gx
        erase-rect
        invert-rect
        <em>plus all the bindings in the Dylan module</em> </pre>
-    <p class="T1.Text1">The <code>lines</code> and <code>rectangles</code> modules do not export any variables. They are presumably used to provide definitions for the variables created and exported by the <code>graphics</code> modules. The difference between the <code>graphics</code> module and the <code>dylan-gx</code> module is that one variable is renamed, and the <code>dylan-gx</code> module exports the variables that it imports from the <code>dylan</code> module, while the <code>graphics</code> module does not.</p>
+    <p>The <code>lines</code> and <code>rectangles</code> modules do not export any variables. They are presumably used to provide definitions for the variables created and exported by the <code>graphics</code> modules. The difference between the <code>graphics</code> module and the <code>dylan-gx</code> module is that one variable is renamed, and the <code>dylan-gx</code> module exports the variables that it imports from the <code>dylan</code> module, while the <code>graphics</code> module does not.</p>
   </dd>
 </dl>
 <a name="HEADING112-282"></a>
@@ -647,10 +653,11 @@ dylan-gx
       <dd><p><code>export: all</code> <strong class="re">|</strong> <code>{</code> <strong class="re">{</strong> <span class="BNF">name<em class="BNF"><sub>bnf</sub></em></span> <strong class="re">}</strong> <code>,</code><strong class="re">*</strong> <code>}</code></p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><code>define library</code> defines a library with the given name. It describes which libraries are used by the library being defined, which modules are imported from the used libraries, and which modules are exported by the library being defined.</p>
-    <p class="T1.Text1">Circular use relationships among libraries are not allowed. The graph of the library-uses-library relation must be directed and acyclic.</p>
-    <p class="T1.Text1">Like other definitions, library definitions are only allowed at top level. Like all constituents, library definitions are contained in a module. The names of modules being imported and exported by a library definition do not refer to bindings, and are not affected by the environment in which the library definition occurs.</p>
-    <p class="T1.Text1">There is no prohibition against macros that expand into library definitions.</p>
+  <dd class="Cliche">
+    <p><code>define library</code> defines a library with the given name. It describes which libraries are used by the library being defined, which modules are imported from the used libraries, and which modules are exported by the library being defined.</p>
+    <p>Circular use relationships among libraries are not allowed. The graph of the library-uses-library relation must be directed and acyclic.</p>
+    <p>Like other definitions, library definitions are only allowed at top level. Like all constituents, library definitions are contained in a module. The names of modules being imported and exported by a library definition do not refer to bindings, and are not affected by the environment in which the library definition occurs.</p>
+    <p>There is no prohibition against macros that expand into library definitions.</p>
     <ul>
       <li><var>library-name</var> is the name of the library being defined. Note that no binding is created for this name. The namespaces of libraries, modules, and bindings are distinct. The library name is scoped along with the other library names in the program.</li>
       <li>An <var>export-clause</var> specifies modules that are to be exported from the library being defined. Each name is the name of one such module. It is an error if any of the modules were imported from other libraries. It is allowed for the same name to appear more than once, since this is sometimes useful for documentation purposes.</li>
@@ -707,8 +714,9 @@ dylan-gx
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>See <a href="Macros">Chapter 10, "Macros,"</a> for a complete description of the macro system.</p>
-    <p class="T1.Text1">Note that <code>define macro</code> is not a defining macro but a special definition. It is not named by a binding, and so it cannot being excluded or renamed using module operations.<a name="MARKER-2-2028"></a></p></dd>
+  <dd class="Cliche">
+    <p>See <a href="Macros">Chapter 10, "Macros,"</a> for a complete description of the macro system.</p>
+    <p>Note that <code>define macro</code> is not a defining macro but a special definition. It is not named by a binding, and so it cannot being excluded or renamed using module operations.<a name="MARKER-2-2028"></a></p></dd>
 </dl>
 
 </div>

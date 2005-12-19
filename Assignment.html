@@ -118,9 +118,9 @@
 <a name="HEADING32-0"></a>
 <a name="UID-Program_Control-1200"></a>
 <h1 class="section-title"><a name="MARKER-2-451"></a>Assignment</h1>
-<p class="T1.Text1"><a name="MARKER-2-452"></a>The operator  <code>:= </code>is used to set variables to new values and as an alternate syntax for calling setter functions and macros.</p>
-<p class="T1.Text1">The assignment operator is described in detail on <a href="Function_Macros#MARKER-9-2072">page 409</a>.</p>
-<p class="T1.Text1"><a name="MARKER-2-453"></a>The following examples show the use of <code>:=</code> to change the value of a module binding.</p>
+<p><a name="MARKER-2-452"></a>The operator  <code>:= </code>is used to set variables to new values and as an alternate syntax for calling setter functions and macros.</p>
+<p>The assignment operator is described in detail on <a href="Function_Macros#MARKER-9-2072">page 409</a>.</p>
+<p><a name="MARKER-2-453"></a>The following examples show the use of <code>:=</code> to change the value of a module binding.</p>
 <pre class="code">
 define variable *foo* = 10;
 *foo*
@@ -130,7 +130,7 @@ define variable *foo* = 10;
 *foo*
 <code> &rArr;</code>  110
 </pre>
-<p class="T1.Text1"><a name="MARKER-2-454"></a><a name="MARKER-2-455"></a>The following examples show the use of <code>:=</code> as shorthand for calling a setter function. In general, using this syntax to call a function <var>fun</var> is equivalent to calling the function <code><var>fun</var>-setter</code>.</p>
+<p><a name="MARKER-2-454"></a><a name="MARKER-2-455"></a>The following examples show the use of <code>:=</code> as shorthand for calling a setter function. In general, using this syntax to call a function <var>fun</var> is equivalent to calling the function <code><var>fun</var>-setter</code>.</p>
 <pre class="code">
 define variable *foo* = vector (10, 6, 8, 5);
 element(*foo*, 2)
@@ -140,12 +140,12 @@ element(*foo*, 2) := &quot;bar&quot;
 *foo*
 <code> &rArr;</code>  #[10, 6, &quot;bar&quot;, 5]
 </pre>
-<p class="T1.Text1">The following examples show the use of <code>:=</code> as shorthand for calling a setter function using slot access notation.</p>
+<p>The following examples show the use of <code>:=</code> as shorthand for calling a setter function using slot access notation.</p>
 <pre class="code">
 window.position := point(100, 100)
 vector.size := 50
 </pre>
-<p class="T1.Text1">The following examples show the use of <code>:=</code> as shorthand for calling <code id="MARKER-2-456">element-setter</code> or <code id="MARKER-2-457">aref-setter</code>.</p>
+<p>The following examples show the use of <code>:=</code> as shorthand for calling <code id="MARKER-2-456">element-setter</code> or <code id="MARKER-2-457">aref-setter</code>.</p>
 <pre class="code">
 my-vector[2] := #"two"
 my-array[1,1] := #"top-left"<a name="MARKER-2-458"></a>

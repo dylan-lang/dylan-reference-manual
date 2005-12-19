@@ -219,15 +219,16 @@
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns an instance of <var>type</var>, with characteristics specified by keyword arguments.</p>
-    <p class="T1.Text1">The <var>instance</var> returned is guaranteed to be a general instance of <var>type</var>  but not necessarily a direct instance of <var>type</var>. This <a name="MARKER-2-1540"></a>liberality allows <code>make</code> to be called on an abstract class or other type;  it can instantiate and return a direct instance of one of the concrete subtypes of the abstract class or type.</p>
-    <p class="T1.Text1">The <var>instance</var> returned may or may not be newly allocated. If a new instance is allocated, <code>make</code> will call <code>initialize</code> on the instance before returning it.</p>
-    <p class="T1.Text1">Programmers may customize <code>make</code> for particular classes by defining methods specialized by singleton specializers. These methods may obtain the default <code>make</code> behavior, if desired, by calling next-method.</p>
-    <p class="T1.Text1">Note that the <code>&lt;class&gt;</code> method on <code>make</code> returns a newly allocated direct instance of its first argument.</p>
+  <dd class="Cliche">
+    <p>Returns an instance of <var>type</var>, with characteristics specified by keyword arguments.</p>
+    <p>The <var>instance</var> returned is guaranteed to be a general instance of <var>type</var>  but not necessarily a direct instance of <var>type</var>. This <a name="MARKER-2-1540"></a>liberality allows <code>make</code> to be called on an abstract class or other type;  it can instantiate and return a direct instance of one of the concrete subtypes of the abstract class or type.</p>
+    <p>The <var>instance</var> returned may or may not be newly allocated. If a new instance is allocated, <code>make</code> will call <code>initialize</code> on the instance before returning it.</p>
+    <p>Programmers may customize <code>make</code> for particular classes by defining methods specialized by singleton specializers. These methods may obtain the default <code>make</code> behavior, if desired, by calling next-method.</p>
+    <p>Note that the <code>&lt;class&gt;</code> method on <code>make</code> returns a newly allocated direct instance of its first argument.</p>
     <a name="HEADING98-14"></a>
     <h5 class="method-signature"><span class="signature"><code>make <var>class</var> #rest <var>supplied-init-args</var> #key </code>&rArr;<code> <var>object</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
     <p class="short-description"><a name="MARKER-9-1541"></a>The method on <code>&lt;class&gt;</code> creates an instance of <var>class</var>, calls <code>initialize</code> on the instance, and then returns the instance. An error is signaled if <var>class</var> is abstract.</p>
-    <p class="T1.Text1">A complete description of this method and its role in the initialization protocol is given in <a href="Instance_Creation_and_Initialization#MARKER-9-658">"Instance Creation and Initialization" on page 64</a>.</p>
+    <p>A complete description of this method and its role in the initialization protocol is given in <a href="Instance_Creation_and_Initialization#MARKER-9-658">"Instance Creation and Initialization" on page 64</a>.</p>
     <a name="HEADING98-17"></a>
     <h5 class="method-signature"><span class="signature"><code>make <em>(singleton (&lt;array&gt;))</em><br /> #key <var>dimensions fill</var> </code>&rArr;<code> <var>array</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <p class="short-description">The method on <code>singleton(&lt;array&gt;)</code> accepts <var>dimensions</var> and <var>fill</var> keyword arguments, and instantiates a concrete subclass of <code>&lt;array&gt;</code>. These arguments are described with the &lt;array&gt; class on <a href="Collection_Classes#MARKER-9-1426">page 218</a>.</p>
@@ -243,10 +244,10 @@
     <a name="HEADING98-25"></a>
     <h5 class="method-signature"><span class="signature"><code>make <em>(singleton (&lt;vector&gt;))</em><br /> #key <var>size fill</var> </code>&rArr;<code> <var>simple-object-vector</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <h5 class="method-signature"><span class="signature"><code>make <em>(singleton (&lt;simple-vector&gt;))</em><br /> #key <var>size fill</var> </code>&rArr;<code> <var>simple-object-vector</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">Methods on <code>singleton(&lt;vector&gt;)</code> and <code>singleton(&lt;simple-vector&gt;)</code> accept <var>size</var> and <var>fill</var> keyword arguments, and return an instance of <code>&lt;simple-object-vector&gt;</code>. These arguments are described with the <code>&lt;vector&gt;</code> class on <a href="Collection_Classes#MARKER-9-1432">page 221</a> and with the <code>&lt;simple-vector&gt;</code> class on <a href="Collection_Classes#MARKER-9-1435">page 222</a>.</p>
+    <p>Methods on <code>singleton(&lt;vector&gt;)</code> and <code>singleton(&lt;simple-vector&gt;)</code> accept <var>size</var> and <var>fill</var> keyword arguments, and return an instance of <code>&lt;simple-object-vector&gt;</code>. These arguments are described with the <code>&lt;vector&gt;</code> class on <a href="Collection_Classes#MARKER-9-1432">page 221</a> and with the <code>&lt;simple-vector&gt;</code> class on <a href="Collection_Classes#MARKER-9-1435">page 222</a>.</p>
     <a name="HEADING98-27"></a>
     <h5 class="method-signature"><span class="signature"><code>make <em>(singleton (&lt;list&gt;))</em><br /> #key <var>size fill</var> </code>&rArr;<code> <var>list</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">A method on <code>singleton(&lt;list&gt;)</code> accepts <var>size</var> and <var>fill</var> keyword arguments. These arguments are described with the <code>&lt;list&gt;</code> class on <a href="Collection_Classes#MARKER-9-1449">page 227</a>.</p>
+    <p>A method on <code>singleton(&lt;list&gt;)</code> accepts <var>size</var> and <var>fill</var> keyword arguments. These arguments are described with the <code>&lt;list&gt;</code> class on <a href="Collection_Classes#MARKER-9-1449">page 227</a>.</p>
   </dd>
 </dl>
 <a name="HEADING98-29"></a>
@@ -283,9 +284,10 @@
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Provides a way for users to handle initialization of instances which cannot be expressed simply by init specifications. This is typically needed when a computation requires inputs from multiple initialization arguments or slot values, or a single computation needs to be used to initialize multiple slots.</p>
-    <p class="T1.Text1">By convention, all <code>initialize</code> methods should call next-method very early, to make sure that any initializations from less specific classes are performed first.</p>
-    <p class="T1.Text1">The <code>initialize</code> generic function permits all keywords and requires none. It does this because the keyword argument checking is performed by the default method on <code>make</code>.</p>
+  <dd class="Cliche">
+    <p>Provides a way for users to handle initialization of instances which cannot be expressed simply by init specifications. This is typically needed when a computation requires inputs from multiple initialization arguments or slot values, or a single computation needs to be used to initialize multiple slots.</p>
+    <p>By convention, all <code>initialize</code> methods should call next-method very early, to make sure that any initializations from less specific classes are performed first.</p>
+    <p>The <code>initialize</code> generic function permits all keywords and requires none. It does this because the keyword argument checking is performed by the default method on <code>make</code>.</p>
     <a name="HEADING98-38"></a>
     <h5 class="method-signature"><span class="signature"><code>initialize <var>object</var> #key </code>
       &rArr;<code> <var>object</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
@@ -321,9 +323,10 @@
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns true if the slot in <var>instance</var> that would be accessed by the <var>getter</var> generic function is initialized. If the slot is not initialized, then false is returned.</p>
-    <p class="T1.Text1"><code>slot-initialized?</code> will signal an error if the  <var>getter</var> does not access a slot in the <var>instance</var>.</p>
-    <p class="T1.Text1">To support <code>slot-initialized?</code> for a virtual slot, programmers must define a method for <code>slot-initialized?</code> that shares a protocol with the getter of the slot.<a name="MARKER-2-1547"></a></p></dd>
+  <dd class="Cliche">
+    <p>Returns true if the slot in <var>instance</var> that would be accessed by the <var>getter</var> generic function is initialized. If the slot is not initialized, then false is returned.</p>
+    <p><code>slot-initialized?</code> will signal an error if the  <var>getter</var> does not access a slot in the <var>instance</var>.</p>
+    <p>To support <code>slot-initialized?</code> for a virtual slot, programmers must define a method for <code>slot-initialized?</code> that shares a protocol with the getter of the slot.<a name="MARKER-2-1547"></a></p></dd>
 </dl>
 <a name="HEADING98-49"></a>
 <a name="UID-Built-In_Functions-25322"></a>
@@ -396,7 +399,7 @@ pair (1, 2)
   &rArr; #(1 . 2)
 pair (1, #(2, 3, 4, 5))
   &rArr; #(1, 2, 3, 4, 5)</pre>
-    <p class="T1.Text1">Note that while the pair returned by <code>pair</code> is freshly allocated, it may be the beginning of a list, portions of which are not freshly allocated.</p>
+    <p>Note that while the pair returned by <code>pair</code> is freshly allocated, it may be the beginning of a list, portions of which are not freshly allocated.</p>
     <pre class="code">
 define variable *preexisting-list* = list(2, 3, 4)
 define variable *new-list* = pair(1, *preexisting-list*)
@@ -518,11 +521,12 @@ third(*new-list*) := 'x'
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a limited subtype of <var>class</var>. The available keyword arguments depend on the <var>class</var>. Not all classes support <code>limited</code>; those that do are documented in the method descriptions below.</p>
-    <p class="T1.Text1">Note that an implementation is not required to implement <code>limited</code> as a generic function, and so the behavior embodied in the following method descriptions need not actually be implemented by separate methods. The behavior is described as a set of methods for convenience of presentation only.</p>
+  <dd class="Cliche">
+    <p>Returns a limited subtype of <var>class</var>. The available keyword arguments depend on the <var>class</var>. Not all classes support <code>limited</code>; those that do are documented in the method descriptions below.</p>
+    <p>Note that an implementation is not required to implement <code>limited</code> as a generic function, and so the behavior embodied in the following method descriptions need not actually be implemented by separate methods. The behavior is described as a set of methods for convenience of presentation only.</p>
     <a name="HEADING98-90"></a>
     <h5 class="method-signature"><span class="signature"><code>limited <em>(singleton (&lt;integer&gt;))</em><br />        #key <var>min max</var> </code>&rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">Returns a limited integer type, which is a subtype of <code>&lt;integer&gt;</code> whose instances are integers greater than or equal to <var>min</var> (if <code>min:</code> is specified) and less than or equal to <var>max</var> (if <code>max:</code> is specified). If no keyword arguments are specified, the result type is equivalent to <code>&lt;integer&gt;</code>. Limited integer types are not instantiable.</p>
+    <p>Returns a limited integer type, which is a subtype of <code>&lt;integer&gt;</code> whose instances are integers greater than or equal to <var>min</var> (if <code>min:</code> is specified) and less than or equal to <var>max</var> (if <code>max:</code> is specified). If no keyword arguments are specified, the result type is equivalent to <code>&lt;integer&gt;</code>. Limited integer types are not instantiable.</p>
     <a name="HEADING98-92"></a>
     <h5 class="method-signature"><span class="signature"><code><a name="MARKER-9-1561"></a>limited <em>(singleton (&lt;collection&gt;))</em><br />        #key <var>of size</var> </code>&rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <h5 class="method-signature"><span class="signature"><code>limited <em>(singleton (&lt;explicit-key-collection&gt;))</em><br />        #key <var>of size</var> </code>&rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
@@ -531,31 +535,31 @@ third(*new-list*) := 'x'
     <h5 class="method-signature"><span class="signature"><code>limited <em>(singleton (&lt;mutable-explicit-key-collection&gt;))</em><br />        #key <var>of size</var> </code>&rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <h5 class="method-signature"><span class="signature"><code>limited <em>(singleton (&lt;sequence&gt;))</em><br />        #key <var>of size</var> </code>&rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <h5 class="method-signature"><span class="signature"><code>limited <em>(singleton (&lt;mutable-sequence&gt;))</em><br />        #key <var>of size</var> </code>&rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">These methods return uninstantiable limited collection types.</p>
+    <p>These methods return uninstantiable limited collection types.</p>
     <a name="HEADING98-94"></a>
     <h5 class="method-signature"><span class="signature"><code>limited <em>(singleton (&lt;table&gt;))</em><br />        #key <var>of size</var> </code>&rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <h5 class="method-signature"><span class="signature"><code>limited <em>(singleton (&lt;object-table&gt;))</em><br />        #key <var>of size</var> </code>&rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">These two methods return types that support a <code>size:</code> initialization keyword with the same behavior as <code>&lt;table&gt;</code>.</p>
+    <p>These two methods return types that support a <code>size:</code> initialization keyword with the same behavior as <code>&lt;table&gt;</code>.</p>
     <a name="HEADING98-96"></a>
     <h5 class="method-signature"><span class="signature"><code>limited <em>(singleton (&lt;array&gt;))</em><br />        #key <var>of size dimensions</var> </code>&rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">This method returns a type that supports <code>dimensions:</code> and <code>fill:</code> initialization keywords with the same behavior as <code>&lt;array&gt;</code>. The default for fill is <code>#f</code> so if <code>instance?(#f, <var>of)</var></code> is not true and the product of the <var>dimensions</var> is nonzero, the <code>fill:</code> initialization keyword is required because the default would cause a type error.</p>
-    <p class="T1.Text1">Instantiating <var>type</var> with a value of <var>dimensions</var>  that has one element will return an instance of <code>limited(&lt;simple-vector&gt;, of: <var>of)</var></code>.</p>
+    <p>This method returns a type that supports <code>dimensions:</code> and <code>fill:</code> initialization keywords with the same behavior as <code>&lt;array&gt;</code>. The default for fill is <code>#f</code> so if <code>instance?(#f, <var>of)</var></code> is not true and the product of the <var>dimensions</var> is nonzero, the <code>fill:</code> initialization keyword is required because the default would cause a type error.</p>
+    <p>Instantiating <var>type</var> with a value of <var>dimensions</var>  that has one element will return an instance of <code>limited(&lt;simple-vector&gt;, of: <var>of)</var></code>.</p>
     <a name="HEADING98-99"></a>
     <h5 class="method-signature"><span class="signature"><code>limited <em>(singleton (&lt;vector&gt;))</em><br />        #key <var>of size</var> </code>&rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">This method returns the same types as the method on <code>singleton(&lt;simple-vector&gt;)</code>.</p>
+    <p>This method returns the same types as the method on <code>singleton(&lt;simple-vector&gt;)</code>.</p>
     <a name="HEADING98-101"></a>
     <h5 class="method-signature"><span class="signature"><code>limited <em>(singleton (&lt;simple-vector&gt;))</em><br />        #key <var>of size</var> </code>&rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <h5 class="method-signature"><span class="signature"><code>limited <em>(singleton (&lt;stretchy-vector&gt;))</em><br />        #key <var>of </var> </code>&rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <h5 class="method-signature"><span class="signature"><code>limited <em>(singleton (&lt;deque&gt;))</em><br />        #key <var>of </var> </code>&rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">These three methods return types that support <code>size:</code> and <code>fill:</code> initialization keywords with the same behavior as the collection-class argument. The default for fill is <code>#f</code> so if <code>instance?(#f, <var>of)</var></code> is not true and <var>size</var> is nonzero, the <code>fill:</code> initialization keyword is required because the default would cause a type error.</p>
-    <p class="T1.Text1">All general instances of <code>&lt;simple-vector&gt;</code> provide a constant time implementation of <code>element</code> and <code>element-setter</code>.</p>
+    <p>These three methods return types that support <code>size:</code> and <code>fill:</code> initialization keywords with the same behavior as the collection-class argument. The default for fill is <code>#f</code> so if <code>instance?(#f, <var>of)</var></code> is not true and <var>size</var> is nonzero, the <code>fill:</code> initialization keyword is required because the default would cause a type error.</p>
+    <p>All general instances of <code>&lt;simple-vector&gt;</code> provide a constant time implementation of <code>element</code> and <code>element-setter</code>.</p>
     <a name="HEADING98-104"></a>
     <h5 class="method-signature"><span class="signature"><code>limited <em>(singleton (&lt;string&gt;))</em><br />        #key <var>of size </var> </code>&rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">The <var>of</var> argument must be a subtype of <code>&lt;character&gt;</code>. This method returns a type that supports <code>size:</code> and <code>fill:</code> initialization keywords with the same behavior as <code>&lt;string&gt;</code>. The default for <code>fill</code>: is <code>' '</code> so if <code>instance?(' ', <var>of)</var></code> is not true and <var>size</var> is nonzero, the <code>fill:</code> initialization keyword is required because the default would cause a type error.</p>
-    <p class="T1.Text1">There are no specified subtypes of <code>&lt;character&gt;</code>, except for unions of singletons, which makes this method rather useless for portable programs. However, the method is provided because there might be useful subtypes of <code>&lt;character&gt;</code> in a particular implementation or in future versions of Dylan.</p>
+    <p>The <var>of</var> argument must be a subtype of <code>&lt;character&gt;</code>. This method returns a type that supports <code>size:</code> and <code>fill:</code> initialization keywords with the same behavior as <code>&lt;string&gt;</code>. The default for <code>fill</code>: is <code>' '</code> so if <code>instance?(' ', <var>of)</var></code> is not true and <var>size</var> is nonzero, the <code>fill:</code> initialization keyword is required because the default would cause a type error.</p>
+    <p>There are no specified subtypes of <code>&lt;character&gt;</code>, except for unions of singletons, which makes this method rather useless for portable programs. However, the method is provided because there might be useful subtypes of <code>&lt;character&gt;</code> in a particular implementation or in future versions of Dylan.</p>
     <a name="HEADING98-107"></a>
     <h5 class="method-signature"><span class="signature"><code>limited <em>(singleton (&lt;range&gt;))</em><br />        #key <var>of </var> </code>&rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">The <var>of</var> argument must be a subtype of <code>&lt;real&gt;</code>. This method returns a type that supports <code>from:</code>, <code>to:</code>, <code>below:</code>, <code>above:</code>, <code>by:</code>, and <code>size:</code> initialization keywords with the same behavior as <code>&lt;range&gt;</code>. Make of this type signals a <code>&lt;type-error&gt;</code> if any element of the range is not an instance of <var>of</var>.</p>
+    <p>The <var>of</var> argument must be a subtype of <code>&lt;real&gt;</code>. This method returns a type that supports <code>from:</code>, <code>to:</code>, <code>below:</code>, <code>above:</code>, <code>by:</code>, and <code>size:</code> initialization keywords with the same behavior as <code>&lt;range&gt;</code>. Make of this type signals a <code>&lt;type-error&gt;</code> if any element of the range is not an instance of <var>of</var>.</p>
   </dd>
 </dl>
 <a name="HEADING98-109"></a>

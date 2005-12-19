@@ -154,7 +154,7 @@
       <a name="UID-Built-In_Classes-395"></a>
       <h1 class="section-title"><a name="MARKER-2-1381"></a>Numbers</h1>
       <p class="T0.Text0">Dylan provides a variety of numeric classes. Classes under <code>&lt;complex&gt;</code> are sealed, so that numeric operations on them can be highly optimized. User defined numeric classes will be subclasses of <code>&lt;number&gt;</code>.</p>
-      <p class="T1.Text1"><a href="#MARKER-9-1382">Figure 11-3</a> shows the built-in number classes and some of their characteristics.</p>
+      <p><a href="#MARKER-9-1382">Figure 11-3</a> shows the built-in number classes and some of their characteristics.</p>
       <p class="figure"><strong>Figure</strong> <strong>11-3</strong>  <a name="MARKER-9-1382"></a>The Number Classes</p>
       
       <div class="figure wide" style="min-width: 616px">
@@ -215,8 +215,9 @@
 	<dt class="Cliche"><span>Operations:</span></dt>
 	<dd class="Cliche"><p>None.</p></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>The class of all numbers.</p>
-	  <p class="T1.Text1">The class <code>&lt;number&gt;</code> is open, to allow programmers to create additional numeric classes. <a name="MARKER-2-1384"></a>The built-in numeric operations do not provide default implementations for <code>&lt;number&gt;</code>, but for <code>&lt;complex&gt;</code>, a sealed subclass of <code>&lt;number&gt;</code>.</p></dd>
+	<dd class="Cliche">
+	  <p>The class of all numbers.</p>
+	  <p>The class <code>&lt;number&gt;</code> is open, to allow programmers to create additional numeric classes. <a name="MARKER-2-1384"></a>The built-in numeric operations do not provide default implementations for <code>&lt;number&gt;</code>, but for <code>&lt;complex&gt;</code>, a sealed subclass of <code>&lt;number&gt;</code>.</p></dd>
       </dl>
       <a name="HEADING92-12"></a>
       <a name="UID-Built-In_Classes-15908"></a>
@@ -231,8 +232,9 @@
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
 	<dd class="Cliche"><p>None.</p></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>The sealed superclass of all built-in numbers, including real numbers. There are no non-real subclasses of <code>&lt;complex&gt;</code> defined by the language, but implementations may define such subclasses. Because <code>&lt;complex&gt;</code> and all its defined subclasses are sealed, implementation-defined subclasses may be added efficiently.</p>
-	  <p class="T1.Text1">Many built-in functions are defined to have methods on <code>&lt;complex&gt;</code>. This means that the function is defined on all built-in subclasses of <code>&lt;complex&gt;</code>. It does not imply that there is a single method specialized on the <code>&lt;complex&gt;</code> class.</p></dd>
+	<dd class="Cliche">
+	  <p>The sealed superclass of all built-in numbers, including real numbers. There are no non-real subclasses of <code>&lt;complex&gt;</code> defined by the language, but implementations may define such subclasses. Because <code>&lt;complex&gt;</code> and all its defined subclasses are sealed, implementation-defined subclasses may be added efficiently.</p>
+	  <p>Many built-in functions are defined to have methods on <code>&lt;complex&gt;</code>. This means that the function is defined on all built-in subclasses of <code>&lt;complex&gt;</code>. It does not imply that there is a single method specialized on the <code>&lt;complex&gt;</code> class.</p></dd>
 	<dt class="Cliche"><span>Operations:</span></dt>
 	<dd class="Cliche"><p>The class &lt;complex&gt; provides implementations for the following functions:</p>
 	  <table class="numbered"><caption><strong>Table 11-10</strong>  Methods on &lt;complex&gt;</caption>
@@ -342,8 +344,8 @@
       <a name="HEADING92-409"></a>
       <a name="UID-Built-In_Classes-9235"></a>
       <h2 class="subsection-title">Floats</h2>
-      <p class="T1.Text1"><a name="MARKER-2-1387"></a>The classes <code>&lt;single-float&gt;</code> and <code>&lt;double-float&gt;</code> are intended but not required to be the corresponding IEEE types. The class <code>&lt;extended-float&gt;</code> is intended but not required to have more range and/or precision than <code>&lt;double-float&gt;</code>.</p>
-      <p class="T1.Text1">If an implementation has fewer than three floating point classes, the names <code>&lt;single-float&gt;</code>, <code>&lt;double-float&gt;</code> and <code>&lt;extended-float&gt;</code> may all refer to the same object.</p>
+      <p><a name="MARKER-2-1387"></a>The classes <code>&lt;single-float&gt;</code> and <code>&lt;double-float&gt;</code> are intended but not required to be the corresponding IEEE types. The class <code>&lt;extended-float&gt;</code> is intended but not required to have more range and/or precision than <code>&lt;double-float&gt;</code>.</p>
+      <p>If an implementation has fewer than three floating point classes, the names <code>&lt;single-float&gt;</code>, <code>&lt;double-float&gt;</code> and <code>&lt;extended-float&gt;</code> may all refer to the same object.</p>
       <a name="HEADING92-412"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1388">&lt;float&gt;</code> </span><span class="attributes-summary">[Sealed Abstract Class]</span></h4>
       <hr class="item-title" />
@@ -430,9 +432,10 @@
 	<dt class="Cliche"><span>Init-keywords:</span></dt>
 	<dd class="Cliche"><p>None.</p></dd>
 	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>The class of integers.</p>
-	  <p class="T1.Text1"><a name="MARKER-2-1395"></a>Implementations are required to support integers with at least 28 bits of precision. The overflow and underflow behavior is implementation-defined. (Some implementations may choose to have integers of unlimited size, but this is not required.)</p>
-	  <p class="T1.Text1"><a name="MARKER-2-1396"></a>The result of dividing two integers with / is implementation defined. Portable programs should use <code>floor/</code>, <code>ceiling/</code>, <code>round/</code>, or <code>truncate/</code> to divide two integers.</p></dd>
+	<dd class="Cliche">
+	  <p>The class of integers.</p>
+	  <p><a name="MARKER-2-1395"></a>Implementations are required to support integers with at least 28 bits of precision. The overflow and underflow behavior is implementation-defined. (Some implementations may choose to have integers of unlimited size, but this is not required.)</p>
+	  <p><a name="MARKER-2-1396"></a>The result of dividing two integers with / is implementation defined. Portable programs should use <code>floor/</code>, <code>ceiling/</code>, <code>round/</code>, or <code>truncate/</code> to divide two integers.</p></dd>
 	<dt class="Cliche"><span>Operations:</span></dt>
 	<dd class="Cliche"><p>The class <code>&lt;integer&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-13</strong>  Functions on &lt;integer&gt;</caption>

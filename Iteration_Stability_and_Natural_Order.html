@@ -119,9 +119,9 @@
 <a name="HEADING62-0"></a>
 <a name="UID-Collections-3044"></a>
 <h1 class="section-title"><a name="MARKER-9-1001"></a>Iteration Stability and Natural Order</h1>
-<p class="T1.Text1">A collection is <dfn id="MARKER-2-1002">stable under iteration</dfn> if any two iterations over the collection are guaranteed to produce the same values in the same order in the absence of modifications to the table. If this guarantee does not hold, the collection is <dfn id="MARKER-2-1003">unstable under iteration</dfn>.</p>
-<p class="T1.Text1">Sequences are required to be stable under iteration. Explicit key collections may or may not be stable under iteration.</p>
-<p class="T1.Text1"><a name="MARKER-2-1004"></a>The order in which elements and keys are enumerated by the iteration protocol for a particular iteration is known as the <dfn id="MARKER-2-1005">natural order</dfn> for that iteration over the collection. If a collection is stable under iteration, then every iteration over that collection will have the same natural order, and we may speak of the natural order of the collection itself. Most of the operations on collections are required to operate in natural order, usually for the purpose of understanding interactions among side effects.</p>
+<p>A collection is <dfn id="MARKER-2-1002">stable under iteration</dfn> if any two iterations over the collection are guaranteed to produce the same values in the same order in the absence of modifications to the table. If this guarantee does not hold, the collection is <dfn id="MARKER-2-1003">unstable under iteration</dfn>.</p>
+<p>Sequences are required to be stable under iteration. Explicit key collections may or may not be stable under iteration.</p>
+<p><a name="MARKER-2-1004"></a>The order in which elements and keys are enumerated by the iteration protocol for a particular iteration is known as the <dfn id="MARKER-2-1005">natural order</dfn> for that iteration over the collection. If a collection is stable under iteration, then every iteration over that collection will have the same natural order, and we may speak of the natural order of the collection itself. Most of the operations on collections are required to operate in natural order, usually for the purpose of understanding interactions among side effects.</p>
 
 </div>
 

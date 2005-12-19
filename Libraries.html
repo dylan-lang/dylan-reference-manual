@@ -111,7 +111,7 @@
       <a name="HEADING27-0"></a>
       <a name="UID-Program_Structure-1450"></a>
       <h1 class="section-title"><a name="MARKER-2-391"></a>Libraries</h1>
-      <p class="T1.Text1">A library consists of the following parts:</p>
+      <p>A library consists of the following parts:</p>
       <ul>
 	<li>A <a name="MARKER-2-392"></a>library definition. This specifies a name for the library; a set of
 	modules that are exported from the library for use by other libraries; a set of other libraries that
@@ -125,31 +125,32 @@
 	<li>The association of executable code with the library. The mechanism by which this association is
 	made is implementation-defined. The mechanism by which the compiler is invoked to produce the
 	executable code is implementation-defined.</li>
-	<li><a name="MARKER-2-395"></a>The export information of the library. The format of this information
-	and the mechanism by which it is associated with the library is implementation-defined. The export
-	information comprises the information required to process the source code of another library that
-	imports the library.
-	  <p class="T1.Text1">The library export information is the only part of a Dylan library that is
-	  needed to allow some other library to import it. A library that exports some modules does not have
-	  any additional declarations providing information to the compiler when it is processing the code
-	  that imports those modules. Rather, any such information that is needed is obtained in some
-	  implementation-defined way while processing the source code of the exporting library and is retained
-	  in the library export information of the exporting library.</p></li>
+	<li><a name="MARKER-2-395"></a>The export information of the library. The format of this
+	information and the mechanism by which it is associated with the library is
+	implementation-defined. The export information comprises the information required to process
+	the source code of another library that imports the library.
+	  <p>The library export information is the only part of a Dylan library that is needed to
+	  allow some other library to import it. A library that exports some modules does not have
+	  any additional declarations providing information to the compiler when it is processing
+	  the code that imports those modules. Rather, any such information that is needed is
+	  obtained in some implementation-defined way while processing the source code of the
+	  exporting library and is retained in the library export information of the exporting
+	  library.</p></li>
       </ul>
       <p class="Default"> <a name="MARKER-2-396"></a>Exporting a module from a library makes all of the
       bindings exported by the module available for import by modules in other libraries.</p>
-      <p class="T1.Text1"><a name="MARKER-2-397"></a>Importing a module into a library allows the module to be
-      used by modules defined within the library. This gives the library's modules access to the bindings of
-      the module being imported.</p>
-      <p class="T1.Text1">Importing a module into a library does not allow source records in the importing
-      library to be contained in the imported module.</p>
-      <p class="T1.Text1"><a name="MARKER-2-398"></a>Each implementation must provide a library
-      named <code>dylan</code> that exports a module named <code>dylan</code>. That module must export exactly
-      those bindings documented as being part of the Dylan language, and the values of those bindings must be
-      as specified by the Dylan language. The <code>dylan</code> library is permitted to export additional
-      implementation-defined modules.</p>
-      <p class="T1.Text1"><a name="MARKER-2-399"></a><a name="MARKER-2-400"></a>Each library contains an
-      implicitly defined module whose name is <code>dylan-user</code>. Within this module, all the bindings
+      <p><a name="MARKER-2-397"></a>Importing a module into a library allows the module to be used
+      by modules defined within the library. This gives the library's modules access to the bindings
+      of the module being imported.</p>
+      <p>Importing a module into a library does not allow source records in the importing library to
+      be contained in the imported module.</p>
+      <p><a name="MARKER-2-398"></a>Each implementation must provide a library
+      named <code>dylan</code> that exports a module named <code>dylan</code>. That module must
+      export exactly those bindings documented as being part of the Dylan language, and the values
+      of those bindings must be as specified by the Dylan language. The <code>dylan</code> library
+      is permitted to export additional implementation-defined modules.</p>
+      <p><a name="MARKER-2-399"></a><a name="MARKER-2-400"></a>Each library contains an implicitly
+      defined module whose name is <code>dylan-user</code>. Within this module, all the bindings
       specified by the Dylan language are accessible using their specified names. Additional
       implementation-dependent bindings may also be accessible from this
       module.<a name="MARKER-2-401"></a><a name="MARKER-2-402"></a></p>

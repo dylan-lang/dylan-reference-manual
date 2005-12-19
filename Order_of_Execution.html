@@ -122,14 +122,14 @@
 <a name="HEADING37-0"></a>
 <a name="UID-Program_Control-1422"></a>
 <h1 class="section-title"><a name="MARKER-2-484"></a><a name="MARKER-9-485"></a>Order of Execution</h1>
-<p class="T1.Text1">Order of execution is defined for the <a name="MARKER-2-486"></a>constituents within a body. With some exceptions noted below, this execution order is left-to-right.</p>
-<p class="T1.Text1"><a name="MARKER-2-487"></a>Definitions form the overall structure of a program and are not said to execute. In particular, module bindings are not created in any order, but all exist when program execution commences. To the extent that these bindings must be initialized by the values of some expressions that cannot be analyzed at compile time, references to the bindings are constrained by the execution order of the expressions within the surrounding body.</p>
-<p class="T1.Text1"><a name="MARKER-2-488"></a>Dylan implementations are encouraged to allow forward references to module bindings whenever possible.</p>
-<p class="T1.Text1">The order of execution of the components of a call to a user-defined macro is determined by the macro.</p>
+<p>Order of execution is defined for the <a name="MARKER-2-486"></a>constituents within a body. With some exceptions noted below, this execution order is left-to-right.</p>
+<p><a name="MARKER-2-487"></a>Definitions form the overall structure of a program and are not said to execute. In particular, module bindings are not created in any order, but all exist when program execution commences. To the extent that these bindings must be initialized by the values of some expressions that cannot be analyzed at compile time, references to the bindings are constrained by the execution order of the expressions within the surrounding body.</p>
+<p><a name="MARKER-2-488"></a>Dylan implementations are encouraged to allow forward references to module bindings whenever possible.</p>
+<p>The order of execution of the components of a call to a user-defined macro is determined by the macro.</p>
 <a name="HEADING37-5"></a>
 <a name="UID-Program_Control-3893"></a>
 <h2 class="subsection-title"><a name="MARKER-2-489"></a>Execution Order Within Expressions</h2>
-<p class="T1.Text1">In general, execution within an expression proceeds left-to-right. The chief exception to this rule is the <a name="MARKER-2-490"></a>assignment operator, which is executed right-to-left.</p>
+<p>In general, execution within an expression proceeds left-to-right. The chief exception to this rule is the <a name="MARKER-2-490"></a>assignment operator, which is executed right-to-left.</p>
 <ul>
   <li><a name="MARKER-2-491"></a>In a standard function call, the function operand is executed first, followed by the argument expressions. (Remember, the function need not be a named value reference, but can be a more complex operand). After the function operand has been executed and each of the argument expressions has been executed, the function is applied to the arguments.
     <pre class="code">

@@ -127,19 +127,19 @@
 <a name="HEADING30-1"></a>
 <a name="UID-Program_Control-1538"></a>
 <h2 class="subsection-title"><a name="MARKER-2-431"></a>General Syntax</h2>
-<p class="T1.Text1">The general syntax for function calls is</p>
-<p class="T1.Text1"><code><var>function</var>(<var>arg1</var>, <var>arg2</var>, <var>&hellip;</var> <var>argn</var>)</code></p>
-<p class="T1.Text1"><var>function</var> has the syntax of an operand and is the function to be called. The <var>args</var> have the syntax of expressions, and are the arguments to the function. The <var>function</var> will often be a named value reference, but it can be any other kind of operand as well.</p>
-<p class="T1.Text1">In the following example, the function being called is the value of the binding <code>average</code>.</p>
+<p>The general syntax for function calls is</p>
+<p><code><var>function</var>(<var>arg1</var>, <var>arg2</var>, <var>&hellip;</var> <var>argn</var>)</code></p>
+<p><var>function</var> has the syntax of an operand and is the function to be called. The <var>args</var> have the syntax of expressions, and are the arguments to the function. The <var>function</var> will often be a named value reference, but it can be any other kind of operand as well.</p>
+<p>In the following example, the function being called is the value of the binding <code>average</code>.</p>
 <pre class="code">
 average(x, y)
 </pre>
-<p class="T1.Text1">In the following two examples, the function being called is the value of a <code>method</code> statement. The examples differ only in that the second example puts parentheses around the <code>method</code> statement, to make the code somewhat more readable.</p>
+<p>In the following two examples, the function being called is the value of a <code>method</code> statement. The examples differ only in that the second example puts parentheses around the <code>method</code> statement, to make the code somewhat more readable.</p>
 <pre class="code">
 method(x) x + 1 end (99)
 (method(x) x + 1 end) (99)
 </pre>
-<p class="T1.Text1">In the following examples, the function being called is the result of another function call. <code>key-test</code> takes a collection as an argument, and returns a predicate function. The predicate function is then applied to the two keys. The following three program fragments will have the same effect.</p>
+<p>In the following examples, the function being called is the result of another function call. <code>key-test</code> takes a collection as an argument, and returns a predicate function. The predicate function is then applied to the two keys. The following three program fragments will have the same effect.</p>
 <pre class="code">
 key-test(collection)(key1, key2)
 
@@ -150,13 +150,13 @@ begin
  fun(key1, key2);
 end
 </pre>
-<p class="T1.Text1">Functions may accept keyword arguments. These are optional and order-independent. They may also accept a variable number of "rest" arguments.</p>
-<p class="T1.Text1">A complete description of functions, parameter lists, and function calling is given in <a href="Functions">Chapter 6, "Functions."</a></p>
+<p>Functions may accept keyword arguments. These are optional and order-independent. They may also accept a variable number of "rest" arguments.</p>
+<p>A complete description of functions, parameter lists, and function calling is given in <a href="Functions">Chapter 6, "Functions."</a></p>
 <a name="HEADING30-16"></a>
 <a name="UID-Program_Control-1278"></a>
 <h2 class="subsection-title"><a name="MARKER-2-432"></a>Slot Reference<a name="MARKER-2-433"></a></h2>
-<p class="T1.Text1">Dylan provides a shorthand syntax for functions that accept one argument. The syntax <code><var>argument</var>.<var>function</var></code> applies <var>function</var> to <var>argument</var>. This syntax is commonly used for slot reference, to access the <var>function </var> slot of <var>argument</var>.</p>
-<p class="T1.Text1">Order of execution aside, the following pairs of function calls are equivalent:</p>
+<p>Dylan provides a shorthand syntax for functions that accept one argument. The syntax <code><var>argument</var>.<var>function</var></code> applies <var>function</var> to <var>argument</var>. This syntax is commonly used for slot reference, to access the <var>function </var> slot of <var>argument</var>.</p>
+<p>Order of execution aside, the following pairs of function calls are equivalent:</p>
 <pre class="code">
 america.capital
 capital(america)
@@ -164,7 +164,7 @@ capital(america)
 window.position
 position(window)
 </pre>
-<p class="T1.Text1">Slot reference syntax can be cascaded and is left associative. Order of execution aside, the following pair of expressions are equivalent. Each returns the origin of the root-view of a window.</p>
+<p>Slot reference syntax can be cascaded and is left associative. Order of execution aside, the following pair of expressions are equivalent. Each returns the origin of the root-view of a window.</p>
 <pre class="code">
 window.root-view.origin
 origin(root-view(window))<a name="MARKER-2-434"></a>
@@ -172,8 +172,8 @@ origin(root-view(window))<a name="MARKER-2-434"></a>
 <a name="HEADING30-22"></a>
 <a name="UID-Program_Control-1292"></a>
 <h2 class="subsection-title"><a name="MARKER-2-435"></a>Element Reference<a name="MARKER-2-436"></a></h2>
-<p class="T1.Text1">Dylan provides a shorthand syntax for element reference. The syntax <code><var>sequence</var>[<var>i</var>]</code> is equivalent to the function call <code>element(<var>sequence</var>, <var>i</var>)</code>. The syntax <code><var>array</var>[<var>i<em><sub>1</sub></em></var>, <var>i<em><sub>2</sub></em></var>, <var>&hellip;</var> <var>i<em><sub>n</sub></em></var>]</code> is equivalent to the function call <code>aref(<var>array</var>, <var>i<em><sub>1</sub></em></var>, <var>i<em><sub>2</sub></em></var>, <var>&hellip;</var> <var>i<em><sub>n</sub></em></var>)</code>.</p>
-<p class="T1.Text1">Order of execution aside, the following pairs of expressions are equivalent:</p>
+<p>Dylan provides a shorthand syntax for element reference. The syntax <code><var>sequence</var>[<var>i</var>]</code> is equivalent to the function call <code>element(<var>sequence</var>, <var>i</var>)</code>. The syntax <code><var>array</var>[<var>i<em><sub>1</sub></em></var>, <var>i<em><sub>2</sub></em></var>, <var>&hellip;</var> <var>i<em><sub>n</sub></em></var>]</code> is equivalent to the function call <code>aref(<var>array</var>, <var>i<em><sub>1</sub></em></var>, <var>i<em><sub>2</sub></em></var>, <var>&hellip;</var> <var>i<em><sub>n</sub></em></var>)</code>.</p>
+<p>Order of execution aside, the following pairs of expressions are equivalent:</p>
 <pre class="code">
 *all-windows*[0]
 element(*all-windows*, 0)
@@ -181,7 +181,7 @@ element(*all-windows*, 0)
 *tic-tac-toe*[1, 2]
 aref(*tic-tac-toe*, 1, 2)
 </pre>
-<p class="T1.Text1">The names <code>element</code> and <code>aref</code> are looked up in the environment of the element reference expression.<a name="MARKER-2-437"></a></p>
+<p>The names <code>element</code> and <code>aref</code> are looked up in the environment of the element reference expression.<a name="MARKER-2-437"></a></p>
 
 </div>
 

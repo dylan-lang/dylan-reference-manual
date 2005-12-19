@@ -223,7 +223,7 @@
 	  handler has violated protocol; <code>signal</code> does not check for this
 	  error. If <var>condition</var> is a restart, the caller of <code>signal</code> should
 	  always assume that it might return.</p>
-	  <p class="T1.Text1">The second form signals a condition of
+	  <p>The second form signals a condition of
 	  type <code>&lt;simple-warning&gt;</code>.</p></dd>
       </dl>
       <a name="HEADING107-12"></a>
@@ -267,8 +267,7 @@
 	  returns, <code>error</code> invokes the debugger immediately. <code>error</code> is used
 	  to make it clear that a program does not expect to receive control again after signaling a
 	  condition and might enable the compiler to generate slightly more compact code.</p>
-	  <p class="T1.Text1">The second form signals a condition of
-	  type <code>&lt;simple-error&gt;</code>.</p></dd>
+	  <p>The second form signals a condition of type <code>&lt;simple-error&gt;</code>.</p></dd>
       </dl>
       <a name="HEADING107-21"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1922">cerror</code> </span><span class="attributes-summary">[Function]</span></h4>
@@ -321,11 +320,11 @@
 	  for<code> &lt;simple-restart&gt;</code>, with a format string
 	  of <var>restart-description</var> and format arguments of a sequence containing
 	  the <var>arguments</var>.</p>
-	  <p class="T1.Text1">If the restart handler is invoked, <code>cerror</code>
-	  returns <code>#f</code>; otherwise, <code>cerror</code> never
-	  returns. If <code>cerror</code> returns, the program should take the corrective actions
-	  promised in the <var>restart-description</var>. <code>cerror</code> is the standard way to
-	  signal correctable errors when no special class of restart condition is required.</p></dd>
+	  <p>If the restart handler is invoked, <code>cerror</code> returns <code>#f</code>;
+	  otherwise, <code>cerror</code> never returns. If <code>cerror</code> returns, the program
+	  should take the corrective actions promised in
+	  the <var>restart-description</var>. <code>cerror</code> is the standard way to signal
+	  correctable errors when no special class of restart condition is required.</p></dd>
       </dl>
       <a name="HEADING107-32"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1924">break</code> </span><span class="attributes-summary">[Function]</span></h4>
@@ -382,7 +381,7 @@
 	  a <code>&lt;simple-restart&gt;</code> so the debugger can continue execution. This is
 	  useful for breakpoints. <code>break</code> always returns <code>#f</code>. With no
 	  arguments, a default message string is used.</p>
-	  <p class="T1.Text1">The behavior of the debugger is implementation-defined.</p></dd>
+	  <p>The behavior of the debugger is implementation-defined.</p></dd>
       </dl>
       <a name="HEADING107-42"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1926">check-type</code> </span><span class="attributes-summary">[Function]</span></h4>
@@ -438,9 +437,9 @@
 	<dt class="Cliche"><span>Description:</span></dt>
 	<dd class="Cliche">
 	  <p>Performs <code>error(make (&lt;abort&gt;))</code>.</p>
-	  <p class="T1.Text1">This function is provided as a convenient shortcut. The call is
-	  to <code>error</code>, rather than to <code>signal</code>, to guarantee
-	  that <code>abort</code> will never return.</p></dd>
+	  <p>This function is provided as a convenient shortcut. The call is to <code>error</code>,
+	  rather than to <code>signal</code>, to guarantee that <code>abort</code> will never
+	  return.</p></dd>
       </dl>
       <a name="HEADING107-56"></a>
       <a name="UID-Built-In_Functions-423"></a>
@@ -531,13 +530,11 @@
 	<dd class="Cliche">
 	  <p>Engages the interactive user in a dialog and stores the results in slots
 	  of <var>restart</var>.</p>
-	  <p class="T1.Text1">This function is designed to be called from a handler, after making a
-	  restart and before signaling it. The debugger uses <code>restart-query</code>, for
-	  example.</p>
+	  <p>This function is designed to be called from a handler, after making a restart and
+	  before signaling it. The debugger uses <code>restart-query</code>, for example.</p>
 	  <a name="HEADING107-78"></a>
 	  <h5 class="method-signature"><span class="signature"><code>restart-query</code> <var>restart</var> &rArr; <var>object</var> </span><span class="attributes-summary">[G.F. Method]</span></h5>
-	  <p class="T1.Text1">There is a default method for <code>&lt;restart&gt;</code> that does
-	  nothing.</p>
+	  <p>There is a default method for <code>&lt;restart&gt;</code> that does nothing.</p>
 	</dd>
       </dl>
       <a name="HEADING107-80"></a>
@@ -575,11 +572,10 @@
 	  <p>If the recovery protocol of <var>condition</var> allows returning values, this engages
 	  the program user in a dialog and returns the results as any number of values, which the
 	  handler should return.</p>
-	  <p class="T1.Text1"><code>return-query</code> should not be called
-	  if <code>return-allowed?</code> returns <code>#f</code>. Programs that define condition
-	  classes whose recovery protocol allows returning values should ensure that there is an
-	  appropriate method for this function defined on or inherited by the condition
-	  class.</p></dd>
+	  <p><code>return-query</code> should not be called if <code>return-allowed?</code>
+	  returns <code>#f</code>. Programs that define condition classes whose recovery protocol
+	  allows returning values should ensure that there is an appropriate method for this
+	  function defined on or inherited by the condition class.</p></dd>
       </dl>
       <a name="HEADING107-87"></a>
       <a name="UID-Built-In_Functions-1650"></a>
@@ -660,13 +656,13 @@
 	<dd class="Cliche">
 	  <p>Returns <code>#t</code> if the recovery protocol of <var>condition</var> allows
 	  returning values, or <code>#f</code> if it does not.</p>
-	  <p class="T1.Text1">There is a default method for <code>&lt;condition&gt;</code> that
+	  <p>There is a default method for <code>&lt;condition&gt;</code> that
 	  returns <code>#f</code>. Programs which define condition classes whose recovery protocol
 	  allows returning values should ensure that there is an appropriate method for this
 	  function defined on or inherited by the condition class.</p>
 	  <a name="HEADING107-101"></a>
 	  <h5 class="method-signature"><span class="signature"><code>return-allowed?</code> <var>condition</var> &rArr; <var>false</var> </span><span class="attributes-summary">[G.F. Method]</span></h5>
-	  <p class="T1.Text1">There is a default method for <code>&lt;condition&gt;</code> that returns <code>#f</code>.</p>
+	  <p>There is a default method for <code>&lt;condition&gt;</code> that returns <code>#f</code>.</p>
 	</dd>
       </dl>
       <a name="HEADING107-103"></a>
@@ -706,7 +702,7 @@
 	  <p>If the recovery protocol of this condition allows returning
 	  values, <code>return-description</code> returns a description of the meaning of returning
 	  values.</p>
-	  <p class="T1.Text1">This <var>description</var> can be a restart, a string,
+	  <p>This <var>description</var> can be a restart, a string,
 	  or <code>#f</code>. <code>return-description</code> should not be called
 	  if <code>return-allowed?</code> returns <code>#f</code>. If you define your own condition
 	  class whose recovery protocol allows returning values, you need to define a method
@@ -857,7 +853,7 @@
 	  <p>Returns the expected type of the type check that led to the type
 	  error.<a
 	  name="MARKER-2-1950"></a><a name="MARKER-2-1951"></a><a name="MARKER-2-1952"></a></p>
-	  <p class="T1.Text1"></p>
+	  <p></p>
 	  <a name="LINK-Built-In_Functions-lastpage"></a><a name="LINK-Built-In_ObjectsTOC-firstpage"></a></dd>
       </dl>
       <a name="UID-Built-In_ObjectsTOC-217"></a>

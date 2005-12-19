@@ -117,8 +117,8 @@
 <a name="HEADING45-0"></a>
 <a name="UID-Types_and_Classes-1556"></a>
 <h1 class="section-title"><a name="MARKER-2-700"></a><a name="MARKER-9-701"></a>Union Types</h1>
-<p class="T1.Text1">Union types represent the union of the instances of two or more other types. Union types are created with the function <code id="MARKER-2-702">type-union</code>. They are not classes.</p>
-<p class="T1.Text1">Union types are useful as slot specializers, and describe the return types of many common functions. For example, the return type of the collection method on <code>size</code> could be expressed as <code>type-union(&lt;integer&gt;, singleton(#f))</code>.</p>
+<p>Union types represent the union of the instances of two or more other types. Union types are created with the function <code id="MARKER-2-702">type-union</code>. They are not classes.</p>
+<p>Union types are useful as slot specializers, and describe the return types of many common functions. For example, the return type of the collection method on <code>size</code> could be expressed as <code>type-union(&lt;integer&gt;, singleton(#f))</code>.</p>
 <pre class="code">
 define constant &lt;green-thing&gt; = type-union(&lt;frog&gt;, &lt;broccoli&gt;);
 
@@ -131,25 +131,25 @@ end method;
 red?(kermit)
   &rArr;  #f
 </pre>
-<p class="T1.Text1">The following rules govern <code id="MARKER-2-703">subtype?</code> and <code id="MARKER-2-704">instance?</code> for union types.</p>
-<p class="T1.Text1">Given</p>
+<p>The following rules govern <code id="MARKER-2-703">subtype?</code> and <code id="MARKER-2-704">instance?</code> for union types.</p>
+<p>Given</p>
 <ul>
   <li><var>x</var> is an object.</li>
   <li><var>s<em><sub>1</sub></em></var>&hellip;<var>s<em><sub>m</sub></em></var> and <var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var> are nonunion types.</li>
   <li>The notation <code>type-union*(<var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>)</code> stands for any arrangement of nested calls to <code>type-union</code>, where none of the arguments is a subtype of any other, and none of the arguments forms an exhaustive partition of any other type.</li>
 </ul>
-<p class="T1.Text1">Then</p>
-<p class="T1.Text1"><code>type-union(<var>t<em><sub>1</sub></em></var>, <var>t<em><sub>1</sub></em></var>)</code> is type equivalent to <var>t<em><sub>1</sub></em></var>.</p>
-<p class="T1.Text1"><code>type-union(<var>t<em><sub>1</sub></em></var>, <var>t<em><sub>2</sub></em></var>)</code> is type equivalent to <code>type-union(<var>t<em><sub>2</sub></em></var>, <var>t<em><sub>1</sub></em></var>)</code>.</p>
-<p class="T1.Text1"><code>type-union(<var>t<em><sub>1</sub></em></var>, type-union(<var>t<em><sub>2</sub></em></var>, <var>t<em><sub>3</sub></em></var>))</code> is type equivalent to <code>type-union(type-union(<var>t<em><sub>1</sub></em></var>, <var>t<em><sub>2</sub></em></var>), <var>t<em><sub>3</sub></em></var>)</code>.</p>
-<p class="T1.Text1"><code>type-union(<var>t<em><sub>1</sub></em></var>, <var>t<em><sub>2</sub></em></var>)</code> is type equivalent to <var>t<em><sub>2</sub></em></var> when <code>subtype?(<var>t<em><sub>1</sub></em></var>, <var>t<em><sub>2</sub></em></var>)</code>.</p>
-<p class="T1.Text1"><code>instance?(<var>x</var>, type-union*(<var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>))</code> will be true if and only if <code>instance?(<var>x</var>, <var>t</var>)</code> is true for some <var>t</var> in <var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>.</p>
-<p class="T1.Text1"><code>subtype?(type-union*(<var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>), <var>s<em><sub>1</sub></em></var>)</code> will be true if and only if <code>subtype?(<var>t</var>, <var>s<em><sub>1</sub></em></var>)</code> is true for every <var>t</var> in <var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>.</p>
-<p class="T1.Text1"><code>subtype?(<var>s<em><sub>1</sub></em></var>, type-union*(<var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>))</code> will be true if and only if <code>subtype?(<var>s<em><sub>1</sub></em></var>, <var>t</var>)</code> is true for some <var>t</var> in <var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>.</p>
+<p>Then</p>
+<p><code>type-union(<var>t<em><sub>1</sub></em></var>, <var>t<em><sub>1</sub></em></var>)</code> is type equivalent to <var>t<em><sub>1</sub></em></var>.</p>
+<p><code>type-union(<var>t<em><sub>1</sub></em></var>, <var>t<em><sub>2</sub></em></var>)</code> is type equivalent to <code>type-union(<var>t<em><sub>2</sub></em></var>, <var>t<em><sub>1</sub></em></var>)</code>.</p>
+<p><code>type-union(<var>t<em><sub>1</sub></em></var>, type-union(<var>t<em><sub>2</sub></em></var>, <var>t<em><sub>3</sub></em></var>))</code> is type equivalent to <code>type-union(type-union(<var>t<em><sub>1</sub></em></var>, <var>t<em><sub>2</sub></em></var>), <var>t<em><sub>3</sub></em></var>)</code>.</p>
+<p><code>type-union(<var>t<em><sub>1</sub></em></var>, <var>t<em><sub>2</sub></em></var>)</code> is type equivalent to <var>t<em><sub>2</sub></em></var> when <code>subtype?(<var>t<em><sub>1</sub></em></var>, <var>t<em><sub>2</sub></em></var>)</code>.</p>
+<p><code>instance?(<var>x</var>, type-union*(<var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>))</code> will be true if and only if <code>instance?(<var>x</var>, <var>t</var>)</code> is true for some <var>t</var> in <var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>.</p>
+<p><code>subtype?(type-union*(<var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>), <var>s<em><sub>1</sub></em></var>)</code> will be true if and only if <code>subtype?(<var>t</var>, <var>s<em><sub>1</sub></em></var>)</code> is true for every <var>t</var> in <var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>.</p>
+<p><code>subtype?(<var>s<em><sub>1</sub></em></var>, type-union*(<var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>))</code> will be true if and only if <code>subtype?(<var>s<em><sub>1</sub></em></var>, <var>t</var>)</code> is true for some <var>t</var> in <var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>.</p>
 <p class="errata left"><a href="Errata#p73_1"
 			  name="errata_p73_1"><strong>Errata:</strong></a>
   Missing comma between the arguments to <code>subtype?</code>.</p>
-<p class="T1.Text1"><code>subtype?(type-union*(<var>s<em><sub>1</sub></em></var>&hellip;<var>s<em><sub>m</sub></em></var>) type-union*(<var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>))</code> will be true if and only if every <var>s</var> in <var>s<em><sub>1</sub></em></var>&hellip;<var>s<em><sub>m</sub></em></var> is a subtype of some <var>t</var> in <var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>.<a name="MARKER-2-705"></a></p>
+<p><code>subtype?(type-union*(<var>s<em><sub>1</sub></em></var>&hellip;<var>s<em><sub>m</sub></em></var>) type-union*(<var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>))</code> will be true if and only if every <var>s</var> in <var>s<em><sub>1</sub></em></var>&hellip;<var>s<em><sub>m</sub></em></var> is a subtype of some <var>t</var> in <var>t<em><sub>1</sub></em></var>&hellip;<var>t<em><sub>n</sub></em></var>.<a name="MARKER-2-705"></a></p>
 
 </div>
 

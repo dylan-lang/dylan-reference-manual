@@ -119,11 +119,11 @@
 <a name="HEADING83-0"></a>
 <a name="UID-Macros-1805"></a>
 <h1 class="section-title">Templates</h1>
-<p class="T1.Text1"><a name="MARKER-2-1262"></a>Approximately speaking, a template has the same structure as what it constructs, but contains pattern variables that will be replaced by fragments extracted from the macro call. Thus a template in the <var>main-rule-set</var>  looks like the macro expansion.</p>
-<p class="T1.Text1">However, templates do not have a full grammar. A template is essentially any sequence of tokens and <var>substitutions</var> in which all of Dylan's brackets are balanced: <code>()</code>, <code>[]</code>, <code>{}</code>, <code>#()</code>, and <code>#[]</code>. Substitution for pattern variables produces a sequence of tokens and other elementary fragments.</p>
-<p class="T1.Text1"><a name="MARKER-2-1263"></a>Note that using unparsed token sequences as templates allows a macro expansion to contain macro calls without creating any inter-dependencies between macros. Since the template is not parsed at macro definition time, any macros called in the template do not have to be defined first, and macros can be compiled independently of each other. This simplifies the implementation at the minor cost of deferring some error checking from when a macro is defined until the time when the macro is called.</p>
-<p class="T1.Text1">The grammar for templates is the definition of <var>template </var> in <a href="Phrase_Grammar#MARKER-9-2119">"Templates" on page 429</a>.</p>
-<p class="T1.Text1">All <var>template-elements</var>  other than <var>substitution</var>  are copied directly into the macro expansion. The various kinds of <var>substitution</var>  insert something else into the macro expansion, as follows:</p>
+<p><a name="MARKER-2-1262"></a>Approximately speaking, a template has the same structure as what it constructs, but contains pattern variables that will be replaced by fragments extracted from the macro call. Thus a template in the <var>main-rule-set</var>  looks like the macro expansion.</p>
+<p>However, templates do not have a full grammar. A template is essentially any sequence of tokens and <var>substitutions</var> in which all of Dylan's brackets are balanced: <code>()</code>, <code>[]</code>, <code>{}</code>, <code>#()</code>, and <code>#[]</code>. Substitution for pattern variables produces a sequence of tokens and other elementary fragments.</p>
+<p><a name="MARKER-2-1263"></a>Note that using unparsed token sequences as templates allows a macro expansion to contain macro calls without creating any inter-dependencies between macros. Since the template is not parsed at macro definition time, any macros called in the template do not have to be defined first, and macros can be compiled independently of each other. This simplifies the implementation at the minor cost of deferring some error checking from when a macro is defined until the time when the macro is called.</p>
+<p>The grammar for templates is the definition of <var>template </var> in <a href="Phrase_Grammar#MARKER-9-2119">"Templates" on page 429</a>.</p>
+<p>All <var>template-elements</var>  other than <var>substitution</var>  are copied directly into the macro expansion. The various kinds of <var>substitution</var>  insert something else into the macro expansion, as follows:</p>
 <dl>
   <dt><code>?</code> <em class="BNFCaps">name</em></dt>
   <dd><p>The fragment bound to the pattern variable named <em class="BNFCaps">name</em>.</p></dd>
@@ -136,10 +136,10 @@
   <dt><code>?=</code> <em class="BNFCaps">name</em></dt>
   <dd><p>A reference to <em class="BNFCaps">NAME</em>, in the lexical context where the macro was called.</p></dd>
 </dl>
-<p class="T1.Text1">It is an error for a single question-mark <var>substitution</var>  to use a pattern variable that was bound by a double question-mark <var>pattern-keyword.</var> </p>
-<p class="T1.Text1">It is an error for a double question-mark <var>substitution</var>  to use a pattern variable that was bound by a single question-mark <var>pattern-variable</var> or <var>pattern-keyword.</var> </p>
-<p class="T1.Text1">It is an error for a <var>substitution</var> to use a pattern variable that does not appear on the left-hand side of the same rule.</p>
-<p class="T1.Text1">When a template contains a <var>separator</var> immediately followed by a <var>substitution</var>, and the fragment inserted into the macro expansion by the <var>substitution</var> is empty, the separator is removed from the macro expansion.<a name="MARKER-2-1264"></a></p>
+<p>It is an error for a single question-mark <var>substitution</var>  to use a pattern variable that was bound by a double question-mark <var>pattern-keyword.</var> </p>
+<p>It is an error for a double question-mark <var>substitution</var>  to use a pattern variable that was bound by a single question-mark <var>pattern-variable</var> or <var>pattern-keyword.</var> </p>
+<p>It is an error for a <var>substitution</var> to use a pattern variable that does not appear on the left-hand side of the same rule.</p>
+<p>When a template contains a <var>separator</var> immediately followed by a <var>substitution</var>, and the fragment inserted into the macro expansion by the <var>substitution</var> is empty, the separator is removed from the macro expansion.<a name="MARKER-2-1264"></a></p>
 
 </div>
 

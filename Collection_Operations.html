@@ -338,8 +338,8 @@
 <a name="HEADING102-0"></a>
 <a name="UID-Built-In_Functions-3130"></a>
 <h1 class="section-title"><a name="MARKER-9-1696"></a>Collection Operations</h1>
-<p class="T1.Text1"><a name="MARKER-2-1697"></a>The generic functions described in this section have predefined methods for the built-in collection classes (and sequence classes, where appropriate). The details of these predefined methods have not yet been specified.</p>
-<p class="T1.Text1">Note to implementors:  Functions such as <code>map</code>, <code>map-as</code> that return a new collection cannot rely on the type they instantiate having a valid default for <code>fill:</code>. Therefore, when the size of the result is nonzero, these functions should compute the first element of the result before making the collection and specify that element as the <code>fill:</code> value. Otherwise a spurious type error could occur when making the collection.</p>
+<p><a name="MARKER-2-1697"></a>The generic functions described in this section have predefined methods for the built-in collection classes (and sequence classes, where appropriate). The details of these predefined methods have not yet been specified.</p>
+<p>Note to implementors:  Functions such as <code>map</code>, <code>map-as</code> that return a new collection cannot rely on the type they instantiate having a valid default for <code>fill:</code>. Therefore, when the size of the result is nonzero, these functions should compute the first element of the result before making the collection and specify that element as the <code>fill:</code> value. Otherwise a spurious type error could occur when making the collection.</p>
 <a name="HEADING102-3"></a>
 <a name="UID-Built-In_Functions-21096"></a>
 <h2 class="subsection-title">Collection Properties</h2>
@@ -377,7 +377,7 @@
   <dd class="Cliche"><p>Returns true if <var>object</var> is empty. Otherwise returns <code>#f</code>.</p>
     <a name="HEADING102-10"></a>
     <h5 class="method-signature"><span class="signature"><code>empty?</code>  <var>collection</var> &rArr;  <var>boolean</var> </span><span class="attributes-summary">[G.F. Method]</span></h5>
-    <p class="T1.Text1">A set of methods defined for the class <code>&lt;collection&gt;</code> returns true if the collection has zero elements.</p>
+    <p>A set of methods defined for the class <code>&lt;collection&gt;</code> returns true if the collection has zero elements.</p>
   </dd>
 </dl>
 <a name="HEADING102-12"></a>
@@ -414,21 +414,21 @@
   <dd class="Cliche"><p>Returns the size of <var>object</var>.</p>
     <a name="HEADING102-18"></a>
     <h5 class="method-signature"><span class="signature"><code>size</code> <var>collection</var> &rArr; <var>integer-or-false</var> </span><span class="attributes-summary">[G.F. Method]</span></h5>
-    <p class="T1.Text1">When called on a collection, <code>size</code> returns the numbers of keys in the collection. This default method simply counts while iterating through the collection. <code>size</code> may return <code>#f</code> for collections of unbounded size.</p>
+    <p>When called on a collection, <code>size</code> returns the numbers of keys in the collection. This default method simply counts while iterating through the collection. <code>size</code> may return <code>#f</code> for collections of unbounded size.</p>
     <a name="HEADING102-20"></a>
     <h5 class="method-signature"><span class="signature"><code>size</code> <var>array</var> &rArr; <var>size</var>  </span><span class="attributes-summary">[G.F. Method]</span></h5>
-    <p class="T1.Text1">The method for <code>&lt;array&gt;</code> is equivalent to</p>
+    <p>The method for <code>&lt;array&gt;</code> is equivalent to</p>
     <pre class="code">
 reduce(\*, 1, dimensions (array))</pre>
     <a name="HEADING102-23"></a>
     <h5 class="method-signature"><span class="signature"><code>size</code>  <var>list</var> &rArr;  <var>integer-or-false</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">For circular lists, <code>size</code> is guaranteed to terminate and return <code>#f</code>. For noncircular lists, <code>size</code> returns an integer size value.</p>
+    <p>For circular lists, <code>size</code> is guaranteed to terminate and return <code>#f</code>. For noncircular lists, <code>size</code> returns an integer size value.</p>
     <a name="HEADING102-25"></a>
     <h5 class="method-signature"><span class="signature"><code>size</code>  <var>range</var> &rArr;  <var>size</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">For unbounded ranges, <code>size</code> always terminates and returns <code>#f</code>. For finite ranges, <code>size</code> returns an integer.</p>
+    <p>For unbounded ranges, <code>size</code> always terminates and returns <code>#f</code>. For finite ranges, <code>size</code> returns an integer.</p>
     <a name="HEADING102-27"></a>
     <h5 class="method-signature"><span class="signature"><code>size</code>  <var>table</var> &rArr;  <var>size</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">The class <code>&lt;table&gt;</code> provides an implementation of <code>size</code> for use by its subclasses. The method returns an instance of <code>&lt;integer&gt;</code>.</p>
+    <p>The class <code>&lt;table&gt;</code> provides an implementation of <code>size</code> for use by its subclasses. The method returns an instance of <code>&lt;integer&gt;</code>.</p>
   </dd>
 </dl>
 <a name="HEADING102-29"></a>
@@ -464,10 +464,10 @@ reduce(\*, 1, dimensions (array))</pre>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p>Sets the size of <var>object</var> to <var>new-size</var>.</p>
-    <p class="T1.Text1"><var>object </var>is modified by this operation.</p>
-    <p class="T1.Text1">Methods are provided for stretchy sequences; that is, for collections that are instances both of <code>&lt;stretchy-collection&gt;</code> and of <code>&lt;sequence&gt;</code>.</p>
-    <p class="T1.Text1"><code>size-setter</code> sets the size of a stretchy sequence to be <var>new-size</var>. The stretchy sequence is modified by this operation. If <var>new-size </var>is less than or equal to the original size of the stretchy sequence, then the first <var>new-size</var> elements of the stretchy sequence are retained at the same positions. If <var>new-size</var> is greater than the original size of the stretchy sequence, then the previous elements of the stretchy sequence are retained at the same positions, and enough new elements are added to reach the new size. The value of each new element is the same as would have been used if the stretchy sequence had been created with <code>make</code>, specifying <code>size: <var>new-size</var></code> but not <code>fill:</code>.</p>
-    <p class="T1.Text1">It is not specified how <code>size-setter</code> adds new elements to the stretchy sequence. In particular, it is not required to call <code>add!</code> or any other predefined function.</p></dd>
+    <p><var>object </var>is modified by this operation.</p>
+    <p>Methods are provided for stretchy sequences; that is, for collections that are instances both of <code>&lt;stretchy-collection&gt;</code> and of <code>&lt;sequence&gt;</code>.</p>
+    <p><code>size-setter</code> sets the size of a stretchy sequence to be <var>new-size</var>. The stretchy sequence is modified by this operation. If <var>new-size </var>is less than or equal to the original size of the stretchy sequence, then the first <var>new-size</var> elements of the stretchy sequence are retained at the same positions. If <var>new-size</var> is greater than the original size of the stretchy sequence, then the previous elements of the stretchy sequence are retained at the same positions, and enough new elements are added to reach the new size. The value of each new element is the same as would have been used if the stretchy sequence had been created with <code>make</code>, specifying <code>size: <var>new-size</var></code> but not <code>fill:</code>.</p>
+    <p>It is not specified how <code>size-setter</code> adds new elements to the stretchy sequence. In particular, it is not required to call <code>add!</code> or any other predefined function.</p></dd>
 </dl>
 <a name="HEADING102-40"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-1705">rank</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
@@ -503,7 +503,7 @@ reduce(\*, 1, dimensions (array))</pre>
   <dd class="Cliche"><p>Returns the number of dimensions (the rank) of <var>array</var>.</p>
     <a name="HEADING102-46"></a>
     <h5 class="method-signature"><span class="signature"><code>rank</code> <var>array</var> &rArr; <var>rank</var> </span><span class="attributes-summary">[G.F. Method]</span></h5>
-    <p class="T1.Text1">The method for <code>&lt;array&gt;</code> computes <code>rank</code> by calling <code>size</code> on the <code>dimensions</code> of <code>array</code>.</p>
+    <p>The method for <code>&lt;array&gt;</code> computes <code>rank</code> by calling <code>size</code> on the <code>dimensions</code> of <code>array</code>.</p>
   </dd>
 </dl>
 <a name="HEADING102-48"></a>
@@ -539,10 +539,10 @@ reduce(\*, 1, dimensions (array))</pre>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
   <dd class="Cliche"><p>Computes the position according to the row-major ordering of <code>array</code> for the   element that is specified by <code>subscripts</code>, and returns the position of that element.</p>
-    <p class="T1.Text1">An error is signaled if the number of subscripts is not equal to the rank of the array. An error is signaled if any of the subscripts are out of bounds for array.</p>
+    <p>An error is signaled if the number of subscripts is not equal to the rank of the array. An error is signaled if any of the subscripts are out of bounds for array.</p>
     <a name="HEADING102-56"></a>
     <h5 class="method-signature"><span class="signature"><code>row-major-index</code> <var>array</var> <code>#rest</code> <var>subscripts</var> &rArr; <var>index</var>  </span><span class="attributes-summary">[G.F. Method]</span></h5>
-    <p class="T1.Text1">The method for <code>&lt;array&gt;</code> computes the <var>index</var> using the <var>subscripts</var> and the result of calling <code>dimensions</code> on the <var>array</var>.</p>
+    <p>The method for <code>&lt;array&gt;</code> computes the <var>index</var> using the <var>subscripts</var> and the result of calling <code>dimensions</code> on the <var>array</var>.</p>
   </dd>
 </dl>
 <a name="HEADING102-58"></a>
@@ -579,7 +579,7 @@ reduce(\*, 1, dimensions (array))</pre>
   <dd class="Cliche"><p>Returns the dimensions  of <var>array</var>, as a sequence of integers. The consequences are undefined if the resulting sequence is modified. This function forms the basis for all the other array operations. Each concrete subclass of <code>&lt;array&gt;</code> must either provide or inherit an implementation of this function.</p>
     <a name="HEADING102-64"></a>
     <h5 class="method-signature"><span class="signature"><code>dimensions</code> <var>vector</var> &rArr;  <var>sequence</var> </span><span class="attributes-summary">[G.F. Method]</span></h5>
-    <p class="T1.Text1">Returns a sequence whose single element is the size of the vector.</p>
+    <p>Returns a sequence whose single element is the size of the vector.</p>
   </dd>
 </dl>
 <a name="HEADING102-66"></a>
@@ -614,11 +614,12 @@ reduce(\*, 1, dimensions (array))</pre>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the <var>axis</var> dimension of <code>array</code>.</p>
-    <p class="T1.Text1"><var>axis</var> must be a non-negative integer less than the rank of <code>array</code>. An error is signaled if <var>axis</var> is out of bounds for <code>array</code>.</p>
+  <dd class="Cliche">
+    <p>Returns the <var>axis</var> dimension of <code>array</code>.</p>
+    <p><var>axis</var> must be a non-negative integer less than the rank of <code>array</code>. An error is signaled if <var>axis</var> is out of bounds for <code>array</code>.</p>
     <a name="HEADING102-74"></a>
     <h5 class="method-signature"><span class="signature"><code>dimension</code> <var>array axis</var> &rArr; <var>dimension</var>   </span><span class="attributes-summary">[G.F. Method]</span></h5>
-    <p class="T1.Text1">The method for <code>&lt;array&gt;</code> calls <code>element</code> on the result of calling <code>dimensions</code> on the <code>array</code>, using the <code>axis</code> number as the key.</p>
+    <p>The method for <code>&lt;array&gt;</code> calls <code>element</code> on the result of calling <code>dimensions</code> on the <code>array</code>, using the <code>axis</code> number as the key.</p>
   </dd>
 </dl>
 <a name="HEADING102-76"></a>
@@ -652,14 +653,15 @@ reduce(\*, 1, dimensions (array))</pre>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the function used by <var>collection</var> to compare keys.</p>
-    <p class="T1.Text1">All collection classes must provide or inherit a method that returns a result consistent with their iteration protocol and <code>element</code> methods. A given method for <code>key-test</code> must return the same value (compared with <code>==</code>) each time it is called.</p>
+  <dd class="Cliche">
+    <p>Returns the function used by <var>collection</var> to compare keys.</p>
+    <p>All collection classes must provide or inherit a method that returns a result consistent with their iteration protocol and <code>element</code> methods. A given method for <code>key-test</code> must return the same value (compared with <code>==</code>) each time it is called.</p>
     <a name="HEADING102-83"></a>
     <h5 class="method-signature"><span class="signature"><code>key-test</code> <var>sequence</var>  &rArr; <var>test-function</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">The method of <code>key-test</code> for sequences returns the function <code>==</code>.</p>
+    <p>The method of <code>key-test</code> for sequences returns the function <code>==</code>.</p>
     <a name="HEADING102-85"></a>
     <h5 class="method-signature"><span class="signature"><code>key-test</code> <var>table</var>  &rArr; <var>test-function</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">The method of <code>key-test</code> for instances of <code>&lt;table&gt;</code> returns the first value of <code>table-protocol(<var>table)</var></code>.</p>
+    <p>The method of <code>key-test</code> for instances of <code>&lt;table&gt;</code> returns the first value of <code>table-protocol(<var>table)</var></code>.</p>
   </dd>
 </dl>
 <a name="HEADING102-87"></a>
@@ -693,9 +695,10 @@ reduce(\*, 1, dimensions (array))</pre>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a sequence containing the keys of <var>collection</var>.</p>
-    <p class="T1.Text1">Although elements may be duplicated in a collection, keys, by their nature, must be unique; two different elements in a collection may not share a common key, even though distinct keys may yield identical elements.</p>
-    <p class="T1.Text1">The order in which the keys from <var>collection</var> appear in the key sequence is unspecified if <var>collection</var> is unstable under iteration. In particular, different calls to <code>key-sequence</code> with the same argument may yield differently ordered key sequences. If <var>collection</var>  is stable under iteration, however, the resulting sequence of keys will be in the natural order for <var>collection</var>.<a name="MARKER-2-1717"></a></p></dd>
+  <dd class="Cliche">
+    <p>Returns a sequence containing the keys of <var>collection</var>.</p>
+    <p>Although elements may be duplicated in a collection, keys, by their nature, must be unique; two different elements in a collection may not share a common key, even though distinct keys may yield identical elements.</p>
+    <p>The order in which the keys from <var>collection</var> appear in the key sequence is unspecified if <var>collection</var> is unstable under iteration. In particular, different calls to <code>key-sequence</code> with the same argument may yield differently ordered key sequences. If <var>collection</var>  is stable under iteration, however, the resulting sequence of keys will be in the natural order for <var>collection</var>.<a name="MARKER-2-1717"></a></p></dd>
 </dl>
 <a name="HEADING102-95"></a>
 <a name="UID-Built-In_Functions-415"></a>
@@ -734,20 +737,21 @@ reduce(\*, 1, dimensions (array))</pre>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the element associated with <var>key</var> in <var>collection</var>. If no element is associated with <var>key</var>, then the behavior of <code>element</code> depends on whether it was called with a <var>default</var> argument: if a <var>default</var> argument was passed, its value is returned; otherwise, an error is signaled.</p>
-    <p class="T1.Text1">All collections are required to implement <code>element</code>.</p>
+  <dd class="Cliche">
+    <p>Returns the element associated with <var>key</var> in <var>collection</var>. If no element is associated with <var>key</var>, then the behavior of <code>element</code> depends on whether it was called with a <var>default</var> argument: if a <var>default</var> argument was passed, its value is returned; otherwise, an error is signaled.</p>
+    <p>All collections are required to implement <code>element</code>.</p>
     <a name="HEADING102-105"></a>
     <h5 class="method-signature"><span class="signature"><code>element</code> <var>simple-vector  index</var> #key <var>default</var> &rArr;  <var>element</var>  </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">There is a constant time implementation of <code>element</code> for all general instances of <code>&lt;simple-vector&gt;</code>.</p>
+    <p>There is a constant time implementation of <code>element</code> for all general instances of <code>&lt;simple-vector&gt;</code>.</p>
     <a name="HEADING102-107"></a>
     <h5 class="method-signature"><span class="signature"><code>element</code> <var>unicode-string index</var> #key <var>default</var>  &rArr;  <var>character</var>   </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">The class <code>&lt;unicode-string&gt;</code> provides a constant time implementation for the <code>element</code> function.</p>
+    <p>The class <code>&lt;unicode-string&gt;</code> provides a constant time implementation for the <code>element</code> function.</p>
     <a name="HEADING102-109"></a>
     <h5 class="method-signature"><span class="signature"><code>element</code> <var>byte-string index</var> #key <var>default</var>  &rArr;  <var>character</var>       </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">The class <code>&lt;byte-string&gt;</code> provides a constant time implementation for the <code>element</code> function.</p>
+    <p>The class <code>&lt;byte-string&gt;</code> provides a constant time implementation for the <code>element</code> function.</p>
     <a name="HEADING102-111"></a>
     <h5 class="method-signature"><span class="signature"><code>element</code> <var>table key</var> #key <var>default</var>  &rArr;  <var>element</var>       </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">The class <code>&lt;table&gt;</code> provides a default implementation for the <code>element</code> function.</p>
+    <p>The class <code>&lt;table&gt;</code> provides a default implementation for the <code>element</code> function.</p>
   </dd>
 </dl>
 <a name="HEADING102-113"></a>
@@ -784,9 +788,10 @@ reduce(\*, 1, dimensions (array))</pre>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Alters <var>mutable-collection </var> so that the value associated with <var>key</var> will subsequently be <var>new-value</var>. If <var>mutable-collection</var> is stretchy, <code>element-setter</code> may also change its size (for example, by adding new keys with values).</p>
-    <p class="T1.Text1">An error is signaled if a program calls <code>element-setter</code> with a key that is not already a key to <var>collection</var>, unless the collection is stretchy.</p>
-    <p class="T1.Text1">Stretchy collections allow <code>element-setter</code> to be called with a key that is not present in the collection, expanding the collection as necessary to add a new element in that case. Each concrete subclass of <code>&lt;stretchy-collection&gt;</code> must provide or inherit a method for <code>element-setter</code> that behaves as follows when there is not already an element present for the indicated key:</p>
+  <dd class="Cliche">
+    <p>Alters <var>mutable-collection </var> so that the value associated with <var>key</var> will subsequently be <var>new-value</var>. If <var>mutable-collection</var> is stretchy, <code>element-setter</code> may also change its size (for example, by adding new keys with values).</p>
+    <p>An error is signaled if a program calls <code>element-setter</code> with a key that is not already a key to <var>collection</var>, unless the collection is stretchy.</p>
+    <p>Stretchy collections allow <code>element-setter</code> to be called with a key that is not present in the collection, expanding the collection as necessary to add a new element in that case. Each concrete subclass of <code>&lt;stretchy-collection&gt;</code> must provide or inherit a method for <code>element-setter</code> that behaves as follows when there is not already an element present for the indicated key:</p>
     <ul>
       <li>If the class is a subclass of <code>&lt;explicit-key-collection&gt;</code>, adds a new element to the collection with the indicated key.</li>
       <li>If the class is a subclass of <code>&lt;sequence&gt;</code>, first calls <code>size-setter</code> on the key + 1 and the collection to expand the sequence. The key must be a non-negative integer.</li>
@@ -794,16 +799,16 @@ reduce(\*, 1, dimensions (array))</pre>
     <a name="HEADING102-125"></a>
     <h5 class="method-signature"><span class="signature"><code>element-setter</code>  <var>new-element simple-vector  index</var><br />
 	&rArr;  <var>new-element</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">There is a constant time implementation of <code>element-setter</code> for all general instances of <code>&lt;simple-vector&gt;</code>.</p>
+    <p>There is a constant time implementation of <code>element-setter</code> for all general instances of <code>&lt;simple-vector&gt;</code>.</p>
     <a name="HEADING102-127"></a>
     <h5 class="method-signature"><span class="signature"><code>element-setter</code> <var>new-value table key</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">The class <code>&lt;table&gt;</code> provides an implementation of <code>element-setter</code> for use by its subclasses. If no element with the given <var>key</var> exists, <code>element-setter</code> will add the <var>key</var> and <var>new-value</var> to the table.</p>
+    <p>The class <code>&lt;table&gt;</code> provides an implementation of <code>element-setter</code> for use by its subclasses. If no element with the given <var>key</var> exists, <code>element-setter</code> will add the <var>key</var> and <var>new-value</var> to the table.</p>
     <a name="HEADING102-129"></a>
     <h5 class="method-signature"><span class="signature"><code>element-setter</code>  <var>character unicode-string index</var>   </span><span class="attributes-summary">[Sealed G.F. Method]</span><br />&rArr;  <var>character</var></h5>
-    <p class="T1.Text1">The class <code>&lt;unicode-string&gt;</code> provides a constant time implementation for the <code>element-setter</code> function.</p>
+    <p>The class <code>&lt;unicode-string&gt;</code> provides a constant time implementation for the <code>element-setter</code> function.</p>
     <a name="HEADING102-131"></a>
     <h5 class="method-signature"><span class="signature"><code>element-setter</code>  <var>character byte-string index</var> &rArr;  <var>character</var>  </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">The class <code>&lt;byte-string&gt;</code> provides a constant time implementation for the <code>element-setter</code> function.</p>
+    <p>The class <code>&lt;byte-string&gt;</code> provides a constant time implementation for the <code>element-setter</code> function.</p>
   </dd>
 </dl>
 <a name="HEADING102-133"></a>
@@ -838,11 +843,12 @@ reduce(\*, 1, dimensions (array))</pre>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the element of <var>array</var> indicated by <var>indices</var>.</p>
-    <p class="T1.Text1">An error is signaled if the number of <var>indices</var> is not equal to the rank of the <var>array</var>. An error is signaled if any of the <var>indices</var> are out of bounds for the <var>array</var>.</p>
+  <dd class="Cliche">
+    <p>Returns the element of <var>array</var> indicated by <var>indices</var>.</p>
+    <p>An error is signaled if the number of <var>indices</var> is not equal to the rank of the <var>array</var>. An error is signaled if any of the <var>indices</var> are out of bounds for the <var>array</var>.</p>
     <a name="HEADING102-141"></a>
     <h5 class="method-signature"><span class="signature"><code>aref</code> <var>array</var> <code>#rest</code> <var>indices</var> &rArr; <var>element</var>  </span><span class="attributes-summary">[G.F. Method]</span></h5>
-    <p class="T1.Text1">The method for <code>&lt;array&gt;</code> calls <code>element</code> on the <var>array</var>, using as the key the result of applying <code>row-major-index</code> to the <var>array </var>and <var>indices</var>.</p>
+    <p>The method for <code>&lt;array&gt;</code> calls <code>element</code> on the <var>array</var>, using as the key the result of applying <code>row-major-index</code> to the <var>array </var>and <var>indices</var>.</p>
   </dd>
 </dl>
 <a name="HEADING102-143"></a>
@@ -879,12 +885,13 @@ reduce(\*, 1, dimensions (array))</pre>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Sets the element of <var>array</var> indicated by <var>indices</var> to the <var>new-value</var> and returns the <var>new-value</var>.</p>
-    <p class="T1.Text1">array is modified by this operation.</p>
-    <p class="T1.Text1">An error is signaled if the number of <var>indices</var> is not equal to the rank of the <var>array</var>. An error is signaled if any of the <var>indices</var> are out of bounds for <var>array</var>. An error is signaled if the <var>array </var>is limited to hold objects of a particular type and the new value is not an instance of that type.</p>
+  <dd class="Cliche">
+    <p>Sets the element of <var>array</var> indicated by <var>indices</var> to the <var>new-value</var> and returns the <var>new-value</var>.</p>
+    <p>array is modified by this operation.</p>
+    <p>An error is signaled if the number of <var>indices</var> is not equal to the rank of the <var>array</var>. An error is signaled if any of the <var>indices</var> are out of bounds for <var>array</var>. An error is signaled if the <var>array </var>is limited to hold objects of a particular type and the new value is not an instance of that type.</p>
     <a name="HEADING102-153"></a>
     <h5 class="method-signature"><span class="signature"><code>aref-setter</code> <var>new-value   array</var> <code> #rest</code> <var>indices</var> &rArr; <var>new-value</var>  </span><span class="attributes-summary">[G.F. Method]</span></h5>
-    <p class="T1.Text1">The method for <code>&lt;array&gt;</code> calls <code>element-setter</code> on the array and new value, using as the key the result of applying <code>row-major-index</code> to the <code>array</code> and <var>indices</var>.</p>
+    <p>The method for <code>&lt;array&gt;</code> calls <code>element-setter</code> on the array and new value, using as the key the result of applying <code>row-major-index</code> to the <code>array</code> and <var>indices</var>.</p>
   </dd>
 </dl>
 <a name="HEADING102-155"></a>
@@ -919,8 +926,9 @@ reduce(\*, 1, dimensions (array))</pre>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the first element of the <var>sequence</var> by calling <code>element</code> with the supplied arguments and the corresponding index.</p>
-    <p class="T1.Text1">Note that because <code>element</code> is zero-based,  <code>first(seq)</code> is equivalent to <code>element(seq, 0)</code> and <code>seq[0]</code>.</p></dd>
+  <dd class="Cliche">
+    <p>Returns the first element of the <var>sequence</var> by calling <code>element</code> with the supplied arguments and the corresponding index.</p>
+    <p>Note that because <code>element</code> is zero-based,  <code>first(seq)</code> is equivalent to <code>element(seq, 0)</code> and <code>seq[0]</code>.</p></dd>
 </dl>
 <a name="HEADING102-163"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-1729">second</code> </span><span class="attributes-summary">[Function]</span></h4>
@@ -1022,8 +1030,9 @@ reduce(\*, 1, dimensions (array))</pre>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Sets the first element of the <var>mutable-sequence</var> and returns the <var>new-value</var>, by calling <code>element-setter </code>with the supplied arguments and the corresponding index.</p>
-    <p class="T1.Text1">Note that because <code>element-setter</code> is zero-based, <code>first-setter(val, seq)</code> is equivalent to <code>element-setter(val, seq, 0)</code> and <code>seq[0] := val</code>.</p></dd>
+  <dd class="Cliche">
+    <p>Sets the first element of the <var>mutable-sequence</var> and returns the <var>new-value</var>, by calling <code>element-setter </code>with the supplied arguments and the corresponding index.</p>
+    <p>Note that because <code>element-setter</code> is zero-based, <code>first-setter(val, seq)</code> is equivalent to <code>element-setter(val, seq, 0)</code> and <code>seq[0] := val</code>.</p></dd>
 </dl>
 <a name="HEADING102-185"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-1735">second-setter</code> </span><span class="attributes-summary">[Function]</span></h4>
@@ -1125,8 +1134,9 @@ reduce(\*, 1, dimensions (array))</pre>
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the last element of <var>sequence</var>.</p>
-    <p class="T1.Text1">If the sequence is empty, then the behavior of <code>last</code> depends on whether it was called with a <var>default</var> argument. If the <var>default</var> argument was supplied, its value is returned; otherwise, an error is signaled.</p>
+  <dd class="Cliche">
+    <p>Returns the last element of <var>sequence</var>.</p>
+    <p>If the sequence is empty, then the behavior of <code>last</code> depends on whether it was called with a <var>default</var> argument. If the <var>default</var> argument was supplied, its value is returned; otherwise, an error is signaled.</p>
     <pre class="code">
 last (#(&quot;emperor&quot;, &quot;of&quot;, &quot;china&quot;))
 <code> &rArr;</code>  &quot;china&quot;</pre>
@@ -1164,9 +1174,10 @@ last (#(&quot;emperor&quot;, &quot;of&quot;, &quot;china&quot;))
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Replaces the last element of <var>mutable-sequence</var>  with <var>new-value</var>.</p>
-    <p class="T1.Text1"><var>mutable-sequence</var> is modified by this operation.</p>
-    <p class="T1.Text1"><var>new-value</var>  must obey any type restrictions for elements of <var>mutable-sequence</var> . An error is signaled if <var>mutable-sequence</var>  is empty or unbounded.</p>
+  <dd class="Cliche">
+    <p>Replaces the last element of <var>mutable-sequence</var>  with <var>new-value</var>.</p>
+    <p><var>mutable-sequence</var> is modified by this operation.</p>
+    <p><var>new-value</var>  must obey any type restrictions for elements of <var>mutable-sequence</var> . An error is signaled if <var>mutable-sequence</var>  is empty or unbounded.</p>
 <pre class="code">
 define variable my-list = list (1, 2, 3)
 my-list
@@ -1213,8 +1224,9 @@ last (my-empty-vector) := 4
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the head of <var>list</var>.</p>
-    <p class="T1.Text1">If <var>list</var> is a pair, <code>head</code> returns the value of the head slot. If <var>list</var> is the empty list, <code>head</code> returns the empty list.</p>
+  <dd class="Cliche">
+    <p>Returns the head of <var>list</var>.</p>
+    <p>If <var>list</var> is a pair, <code>head</code> returns the value of the head slot. If <var>list</var> is the empty list, <code>head</code> returns the empty list.</p>
     <pre class="code">
 head (#(4, 5, 6))
 <code> &rArr;</code>  4
@@ -1253,8 +1265,9 @@ head (#())
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the tail of <var>list</var>.</p>
-    <p class="T1.Text1">If <var>list</var> is a pair, <code>tail</code> returns the value of the tail slot. If <var>list</var> is the empty list, <code>tail</code> returns the empty list.</p>
+  <dd class="Cliche">
+    <p>Returns the tail of <var>list</var>.</p>
+    <p>If <var>list</var> is a pair, <code>tail</code> returns the value of the tail slot. If <var>list</var> is the empty list, <code>tail</code> returns the empty list.</p>
     <pre class="code">
 tail (#(4, 5, 6))
  &rArr; #(5, 6)
@@ -1294,8 +1307,9 @@ tail (#())
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Sets the head of <var>pair</var> to contain <var>object</var> and returns <var>object</var>.</p>
-    <p class="T1.Text1"><var>pair</var> is modified by this operation.</p>
+  <dd class="Cliche">
+    <p>Sets the head of <var>pair</var> to contain <var>object</var> and returns <var>object</var>.</p>
+    <p><var>pair</var> is modified by this operation.</p>
     <pre class="code">
 define variable x = list (4, 5, 6)
 head (x) := 9
@@ -1336,8 +1350,9 @@ x
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Sets the tail of <var>pair</var> to contain <var>object</var> and returns <var>object</var>.</p>
-    <p class="T1.Text1"><var>pair</var> is modified by this operation.</p>
+  <dd class="Cliche">
+    <p>Sets the tail of <var>pair</var> to contain <var>object</var> and returns <var>object</var>.</p>
+    <p><var>pair</var> is modified by this operation.</p>
     <p class="errata right"><a href="Errata#p309_1"
 			       name="errata_p309_1"><strong>Errata:</strong></a>
       The final value of <code>x</code> should be:<br />
@@ -1389,9 +1404,10 @@ x
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a sequence that contains <var>new-element</var> and all the elements of <var>source-sequence</var>. The <var>result-sequence</var> may or may not be freshly allocated. It may share structure with a preexisting sequence.</p>
-    <p class="T1.Text1"><var>source-sequence</var> is not modified by this operation.</p>
-    <p class="T1.Text1">The <var>result-sequence</var>'s size is one greater than the size of <var>source-sequence</var>. The generic function <code>add</code> doesn't specify where the new element will be added, although individual methods may do so.</p>
+  <dd class="Cliche">
+    <p>Returns a sequence that contains <var>new-element</var> and all the elements of <var>source-sequence</var>. The <var>result-sequence</var> may or may not be freshly allocated. It may share structure with a preexisting sequence.</p>
+    <p><var>source-sequence</var> is not modified by this operation.</p>
+    <p>The <var>result-sequence</var>'s size is one greater than the size of <var>source-sequence</var>. The generic function <code>add</code> doesn't specify where the new element will be added, although individual methods may do so.</p>
     <pre class="code">
 define variable *numbers* = #(3, 4, 5)
 add (*numbers*, 1)
@@ -1432,9 +1448,10 @@ add (*numbers*, 1)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a sequence that contains <var>new-element</var> and all the elements of <var>source-sequence</var>. The <var>result-sequence</var> may or may not be freshly allocated. It may share structure with a preexisting sequence. <var>source-sequence</var> and <var>result-sequence</var> may or may not be <code>==</code>.</p>
-    <p class="T1.Text1"><var>source-sequence</var> may be modified by this operation.</p>
-    <p class="T1.Text1"><var>result-sequence</var>'s size is one greater than the size of <var>source-sequence</var>. The generic function <code>add!</code> doesn't specify where the new element will be added, although individual methods may do so.</p>
+  <dd class="Cliche">
+    <p>Returns a sequence that contains <var>new-element</var> and all the elements of <var>source-sequence</var>. The <var>result-sequence</var> may or may not be freshly allocated. It may share structure with a preexisting sequence. <var>source-sequence</var> and <var>result-sequence</var> may or may not be <code>==</code>.</p>
+    <p><var>source-sequence</var> may be modified by this operation.</p>
+    <p><var>result-sequence</var>'s size is one greater than the size of <var>source-sequence</var>. The generic function <code>add!</code> doesn't specify where the new element will be added, although individual methods may do so.</p>
     <pre class="code">
 define variable *numbers* = list (3, 4, 5)
 add! (*numbers*, 1)
@@ -1443,13 +1460,13 @@ add! (*numbers*, 1)
   &rArr; {undefined}</pre>
     <a name="HEADING102-274"></a>
     <h5 class="method-signature"><span class="signature"><code>add! <var>deque new-value</var> </code>&rArr;<code> <var>deque</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">The result of <code>add!</code> on a deque is <code>==</code> to the <var>deque</var> argument, which is modified by this operation. <code>add!</code> adds <var>new-element</var> at the beginning of the <var>deque</var>.</p>
+    <p>The result of <code>add!</code> on a deque is <code>==</code> to the <var>deque</var> argument, which is modified by this operation. <code>add!</code> adds <var>new-element</var> at the beginning of the <var>deque</var>.</p>
     <a name="HEADING102-276"></a>
     <h5 class="method-signature"><span class="signature"><code>add! <var>stretchy-vector new-element</var> </code>&rArr;<code> <var>stretchy-vector</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">The result of <code>add!</code> on a stretchy vector is <code>==</code> to the <var>stretchy-vector</var> argument, which is modified by this operation. <code>add!</code> adds <var>new-element</var> at the end of the <var>stretchy-vector</var>.</p>
+    <p>The result of <code>add!</code> on a stretchy vector is <code>==</code> to the <var>stretchy-vector</var> argument, which is modified by this operation. <code>add!</code> adds <var>new-element</var> at the end of the <var>stretchy-vector</var>.</p>
     <a name="HEADING102-278"></a>
     <h5 class="method-signature"><span class="signature"><code>add! <var>list element</var> </code>&rArr;<code> <var>pair</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">The result of <code>add!</code> on a list is equivalent to<code> (pair <var>element list)</var></code>. The result will share structure with the <var>list</var> argument, but it will not be <code>==</code> to the argument, and the argument will not be modified.</p>
+    <p>The result of <code>add!</code> on a list is equivalent to<code> (pair <var>element list)</var></code>. The result will share structure with the <var>list</var> argument, but it will not be <code>==</code> to the argument, and the argument will not be modified.</p>
   </dd>
 </dl>
 <a name="HEADING102-280"></a>
@@ -1486,9 +1503,10 @@ add! (*numbers*, 1)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Adds <var>new-element</var> to source-sequence if it is not already an element of <var>source-sequence</var>, as determined by the <var>test</var> function. If <var>new-element</var> is already a member of <var>source-sequence</var>, then <var>source-sequence</var> is returned unmodified.</p>
-    <p class="T1.Text1">If an element is added, <code>add-new</code> operates just as <code>add</code> would.</p>
-    <p class="T1.Text1">The <var>test</var> function may be noncommutative: it is always called with an element from <var>source-sequence</var> as its first argument and <var>new-element</var>  as its second argument.</p>
+  <dd class="Cliche">
+    <p>Adds <var>new-element</var> to source-sequence if it is not already an element of <var>source-sequence</var>, as determined by the <var>test</var> function. If <var>new-element</var> is already a member of <var>source-sequence</var>, then <var>source-sequence</var> is returned unmodified.</p>
+    <p>If an element is added, <code>add-new</code> operates just as <code>add</code> would.</p>
+    <p>The <var>test</var> function may be noncommutative: it is always called with an element from <var>source-sequence</var> as its first argument and <var>new-element</var>  as its second argument.</p>
     <pre class="code">
 add-new (#(3, 4, 5), 1)
   &rArr;  #(1, 3, 4, 5)
@@ -1530,9 +1548,10 @@ add-new (#(3, 4, 5), 4)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Adds <var>new-element</var> to source-sequence if it is not already an element of <var>source-sequence</var>, as determined by the <var>test</var> function. If <var>new-element</var> is already a member of <var>source-sequence</var>, then <var>source-sequence</var> is returned unmodified.</p>
-    <p class="T1.Text1">If an element is added, <code>add-new!</code> operates just as <code>add!</code> would.</p>
-    <p class="T1.Text1">The <var>test</var> function may be noncommutative: it is always called with an element from <var>sequence</var> as its first argument and <var>new-element</var>  as its second argument.</p>
+  <dd class="Cliche">
+    <p>Adds <var>new-element</var> to source-sequence if it is not already an element of <var>source-sequence</var>, as determined by the <var>test</var> function. If <var>new-element</var> is already a member of <var>source-sequence</var>, then <var>source-sequence</var> is returned unmodified.</p>
+    <p>If an element is added, <code>add-new!</code> operates just as <code>add!</code> would.</p>
+    <p>The <var>test</var> function may be noncommutative: it is always called with an element from <var>sequence</var> as its first argument and <var>new-element</var>  as its second argument.</p>
     <pre class="code">
 add-new! (list (3, 4, 5), 1)
   &rArr;  #(1, 3, 4, 5)
@@ -1576,9 +1595,10 @@ add-new! (list (3, 4, 5), 4)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a sequence consisting of the elements of <var>source-sequence</var> not equal to <var>value</var>. The <var>result-sequence</var> may or may not be freshly allocated. However, the <var>source-sequence</var> is never modified by <code>remove</code>.</p>
-    <p class="T1.Text1"><var>test</var> is a function that determines whether an element is equal to <var>value</var>. The <var>test</var> function may be noncommutative: it is always called with an element from <var>source-sequence</var> as its first argument and <var>value</var>  as its second argument.</p>
-    <p class="T1.Text1">If <var>count</var> is <code>#f</code>, then all copies of <var>value</var> are removed. Otherwise, no more than <var>count</var> copies of <var>value</var> are removed (so additional elements equal to <var>value</var> might remain in <var>result-sequence</var>).</p>
+  <dd class="Cliche">
+    <p>Returns a sequence consisting of the elements of <var>source-sequence</var> not equal to <var>value</var>. The <var>result-sequence</var> may or may not be freshly allocated. However, the <var>source-sequence</var> is never modified by <code>remove</code>.</p>
+    <p><var>test</var> is a function that determines whether an element is equal to <var>value</var>. The <var>test</var> function may be noncommutative: it is always called with an element from <var>source-sequence</var> as its first argument and <var>value</var>  as its second argument.</p>
+    <p>If <var>count</var> is <code>#f</code>, then all copies of <var>value</var> are removed. Otherwise, no more than <var>count</var> copies of <var>value</var> are removed (so additional elements equal to <var>value</var> might remain in <var>result-sequence</var>).</p>
     <pre class="code">
 define variable *old-list* = list(1, 2, 3)
 define variable *new-list* = remove(*old-list*, 1)
@@ -1624,19 +1644,20 @@ define variable *new-list* = remove(*old-list*, 1)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a sequence consisting of the elements of <var>source-sequence</var> not equal to <var>value</var>. The <var>result-sequence</var> may or may not be freshly allocated, may or may not be <code>==</code> to the <var>source-sequence</var>, and may or may not share structure with the <var>source-sequence</var>. The <var>source-sequence</var> may be modified by <code>remove!</code>.</p>
-    <p class="T1.Text1"><var>test</var> is a function that determines whether an element is equal to <var>value</var>. The <var>test</var> function may be noncommutative: it is always called with an element from <var>source-sequence</var> as its first argument and <var>value</var>  as its second argument.</p>
-    <p class="T1.Text1">If <var>count</var> is <code>#f</code>, then all copies of <var>value</var> are removed. Otherwise, no more than <var>count</var> copies of <var>value</var> are removed (so additional elements equal to <var>value</var> might remain in <var>result-sequence</var>).</p>
+  <dd class="Cliche">
+    <p>Returns a sequence consisting of the elements of <var>source-sequence</var> not equal to <var>value</var>. The <var>result-sequence</var> may or may not be freshly allocated, may or may not be <code>==</code> to the <var>source-sequence</var>, and may or may not share structure with the <var>source-sequence</var>. The <var>source-sequence</var> may be modified by <code>remove!</code>.</p>
+    <p><var>test</var> is a function that determines whether an element is equal to <var>value</var>. The <var>test</var> function may be noncommutative: it is always called with an element from <var>source-sequence</var> as its first argument and <var>value</var>  as its second argument.</p>
+    <p>If <var>count</var> is <code>#f</code>, then all copies of <var>value</var> are removed. Otherwise, no more than <var>count</var> copies of <var>value</var> are removed (so additional elements equal to <var>value</var> might remain in <var>result-sequence</var>).</p>
     <a name="HEADING102-325"></a>
     <h5 class="method-signature"><span class="signature"><code>remove!</code> <var>deque value</var> #key <var>test count</var> &rArr; <var>deque</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">The result of <code>remove!</code> on a deque is <code>==</code> to the <var>deque</var> argument. The argument is modified by this operation.</p>
+    <p>The result of <code>remove!</code> on a deque is <code>==</code> to the <var>deque</var> argument. The argument is modified by this operation.</p>
     <a name="HEADING102-327"></a>
     <h5 class="method-signature"><span class="signature"><code>remove!</code> <var>stretchy-vector element</var> #key <var>test count</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span><br />
       &rArr; <var>stretchy-vector</var></h5>
-    <p class="T1.Text1">The result of <code>remove!</code> on a stretchy vector is <code>==</code> to the <var>stretchy-vector</var> argument. The argument is modified by this operation.</p>
+    <p>The result of <code>remove!</code> on a stretchy vector is <code>==</code> to the <var>stretchy-vector</var> argument. The argument is modified by this operation.</p>
     <a name="HEADING102-329"></a>
     <h5 class="method-signature"><span class="signature"><code>remove!</code> <var>list element</var> #key <var>test count</var> &rArr; <var>list</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">The result of <code>remove!</code> on a list may or may not be <code>==</code> to the <var>list</var> argument. The argument may be modified by this operation.</p>
+    <p>The result of <code>remove!</code> on a list may or may not be <code>==</code> to the <var>list</var> argument. The argument may be modified by this operation.</p>
   </dd>
 </dl>
 <a name="HEADING102-331"></a>
@@ -1671,8 +1692,9 @@ define variable *new-list* = remove(*old-list*, 1)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Augments <var>deque</var> by adding <var>new-value</var> to its front.</p>
-    <p class="T1.Text1"><var>deque</var> is modified by this operation.</p></dd>
+  <dd class="Cliche">
+    <p>Augments <var>deque</var> by adding <var>new-value</var> to its front.</p>
+    <p><var>deque</var> is modified by this operation.</p></dd>
 </dl>
 <a name="HEADING102-339"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-1768">pop</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
@@ -1705,8 +1727,9 @@ define variable *new-list* = remove(*old-list*, 1)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Removes the first element from <var>deque</var> and returns it.</p>
-    <p class="T1.Text1"><var>deque</var> is modified by this operation.</p></dd>
+  <dd class="Cliche">
+    <p>Removes the first element from <var>deque</var> and returns it.</p>
+    <p><var>deque</var> is modified by this operation.</p></dd>
 </dl>
 <a name="HEADING102-346"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-1770">push-last</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
@@ -1740,8 +1763,9 @@ define variable *new-list* = remove(*old-list*, 1)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Augments <var>deque</var> by adding <var>new-value</var> to its end.</p>
-    <p class="T1.Text1"><var>deque</var> is modified by this operation.</p></dd>
+  <dd class="Cliche">
+    <p>Augments <var>deque</var> by adding <var>new-value</var> to its end.</p>
+    <p><var>deque</var> is modified by this operation.</p></dd>
 </dl>
 <a name="HEADING102-354"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-1772">pop-last</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
@@ -1774,8 +1798,9 @@ define variable *new-list* = remove(*old-list*, 1)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Removes the last element from <var>deque</var> and returns it.</p>
-    <p class="T1.Text1"><var>deque</var> is modified by this operation. <a name="MARKER-2-1774"></a><a name="MARKER-2-1775"></a></p></dd>
+  <dd class="Cliche">
+    <p>Removes the last element from <var>deque</var> and returns it.</p>
+    <p><var>deque</var> is modified by this operation. <a name="MARKER-2-1774"></a><a name="MARKER-2-1775"></a></p></dd>
 </dl>
 <a name="HEADING102-361"></a>
 <a name="UID-Built-In_Functions-9856"></a>
@@ -1811,9 +1836,10 @@ define variable *new-list* = remove(*old-list*, 1)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a sequence containing the same elements as <var>source-sequence</var>, but in reverse order. The <var>result-sequence</var> is generally of the same class as the <var>source-sequence</var>.</p>
-    <p class="T1.Text1">The <var>result-sequence</var> may or may not be freshly allocated. The <var>source-sequence</var> is not modified by this operation.</p>
-    <p class="T1.Text1">The consequences are undefined if the <var>source-sequence</var> is unbounded (circular or infinite).</p>
+  <dd class="Cliche">
+    <p>Returns a sequence containing the same elements as <var>source-sequence</var>, but in reverse order. The <var>result-sequence</var> is generally of the same class as the <var>source-sequence</var>.</p>
+    <p>The <var>result-sequence</var> may or may not be freshly allocated. The <var>source-sequence</var> is not modified by this operation.</p>
+    <p>The consequences are undefined if the <var>source-sequence</var> is unbounded (circular or infinite).</p>
     <pre class="code">
 define variable *x* = list(&quot;bim&quot;, &quot;bam&quot;, &quot;boom&quot;)
 *x*
@@ -1824,7 +1850,7 @@ reverse(*x*)
   &rArr;  #(&quot;bim&quot;, &quot;bam&quot;, &quot;boom&quot;)</pre>
     <a name="HEADING102-371"></a>
     <h5 class="method-signature"><span class="signature"><code>reverse</code> <var>range</var> &rArr; <var>new-range</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">Reversing a range produces another range. An unbounded range cannot be reversed.</p>
+    <p>Reversing a range produces another range. An unbounded range cannot be reversed.</p>
   </dd>
 </dl>
 <a name="HEADING102-373"></a>
@@ -1858,13 +1884,14 @@ reverse(*x*)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a sequence containing the same elements as <var>source-sequence</var>, but in reverse order. The <var>result-sequence</var> is generally of the same class as the <var>source-sequence</var>.</p>
-    <p class="T1.Text1">The <var>source-sequence</var> may be modified by this operation. The <var>result-sequence</var> may or may not be freshly allocated. The <var>source-sequence</var> and the <var>result-sequence</var> may or may not be <code>==</code>. Programs should never rely on this operation performing a side-effect on an existing sequence, but should instead use the value returned by the function.</p>
-    <p class="T1.Text1">The consequences are undefined if the <var>source-sequence</var> is unbounded (circular or infinite).</p>
-    <p class="T1.Text1"><code>define variable *x* = list(&quot;bim&quot;, &quot;bam&quot;, &quot;boom&quot;)<br />*x*<br />  &rArr;  #(&quot;bim&quot;, &quot;bam&quot;, &quot;boom&quot;)<br />reverse!(*x*)<br />  &rArr;  #(&quot;boom&quot;, &quot;bam&quot;, &quot;bim&quot;)<br />*x*<br />  &rArr; {undefined}</code></p>
+  <dd class="Cliche">
+    <p>Returns a sequence containing the same elements as <var>source-sequence</var>, but in reverse order. The <var>result-sequence</var> is generally of the same class as the <var>source-sequence</var>.</p>
+    <p>The <var>source-sequence</var> may be modified by this operation. The <var>result-sequence</var> may or may not be freshly allocated. The <var>source-sequence</var> and the <var>result-sequence</var> may or may not be <code>==</code>. Programs should never rely on this operation performing a side-effect on an existing sequence, but should instead use the value returned by the function.</p>
+    <p>The consequences are undefined if the <var>source-sequence</var> is unbounded (circular or infinite).</p>
+    <p><code>define variable *x* = list(&quot;bim&quot;, &quot;bam&quot;, &quot;boom&quot;)<br />*x*<br />  &rArr;  #(&quot;bim&quot;, &quot;bam&quot;, &quot;boom&quot;)<br />reverse!(*x*)<br />  &rArr;  #(&quot;boom&quot;, &quot;bam&quot;, &quot;bim&quot;)<br />*x*<br />  &rArr; {undefined}</code></p>
     <a name="HEADING102-382"></a>
     <h5 class="method-signature"><span class="signature"><code>reverse!</code> <var>range</var> &rArr; <var>range</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">The result of <code>reverse!</code> on a range is <code>==</code> to the <var>range</var> argument. An unbounded range cannot be reversed.</p>
+    <p>The result of <code>reverse!</code> on a range is <code>==</code> to the <var>range</var> argument. An unbounded range cannot be reversed.</p>
   </dd>
 </dl>
 <a name="HEADING102-384"></a>
@@ -1901,9 +1928,10 @@ reverse(*x*)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a sequence containing the elements of <var>source-sequence</var> sorted into ascending order. The <var>result-sequence</var> may or may not be freshly allocated. The <var>source-sequence</var> is not modified by this operation.</p>
-    <p class="T1.Text1"><code>sort</code> determines the relationship between two elements by giving elements to the <var>test</var>. The first argument to the <var>test</var> function is one element of <var>source-sequence</var>; the second argument is another element of <var>source-sequence</var>. <var>test</var> should return true if and only if the first argument is strictly less than the second (in some appropriate sense). If the first argument is greater than or equal to the second (in the appropriate sense), then the <var>test</var> should return  <code>#f</code>.</p>
-    <p class="T1.Text1">If <var>stable</var> is supplied and not <code>#f</code>, a possibly slower algorithm will be used that will leave in their original order any two elements, <var>x</var> and <var>y</var>, such that <var>test(x, y)</var> and <var>test(y, x)</var> are both false.</p>
+  <dd class="Cliche">
+    <p>Returns a sequence containing the elements of <var>source-sequence</var> sorted into ascending order. The <var>result-sequence</var> may or may not be freshly allocated. The <var>source-sequence</var> is not modified by this operation.</p>
+    <p><code>sort</code> determines the relationship between two elements by giving elements to the <var>test</var>. The first argument to the <var>test</var> function is one element of <var>source-sequence</var>; the second argument is another element of <var>source-sequence</var>. <var>test</var> should return true if and only if the first argument is strictly less than the second (in some appropriate sense). If the first argument is greater than or equal to the second (in the appropriate sense), then the <var>test</var> should return  <code>#f</code>.</p>
+    <p>If <var>stable</var> is supplied and not <code>#f</code>, a possibly slower algorithm will be used that will leave in their original order any two elements, <var>x</var> and <var>y</var>, such that <var>test(x, y)</var> and <var>test(y, x)</var> are both false.</p>
     <pre class="code">
 define variable *numbers* = vector(3, 1, 4, 1, 5, 9)
 *numbers*
@@ -1948,11 +1976,12 @@ sort (*numbers*)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a sequence containing the elements of <var>source-sequence</var> sorted into ascending order. The <var>result-sequence</var> may or may not be freshly allocated. The <var>source-sequence</var> may be modified by this operation. The <var>result-sequence</var> may or may not be <code>==</code> to <var>source-sequence</var>. After this operation, the contents of <var>source-sequence</var> are undefined.</p>
-    <p class="T1.Text1">Programs should never rely on this operation performing a side-effect on an existing sequence, but should instead use the value returned by the function.</p>
-    <p class="T1.Text1"><code>sort!</code> determines the relationship between two elements by giving elements to the <var>test</var>. The first argument to the <var>test</var> function is one element of <var>source-sequence</var>; the second argument is another element of <var>source-sequence</var>. <var>test</var> should return true if and only if the first argument is strictly less than the second (in some appropriate sense). If the first argument is greater than or equal to the second (in the appropriate sense), then the <var>test</var> should return  <code>#f</code>.</p>
-    <p class="T1.Text1">If <var>stable</var> is supplied and not <code>#f</code>, a possibly slower algorithm will be used that will leave in their original order any two elements, <var>x</var> and <var>y</var>, such that <var>test(x, y)</var> and <var>test(y, x)</var> are both false.</p>
-    <p class="T1.Text1"><code>define variable *numbers* = vector(3, 1, 4, 1, 5, 9)<br />*numbers*<br />  &rArr; #[3, 1, 4, 1, 5, 9]<br />sort! (*numbers*)<br />  &rArr;  #[1, 1, 3, 4, 5, 9]<br />*numbers*<br />  &rArr;  {undefined}<a name="MARKER-2-1785"></a></code></p></dd>
+  <dd class="Cliche">
+    <p>Returns a sequence containing the elements of <var>source-sequence</var> sorted into ascending order. The <var>result-sequence</var> may or may not be freshly allocated. The <var>source-sequence</var> may be modified by this operation. The <var>result-sequence</var> may or may not be <code>==</code> to <var>source-sequence</var>. After this operation, the contents of <var>source-sequence</var> are undefined.</p>
+    <p>Programs should never rely on this operation performing a side-effect on an existing sequence, but should instead use the value returned by the function.</p>
+    <p><code>sort!</code> determines the relationship between two elements by giving elements to the <var>test</var>. The first argument to the <var>test</var> function is one element of <var>source-sequence</var>; the second argument is another element of <var>source-sequence</var>. <var>test</var> should return true if and only if the first argument is strictly less than the second (in some appropriate sense). If the first argument is greater than or equal to the second (in the appropriate sense), then the <var>test</var> should return  <code>#f</code>.</p>
+    <p>If <var>stable</var> is supplied and not <code>#f</code>, a possibly slower algorithm will be used that will leave in their original order any two elements, <var>x</var> and <var>y</var>, such that <var>test(x, y)</var> and <var>test(y, x)</var> are both false.</p>
+    <p><code>define variable *numbers* = vector(3, 1, 4, 1, 5, 9)<br />*numbers*<br />  &rArr; #[3, 1, 4, 1, 5, 9]<br />sort! (*numbers*)<br />  &rArr;  #[1, 1, 3, 4, 5, 9]<br />*numbers*<br />  &rArr;  {undefined}<a name="MARKER-2-1785"></a></code></p></dd>
 </dl>
 <a name="HEADING102-407"></a>
 <a name="UID-Built-In_Functions-2737"></a>
@@ -1991,9 +2020,10 @@ sort (*numbers*)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a new sequence containing only those elements of <var>sequence1</var> that also appear in <var>sequence2</var>.</p>
-    <p class="T1.Text1"><var>test</var>  is used to determine whether an element appears in <var>sequence2</var>. It is always called with an element of <var>sequence1</var>  as its first argument and an element from <var>sequence2</var>  as its second argument. The order of elements in the result sequence is not specified.</p>
-    <p class="T1.Text1"><var>new-sequence</var> may or may not share structure with the <var>sequence1</var> and <var>sequence2</var>.</p>
+  <dd class="Cliche">
+    <p>Returns a new sequence containing only those elements of <var>sequence1</var> that also appear in <var>sequence2</var>.</p>
+    <p><var>test</var>  is used to determine whether an element appears in <var>sequence2</var>. It is always called with an element of <var>sequence1</var>  as its first argument and an element from <var>sequence2</var>  as its second argument. The order of elements in the result sequence is not specified.</p>
+    <p><var>new-sequence</var> may or may not share structure with the <var>sequence1</var> and <var>sequence2</var>.</p>
     <pre class="code">
 ? intersection (#(&quot;john&quot;, &quot;paul&quot;, &quot;george&quot;, &quot;ringo&quot;),
                 #(&quot;richard&quot;, &quot;george&quot;, &quot;edward&quot;, &quot;charles&quot;),
@@ -2001,7 +2031,7 @@ sort (*numbers*)
 #(&quot;george&quot;)</pre>
     <a name="HEADING102-419"></a>
     <h5 class="method-signature"><span class="signature"><code>intersection <var>range1 range2</var> #key <var>test</var> </code>&rArr;<code> <var>range</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1"><code>intersection</code> applied to two ranges and a test of <code>==</code> (the default) will produce another range as its result, even though the <code>type-for-copy</code> of a range is not <code>&lt;range&gt;</code>. If either <var>range1</var> or <var>range2</var> is unbounded, this method is guaranteed to terminate only if the <var>test</var> is <code>==</code>.</p>
+    <p><code>intersection</code> applied to two ranges and a test of <code>==</code> (the default) will produce another range as its result, even though the <code>type-for-copy</code> of a range is not <code>&lt;range&gt;</code>. If either <var>range1</var> or <var>range2</var> is unbounded, this method is guaranteed to terminate only if the <var>test</var> is <code>==</code>.</p>
   </dd>
 </dl>
 <a name="HEADING102-421"></a>
@@ -2038,10 +2068,11 @@ sort (*numbers*)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a sequence containing every element of <var>sequence1</var> and <var>sequence2</var>.</p>
-    <p class="T1.Text1">If the same element appears in both argument sequences, this will not cause it to appear twice in the result sequence. However, if the same element appears more than once in a single argument sequence, it may appear more than once in the result sequence.</p>
-    <p class="T1.Text1"><var>test</var> is used for all comparisons. It is always called with an element from <var>sequence1</var>  as its first argument and an element from <var>sequence2</var>  as its second argument. The order of elements in the <var>new-sequence</var> is not specified.</p>
-    <p class="T1.Text1"><var>new-sequence</var> may or may not share structure with <var>sequence1</var> or <var>sequence2</var>.</p>
+  <dd class="Cliche">
+    <p>Returns a sequence containing every element of <var>sequence1</var> and <var>sequence2</var>.</p>
+    <p>If the same element appears in both argument sequences, this will not cause it to appear twice in the result sequence. However, if the same element appears more than once in a single argument sequence, it may appear more than once in the result sequence.</p>
+    <p><var>test</var> is used for all comparisons. It is always called with an element from <var>sequence1</var>  as its first argument and an element from <var>sequence2</var>  as its second argument. The order of elements in the <var>new-sequence</var> is not specified.</p>
+    <p><var>new-sequence</var> may or may not share structure with <var>sequence1</var> or <var>sequence2</var>.</p>
     <pre class="code">
 union (#(&quot;butter&quot;, &quot;flour&quot;, &quot;sugar&quot;, &quot;salt&quot;, &quot;eggs&quot;),
        #(&quot;eggs&quot;, &quot;butter&quot;, &quot;mushrooms&quot;, &quot;onions&quot;, &quot;salt&quot;),
@@ -2082,9 +2113,10 @@ union (#(&quot;butter&quot;, &quot;flour&quot;, &quot;sugar&quot;, &quot;salt&qu
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a sequence that contains all the unique elements from <var>source-sequence</var> but no duplicate elements.</p>
-    <p class="T1.Text1"><var>test</var>  is the function used to determine whether one element is a duplicate of another. The <var>test</var> argument may be noncommutative; it will always be called with its arguments in the same order as they appear in <var>source-sequence</var>.</p>
-    <p class="T1.Text1">The <var>result-sequence</var> may or may not be freshly allocated. However, the <var>source-sequence</var> will not be modified by this operation.</p>
+  <dd class="Cliche">
+    <p>Returns a sequence that contains all the unique elements from <var>source-sequence</var> but no duplicate elements.</p>
+    <p><var>test</var>  is the function used to determine whether one element is a duplicate of another. The <var>test</var> argument may be noncommutative; it will always be called with its arguments in the same order as they appear in <var>source-sequence</var>.</p>
+    <p>The <var>result-sequence</var> may or may not be freshly allocated. However, the <var>source-sequence</var> will not be modified by this operation.</p>
     <pre class="code">
 remove-duplicates (#(&quot;spam&quot;, &quot;eggs&quot;, &quot;spam&quot;, 
                      &quot;sausage&quot;, &quot;spam&quot;, &quot;spam&quot;),
@@ -2128,9 +2160,10 @@ or
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a sequence that contains all the unique elements from <var>source-sequence</var> but no duplicate elements.</p>
-    <p class="T1.Text1"><var>test</var>  is the function used to determine whether one element is a duplicate of another. The <var>test</var> argument may be noncommutative; it will always be called with its arguments in the same order as they appear in <var>source-sequence</var>.</p>
-    <p class="T1.Text1">The <var>result-sequence</var> may or may not be freshly allocated, may or may not share structure with the <var>source-sequence</var>, and may or may not be <code>==</code> to the <var>source-sequence</var>. The <var>source-sequence</var> may or may not be modified by the operation.</p>
+  <dd class="Cliche">
+    <p>Returns a sequence that contains all the unique elements from <var>source-sequence</var> but no duplicate elements.</p>
+    <p><var>test</var>  is the function used to determine whether one element is a duplicate of another. The <var>test</var> argument may be noncommutative; it will always be called with its arguments in the same order as they appear in <var>source-sequence</var>.</p>
+    <p>The <var>result-sequence</var> may or may not be freshly allocated, may or may not share structure with the <var>source-sequence</var>, and may or may not be <code>==</code> to the <var>source-sequence</var>. The <var>source-sequence</var> may or may not be modified by the operation.</p>
     <pre class="code">
 define variable *menu* = #(&quot;spam&quot;, &quot;eggs&quot;, &quot;spam&quot;, 
                            &quot;sausage&quot;, &quot;spam&quot;, &quot;spam&quot;)
@@ -2190,7 +2223,7 @@ copy-sequence (hamlet, start: 2, end: 4)
 <code> &rArr;</code>  #(&quot;or&quot;, &quot;not&quot;)</pre>
     <a name="HEADING102-463"></a>
     <h5 class="method-signature"><span class="signature"><code>copy-sequence</code>   <var>range</var> <code>#key</code> <var>start end</var> &rArr;  <var>new-range</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">When applied to a range, <code>copy-sequence</code> returns another range, even though the <code>type-for-copy</code> of a range is the <code>&lt;list&gt;</code> class.</p>
+    <p>When applied to a range, <code>copy-sequence</code> returns another range, even though the <code>type-for-copy</code> of a range is the <code>&lt;list&gt;</code> class.</p>
   </dd>
 </dl>
 <a name="HEADING102-465"></a>
@@ -2225,9 +2258,10 @@ copy-sequence (hamlet, start: 2, end: 4)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a sequence containing all the elements of all the sequences, in order.</p>
-    <p class="T1.Text1">The <var>result-sequence</var> will be an instance of the <code>type-for-copy</code> value for <var>first-sequence</var>. It may or may not be freshly allocated. The <var>result-sequence</var> may be created by calling <code>make</code> on the indicated type, with a <code>size:</code> initialization argument whose value is the sum of the sizes of the argument sequences. (For this reason, the <code>type-for-copy</code> value of <var>first-sequence</var> must support the <code>size:</code> init-keyword.)</p>
-    <p class="T1.Text1"><var>new-sequence</var> may share structure with any of the argument sequences, but it is not guaranteed to do so.  The argument sequences will not be modified by this operation.</p>
+  <dd class="Cliche">
+    <p>Returns a sequence containing all the elements of all the sequences, in order.</p>
+    <p>The <var>result-sequence</var> will be an instance of the <code>type-for-copy</code> value for <var>first-sequence</var>. It may or may not be freshly allocated. The <var>result-sequence</var> may be created by calling <code>make</code> on the indicated type, with a <code>size:</code> initialization argument whose value is the sum of the sizes of the argument sequences. (For this reason, the <code>type-for-copy</code> value of <var>first-sequence</var> must support the <code>size:</code> init-keyword.)</p>
+    <p><var>new-sequence</var> may share structure with any of the argument sequences, but it is not guaranteed to do so.  The argument sequences will not be modified by this operation.</p>
     <pre class="code">
 concatenate (&quot;low-&quot;, &quot;calorie&quot;)
 <code> &rArr;</code>  &quot;low-calorie&quot;</pre>
@@ -2267,9 +2301,10 @@ concatenate (&quot;low-&quot;, &quot;calorie&quot;)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a sequence containing all the elements of all the sequences, in order.</p>
-    <p class="T1.Text1">The <var>result-sequence</var> will be an instance of <var>type</var>. It may or may not be freshly allocated.</p>
-    <p class="T1.Text1"><var>type</var> must be a subtype of <code>&lt;mutable-sequence&gt;</code> and acceptable as the first argument to <code>make</code>. <code>size:</code> with a non-negative integer value must be an acceptable initarg for <code>make</code> of <var>type</var>. The <var>result-sequence</var> may be created by calling <code>make</code> on <var>type</var>, with a <code>size: </code>initialization argument whose value is the sum of the sizes of the arguments.</p>
+  <dd class="Cliche">
+    <p>Returns a sequence containing all the elements of all the sequences, in order.</p>
+    <p>The <var>result-sequence</var> will be an instance of <var>type</var>. It may or may not be freshly allocated.</p>
+    <p><var>type</var> must be a subtype of <code>&lt;mutable-sequence&gt;</code> and acceptable as the first argument to <code>make</code>. <code>size:</code> with a non-negative integer value must be an acceptable initarg for <code>make</code> of <var>type</var>. The <var>result-sequence</var> may be created by calling <code>make</code> on <var>type</var>, with a <code>size: </code>initialization argument whose value is the sum of the sizes of the arguments.</p>
     <pre class="code">
 concatenate-as (&lt;string&gt;, #('n', 'o', 'n'), #('f', 'a', 't'))
 <code> &rArr;</code>  &quot;nonfat&quot;</pre>
@@ -2315,7 +2350,7 @@ concatenate-as (&lt;string&gt;, #('n', 'o', 'n'), #('f', 'a', 't'))
     <p class="errata left"><a href="Errata#p325_1"
 			      name="errata_p325_1"><strong>Errata:</strong></a>
       <var>source-sequence</var> should be <var>target-sequence</var>.</p>
-    <p class="T1.Text1"><var>result-sequence</var>  may or may not share structure with <var>source-sequence</var> or <var>insert-sequence</var>, and it may or may not be <code>==</code> to <var>source-sequence</var> or <var>insert-sequence</var>. <var>source-sequence</var>  may or may not be modified by the operation. <var>insert-sequence</var> will not be modified by this operation.</p>
+    <p><var>result-sequence</var>  may or may not share structure with <var>source-sequence</var> or <var>insert-sequence</var>, and it may or may not be <code>==</code> to <var>source-sequence</var> or <var>insert-sequence</var>. <var>source-sequence</var>  may or may not be modified by the operation. <var>insert-sequence</var> will not be modified by this operation.</p>
     <pre class="code">
 define variable *original* = list (&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;)
 *new* := replace-subsequence! (*original*, #(&quot;x&quot;, &quot;y&quot;, &quot;z&quot;), end: 1))
@@ -2363,8 +2398,9 @@ define variable *original* = list (&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, 
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Searches <var>big</var> for a subsequence that is element-for-element equal to <var>pattern</var>, as determined by the <var>test</var> argument.</p>
-    <p class="T1.Text1"><var>test</var> is applied to elements of successive subsequences of <var>big</var> and corresponding elements of the <var>pattern</var> to determine whether a match has occurred. If a subsequence is found, <code>subsequence-position</code> returns the index at which the subsequence starts; otherwise, it returns <code>#f</code>. If there is more than one match, <var>count</var> determines which subsequence is selected. A <var>count</var> of 1 (the default) indicates that the first match should be returned.</p>
+  <dd class="Cliche">
+    <p>Searches <var>big</var> for a subsequence that is element-for-element equal to <var>pattern</var>, as determined by the <var>test</var> argument.</p>
+    <p><var>test</var> is applied to elements of successive subsequences of <var>big</var> and corresponding elements of the <var>pattern</var> to determine whether a match has occurred. If a subsequence is found, <code>subsequence-position</code> returns the index at which the subsequence starts; otherwise, it returns <code>#f</code>. If there is more than one match, <var>count</var> determines which subsequence is selected. A <var>count</var> of 1 (the default) indicates that the first match should be returned.</p>
     <pre class="code">
 subsequence-position (&quot;Ralph Waldo Emerson&quot;, &quot;Waldo&quot;)
 <code> &rArr;</code>  6</pre>
@@ -2376,7 +2412,7 @@ subsequence-position (&quot;Ralph Waldo Emerson&quot;, &quot;Waldo&quot;)
 <a name="HEADING102-512"></a>
 <h3 class="sub-subsection-title">Simple Mapping</h3>
 <p class="T0.Text0"><a name="MARKER-2-1807"></a><a name="MARKER-2-1808"></a>The following mapping functions (<code>do</code>, <code>map</code>, <code>map-as</code>, <code>map-into</code>, <code>any?</code>, <code>every?</code>) iterate over a number of source collections. Each time through the iteration, a function is applied to one element from each of the source collections. The number of arguments to the function is equal to the number of source collections.</p>
-<p class="T1.Text1">The functions vary in how they handle the results of each function application.</p>
+<p>The functions vary in how they handle the results of each function application.</p>
 <a name="HEADING102-515"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-1809">do</code> </span><span class="attributes-summary">[Function]</span></h4>
 <hr class="item-title" />
@@ -2457,8 +2493,9 @@ do (method (a b) print (a + b) end,
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Creates a freshly allocated collection whose elements are obtained by calling <var>function</var> on corresponding elements of all the <var>collections</var>. If all the <var>collections</var> are sequences, processing is performed in the natural order.</p>
-    <p class="T1.Text1"><code>map</code> returns a collection whose value is an instance of the <code>type-for-copy</code> value of <var>collection</var>. The new collection is created by calling <code>make</code> on that type, with a <code>size:</code> initialization argument whose value is the number of corresponding elements in the <var>collections</var>.</p>
+  <dd class="Cliche">
+    <p>Creates a freshly allocated collection whose elements are obtained by calling <var>function</var> on corresponding elements of all the <var>collections</var>. If all the <var>collections</var> are sequences, processing is performed in the natural order.</p>
+    <p><code>map</code> returns a collection whose value is an instance of the <code>type-for-copy</code> value of <var>collection</var>. The new collection is created by calling <code>make</code> on that type, with a <code>size:</code> initialization argument whose value is the number of corresponding elements in the <var>collections</var>.</p>
     <pre class="code">
 map (\+,
      #(100, 100, 200, 200),
@@ -2550,11 +2587,12 @@ map-as (&lt;vector&gt;, \+,
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the <var>mutable-collection</var> argument after modifying it by replacing its elements with the results of applying <var>function</var> to corresponding elements of <var>collection</var> and <var>more-collections</var>.</p>
-    <p class="T1.Text1">If <var>mutable-collection</var> and all the other <var>collections</var> are sequences, processing is done in the natural order.</p>
-    <p class="T1.Text1">When <var>mutable-collection</var>  is an instance of <code>&lt;stretchy-collection&gt;</code>, the usual alignment requirement (described in <a href="Collection_Alignment#MARKER-9-1021">"Collection Alignment" on page 120</a>) is relaxed. In this case, the key sequence of <var>mutable-collection</var>  is not considered during alignment. Rather, only the key sequences for the source <var>collections</var> are aligned, with <var>function</var>  called on the corresponding elements. The result of each call to <var>function</var> is then stored into <var>mutable-collection</var>  with the corresponding key (possibly stretching <var>mutable-collection</var>  in the process), using <code>element-setter</code>. Other keys in <var>mutable-collection</var> remain undisturbed.</p>
-    <p class="T1.Text1"><var>mutable-collection </var>may be the same object as <var>collection</var> or any of the <var>more-collections</var>.</p>
-    <p class="T1.Text1">An error is signaled if<var> mutable-collection</var> does not have the same <code>key-test</code> function as the rest of the <var>collections</var>. This is true even if it is a <code>&lt;stretchy-collection&gt;</code> and therefore does not get aligned.</p>
+  <dd class="Cliche">
+    <p>Returns the <var>mutable-collection</var> argument after modifying it by replacing its elements with the results of applying <var>function</var> to corresponding elements of <var>collection</var> and <var>more-collections</var>.</p>
+    <p>If <var>mutable-collection</var> and all the other <var>collections</var> are sequences, processing is done in the natural order.</p>
+    <p>When <var>mutable-collection</var>  is an instance of <code>&lt;stretchy-collection&gt;</code>, the usual alignment requirement (described in <a href="Collection_Alignment#MARKER-9-1021">"Collection Alignment" on page 120</a>) is relaxed. In this case, the key sequence of <var>mutable-collection</var>  is not considered during alignment. Rather, only the key sequences for the source <var>collections</var> are aligned, with <var>function</var>  called on the corresponding elements. The result of each call to <var>function</var> is then stored into <var>mutable-collection</var>  with the corresponding key (possibly stretching <var>mutable-collection</var>  in the process), using <code>element-setter</code>. Other keys in <var>mutable-collection</var> remain undisturbed.</p>
+    <p><var>mutable-collection </var>may be the same object as <var>collection</var> or any of the <var>more-collections</var>.</p>
+    <p>An error is signaled if<var> mutable-collection</var> does not have the same <code>key-test</code> function as the rest of the <var>collections</var>. This is true even if it is a <code>&lt;stretchy-collection&gt;</code> and therefore does not get aligned.</p>
     <pre class="code">
 define variable x = list (10, 9, 8, 7)
 map-into (x, \+, #(1, 2, 3, 4), #(100, 100, 200, 200))
@@ -2597,8 +2635,9 @@ x
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Applies <var>function</var> to groups of corresponding elements of <var>collection</var> and <var>more-collections</var>. If an application of <var>function</var> returns true, then <code>any?</code> returns that true value. Otherwise <var>function</var> returns <code>#f</code> when applied to every such group, and <code>any?</code> returns <code>#f</code>.</p>
-    <p class="T1.Text1">If all the <var>collections</var> are sequences, <code>any?</code> operates in natural order. In all cases, <code>any?</code> stops on the first true value returned by <var>function</var>.</p>
+  <dd class="Cliche">
+    <p>Applies <var>function</var> to groups of corresponding elements of <var>collection</var> and <var>more-collections</var>. If an application of <var>function</var> returns true, then <code>any?</code> returns that true value. Otherwise <var>function</var> returns <code>#f</code> when applied to every such group, and <code>any?</code> returns <code>#f</code>.</p>
+    <p>If all the <var>collections</var> are sequences, <code>any?</code> operates in natural order. In all cases, <code>any?</code> stops on the first true value returned by <var>function</var>.</p>
     <pre class="code">
 any? (\&gt;, #(1, 2, 3 ,4), #(5, 4, 3, 2))
 <code> &rArr;</code>  #t
@@ -2640,8 +2679,9 @@ any? (even?, #(1, 3, 5, 7))
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Applies <var>function</var> to groups of corresponding elements of <var>collection</var> and <var>more-collections</var>. If an application of <var>function</var> returns false, then <code>every?</code> returns <code>#f</code>. Otherwise <var>function</var> returns a true value when applied to every such group, and <code>every?</code> returns <code>#t</code>.</p>
-    <p class="T1.Text1">If all the <var>collections</var> are sequences, <code>every?</code> operates in natural order. In all cases, <code>every?</code> stops on the first false value returned by <var>function</var>.</p>
+  <dd class="Cliche">
+    <p>Applies <var>function</var> to groups of corresponding elements of <var>collection</var> and <var>more-collections</var>. If an application of <var>function</var> returns false, then <code>every?</code> returns <code>#f</code>. Otherwise <var>function</var> returns a true value when applied to every such group, and <code>every?</code> returns <code>#t</code>.</p>
+    <p>If all the <var>collections</var> are sequences, <code>every?</code> operates in natural order. In all cases, <code>every?</code> stops on the first false value returned by <var>function</var>.</p>
     <pre class="code">
 every? (\&gt;, #(1, 2, 3, 4), #(5, 4, 3, 2))
 <code> &rArr;</code>  #f
@@ -2685,9 +2725,10 @@ every? (odd?, #(1, 3, 5, 7))
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the result of combining the elements of <var>collection</var> and <var>initial-value</var> according to <var>function</var>.</p>
-    <p class="T1.Text1">If <var>collection</var> is empty, <code>reduce</code> returns <var>initial-value</var>; otherwise, <var>function</var> is applied to <var>initial-value</var> and the first element of <var>collection</var> to produce a new value. If more elements remain in the <var>collection</var>, then <var>function</var> is called again, this time with the value from the previous application and the next element from <var>collection</var>. This process continues until all elements of <var>collection</var> have been processed.</p>
-    <p class="T1.Text1"><var>function</var> is a binary function used to combine all the elements of <var>collection</var> into a single value. Processing is always done in the natural order for <var>collection</var>.</p>
+  <dd class="Cliche">
+    <p>Returns the result of combining the elements of <var>collection</var> and <var>initial-value</var> according to <var>function</var>.</p>
+    <p>If <var>collection</var> is empty, <code>reduce</code> returns <var>initial-value</var>; otherwise, <var>function</var> is applied to <var>initial-value</var> and the first element of <var>collection</var> to produce a new value. If more elements remain in the <var>collection</var>, then <var>function</var> is called again, this time with the value from the previous application and the next element from <var>collection</var>. This process continues until all elements of <var>collection</var> have been processed.</p>
+    <p><var>function</var> is a binary function used to combine all the elements of <var>collection</var> into a single value. Processing is always done in the natural order for <var>collection</var>.</p>
     <pre class="code">
 define variable high-score = 10
 reduce (max, high-score, #(3, 1, 4, 1, 5, 9))
@@ -2728,10 +2769,12 @@ reduce (max, high-score, #(3, 12, 9, 8, 8, 6))
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the combination of the elements of <var>collection</var> according to <var>function</var>.</p></dd>
-  <dd><p class="T1.Text1">An error is signaled if <var>collection</var> is empty.</p>
-    <p class="T1.Text1"><code>reduce1</code> is similar to <code>reduce</code>, except that the first element of <var>collection</var> is taken as the initial value, and all the remaining elements of <var>collection</var> are processed as if by <code>reduce</code>. (In other words, the first value isn't used twice.)</p>
-    <p class="T1.Text1">For unstable collections, "first" element effectively means "an element chosen at random."  Processing is done in the natural order for <var>collection</var>.</p>
+  <dd class="Cliche">
+    <p>Returns the combination of the elements of <var>collection</var> according to <var>function</var>.</p></dd>
+  <dd>
+    <p>An error is signaled if <var>collection</var> is empty.</p>
+    <p><code>reduce1</code> is similar to <code>reduce</code>, except that the first element of <var>collection</var> is taken as the initial value, and all the remaining elements of <var>collection</var> are processed as if by <code>reduce</code>. (In other words, the first value isn't used twice.)</p>
+    <p>For unstable collections, "first" element effectively means "an element chosen at random."  Processing is done in the natural order for <var>collection</var>.</p>
     <pre class="code">
 reduce1 (\+, #(1, 2, 3, 4, 5))
 <code> &rArr;</code>  15 </pre>
@@ -2852,8 +2895,9 @@ choose-by (even?, range (from: 1),
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><a name="MARKER-2-1835"></a>Returns true if <var>collection</var> contains <var>value</var> as determined by <var>test</var>. Otherwise returns false.</p>
-    <p class="T1.Text1">The <var>test</var> function may be noncommutative: it is always called with <var>value</var> as its first argument and an element from <var>collection</var> as its second argument.</p>
+  <dd class="Cliche">
+    <p><a name="MARKER-2-1835"></a>Returns true if <var>collection</var> contains <var>value</var> as determined by <var>test</var>. Otherwise returns false.</p>
+    <p>The <var>test</var> function may be noncommutative: it is always called with <var>value</var> as its first argument and an element from <var>collection</var> as its second argument.</p>
     <pre class="code">
 define constant flavors = #(#&quot;vanilla&quot;, #&quot;pistachio&quot;, #&quot;ginger&quot;)
 member? (#&quot;vanilla&quot;, flavors)      
@@ -2862,7 +2906,7 @@ member? (#&quot;banana&quot;, flavors)
 <code> &rArr;</code>  #f </pre>
     <a name="HEADING102-629"></a>
     <h5 class="method-signature"><span class="signature"><code>member?</code>  <var>val range</var>  <code>#key</code> <var>test</var> &rArr;  <var>boolean</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1"><code>I</code>f <var>range</var> is unbounded, this method is guaranteed to terminate if <var>test</var> is <code>==</code>.</p>
+    <p><code>I</code>f <var>range</var> is unbounded, this method is guaranteed to terminate if <var>test</var> is <code>==</code>.</p>
   </dd>
 </dl>
 <a name="HEADING102-631"></a>
@@ -2901,8 +2945,9 @@ member? (#&quot;banana&quot;, flavors)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a key value such that <code>(</code><var>predicate</var> <code>(element</code> <var>collection key</var><code>))</code> is true. If no element in <var>collection</var> satisfies <var>predicate</var>, <code>find-key</code> returns <var>failure</var>.</p>
-    <p class="T1.Text1">The <var>skip</var> argument indicates that the first <var>skip</var> matching elements should be ignored. If <var>skip</var> or fewer elements of <var>collection</var> satisfy <var>predicate</var>, then <var>failure</var> is returned. If collection is not stable under iteration, then skip is only useful for finding out whether collection contains at least <var>skip</var> elements which satisfy <var>predicate</var>; it is not useful for finding a particular element.</p>
+  <dd class="Cliche">
+    <p>Returns a key value such that <code>(</code><var>predicate</var> <code>(element</code> <var>collection key</var><code>))</code> is true. If no element in <var>collection</var> satisfies <var>predicate</var>, <code>find-key</code> returns <var>failure</var>.</p>
+    <p>The <var>skip</var> argument indicates that the first <var>skip</var> matching elements should be ignored. If <var>skip</var> or fewer elements of <var>collection</var> satisfy <var>predicate</var>, then <var>failure</var> is returned. If collection is not stable under iteration, then skip is only useful for finding out whether collection contains at least <var>skip</var> elements which satisfy <var>predicate</var>; it is not useful for finding a particular element.</p>
     <pre class="code">
 flavors
 <code> &rArr;</code>  #(#&quot;vanilla&quot;, #&quot;pistachio&quot;, #&quot;ginger&quot;)
@@ -2944,11 +2989,12 @@ flavors[1]
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Modifies <var>collection</var> so that it no longer has a key equal to <var>key</var>. Equality is determined by <var>collection</var>'s key-test function.</p>
-    <p class="T1.Text1">The <var>boolean</var> return value will be <code>#t</code> if the <var>key</var> was present and removed, or <code>#f</code> if the key was not present and hence not removed.</p>
+  <dd class="Cliche">
+    <p>Modifies <var>collection</var> so that it no longer has a key equal to <var>key</var>. Equality is determined by <var>collection</var>'s key-test function.</p>
+    <p>The <var>boolean</var> return value will be <code>#t</code> if the <var>key</var> was present and removed, or <code>#f</code> if the key was not present and hence not removed.</p>
     <a name="HEADING102-650"></a>
     <h5 class="method-signature"><span class="signature"><code>remove-key!</code> <var>table key</var> &rArr; <var>table</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-    <p class="T1.Text1">There is a predefined method on <code>&lt;table&gt;</code>.</p>
+    <p>There is a predefined method on <code>&lt;table&gt;</code>.</p>
   </dd>
 </dl>
 <a name="HEADING102-652"></a>
@@ -3031,8 +3077,9 @@ replace-elements! (numbers, odd?, double)
     </dl>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Modifies <var>mutable-collection</var> so that <code>element(<var>mutable-collection, key)</var></code> returns <var>value</var> for every <var>key</var>.</p>
-    <p class="T1.Text1">If <var>mutable-collection</var> is a sequence, then <var>start</var> and <var>end</var> keywords may be specified to indicate that only a part of the sequence should be filled. <var>start</var> is considered an inclusive bound and defaults to <code>0</code>; <var>end</var> is an exclusive bound and defaults to the length of the sequence.</p>
+  <dd class="Cliche">
+    <p>Modifies <var>mutable-collection</var> so that <code>element(<var>mutable-collection, key)</var></code> returns <var>value</var> for every <var>key</var>.</p>
+    <p>If <var>mutable-collection</var> is a sequence, then <var>start</var> and <var>end</var> keywords may be specified to indicate that only a part of the sequence should be filled. <var>start</var> is considered an inclusive bound and defaults to <code>0</code>; <var>end</var> is an exclusive bound and defaults to the length of the sequence.</p>
     <pre class="code">
 define variable numbers = list (10, 13, 16, 19)
 fill! (numbers, 3, start: 2)
@@ -3123,8 +3170,9 @@ fill! (numbers, 3, start: 2)
 	  the iteration over <var>collection</var> as is represented by <var>state.</var></p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns eight values used to implement iteration over the <var>collection</var> argument.</p>
-    <p class="T1.Text1">Only the <var>collection</var> argument this function was called with may be
+  <dd class="Cliche">
+    <p>Returns eight values used to implement iteration over the <var>collection</var> argument.</p>
+    <p>Only the <var>collection</var> argument this function was called with may be
       used as the <var>collection</var> argument to functions returned by this function. Only
       the <var>initial-state</var> object and state objects returned by the <var>next-state</var>
       and <var>copy-state</var> functions may be used as the <var>state</var> argument to functions
@@ -3190,8 +3238,9 @@ end method do1;</pre>
       <dd><p>An instance of <code>&lt;function&gt;</code>.</p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns eight values used to implement reverse iteration over the <var>collection</var> argument.</p>
-    <p class="T1.Text1">Some collection classes that are stable under iteration support the ability to iterate in the reverse of the natural order, by providing a method on the generic function <code>backward-iteration-protocol</code>. The eight values returned by this function are analogous to the corresponding values returned by <code>forward-iteration-protocol</code>.</p></dd>
+  <dd class="Cliche">
+    <p>Returns eight values used to implement reverse iteration over the <var>collection</var> argument.</p>
+    <p>Some collection classes that are stable under iteration support the ability to iterate in the reverse of the natural order, by providing a method on the generic function <code>backward-iteration-protocol</code>. The eight values returned by this function are analogous to the corresponding values returned by <code>forward-iteration-protocol</code>.</p></dd>
 </dl>
 <a name="HEADING102-719"></a>
 <h3 class="sub-subsection-title">The Table Protocol</h3>
@@ -3241,7 +3290,7 @@ end method do1;</pre>
     <a name="HEADING102-732"></a>
     <h5 class="method-signature"><span class="signature"><code>table-protocol</code> <var>object-table</var> &rArr; <var>test-function  hash-function</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <p class="short-description">The method for <code>&lt;object-table&gt;</code> returns <code>==</code>  as the <var>test-function</var> and <code>object-hash</code> as the <var>hash-function</var>.</p>
-    <p class="T1.Text1">The method for <code>&lt;object-table&gt;</code> could be written as</p>
+    <p>The method for <code>&lt;object-table&gt;</code> could be written as</p>
     <pre class="code">
 define method table-protocol (table :: &lt;object-table&gt;)
       =&gt; test-function :: &lt;function&gt;, 
@@ -3289,9 +3338,10 @@ end method table-protocol; </pre>
       <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Computes a new hash code by merging the argument hash codes in some implementation dependent way. This can be used, for example, to generate a hash-code for an object by combining hash codes of some of its parts.</p>
-    <p class="T1.Text1"><var>id1</var>, <var>id2</var>, and <var>merged-id </var> are all integers. <var>state1</var>, <var>state2</var>, and <var>merged-state </var> are all hash states. <var>ordered</var> is a boolean and determines whether the algorithm used to perform the merge is permitted to be order dependent. If false, which is the default, then the merged result must be independent of the order in which the argument pairs are provided. If true, then the order of the argument pairs matters because the algorithm used need not be either commutative or associative. It is best to provide a true value for <var>ordered</var> when possible, as this may result in a better distribution of hash ids. However, <var>ordered</var> must only be true if this will not cause the hash function to violate the second constraint on hash functions, described on <a href="Tables#MARKER-9-1049">page 123</a>.</p>
-    <p class="T1.Text1"><var>state1</var> and <var>state2</var> should be the value of <code>$permanant-hash-state</code> or hash-states returned from previous calls to <code>merge-hash-codes</code> or <code>object-hash</code>.</p></dd>
+  <dd class="Cliche">
+    <p>Computes a new hash code by merging the argument hash codes in some implementation dependent way. This can be used, for example, to generate a hash-code for an object by combining hash codes of some of its parts.</p>
+    <p><var>id1</var>, <var>id2</var>, and <var>merged-id </var> are all integers. <var>state1</var>, <var>state2</var>, and <var>merged-state </var> are all hash states. <var>ordered</var> is a boolean and determines whether the algorithm used to perform the merge is permitted to be order dependent. If false, which is the default, then the merged result must be independent of the order in which the argument pairs are provided. If true, then the order of the argument pairs matters because the algorithm used need not be either commutative or associative. It is best to provide a true value for <var>ordered</var> when possible, as this may result in a better distribution of hash ids. However, <var>ordered</var> must only be true if this will not cause the hash function to violate the second constraint on hash functions, described on <a href="Tables#MARKER-9-1049">page 123</a>.</p>
+    <p><var>state1</var> and <var>state2</var> should be the value of <code>$permanant-hash-state</code> or hash-states returned from previous calls to <code>merge-hash-codes</code> or <code>object-hash</code>.</p></dd>
 </dl>
 <a name="HEADING102-749"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-1854">object-hash</code> </span><span class="attributes-summary">[Function]</span></h4>

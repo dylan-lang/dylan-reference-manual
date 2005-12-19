@@ -119,29 +119,26 @@
       <a name="HEADING68-0"></a>
       <a name="UID-Collections-5050"></a>
       <h1 class="section-title"><a name="MARKER-9-1051"></a>Element Types</h1>
-      <p class="T1.Text1"><a name="MARKER-2-1052"></a>Each instance <var>X</var>
-      of <code>&lt;collection&gt;</code> has a conceptual <dfn>element type</dfn> that is an
-      instance of <code>&lt;type&gt;</code>. If the element type of <var>X</var>
-      is <var>T</var>, <var>X</var> stores elements of
+      <p><a name="MARKER-2-1052"></a>Each instance <var>X</var> of <code>&lt;collection&gt;</code>
+      has a conceptual <dfn>element type</dfn> that is an instance of <code>&lt;type&gt;</code>. If
+      the element type of <var>X</var> is <var>T</var>, <var>X</var> stores elements of
       type <var>T</var>. The <code id="MARKER-2-1053">element</code> method will always return an
       instance of <var>T</var> and the <code id="MARKER-2-1054">element-setter</code> method
       (if <var>X</var> is mutable) will accept any instance of <var>T</var>. The analogous functions
       returned by the <a name="MARKER-2-1055"></a>iteration protocol also return/accept any instance
       of <var>T</var>.</p>
-      <p class="T1.Text1"><a name="MARKER-2-1056"></a>Each subclass <var>C</var>
-      of <code>&lt;collection&gt;</code> has a conceptual element type that is
-      either <var>T<em><sub>1</sub></em></var> or
+      <p><a name="MARKER-2-1056"></a>Each subclass <var>C</var> of <code>&lt;collection&gt;</code>
+      has a conceptual element type that is either <var>T<em><sub>1</sub></em></var> or
       indefinite <code>&lArr;</code> <var>T<em><sub>1</sub></em></var>,
       where <var>T<em><sub>1</sub></em></var> is a type. (The symbol "<code>&lArr;</code> " in the
       "indefinite <code>&lArr;</code> <var>T<em><sub>1</sub></em></var>" notation is an abbreviation
       for "subtype.")</p>
-      <p class="T1.Text1">If the element type of <var>C</var> is <var>T<em><sub>1</sub></em></var>,
-      each general instance of <var>C</var> must have an element
-      type <var>T<em><sub>2</sub></em></var> that is type equivalent
-      to <var>T<em><sub>1</sub></em></var>. Each subclass of <var>C</var> must have an element
-      type <var>T<em><sub>3</sub></em></var> that is type equivalent
+      <p>If the element type of <var>C</var> is <var>T<em><sub>1</sub></em></var>, each general
+      instance of <var>C</var> must have an element type <var>T<em><sub>2</sub></em></var> that is
+      type equivalent to <var>T<em><sub>1</sub></em></var>. Each subclass of <var>C</var> must have
+      an element type <var>T<em><sub>3</sub></em></var> that is type equivalent
       to <var>T<em><sub>1</sub></em></var>.</p>
-      <p class="T1.Text1">If the element type of <var>C</var> is
+      <p>If the element type of <var>C</var> is
       indefinite <code>&lArr;</code> <var>T<em><sub>1</sub></em></var>, each general instance
       of <var>C</var> must have an element type <var>T<em><sub>2</sub></em></var> that is a subtype
       of <var>T<em><sub>1</sub></em></var>. Therefore, <code>element</code> called on that instance
@@ -153,10 +150,9 @@
       element type <var>T<em><sub>3</sub></em></var> or
       indefinite <code>&lArr;</code> <var>T<em><sub>3</sub></em></var>,
       where <var>T<em><sub>3</sub></em></var> is a subtype of <var>T<em><sub>1</sub></em></var>.</p>
-      <p class="T1.Text1">User-defined collection classes must also follow these rules.</p>
-      <p class="T1.Text1">Note: the above statements about the value returned
-      by <code>element</code> only apply when no <code>default:</code> keyword argument is
-      specified.</p>
+      <p>User-defined collection classes must also follow these rules.</p>
+      <p>Note: the above statements about the value returned by <code>element</code> only apply when
+      no <code>default:</code> keyword argument is specified.</p>
       <table class="numbered">
 	<caption><strong>Table 8-1</strong>  Element Types of Built-in Collections</caption>
 	<tr>
@@ -252,19 +248,18 @@
 	  <td><p><code>&lt;object&gt;</code></p></td>
 	</tr>
       </table>
-      <p class="T1.Text1">Note: <var>K<em><sub>1</sub></em></var>
-      and <var>K<em><sub>2</sub></em></var> are subtypes
+      <p>Note: <var>K<em><sub>1</sub></em></var> and <var>K<em><sub>2</sub></em></var> are subtypes
       of <code id="MARKER-2-1057">&lt;character&gt;</code> that have not been given standardized
       names.</p>
-      <p class="T1.Text1">By convention, if <var>C</var> is an instantiable subtype
+      <p>By convention, if <var>C</var> is an instantiable subtype
       of <code>&lt;collection&gt;</code> and <var>C</var>'s element-type is
       indefinite <code>&lArr;</code> <code>&lt;object&gt;</code>, then instantiating <var>C</var>
       produces a collection whose element type is <code>&lt;object&gt;</code>.</p>
-      <p class="T1.Text1">Instantiating <code>&lt;range&gt;</code> produces a collection whose
-      element-type is unspecified except that it is a subtype of <code>&lt;real&gt;</code> and every
-      element of the range is an instance of the element type.</p>
-      <p class="T1.Text1">The preceding section describes the element type of every object that is
-      created by <code>make</code> of an instantiable built-in collection
+      <p>Instantiating <code>&lt;range&gt;</code> produces a collection whose element-type is
+      unspecified except that it is a subtype of <code>&lt;real&gt;</code> and every element of the
+      range is an instance of the element type.</p>
+      <p>The preceding section describes the element type of every object that is created
+      by <code>make</code> of an instantiable built-in collection
       class. <a name="MARKER-2-1058"></a>The element type of an instance of a user-defined
       collection class is unspecified, but should follow the rules given here in order to preserve
       the property that any operation that works on an instance of a supertype must work on an

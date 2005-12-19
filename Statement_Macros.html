@@ -139,8 +139,8 @@
 <a name="HEADING114-0"></a>
 <a name="UID-Built-In_Macros-2670"></a>
 <h1 class="section-title">Statements</h1>
-<p class="T1.Text1"><a name="MARKER-2-2041"></a>Statements are used to implement a variety of program constructs.</p>
-<p class="T1.Text1">Many statements include an optional implicit body, which may contain one or more constituents separated by semicolons. When an implicit body is executed, the expressions in the implicit body are executed in order (left to right). The values of the implicit body are the values of the last expression. If the optional implicit body is not present or contains no expressions, the return value is <code>#f</code>.</p>
+<p><a name="MARKER-2-2041"></a>Statements are used to implement a variety of program constructs.</p>
+<p>Many statements include an optional implicit body, which may contain one or more constituents separated by semicolons. When an implicit body is executed, the expressions in the implicit body are executed in order (left to right). The values of the implicit body are the values of the last expression. If the optional implicit body is not present or contains no expressions, the return value is <code>#f</code>.</p>
 <table class="numbered"><caption><strong>Table 14-3</strong> Statements</caption>
 <tr><th class="primary"><p> Macro</p>
 </th><th><p> Description</p>
@@ -178,7 +178,7 @@
 </td></tr></table><a name="HEADING114-162"></a>
 <a name="UID-Built-In_Macros-10641"></a>
 <h2 class="subsection-title">Conditionals</h2>
-<p class="T1.Text1"><a name="MARKER-2-2042"></a>The following statements are used to perform conditional execution.</p>
+<p><a name="MARKER-2-2042"></a>The following statements are used to perform conditional execution.</p>
 <a name="HEADING114-164"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-2043">if</code> </span><span class="attributes-summary">[Statement]</span></h4>
 <hr class="item-title" />
@@ -211,10 +211,11 @@
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><code>if</code> executes one or more expressions, executing and returning the values of a body following the first test that returns true.</p>
-    <p class="T1.Text1"><var>test</var> is the first expression to be executed. If its value is true, <code>if</code> executes and returns the values of the <var>consequent</var>. If the value of <var>test</var> is false, <code>if</code> proceeds with the optional elseif-tests and alternate.</p>
-    <p class="T1.Text1">First the elseif clauses are tried in order. The first <var>elseif-test</var> is executed. If its value is true, the corresponding <var>elseif-consequent</var> is executed and its values are returned as the value of the <code>if</code> statement. If its value is false, the next <var>elseif-test</var> is tried. This continues until a true <var>elseif-test</var> is found, or until there are no more elseif clauses.</p>
-    <p class="T1.Text1">If the <var>test</var> and all the <var>elseif-tests</var> are false, the <var>alternate</var> is executed and its values are returned as the value of the <code>if</code> statement. If there is no alternate, the <code>if</code> statement returns <code>#f</code>.</p>
+  <dd class="Cliche">
+    <p><code>if</code> executes one or more expressions, executing and returning the values of a body following the first test that returns true.</p>
+    <p><var>test</var> is the first expression to be executed. If its value is true, <code>if</code> executes and returns the values of the <var>consequent</var>. If the value of <var>test</var> is false, <code>if</code> proceeds with the optional elseif-tests and alternate.</p>
+    <p>First the elseif clauses are tried in order. The first <var>elseif-test</var> is executed. If its value is true, the corresponding <var>elseif-consequent</var> is executed and its values are returned as the value of the <code>if</code> statement. If its value is false, the next <var>elseif-test</var> is tried. This continues until a true <var>elseif-test</var> is found, or until there are no more elseif clauses.</p>
+    <p>If the <var>test</var> and all the <var>elseif-tests</var> are false, the <var>alternate</var> is executed and its values are returned as the value of the <code>if</code> statement. If there is no alternate, the <code>if</code> statement returns <code>#f</code>.</p>
     <pre class="code">
 if ( x &lt; 0 )
   - x;
@@ -265,8 +266,9 @@ end if; </pre>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><code>unless</code> executes <var>test</var>. If the value of <var>test</var> is false, then the <var>body</var> is executed and its values are returned by <code>unless</code>. If the value of <var>test</var> is true, the <var>body</var> is not executed and <code>unless</code> returns <code>#f</code>.</p>
-    <p class="T1.Text1">If there are no expressions in the <var>body</var>, then <code>#f</code> is returned.</p>
+  <dd class="Cliche">
+    <p><code>unless</code> executes <var>test</var>. If the value of <var>test</var> is false, then the <var>body</var> is executed and its values are returned by <code>unless</code>. If the value of <var>test</var> is true, the <var>body</var> is not executed and <code>unless</code> returns <code>#f</code>.</p>
+    <p>If there are no expressions in the <var>body</var>, then <code>#f</code> is returned.</p>
     <pre class="code">
 unless(detect-gas? (nose))
     light(match)
@@ -305,9 +307,10 @@ end unless </pre>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><code>case</code> executes the <var>test</var> in order, until it reaches a test that returns true. When it reaches a test that returns true, it executes the corresponding <var>consequent</var> and returns its values. Subsequent tests are not executed. If the corresponding <var>consequent</var> is empty, the first value of the successful test is returned.</p>
-    <p class="T1.Text1">As a special case, the name <code>otherwise</code> may appear as a <var>test</var>. This <var>test</var> always succeeds if there is no preceding successful <var>test</var>.</p>
-    <p class="T1.Text1">If no <var>test</var> is true, then <code>case</code> returns <code>#f</code>.</p>
+  <dd class="Cliche">
+    <p><code>case</code> executes the <var>test</var> in order, until it reaches a test that returns true. When it reaches a test that returns true, it executes the corresponding <var>consequent</var> and returns its values. Subsequent tests are not executed. If the corresponding <var>consequent</var> is empty, the first value of the successful test is returned.</p>
+    <p>As a special case, the name <code>otherwise</code> may appear as a <var>test</var>. This <var>test</var> always succeeds if there is no preceding successful <var>test</var>.</p>
+    <p>If no <var>test</var> is true, then <code>case</code> returns <code>#f</code>.</p>
     <pre class="code">
 case
    player1.money &lt;= 0
@@ -352,14 +355,15 @@ end case; </pre>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><code>select</code> generates a target object and then compares it to a series of potential matches, in order. If it finds a match, it executes the corresponding <var>consequent</var> and returns the values of the <var>consequent</var>. If no match is found, an error is signaled.</p>
-    <p class="T1.Text1">The <var>target</var> is executed to produce the match object.</p>
-    <p class="T1.Text1">The <var>test</var>, if supplied, is a function used to compare the target object to the potential matches. The default <var>test</var> is <code>==</code>.</p>
-    <p class="T1.Text1">One at a time, each <var>match</var> is executed and its value compared to <var>target</var>, in order. If a match is found, the corresponding <var>consequent</var> is executed and its values are returned. If the corresponding <var>consequent</var> is empty, <code>#f</code> is returned.</p>
-    <p class="T1.Text1">Once a match is found, subsequent <var>matches</var>  and the corresponding bodies are not executed.</p>
-    <p class="T1.Text1">As a special case, the name <code>otherwise</code> may appear instead of a <var>matches</var>. This will be considered a match if no other match is found.</p>
-    <p class="T1.Text1">If there is no matching clause, an error is signaled. Because an <code>otherwise</code> clause matches when no other clause matches, a <code>select</code> form that includes an <code>otherwise</code> clause will never signal an error for failure to match.</p>
-    <p class="T1.Text1">Since testing stops when the first match is found, it is irrelevant whether the test function would also have returned true if called on later matches of the same clause or on matches of later clauses.</p>
+  <dd class="Cliche">
+    <p><code>select</code> generates a target object and then compares it to a series of potential matches, in order. If it finds a match, it executes the corresponding <var>consequent</var> and returns the values of the <var>consequent</var>. If no match is found, an error is signaled.</p>
+    <p>The <var>target</var> is executed to produce the match object.</p>
+    <p>The <var>test</var>, if supplied, is a function used to compare the target object to the potential matches. The default <var>test</var> is <code>==</code>.</p>
+    <p>One at a time, each <var>match</var> is executed and its value compared to <var>target</var>, in order. If a match is found, the corresponding <var>consequent</var> is executed and its values are returned. If the corresponding <var>consequent</var> is empty, <code>#f</code> is returned.</p>
+    <p>Once a match is found, subsequent <var>matches</var>  and the corresponding bodies are not executed.</p>
+    <p>As a special case, the name <code>otherwise</code> may appear instead of a <var>matches</var>. This will be considered a match if no other match is found.</p>
+    <p>If there is no matching clause, an error is signaled. Because an <code>otherwise</code> clause matches when no other clause matches, a <code>select</code> form that includes an <code>otherwise</code> clause will never signal an error for failure to match.</p>
+    <p>Since testing stops when the first match is found, it is irrelevant whether the test function would also have returned true if called on later matches of the same clause or on matches of later clauses.</p>
     <pre class="code">
 select ( career-choice(student) )
    art:, music:, drama:
@@ -403,8 +407,9 @@ end select<a name="MARKER-2-2051"></a> </pre>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p><code>#f</code></p></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><code>while</code> loops over <var>body</var> until <var>test</var> returns false.</p>
-    <p class="T1.Text1">Each pass through the loop begins by executing <var>test</var>. If <var>test</var> returns a true value, the expressions in the <var>body</var> are executed and the looping continues. If <var>test</var> returns false, the loop terminates and <code>while</code> returns <code>#f</code>.</p></dd>
+  <dd class="Cliche">
+    <p><code>while</code> loops over <var>body</var> until <var>test</var> returns false.</p>
+    <p>Each pass through the loop begins by executing <var>test</var>. If <var>test</var> returns a true value, the expressions in the <var>body</var> are executed and the looping continues. If <var>test</var> returns false, the loop terminates and <code>while</code> returns <code>#f</code>.</p></dd>
 </dl>
 <a name="HEADING114-229"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-2055">until ( <var>test</var> )</code> </span><span class="attributes-summary">[Statement]</span></h4>
@@ -432,8 +437,9 @@ end select<a name="MARKER-2-2051"></a> </pre>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p><code>#f</code></p></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><code>until</code> loops over <var>body</var> until <var>test</var> returns true.</p>
-    <p class="T1.Text1">Each pass through the loop begins by executing <var>test</var>. If <var>test</var> returns false, the expressions in the <var>body</var> are executed and the looping continues. If <var>test</var> returns true, the loop terminates and <code>until</code> returns <code>#f</code>.</p></dd>
+  <dd class="Cliche">
+    <p><code>until</code> loops over <var>body</var> until <var>test</var> returns true.</p>
+    <p>Each pass through the loop begins by executing <var>test</var>. If <var>test</var> returns false, the expressions in the <var>body</var> are executed and the looping continues. If <var>test</var> returns true, the loop terminates and <code>until</code> returns <code>#f</code>.</p></dd>
 </dl>
 <a name="HEADING114-237"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-2057">for</code> </span><span class="attributes-summary">[Statement]</span></h4>
@@ -495,10 +501,11 @@ end select<a name="MARKER-2-2051"></a> </pre>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><code>for</code> iterates over <var>loop-body</var>, creating and updating iteration bindings on each iteration according to the <var>for-clauses</var>. Iteration ends when one of the <var>for-clauses</var> is exhausted, or when the optional <var>end-test</var> is satisfied.</p>
-    <p class="T1.Text1">Each <var>for-clause</var> controls one iteration binding. The optional <var>end-test</var> does not control any iteration bindings.</p>
-    <p class="T1.Text1">There are three kinds of for-clauses: <var>explicit-step-clauses</var>, <var>collection-clauses</var>, and <var>numeric-clauses</var>:  An <var>explicit-step-clause</var> creates bindings for the results of executing an expression. A <var>collection-clause</var> creates bindings for successive elements of a collection. A <var>numeric-clause</var> creates bindings for a series of numbers.</p>
-    <p class="T1.Text1">Execution of a <code>for</code> statement proceeds through the following steps:</p>
+  <dd class="Cliche">
+    <p><code>for</code> iterates over <var>loop-body</var>, creating and updating iteration bindings on each iteration according to the <var>for-clauses</var>. Iteration ends when one of the <var>for-clauses</var> is exhausted, or when the optional <var>end-test</var> is satisfied.</p>
+    <p>Each <var>for-clause</var> controls one iteration binding. The optional <var>end-test</var> does not control any iteration bindings.</p>
+    <p>There are three kinds of for-clauses: <var>explicit-step-clauses</var>, <var>collection-clauses</var>, and <var>numeric-clauses</var>:  An <var>explicit-step-clause</var> creates bindings for the results of executing an expression. A <var>collection-clause</var> creates bindings for successive elements of a collection. A <var>numeric-clause</var> creates bindings for a series of numbers.</p>
+    <p>Execution of a <code>for</code> statement proceeds through the following steps:</p>
     <ol>
       <li>Execute the expressions that are executed just once, in left to right order as they appear in the <code>for</code> statement. These expressions include the types of all the bindings, and the expressions <var>init-value</var>, <var>collection</var>, <var>start</var>, <var>bound</var>, and <var>increment</var>. If the value of <var>collection</var> is not a collection, an error is signaled. The default value for <var>increment</var> is <code>1</code>.</li>
       <li>Create the iteration bindings of explicit step and numeric clauses.
@@ -627,11 +634,12 @@ end;<a name="MARKER-2-2059"></a> </pre>
   <dt class="Cliche"><span>Values:</span></dt>
   <dd class="Cliche"><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><code id="MARKER-2-2064">block</code> executes the expressions in the <var>block-body</var> in order, and then executes the optional <var>afterwards-clause</var> and <var>cleanup-clause</var>. Unless there is a nonlocal exit, block returns the values of the <var>block-body</var>, or <code>#f</code> if there is no <var>block-body</var>.</p>
-    <p class="T1.Text1">If <var>exit-variable</var> is provided, it is bound to an exit procedure (an object of type <code>&lt;function&gt;</code>) that is valid during the execution of the block body and the clauses. At any point in time before the last clause returns, the exit procedure can be called. Calling the exit procedure has the effect of immediately terminating the execution of the block, and returning as values the arguments to the exit procedure.</p>
-    <p class="T1.Text1">The body of the <var>afterwards-clause</var>, if provided, is executed after the <var>block-body</var>. The values produced by the <var>afterwards-clause</var> are ignored. This is useful when you want to execute an expression for side-effect after the <var>block-body</var> has executed, but still want to return the values of the last expression in the <var>block-body</var>.</p>
-    <p class="T1.Text1">The body of the <var>cleanup-clause</var>, if provided, is executed after the <var>block-body</var> and <var>afterwards-clause</var>. Its values are also ignored. The cleanup clause differs from the afterwards clause in that its body is guaranteed to be executed, even if the execution of the block is interrupted by a nonlocal exit. There is no such guarantee for the <var>afterwards-clause</var>.</p>
-    <p class="T1.Text1">For example, the following code fragment ensures that files are closed even in the case of an error causing a nonlocal exit from the block body:</p>
+  <dd class="Cliche">
+    <p><code id="MARKER-2-2064">block</code> executes the expressions in the <var>block-body</var> in order, and then executes the optional <var>afterwards-clause</var> and <var>cleanup-clause</var>. Unless there is a nonlocal exit, block returns the values of the <var>block-body</var>, or <code>#f</code> if there is no <var>block-body</var>.</p>
+    <p>If <var>exit-variable</var> is provided, it is bound to an exit procedure (an object of type <code>&lt;function&gt;</code>) that is valid during the execution of the block body and the clauses. At any point in time before the last clause returns, the exit procedure can be called. Calling the exit procedure has the effect of immediately terminating the execution of the block, and returning as values the arguments to the exit procedure.</p>
+    <p>The body of the <var>afterwards-clause</var>, if provided, is executed after the <var>block-body</var>. The values produced by the <var>afterwards-clause</var> are ignored. This is useful when you want to execute an expression for side-effect after the <var>block-body</var> has executed, but still want to return the values of the last expression in the <var>block-body</var>.</p>
+    <p>The body of the <var>cleanup-clause</var>, if provided, is executed after the <var>block-body</var> and <var>afterwards-clause</var>. Its values are also ignored. The cleanup clause differs from the afterwards clause in that its body is guaranteed to be executed, even if the execution of the block is interrupted by a nonlocal exit. There is no such guarantee for the <var>afterwards-clause</var>.</p>
+    <p>For example, the following code fragment ensures that files are closed even in the case of an error causing a nonlocal exit from the block body:</p>
     <pre class="code">
 block (return)
   open-files();
@@ -642,10 +650,10 @@ block (return)
 cleanup
   close-files();
 end block </pre>
-    <p class="T1.Text1">The <var>exception-clauses</var>, if supplied, install exception handlers during the execution of the <var>block-body</var>, <var>afterwards-clause</var>, and <var>cleanup-clause</var>. If one of these handlers is invoked, it never declines but immediately takes a nonlocal exit to the beginning of the block, executes the expressions in its body and returns the values of the last expression or <code>#f</code> if the body is empty. Note that when the expressions in an exception body are executed, all handlers established by the <code>block</code> are no longer active. Note also that the cleanup clause of the block will be executed before the expressions of the handler body are executed.</p>
-    <p class="T1.Text1">The <var>type</var> and <var>exception-options</var> are as for <code>let handler</code>. If present, <var>name</var> is bound to the condition during the execution of the handler's body.</p>
-    <p class="T1.Text1">The exception clauses are checked in the order in which they appear. That is, the first handler will take precedence over the second, the second over the third, etc.</p>
-    <p class="T1.Text1">The following is a trivial use of an exception clause.</p>
+    <p>The <var>exception-clauses</var>, if supplied, install exception handlers during the execution of the <var>block-body</var>, <var>afterwards-clause</var>, and <var>cleanup-clause</var>. If one of these handlers is invoked, it never declines but immediately takes a nonlocal exit to the beginning of the block, executes the expressions in its body and returns the values of the last expression or <code>#f</code> if the body is empty. Note that when the expressions in an exception body are executed, all handlers established by the <code>block</code> are no longer active. Note also that the cleanup clause of the block will be executed before the expressions of the handler body are executed.</p>
+    <p>The <var>type</var> and <var>exception-options</var> are as for <code>let handler</code>. If present, <var>name</var> is bound to the condition during the execution of the handler's body.</p>
+    <p>The exception clauses are checked in the order in which they appear. That is, the first handler will take precedence over the second, the second over the third, etc.</p>
+    <p>The following is a trivial use of an exception clause.</p>
     <p class="errata right"><a href="Errata#p406_1"
 			       name="errata_p406_1"><strong>Errata:</strong></a>
       In this example, the <code>cleanup</code> and <code>exception</code>
@@ -662,7 +670,7 @@ cleanup
 end block </pre>
     <a name="HEADING114-310"></a>
     <h5 class="description-subsection-title">Dynamic Extent of Block Features</h5>
-    <p class="T1.Text1">A block installs features that are active for different portions of the execution of the block.</p>
+    <p>A block installs features that are active for different portions of the execution of the block.</p>
     <ul>
       <li>During the execution of the block body and the afterwards clause the exit procedure, exception clauses, and cleanup clauses are active.</li>
       <li>During the execution of the cleanup clause, the exit procedure and exception clauses are active.</li>
@@ -670,14 +678,14 @@ end block </pre>
     </ul>
     <a name="HEADING114-315"></a>
     <h5 class="description-subsection-title">Intervening Cleanup Clauses</h5>
-    <p class="T1.Text1">When an exit procedure is called, it initiates a nonlocal exit out of its establishing block. Before the nonlocal exit can complete, however, the cleanup clauses of intervening blocks (blocks that have been entered, but not exited, since the establishing block was entered) must be executed, beginning with the most recently entered intervening block. Once the cleanup clauses of an intervening block have been executed, it is an error to invoke the exit procedure established by that block. The cleanup clauses of the establishing block are executed last. At that point, further invocation of the exit procedure becomes invalid, and the establishing block returns with the values that were passed to the exit procedure.</p>
-    <p class="T1.Text1">Note that a block statement may also be exited due to the execution of a handler clause. Before the exception clause is executed, intervening cleanup clauses are executed as described above (including any clause for the establishing block.)  The exit procedure may be invoked during execution of exception clauses, in which case the argument values are immediately returned from the block (the cleanup clause already having been executed).</p>
-    <p class="T1.Text1">During the process of executing the cleanup clauses of the intervening blocks, any valid exit procedure may be invoked and may interrupt the current nonlocal exit.</p>
-    <p class="T1.Text1">All exception clauses are executed in the same dynamic environment. None of the handlers established in the block are visible during the execution of one of the handlers. This can be thought of as parallel installation of the handlers.</p>
+    <p>When an exit procedure is called, it initiates a nonlocal exit out of its establishing block. Before the nonlocal exit can complete, however, the cleanup clauses of intervening blocks (blocks that have been entered, but not exited, since the establishing block was entered) must be executed, beginning with the most recently entered intervening block. Once the cleanup clauses of an intervening block have been executed, it is an error to invoke the exit procedure established by that block. The cleanup clauses of the establishing block are executed last. At that point, further invocation of the exit procedure becomes invalid, and the establishing block returns with the values that were passed to the exit procedure.</p>
+    <p>Note that a block statement may also be exited due to the execution of a handler clause. Before the exception clause is executed, intervening cleanup clauses are executed as described above (including any clause for the establishing block.)  The exit procedure may be invoked during execution of exception clauses, in which case the argument values are immediately returned from the block (the cleanup clause already having been executed).</p>
+    <p>During the process of executing the cleanup clauses of the intervening blocks, any valid exit procedure may be invoked and may interrupt the current nonlocal exit.</p>
+    <p>All exception clauses are executed in the same dynamic environment. None of the handlers established in the block are visible during the execution of one of the handlers. This can be thought of as parallel installation of the handlers.</p>
     <a name="HEADING114-320"></a>
     <h5 class="description-subsection-title">Restrictions on the use of exit procedures</h5>
-    <p class="T1.Text1">The exit procedure is a first-class object. Specifically, it can be passed as an argument to functions, stored in data structures, and so on. Its use is not restricted to the lexical body of the block in which it was established. However, invocation of the exit procedure is valid only during the execution of the establishing block. It is an error to invoke an exit procedure after its establishing block has returned, or after execution of the establishing block has been terminated by a nonlocal exit.</p>
-    <p class="T1.Text1">In the following example, the <code>block</code> establishes an exit procedure in the binding <code>bar</code>. The <code>block</code> returns a method containing a call to <code>bar</code>, and the  method is stored in the binding <code>foo</code>. Calling <code>foo</code> is an error because it is no longer valid to invoke <code>bar</code> after its establishing <code>block</code> has returned.</p>
+    <p>The exit procedure is a first-class object. Specifically, it can be passed as an argument to functions, stored in data structures, and so on. Its use is not restricted to the lexical body of the block in which it was established. However, invocation of the exit procedure is valid only during the execution of the establishing block. It is an error to invoke an exit procedure after its establishing block has returned, or after execution of the establishing block has been terminated by a nonlocal exit.</p>
+    <p>In the following example, the <code>block</code> establishes an exit procedure in the binding <code>bar</code>. The <code>block</code> returns a method containing a call to <code>bar</code>, and the  method is stored in the binding <code>foo</code>. Calling <code>foo</code> is an error because it is no longer valid to invoke <code>bar</code> after its establishing <code>block</code> has returned.</p>
     <pre class="code">
 define constant foo =
   block (bar)

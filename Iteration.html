@@ -144,8 +144,8 @@
 </td></tr></table><a name="HEADING34-65"></a>
 <a name="UID-Program_Control-5136"></a>
 <h2 class="subsection-title"><a name="MARKER-2-467"></a>Tail Recursion</h2>
-<p class="T1.Text1">Implementations are encouraged to optimize tail recursive function calls whenever possible. Tail recursion occurs when a function <var>F<em><sub>1</sub></em></var> returns the values of a call to another function <var>F<em><sub>2</sub></em></var>. In many cases, this can be used to create loops using self-recursive or mutually recursive functions. (Among the cases that cannot be optimized are those in which the return value types of <var>F<em><sub>1</sub></em></var> and <var>F<em><sub>2</sub></em></var> differ, requiring the <var>F<em><sub>1</sub></em></var> to check the types of the values before returning them.)</p>
-<p class="T1.Text1">The following example uses tail recursion to compute the name of the root volume on which a given file system object is stored.</p>
+<p>Implementations are encouraged to optimize tail recursive function calls whenever possible. Tail recursion occurs when a function <var>F<em><sub>1</sub></em></var> returns the values of a call to another function <var>F<em><sub>2</sub></em></var>. In many cases, this can be used to create loops using self-recursive or mutually recursive functions. (Among the cases that cannot be optimized are those in which the return value types of <var>F<em><sub>1</sub></em></var> and <var>F<em><sub>2</sub></em></var> differ, requiring the <var>F<em><sub>1</sub></em></var> to check the types of the values before returning them.)</p>
+<p>The following example uses tail recursion to compute the name of the root volume on which a given file system object is stored.</p>
 <pre class="code">
 define method root-volume-name (f :: &lt;file-or-directory&gt;)
   if ( root-volume?(f) ) 
@@ -155,7 +155,7 @@ define method root-volume-name (f :: &lt;file-or-directory&gt;)
   end if;
 end method;
 </pre>
-<p class="T1.Text1">The example above can execute with constant stack size,  regardless of how deeply nested the file system hierarchy may be.<a name="MARKER-2-468"></a></p>
+<p>The example above can execute with constant stack size,  regardless of how deeply nested the file system hierarchy may be.<a name="MARKER-2-468"></a></p>
 
 </div>
 

@@ -172,8 +172,8 @@
 	  <p>Returns a sequence of all of the methods in <var>generic-function</var>. The order of
 	  the methods in the sequence is not significant. The sequence returned should never be
 	  destructively modified. Doing so may cause unpredictable behavior.</p>
-	  <p class="T1.Text1">If <var>generic-function</var> is sealed, an implementation may choose
-	  not to return a sequence of methods, but instead signal an error of
+	  <p>If <var>generic-function</var> is sealed, an implementation may choose not to return a
+	  sequence of methods, but instead signal an error of
 	  type <code>&lt;sealed-object-error&gt;</code>.</p></dd>
       </dl>
       <a name="HEADING106-9"></a>
@@ -212,21 +212,20 @@
 	<dd class="Cliche">
 	  <p>Adds <var>method</var> to <var>generic-function</var>, thereby modifying
 	  the <var>generic-function</var>.</p>
-	  <p class="T1.Text1">Programs do not commonly call <code>add-method</code> directly. It is
-	  called by <code>define method</code>.</p>
-	  <p class="T1.Text1">If you add a method to a generic function, and the generic function
-	  already has a method with the exact same specializers, then the old method is replaced
-	  with the new one.</p>
-	  <p class="T1.Text1">A single method may be added to any number of generic functions.</p>
-	  <p class="T1.Text1"><code>add-method</code> returns two values. The first is the
-	  new <var>method</var>. The second will be either the method in <var>generic-function</var>
-	  that is being replaced by <var>method</var>, or it will be <code>#f</code> if no method is
-	  being replaced.</p>
-	  <p class="T1.Text1"><code>add-method</code> may signal an error of
+	  <p>Programs do not commonly call <code>add-method</code> directly. It is called
+	  by <code>define method</code>.</p>
+	  <p>If you add a method to a generic function, and the generic function already has a
+	  method with the exact same specializers, then the old method is replaced with the new
+	  one.</p>
+	  <p>A single method may be added to any number of generic functions.</p>
+	  <p><code>add-method</code> returns two values. The first is the new <var>method</var>. The
+	  second will be either the method in <var>generic-function</var> that is being replaced
+	  by <var>method</var>, or it will be <code>#f</code> if no method is being replaced.</p>
+	  <p><code>add-method</code> may signal an error of
 	  type <code>&lt;sealed-object-error&gt;</code> if adding the method or replacing an
 	  existing method would cause a sealing violation.</p>
-	  <p class="T1.Text1">If <var>generic-function</var> is sealed, or if <var>method</var> is
-	  in a sealed domain of <var>generic-function</var>, then an error of
+	  <p>If <var>generic-function</var> is sealed, or if <var>method</var> is in a sealed domain
+	  of <var>generic-function</var>, then an error of
 	  type <code>&lt;sealed-object-error&gt;</code> is signaled.</p></dd>
       </dl>
       <a name="HEADING106-23"></a>
@@ -268,8 +267,8 @@
 	  generic function accepts keywords but does not have any mandatory
 	  keywords. <code>generic-function-mandatory-keywords</code> returns <code>#f</code>
 	  if <var>generic-function</var> does not accept keyword arguments.</p>
-	  <p class="T1.Text1">The collection returned should never be destructively modified. Doing
-	  so may cause unpredictable behavior.</p></dd>
+	  <p>The collection returned should never be destructively modified. Doing so may cause
+	  unpredictable behavior.</p></dd>
       </dl>
       <a name="HEADING106-30"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1900">function-specializers</code> </span><span class="attributes-summary">[Function]</span></h4>
@@ -309,8 +308,8 @@
 	  element of the sequence will be the specializer of the first argument
 	  of <var>function</var>, the second will be the specializer of the second argument, and so
 	  on.</p>
-	  <p class="T1.Text1">The sequence returned should never be destructively modified. Doing so
-	  may cause unpredictable behavior.</p></dd>
+	  <p>The sequence returned should never be destructively modified. Doing so may cause
+	  unpredictable behavior.</p></dd>
       </dl>
       <a name="HEADING106-37"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1902">function-arguments</code> </span><span class="attributes-summary">[Function]</span></h4>
@@ -365,9 +364,9 @@
 	    either a collection of the keywords that are permissible for any call to the function,
 	    or the symbol <code>#"all"</code> if all keywords are permitted by the function.</li>
 	  </ul>
-	  <p class="T1.Text1">Note that particular calls to a generic function may accept additional
-	  keywords not included in the third value returned by <code>function-arguments</code>, by
-	  virtue of their being recognized by applicable methods.</p>
+	  <p>Note that particular calls to a generic function may accept additional keywords not
+	  included in the third value returned by <code>function-arguments</code>, by virtue of
+	  their being recognized by applicable methods.</p>
 	</dd>
       </dl>
       <a name="HEADING106-49"></a>
@@ -454,15 +453,14 @@
 	  <p>Returns true if <var>function</var> is a method that would be applicable
 	  to <var>sample-args</var> or if it is a generic function that contains a method that would
 	  be applicable to <var>sample-args</var>.</p>
-	  <p class="T1.Text1">Note that if <var>function</var> is a generic function, then calling
-	  it with the <var>sample-args</var> may still signal an error, even
+	  <p>Note that if <var>function</var> is a generic function, then calling it with
+	  the <var>sample-args</var> may still signal an error, even
 	  if <code>applicable-method?</code> returns true. This is because the generic function may
 	  contain methods that are ambiguous relative to
 	  the <var>sample-args</var>. See <a href="Method_Dispatch#MARKER-9-849">"Method
 	  Specificity" on page 96</a> for a complete description of ambiguous methods.</p>
-	  <p class="T1.Text1">If <var>function</var> is a sealed generic
-	  function, <code>applicable-method?</code> may signal an error of
-	  type <code>&lt;sealed-object-error&gt;</code>.</p></dd>
+	  <p>If <var>function</var> is a sealed generic function, <code>applicable-method?</code>
+	  may signal an error of type <code>&lt;sealed-object-error&gt;</code>.</p></dd>
       </dl>
       <a name="HEADING106-67"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1908">sorted-applicable-methods</code> </span><span class="attributes-summary">[Function]</span></h4>
@@ -505,10 +503,10 @@
 	  the <var>sample-args</var>. <var>sorted-methods</var> contains methods that are more
 	  specific than every method that follows them. <var>unsorted-methods</var> begins at the
 	  first point of ambiguity; it contains the methods that cannot be sorted.</p>
-	  <p class="T1.Text1">The sequences returned should never be destructively modified. Doing
-	  so may cause unpredictable behavior.</p>
-	  <p class="T1.Text1">If <var>generic-function</var> is sealed, an implementation may choose
-	  not to return two sequences of methods, but instead signal an error of
+	  <p>The sequences returned should never be destructively modified. Doing so may cause
+	  unpredictable behavior.</p>
+	  <p>If <var>generic-function</var> is sealed, an implementation may choose not to return
+	  two sequences of methods, but instead signal an error of
 	  type <code>&lt;sealed-object-error&gt;</code>.</p></dd>
       </dl>
       <a name="HEADING106-77"></a>
@@ -548,8 +546,8 @@
 	  <p>Returns the method in <var>generic-function</var> that has the specializers
 	  in <var>specializers</var> as its specializers. The specializers must match exactly for a
 	  method to be returned.</p>
-	  <p class="T1.Text1">If <var>generic-function</var> is sealed, an implementation may choose
-	  to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than return a
+	  <p>If <var>generic-function</var> is sealed, an implementation may choose to signal an
+	  error of type <code>&lt;sealed-object-error&gt;</code> rather than return a
 	  value.</p></dd>
       </dl>
       <a name="HEADING106-85"></a>
@@ -587,9 +585,9 @@
 	<dd class="Cliche">
 	  <p>Removes <var>method</var> from <var>generic-function</var> and
 	  returns <var>method</var>.</p>
-	  <p class="T1.Text1">This operation modifies the <var>generic-function</var>.</p>
-	  <p class="T1.Text1">If <var>generic-function</var> is sealed, or if <var>method</var> is
-	  in a sealed domain of <var>generic-function</var>, then an error of
+	  <p>This operation modifies the <var>generic-function</var>.</p>
+	  <p>If <var>generic-function</var> is sealed, or if <var>method</var> is in a sealed domain
+	  of <var>generic-function</var>, then an error of
 	  type <code>&lt;sealed-object-error&gt;</code> is
 	  signaled.<a name="MARKER-2-1914"></a><code><a name="MARKER-2-1915"></a></code>
 	  </p>

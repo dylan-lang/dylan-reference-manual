@@ -262,8 +262,9 @@
 	  </dl>
 	</dd>
 	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>Returns the class precedence list of <var>class</var>. This is an ordered sequence of<var>class</var> and all its superclasses, as described in <a href="Classes#MARKER-9-590">"Computing the Class Precedence List" on page 54</a>.</p>
-	  <p class="T1.Text1">The result <var>sequence</var> should never be destructively modified. Doing so may cause unpredictable behavior. If <var>class</var> is sealed, an implementation may choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than returning the sequence of all superclasses.</p></dd>
+	<dd class="Cliche">
+	  <p>Returns the class precedence list of <var>class</var>. This is an ordered sequence of<var>class</var> and all its superclasses, as described in <a href="Classes#MARKER-9-590">"Computing the Class Precedence List" on page 54</a>.</p>
+	  <p>The result <var>sequence</var> should never be destructively modified. Doing so may cause unpredictable behavior. If <var>class</var> is sealed, an implementation may choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than returning the sequence of all superclasses.</p></dd>
       </dl>
       <a name="HEADING103-29"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1868">direct-superclasses</code> </span><span class="attributes-summary">[Function]</span></h4>
@@ -296,8 +297,9 @@
 	  </dl>
 	</dd>
 	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>Returns the direct superclasses of <var>class</var>  in a sequence. These are the classes that were passed as arguments to <code>make</code> or <code>define class</code> when the <var>class</var> was created. The order of the classes in the sequence is the same as the order in which they were passed to <code>define class</code> or <code>make</code> when <var>class</var> was created.</p>
-	  <p class="T1.Text1">The result <var>sequence</var> should never be destructively modified. Doing so may cause unpredictable behavior. If <var>class</var> is sealed, an implementation may choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than returning the direct superclasses.</p></dd>
+	<dd class="Cliche">
+	  <p>Returns the direct superclasses of <var>class</var>  in a sequence. These are the classes that were passed as arguments to <code>make</code> or <code>define class</code> when the <var>class</var> was created. The order of the classes in the sequence is the same as the order in which they were passed to <code>define class</code> or <code>make</code> when <var>class</var> was created.</p>
+	  <p>The result <var>sequence</var> should never be destructively modified. Doing so may cause unpredictable behavior. If <var>class</var> is sealed, an implementation may choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than returning the direct superclasses.</p></dd>
       </dl>
       <a name="HEADING103-36"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1870">direct-subclasses</code> </span><span class="attributes-summary">[Function]</span></h4>
@@ -330,8 +332,9 @@
 	  </dl>
 	</dd>
 	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>Returns the direct subclasses of  <var>class</var>  in a sequence. These are the classes that have <var>class</var> as a direct superclass. The order of the classes in the sequence is not significant.</p>
-	  <p class="T1.Text1">The result <var>sequence</var> should never be destructively modified. Doing so may cause unpredictable behavior. If <var>class</var> is sealed, an implementation may choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than returning the direct subclasses.<a name="MARKER-2-1872"></a></p></dd>
+	<dd class="Cliche">
+	  <p>Returns the direct subclasses of  <var>class</var>  in a sequence. These are the classes that have <var>class</var> as a direct superclass. The order of the classes in the sequence is not significant.</p>
+	  <p>The result <var>sequence</var> should never be destructively modified. Doing so may cause unpredictable behavior. If <var>class</var> is sealed, an implementation may choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than returning the direct subclasses.<a name="MARKER-2-1872"></a></p></dd>
       </dl>
 
     </div>

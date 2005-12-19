@@ -128,7 +128,7 @@
 <a name="HEADING115-0"></a>
 <a name="UID-Built-In_Macros-5344"></a>
 <h1 class="section-title"><a name="MARKER-9-2068"></a>Function Macros</h1>
-<p class="T1.Text1"><a name="MARKER-2-2069"></a>Function macros provide syntax for assignment and for conditional execution. These three built-in function macros may be called using function-call syntax or operator syntax.</p>
+<p><a name="MARKER-2-2069"></a>Function macros provide syntax for assignment and for conditional execution. These three built-in function macros may be called using function-call syntax or operator syntax.</p>
 <table class="numbered"><caption><strong>Table 14-4</strong>  Function Macros</caption>
   <tr><th class="primary"><p> Macro</p>
     </th><th><p> Description</p>
@@ -166,14 +166,15 @@
     <p><var>new-value</var>, an instance of <code>&lt;object&gt;</code>.</p>
   </dd>
   <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><code>:=</code> stores <var>new-value</var> in <var>place</var> and returns <var>new-value</var>.</p>
-    <p class="T1.Text1"><var>place</var> may be a variable, a getter function or macro call with a corresponding setter, a slot access, or an element reference.</p>
-    <p class="T1.Text1"><var>new-value</var> may be any operand. It is executed, and its value is stored in <var>place</var>.</p>
-    <p class="T1.Text1">In all cases, <var>new-value</var> must be an appropriate type for <var>place</var> or an error is signaled.</p>
-    <p class="T1.Text1">The <var>new-value</var> of an assignment statement is executed first, followed by the <var>place</var> (assuming the <var>place</var> requires any execution, which will only be true if it is not a binding name).</p>
+  <dd class="Cliche">
+    <p><code>:=</code> stores <var>new-value</var> in <var>place</var> and returns <var>new-value</var>.</p>
+    <p><var>place</var> may be a variable, a getter function or macro call with a corresponding setter, a slot access, or an element reference.</p>
+    <p><var>new-value</var> may be any operand. It is executed, and its value is stored in <var>place</var>.</p>
+    <p>In all cases, <var>new-value</var> must be an appropriate type for <var>place</var> or an error is signaled.</p>
+    <p>The <var>new-value</var> of an assignment statement is executed first, followed by the <var>place</var> (assuming the <var>place</var> requires any execution, which will only be true if it is not a binding name).</p>
     <a name="HEADING115-75"></a>
     <h5 class="description-subsection-title">Assignment to a binding</h5>
-    <p class="T1.Text1">If <var>place</var> is a binding name, then <var>new-value</var> is stored in the binding. It is an error if there is no binding corresponding to <var>place</var>. (<code>:=</code> cannot be used to create bindings, only to change their values.)  An error is also signaled if <var>place</var> is a binding specialized to a type and the <var>new-value</var> is not of that type.</p>
+    <p>If <var>place</var> is a binding name, then <var>new-value</var> is stored in the binding. It is an error if there is no binding corresponding to <var>place</var>. (<code>:=</code> cannot be used to create bindings, only to change their values.)  An error is also signaled if <var>place</var> is a binding specialized to a type and the <var>new-value</var> is not of that type.</p>
     <pre class="code">
 define variable *number* = 10;
 *number*
@@ -184,28 +185,28 @@ define variable *number* = 10;
 <code> &rArr;</code>  20 </pre>
     <a name="HEADING115-78"></a>
     <h5 class="description-subsection-title">Assignment to a function or function macro</h5>
-    <p class="T1.Text1">If <var>place</var> has the syntax of a function call, then <code>:=</code> will invoke the corresponding setter function. Given a binding named <var>fun</var>, the corresponding setter is the binding named <code><var>fun</var>-setter</code></i> in the current environment.</p>
-  <p class="T1.Text1"><code>:=</code> maps <var>place</var> to <code><var>place</var>-setter</code></i> without regard for whether <var>place</var> is a function or a macro. It does not expand a macro call on the left-hand side before determining the setter.</p>
-    <p class="T1.Text1">With the exception of the order of execution and a guaranteed return value, the following three expressions are equivalent:</p>
+    <p>If <var>place</var> has the syntax of a function call, then <code>:=</code> will invoke the corresponding setter function. Given a binding named <var>fun</var>, the corresponding setter is the binding named <code><var>fun</var>-setter</code></i> in the current environment.</p>
+  <p><code>:=</code> maps <var>place</var> to <code><var>place</var>-setter</code></i> without regard for whether <var>place</var> is a function or a macro. It does not expand a macro call on the left-hand side before determining the setter.</p>
+    <p>With the exception of the order of execution and a guaranteed return value, the following three expressions are equivalent:</p>
     <pre class="code">
 *top-view*.subviews := generate-subviews()
 subviews(*top-view*) := generate-subviews()
 subviews-setter(generate-subviews(), *top-view*) </pre>
-    <p class="T1.Text1">(The differences are as follows: the execution time of <code>subviews-setter</code> is undefined in the first two expressions but defined in the last; the first two expressions will return the value of the call to <code>generate-subviews</code> while the last will return the value of the call to <code>subviews-setter</code>.)</p>
+    <p>(The differences are as follows: the execution time of <code>subviews-setter</code> is undefined in the first two expressions but defined in the last; the first two expressions will return the value of the call to <code>generate-subviews</code> while the last will return the value of the call to <code>subviews-setter</code>.)</p>
     <pre class="code">
 name(arg1,&hellip;argn ) := new-value </pre>
-    <p class="T1.Text1">behaves exactly the same as</p>
+    <p>behaves exactly the same as</p>
     <pre class="code">
 begin
   let <var>temp</var> = new-value;
   name-setter(temp, arg1,&hellip;argn );
   <var>temp</var>
 end</pre>
-    <p class="T1.Text1">This is true regardless of whether <code>name</code> and <code>name-setter</code> are functions or macros. Here <var>temp</var> stands for a variable with a unique name. If <code>name-setter</code> is a macro, it  is responsible for the order of executation of <code>arg1,&hellip;argn</code>.</p>
-    <p class="T1.Text1">The same considerations apply to <code>arg.name := new-value</code>.</p>
+    <p>This is true regardless of whether <code>name</code> and <code>name-setter</code> are functions or macros. Here <var>temp</var> stands for a variable with a unique name. If <code>name-setter</code> is a macro, it  is responsible for the order of executation of <code>arg1,&hellip;argn</code>.</p>
+    <p>The same considerations apply to <code>arg.name := new-value</code>.</p>
     <a name="HEADING115-89"></a>
     <h5 class="description-subsection-title">Assignment to element references</h5>
-    <p class="T1.Text1">Just as <code>[]</code> can be used as syntax for <code>element</code> and <code>aref</code>, <code>[]</code> and <code>:=</code> can be used as syntax for <code>element-setter</code> and <code>aref-setter</code>. For example, the following three expressions are equivalent:</p>
+    <p>Just as <code>[]</code> can be used as syntax for <code>element</code> and <code>aref</code>, <code>[]</code> and <code>:=</code> can be used as syntax for <code>element-setter</code> and <code>aref-setter</code>. For example, the following three expressions are equivalent:</p>
     <pre class="code">
 foo[2] := &quot;quux&quot;
 element (foo, 2) := &quot;quux&quot;
