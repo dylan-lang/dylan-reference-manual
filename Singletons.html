@@ -122,18 +122,18 @@
 <p>Singleton methods are considered more specific than methods defined on an object's class. Singletons are the most specific specializer.</p>
 <pre class="code">
 define method double (thing :: singleton(#"cup"))
-  #&quot;pint&quot;
+  #"pint"
 end method
-double (#&quot;cup&quot;)
-<code> &rArr;</code>  #&quot;pint&quot;
+double (#"cup")
+<code> &rArr;</code>  #"pint"
 </pre>
 <p>Dylan provides a concise syntax for singletons used as method specializers. The following definition is equivalent to the previous one; it generates a call to the binding of <code>singleton</code> in the current lexical environment.</p>
 <pre class="code">
-define method double (thing == #&quot;cup&quot;)
-  #&quot;pint&quot;
+define method double (thing == #"cup")
+  #"pint"
 end method
-double (#&quot;cup&quot;)
-<code> &rArr;</code>  #&quot;pint&quot;<a name="MARKER-2-699"></a>
+double (#"cup")
+<code> &rArr;</code>  #"pint"<a name="MARKER-2-699"></a>
 </pre>
 
 </div>

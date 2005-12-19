@@ -1144,8 +1144,8 @@ reduce(\*, 1, dimensions (array))</pre>
     <p>Returns the last element of <var>sequence</var>.</p>
     <p>If the sequence is empty, then the behavior of <code>last</code> depends on whether it was called with a <var>default</var> argument. If the <var>default</var> argument was supplied, its value is returned; otherwise, an error is signaled.</p>
     <pre class="code">
-last (#(&quot;emperor&quot;, &quot;of&quot;, &quot;china&quot;))
-<code> &rArr;</code>  &quot;china&quot;</pre>
+last (#("emperor", "of", "china"))
+<code> &rArr;</code>  "china"</pre>
   </dd>
 </dl>
 <a name="HEADING102-208"></a>
@@ -1369,10 +1369,10 @@ tail (x) := #(9, 8, 7)
 <code> &rArr;</code>  #(9, 8, 7)
 x
 <code> &rArr;</code>  #(4, 9, 8, 7)
-tail (x) := &quot;dot&quot;
-<code> &rArr;</code>  &quot;dot&quot;
+tail (x) := "dot"
+<code> &rArr;</code>  "dot"
 x
-<code> &rArr;</code>  #(4, 9, 8 . &quot;dot&quot;)<a name="MARKER-2-1751"></a></pre>
+<code> &rArr;</code>  #(4, 9, 8 . "dot")<a name="MARKER-2-1751"></a></pre>
   </dd>
 </dl>
 <a name="HEADING102-253"></a>
@@ -1847,13 +1847,13 @@ define variable *new-list* = remove(*old-list*, 1)
     <p>The <var>result-sequence</var> may or may not be freshly allocated. The <var>source-sequence</var> is not modified by this operation.</p>
     <p>The consequences are undefined if the <var>source-sequence</var> is unbounded (circular or infinite).</p>
     <pre class="code">
-define variable *x* = list(&quot;bim&quot;, &quot;bam&quot;, &quot;boom&quot;)
+define variable *x* = list("bim", "bam", "boom")
 *x*
-  &rArr;  #(&quot;bim&quot;, &quot;bam&quot;, &quot;boom&quot;)
+  &rArr;  #("bim", "bam", "boom")
 reverse(*x*)
-  &rArr;  #(&quot;boom&quot;, &quot;bam&quot;, &quot;bim&quot;)
+  &rArr;  #("boom", "bam", "bim")
 *x*
-  &rArr;  #(&quot;bim&quot;, &quot;bam&quot;, &quot;boom&quot;)</pre>
+  &rArr;  #("bim", "bam", "boom")</pre>
     <a name="HEADING102-371"></a>
     <h5 class="method-signature"><span class="signature"><code>reverse</code> <var>range</var> &rArr; <var>new-range</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <p>Reversing a range produces another range. An unbounded range cannot be reversed.</p>
@@ -1894,7 +1894,7 @@ reverse(*x*)
     <p>Returns a sequence containing the same elements as <var>source-sequence</var>, but in reverse order. The <var>result-sequence</var> is generally of the same class as the <var>source-sequence</var>.</p>
     <p>The <var>source-sequence</var> may be modified by this operation. The <var>result-sequence</var> may or may not be freshly allocated. The <var>source-sequence</var> and the <var>result-sequence</var> may or may not be <code>==</code>. Programs should never rely on this operation performing a side-effect on an existing sequence, but should instead use the value returned by the function.</p>
     <p>The consequences are undefined if the <var>source-sequence</var> is unbounded (circular or infinite).</p>
-    <p><code>define variable *x* = list(&quot;bim&quot;, &quot;bam&quot;, &quot;boom&quot;)<br />*x*<br />  &rArr;  #(&quot;bim&quot;, &quot;bam&quot;, &quot;boom&quot;)<br />reverse!(*x*)<br />  &rArr;  #(&quot;boom&quot;, &quot;bam&quot;, &quot;bim&quot;)<br />*x*<br />  &rArr; {undefined}</code></p>
+    <p><code>define variable *x* = list("bim", "bam", "boom")<br />*x*<br />  &rArr;  #("bim", "bam", "boom")<br />reverse!(*x*)<br />  &rArr;  #("boom", "bam", "bim")<br />*x*<br />  &rArr; {undefined}</code></p>
     <a name="HEADING102-382"></a>
     <h5 class="method-signature"><span class="signature"><code>reverse!</code> <var>range</var> &rArr; <var>range</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <p>The result of <code>reverse!</code> on a range is <code>==</code> to the <var>range</var> argument. An unbounded range cannot be reversed.</p>
@@ -2031,10 +2031,10 @@ sort (*numbers*)
     <p><var>test</var>  is used to determine whether an element appears in <var>sequence2</var>. It is always called with an element of <var>sequence1</var>  as its first argument and an element from <var>sequence2</var>  as its second argument. The order of elements in the result sequence is not specified.</p>
     <p><var>new-sequence</var> may or may not share structure with the <var>sequence1</var> and <var>sequence2</var>.</p>
     <pre class="code">
-? intersection (#(&quot;john&quot;, &quot;paul&quot;, &quot;george&quot;, &quot;ringo&quot;),
-                #(&quot;richard&quot;, &quot;george&quot;, &quot;edward&quot;, &quot;charles&quot;),
+? intersection (#("john", "paul", "george", "ringo"),
+                #("richard", "george", "edward", "charles"),
                 test: \=)
-#(&quot;george&quot;)</pre>
+#("george")</pre>
     <a name="HEADING102-419"></a>
     <h5 class="method-signature"><span class="signature"><code>intersection <var>range1 range2</var> #key <var>test</var> </code>&rArr;<code> <var>range</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <p><code>intersection</code> applied to two ranges and a test of <code>==</code> (the default) will produce another range as its result, even though the <code>type-for-copy</code> of a range is not <code>&lt;range&gt;</code>. If either <var>range1</var> or <var>range2</var> is unbounded, this method is guaranteed to terminate only if the <var>test</var> is <code>==</code>.</p>
@@ -2080,11 +2080,11 @@ sort (*numbers*)
     <p><var>test</var> is used for all comparisons. It is always called with an element from <var>sequence1</var>  as its first argument and an element from <var>sequence2</var>  as its second argument. The order of elements in the <var>new-sequence</var> is not specified.</p>
     <p><var>new-sequence</var> may or may not share structure with <var>sequence1</var> or <var>sequence2</var>.</p>
     <pre class="code">
-union (#(&quot;butter&quot;, &quot;flour&quot;, &quot;sugar&quot;, &quot;salt&quot;, &quot;eggs&quot;),
-       #(&quot;eggs&quot;, &quot;butter&quot;, &quot;mushrooms&quot;, &quot;onions&quot;, &quot;salt&quot;),
+union (#("butter", "flour", "sugar", "salt", "eggs"),
+       #("eggs", "butter", "mushrooms", "onions", "salt"),
        test: \=)
-<code> &rArr;</code>  #(&quot;salt&quot;, &quot;butter&quot;, &quot;flour&quot;, &quot;sugar&quot;, &quot;eggs&quot;,
-       &quot;mushrooms&quot;, &quot;onions&quot;)</pre>
+<code> &rArr;</code>  #("salt", "butter", "flour", "sugar", "eggs",
+       "mushrooms", "onions")</pre>
   </dd>
 </dl>
 <a name="HEADING102-433"></a>
@@ -2124,14 +2124,14 @@ union (#(&quot;butter&quot;, &quot;flour&quot;, &quot;sugar&quot;, &quot;salt&qu
     <p><var>test</var>  is the function used to determine whether one element is a duplicate of another. The <var>test</var> argument may be noncommutative; it will always be called with its arguments in the same order as they appear in <var>source-sequence</var>.</p>
     <p>The <var>result-sequence</var> may or may not be freshly allocated. However, the <var>source-sequence</var> will not be modified by this operation.</p>
     <pre class="code">
-remove-duplicates (#(&quot;spam&quot;, &quot;eggs&quot;, &quot;spam&quot;, 
-                     &quot;sausage&quot;, &quot;spam&quot;, &quot;spam&quot;),
+remove-duplicates (#("spam", "eggs", "spam", 
+                     "sausage", "spam", "spam"),
                     test: \=)
-<code> &rArr;</code>  #(&quot;spam&quot;, &quot;eggs&quot;, &quot;sausage&quot;)
+<code> &rArr;</code>  #("spam", "eggs", "sausage")
 or
-<code> &rArr;</code>  #(&quot;eggs&quot;, &quot;spam&quot;, &quot;sausage&quot;)
+<code> &rArr;</code>  #("eggs", "spam", "sausage")
 or
-<code> &rArr;</code>  #(&quot;eggs&quot;, &quot;sausage&quot;, &quot;spam&quot;)</pre>
+<code> &rArr;</code>  #("eggs", "sausage", "spam")</pre>
   </dd>
 </dl>
 <a name="HEADING102-443"></a>
@@ -2171,14 +2171,14 @@ or
     <p><var>test</var>  is the function used to determine whether one element is a duplicate of another. The <var>test</var> argument may be noncommutative; it will always be called with its arguments in the same order as they appear in <var>source-sequence</var>.</p>
     <p>The <var>result-sequence</var> may or may not be freshly allocated, may or may not share structure with the <var>source-sequence</var>, and may or may not be <code>==</code> to the <var>source-sequence</var>. The <var>source-sequence</var> may or may not be modified by the operation.</p>
     <pre class="code">
-define variable *menu* = #(&quot;spam&quot;, &quot;eggs&quot;, &quot;spam&quot;, 
-                           &quot;sausage&quot;, &quot;spam&quot;, &quot;spam&quot;)
+define variable *menu* = #("spam", "eggs", "spam", 
+                           "sausage", "spam", "spam")
 remove-duplicates! (*menu*, test: \=)
-  &rArr;  #(&quot;spam&quot;, &quot;eggs&quot;, &quot;sausage&quot;)
+  &rArr;  #("spam", "eggs", "sausage")
 or
-<code> &rArr;</code>  #(&quot;eggs&quot;, &quot;spam&quot;, &quot;sausage&quot;)
+<code> &rArr;</code>  #("eggs", "spam", "sausage")
 or
-<code> &rArr;</code>  #(&quot;eggs&quot;, &quot;sausage&quot;, &quot;spam&quot;)
+<code> &rArr;</code>  #("eggs", "sausage", "spam")
 *menu*
   &rArr;  {undefined}<a name="MARKER-2-1795"></a></pre>
   </dd>
@@ -2223,11 +2223,11 @@ or
   <dd>
     <p>Creates a freshly allocated sequence containing the elements of <var>source</var> between <var>start</var> and <var>end</var>.</p>
     <pre class="code">
-define constant hamlet = #(&quot;to&quot;, &quot;be&quot;, &quot;or&quot;, &quot;not&quot;, &quot;to&quot;, &quot;be&quot;)
+define constant hamlet = #("to", "be", "or", "not", "to", "be")
 hamlet == copy-sequence (hamlet)
 <code> &rArr;</code>  #f
 copy-sequence (hamlet, start: 2, end: 4)
-<code> &rArr;</code>  #(&quot;or&quot;, &quot;not&quot;)</pre>
+<code> &rArr;</code>  #("or", "not")</pre>
     <a name="HEADING102-463"></a>
     <h5 class="method-signature"><span class="signature"><code>copy-sequence</code>   <var>range</var> <code>#key</code> <var>start end</var> &rArr;  <var>new-range</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <p>When applied to a range, <code>copy-sequence</code> returns another range, even though the <code>type-for-copy</code> of a range is the <code>&lt;list&gt;</code> class.</p>
@@ -2270,8 +2270,8 @@ copy-sequence (hamlet, start: 2, end: 4)
     <p>The <var>result-sequence</var> will be an instance of the <code>type-for-copy</code> value for <var>first-sequence</var>. It may or may not be freshly allocated. The <var>result-sequence</var> may be created by calling <code>make</code> on the indicated type, with a <code>size:</code> initialization argument whose value is the sum of the sizes of the argument sequences. (For this reason, the <code>type-for-copy</code> value of <var>first-sequence</var> must support the <code>size:</code> init-keyword.)</p>
     <p><var>new-sequence</var> may share structure with any of the argument sequences, but it is not guaranteed to do so.  The argument sequences will not be modified by this operation.</p>
     <pre class="code">
-concatenate (&quot;low-&quot;, &quot;calorie&quot;)
-<code> &rArr;</code>  &quot;low-calorie&quot;</pre>
+concatenate ("low-", "calorie")
+<code> &rArr;</code>  "low-calorie"</pre>
   </dd>
 </dl>
 <a name="HEADING102-475"></a>
@@ -2314,7 +2314,7 @@ concatenate (&quot;low-&quot;, &quot;calorie&quot;)
     <p><var>type</var> must be a subtype of <code>&lt;mutable-sequence&gt;</code> and acceptable as the first argument to <code>make</code>. <code>size:</code> with a non-negative integer value must be an acceptable initarg for <code>make</code> of <var>type</var>. The <var>result-sequence</var> may be created by calling <code>make</code> on <var>type</var>, with a <code>size: </code>initialization argument whose value is the sum of the sizes of the arguments.</p>
     <pre class="code">
 concatenate-as (&lt;string&gt;, #('n', 'o', 'n'), #('f', 'a', 't'))
-<code> &rArr;</code>  &quot;nonfat&quot;</pre>
+<code> &rArr;</code>  "nonfat"</pre>
   </dd>
 </dl>
 <a name="HEADING102-486"></a>
@@ -2359,14 +2359,14 @@ concatenate-as (&lt;string&gt;, #('n', 'o', 'n'), #('f', 'a', 't'))
       <var>source-sequence</var> should be <var>target-sequence</var>.</p>
     <p><var>result-sequence</var>  may or may not share structure with <var>source-sequence</var> or <var>insert-sequence</var>, and it may or may not be <code>==</code> to <var>source-sequence</var> or <var>insert-sequence</var>. <var>source-sequence</var>  may or may not be modified by the operation. <var>insert-sequence</var> will not be modified by this operation.</p>
     <pre class="code">
-define variable *original* = list (&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;)
-*new* := replace-subsequence! (*original*, #(&quot;x&quot;, &quot;y&quot;, &quot;z&quot;), end: 1))
-    #(&quot;x&quot;, &quot;y&quot;, &quot;z&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;)
-*new* := replace-subsequence! (*new*, #(&quot;x&quot;, &quot;y&quot;, &quot;z&quot;), start: 4))
-    #(&quot;x&quot;, &quot;y&quot;, &quot;z&quot;, &quot;b&quot;, &quot;x&quot;, &quot;y&quot;, &quot;z&quot;)
-*new* := replace-subsequence! (*new*, #(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;), 
+define variable *original* = list ("a", "b", "c", "d", "e")
+*new* := replace-subsequence! (*original*, #("x", "y", "z"), end: 1))
+    #("x", "y", "z", "b", "c", "d", "e")
+*new* := replace-subsequence! (*new*, #("x", "y", "z"), start: 4))
+    #("x", "y", "z", "b", "x", "y", "z")
+*new* := replace-subsequence! (*new*, #("a", "b", "c"), 
                                       start: 2, end: 4))
-    #(&quot;x&quot;, &quot;y&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;x&quot;, &quot;y&quot;, &quot;z&quot;)</pre>
+    #("x", "y", "a", "b", "c", "x", "y", "z")</pre>
   </dd>
 </dl>
 <a name="HEADING102-500"></a>
@@ -2409,7 +2409,7 @@ define variable *original* = list (&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, 
     <p>Searches <var>big</var> for a subsequence that is element-for-element equal to <var>pattern</var>, as determined by the <var>test</var> argument.</p>
     <p><var>test</var> is applied to elements of successive subsequences of <var>big</var> and corresponding elements of the <var>pattern</var> to determine whether a match has occurred. If a subsequence is found, <code>subsequence-position</code> returns the index at which the subsequence starts; otherwise, it returns <code>#f</code>. If there is more than one match, <var>count</var> determines which subsequence is selected. A <var>count</var> of 1 (the default) indicates that the first match should be returned.</p>
     <pre class="code">
-subsequence-position (&quot;Ralph Waldo Emerson&quot;, &quot;Waldo&quot;)
+subsequence-position ("Ralph Waldo Emerson", "Waldo")
 <code> &rArr;</code>  6</pre>
 </dd>
 </dl>
@@ -2866,8 +2866,8 @@ choose (even?, #(3, 1, 4, 1, 5, 8, 9))
     <p>Returns a sequence containing the elements from <var>value-sequence</var> that correspond to elements in <var>test-sequence</var> that satisfy <var>predicate</var>. The <var>result-sequence</var> may or may not be freshly allocated.</p>
     <pre class="code">
 choose-by (even?, range (from: 1),
-             #(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, &quot;g&quot;, &quot;h&quot;, &quot;i&quot;))
-  &rArr;  #(&quot;b&quot;, &quot;d&quot;, &quot;f&quot;, &quot;h&quot;) </pre>
+             #("a", "b", "c", "d", "e", "f", "g", "h", "i"))
+  &rArr;  #("b", "d", "f", "h") </pre>
   </dd>
 </dl>
 <a name="HEADING102-618"></a>
@@ -2910,10 +2910,10 @@ choose-by (even?, range (from: 1),
     <p><a name="MARKER-2-1835"></a>Returns true if <var>collection</var> contains <var>value</var> as determined by <var>test</var>. Otherwise returns false.</p>
     <p>The <var>test</var> function may be noncommutative: it is always called with <var>value</var> as its first argument and an element from <var>collection</var> as its second argument.</p>
     <pre class="code">
-define constant flavors = #(#&quot;vanilla&quot;, #&quot;pistachio&quot;, #&quot;ginger&quot;)
-member? (#&quot;vanilla&quot;, flavors)      
+define constant flavors = #(#"vanilla", #"pistachio", #"ginger")
+member? (#"vanilla", flavors)      
 <code> &rArr;  #t </code>                                  
-member? (#&quot;banana&quot;, flavors)
+member? (#"banana", flavors)
 <code> &rArr;</code>  #f </pre>
     <a name="HEADING102-629"></a>
     <h5 class="method-signature"><span class="signature"><code>member?</code>  <var>val range</var>  <code>#key</code> <var>test</var> &rArr;  <var>boolean</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
@@ -2961,11 +2961,11 @@ member? (#&quot;banana&quot;, flavors)
     <p>The <var>skip</var> argument indicates that the first <var>skip</var> matching elements should be ignored. If <var>skip</var> or fewer elements of <var>collection</var> satisfy <var>predicate</var>, then <var>failure</var> is returned. If collection is not stable under iteration, then skip is only useful for finding out whether collection contains at least <var>skip</var> elements which satisfy <var>predicate</var>; it is not useful for finding a particular element.</p>
     <pre class="code">
 flavors
-<code> &rArr;</code>  #(#&quot;vanilla&quot;, #&quot;pistachio&quot;, #&quot;ginger&quot;)
+<code> &rArr;</code>  #(#"vanilla", #"pistachio", #"ginger")
 find-key (flavors, has-nuts?)
 <code> &rArr;</code>  1
 flavors[1]
-<code> &rArr;</code>  #&quot;pistachio&quot; </pre>
+<code> &rArr;</code>  #"pistachio" </pre>
   </dd>
 </dl>
 <a name="HEADING102-642"></a>

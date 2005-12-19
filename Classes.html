@@ -212,7 +212,7 @@ define constant compute-class-linearization =
                 merge-lists(pair(next, reversed-partial-result),
                             map(remove-next, remaining-inputs))
               else
-                error(&quot;Inconsistent precedence graph&quot;);
+                error("Inconsistent precedence graph");
               end if
             end if
           end method merge-lists;

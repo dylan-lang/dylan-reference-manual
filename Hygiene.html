@@ -150,10 +150,10 @@
 <p>If one of the following template-element sequences appears in the right-hand side of a rewrite rule, it may introduce named value references to the indicated name in an expansion of the macro. If such a named value reference does not refer to a local binding created by the macro expansion then it must have the same meaning as would a named value reference with the same name adjacent to the macro definition.</p>
 <ul>
   <li><var>variable-name</var><br /><br />Reference to <var>variable-name</var></li>
-  <li><var>getter-name</var> <code>(</code> <var>template<em><sub>opt</sub></em></var> <code>)</code> <var>assignment-operator</var><br /><var>assignment-operator-name</var> <code>(</code> <var>template<em><sub>opt</sub></em></var> <var>getter-name</var> <code>(</code> <var>template<em><sub>opt</sub></em></var> <code>)</code> <code>)</code><br /><br />Reference to <var>getter-name</var> <code>##</code> <code>&quot;-setter&quot;</code></li>
+  <li><var>getter-name</var> <code>(</code> <var>template<em><sub>opt</sub></em></var> <code>)</code> <var>assignment-operator</var><br /><var>assignment-operator-name</var> <code>(</code> <var>template<em><sub>opt</sub></em></var> <var>getter-name</var> <code>(</code> <var>template<em><sub>opt</sub></em></var> <code>)</code> <code>)</code><br /><br />Reference to <var>getter-name</var> <code>##</code> <code>"-setter"</code></li>
   <li><code>[</code> <var>template<em><sub>opt</sub></em></var> <code>]</code> <var>assignment-operator</var><br /><var>assignment-operator-name</var> <code>(</code> <var>template<em><sub>opt</sub></em></var> <code>[</code> <var>template<em><sub>opt</sub></em></var> <code>]</code> <code>)</code><br /><br />Reference to either <code>element-setter</code> and <code>aref-setter</code></li>
-  <li><code>.</code> <var>getter-name</var> <var>assignment-operator</var><br /><var>assignment-operator-name</var> <code>(</code> <var>template<em><sub>opt</sub></em></var> <code>.</code> <var>getter-name</var> <code>)</code><br /><br />Reference to <var>getter-name</var> <code>##</code> <code>&quot;-setter&quot;</code></li>
-  <li><code>define</code> <var>definition-head<em><sub>opt</sub></em></var> <var>definer-name</var><br /><br />Reference to <var>definer-name</var> <code>##</code> <code>&quot;-definer&quot;</code></li>
+  <li><code>.</code> <var>getter-name</var> <var>assignment-operator</var><br /><var>assignment-operator-name</var> <code>(</code> <var>template<em><sub>opt</sub></em></var> <code>.</code> <var>getter-name</var> <code>)</code><br /><br />Reference to <var>getter-name</var> <code>##</code> <code>"-setter"</code></li>
+  <li><code>define</code> <var>definition-head<em><sub>opt</sub></em></var> <var>definer-name</var><br /><br />Reference to <var>definer-name</var> <code>##</code> <code>"-definer"</code></li>
 </ul>
 <p>Items in the preceding template-element sequences have the following meanings:</p>
 <ul class="no-bullet">
@@ -165,7 +165,7 @@
       <li><var>variable-name</var> and <var>getter-name</var> are <em class="BNFCaps">name</em>s.</li>
       <li><var>template</var> is defined in <a href="BNF">Appendix A, <q>BNF,</q></a> on <a href="Phrase_Grammar#MARKER-9-2121">page 429</a>.</li>
       <li><var>definition-head</var> is defined in <a href="BNF">Appendix A, <q>BNF,</q></a> on <a href="Phrase_Grammar#MARKER-9-2117">page 427</a>.</li>
-      <li>The notation <var>foo</var> <code>##</code> <code>&quot;string&quot;</code> indicates a new token composed of the text of <var>foo</var> concatenated with the string.</li>
+      <li>The notation <var>foo</var> <code>##</code> <code>"string"</code> indicates a new token composed of the text of <var>foo</var> concatenated with the string.</li>
     </ul>
   </li>
 </ul>

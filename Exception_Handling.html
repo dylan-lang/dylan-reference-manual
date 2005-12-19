@@ -165,7 +165,7 @@ define method copy-file (source, destination)
     signal(make(&lt;copy-protection-violation&gt;, file: source));
   else
     // copy normally
-    notify-user(&quot;Copying %s to %s.&quot;, source, destination);
+    notify-user("Copying %s to %s.", source, destination);
   end if;
 end method;
 // The following function copies a sequence of files.
@@ -175,7 +175,7 @@ define method backup-all-possible (volume, archive)
   let handler &lt;copy-protection-violation&gt;
        = method (condition, next)
            // The handler just notifies the user and continues
-           notify-user(&quot;The file %s could not be copied.&quot;,
+           notify-user("The file %s could not be copied.",
                        condition.file);
          end method;
   // start copying files, with the handler in effect
@@ -192,7 +192,7 @@ define method backup-exit (volume, archive)
        = method (condition, next)
            // Notify the user and abort the backup
            notify-user(
-    &quot;Backup interrupted: the file %s could not be copied.&quot;,
+    "Backup interrupted: the file %s could not be copied.",
                        condition.file);
            exit(#f);
          end method;
@@ -214,7 +214,7 @@ define method backup-block (volume, archive)
     end for;
   exception (condition :: &lt;copy-protection-violation&gt;)
     notify-user(
-   &quot;Backup interrupted: the file %s could not be copied.&quot;,
+   "Backup interrupted: the file %s could not be copied.",
                 condition.file);
   end block;
 end method;<a name="MARKER-2-937"></a>

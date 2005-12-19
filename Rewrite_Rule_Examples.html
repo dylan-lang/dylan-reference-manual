@@ -392,7 +392,7 @@ define macro select
                                           let compare = \== }
  case-body:
   { }
-   =&gt; { error(&quot;select error, %= doesn't match any key&quot;, object) }
+   =&gt; { error("select error, %= doesn't match any key", object) }
   { otherwise ?:body }              =&gt; { ?body }
   { ?keys =&gt; ?:body; ... }          =&gt; { if (?keys) ?body
                                          else ... end if }
@@ -593,11 +593,11 @@ end;<a name="MARKER-2-1303"></a>
 <pre class="code">
 define macro test
   { test(?object:expression) }
-   =&gt; { frame-slot-getter(?object, #&quot;test&quot;) }
+   =&gt; { frame-slot-getter(?object, #"test") }
 end macro;
 define macro test-setter
   { test-setter(?value:expression, ?object:expression) }
-   =&gt; { frame-slot-setter(?value, ?object, #&quot;test&quot;) }
+   =&gt; { frame-slot-setter(?value, ?object, #"test") }
 end macro;
 test(foo.bar) := foo.baz;
 </pre>
@@ -668,7 +668,7 @@ define macro command-definer
        define-command-2 ?name (?arguments) (?options) end }
 end macro;
 // define the method that implements a command
-// throws away the &quot;stuff&quot; in each argument used by the command parser
+// throws away the "stuff" in each argument used by the command parser
 define macro define-command-1
  { define-command-1 ?:name (?arguments) ?:body end }
   =&gt; { define method ?name (?arguments) ?body end }
@@ -704,22 +704,22 @@ define macro define-command-2
  // reduce one argument specification to a data structure
  argument:
   { ?:name :: ?type:expression = ?default:expression ?details }
-   =&gt; { make(&lt;argument-info&gt;, name: ?&quot;name&quot;, type: ?type,
+   =&gt; { make(&lt;argument-info&gt;, name: ?"name", type: ?type,
              default: ?default, ?details) }
   { ?:name :: ?type:expression ?details }
-   =&gt; { make(&lt;argument-info&gt;, name: ?&quot;name&quot;, type: ?type, ?details) }
+   =&gt; { make(&lt;argument-info&gt;, name: ?"name", type: ?type, ?details) }
  // translate argument specification to &lt;argument-info&gt; init keywords
  details:
   { } =&gt; { }
-  { ?key:name ?value:expression ... } =&gt; { ?#&quot;key&quot; ?value, ... }
+  { ?key:name ?value:expression ... } =&gt; { ?#"key" ?value, ... }
 end macro;
 define command com-show-home-directory
        (directory :: &lt;type&gt; provide-default #t,
-        before :: &lt;time&gt; = #() prompt &quot;date&quot;,
-        after  :: &lt;time&gt; = #() prompt &quot;date&quot;)
+        before :: &lt;time&gt; = #() prompt "date",
+        after  :: &lt;time&gt; = #() prompt "date")
        // Options
        (command-table: directories,
-        name: &quot;Show Home Directory&quot;)
+        name: "Show Home Directory")
     body()
 end command com-show-home-directory;
 </pre>
@@ -735,14 +735,14 @@ define macro get-resource
   { get-resource(?type:expression, ?id:expression) }
    =&gt; { get-resource-from-library(?=$library, ?type, ?id) }
 end macro;
-show-icon(get-resource(ResType(&quot;ICON&quot;), 1044));
+show-icon(get-resource(ResType("ICON"), 1044));
 </pre>
 <a name="HEADING86-110"></a>
 <h3 class="sub-subsection-title">Completing-from-suggestions</h3>
 <pre class="code">
 // The completing-from-suggestions macro defines a lexically visible
-// helper function called &quot;suggest,&quot; which is only meaningful inside
-// of calls to the completer. The &quot;suggest&quot; function is passed as an
+// helper function called "suggest," which is only meaningful inside
+// of calls to the completer. The "suggest" function is passed as an
 // argument to the method passed to complete-input; alternatively it
 // could have been defined in a local declaration wrapped around the
 // method.
@@ -765,9 +765,9 @@ end completing-from-suggestions;
 <pre class="code">
 define macro jump-instruction-definer
   { define jump-instruction ?:name ?options:* end }
-   =&gt; { register-instruction(&quot;j&quot; ## ?#&quot;name&quot;,
+   =&gt; { register-instruction("j" ## ?#"name",
                              make(&lt;instruction&gt;,
-                                  debug-name: &quot;j&quot; ## ?&quot;name&quot;,
+                                  debug-name: "j" ## ?"name",
                                   ?options)) }
 end macro;
 define jump-instruction eq cr-bit: 2, commutative?: #t end;

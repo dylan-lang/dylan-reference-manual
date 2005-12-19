@@ -328,20 +328,20 @@ values(1, 2, 3);
 	  on <code>as</code> will always return the same symbol for strings of the same characters,
 	  without regard to alphabetic case.</p>
 	  <pre class="code">
-as (&lt;symbol&gt;, &quot;foo&quot;)
-<code> &rArr;</code>  #&quot;foo&quot;
-#&quot;FOO&quot; == as (&lt;symbol&gt;, &quot;foo&quot;)
+as (&lt;symbol&gt;, "foo")
+<code> &rArr;</code>  #"foo"
+#"FOO" == as (&lt;symbol&gt;, "foo")
 <code> &rArr;</code>  #t
-#&quot;Foo&quot;
-<code> &rArr;</code>  #&quot;foo&quot;</pre>
+#"Foo"
+<code> &rArr;</code>  #"foo"</pre>
 	  <a name="HEADING101-33"></a>
 	  <h5 class="method-signature"><span class="signature"><code>as <em>(singleton (&lt;string&gt;))</em> <var>symbol</var> </code>
 	      &rArr;<code> <var>string</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
 	  <p>This method on <code>as</code> returns the name of the symbol, which will be a
 	  string.</p>
 	  <pre class="code">
-as (&lt;string&gt;, #&quot;Foo&quot;)
-<code> &rArr;</code>  &quot;Foo&quot;</pre>
+as (&lt;string&gt;, #"Foo")
+<code> &rArr;</code>  "Foo"</pre>
 	</dd>
       </dl>
       <a name="HEADING101-36"></a>

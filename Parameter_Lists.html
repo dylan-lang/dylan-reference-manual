@@ -191,14 +191,14 @@ end method;
 <p><a name="MARKER-2-822"></a>The <var>expression</var> supplies a default value for the parameter. It is used when the method is called and the keyword is not supplied. It is executed each time the method is called and the corresponding keyword argument is not supplied. If no <var>expression</var> is specified, the parameter corresponding to an unsupplied keyword argument is initialized to <code id="MARKER-2-823">#f</code>. The <var>expression</var> is executed in a scope that includes all the preceding parameters, including required parameters, the rest parameter (if any), the preceding keyword parameters, and the next-method parameter (if any).</p>
 <p>In the following example, all three keyword parameters have default values, and all three use the same name for the keyword and the parameter.</p>
 <pre class="code">
-define method percolate (#key brand = #&quot;maxwell-house&quot;,
+define method percolate (#key brand = #"maxwell-house",
                               cups = 4,
-                              strength = #&quot;strong&quot;)
+                              strength = #"strong")
   make-coffee (brand, cups, strength);
 end method;
 </pre>
 <p>The caller can choose which keyword arguments to supply and what order to supply them in:</p>
-<p><code>percolate (brand: #&quot;ja<a name="MARKER-2-824"></a>va&quot;, cups: 10);<br />percolate (strength: #&quot;strong&quot;,<br />           brand: #&quot;st<a name="MARKER-2-825"></a>arbucks&quot;,<br />            cups: 1);</code></p>
+<p><code>percolate (brand: #"ja<a name="MARKER-2-824"></a>va", cups: 10);<br />percolate (strength: #"strong",<br />           brand: #"st<a name="MARKER-2-825"></a>arbucks",<br />            cups: 1);</code></p>
 <p>The following method has two keyword parameters. In each, the name of the keyword and the name of the parameter is specified separately. The first keyword parameter has a default value, the second does not.</p>
 <pre class="code">
 define method layout (widget, #key position: the-pos = 0,
@@ -230,7 +230,7 @@ end method;
 <p>If a keyword parameter is given a type, if <code>#f</code> is not an instance of that type, and if the keyword parameter is not given a default value, then the keyword parameter is essentially required. An error of type <code>&lt;type-error&gt;</code> will be signaled if a call to the method does not include the keyword.</p>
 <p>The following examples include keyword parameters that include both a type and a default value.</p>
 <pre class="code">
-define method find-happiness (#key hint :: &lt;symbol&gt; =  #&quot;here&quot;)
+define method find-happiness (#key hint :: &lt;symbol&gt; =  #"here")
   ...
 end method find-happiness;
 

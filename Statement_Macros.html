@@ -237,11 +237,11 @@ else
 end if
 
 if ( camel.humps = 1 )
-  &quot;dromedary&quot;
+  "dromedary"
 elseif ( camel.humps = 2 )
-  &quot;bactrian&quot;
+  "bactrian"
 else
-  &quot;not a camel&quot;
+  "not a camel"
 end if; </pre>
   </dd>
 </dl>
@@ -367,18 +367,18 @@ end case; </pre>
     <pre class="code">
 select ( career-choice(student) )
    art:, music:, drama:
-     =&gt; &quot;Don't quit your day job&quot;;
+     =&gt; "Don't quit your day job";
    literature:, history:, linguistics:
-     =&gt; &quot;That really is fascinating&quot;;
+     =&gt; "That really is fascinating";
    science:, math:, engineering:
-     =&gt; &quot;Say, can you fix my VCR?&quot;;
-   otherwise =&gt; &quot;I wish you luck&quot;;
+     =&gt; "Say, can you fix my VCR?";
+   otherwise =&gt; "I wish you luck";
 end select;
 
 select ( my-object by instance? )
-  &lt;window&gt;, &lt;view&gt;, &lt;rectangle&gt; =&gt; &quot;a graphical object&quot;;
-  &lt;number&gt;, &lt;string&gt;, &lt;list&gt; =&gt; &quot;a computational object&quot;;
-  otherwise =&gt; &quot;I don't know&quot;;
+  &lt;window&gt;, &lt;view&gt;, &lt;rectangle&gt; =&gt; "a graphical object";
+  &lt;number&gt;, &lt;string&gt;, &lt;list&gt; =&gt; "a computational object";
+  otherwise =&gt; "I don't know";
 end select<a name="MARKER-2-2051"></a> </pre>
   </dd>
 </dl>
@@ -644,7 +644,7 @@ end;<a name="MARKER-2-2059"></a> </pre>
 block (return)
   open-files();
   if (something-wrong)
-    return(&quot;didn't work&quot;);
+    return("didn't work");
   end if;
   compute-with-files()
 cleanup
@@ -664,7 +664,7 @@ block ()
   open-files();
   compute-with-files()
 exception (&lt;error&gt;) 
-  &quot;didn't work&quot;;
+  "didn't work";
 cleanup
   close-files();
 end block </pre>
