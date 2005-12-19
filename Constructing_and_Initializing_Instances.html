@@ -195,22 +195,22 @@
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1539"></a>Returns a general instance of its first argument.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
+  <dt><span>Signature:</span></dt>
   <dd>
     <p class="signature">
       <code>make <var>type</var> #rest <var>supplied-init-args</var> #key #all-keys </code>
       &rArr;<code> <var class="results">instance</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
+  <dt><span>Arguments:</span></dt>
   <dd><dl>
       <dt><var>type</var></dt>
       <dd><p>An instance of <code>&lt;type&gt;</code>.</p></dd>
       <dt><var>supplied-init-args</var></dt>
       <dd><p>Keyword/argument pairs.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>instance</var></dt>
       <dd>
@@ -218,8 +218,8 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns an instance of <var>type</var>, with characteristics specified by keyword arguments.</p>
     <p>The <var>instance</var> returned is guaranteed to be a general instance of <var>type</var>  but not necessarily a direct instance of <var>type</var>. This <a name="MARKER-2-1540"></a>liberality allows <code>make</code> to be called on an abstract class or other type;  it can instantiate and return a direct instance of one of the concrete subtypes of the abstract class or type.</p>
     <p>The <var>instance</var> returned may or may not be newly allocated. If a new instance is allocated, <code>make</code> will call <code>initialize</code> on the instance before returning it.</p>
@@ -258,15 +258,15 @@
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1543"></a>Performs instance initialization that cannot be specified declaratively by a class definition.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
+  <dt><span>Signature:</span></dt>
   <dd>
     <p class="signature">
       <code>initialize <var>instance</var> #key #all-keys </code>
       &rArr;<code> #rest <var>objects</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>instance</var></dt>
       <dd>
@@ -283,8 +283,8 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Provides a way for users to handle initialization of instances which cannot be expressed simply by init specifications. This is typically needed when a computation requires inputs from multiple initialization arguments or slot values, or a single computation needs to be used to initialize multiple slots.</p>
     <p>By convention, all <code>initialize</code> methods should call next-method very early, to make sure that any initializations from less specific classes are performed first.</p>
     <p>The <code>initialize</code> generic function permits all keywords and requires none. It does this because the keyword argument checking is performed by the default method on <code>make</code>.</p>
@@ -299,22 +299,22 @@
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-2-1545"></a><a name="MARKER-9-1546"></a>Tests whether a slot has been initialized</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>slot-initialized? <var>instance getter</var> </code>
       &rArr;<code> <var>boolean</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
+  <dt><span>Arguments:</span></dt>
   <dd><dl>
       <dt><var>instance</var></dt>
       <dd><p>An instance of of <code>&lt;object&gt;</code>.</p></dd>
       <dt><var>getter</var></dt>
       <dd><p>An instance of <code>&lt;generic-function&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>boolean</var></dt>
       <dd>
@@ -322,8 +322,8 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns true if the slot in <var>instance</var> that would be accessed by the <var>getter</var> generic function is initialized. If the slot is not initialized, then false is returned.</p>
     <p><code>slot-initialized?</code> will signal an error if the  <var>getter</var> does not access a slot in the <var>instance</var>.</p>
     <p>To support <code>slot-initialized?</code> for a virtual slot, programmers must define a method for <code>slot-initialized?</code> that shares a protocol with the getter of the slot.<a name="MARKER-2-1547"></a></p></dd>
@@ -336,15 +336,15 @@
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1550"></a>Creates and returns a freshly allocated list.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>list #rest <var>arguments</var> </code>
       &rArr;<code> <var>list</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>arguments</var></dt>
       <dd>
@@ -352,8 +352,8 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>list</var></dt>
       <dd>
@@ -361,30 +361,30 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a freshly allocated list containing the <var>arguments</var>, in order.</p></dd>
+  <dt><span>Description:</span></dt>
+  <dd><p>Returns a freshly allocated list containing the <var>arguments</var>, in order.</p></dd>
 </dl>
 <a name="HEADING98-56"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-1551">pair</code> </span><span class="attributes-summary">[Function]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1552"></a><a name="MARKER-2-1553"></a>Creates and returns a freshly allocated pair.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>pair <var>object1</var>,<var>object2</var> </code>
       &rArr;<code> <var>pair</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
+  <dt><span>Arguments:</span></dt>
   <dd><dl>
       <dt><var>object1</var></dt>
       <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
       <dt><var>object2</var></dt>
       <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>pair</var></dt>
       <dd>
@@ -392,8 +392,9 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Creates a freshly allocated pair whose head value is <var>object1</var> and tail value is <var>object2</var>.</p>
+  <dt><span>Description:</span></dt>
+  <dd>
+    <p>Creates a freshly allocated pair whose head value is <var>object1</var> and tail value is <var>object2</var>.</p>
     <pre class="code">
 pair (1, 2)
   &rArr; #(1 . 2)
@@ -418,14 +419,14 @@ third(*new-list*) := 'x'
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-2-1555"></a>Creates and returns a range.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>range #key <var>from to above below by size</var> </code>
       &rArr;<code> <var>range</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
+  <dt><span>Arguments:</span></dt>
   <dd><dl>
       <dt><var>from</var></dt>
       <dd><p>An instance of <code>&lt;real&gt;</code>. The default value is <code>0</code>.</p></dd>
@@ -445,8 +446,8 @@ third(*new-list*) := 'x'
       <dt><var>size</var></dt>
       <dd><p>An instance of <code>&lt;real&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>range</var></dt>
       <dd>
@@ -454,23 +455,23 @@ third(*new-list*) := 'x'
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Creates an instance of <code>&lt;range&gt;</code>. The arguments correspond to the initialization arguments of <code>&lt;range&gt;</code>, described on <a href="Collection_Classes#MARKER-9-1454">page 230</a>.</p></dd>
+  <dt><span>Description:</span></dt>
+  <dd><p>Creates an instance of <code>&lt;range&gt;</code>. The arguments correspond to the initialization arguments of <code>&lt;range&gt;</code>, described on <a href="Collection_Classes#MARKER-9-1454">page 230</a>.</p></dd>
 </dl>
 <a name="HEADING98-77"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-1556">singleton</code> </span><span class="attributes-summary">[Function]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-2-1557"></a>Creates and returns a singleton.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>singleton <var>object</var> </code>
       &rArr;<code> <var>singleton</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>object</var></dt>
       <dd>
@@ -478,8 +479,8 @@ third(*new-list*) := 'x'
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>singleton</var></dt>
       <dd>
@@ -487,23 +488,23 @@ third(*new-list*) := 'x'
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a singleton for <var>object</var>. <code>singleton(<var>object)</var></code> is equivalent to <code>make(&lt;singleton&gt;, object: <var>object)</var></code>. If a singleton for the specified object already exists, implementations are free to return it rather than allocate a new singleton.</p></dd>
+  <dt><span>Description:</span></dt>
+  <dd><p>Returns a singleton for <var>object</var>. <code>singleton(<var>object)</var></code> is equivalent to <code>make(&lt;singleton&gt;, object: <var>object)</var></code>. If a singleton for the specified object already exists, implementations are free to return it rather than allocate a new singleton.</p></dd>
 </dl>
 <a name="HEADING98-83"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-1558">limited</code> </span><span class="attributes-summary">[Function]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1559"></a><a name="MARKER-2-1560"></a>Returns a limited subtype of a class.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>limited <var>class</var> #key </code>
       &rArr;<code> <var>type</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>class</var></dt>
       <dd>
@@ -511,8 +512,8 @@ third(*new-list*) := 'x'
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>type</var></dt>
       <dd>
@@ -520,8 +521,8 @@ third(*new-list*) := 'x'
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a limited subtype of <var>class</var>. The available keyword arguments depend on the <var>class</var>. Not all classes support <code>limited</code>; those that do are documented in the method descriptions below.</p>
     <p>Note that an implementation is not required to implement <code>limited</code> as a generic function, and so the behavior embodied in the following method descriptions need not actually be implemented by separate methods. The behavior is described as a set of methods for convenience of presentation only.</p>
     <a name="HEADING98-90"></a>
@@ -567,22 +568,22 @@ third(*new-list*) := 'x'
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1564"></a><a name="MARKER-2-1565"></a>Returns the union of two or more types.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>type-union <var>type1</var> #rest <var>more-types</var> </code>
       &rArr;<code> <var>type</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
+  <dt><span>Arguments:</span></dt>
   <dd><dl>
       <dt><var>type1</var></dt>
       <dd><p>An instance of <code>&lt;type&gt;</code>.</p></dd>
       <dt><var>more-types</var></dt>
       <dd><p>Instances of <code>&lt;type&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>type</var></dt>
       <dd>
@@ -590,8 +591,8 @@ third(*new-list*) := 'x'
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a type whose instances are the instances of <var>type1</var> and all the <var>more-types</var>. The type returned is not instantiable. A complete description of union types is given in <a href="Union_Types#MARKER-9-701">"Union Types" on page 72</a>.</p>
+  <dt><span>Description:</span></dt>
+  <dd><p>Returns a type whose instances are the instances of <var>type1</var> and all the <var>more-types</var>. The type returned is not instantiable. A complete description of union types is given in <a href="Union_Types#MARKER-9-701">"Union Types" on page 72</a>.</p>
     <pre class="code">
 define constant $my-enumerated-type = 
                     type-union(singleton(#&quot;one&quot;),
@@ -606,15 +607,15 @@ define constant $my-enumerated-type =
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1567"></a><a name="MARKER-2-1568"></a>Creates and returns a freshly allocated vector.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>vector #rest <var>arguments</var> </code>
       &rArr;<code> <var>vector</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>arguments</var></dt>
       <dd>
@@ -631,8 +632,8 @@ define constant $my-enumerated-type =
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a vector whose elements are the <var>arguments</var>, in order.<a name="MARKER-2-1569"></a></p></dd>
+  <dt><span>Description:</span></dt>
+  <dd><p>Returns a vector whose elements are the <var>arguments</var>, in order.<a name="MARKER-2-1569"></a></p></dd>
 </dl>
 
 </div>

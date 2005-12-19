@@ -208,14 +208,14 @@
       <hr class="item-title" />
       <p>The class of all numbers.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;object&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;object&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Operations:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of all numbers.</p>
 	  <p>The class <code>&lt;number&gt;</code> is open, to allow programmers to create additional numeric classes. <a name="MARKER-2-1384"></a>The built-in numeric operations do not provide default implementations for <code>&lt;number&gt;</code>, but for <code>&lt;complex&gt;</code>, a sealed subclass of <code>&lt;number&gt;</code>.</p></dd>
       </dl>
@@ -227,16 +227,16 @@
       <hr class="item-title" />
       <p>The class of complex numbers.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;number&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;number&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The sealed superclass of all built-in numbers, including real numbers. There are no non-real subclasses of <code>&lt;complex&gt;</code> defined by the language, but implementations may define such subclasses. Because <code>&lt;complex&gt;</code> and all its defined subclasses are sealed, implementation-defined subclasses may be added efficiently.</p>
 	  <p>Many built-in functions are defined to have methods on <code>&lt;complex&gt;</code>. This means that the function is defined on all built-in subclasses of <code>&lt;complex&gt;</code>. It does not imply that there is a single method specialized on the <code>&lt;complex&gt;</code> class.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class &lt;complex&gt; provides implementations for the following functions:</p>
+	<dt><span>Operations:</span></dt>
+	<dd><p>The class &lt;complex&gt; provides implementations for the following functions:</p>
 	  <table class="numbered"><caption><strong>Table 11-10</strong>  Methods on &lt;complex&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -273,14 +273,15 @@
       <hr class="item-title" />
       <p>The class of real numbers.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;complex&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>The class of real numbers.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;real&gt;</code> provides implementations for the following functions:</p>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;complex&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd><p>The class of real numbers.</p></dd>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;real&gt;</code> provides implementations for the following functions:</p>
 	  <table class="numbered"><caption><strong>Table 11-11</strong>  Functions on &lt;real&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -351,56 +352,56 @@
       <hr class="item-title" />
       <p>The class of floating-point numbers.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;real&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>The class of all floating-point numbers. This class is abstract. All floating point numbers will be instances of some concrete subclass of this class.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;real&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd><p>The class of all floating-point numbers. This class is abstract. All floating point numbers will be instances of some concrete subclass of this class.</p></dd>
+	<dt><span>Operations:</span></dt>
+	<dd><p>None.</p></dd>
       </dl>
       <a name="HEADING92-418"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1389">&lt;single-float&gt;</code> </span><span class="attributes-summary">[Sealed Class]</span></h4>
       <hr class="item-title" />
       <p>The class of single-precision floating-point numbers.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;float&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>The class of single-precision floating-point numbers. This class is intended but not required to correspond to IEEE single-precision.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;float&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd><p>The class of single-precision floating-point numbers. This class is intended but not required to correspond to IEEE single-precision.</p></dd>
+	<dt><span>Operations:</span></dt>
+	<dd><p>None.</p></dd>
       </dl>
       <a name="HEADING92-424"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1390">&lt;double-float&gt;</code> </span><span class="attributes-summary">[Sealed Class]</span></h4>
       <hr class="item-title" />
       <p>The class of double-precision floating-point numbers.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;float&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>The class of double-precision floating-point numbers. This class is intended but not required to correspond to IEEE double-precision.<a name="MARKER-2-1391"></a></p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;float&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd><p>The class of double-precision floating-point numbers. This class is intended but not required to correspond to IEEE double-precision.<a name="MARKER-2-1391"></a></p></dd>
+	<dt><span>Operations:</span></dt>
+	<dd><p>None.</p></dd>
       </dl>
       <a name="HEADING92-430"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1392">&lt;extended-float&gt;</code> </span><span class="attributes-summary">[Sealed Class]</span></h4>
       <hr class="item-title" />
       <p>The class of extended-precision floating-point numbers.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;float&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>The class of extended-precision floating-point numbers. This class is intended but not required to provide more precision that <code>&lt;double-float&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;float&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd><p>The class of extended-precision floating-point numbers. This class is intended but not required to provide more precision that <code>&lt;double-float&gt;</code>.</p></dd>
+	<dt><span>Operations:</span></dt>
+	<dd><p>None.</p></dd>
       </dl>
       <a name="HEADING92-436"></a>
       <a name="UID-Built-In_Classes-412"></a>
@@ -410,14 +411,14 @@
       <hr class="item-title" />
       <p>The class of rational numbers.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;real&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>The class of rational numbers.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;real&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd><p>The class of rational numbers.</p></dd>
+	<dt><span>Operations:</span></dt>
+	<dd><p>None.</p></dd>
       </dl>
       <a name="HEADING92-443"></a>
       <a name="UID-Built-In_Classes-414"></a>
@@ -427,17 +428,18 @@
       <hr class="item-title" />
       <p>The class of integers.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;rational&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;rational&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of integers.</p>
 	  <p><a name="MARKER-2-1395"></a>Implementations are required to support integers with at least 28 bits of precision. The overflow and underflow behavior is implementation-defined. (Some implementations may choose to have integers of unlimited size, but this is not required.)</p>
 	  <p><a name="MARKER-2-1396"></a>The result of dividing two integers with / is implementation defined. Portable programs should use <code>floor/</code>, <code>ceiling/</code>, <code>round/</code>, or <code>truncate/</code> to divide two integers.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;integer&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;integer&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-13</strong>  Functions on &lt;integer&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>

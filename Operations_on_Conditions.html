@@ -175,8 +175,8 @@
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1919"></a>Signals a condition.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signatures:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signatures:</span></dt>
+	<dd>
 	  <p>
 	    <code>signal <var>condition</var> </code>
 	    &rArr;<code> #rest <var>values</var></code><br />
@@ -184,8 +184,8 @@
 	    &rArr;<code> #rest <var>values</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments (1):</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments (1):</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>condition</var></dt>
 	    <dd>
@@ -193,8 +193,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Arguments (2):</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments (2):</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>string</var></dt>
 	    <dd>
@@ -203,8 +203,8 @@
 	    <dt><var>arguments</var></dt>
 	    <dd><p>Instances of <code>&lt;object&gt;</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>values</var></dt>
 	    <dd>
@@ -212,8 +212,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Signals the <var>condition</var>, trying each active dynamic handler, the most recent
 	  first. If all dynamic handlers decline, <code>signal</code>
 	  calls <code>default-handler(<var>condition</var>)</code>. If a handler returns, all the
@@ -230,8 +230,8 @@
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1921"></a>Signals a nonrecoverable error.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signatures:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signatures:</span></dt>
+	<dd>
 	  <p>
 	    <code>error <var>condition</var> </code>
 	    &rArr;<code> <var>{will never return}</var></code><br />
@@ -239,8 +239,8 @@
 	    &rArr;<code> <var>{will never return}</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments (1):</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments (1):</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>condition</var></dt>
 	    <dd>
@@ -248,8 +248,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Arguments (2):</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments (2):</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>string</var></dt>
 	    <dd>
@@ -258,10 +258,10 @@
 	    <dt><var>arguments</var></dt>
 	    <dd><p>Instances of <code>&lt;object&gt;</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche"><p>None. <code>error</code> will never return.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd><p>None. <code>error</code> will never return.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p><code>error</code> is similar to <code>signal</code> but never returns; if a handler
 	  returns, <code>error</code> invokes the debugger immediately. <code>error</code> is used
 	  to make it clear that a program does not expect to receive control again after signaling a
@@ -273,8 +273,8 @@
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1923"></a>Signals a correctable error.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signatures:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signatures:</span></dt>
+	<dd>
 	  <p>
 	    <code>cerror <var>restart-description condition</var> </code>
 	    &rArr;<code> <var>false</var></code><br />
@@ -304,8 +304,8 @@
 	    <dt><var>arguments</var></dt>
 	    <dd><p>Instances of <code>&lt;object&gt;</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>false</var></dt>
 	    <dd>
@@ -313,8 +313,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p><code>cerror</code> is the same as <code>error</code> but first establishes a handler
 	  for<code> &lt;simple-restart&gt;</code>, with a format string
 	  of <var>restart-description</var> and format arguments of a sequence containing
@@ -330,8 +330,8 @@
       <hr class="item-title" />
       <p class="short-description">Invokes the debugger<a name="MARKER-9-1925"></a>.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signatures:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signatures:</span></dt>
+	<dd>
 	  <p>
 	    <code>break <var>condition</var> </code>
 	    &rArr;<code> <var>false</var></code><br />
@@ -341,8 +341,8 @@
 	    &rArr;<code> <var>false</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments (1):</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments (1):</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>condition</var></dt>
 	    <dd>
@@ -350,8 +350,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Arguments (2):</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments (2):</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>string</var></dt>
 	    <dd>
@@ -362,10 +362,10 @@
 	      <p>Instances of <code>&lt;object&gt;</code>, interpreted as format arguments.</p>
 	    </dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Arguments (3):</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments (3):</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>false</var></dt>
 	    <dd>
@@ -373,8 +373,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Obtains a condition in the same way as <code>signal</code> but then invokes the
 	  debugger immediately without signaling first. <code>break</code> establishes
 	  a <code>&lt;simple-restart&gt;</code> so the debugger can continue execution. This is
@@ -387,15 +387,15 @@
       <hr class="item-title" />
       <p class="short-description">Checks an object to ensure that it is an instance of a specified type.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>check-type <var>value type</var> </code>
 	    &rArr;<code> <var>value</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>value</var></dt>
 	    <dd>
@@ -404,8 +404,8 @@
 	    <dt><var>type</var></dt>
 	    <dd><p>An instance of <code>&lt;type&gt;</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>value</var></dt>
 	    <dd>
@@ -413,8 +413,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>Checks <var>value</var> to ensure that it is an instance
+	<dt><span>Description:</span></dt>
+	<dd><p>Checks <var>value</var> to ensure that it is an instance
 	of <var>type</var>, and signal an error of type <code>&lt;type-error&gt;</code> if it is
 	not.</p></dd>
       </dl>
@@ -423,18 +423,18 @@
       <hr class="item-title" />
       <p class="short-description">Aborts and never returns.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>abort</code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche"><p>None. <code>abort</code> will never return.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Values:</span></dt>
+	<dd><p>None. <code>abort</code> will never return.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Performs <code>error(make (&lt;abort&gt;))</code>.</p>
 	  <p>This function is provided as a convenient shortcut. The call is to <code>error</code>,
 	  rather than to <code>signal</code>, to guarantee that <code>abort</code> will never
@@ -448,15 +448,15 @@
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1929"></a>Called if no dynamic handler handles a condition.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>default-handler <var>condition</var> </code>
 	    &rArr;<code> #rest <var>values</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>condition</var></dt>
 	    <dd>
@@ -464,8 +464,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>values</var></dt>
 	    <dd>
@@ -473,8 +473,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>Called if no dynamic handler handles a condition.</p>
+	<dt><span>Description:</span></dt>
+	<dd><p>Called if no dynamic handler handles a condition.</p>
 	  <a name="HEADING107-63"></a>
 	  <h5 class="method-signature"><span class="signature"><code>default-handler</code> <var>condition</var> &rArr; <var>false</var> </span><span class="attributes-summary">[G.F. Method]</span></h5>
 	  <p class="short-description">A predefined method on <code>&lt;condition&gt;</code> simply
@@ -500,15 +500,15 @@
       <p class="short-description"><a name="MARKER-9-1637"></a>Called to query the user and
       restart.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>restart-query <var>restart</var> </code>
 	    &rArr;<code> #rest <var>values</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>restart</var></dt>
 	    <dd>
@@ -516,8 +516,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>values</var></dt>
 	    <dd>
@@ -525,8 +525,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Engages the interactive user in a dialog and stores the results in slots
 	  of <var>restart</var>.</p>
 	  <p>This function is designed to be called from a handler, after making a restart and
@@ -541,15 +541,15 @@
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1933"></a>Queries the user for values to return.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>return-query <var>condition</var> </code>
 	    &rArr;<code> #rest <var>values</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>condition</var></dt>
 	    <dd>
@@ -557,8 +557,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>values</var></dt>
 	    <dd>
@@ -566,8 +566,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>If the recovery protocol of <var>condition</var> allows returning values, this engages
 	  the program user in a dialog and returns the results as any number of values, which the
 	  handler should return.</p>
@@ -585,15 +585,15 @@
       <p class="short-description"><a name="MARKER-9-1937"></a>Applies a function to all dynamically
       active handlers.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>do-handlers <var>function</var> </code>
 	    &rArr;<code> <var>false</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>function</var></dt>
 	    <dd>
@@ -601,8 +601,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>false</var></dt>
 	    <dd>
@@ -610,8 +610,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Applies<var> function</var> to all dynamically active handlers, the most recently
 	  established first. <var>function</var> receives four
 	  arguments: <var>type</var>, <var>test</var>, <var>function</var>,
@@ -626,15 +626,15 @@
       <p class="short-description"><a name="MARKER-9-1939"></a>Returns true if a condition's
       recovery protocol allows returning values.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>return-allowed? <var>condition</var> </code>
 	    &rArr;<code> <var>boolean</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>condition</var></dt>
 	    <dd>
@@ -642,8 +642,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>boolean</var></dt>
 	    <dd>
@@ -651,8 +651,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Returns <code>#t</code> if the recovery protocol of <var>condition</var> allows
 	  returning values, or <code>#f</code> if it does not.</p>
 	  <p>There is a default method for <code>&lt;condition&gt;</code> that
@@ -670,15 +670,15 @@
       <p class="short-description"><a name="MARKER-9-1941"></a>Returns a description of a
       condition's returned values.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>return-description <var>condition</var> </code>
 	    &rArr;<code> <var>description</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>condition</var></dt>
 	    <dd>
@@ -686,8 +686,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>description</var></dt>
 	    <dd>
@@ -696,8 +696,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>If the recovery protocol of this condition allows returning
 	  values, <code>return-description</code> returns a description of the meaning of returning
 	  values.</p>
@@ -712,8 +712,8 @@
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-2-1681"></a>Returns the format string of a simple condition.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>condition-format-string <var>simple-condition</var> </code>
 	    &rArr;<code> <var>format-string</var></code>
@@ -730,8 +730,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>format-string</var></dt>
 	    <dd>
@@ -739,9 +739,9 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>Returns the format string that was supplied as an initialization
-	argument when the <var>simple-condition</var> was created.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd><p>Returns the format string that was supplied as an initialization argument when
+	the <var>simple-condition</var> was created.</p></dd>
       </dl>
       <a name="HEADING107-116"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1944">condition-format-arguments</code> </span><span class="attributes-summary">[Function]</span></h4>
@@ -749,8 +749,8 @@
       <p class="short-description"><a name="MARKER-9-1945"></a>Returns the format arguments of a
       simple condition.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>condition-format-arguments <var>simple-condition</var> </code>
 	    &rArr;<code> <var>format-args</var></code>
@@ -767,8 +767,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>format-args</var></dt>
 	    <dd>
@@ -776,8 +776,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Returns the sequence of format arguments that was supplied as an initialization
 	  argument when the <var>simple-condition</var> was created.</p></dd>
       </dl>
@@ -787,8 +787,8 @@
       <p class="short-description"><a name="MARKER-9-1947"></a>Returns the value that was not of the
       expected type.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>type-error-value <var>type-error</var> </code>
 	    &rArr;<code> <var>object</var></code>
@@ -803,8 +803,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>object</var></dt>
 	    <dd>
@@ -812,8 +812,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>Returns the value that was not of the expected type, and thereby led
+	<dt><span>Description:</span></dt>
+	<dd><p>Returns the value that was not of the expected type, and thereby led
 	to the type error.</p></dd>
       </dl>
       <a name="HEADING107-128"></a>
@@ -822,8 +822,8 @@
       <p class="short-description"><a name="MARKER-9-1949"></a>Returns the expected type of the type
       check that led to the type error.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>type-error-expected-type <var>type-error</var> </code>
 	    &rArr;<code> <var>type</var></code>
@@ -838,8 +838,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>type</var></dt>
 	    <dd>
@@ -847,8 +847,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Returns the expected type of the type check that led to the type
 	  error.<a
 	  name="MARKER-2-1950"></a><a name="MARKER-2-1951"></a><a name="MARKER-2-1952"></a></p>

@@ -348,15 +348,15 @@
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1700"></a>Returns true if its argument is empty.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>empty? <var>object</var> </code>
       &rArr;<code> <var>boolean</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>object</var></dt>
       <dd>
@@ -364,8 +364,8 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>boolean</var></dt>
       <dd>
@@ -373,8 +373,9 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns true if <var>object</var> is empty. Otherwise returns <code>#f</code>.</p>
+  <dt><span>Description:</span></dt>
+  <dd>
+    <p>Returns true if <var>object</var> is empty. Otherwise returns <code>#f</code>.</p>
     <a name="HEADING102-10"></a>
     <h5 class="method-signature"><span class="signature"><code>empty?</code>  <var>collection</var> &rArr;  <var>boolean</var> </span><span class="attributes-summary">[G.F. Method]</span></h5>
     <p>A set of methods defined for the class <code>&lt;collection&gt;</code> returns true if the collection has zero elements.</p>
@@ -385,15 +386,15 @@
 <hr class="item-title" />
 <p class="short-description"><code><a name="MARKER-9-1702"></a></code>Returns the size of its argument.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>size <var>object</var> </code>
       &rArr;<code> #rest <var>objects</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>object</var></dt>
       <dd>
@@ -401,8 +402,8 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>objects</var></dt>
       <dd>
@@ -410,8 +411,9 @@
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the size of <var>object</var>.</p>
+  <dt><span>Description:</span></dt>
+  <dd>
+    <p>Returns the size of <var>object</var>.</p>
     <a name="HEADING102-18"></a>
     <h5 class="method-signature"><span class="signature"><code>size</code> <var>collection</var> &rArr; <var>integer-or-false</var> </span><span class="attributes-summary">[G.F. Method]</span></h5>
     <p>When called on a collection, <code>size</code> returns the numbers of keys in the collection. This default method simply counts while iterating through the collection. <code>size</code> may return <code>#f</code> for collections of unbounded size.</p>
@@ -436,15 +438,15 @@ reduce(\*, 1, dimensions (array))</pre>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1704"></a>Sets the size of an object.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>size-setter <var>new-size object</var> </code>
       &rArr;<code> <var>new-size</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-size</var></dt>
       <dd>
@@ -453,8 +455,8 @@ reduce(\*, 1, dimensions (array))</pre>
       <dt><var>object</var></dt>
       <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-size</var></dt>
       <dd>
@@ -462,8 +464,9 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Sets the size of <var>object</var> to <var>new-size</var>.</p>
+  <dt><span>Description:</span></dt>
+  <dd>
+    <p>Sets the size of <var>object</var> to <var>new-size</var>.</p>
     <p><var>object </var>is modified by this operation.</p>
     <p>Methods are provided for stretchy sequences; that is, for collections that are instances both of <code>&lt;stretchy-collection&gt;</code> and of <code>&lt;sequence&gt;</code>.</p>
     <p><code>size-setter</code> sets the size of a stretchy sequence to be <var>new-size</var>. The stretchy sequence is modified by this operation. If <var>new-size </var>is less than or equal to the original size of the stretchy sequence, then the first <var>new-size</var> elements of the stretchy sequence are retained at the same positions. If <var>new-size</var> is greater than the original size of the stretchy sequence, then the previous elements of the stretchy sequence are retained at the same positions, and enough new elements are added to reach the new size. The value of each new element is the same as would have been used if the stretchy sequence had been created with <code>make</code>, specifying <code>size: <var>new-size</var></code> but not <code>fill:</code>.</p>
@@ -474,15 +477,15 @@ reduce(\*, 1, dimensions (array))</pre>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1706"></a>Returns the number of dimensions of an array.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>rank <var>array</var> </code>
       &rArr;<code> <var>rank</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>array</var></dt>
       <dd>
@@ -490,8 +493,8 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>rank</var></dt>
       <dd>
@@ -499,8 +502,9 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the number of dimensions (the rank) of <var>array</var>.</p>
+  <dt><span>Description:</span></dt>
+  <dd>
+    <p>Returns the number of dimensions (the rank) of <var>array</var>.</p>
     <a name="HEADING102-46"></a>
     <h5 class="method-signature"><span class="signature"><code>rank</code> <var>array</var> &rArr; <var>rank</var> </span><span class="attributes-summary">[G.F. Method]</span></h5>
     <p>The method for <code>&lt;array&gt;</code> computes <code>rank</code> by calling <code>size</code> on the <code>dimensions</code> of <code>array</code>.</p>
@@ -511,15 +515,15 @@ reduce(\*, 1, dimensions (array))</pre>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1708"></a>Returns the row-major-index position of an array element.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>row-major-index <var>array</var> #rest <var>subscripts</var> </code>
       &rArr;<code> <var>index</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>array</var></dt>
       <dd>
@@ -528,8 +532,8 @@ reduce(\*, 1, dimensions (array))</pre>
       <dt><var>subscripts</var></dt>
       <dd><p>Instances of <code>&lt;integer&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>index</var></dt>
       <dd>
@@ -537,8 +541,9 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Computes the position according to the row-major ordering of <code>array</code> for the   element that is specified by <code>subscripts</code>, and returns the position of that element.</p>
+  <dt><span>Description:</span></dt>
+  <dd>
+    <p>Computes the position according to the row-major ordering of <code>array</code> for the   element that is specified by <code>subscripts</code>, and returns the position of that element.</p>
     <p>An error is signaled if the number of subscripts is not equal to the rank of the array. An error is signaled if any of the subscripts are out of bounds for array.</p>
     <a name="HEADING102-56"></a>
     <h5 class="method-signature"><span class="signature"><code>row-major-index</code> <var>array</var> <code>#rest</code> <var>subscripts</var> &rArr; <var>index</var>  </span><span class="attributes-summary">[G.F. Method]</span></h5>
@@ -550,15 +555,15 @@ reduce(\*, 1, dimensions (array))</pre>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1710"></a>Returns the dimensions of an array.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>dimensions <var>array</var> </code>
       &rArr;<code> <var>sequence</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>array</var></dt>
       <dd>
@@ -575,8 +580,9 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the dimensions  of <var>array</var>, as a sequence of integers. The consequences are undefined if the resulting sequence is modified. This function forms the basis for all the other array operations. Each concrete subclass of <code>&lt;array&gt;</code> must either provide or inherit an implementation of this function.</p>
+  <dt><span>Description:</span></dt>
+  <dd>
+    <p>Returns the dimensions  of <var>array</var>, as a sequence of integers. The consequences are undefined if the resulting sequence is modified. This function forms the basis for all the other array operations. Each concrete subclass of <code>&lt;array&gt;</code> must either provide or inherit an implementation of this function.</p>
     <a name="HEADING102-64"></a>
     <h5 class="method-signature"><span class="signature"><code>dimensions</code> <var>vector</var> &rArr;  <var>sequence</var> </span><span class="attributes-summary">[G.F. Method]</span></h5>
     <p>Returns a sequence whose single element is the size of the vector.</p>
@@ -587,15 +593,15 @@ reduce(\*, 1, dimensions (array))</pre>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1712"></a>Returns the size of a specified dimension of an array.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>dimension <var>array axis</var> </code>
       &rArr;<code> <var>dimension</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>array </var></dt>
       <dd>
@@ -604,8 +610,8 @@ reduce(\*, 1, dimensions (array))</pre>
       <dt><var>axis</var></dt>
       <dd><p>An instance of <code>&lt;integer&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>dimension</var></dt>
       <dd>
@@ -613,8 +619,8 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns the <var>axis</var> dimension of <code>array</code>.</p>
     <p><var>axis</var> must be a non-negative integer less than the rank of <code>array</code>. An error is signaled if <var>axis</var> is out of bounds for <code>array</code>.</p>
     <a name="HEADING102-74"></a>
@@ -627,15 +633,15 @@ reduce(\*, 1, dimensions (array))</pre>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1714"></a>Returns the function used by its collection argument to compare keys.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>key-test <var>collection</var> </code>
       &rArr;<code> <var>test-function</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>collection</var></dt>
       <dd>
@@ -652,8 +658,8 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns the function used by <var>collection</var> to compare keys.</p>
     <p>All collection classes must provide or inherit a method that returns a result consistent with their iteration protocol and <code>element</code> methods. A given method for <code>key-test</code> must return the same value (compared with <code>==</code>) each time it is called.</p>
     <a name="HEADING102-83"></a>
@@ -669,15 +675,15 @@ reduce(\*, 1, dimensions (array))</pre>
 <hr class="item-title" />
 <p class="short-description"><code><a name="MARKER-9-1716"></a></code>Returns a sequence containing the keys of its collection argument.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>key-sequence <var>collection</var> </code>
       &rArr;<code> <var>keys</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>collection</var></dt>
       <dd>
@@ -685,8 +691,8 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>keys</var></dt>
       <dd>
@@ -694,8 +700,8 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a sequence containing the keys of <var>collection</var>.</p>
     <p>Although elements may be duplicated in a collection, keys, by their nature, must be unique; two different elements in a collection may not share a common key, even though distinct keys may yield identical elements.</p>
     <p>The order in which the keys from <var>collection</var> appear in the key sequence is unspecified if <var>collection</var> is unstable under iteration. In particular, different calls to <code>key-sequence</code> with the same argument may yield differently ordered key sequences. If <var>collection</var>  is stable under iteration, however, the resulting sequence of keys will be in the natural order for <var>collection</var>.<a name="MARKER-2-1717"></a></p></dd>
@@ -708,15 +714,15 @@ reduce(\*, 1, dimensions (array))</pre>
 <hr class="item-title" />
 <p class="short-description"><code><a name="MARKER-9-1720"></a></code>Returns the collection element associated with a particular key.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>element <var>collection key</var> #key <var>default</var> </code>
       &rArr;<code> <var>element</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>collection</var></dt>
       <dd>
@@ -727,8 +733,8 @@ reduce(\*, 1, dimensions (array))</pre>
       <dt><var>default</var></dt>
       <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>element</var></dt>
       <dd>
@@ -736,8 +742,8 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns the element associated with <var>key</var> in <var>collection</var>. If no element is associated with <var>key</var>, then the behavior of <code>element</code> depends on whether it was called with a <var>default</var> argument: if a <var>default</var> argument was passed, its value is returned; otherwise, an error is signaled.</p>
     <p>All collections are required to implement <code>element</code>.</p>
     <a name="HEADING102-105"></a>
@@ -759,15 +765,15 @@ reduce(\*, 1, dimensions (array))</pre>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1722"></a>Sets the collection element associated with a particular key.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>element-setter <var>new-value mutable-collection key</var> </code>
       &rArr;<code> <var>new-value</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-value</var></dt>
       <dd>
@@ -778,8 +784,8 @@ reduce(\*, 1, dimensions (array))</pre>
       <dt><var>key</var></dt>
       <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-value</var></dt>
       <dd>
@@ -787,8 +793,8 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Alters <var>mutable-collection </var> so that the value associated with <var>key</var> will subsequently be <var>new-value</var>. If <var>mutable-collection</var> is stretchy, <code>element-setter</code> may also change its size (for example, by adding new keys with values).</p>
     <p>An error is signaled if a program calls <code>element-setter</code> with a key that is not already a key to <var>collection</var>, unless the collection is stretchy.</p>
     <p>Stretchy collections allow <code>element-setter</code> to be called with a key that is not present in the collection, expanding the collection as necessary to add a new element in that case. Each concrete subclass of <code>&lt;stretchy-collection&gt;</code> must provide or inherit a method for <code>element-setter</code> that behaves as follows when there is not already an element present for the indicated key:</p>
@@ -816,15 +822,15 @@ reduce(\*, 1, dimensions (array))</pre>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1724"></a>Returns the array element indicated by a set of indices.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>aref <var>array</var> #rest <var>indices</var> </code>
       &rArr;<code> <var>element</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>array</var></dt>
       <dd>
@@ -833,8 +839,8 @@ reduce(\*, 1, dimensions (array))</pre>
       <dt><var>indices</var></dt>
       <dd><p>Instances of <code>&lt;integer&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>element</var></dt>
       <dd>
@@ -842,8 +848,8 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns the element of <var>array</var> indicated by <var>indices</var>.</p>
     <p>An error is signaled if the number of <var>indices</var> is not equal to the rank of the <var>array</var>. An error is signaled if any of the <var>indices</var> are out of bounds for the <var>array</var>.</p>
     <a name="HEADING102-141"></a>
@@ -856,15 +862,15 @@ reduce(\*, 1, dimensions (array))</pre>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1726"></a>Sets the array element indicated by a set of indices.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>aref-setter <var>new-value array</var> #rest <var>indices</var> </code>
       &rArr;<code> <var>new-value</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-value</var></dt>
       <dd>
@@ -875,8 +881,8 @@ reduce(\*, 1, dimensions (array))</pre>
       <dt><var>indices</var></dt>
       <dd><p>Instances of <code>&lt;integer&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-value</var></dt>
       <dd>
@@ -884,8 +890,8 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Sets the element of <var>array</var> indicated by <var>indices</var> to the <var>new-value</var> and returns the <var>new-value</var>.</p>
     <p>array is modified by this operation.</p>
     <p>An error is signaled if the number of <var>indices</var> is not equal to the rank of the <var>array</var>. An error is signaled if any of the <var>indices</var> are out of bounds for <var>array</var>. An error is signaled if the <var>array </var>is limited to hold objects of a particular type and the new value is not an instance of that type.</p>
@@ -899,15 +905,15 @@ reduce(\*, 1, dimensions (array))</pre>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1728"></a>Returns the first element of a sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>first <var>sequence</var> #key <var>default</var> </code>
       &rArr;<code> <var>value</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>sequence</var></dt>
       <dd>
@@ -916,8 +922,8 @@ reduce(\*, 1, dimensions (array))</pre>
       <dt><var>default</var></dt>
       <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>value</var></dt>
       <dd>
@@ -925,8 +931,8 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns the first element of the <var>sequence</var> by calling <code>element</code> with the supplied arguments and the corresponding index.</p>
     <p>Note that because <code>element</code> is zero-based,  <code>first(seq)</code> is equivalent to <code>element(seq, 0)</code> and <code>seq[0]</code>.</p></dd>
 </dl>
@@ -935,15 +941,15 @@ reduce(\*, 1, dimensions (array))</pre>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1730"></a>Returns the second element of a sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>second <var>sequence</var> #key <var>default</var> </code>
       &rArr;<code> <var>value</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>sequence</var></dt>
       <dd>
@@ -952,8 +958,8 @@ reduce(\*, 1, dimensions (array))</pre>
       <dt><var>default</var></dt>
       <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>value</var></dt>
       <dd>
@@ -961,23 +967,23 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the second element of the <var>sequence</var> by calling <code>element</code> with the supplied arguments and the corresponding index.</p></dd>
+  <dt><span>Description:</span></dt>
+  <dd><p>Returns the second element of the <var>sequence</var> by calling <code>element</code> with the supplied arguments and the corresponding index.</p></dd>
 </dl>
 <a name="HEADING102-170"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-1731">third</code> </span><span class="attributes-summary">[Function]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1732"></a>Returns the third element of a sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>third <var>sequence</var> #key <var>default</var> </code>
       &rArr;<code> <var>value</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>sequence</var></dt>
       <dd>
@@ -986,8 +992,8 @@ reduce(\*, 1, dimensions (array))</pre>
       <dt><var>default</var></dt>
       <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>value</var></dt>
       <dd>
@@ -995,23 +1001,23 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the third element of the <var>sequence</var> by calling <code>element</code> with the supplied arguments and the corresponding index.</p></dd>
+  <dt><span>Description:</span></dt>
+  <dd><p>Returns the third element of the <var>sequence</var> by calling <code>element</code> with the supplied arguments and the corresponding index.</p></dd>
 </dl>
 <a name="HEADING102-177"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-9-1637">first-setter</code> </span><span class="attributes-summary">[Function]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1734"></a>Sets the first element of a mutable sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>first-setter <var>new-value mutable-sequence</var> </code>
       &rArr;<code> <var>new-value</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-value</var></dt>
       <dd>
@@ -1020,8 +1026,8 @@ reduce(\*, 1, dimensions (array))</pre>
       <dt><var>mutable-sequence</var></dt>
       <dd><p>An instance of <code>&lt;mutable-sequence&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-value</var></dt>
       <dd>
@@ -1029,8 +1035,8 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Sets the first element of the <var>mutable-sequence</var> and returns the <var>new-value</var>, by calling <code>element-setter </code>with the supplied arguments and the corresponding index.</p>
     <p>Note that because <code>element-setter</code> is zero-based, <code>first-setter(val, seq)</code> is equivalent to <code>element-setter(val, seq, 0)</code> and <code>seq[0] := val</code>.</p></dd>
 </dl>
@@ -1039,15 +1045,15 @@ reduce(\*, 1, dimensions (array))</pre>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1736"></a>Sets the second element of a mutable sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>second-setter <var>new-value mutable-sequence</var> </code>
       &rArr;<code> <var>new-value</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-value</var></dt>
       <dd>
@@ -1056,8 +1062,8 @@ reduce(\*, 1, dimensions (array))</pre>
       <dt><var>mutable-sequence</var></dt>
       <dd><p>An instance of <code>&lt;mutable-sequence&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-value</var></dt>
       <dd>
@@ -1065,23 +1071,23 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Sets the second element of the <var>mutable-sequence</var> and returns the <var>new-value</var>, by calling <code>element-setter </code>with the supplied arguments and the corresponding index.</p></dd>
+  <dt><span>Description:</span></dt>
+  <dd><p>Sets the second element of the <var>mutable-sequence</var> and returns the <var>new-value</var>, by calling <code>element-setter </code>with the supplied arguments and the corresponding index.</p></dd>
 </dl>
 <a name="HEADING102-192"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-1737">third-setter</code> </span><span class="attributes-summary">[Function]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1738"></a>Sets the third element of a mutable sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>third-setter <var>new-value mutable-sequence</var> </code>
       &rArr;<code> <var>new-value</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-value</var></dt>
       <dd>
@@ -1090,8 +1096,8 @@ reduce(\*, 1, dimensions (array))</pre>
       <dt><var>mutable-sequence</var></dt>
       <dd><p>An instance of <code>&lt;mutable-sequence&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-value</var></dt>
       <dd>
@@ -1099,23 +1105,23 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Sets the third element of the <var>mutable-sequence</var> and returns the <var>new-value</var>, by calling <code>element-setter </code>with the supplied arguments and the corresponding index.</p></dd>
+  <dt><span>Description:</span></dt>
+  <dd><p>Sets the third element of the <var>mutable-sequence</var> and returns the <var>new-value</var>, by calling <code>element-setter </code>with the supplied arguments and the corresponding index.</p></dd>
 </dl>
 <a name="HEADING102-199"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-1739">last</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><code><a name="MARKER-9-1740"></a></code>Returns the last element of a sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>last <var>sequence</var> #key <var>default</var> </code>
       &rArr;<code> <var>value</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>sequence</var></dt>
       <dd>
@@ -1124,8 +1130,8 @@ reduce(\*, 1, dimensions (array))</pre>
       <dt><var>default</var></dt>
       <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>value</var></dt>
       <dd>
@@ -1133,8 +1139,8 @@ reduce(\*, 1, dimensions (array))</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns the last element of <var>sequence</var>.</p>
     <p>If the sequence is empty, then the behavior of <code>last</code> depends on whether it was called with a <var>default</var> argument. If the <var>default</var> argument was supplied, its value is returned; otherwise, an error is signaled.</p>
     <pre class="code">
@@ -1147,15 +1153,15 @@ last (#(&quot;emperor&quot;, &quot;of&quot;, &quot;china&quot;))
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1742"></a>Sets the last element of a mutable sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>last-setter <var>new-value mutable-sequence</var> </code>
       &rArr;<code> <var>new-value</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-value</var></dt>
       <dd>
@@ -1164,8 +1170,8 @@ last (#(&quot;emperor&quot;, &quot;of&quot;, &quot;china&quot;))
       <dt><var>mutable-sequence</var></dt>
       <dd><p>An instance of <code>&lt;mutable-sequence&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-value</var></dt>
       <dd>
@@ -1173,8 +1179,8 @@ last (#(&quot;emperor&quot;, &quot;of&quot;, &quot;china&quot;))
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Replaces the last element of <var>mutable-sequence</var>  with <var>new-value</var>.</p>
     <p><var>mutable-sequence</var> is modified by this operation.</p>
     <p><var>new-value</var>  must obey any type restrictions for elements of <var>mutable-sequence</var> . An error is signaled if <var>mutable-sequence</var>  is empty or unbounded.</p>
@@ -1198,15 +1204,15 @@ last (my-empty-vector) := 4
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1744"></a>Returns the head of a list.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>head <var>list</var> </code>
       &rArr;<code> <var>object</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>list</var></dt>
       <dd>
@@ -1214,8 +1220,8 @@ last (my-empty-vector) := 4
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>object</var></dt>
       <dd>
@@ -1223,8 +1229,8 @@ last (my-empty-vector) := 4
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns the head of <var>list</var>.</p>
     <p>If <var>list</var> is a pair, <code>head</code> returns the value of the head slot. If <var>list</var> is the empty list, <code>head</code> returns the empty list.</p>
     <pre class="code">
@@ -1239,15 +1245,15 @@ head (#())
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1746"></a>Returns the tail of a list.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>tail <var>list</var> </code>
       &rArr;<code> <var>object</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>list</var></dt>
       <dd>
@@ -1255,8 +1261,8 @@ head (#())
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>object</var></dt>
       <dd>
@@ -1264,8 +1270,8 @@ head (#())
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns the tail of <var>list</var>.</p>
     <p>If <var>list</var> is a pair, <code>tail</code> returns the value of the tail slot. If <var>list</var> is the empty list, <code>tail</code> returns the empty list.</p>
     <pre class="code">
@@ -1280,15 +1286,15 @@ tail (#())
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1748"></a>Sets the head of a pair.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>head-setter <var>object pair</var> </code>
       &rArr;<code> <var>object</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>object</var></dt>
       <dd>
@@ -1297,8 +1303,8 @@ tail (#())
       <dt><var>pair</var></dt>
       <dd><p>An instance of <code>&lt;pair&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>object</var></dt>
       <dd>
@@ -1306,8 +1312,8 @@ tail (#())
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Sets the head of <var>pair</var> to contain <var>object</var> and returns <var>object</var>.</p>
     <p><var>pair</var> is modified by this operation.</p>
     <pre class="code">
@@ -1323,15 +1329,15 @@ x
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1750"></a>Sets the tail of a pair.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>tail-setter <var>object pair</var> </code>
       &rArr;<code> <var>object</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>object</var></dt>
       <dd>
@@ -1340,8 +1346,8 @@ x
       <dt><var>pair</var></dt>
       <dd><p>An instance of <code>&lt;pair&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>object</var></dt>
       <dd>
@@ -1349,8 +1355,8 @@ x
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Sets the tail of <var>pair</var> to contain <var>object</var> and returns <var>object</var>.</p>
     <p><var>pair</var> is modified by this operation.</p>
     <p class="errata right"><a href="Errata#p309_1"
@@ -1377,8 +1383,8 @@ x
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1754"></a>Adds an element to a sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>add <var>source-sequence new-element</var> </code>
       &rArr;<code> <var>result-sequence</var></code>
@@ -1403,8 +1409,8 @@ x
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a sequence that contains <var>new-element</var> and all the elements of <var>source-sequence</var>. The <var>result-sequence</var> may or may not be freshly allocated. It may share structure with a preexisting sequence.</p>
     <p><var>source-sequence</var> is not modified by this operation.</p>
     <p>The <var>result-sequence</var>'s size is one greater than the size of <var>source-sequence</var>. The generic function <code>add</code> doesn't specify where the new element will be added, although individual methods may do so.</p>
@@ -1421,8 +1427,8 @@ add (*numbers*, 1)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1756"></a>Adds an element to a sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>add! <var>source-sequence new-element</var> </code>
       &rArr;<code> <var>result-sequence</var></code>
@@ -1447,8 +1453,8 @@ add (*numbers*, 1)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a sequence that contains <var>new-element</var> and all the elements of <var>source-sequence</var>. The <var>result-sequence</var> may or may not be freshly allocated. It may share structure with a preexisting sequence. <var>source-sequence</var> and <var>result-sequence</var> may or may not be <code>==</code>.</p>
     <p><var>source-sequence</var> may be modified by this operation.</p>
     <p><var>result-sequence</var>'s size is one greater than the size of <var>source-sequence</var>. The generic function <code>add!</code> doesn't specify where the new element will be added, although individual methods may do so.</p>
@@ -1474,8 +1480,8 @@ add! (*numbers*, 1)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1758"></a>Adds a new element to a sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>add-new <var>source-sequence new-element</var> #key <var>test</var> </code>
       &rArr;<code> <var>result-sequence</var></code>
@@ -1502,8 +1508,8 @@ add! (*numbers*, 1)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Adds <var>new-element</var> to source-sequence if it is not already an element of <var>source-sequence</var>, as determined by the <var>test</var> function. If <var>new-element</var> is already a member of <var>source-sequence</var>, then <var>source-sequence</var> is returned unmodified.</p>
     <p>If an element is added, <code>add-new</code> operates just as <code>add</code> would.</p>
     <p>The <var>test</var> function may be noncommutative: it is always called with an element from <var>source-sequence</var> as its first argument and <var>new-element</var>  as its second argument.</p>
@@ -1519,8 +1525,8 @@ add-new (#(3, 4, 5), 4)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1760"></a>Adds a new element to a sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>add-new! <var>source-sequence new-element</var> #key <var>test</var> </code>
       &rArr;<code> <var>result-sequence</var></code>
@@ -1538,8 +1544,8 @@ add-new (#(3, 4, 5), 4)
       <dt><var>test</var></dt>
       <dd><p>An instance of <code>&lt;function&gt;</code>. The default is <code>==</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>result-sequence</var></dt>
       <dd>
@@ -1547,8 +1553,8 @@ add-new (#(3, 4, 5), 4)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Adds <var>new-element</var> to source-sequence if it is not already an element of <var>source-sequence</var>, as determined by the <var>test</var> function. If <var>new-element</var> is already a member of <var>source-sequence</var>, then <var>source-sequence</var> is returned unmodified.</p>
     <p>If an element is added, <code>add-new!</code> operates just as <code>add!</code> would.</p>
     <p>The <var>test</var> function may be noncommutative: it is always called with an element from <var>sequence</var> as its first argument and <var>new-element</var>  as its second argument.</p>
@@ -1564,8 +1570,8 @@ add-new! (list (3, 4, 5), 4)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-2-1762"></a><a name="MARKER-9-1763"></a>Removes an element from a sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>remove <var>source-sequence value</var> #key <var>test count</var> </code>
       &rArr;<code> <var>result-sequence</var></code>
@@ -1594,8 +1600,8 @@ add-new! (list (3, 4, 5), 4)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a sequence consisting of the elements of <var>source-sequence</var> not equal to <var>value</var>. The <var>result-sequence</var> may or may not be freshly allocated. However, the <var>source-sequence</var> is never modified by <code>remove</code>.</p>
     <p><var>test</var> is a function that determines whether an element is equal to <var>value</var>. The <var>test</var> function may be noncommutative: it is always called with an element from <var>source-sequence</var> as its first argument and <var>value</var>  as its second argument.</p>
     <p>If <var>count</var> is <code>#f</code>, then all copies of <var>value</var> are removed. Otherwise, no more than <var>count</var> copies of <var>value</var> are removed (so additional elements equal to <var>value</var> might remain in <var>result-sequence</var>).</p>
@@ -1613,8 +1619,8 @@ define variable *new-list* = remove(*old-list*, 1)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1765"></a>Removes an element from a sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>remove! <var>source-sequence value</var> #key <var>test count</var> </code>
       &rArr;<code> <var>result-sequence</var></code>
@@ -1643,8 +1649,8 @@ define variable *new-list* = remove(*old-list*, 1)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a sequence consisting of the elements of <var>source-sequence</var> not equal to <var>value</var>. The <var>result-sequence</var> may or may not be freshly allocated, may or may not be <code>==</code> to the <var>source-sequence</var>, and may or may not share structure with the <var>source-sequence</var>. The <var>source-sequence</var> may be modified by <code>remove!</code>.</p>
     <p><var>test</var> is a function that determines whether an element is equal to <var>value</var>. The <var>test</var> function may be noncommutative: it is always called with an element from <var>source-sequence</var> as its first argument and <var>value</var>  as its second argument.</p>
     <p>If <var>count</var> is <code>#f</code>, then all copies of <var>value</var> are removed. Otherwise, no more than <var>count</var> copies of <var>value</var> are removed (so additional elements equal to <var>value</var> might remain in <var>result-sequence</var>).</p>
@@ -1665,15 +1671,15 @@ define variable *new-list* = remove(*old-list*, 1)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1767"></a>Adds an element to the front of a deque.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>push <var>deque new-value</var> </code>
       &rArr;<code> <var>new-value</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>deque</var></dt>
       <dd>
@@ -1691,8 +1697,8 @@ define variable *new-list* = remove(*old-list*, 1)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Augments <var>deque</var> by adding <var>new-value</var> to its front.</p>
     <p><var>deque</var> is modified by this operation.</p></dd>
 </dl>
@@ -1701,15 +1707,15 @@ define variable *new-list* = remove(*old-list*, 1)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1769"></a>Removes and returns the first element of a deque.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>pop <var>deque</var> </code>
       &rArr;<code> <var>first-element</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>deque</var></dt>
       <dd>
@@ -1717,8 +1723,8 @@ define variable *new-list* = remove(*old-list*, 1)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>first-element</var></dt>
       <dd>
@@ -1726,8 +1732,8 @@ define variable *new-list* = remove(*old-list*, 1)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Removes the first element from <var>deque</var> and returns it.</p>
     <p><var>deque</var> is modified by this operation.</p></dd>
 </dl>
@@ -1736,15 +1742,15 @@ define variable *new-list* = remove(*old-list*, 1)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1771"></a>Adds an element to the end of a deque.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>push-last <var>deque new-value</var> </code>
       &rArr;<code> <var>new-value</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>deque</var></dt>
       <dd>
@@ -1762,8 +1768,8 @@ define variable *new-list* = remove(*old-list*, 1)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Augments <var>deque</var> by adding <var>new-value</var> to its end.</p>
     <p><var>deque</var> is modified by this operation.</p></dd>
 </dl>
@@ -1772,15 +1778,15 @@ define variable *new-list* = remove(*old-list*, 1)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1773"></a>Removes and returns an element from the end of a deque.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>pop-last <var>deque</var> </code>
       &rArr;<code> <var>last-element</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>deque</var></dt>
       <dd>
@@ -1788,8 +1794,8 @@ define variable *new-list* = remove(*old-list*, 1)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>last-element</var></dt>
       <dd>
@@ -1797,8 +1803,8 @@ define variable *new-list* = remove(*old-list*, 1)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Removes the last element from <var>deque</var> and returns it.</p>
     <p><var>deque</var> is modified by this operation. <a name="MARKER-2-1774"></a><a name="MARKER-2-1775"></a></p></dd>
 </dl>
@@ -1810,8 +1816,8 @@ define variable *new-list* = remove(*old-list*, 1)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1778"></a>Returns a sequence with elements in the reverse order of its argument sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>reverse <var>source-sequence</var> </code>
       &rArr;<code> <var>result-sequence</var></code>
@@ -1835,8 +1841,8 @@ define variable *new-list* = remove(*old-list*, 1)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a sequence containing the same elements as <var>source-sequence</var>, but in reverse order. The <var>result-sequence</var> is generally of the same class as the <var>source-sequence</var>.</p>
     <p>The <var>result-sequence</var> may or may not be freshly allocated. The <var>source-sequence</var> is not modified by this operation.</p>
     <p>The consequences are undefined if the <var>source-sequence</var> is unbounded (circular or infinite).</p>
@@ -1858,8 +1864,8 @@ reverse(*x*)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1780"></a>Returns a sequence with elements in the reverse order of its argument sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>reverse! <var>source-sequence</var> </code>
       &rArr;<code> <var>result-sequence</var></code>
@@ -1883,8 +1889,8 @@ reverse(*x*)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a sequence containing the same elements as <var>source-sequence</var>, but in reverse order. The <var>result-sequence</var> is generally of the same class as the <var>source-sequence</var>.</p>
     <p>The <var>source-sequence</var> may be modified by this operation. The <var>result-sequence</var> may or may not be freshly allocated. The <var>source-sequence</var> and the <var>result-sequence</var> may or may not be <code>==</code>. Programs should never rely on this operation performing a side-effect on an existing sequence, but should instead use the value returned by the function.</p>
     <p>The consequences are undefined if the <var>source-sequence</var> is unbounded (circular or infinite).</p>
@@ -1899,8 +1905,8 @@ reverse(*x*)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1782"></a>Returns a sequence containing the elements of its argument sequence, sorted.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>sort <var>source-sequence</var> #key <var>test stable</var> </code>
       &rArr;<code> <var>result-sequence</var></code>
@@ -1927,8 +1933,8 @@ reverse(*x*)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a sequence containing the elements of <var>source-sequence</var> sorted into ascending order. The <var>result-sequence</var> may or may not be freshly allocated. The <var>source-sequence</var> is not modified by this operation.</p>
     <p><code>sort</code> determines the relationship between two elements by giving elements to the <var>test</var>. The first argument to the <var>test</var> function is one element of <var>source-sequence</var>; the second argument is another element of <var>source-sequence</var>. <var>test</var> should return true if and only if the first argument is strictly less than the second (in some appropriate sense). If the first argument is greater than or equal to the second (in the appropriate sense), then the <var>test</var> should return  <code>#f</code>.</p>
     <p>If <var>stable</var> is supplied and not <code>#f</code>, a possibly slower algorithm will be used that will leave in their original order any two elements, <var>x</var> and <var>y</var>, such that <var>test(x, y)</var> and <var>test(y, x)</var> are both false.</p>
@@ -1947,8 +1953,8 @@ sort (*numbers*)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1784"></a>Returns a sequence containing the elements of its argument sequence, sorted.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>sort! <var>source-sequence</var> #key <var>test stable</var> </code>
       &rArr;<code> <var>result-sequence</var></code>
@@ -1975,8 +1981,8 @@ sort (*numbers*)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a sequence containing the elements of <var>source-sequence</var> sorted into ascending order. The <var>result-sequence</var> may or may not be freshly allocated. The <var>source-sequence</var> may be modified by this operation. The <var>result-sequence</var> may or may not be <code>==</code> to <var>source-sequence</var>. After this operation, the contents of <var>source-sequence</var> are undefined.</p>
     <p>Programs should never rely on this operation performing a side-effect on an existing sequence, but should instead use the value returned by the function.</p>
     <p><code>sort!</code> determines the relationship between two elements by giving elements to the <var>test</var>. The first argument to the <var>test</var> function is one element of <var>source-sequence</var>; the second argument is another element of <var>source-sequence</var>. <var>test</var> should return true if and only if the first argument is strictly less than the second (in some appropriate sense). If the first argument is greater than or equal to the second (in the appropriate sense), then the <var>test</var> should return  <code>#f</code>.</p>
@@ -1991,15 +1997,15 @@ sort (*numbers*)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1788"></a>Returns the intersection of two sequences.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>intersection <var>sequence1 sequence2</var> #key <var>test</var> </code>
       &rArr;<code> <var>new-sequence</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>sequence1</var></dt>
       <dd>
@@ -2010,8 +2016,8 @@ sort (*numbers*)
       <dt><var>test</var></dt>
       <dd><p>An instance of <code>&lt;function&gt;</code>. The default is <code>==</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-sequence</var></dt>
       <dd>
@@ -2019,8 +2025,8 @@ sort (*numbers*)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a new sequence containing only those elements of <var>sequence1</var> that also appear in <var>sequence2</var>.</p>
     <p><var>test</var>  is used to determine whether an element appears in <var>sequence2</var>. It is always called with an element of <var>sequence1</var>  as its first argument and an element from <var>sequence2</var>  as its second argument. The order of elements in the result sequence is not specified.</p>
     <p><var>new-sequence</var> may or may not share structure with the <var>sequence1</var> and <var>sequence2</var>.</p>
@@ -2039,15 +2045,15 @@ sort (*numbers*)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1790"></a>Returns the union of two sequences.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>union <var>sequence1 sequence2</var> #key <var>test</var> </code>
       &rArr;<code> <var>new-sequence</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>sequence1</var></dt>
       <dd>
@@ -2058,8 +2064,8 @@ sort (*numbers*)
       <dt><var>test</var></dt>
       <dd><p>An instance of <code>&lt;function&gt;</code>. The default is <code>==</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-sequence</var></dt>
       <dd>
@@ -2067,8 +2073,8 @@ sort (*numbers*)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a sequence containing every element of <var>sequence1</var> and <var>sequence2</var>.</p>
     <p>If the same element appears in both argument sequences, this will not cause it to appear twice in the result sequence. However, if the same element appears more than once in a single argument sequence, it may appear more than once in the result sequence.</p>
     <p><var>test</var> is used for all comparisons. It is always called with an element from <var>sequence1</var>  as its first argument and an element from <var>sequence2</var>  as its second argument. The order of elements in the <var>new-sequence</var> is not specified.</p>
@@ -2086,8 +2092,8 @@ union (#(&quot;butter&quot;, &quot;flour&quot;, &quot;sugar&quot;, &quot;salt&qu
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1792"></a>Returns a sequence without duplicates.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>remove-duplicates <var>source-sequence</var> #key <var>test</var> </code>
       &rArr;<code> <var>result-sequence</var></code>
@@ -2112,8 +2118,8 @@ union (#(&quot;butter&quot;, &quot;flour&quot;, &quot;sugar&quot;, &quot;salt&qu
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a sequence that contains all the unique elements from <var>source-sequence</var> but no duplicate elements.</p>
     <p><var>test</var>  is the function used to determine whether one element is a duplicate of another. The <var>test</var> argument may be noncommutative; it will always be called with its arguments in the same order as they appear in <var>source-sequence</var>.</p>
     <p>The <var>result-sequence</var> may or may not be freshly allocated. However, the <var>source-sequence</var> will not be modified by this operation.</p>
@@ -2133,8 +2139,8 @@ or
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1794"></a>Returns a sequence without duplicates.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>remove-duplicates! <var>source-sequence</var> #key <var>test</var> </code>
       &rArr;<code> <var>result-sequence</var></code>
@@ -2159,8 +2165,8 @@ or
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a sequence that contains all the unique elements from <var>source-sequence</var> but no duplicate elements.</p>
     <p><var>test</var>  is the function used to determine whether one element is a duplicate of another. The <var>test</var> argument may be noncommutative; it will always be called with its arguments in the same order as they appear in <var>source-sequence</var>.</p>
     <p>The <var>result-sequence</var> may or may not be freshly allocated, may or may not share structure with the <var>source-sequence</var>, and may or may not be <code>==</code> to the <var>source-sequence</var>. The <var>source-sequence</var> may or may not be modified by the operation.</p>
@@ -2185,15 +2191,15 @@ or
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1797"></a><a name="MARKER-2-1798"></a>Returns a freshly allocated copy of some subsequence of a sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>copy-sequence <var>source</var> #key <var>start end</var> </code>
       &rArr;<code> <var>new-sequence</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>source</var></dt>
       <dd>
@@ -2213,8 +2219,9 @@ or
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Creates a freshly allocated sequence containing the elements of <var>source</var> between <var>start</var> and <var>end</var>.</p>
+  <dt><span>Description:</span></dt>
+  <dd>
+    <p>Creates a freshly allocated sequence containing the elements of <var>source</var> between <var>start</var> and <var>end</var>.</p>
     <pre class="code">
 define constant hamlet = #(&quot;to&quot;, &quot;be&quot;, &quot;or&quot;, &quot;not&quot;, &quot;to&quot;, &quot;be&quot;)
 hamlet == copy-sequence (hamlet)
@@ -2231,8 +2238,8 @@ copy-sequence (hamlet, start: 2, end: 4)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1800"></a>Returns the concatenation of one or more sequences in a sequence of a type determined by the <code>type-for-copy</code> of its first argument.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>concatenate <var>first-sequence</var> #rest <var>more-sequences</var> </code>
       &rArr;<code> <var>result-sequence</var></code>
@@ -2257,8 +2264,8 @@ copy-sequence (hamlet, start: 2, end: 4)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a sequence containing all the elements of all the sequences, in order.</p>
     <p>The <var>result-sequence</var> will be an instance of the <code>type-for-copy</code> value for <var>first-sequence</var>. It may or may not be freshly allocated. The <var>result-sequence</var> may be created by calling <code>make</code> on the indicated type, with a <code>size:</code> initialization argument whose value is the sum of the sizes of the argument sequences. (For this reason, the <code>type-for-copy</code> value of <var>first-sequence</var> must support the <code>size:</code> init-keyword.)</p>
     <p><var>new-sequence</var> may share structure with any of the argument sequences, but it is not guaranteed to do so.  The argument sequences will not be modified by this operation.</p>
@@ -2272,8 +2279,8 @@ concatenate (&quot;low-&quot;, &quot;calorie&quot;)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1802"></a>Returns the concatenation of one or more sequences in a sequence of a specified type.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>concatenate-as <var>type first-sequence</var> #rest <var>more-sequences</var> </code>
       &rArr;<code> <var>result-sequence</var></code>
@@ -2300,8 +2307,8 @@ concatenate (&quot;low-&quot;, &quot;calorie&quot;)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a sequence containing all the elements of all the sequences, in order.</p>
     <p>The <var>result-sequence</var> will be an instance of <var>type</var>. It may or may not be freshly allocated.</p>
     <p><var>type</var> must be a subtype of <code>&lt;mutable-sequence&gt;</code> and acceptable as the first argument to <code>make</code>. <code>size:</code> with a non-negative integer value must be an acceptable initarg for <code>make</code> of <var>type</var>. The <var>result-sequence</var> may be created by calling <code>make</code> on <var>type</var>, with a <code>size: </code>initialization argument whose value is the sum of the sizes of the arguments.</p>
@@ -2315,15 +2322,15 @@ concatenate-as (&lt;string&gt;, #('n', 'o', 'n'), #('f', 'a', 't'))
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1804"></a>Replaces a portion of a sequence with the elements of another sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>replace-subsequence! <var>target-sequence insert-sequence</var> #key <var>start end</var> </code><br />
       &rArr;<code> <var>result-sequence</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>target-sequence</var></dt>
       <dd>
@@ -2336,8 +2343,8 @@ concatenate-as (&lt;string&gt;, #('n', 'o', 'n'), #('f', 'a', 't'))
       <dt><var>end</var></dt>
       <dd><p>An instance of <code>&lt;integer&gt;</code>. The default is the size of <var>target-sequence</var>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>result-sequence </var></dt>
       <dd>
@@ -2345,8 +2352,8 @@ concatenate-as (&lt;string&gt;, #('n', 'o', 'n'), #('f', 'a', 't'))
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p><code>replace-subsequence!</code> returns a sequence with the same elements as <var>target-sequence</var>, except that elements of the indicated subsequence of <var>target-sequence</var> are replaced by all the elements of  <var>insert-sequence</var>. The subsequence to be overridden begins at index <var>start</var> and ends at index <var>end</var>.</p>
+  <dt><span>Description:</span></dt>
+  <dd><p><code>replace-subsequence!</code> returns a sequence with the same elements as <var>target-sequence</var>, except that elements of the indicated subsequence of <var>target-sequence</var> are replaced by all the elements of  <var>insert-sequence</var>. The subsequence to be overridden begins at index <var>start</var> and ends at index <var>end</var>.</p>
     <p class="errata left"><a href="Errata#p325_1"
 			      name="errata_p325_1"><strong>Errata:</strong></a>
       <var>source-sequence</var> should be <var>target-sequence</var>.</p>
@@ -2367,15 +2374,15 @@ define variable *original* = list (&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, 
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1806"></a>Returns the position where a pattern appears in a sequence.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>subsequence-position <var>big pattern</var> #key <var>test count</var> </code>
       &rArr;<code> <var>index</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>big</var></dt>
       <dd>
@@ -2388,8 +2395,8 @@ define variable *original* = list (&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, 
       <dt><var>count</var></dt>
       <dd><p>An instance of <code>&lt;integer&gt;</code>. The default is <code>1</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>index</var></dt>
       <dd>
@@ -2397,8 +2404,8 @@ define variable *original* = list (&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, 
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Searches <var>big</var> for a subsequence that is element-for-element equal to <var>pattern</var>, as determined by the <var>test</var> argument.</p>
     <p><var>test</var> is applied to elements of successive subsequences of <var>big</var> and corresponding elements of the <var>pattern</var> to determine whether a match has occurred. If a subsequence is found, <code>subsequence-position</code> returns the index at which the subsequence starts; otherwise, it returns <code>#f</code>. If there is more than one match, <var>count</var> determines which subsequence is selected. A <var>count</var> of 1 (the default) indicates that the first match should be returned.</p>
     <pre class="code">
@@ -2418,15 +2425,15 @@ subsequence-position (&quot;Ralph Waldo Emerson&quot;, &quot;Waldo&quot;)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1810"></a>Iterates over one or more collections for side effect.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>do <var>function collection</var> #rest <var>more-collections</var> </code>
       &rArr;<code> <var>false</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>function</var></dt>
       <dd>
@@ -2437,8 +2444,8 @@ subsequence-position (&quot;Ralph Waldo Emerson&quot;, &quot;Waldo&quot;)
       <dt><var>more-collections</var></dt>
       <dd><p>Instances of <code>&lt;collection&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>false</var></dt>
       <dd>
@@ -2446,8 +2453,9 @@ subsequence-position (&quot;Ralph Waldo Emerson&quot;, &quot;Waldo&quot;)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Applies <var>function</var> to corresponding elements of all the <var>collections</var> and returns <code>#f</code>. If all the <var>collections</var> are sequences, <code>do</code> guarantees that they will be processed in their natural order.</p>
+  <dt><span>Description:</span></dt>
+  <dd>
+    <p>Applies <var>function</var> to corresponding elements of all the <var>collections</var> and returns <code>#f</code>. If all the <var>collections</var> are sequences, <code>do</code> guarantees that they will be processed in their natural order.</p>
     <pre class="code">
 do (method (a b) print (a + b) end,
     #(100, 100, 200, 200),
@@ -2464,15 +2472,15 @@ do (method (a b) print (a + b) end,
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1812"></a>Iterates over one or more collections and collects the results in a freshly allocated collection.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>map <var>function collection</var> #rest <var>more-collections</var> </code>
       &rArr;<code> <var>new-collection</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>function</var></dt>
       <dd>
@@ -2483,8 +2491,8 @@ do (method (a b) print (a + b) end,
       <dt><var>more-collections</var></dt>
       <dd><p>Instances of  <code>&lt;collection&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-collection</var></dt>
       <dd>
@@ -2492,8 +2500,8 @@ do (method (a b) print (a + b) end,
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Creates a freshly allocated collection whose elements are obtained by calling <var>function</var> on corresponding elements of all the <var>collections</var>. If all the <var>collections</var> are sequences, processing is performed in the natural order.</p>
     <p><code>map</code> returns a collection whose value is an instance of the <code>type-for-copy</code> value of <var>collection</var>. The new collection is created by calling <code>make</code> on that type, with a <code>size:</code> initialization argument whose value is the number of corresponding elements in the <var>collections</var>.</p>
     <pre class="code">
@@ -2508,8 +2516,8 @@ map (\+,
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1814"></a>Iterates over one or more collections and collects the results in a freshly allocated collection of a specified type.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>map-as <var>type function collection</var> #rest <var>more-collections</var> </code>
       &rArr;<code> <var>new-collection</var></code>
@@ -2529,8 +2537,8 @@ map (\+,
       <dt><var>more-collections</var></dt>
       <dd><p>Instances of  <code>&lt;collection&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>new-collection</var></dt>
       <dd>
@@ -2538,8 +2546,9 @@ map (\+,
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Creates a freshly allocated collection of type <var>type</var> whose elements are obtained by applying <var>function</var> to corresponding elements of the <var>collection</var> arguments. <var>type</var>  must be acceptable as the first argument to <code>make</code>. <code>size:</code> with a non-negative integer value must be an acceptable initarg for <code>make</code> of <var>type</var>. <var>new-collection</var> is created by calling <code>make</code> on <var>type</var>, with a <code>size:</code> initialization argument whose value is the number of corresponding elements in the <var>collections</var>. If all the <var>collections</var> are sequences (including <var>new-collection</var>), processing is done in the natural order.</p>
+  <dt><span>Description:</span></dt>
+  <dd>
+    <p>Creates a freshly allocated collection of type <var>type</var> whose elements are obtained by applying <var>function</var> to corresponding elements of the <var>collection</var> arguments. <var>type</var>  must be acceptable as the first argument to <code>make</code>. <code>size:</code> with a non-negative integer value must be an acceptable initarg for <code>make</code> of <var>type</var>. <var>new-collection</var> is created by calling <code>make</code> on <var>type</var>, with a <code>size:</code> initialization argument whose value is the number of corresponding elements in the <var>collections</var>. If all the <var>collections</var> are sequences (including <var>new-collection</var>), processing is done in the natural order.</p>
     <p class="errata right"><a href="Errata#p329_1"
 			       name="errata_p329_1"><strong>Errata:</strong></a>
       The result should be a vector:<br />
@@ -2556,8 +2565,8 @@ map-as (&lt;vector&gt;, \+,
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1816"></a>Iterates over one or more collections and collects the results in an existing mutable collection.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>map-into <var>mutable-collection function collection</var> #rest <var>more-collections</var> </code><br />
       &rArr;<code> <var>mutable-collection</var></code>
@@ -2586,8 +2595,8 @@ map-as (&lt;vector&gt;, \+,
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns the <var>mutable-collection</var> argument after modifying it by replacing its elements with the results of applying <var>function</var> to corresponding elements of <var>collection</var> and <var>more-collections</var>.</p>
     <p>If <var>mutable-collection</var> and all the other <var>collections</var> are sequences, processing is done in the natural order.</p>
     <p>When <var>mutable-collection</var>  is an instance of <code>&lt;stretchy-collection&gt;</code>, the usual alignment requirement (described in <a href="Collection_Alignment#MARKER-9-1021">"Collection Alignment" on page 120</a>) is relaxed. In this case, the key sequence of <var>mutable-collection</var>  is not considered during alignment. Rather, only the key sequences for the source <var>collections</var> are aligned, with <var>function</var>  called on the corresponding elements. The result of each call to <var>function</var> is then stored into <var>mutable-collection</var>  with the corresponding key (possibly stretching <var>mutable-collection</var>  in the process), using <code>element-setter</code>. Other keys in <var>mutable-collection</var> remain undisturbed.</p>
@@ -2606,15 +2615,15 @@ x
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1818"></a><a name="MARKER-2-1819"></a>Returns the first true value obtained by iterating over one or more collections.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>any? <var>function collection</var> #rest <var>more-collections</var> </code>
       &rArr;<code> <var>value</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>function</var></dt>
       <dd>
@@ -2625,8 +2634,8 @@ x
       <dt><var>more-collections</var></dt>
       <dd><p>Instances of <code>&lt;collection&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>value</var></dt>
       <dd>
@@ -2634,8 +2643,8 @@ x
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Applies <var>function</var> to groups of corresponding elements of <var>collection</var> and <var>more-collections</var>. If an application of <var>function</var> returns true, then <code>any?</code> returns that true value. Otherwise <var>function</var> returns <code>#f</code> when applied to every such group, and <code>any?</code> returns <code>#f</code>.</p>
     <p>If all the <var>collections</var> are sequences, <code>any?</code> operates in natural order. In all cases, <code>any?</code> stops on the first true value returned by <var>function</var>.</p>
     <pre class="code">
@@ -2650,15 +2659,15 @@ any? (even?, #(1, 3, 5, 7))
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1821"></a><a name="MARKER-2-1822"></a>Returns true if a predicate returns true when applied to all corresponding elements of a set of collections.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>every? <var>function collection</var> #rest <var>more-collections</var> </code>
       &rArr;<code> <var>value</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>function</var></dt>
       <dd>
@@ -2669,8 +2678,8 @@ any? (even?, #(1, 3, 5, 7))
       <dt><var>more-collections</var></dt>
       <dd><p>Instances of <code>&lt;collection&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>value</var></dt>
       <dd>
@@ -2678,8 +2687,8 @@ any? (even?, #(1, 3, 5, 7))
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Applies <var>function</var> to groups of corresponding elements of <var>collection</var> and <var>more-collections</var>. If an application of <var>function</var> returns false, then <code>every?</code> returns <code>#f</code>. Otherwise <var>function</var> returns a true value when applied to every such group, and <code>every?</code> returns <code>#t</code>.</p>
     <p>If all the <var>collections</var> are sequences, <code>every?</code> operates in natural order. In all cases, <code>every?</code> stops on the first false value returned by <var>function</var>.</p>
     <pre class="code">
@@ -2696,15 +2705,15 @@ every? (odd?, #(1, 3, 5, 7))
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1824"></a>Combines the elements of a collection and a seed value into a single value by repeatedly applying a binary function.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>reduce <var>function initial-value collection</var> </code>
       &rArr;<code> <var>value</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>function</var></dt>
       <dd>
@@ -2715,8 +2724,8 @@ every? (odd?, #(1, 3, 5, 7))
       <dt><var>collection</var></dt>
       <dd><p>An instance of <code>&lt;collection&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>value</var></dt>
       <dd>
@@ -2724,8 +2733,8 @@ every? (odd?, #(1, 3, 5, 7))
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns the result of combining the elements of <var>collection</var> and <var>initial-value</var> according to <var>function</var>.</p>
     <p>If <var>collection</var> is empty, <code>reduce</code> returns <var>initial-value</var>; otherwise, <var>function</var> is applied to <var>initial-value</var> and the first element of <var>collection</var> to produce a new value. If more elements remain in the <var>collection</var>, then <var>function</var> is called again, this time with the value from the previous application and the next element from <var>collection</var>. This process continues until all elements of <var>collection</var> have been processed.</p>
     <p><var>function</var> is a binary function used to combine all the elements of <var>collection</var> into a single value. Processing is always done in the natural order for <var>collection</var>.</p>
@@ -2742,15 +2751,15 @@ reduce (max, high-score, #(3, 12, 9, 8, 8, 6))
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1826"></a>Combines the elements of a collection into a single value by repeatedly applying a binary function, using the first element of the collection as the seed value.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>reduce1 <var>function collection</var> </code>
       &rArr;<code> <var>value</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>function</var></dt>
       <dd>
@@ -2759,8 +2768,8 @@ reduce (max, high-score, #(3, 12, 9, 8, 8, 6))
       <dt><var>collection</var></dt>
       <dd><p>An instance of <code>&lt;collection&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>value</var></dt>
       <dd>
@@ -2768,8 +2777,8 @@ reduce (max, high-score, #(3, 12, 9, 8, 8, 6))
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns the combination of the elements of <var>collection</var> according to <var>function</var>.</p></dd>
   <dd>
     <p>An error is signaled if <var>collection</var> is empty.</p>
@@ -2785,15 +2794,15 @@ reduce1 (\+, #(1, 2, 3, 4, 5))
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1828"></a><a name="MARKER-2-1829"></a>Returns those elements of a sequence that satisfy a predicate.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>choose <var>predicate source-sequence</var> </code>
       &rArr;<code> <var>result-sequence</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>predicate</var></dt>
       <dd>
@@ -2811,8 +2820,9 @@ reduce1 (\+, #(1, 2, 3, 4, 5))
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a sequence containing those elements of <var>source-sequence </var> that satisfy <var>predicate</var>. The <var>result-sequence</var> may or may not be freshly allocated.</p>
+  <dt><span>Description:</span></dt>
+  <dd>
+    <p>Returns a sequence containing those elements of <var>source-sequence </var> that satisfy <var>predicate</var>. The <var>result-sequence</var> may or may not be freshly allocated.</p>
     <pre class="code">
 choose (even?, #(3, 1, 4, 1, 5, 8, 9))
   &rArr;  #(4, 8) </pre>
@@ -2823,15 +2833,15 @@ choose (even?, #(3, 1, 4, 1, 5, 8, 9))
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1831"></a><a name="MARKER-2-1832"></a>Returns those elements of a sequence that correspond to those in another sequence that satisfy a predicate.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>choose-by <var>predicate test-sequence value-sequence</var> </code>
       &rArr;<code> <var>result-sequence</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>predicate</var></dt>
       <dd>
@@ -2851,8 +2861,9 @@ choose (even?, #(3, 1, 4, 1, 5, 8, 9))
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a sequence containing the elements from <var>value-sequence</var> that correspond to elements in <var>test-sequence</var> that satisfy <var>predicate</var>. The <var>result-sequence</var> may or may not be freshly allocated.</p>
+  <dt><span>Description:</span></dt>
+  <dd>
+    <p>Returns a sequence containing the elements from <var>value-sequence</var> that correspond to elements in <var>test-sequence</var> that satisfy <var>predicate</var>. The <var>result-sequence</var> may or may not be freshly allocated.</p>
     <pre class="code">
 choose-by (even?, range (from: 1),
              #(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, &quot;g&quot;, &quot;h&quot;, &quot;i&quot;))
@@ -2866,15 +2877,15 @@ choose-by (even?, range (from: 1),
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1834"></a>Returns true if a collection contains a particular value.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>member? <var>value collection</var> #key <var>test</var> </code>
       &rArr;<code> <var>boolean</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>value</var></dt>
       <dd>
@@ -2885,8 +2896,8 @@ choose-by (even?, range (from: 1),
       <dt><var>test</var></dt>
       <dd><p>An instance of <code>&lt;function&gt;</code>. The default is <code>==</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>boolean</var></dt>
       <dd>
@@ -2894,8 +2905,8 @@ choose-by (even?, range (from: 1),
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p><a name="MARKER-2-1835"></a>Returns true if <var>collection</var> contains <var>value</var> as determined by <var>test</var>. Otherwise returns false.</p>
     <p>The <var>test</var> function may be noncommutative: it is always called with <var>value</var> as its first argument and an element from <var>collection</var> as its second argument.</p>
     <pre class="code">
@@ -2914,15 +2925,15 @@ member? (#&quot;banana&quot;, flavors)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1837"></a><a name="MARKER-2-1838"></a>Returns the key in a collection such that the corresponding collection element satisfies a predicate.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>find-key <var>collection function</var> #key <var>skip failure</var> </code>
       &rArr;<code> <var>key</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>collection</var></dt>
       <dd>
@@ -2935,8 +2946,8 @@ member? (#&quot;banana&quot;, flavors)
       <dt><var>failure</var></dt>
       <dd><p>An instance of <code>&lt;object&gt;</code>. The default is <code>#f</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>key</var></dt>
       <dd>
@@ -2944,8 +2955,8 @@ member? (#&quot;banana&quot;, flavors)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns a key value such that <code>(</code><var>predicate</var> <code>(element</code> <var>collection key</var><code>))</code> is true. If no element in <var>collection</var> satisfies <var>predicate</var>, <code>find-key</code> returns <var>failure</var>.</p>
     <p>The <var>skip</var> argument indicates that the first <var>skip</var> matching elements should be ignored. If <var>skip</var> or fewer elements of <var>collection</var> satisfy <var>predicate</var>, then <var>failure</var> is returned. If collection is not stable under iteration, then skip is only useful for finding out whether collection contains at least <var>skip</var> elements which satisfy <var>predicate</var>; it is not useful for finding a particular element.</p>
     <pre class="code">
@@ -2962,15 +2973,15 @@ flavors[1]
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1840"></a>Modifies an explicit key collection so it no longer has a particular key.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>remove-key! <var>collection key</var> </code>
       &rArr;<code> <var>boolean</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>collection</var></dt>
       <dd>
@@ -2988,8 +2999,8 @@ flavors[1]
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Modifies <var>collection</var> so that it no longer has a key equal to <var>key</var>. Equality is determined by <var>collection</var>'s key-test function.</p>
     <p>The <var>boolean</var> return value will be <code>#t</code> if the <var>key</var> was present and removed, or <code>#f</code> if the key was not present and hence not removed.</p>
     <a name="HEADING102-650"></a>
@@ -3002,8 +3013,8 @@ flavors[1]
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1842"></a>Replaces those collection elements that satisfy a predicate.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>replace-elements! <var>mutable-collection predicate new-value-fn</var> #key <var>count</var> </code><br />
       &rArr;<code> <var>mutable-collection</var></code>
@@ -3032,8 +3043,8 @@ flavors[1]
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Replaces those elements of <var>mutable-collection</var> for which <var>predicate</var> returns true. The elements are replaced with the value of calling <var>new-value-fn</var> on the existing element. If <var>count</var> is <code>#f</code>, all of the matching elements are replaced. Otherwise, no more than <var>count</var> elements are replaced.</p></dd>
+  <dt><span>Description:</span></dt>
+  <dd><p>Replaces those elements of <var>mutable-collection</var> for which <var>predicate</var> returns true. The elements are replaced with the value of calling <var>new-value-fn</var> on the existing element. If <var>count</var> is <code>#f</code>, all of the matching elements are replaced. Otherwise, no more than <var>count</var> elements are replaced.</p></dd>
   <dd><p><var>mutable-collection</var> may be modified by this operation.</p>
     <pre class="code">
 define variable numbers = list (10, 13, 16, 19)
@@ -3046,8 +3057,8 @@ replace-elements! (numbers, odd?, double)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1844"></a>Fills a collection with a specified value.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>fill! <var>mutable-collection value</var> #key <var>start end</var> </code>
       &rArr;<code> <var>mutable-collection</var></code>
@@ -3076,8 +3087,8 @@ replace-elements! (numbers, odd?, double)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Modifies <var>mutable-collection</var> so that <code>element(<var>mutable-collection, key)</var></code> returns <var>value</var> for every <var>key</var>.</p>
     <p>If <var>mutable-collection</var> is a sequence, then <var>start</var> and <var>end</var> keywords may be specified to indicate that only a part of the sequence should be filled. <var>start</var> is considered an inclusive bound and defaults to <code>0</code>; <var>end</var> is an exclusive bound and defaults to the length of the sequence.</p>
     <pre class="code">
@@ -3094,15 +3105,15 @@ fill! (numbers, 3, start: 2)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-2-1540"></a>Returns a group of functions used to iterate over the elements of a collection.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>forward-iteration-protocol <var>collection</var> </code><br />
       &rArr;<code> <var>initial-state limit next-state finished-state? current-key current-element current-element-setter copy-state</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>collection</var></dt>
       <dd>
@@ -3110,8 +3121,8 @@ fill! (numbers, 3, start: 2)
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>initial-state</var></dt>
       <dd>
@@ -3169,8 +3180,8 @@ fill! (numbers, 3, start: 2)
       <dd><p>This function returns a state that represents the same point in
 	  the iteration over <var>collection</var> as is represented by <var>state.</var></p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns eight values used to implement iteration over the <var>collection</var> argument.</p>
     <p>Only the <var>collection</var> argument this function was called with may be
       used as the <var>collection</var> argument to functions returned by this function. Only
@@ -3199,15 +3210,15 @@ end method do1;</pre>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1850"></a>Returns a group of functions used to iterate over the elements of a collection in reverse order.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>backward-iteration-protocol <var>collection</var> </code><br />
       &rArr;<code> <var>initial-state limit next-state finished-state? current-key current-element current-element-setter copy-state</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>collection</var></dt>
       <dd>
@@ -3215,8 +3226,8 @@ end method do1;</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>initial-state</var></dt>
       <dd>
@@ -3237,8 +3248,8 @@ end method do1;</pre>
       <dt><var>copy-state</var></dt>
       <dd><p>An instance of <code>&lt;function&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Returns eight values used to implement reverse iteration over the <var>collection</var> argument.</p>
     <p>Some collection classes that are stable under iteration support the ability to iterate in the reverse of the natural order, by providing a method on the generic function <code>backward-iteration-protocol</code>. The eight values returned by this function are analogous to the corresponding values returned by <code>forward-iteration-protocol</code>.</p></dd>
 </dl>
@@ -3250,15 +3261,15 @@ end method do1;</pre>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1852"></a>Returns functions used to implement the iteration protocol for tables.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>table-protocol <var>table</var> </code>
       &rArr;<code> <var>test-function hash-function</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>table</var></dt>
       <dd>
@@ -3266,8 +3277,8 @@ end method do1;</pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>test-function</var></dt>
       <dd>
@@ -3285,8 +3296,8 @@ end method do1;</pre>
       function associated with the table's equivalence predicate. The hash code is returned as two
       values, <var>id</var> (an integer) and <var>state</var> (a hash state).</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns the test-function and hash-function for the <code>&lt;table&gt;</code>. These functions are in turn used to implement the other collection operations on <code>&lt;table&gt;</code>.</p>
+  <dt><span>Description:</span></dt>
+  <dd><p>Returns the test-function and hash-function for the <code>&lt;table&gt;</code>. These functions are in turn used to implement the other collection operations on <code>&lt;table&gt;</code>.</p>
     <a name="HEADING102-732"></a>
     <h5 class="method-signature"><span class="signature"><code>table-protocol</code> <var>object-table</var> &rArr; <var>test-function  hash-function</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
     <p class="short-description">The method for <code>&lt;object-table&gt;</code> returns <code>==</code>  as the <var>test-function</var> and <code>object-hash</code> as the <var>hash-function</var>.</p>
@@ -3304,15 +3315,15 @@ end method table-protocol; </pre>
 <hr class="item-title" />
 <p class="short-description">Returns a hash-code created from the merging of two argument hash codes.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>merge-hash-codes <var>id1 state1 id2 state2</var> #key <var>ordered</var> </code>
       &rArr;<code> <var>merged-id merged-state</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>id1 </var></dt>
       <dd>
@@ -3327,8 +3338,8 @@ end method table-protocol; </pre>
       <dt><var>ordered</var></dt>
       <dd><p>An instance of <code>&lt;boolean&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>merged-id </var></dt>
       <dd>
@@ -3337,8 +3348,8 @@ end method table-protocol; </pre>
       <dt><var>merged-state</var></dt>
       <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p>Computes a new hash code by merging the argument hash codes in some implementation dependent way. This can be used, for example, to generate a hash-code for an object by combining hash codes of some of its parts.</p>
     <p><var>id1</var>, <var>id2</var>, and <var>merged-id </var> are all integers. <var>state1</var>, <var>state2</var>, and <var>merged-state </var> are all hash states. <var>ordered</var> is a boolean and determines whether the algorithm used to perform the merge is permitted to be order dependent. If false, which is the default, then the merged result must be independent of the order in which the argument pairs are provided. If true, then the order of the argument pairs matters because the algorithm used need not be either commutative or associative. It is best to provide a true value for <var>ordered</var> when possible, as this may result in a better distribution of hash ids. However, <var>ordered</var> must only be true if this will not cause the hash function to violate the second constraint on hash functions, described on <a href="Tables#MARKER-9-1049">page 123</a>.</p>
     <p><var>state1</var> and <var>state2</var> should be the value of <code>$permanant-hash-state</code> or hash-states returned from previous calls to <code>merge-hash-codes</code> or <code>object-hash</code>.</p></dd>
@@ -3348,15 +3359,15 @@ end method table-protocol; </pre>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-1855"></a>The hash function for the equivalence predicate <code>==</code>.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Signature:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Signature:</span></dt>
+  <dd>
     <p class="signature">
       <code>object-hash <var>object</var> </code>
       &rArr;<code> <var>hash-id hash-state</var></code>
     </p>
   </dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>object </var></dt>
       <dd>
@@ -3364,8 +3375,8 @@ end method table-protocol; </pre>
       </dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <dl>
       <dt><var>hash-id </var></dt>
       <dd>
@@ -3374,8 +3385,8 @@ end method table-protocol; </pre>
       <dt><var>hash-state</var></dt>
       <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche"><p>Returns a hash-code for <var>object</var> that corresponds to the equivalence predicate <code>==</code>. It is made available as a tool for writing hash functions in which the object identity of some component of a key is to be used in computing the hash code. It returns a hash id (an integer) and associated hash state for the object, computed in some implementation dependent manner. The values returned by <code>object-hash</code> when called repeatedly on the same object might not be the same for each call. If the <var>hash-id</var> value changes then the <var>hash-state</var> value will also change.<a name="MARKER-2-1856"></a><a name="MARKER-2-1857"></a></p></dd>
+  <dt><span>Description:</span></dt>
+  <dd><p>Returns a hash-code for <var>object</var> that corresponds to the equivalence predicate <code>==</code>. It is made available as a tool for writing hash functions in which the object identity of some component of a key is to be used in computing the hash code. It returns a hash id (an integer) and associated hash state for the object, computed in some implementation dependent manner. The values returned by <code>object-hash</code> when called repeatedly on the same object might not be the same for each call. If the <var>hash-id</var> value changes then the <var>hash-state</var> value will also change.<a name="MARKER-2-1856"></a><a name="MARKER-2-1857"></a></p></dd>
 </dl>
 
 </div>

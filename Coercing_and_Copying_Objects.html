@@ -188,15 +188,15 @@
       <hr class="item-title" />
       <p class="short-description"><code><a name="MARKER-9-1676"></a></code>Returns its argument.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>identity <var>object</var> </code>
 	    &rArr;<code> <var>object</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>object</var></dt>
 	    <dd>
@@ -214,23 +214,23 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>Returns <var>object</var> unaltered.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd><p>Returns <var>object</var> unaltered.</p></dd>
       </dl>
       <a name="HEADING101-8"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1677">values</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-2-1678"></a>Returns its arguments as multiple values.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>values #rest <var>the-values</var> </code>
 	    &rArr;<code> #rest <var>the-values</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>the-values</var></dt>
 	    <dd>
@@ -248,8 +248,9 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>Returns <var>the-values</var> as multiple values.</p>
+	<dt><span>Description:</span></dt>
+	<dd>
+	  <p>Returns <var>the-values</var> as multiple values.</p>
 	  <pre class="code">
 values(1, 2, 3);
  &rArr; 1    // first value returned
@@ -265,15 +266,15 @@ values(1, 2, 3);
       <hr class="item-title" />
       <p class="short-description"><code><a name="MARKER-9-1680"></a></code>Coerces an object to a type.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>as <var>type object</var> </code>
 	    &rArr;<code> <var>instance</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>type</var></dt>
 	    <dd>
@@ -282,8 +283,8 @@ values(1, 2, 3);
 	    <dt><var>object</var></dt>
 	    <dd><p>An instance of <code>&lt;object&gt;</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>instance</var></dt>
 	    <dd>
@@ -291,8 +292,8 @@ values(1, 2, 3);
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Coerces <var>object</var> to <var>type</var>. That is, it returns an instance
 	  of <var>type</var> that has the same contents as <var>object</var>. If <var>object</var>
 	  is already an instance of <var>type</var>, it is returned unchanged. In general, the value
@@ -351,15 +352,15 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1683"></a>Coerces an object to uppercase.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>as-uppercase <var>object1</var> </code>
 	    &rArr;<code> <var>object2</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>object1</var></dt>
 	    <dd>
@@ -367,8 +368,8 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>object2</var></dt>
 	    <dd>
@@ -376,8 +377,8 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Coerces an object to uppercase and returns the resulting new object.</p>
 	  <p><var>object1</var> is not modified by this operation.</p>
 	  <a name="HEADING101-44"></a>
@@ -397,15 +398,15 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1685"></a>Coerces an object to uppercase in place.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>as-uppercase! <var>object</var> </code>
 	    &rArr;<code> <var>object</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>object</var></dt>
 	    <dd>
@@ -423,8 +424,8 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Coerces an object to uppercase in place and returns the modified object.</p>
 	  <p><var>object</var> may be modified by this operation, and the result will
 	  be <code>==</code> to the <var>object</var>.</p>
@@ -440,15 +441,15 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1687"></a>Coerces an object to lowercase.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>as-lowercase <var>object1</var> </code>
 	    &rArr;<code> <var>object2</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>object1</var></dt>
 	    <dd>
@@ -456,8 +457,8 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>object2</var></dt>
 	    <dd>
@@ -465,8 +466,8 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Coerces an object to lowercase and returns the resulting new object.</p>
 	  <p><var>object1</var> will not be modified by this operation.</p>
 	  <a name="HEADING101-64"></a>
@@ -486,15 +487,15 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-2-1671"></a>Coerces an object to lowercase in place.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>as-lowercase! <var>object</var> </code>
 	    &rArr;<code> <var>object</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>object</var></dt>
 	    <dd>
@@ -512,8 +513,8 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Coerces an object to lowercase in place and returns the modified object.</p>
 	  <p><var>object</var> may be modified by this operation, and the result will
 	  be <code>==</code> to the <var>object</var>.</p>
@@ -531,15 +532,15 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1692"></a>Returns a copy of its argument.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>shallow-copy <var>object1</var> </code>
 	    &rArr;<code> #rest <var>objects</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>object1</var></dt>
 	    <dd>
@@ -547,8 +548,8 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>objects</var></dt>
 	    <dd>
@@ -556,8 +557,8 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Returns a new object that has the same contents as <var>object1</var>. The contents are
 	  not copied but are the same objects contained in <var>object1</var>.</p>
 	  <p>There is a predefined method for instances of <code>&lt;collection&gt;</code>. For
@@ -576,15 +577,15 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
       <p class="short-description"><a name="MARKER-9-1694"></a>Returns an appropriate type for
       creating mutable copies of its argument.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>type-for-copy <var>object</var> </code>
 	    &rArr;<code> <var>type</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>object</var></dt>
 	    <dd>
@@ -601,8 +602,8 @@ as (&lt;string&gt;, #&quot;Foo&quot;)
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Returns an appropriate type for creating mutable copies of <var>object</var>.</p>
 	  <p>The <code>type-for-copy</code> value of a collection must be an instantiable subtype
 	  of <code>&lt;mutable-collection&gt;</code>. For collections that are themselves mutable,

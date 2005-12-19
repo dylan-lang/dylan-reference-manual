@@ -150,10 +150,10 @@
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2072"></a>Stores a new value in a location.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Macro Call:</span></dt>
-  <dd class="Cliche"><p><var>place</var> <code>:=</code> <var>new-value</var></p></dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Macro Call:</span></dt>
+  <dd><p><var>place</var> <code>:=</code> <var>new-value</var></p></dd>
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>place</var></dt>
       <dd><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
@@ -161,12 +161,12 @@
       <dd><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
     </dl>
   </dd>
-  <dt class="Cliche"><span>Values:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Values:</span></dt>
+  <dd>
     <p><var>new-value</var>, an instance of <code>&lt;object&gt;</code>.</p>
   </dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p><code>:=</code> stores <var>new-value</var> in <var>place</var> and returns <var>new-value</var>.</p>
     <p><var>place</var> may be a variable, a getter function or macro call with a corresponding setter, a slot access, or an element reference.</p>
     <p><var>new-value</var> may be any operand. It is executed, and its value is stored in <var>place</var>.</p>
@@ -221,10 +221,10 @@ element-setter (&quot;quux&quot;, foo, 2).<a name="MARKER-2-2073"></a> </pre>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2075"></a>Returns the value of the first of two operands that is true.<a name="MARKER-9-2076"></a></p>
 <dl class="Cliche">
-<dt class="Cliche"><span>Macro Call:</span></dt>
-<dd class="Cliche"><p><var>one</var> <code>|</code> <var>another</var></p></dd>
-<dt class="Cliche"><span>Arguments:</span></dt>
-<dd class="Cliche">
+<dt><span>Macro Call:</span></dt>
+<dd><p><var>one</var> <code>|</code> <var>another</var></p></dd>
+<dt><span>Arguments:</span></dt>
+<dd>
   <dl>
     <dt><var>one</var></dt>
     <dd><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
@@ -232,24 +232,24 @@ element-setter (&quot;quux&quot;, foo, 2).<a name="MARKER-2-2073"></a> </pre>
     <dd><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
   </dl>
 </dd>
-<dt class="Cliche"><span>Values:</span></dt>
-<dd class="Cliche"><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><span>Description:</span></dt>
-<dd class="Cliche"><p><code>|</code> (<a name="MARKER-2-2077"></a>logical or) executes <var>one</var>. If the first value of <var>one</var> is true, that value is returned and <var>another</var> is not executed. Otherwise <var>another</var> is executed and its values are returned.</p></dd>
+<dt><span>Values:</span></dt>
+<dd><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
+<dt><span>Description:</span></dt>
+<dd><p><code>|</code> (<a name="MARKER-2-2077"></a>logical or) executes <var>one</var>. If the first value of <var>one</var> is true, that value is returned and <var>another</var> is not executed. Otherwise <var>another</var> is executed and its values are returned.</p></dd>
 </dl>
 <a name="HEADING115-100"></a>
 <h4 class="item-title"><span class="signature"><code id="MARKER-2-2078">&amp;</code>  </span><span class="attributes-summary">[Function Macro]</span></h4>
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2079"></a>If the value of a first operand is true, executes a second operand and returns its values.</p>
 <dl class="Cliche">
-<dt class="Cliche"><span>Macro Call:</span></dt>
-<dd class="Cliche">
+<dt><span>Macro Call:</span></dt>
+<dd>
   <p class="macro-call">
     <var>one</var> <code>&amp;</code> <var>another</var> &rArr; <var>values</var>
   </p>
 </dd>
-<dt class="Cliche"><span>Arguments:</span></dt>
-<dd class="Cliche">
+<dt><span>Arguments:</span></dt>
+<dd>
   <dl>
     <dt><var>one</var></dt>
     <dd><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
@@ -257,10 +257,10 @@ element-setter (&quot;quux&quot;, foo, 2).<a name="MARKER-2-2073"></a> </pre>
     <dd><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
   </dl>
 </dd>
-<dt class="Cliche"><span>Values:</span></dt>
-<dd class="Cliche"><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
-<dt class="Cliche"><span>Description:</span></dt>
-<dd class="Cliche"><p><code>&amp;</code> (<a name="MARKER-2-2080"></a>logical and) executes <var>one</var>. If the first value returned by <var>one</var> is false, <code>#f</code> is returned and <var>another</var> is not executed. Otherwise, <var>another</var> is executed and its values are returned.<a name="MARKER-2-2081"></a></p>
+<dt><span>Values:</span></dt>
+<dd><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
+<dt><span>Description:</span></dt>
+<dd><p><code>&amp;</code> (<a name="MARKER-2-2080"></a>logical and) executes <var>one</var>. If the first value returned by <var>one</var> is false, <code>#f</code> is returned and <var>another</var> is not executed. Otherwise, <var>another</var> is executed and its values are returned.<a name="MARKER-2-2081"></a></p>
 <a name="LINK-Built-In_Macros-lastpage"></a></dd>
 </dl>
 

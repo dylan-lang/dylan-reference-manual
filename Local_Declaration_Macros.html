@@ -139,10 +139,10 @@
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2031"></a>Creates and initializes new local bindings within the smallest enclosing implicit body.</p>
 <dl class="Cliche">
-  <dt class="Cliche"><span>Macro Call:</span></dt>
-  <dd class="Cliche"><p><code>let</code> <var>variables</var> <code>=</code> <var>init</var> <code>;</code></p></dd>
-  <dt class="Cliche"><span>Arguments:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Macro Call:</span></dt>
+  <dd><p><code>let</code> <var>variables</var> <code>=</code> <var>init</var> <code>;</code></p></dd>
+  <dt><span>Arguments:</span></dt>
+  <dd>
     <dl>
       <dt><var>variables</var></dt>
       <dd>
@@ -151,8 +151,8 @@
       <dt><var>init</var></dt>
       <dd><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
   </dl></dd>
-  <dt class="Cliche"><span>Description:</span></dt>
-  <dd class="Cliche">
+  <dt><span>Description:</span></dt>
+  <dd>
     <p><code>let</code> creates local bindings for the <var>variables</var>, and initializes them to the values returned by <var>init</var>. The bindings are visible for the remainder of the smallest enclosing implicit body.</p>
     <p><a name="MARKER-2-2032"></a>The first value returned by the <var>init</var> is bound to the first <var>variable</var>, the second value to the second <var>variable</var>, etc. The last <var>variable</var> may be preceded by <code>#rest</code>, in which case it is bound to a sequence containing all the remaining values.</p>
     <p>Each <var>variable</var> is a variable-name or a variable-name followed by a specializer.</p>
@@ -177,10 +177,10 @@ let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2035"></a><a name="MARKER-2-2036"></a>Creates new local bindings within the smallest enclosing implicit body and initializes them to local methods that can be self-recursive and mutually recursive.</p>
 <dl class="Cliche">
-<dt class="Cliche"><span>Macro Call:</span></dt>
-<dd class="Cliche"><p><code>local</code> <strong class="re">{ [</strong> <code>method</code> <strong class="re">]</strong> <var>name parameter-list</var> <strong class="re">[</strong> <var>body</var> <strong class="re">]</strong> <code>end</code> <strong class="re">[</strong> <code>method</code> <strong class="re">] [</strong> <var>name</var> <strong class="re">] }</strong> <code>,</code><strong class="re"><sup>+</sup></strong></p></dd>
-<dt class="Cliche"><span>Arguments:</span></dt>
-<dd class="Cliche">
+<dt><span>Macro Call:</span></dt>
+<dd><p><code>local</code> <strong class="re">{ [</strong> <code>method</code> <strong class="re">]</strong> <var>name parameter-list</var> <strong class="re">[</strong> <var>body</var> <strong class="re">]</strong> <code>end</code> <strong class="re">[</strong> <code>method</code> <strong class="re">] [</strong> <var>name</var> <strong class="re">] }</strong> <code>,</code><strong class="re"><sup>+</sup></strong></p></dd>
+<dt><span>Arguments:</span></dt>
+<dd>
     <dl>
       <dt><var>name</var></dt>
       <dd><p><span class="BNF">variable-name<em class="BNF"><sub>bnf</sub></em></span></p></dd>
@@ -189,8 +189,8 @@ let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount)
       <dt><var>body</var></dt>
       <dd><p><span class="BNF">body<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 </dl></dd>
-<dt class="Cliche"><span>Description:</span></dt>
-<dd class="Cliche">
+<dt><span>Description:</span></dt>
+<dd>
 <p><code>local</code> creates local methods that may be mutually recursive and self-recursive.</p>
 <p>Each <var>name</var> creates a new local binding. The binding is initialized to a new method specified by the <var>parameter-list</var> and <var>body</var>. In addition to being visible for the remainder of the smallest enclosing implicit body, the bindings created for the <var>names</var> are visible to the <var>parameter-lists</var> and <var>bodies</var> of all the methods created by the <code>local</code> declaration.</p>
 <p>The <var>parameter-list</var> is a standard method parameter list. A complete description of parameter lists is given in <a href="Parameter_Lists#MARKER-9-782">"Parameter Lists" on page 84</a>.</p>
@@ -201,10 +201,10 @@ let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount)
 <hr class="item-title" />
 <p class="short-description"><a name="MARKER-9-2038"></a><a name="MARKER-2-2039"></a>Establishes a condition handler for the duration of the execution of smallest enclosing implicit body.</p>
 <dl class="Cliche">
-<dt class="Cliche"><span>Macro Call:</span></dt>
-<dd class="Cliche"><p><code>let handler</code> <var>condition</var> <code>=</code> <var>handler</var></p></dd>
-<dt class="Cliche"><span>Arguments:</span></dt>
-<dd class="Cliche">
+<dt><span>Macro Call:</span></dt>
+<dd><p><code>let handler</code> <var>condition</var> <code>=</code> <var>handler</var></p></dd>
+<dt><span>Arguments:</span></dt>
+<dd>
     <dl>
       <dt><var>condition</var></dt>
       <dd><p><var>type</var> <strong class="re">|</strong> <code>(</code> <var>type</var> <strong class="re">{</strong> <code>,</code> <var>option</var> <strong class="re">}*</strong> <code>)</code></p></dd>
@@ -219,8 +219,9 @@ let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount)
       <dt><var>handler</var></dt>
       <dd><p><span class="BNF">expression<em class="BNF"><sub>bnf</sub></em></span></p></dd>
 </dl></dd>
-<dt class="Cliche"><span>Description:</span></dt>
-<dd class="Cliche"><p><code>let handler</code> establishes a new condition handler that is in effect for the duration of the execution of the remainder of the smallest enclosing implicit body. Unlike the local declarations <code>let</code> and <code>local</code>, <code>let handler</code> does not create any bindings.</p>
+<dt><span>Description:</span></dt>
+<dd>
+  <p><code>let handler</code> establishes a new condition handler that is in effect for the duration of the execution of the remainder of the smallest enclosing implicit body. Unlike the local declarations <code>let</code> and <code>local</code>, <code>let handler</code> does not create any bindings.</p>
   <ul>
     <li>The <var>condition</var> describes the conditions for which the handler is applicable.
       <ul>

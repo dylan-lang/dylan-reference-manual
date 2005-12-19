@@ -178,14 +178,15 @@
       <hr class="item-title" />
       <p>The class of all types, including classes and other types.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;object&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>The class of all types. All types (including <code>&lt;type&gt;</code> and <code>&lt;class&gt;</code>) are instances of <code>&lt;type&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;type&gt;</code> provides the following operations:</p>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;object&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd><p>The class of all types. All types (including <code>&lt;type&gt;</code> and <code>&lt;class&gt;</code>) are instances of <code>&lt;type&gt;</code>.</p></dd>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;type&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-4</strong>  Functions on &lt;type&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -218,10 +219,10 @@
       <hr class="item-title" />
       <p>The class of all Dylan classes.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;type&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;class&gt;</code> supports the following init-keywords:</p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;type&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>The class <code>&lt;class&gt;</code> supports the following init-keywords:</p></dd>
 	<dd>
 	  <dl>
 	    <dt><code>superclasses:</code></dt>
@@ -297,13 +298,14 @@
 	    </dd><!-- 'slots:' description -->
 	  </dl>
 	</dd><!-- 'init-keywords:' description -->
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of all classes. All classes (including <code>&lt;class&gt;</code>) are general instances of <code>&lt;class&gt;</code>.</p>
 	  <p>In most programs the majority of classes are created with <code>define class</code>. However, there is nothing to prevent programmers from creating classes by calling <code>make</code>, for example, if they want to create a class without storing it in a module binding, or if they want to create new classes at runtime.</p>
 	  <p>If <code>make</code> is used to create a new class and creating the new class would violate any restrictions specified by sealing directives, then an error of type <code>&lt;sealed-object-error&gt;</code> is signaled.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;class&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;class&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-6</strong>  Functions on &lt;class&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -339,20 +341,20 @@
       <hr class="item-title" />
       <p>The class of types that indicate a single object.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;type&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;singleton&gt;</code> supports the following init-keyword:</p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;type&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>The class <code>&lt;singleton&gt;</code> supports the following init-keyword:</p></dd>
 	<dd><dl>
 	    <dt><code>object:</code></dt>
 	    <dd><p>An instance of <code>&lt;object&gt;</code>. The object that the singleton indicates. There is no default for this argument. If it is not supplied, an error will be signaled.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of singletons.</p>
 	  <p>If a singleton for the specified object already exists, implementations may return it rather than allocating a new singleton.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>None.<a name="MARKER-2-1374"></a></p></dd>
+	<dt><span>Operations:</span></dt>
+	<dd><p>None.<a name="MARKER-2-1374"></a></p></dd>
       </dl>
 
     </div>

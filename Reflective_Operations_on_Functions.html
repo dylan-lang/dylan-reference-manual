@@ -140,8 +140,8 @@
       <p class="short-description"><a name="MARKER-9-1895"></a>Returns the methods of a generic
       function.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>generic-function-methods <var>generic-function</var> </code>
 	    &rArr;<code> <var>sequence</var></code>
@@ -166,8 +166,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Returns a sequence of all of the methods in <var>generic-function</var>. The order of
 	  the methods in the sequence is not significant. The sequence returned should never be
 	  destructively modified. Doing so may cause unpredictable behavior.</p>
@@ -180,8 +180,8 @@
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1897"></a>Adds a method to a generic function.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>add-method <var>generic-function method</var> </code>
 	    &rArr;<code> <var>new-method old-method</var></code>
@@ -197,8 +197,8 @@
 	    <dt><var>method</var></dt>
 	    <dd><p>An instance of <code>&lt;method&gt;</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>new-method</var></dt>
 	    <dd>
@@ -207,8 +207,8 @@
 	    <dt><var>old-method</var></dt>
 	    <dd><p><code>#f</code> or an instance of <code>&lt;method&gt;</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Adds <var>method</var> to <var>generic-function</var>, thereby modifying
 	  the <var>generic-function</var>.</p>
 	  <p>Programs do not commonly call <code>add-method</code> directly. It is called
@@ -233,8 +233,8 @@
       <p class="short-description"><a name="MARKER-9-1899"></a>Returns the mandatory keywords of a
       generic function, if any.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>generic-function-mandatory-keywords <var>generic-function</var> </code>
 	    &rArr;<code> <var>keywords</var></code>
@@ -249,8 +249,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>keywords</var></dt>
 	    <dd>
@@ -258,8 +258,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>If <var>generic-function</var> accepts keyword
 	  arguments, <code>generic-function-mandatory-keywords</code> returns a collection of the
 	  mandatory keywords for <var>generic-function</var>. This collection will be empty if the
@@ -274,15 +274,15 @@
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1901"></a>Returns the specializers of a function.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>function-specializers <var>function</var> </code>
 	    &rArr;<code> <var>sequence</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>function</var></dt>
 	    <dd>
@@ -300,8 +300,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Returns a sequence of the specializers for <var>function</var>. The length of the
 	  sequence will equal the number of required arguments of <var>function</var>. The first
 	  element of the sequence will be the specializer of the first argument
@@ -315,15 +315,15 @@
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1903"></a>Returns information about the arguments accepted by a function.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p>
 	    <code>function-arguments <var>function</var> </code>
 	    &rArr;<code> <var>required-number rest-boolean kwd-sequence</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>function</var></dt>
 	    <dd>
@@ -350,8 +350,9 @@
 	      of <code>&lt;keyword&gt;</code>.</p>
 	    </dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>Returns three values:</p>
+	<dt><span>Description:</span></dt>
+	<dd>
+	  <p>Returns three values:</p>
 	  <ul>
 	    <li><var>required-number</var> is the number of required arguments accepted by the
 	    function.</li>
@@ -373,8 +374,8 @@
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1905"></a>Returns information about the values returned by a function.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p>
 	    <code>function-return-values <var>function</var> </code>
 	    &rArr;<code> <var>return-value-types rest-return-value</var></code>
@@ -389,8 +390,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>return-value-types</var></dt>
 	    <dd>
@@ -401,8 +402,8 @@
 	    <dd><p>An instance of <code>&lt;type&gt;</code>
 	    or <code>#f</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>Returns two values:</p>
+	<dt><span>Description:</span></dt>
+	<dd><p>Returns two values:</p>
 	  <ul>
 	    <li><var>return-value-types</var> is a sequence of the types of values returned by the
 	    function. The length of the sequence equals the number of required return values of the
@@ -421,15 +422,15 @@
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1907"></a>Tests if a function is applicable to sample arguments.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>applicable-method? <var>function</var> #rest <var>sample-args</var> </code>
 	    &rArr;<code> <var>boolean</var></code>
 	  </p>
 	</dd>
-	<dt class="Cliche"><span>Arguments:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Arguments:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>function</var></dt>
 	    <dd>
@@ -438,8 +439,8 @@
 	    <dt><var>sample-args</var></dt>
 	    <dd><p>Instances of <code>&lt;object&gt;</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>boolean</var></dt>
 	    <dd>
@@ -447,8 +448,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Returns true if <var>function</var> is a method that would be applicable
 	  to <var>sample-args</var> or if it is a generic function that contains a method that would
 	  be applicable to <var>sample-args</var>.</p>
@@ -466,8 +467,8 @@
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1909"></a>Returns all the methods in a generic function that are applicable to sample arguments, sorted in order of specificity.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>sorted-applicable-methods <var>generic-function</var> #rest <var>sample-args</var></code><br />
 	    &rArr;<code> <var>sorted-methods unsorted-methods</var></code>
@@ -495,8 +496,8 @@
 	    <dd><p>An instance of <code>&lt;sequence&gt;</code>. Elements of
 	    the collection are instances of <code>&lt;method&gt;</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Returns two sequences that, taken together, contain the methods
 	  in <var>generic-function</var> that are applicable to
 	  the <var>sample-args</var>. <var>sorted-methods</var> contains methods that are more
@@ -513,8 +514,8 @@
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1911"></a>Returns the method in a generic function that has particular specializers.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>find-method <var>generic-function specializers</var> </code>
 	    &rArr;<code> <var>found-method</var></code>
@@ -531,8 +532,8 @@
 	    <dd><p>An instance of <code>&lt;sequence&gt;</code>. Elements of
 	    the sequence are instances of <code>&lt;type&gt;</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>found-method</var></dt>
 	    <dd>
@@ -540,8 +541,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Returns the method in <var>generic-function</var> that has the specializers
 	  in <var>specializers</var> as its specializers. The specializers must match exactly for a
 	  method to be returned.</p>
@@ -554,8 +555,8 @@
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1913"></a>Removes a method from a generic function.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Signature:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Signature:</span></dt>
+	<dd>
 	  <p class="signature">
 	    <code>remove-method <var>generic-function method</var> </code>
 	    &rArr;<code> <var>method</var></code>
@@ -571,8 +572,8 @@
 	    <dt><var>method</var></dt>
 	    <dd><p>An instance of <code>&lt;method&gt;</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Values:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Values:</span></dt>
+	<dd>
 	  <dl>
 	    <dt><var>method</var></dt>
 	    <dd>
@@ -580,8 +581,8 @@
 	    </dd>
 	  </dl>
 	</dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Removes <var>method</var> from <var>generic-function</var> and
 	  returns <var>method</var>.</p>
 	  <p>This operation modifies the <var>generic-function</var>.</p>

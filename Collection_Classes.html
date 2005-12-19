@@ -264,17 +264,18 @@
       <hr class="item-title" />
       <p>The class of collections, aggregate data structures.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;object&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;object&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of collections.</p>
 	  <p><code>&lt;collection&gt;</code> is the root class of the collection class hierarchy. It provides a set of basic operations on all collections.</p>
 	  <p>The element type of <code>&lt;collection&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;collection&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;collection&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-16</strong>  Functions on &lt;collection&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -364,16 +365,18 @@
       <hr class="item-title" />
       <p>The class of all collections that are not sequences.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;collection&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>The class of all collections that are not sequences.</p>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;collection&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
+	  <p>The class of all collections that are not sequences.</p>
 	  <p>This class is disjoint from <code>&lt;sequence&gt;</code> because <code>key-test</code> is sealed over the domain <code>&lt;sequence&gt;</code>.</p>
 	  <p>The element type of <code>&lt;explicit-key-collection&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;explicit-key-collection&gt;</code> provides the following operation:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;explicit-key-collection&gt;</code> provides the following operation:</p>
 	  <table class="numbered"><caption><strong>Table 11-20</strong>  Methods on singleton(&lt;explicit-key-collection&gt;)</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -392,19 +395,20 @@
       <hr class="item-title" />
       <p>The class of collections whose keys are consecutive integers starting from zero.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;collection&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;collection&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of collections whose keys are consecutive integers starting from zero.</p>
 	  <p><a name="MARKER-2-1404"></a>Sequences must be stable under iteration, and the iteration order must match the order of keys. Thus, the key associated with a sequence's iteration state can be determined by keeping a counter in parallel with the iteration state.</p>
 	  <p><code><a name="MARKER-2-1405"></a><a name="MARKER-2-1406"></a><a name="MARKER-2-1407"></a><a name="MARKER-2-1408"></a><a name="MARKER-2-1409"></a><a name="MARKER-2-1410"></a><a name="MARKER-2-1411"></a><a name="MARKER-2-1412"></a><a name="MARKER-2-1413"></a><a name="MARKER-2-1414"></a><a name="MARKER-2-1415"></a><a name="MARKER-2-1416"></a></code>The default methods for <code>add</code>, <code>add-new</code>, <code>remove</code>, <code>choose</code>, <code>choose-by</code>, <code>intersection</code>, <code>union</code>, <code>remove-duplicates</code>, <code>copy-sequence</code>, <code>concatenate</code>, <code>reverse</code>, and <code>sort</code> all return new sequences that are instances of the <code id="MARKER-2-1417">type-for-copy</code> of their primary sequence argument. However, more specialized methods are permitted to choose a more appropriate result class; for example, <code>copy-sequence</code> of a range returns another range, even though the <code>type-for-copy</code> value of a range is the <code>&lt;list&gt;</code> class.</p>
 	  <p><code>&lt;sequence&gt;</code> is disjoint from <code>&lt;explicit-key-collection&gt;</code> because of the sealed domain over the function <code>key-test</code> for <code>&lt;sequence&gt;</code>.</p>
 	  <p>The element type of <code>&lt;sequence&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;sequence&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;sequence&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-21</strong>  Functions on &lt;sequence&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -519,17 +523,18 @@
       <hr class="item-title" />
       <p>The class of collections that may be modified.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;collection&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;collection&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of collections that may be modified.</p>
 	  <p>Every mutable collection is required to allow modification by implementing <code id="MARKER-2-1419">element-setter</code>.</p>
 	  <p>The element type of <code>&lt;mutable-collection&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;mutable-collection&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;mutable-collection&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-25</strong>  Functions on &lt;mutable-collection&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -569,16 +574,17 @@
       <hr class="item-title" />
       <p>The class of explicit-key-collections that can have elements replaced.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;explicit-key-collection&gt; &lt;mutable-collection&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;explicit-key-collection&gt; &lt;mutable-collection&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of explicit-key-collections that can have elements replaced.</p>
 	  <p>The element type of <code>&lt;mutable-explicit-key-collection&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;mutable-explicit-key-collection&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;mutable-explicit-key-collection&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-29</strong>  Generic Functions on &lt;mutable-explicit-key-collection&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -602,16 +608,17 @@
       <hr class="item-title" />
       <p>The class of sequences that may be modified.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;sequence&gt; &lt;mutable-collection&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;sequence&gt; &lt;mutable-collection&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of sequences that may be modified.</p>
 	  <p>The element type of <code>&lt;mutable-sequence&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;mutable-sequence&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;mutable-sequence&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-31</strong>  Functions on &lt;mutable-sequence&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -652,12 +659,12 @@
       <hr class="item-title" />
       <p>The class of collections that may grow or shrink to accommodate adding or removing elements.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;collection&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;collection&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of collections that may grow or shrink to accommodate adding or removing elements.</p>
 	  <p><a name="MARKER-2-1423"></a>Stretchy collections allow <code id="MARKER-2-1424">element-setter </code>to be called with a key that is not present in the collection, expanding the collection as necessary to add a new element in that case. Each concrete subclass of <code>&lt;stretchy-collection&gt;</code> must provide or inherit a method for <code>element-setter </code>that behaves as follows when there is not already an element present for the indicated key:</p>
 	  <ul>
@@ -668,8 +675,9 @@
 	</dd>
       </dl>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;stretchy-collection&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;stretchy-collection&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-34</strong>  Methods on singleton(&lt;stretchy-collection&gt;)</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -688,18 +696,20 @@
       <hr class="item-title" />
       <p>The class of sequences whose elements are arranged according to a Cartesian coordinate system.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;mutable-sequence&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>The make method on <code>singleton(&lt;array&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code>&lt;array&gt;</code>.</p></dd>
-	<dd><dl>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;mutable-sequence&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>The make method on <code>singleton(&lt;array&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code>&lt;array&gt;</code>.</p></dd>
+	<dd>
+	  <dl>
 	    <dt><code>dimensions:</code></dt>
 	    <dd><p>An instance of <code>&lt;sequence&gt;</code> with elements that are instances of <code>&lt;integer&gt;</code>. This argument specifies the dimensions of the array. The size of the sequence specifies the rank (number of dimensions) of the array, and each integer in the sequence specifies the size of a dimension. This argument is required.</p></dd>
 	    <dt><code>fill:</code> </dt>
 	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying an initial value for each element of the array. The default value is <code>#f</code>.</p></dd>
-	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	  </dl>
+	</dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of collections whose elements are arranged according to a Cartesian coordinate system.</p>
 	  <p>An array element is referred to by a (possibly empty) series of indices. The length of the series must equal the rank of the array. Each index must be a non-negative integer less than the corresponding dimension. An array element may alternatively be referred to by an integer, which is interpreted as a row-major index.</p>
 	  <p>Arrays typically use space efficient representations, and the average time required to access a randomly chosen element is typically sublinear to the number of elements.</p>
@@ -707,8 +717,9 @@
 	  <p><a name="MARKER-2-1428"></a>When a single-dimensional array is created, the array created will be an instance of <code>&lt;vector&gt;</code>.</p>
 	  <p>Each concrete subclass of <code>&lt;array&gt;</code> must either provide or inherit implementations of the functions <code id="MARKER-2-1429">element</code>, <code>element-setter</code>, and <code>dimensions</code>.</p>
 	  <p>The element type of <code>&lt;array&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;array&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;array&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-35</strong>  Generic Functions on &lt;array&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -776,24 +787,27 @@
       <hr class="item-title" />
       <p>The class of arrays of rank one (i.e., exactly one dimension).</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;array&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>The make method on <code>singleton(&lt;vector&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code>&lt;vector&gt;</code>.</p></dd>
-	<dd><dl>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;array&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>The make method on <code>singleton(&lt;vector&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code>&lt;vector&gt;</code>.</p></dd>
+	<dd>
+	  <dl>
 	    <dt><code>size:</code> </dt>
 	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the vector. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code> </dt>
 	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying an initial value for each element of the vector. The default value is <code>#f</code>.</p></dd>
-	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	  </dl>
+	</dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of one-dimensional arrays.</p>
 	  <p><code>&lt;vector&gt;</code> has no direct instances; calling <code>make</code> on <code>&lt;vector&gt;</code> returns an instance of <code>&lt;simple-object-vector&gt;</code>.</p>
 	  <p>Each concrete subclass of <code>&lt;vector&gt;</code> must either provide or inherit an implementation of <code id="MARKER-2-1433">size</code> that shadows the method provided by <code>&lt;array&gt;</code>.</p>
 	  <p>The element type of <code>&lt;vector&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;vector&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;vector&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-38</strong>  Constructors for &lt;vector&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -831,26 +845,27 @@
       <hr class="item-title" />
       <p>A predefined subclass of <code>&lt;vector&gt;</code> that provides an efficient implementation of fixed-length vectors.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;vector&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>The make method on <code>singleton(&lt;simple-vector&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code>&lt;simple-vector&gt;</code>.</p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;vector&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>The make method on <code>singleton(&lt;simple-vector&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code>&lt;simple-vector&gt;</code>.</p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
 	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the vector. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code> </dt>
 	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying an initial value for each element of the vector. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of simple and efficient vectors.</p>
 	  <p><a name="MARKER-2-1436"></a>The class <code>&lt;simple-vector&gt;</code> provides a constant time implementation for the <code>element</code>  and <code>element-setter </code>functions. This property is shared by all subtypes of <code>&lt;simple-vector&gt;</code>.</p>
 	  <p>Calling <code>make</code> on a <code>&lt;simple-vector&gt;</code> returns an instance of <code>&lt;simple-object-vector&gt;</code>. The size of a simple vector cannot be changed after the simple vector has been created.</p>
 	  <p><a name="MARKER-2-1437"></a>Vector literals (created with the <code>#[</code>&hellip;<code>]</code> syntax) are general instances of <code>&lt;simple-vector&gt;</code>.</p>
 	  <p>The element type of <code>&lt;simple-vector&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p>
 	  <p>The class <code>&lt;simple-object-vector&gt;</code> and the type <code>limited(&lt;simple-vector&gt;, of: &lt;object&gt;)</code> have exactly the same instances, but neither is a subtype of the other. The relationship between them is simply that the <code>make</code> method for the type returns an instance of the class.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;simple-vector&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;simple-vector&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-41</strong>  Methods on &lt;simple-vector&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -880,45 +895,45 @@
       <hr class="item-title" />
       <p>The class of simple vectors that may have elements of any type.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;simple-vector&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;simple-object-vector&gt;</code> supports the following init-keywords: </p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;simple-vector&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>The class <code>&lt;simple-object-vector&gt;</code> supports the following init-keywords: </p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
 	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the vector. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code> </dt>
 	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each element. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class <code>&lt;simple-object-vector&gt;</code> represents vectors that may have elements of any type. It provides a constant time implementation for the <code>element</code>  and <code>element-setter </code>functions.</p>
 	  <p>The element type of <code>&lt;simple-object-vector&gt;</code> is<code> &lt;object&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
+	<dt><span>Operations:</span></dt>
+	<dd><p>None.</p></dd>
       </dl>
       <a name="HEADING93-1770"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1439">&lt;stretchy-vector&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Primary Class]</span></h4>
       <hr class="item-title" />
       <p>The class of vectors that are stretchy.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;vector&gt; &lt;stretchy-collection&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;stretchy-vector&gt;</code> supports the following init-keywords:</p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;vector&gt; &lt;stretchy-collection&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>The class <code>&lt;stretchy-vector&gt;</code> supports the following init-keywords:</p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
 	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the initial size of the stretchy vector. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code></dt>
 	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each element. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of vectors that are stretchy.</p>
 	  <p>Because <code>&lt;stretchy-vector&gt;</code> is abstract and instantiable but has no specified subclasses, every implementation must provide one or more concrete subclass to instantiate. These concrete subclasses have no specified names, and their names are not exported by the Dylan module.</p>
 	  <p>The element type of <code>&lt;simple-vector&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;stretchy-vector&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd><p>The class <code>&lt;stretchy-vector&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-43</strong>  Methods on &lt;stretchy-vector&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -948,23 +963,24 @@
       <hr class="item-title" />
       <p>The class of double-ended queues.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;mutable-sequence&gt; &lt;stretchy-collection&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;deque&gt;</code> supports the following init-keywords: </p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;mutable-sequence&gt; &lt;stretchy-collection&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>The class <code>&lt;deque&gt;</code> supports the following init-keywords: </p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
 	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the initial size of the deque. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code> </dt>
 	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each element. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>A subclass of sequence that supports efficient forward and backward iteration, and efficient addition and removal of elements from the beginning or end of the sequence.</p>
 	  <p>Because <code>&lt;deque&gt;</code> is abstract and instantiable but has no specified subclasses, every implementation must provide one or more concrete subclasses to instantiate. These concrete subclasses have no specified names, and their names are not exported by the Dylan module.</p>
 	  <p>The element type of <code>&lt;deque&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;deque&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;deque&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-45</strong>  Generic Functions on &lt;deque&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -1026,23 +1042,24 @@
       <hr class="item-title" />
       <p>The class of linked lists.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;mutable-sequence&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>The make method on <code>singleton(&lt;list&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code>&lt;list&gt;</code>.</p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;mutable-sequence&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>The make method on <code>singleton(&lt;list&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code>&lt;list&gt;</code>.</p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
 	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the list. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code> </dt>
 	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each element. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of linked lists.</p>
 	  <p>The <code>&lt;list&gt;</code> class is partitioned into two concrete subclasses, <code>&lt;pair&gt;</code> and <code>&lt;empty-list&gt;</code>. Calling make on <code>&lt;list&gt;</code> will return a linked list made from pairs and terminated with the empty list.</p>
 	  <p>The element type of <code>&lt;list&gt;</code> is <code>&lt;object&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;list&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;list&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-48</strong>  Constructors for &lt;list&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -1097,16 +1114,17 @@
       <hr class="item-title" />
       <p>The class of lists that can have new values assigned to their heads and tails.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;list&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;list&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of lists that can have new values assigned to their heads and tails.</p>
 	  <p>The element type of <code>&lt;pair&gt;</code> is <code>&lt;object&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The following operations are provided on <code>&lt;pair&gt;</code>:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The following operations are provided on <code>&lt;pair&gt;</code>:</p>
 	  <table class="numbered"><caption><strong>Table 11-52</strong>  Functions on &lt;pair&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -1129,23 +1147,23 @@
 	</dd>
       </dl>
       <dl class="Cliche">
-	<dd class="Cliche"><p></p></dd>
+	<dd><p></p></dd>
       </dl>
       <a name="HEADING93-2356"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1451">&lt;empty-list&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
       <hr class="item-title" />
       <p>The class with only one instance, the empty list.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;list&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;list&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class <code>&lt;empty-list&gt;</code> has only one instance, the empty list. The empty list is a direct instance of <code>&lt;empty-list&gt;</code> and an indirect instance of <code>&lt;list&gt;</code>. Note that <code>&lt;empty-list&gt;</code> is not <code>==</code> to <code>singleton (#())</code>.</p>
 	  <p>The element type of <code>&lt;empty-list&gt;</code> is <code>&lt;object&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>None.<a name="MARKER-2-1452"></a></p></dd>
+	<dt><span>Operations:</span></dt>
+	<dd><p>None.<a name="MARKER-2-1452"></a></p></dd>
       </dl>
       <a name="HEADING93-2363"></a>
       <a name="UID-Built-In_Classes-427"></a>
@@ -1155,10 +1173,10 @@
       <hr class="item-title" />
       <p>The class of arithmetic sequences.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;sequence&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;range&gt;</code> supports the following init-keywords:</p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;sequence&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>The class <code>&lt;range&gt;</code> supports the following init-keywords:</p></dd>
 	<dd><dl>
 	    <dt><code>from:</code> </dt>
 	    <dd><p>An instance of <code>&lt;real&gt;</code> specifying the first value in the range. The default value is <code>0</code>.</p></dd>
@@ -1173,15 +1191,16 @@
 	    <dt><code>size:</code> </dt>
 	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the range.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class <code>&lt;range&gt;</code> is used for creating sequences of numbers. Ranges may be infinite in size, and may run from higher numbers to lower numbers.</p>
 	  <p>If <code>size:</code> is specified and none of <code>to:</code>, <code>above:</code> or <code>below:</code> is specified, then the  <code>size:</code> argument determines the size of the range.</p>
 	  <p>If <code>size:</code> is specified and one of <code>to:</code>, <code>above:</code> or <code>below:</code> is specified, than it is an error if the number of elements implied by the <code>to:</code>, <code>above:</code> or <code>below:</code> argument (and the <code>by:</code> argument, if present) does not agree with the number of elements specified by the <code>size:</code> argument.</p>
 	  <p>Because <code>&lt;range&gt;</code> in abstract and instantiable but has no specified subclasses, every implementation must provide one or more concrete subclass to instantiate. These concrete subclasses have no specified names, and their names are not exported by the Dylan module.</p>
 	  <p>The element type of <code>&lt;range&gt;</code> is <code>indefinite &lArr; &lt;real&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;range&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;range&gt;</code> provides the following operations:</p>
 	  <p class="Anchor">   </p>
 	  <table class="numbered"><caption><strong>Table 11-54</strong>  Methods on &lt;range&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
@@ -1233,23 +1252,24 @@
       <hr class="item-title" />
       <p>The class of sequences with elements that are characters.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;mutable-sequence&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;string&gt;</code> supports the following init-keywords: </p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;mutable-sequence&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>The class <code>&lt;string&gt;</code> supports the following init-keywords: </p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
 	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the string. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code> </dt>
 	    <dd><p>An instance of <code>&lt;character&gt;</code> specifying the initial value for each element. The default value is <code>' ' </code>(space).</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class <code>&lt;string&gt;</code> is used for holding sequences of characters.</p>
 	  <p><code>&lt;string&gt;</code> has no direct instances; calling <code>make</code> on <code>&lt;string&gt;</code> will return an instance of a concrete subclass of <code>&lt;string&gt;</code>.</p>
 	  <p>The element type of <code>&lt;string&gt;</code> is <code>indefinite &lArr; &lt;character&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;string&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;string&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-56</strong>  Methods on &lt;string&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -1285,22 +1305,23 @@
       <hr class="item-title" />
       <p>The class of vectors with elements that are eight-bit characters.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;string&gt;</code>  <code>&lt;vector&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;byte-string&gt;</code> supports the following init-keywords: </p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;string&gt;</code>  <code>&lt;vector&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>The class <code>&lt;byte-string&gt;</code> supports the following init-keywords: </p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
 	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the byte string. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code> </dt>
 	    <dd><p>An instance of <code>&lt;character&gt;</code> specifying the initial value for each element. The default value is <code>' ' </code>(space).</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class <code>&lt;byte-string&gt;</code> represents strings with elements that are eight bit characters. It provides constant time <code>element</code> and <code>element-setter</code> methods.</p>
 	  <p>The element type of <code>&lt;byte-string&gt;</code> is <code>indefinite &lArr; <var>K<em><sub>2</sub></em></var></code> (where <var>K<em><sub>2</sub></em></var> is a subtype of <code>&lt;character&gt;</code>).</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;byte-string&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;byte-string&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-58</strong>  Methods on &lt;byte-string&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -1319,22 +1340,23 @@
       <hr class="item-title" />
       <p>The class of vectors with elements that are sixteen-bit Unicode characters.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;string&gt;</code>  <code>&lt;vector&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;unicode-string&gt;</code> supports the following init-keywords: </p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;string&gt;</code>  <code>&lt;vector&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>The class <code>&lt;unicode-string&gt;</code> supports the following init-keywords: </p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
 	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the unicode string. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code> </dt>
 	    <dd><p>An instance of <code>&lt;character&gt;</code> specifying the initial value for each element. The default value is <code>' ' </code>(space).</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class <code>&lt;unicode-string&gt;</code> represents strings with elements that are sixteen bit Unicode characters. It provides constant time <code>element</code> and <code>element-setter</code> methods.</p>
 	  <p>The element type of <code>&lt;unicode-string&gt;</code> is <code>indefinite &lArr; <var>K<em><sub>1</sub></em></var></code> (where <var>K<em><sub>1</sub></em></var> is a subtype of <code>&lt;character&gt;</code>).</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;unicode-string&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;unicode-string&gt;</code> provides the following operations:</p>
 	  <p class="Anchor"> <a name="MARKER-2-1459"></a></p>
 	  <table class="numbered"><caption><strong>Table 11-59</strong>  Methods on &lt;unicode-string&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
@@ -1360,22 +1382,23 @@
       <hr class="item-title" />
       <p>The class of tables (also known as hash tables).</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;mutable-explicit-key-collection&gt; &lt;stretchy-collection&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;table&gt;</code> supports the following init-keyword: </p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;mutable-explicit-key-collection&gt; &lt;stretchy-collection&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>The class <code>&lt;table&gt;</code> supports the following init-keyword: </p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
 	    <dd><p>An instance of &lt;integer&gt;. If specified, this value provides a hint to the implementation as to the expected number of elements to be stored in the table, which might be used to control how much space to initially allocate for the table. The default value is unspecified.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class <code>&lt;table&gt;</code> is the only predefined instantiable subclass of <code>&lt;explicit-key-collection&gt;</code>.</p>
 	  <p>Every concrete subclass of <code>&lt;table&gt;</code> must provide or inherit a method for <code>table-protocol</code>. For details, see <a href="Tables#MARKER-9-1036">"Tables" on page 122</a>.</p>
 	  <p><code>&lt;table&gt;</code> has no direct instances; calling <code>make</code> on <code>&lt;table&gt;</code> will return an instance of <code>&lt;object-table&gt;</code>.</p>
 	  <p>The element type of <code>&lt;table&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;table&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;table&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-60</strong>  Generic Functions on &lt;table&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -1428,16 +1451,17 @@
       <hr class="item-title" />
       <p>The class of tables that compare keys using <code>==.</code></p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;table&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;table&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>Calling <code>make</code> on <code>&lt;table&gt;</code> will return a general instance of <code>&lt;object-table&gt;</code>. Because <code>&lt;object-table&gt;</code> is abstract and instantiable but has no specified subclasses, every implementation must provide one or more concrete subclasses to instantiate. These concrete subclasses have no specified names, and their names are not exported by the Dylan module.</p>
 	  <p>The element type of <code>&lt;object-table&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;object-table&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;object-table&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-63</strong>  Methods on &lt;object-table&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>

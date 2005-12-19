@@ -206,14 +206,15 @@
       <hr class="item-title" />
       <p>The class of objects used by the condition system to connect a signaler with an appropriate handler.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;object&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>The class of condition objects. A complete description of conditions is given in <a href="Conditions">Chapter 7, "Conditions."</a></p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;condition&gt;</code> provides the following operations:</p>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;object&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd><p>The class of condition objects. A complete description of conditions is given in <a href="Conditions">Chapter 7, "Conditions."</a></p></dd>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;condition&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-68</strong>  Functions on &lt;condition&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -266,14 +267,15 @@
       <hr class="item-title" />
       <p>The class of conditions that cannot safely be ignored.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;condition&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>The class of conditions that cannot safely be ignored.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The following operation is defined on <code>&lt;serious-condition&gt;</code>:</p>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;condition&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd><p>The class of conditions that cannot safely be ignored.</p></dd>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The following operation is defined on <code>&lt;serious-condition&gt;</code>:</p>
 	  <table class="numbered"><caption><strong>Table 11-71</strong>  Methods on &lt;serious-condition&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -292,24 +294,24 @@
       <hr class="item-title" />
       <p>The class of conditions that represent something invalid about the program.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;serious-condition&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;serious-condition&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of serious conditions that represent program errors.</p>
 	  <p><code>&lt;error&gt;</code> is distinct from <code>&lt;serious-condition&gt;</code> so one can establish a handler for errors that does not also trap unpredictable environmental exceptions such as network problems.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
+	<dt><span>Operations:</span></dt>
+	<dd><p>None.</p></dd>
       </dl>
       <a name="HEADING95-246"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1478">&lt;simple-error&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
       <hr class="item-title" />
       <p>The class of error conditions that consist of just an error message constructed from a format string and arguments.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;error&gt;</code></p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;error&gt;</code></p></dd>
 	<dt class="Cliche2"><span>Init-keywords:</span></dt>
 	<dd><dl>
 	    <dt><code>format-string:</code></dt>
@@ -318,12 +320,13 @@
 	    <dd><p>An instance of <code>&lt;sequence&gt;</code>. Format
 		arguments to splice into the format string to describe the error.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of error conditions that consist of just an error message constructed from a format string and arguments.</p>
 	  <p>The recovery protocol of <code>&lt;simple-error&gt;</code> is empty.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class &lt;simple-error&gt; provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class &lt;simple-error&gt; provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-72</strong>  Functions on &lt;simple-error&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -342,21 +345,22 @@
       <hr class="item-title" />
       <p>The class of error conditions generated by type checks.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;error&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;error&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
 	<dd><dl>
 	    <dt><code>value:</code></dt>
 	    <dd><p>An instance of <code>&lt;object&gt;</code>. The object whose type was checked.</p></dd>
 	    <dt><code>type:</code></dt>
 	    <dd><p>An instance of <code>&lt;type&gt;</code>. The type that was expected. The error was signaled because the object was not of this type.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of errors indicating that an object was not of the expected type.</p>
 	  <p>The recovery protocol is empty.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;type-error&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;type-error&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-73</strong>  Functions on &lt;type-error&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -375,14 +379,14 @@
       <hr class="item-title" />
       <p>The class of errors that are generated by sealing violations.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;error&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche"><p>The class of errors that indicate the violation of a sealing restriction.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;error&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd><p>The class of errors that indicate the violation of a sealing restriction.</p></dd>
+	<dt><span>Operations:</span></dt>
+	<dd><p>None.</p></dd>
       </dl>
       <a name="HEADING95-364"></a>
       <a name="UID-Built-In_Classes-445"></a>
@@ -392,12 +396,13 @@
       <hr class="item-title" />
       <p>The class of conditions that are interesting to users but can safely be ignored.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;condition&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The following operation is defined on <code>&lt;warning&gt;</code>:</p>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;condition&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The following operation is defined on <code>&lt;warning&gt;</code>:</p>
 	  <table class="numbered"><caption><strong>Table 11-74</strong>  Methods on &lt;warning&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -409,8 +414,8 @@
 	</dd>
       </dl>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of conditions that can be safely ignored.</p>
 	  <p>There is a default handler for <code>&lt;warning&gt;</code> that displays the warning in a user-interface dependent way and then returns <code>#f</code>. The recovery protocol is that any value can be returned and will be ignored.</p></dd>
       </dl>
@@ -419,8 +424,8 @@
       <hr class="item-title" />
       <p>A default class of warnings that are described by a warning string.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;warning&gt;</code></p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;warning&gt;</code></p></dd>
 	<dt class="Cliche2"><span>Init-keywords:</span></dt>
 	<dd><dl>
 	    <dt class="Cliche2"> <code>format-string:</code></dt>
@@ -428,12 +433,13 @@
 	    <dt><code>format-arguments:</code></dt>
 	    <dd class="Cliche2"><p>An instance of <code>&lt;sequence&gt;</code>. Format arguments to splice into the format string to describe the warning.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of warnings described by a format string and arguments.</p>
 	  <p>The recovery protocol is that any value can be returned and will be ignored.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class &lt;simple-warning&gt; provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class &lt;simple-warning&gt; provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-75</strong>  Functions on &lt;simple-warning&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -455,16 +461,17 @@
       <hr class="item-title" />
       <p>The class of conditions used for restarting a computation.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;condition&gt;</code></p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;condition&gt;</code></p></dd>
 	<dt class="Cliche2"><span>Init-keywords:</span></dt>
 	<dd class="Cliche2"><p> <code>condition:</code>  <code>#f</code> or an instance of <code>&lt;condition&gt;</code>. This argument is accepted and ignored by <code>&lt;restart&gt;</code>; some subclasses save the value of this initialization argument and use it to associate a restart with a particular condition from which the restart can recover. No such subclasses are defined as part of the language. Other restarts do not care; they can recover from any condition.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of conditions used to correct an unusual situation.</p>
 	  <p>There is a default handler for <code>&lt;restart&gt;</code> that signals an error reporting an attempt to use a restart for which no restart handler was established. The recovery protocol concept is not applicable to restarts.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class <code>&lt;restart&gt;</code> provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class <code>&lt;restart&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-76</strong>  Generic functions on &lt;restart&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -488,8 +495,8 @@
       <hr class="item-title" />
       <p>A default class of restarts.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;restart&gt;</code></p></dd>
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;restart&gt;</code></p></dd>
 	<dt class="Cliche2"><span>Init-keywords:</span></dt>
 	<dd><dl>
 	    <dt class="Cliche2"><code>format-string:</code></dt>
@@ -497,12 +504,13 @@
 	    <dt><code>format-arguments:</code></dt>
 	    <dd><p>An instance of <code>&lt;sequence&gt;</code>. Format arguments to splice into the format string to describe the restart.</p></dd>
 	</dl></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>A default class of restarts.</p>
 	  <p>Typical implementations will use the format string and format arguments to produce a description of the restart.</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>The class &lt;simple-restart&gt; provides the following operations:</p>
+	<dt><span>Operations:</span></dt>
+	<dd>
+	  <p>The class &lt;simple-restart&gt; provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-78</strong>  Functions on &lt;simple-restart&gt;</caption>
 	    <tr><th class="primary"><p> Function</p>
 	      </th><th><p> Description</p>
@@ -523,16 +531,16 @@
       <hr class="item-title" />
       <p>The class of conditions used to terminate a computation.</p>
       <dl class="Cliche">
-	<dt class="Cliche"><span>Superclasses:</span></dt>
-	<dd class="Cliche"><p><code>&lt;restart&gt;</code></p></dd>
-	<dt class="Cliche"><span>Init-keywords:</span></dt>
-	<dd class="Cliche"><p>None.</p></dd>
-	<dt class="Cliche"><span>Description:</span></dt>
-	<dd class="Cliche">
+	<dt><span>Superclasses:</span></dt>
+	<dd><p><code>&lt;restart&gt;</code></p></dd>
+	<dt><span>Init-keywords:</span></dt>
+	<dd><p>None.</p></dd>
+	<dt><span>Description:</span></dt>
+	<dd>
 	  <p>The class of conditions used to terminate a computation.</p>
 	  <p>Handlers are expected to terminate execution of the current application command, or similar unit of execution, and return control to something like an application command loop. This is comparable to command-period on the Macintosh. The exact details of this feature depend on the particular environment, of course, but signaling an instance of <code>&lt;abort&gt;</code> is a uniform way to "get out."</p></dd>
-	<dt class="Cliche"><span>Operations:</span></dt>
-	<dd class="Cliche"><p>None.<a name="MARKER-2-1486"></a><a name="MARKER-2-1487"></a></p>
+	<dt><span>Operations:</span></dt>
+	<dd><p>None.<a name="MARKER-2-1486"></a><a name="MARKER-2-1487"></a></p>
 	  <a name="LINK-Built-In_Classes-lastpage"></a><a name="LINK-Built-In_FunctionsTOC-firstpage"></a></dd>
       </dl>
       <a name="UID-Built-In_FunctionsTOC-2636"></a>
