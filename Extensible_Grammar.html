@@ -143,7 +143,7 @@
     <dd><code>define</code> <i>modifiers<em><sub>opt</sub></em></i> <em class="BNFCaps">define-list-word</em> <i>list-fragment<em><sub>opt</sub></em></i></dd>
   </dl>
 </div>
-<p>This allows programmers to extend Dylan by defining new kinds of definitions. The syntax of the definition must be parseable by one of these two predefined grammar rules. The first handles body-style definitions like <code>define class</code>, <code>define method</code>, and <code>define module</code>,  while the second handles list-style definitions like <code>define constant</code>. See <a href="BNF">Appendix A, "BNF,"</a> for the details.</p>
+<p>This allows programmers to extend Dylan by defining new kinds of definitions. The syntax of the definition must be parseable by one of these two predefined grammar rules. The first handles body-style definitions like <code>define class</code>, <code>define method</code>, and <code>define module</code>,  while the second handles list-style definitions like <code>define constant</code>. See <a href="BNF">Appendix A, <q>BNF,</q></a> for the details.</p>
 <p>The new <em class="BNFCaps">define-body-word</em> or <em class="BNFCaps">define-list-word</em> becomes a partially reserved word in each module where the macro definition is visible. In particular a <em class="BNFCaps">define-body-word</em> or <em class="BNFCaps">define-list-word</em> cannot be used as a modifier in a definition. It can still be used as a variable-name.<a name="MARKER-2-1217"></a></p>
 <a name="HEADING78-9"></a>
 <a name="UID-Macros-1562"></a>

@@ -145,15 +145,15 @@
 	alphabetic case.</li>
       </ul>
       <p>In the following grammar, some tokens are used multiple ways. For example the hyphen,
-      "<code>-</code>," is punctuation, a unary operator, and a binary operator; also,
-      "<code>method</code>" is a <em class="BNFCaps">begin-word</em> and
+      <q><code>-</code>,</q> is punctuation, a unary operator, and a binary operator; also,
+      <q><code>method</code></q> is a <em class="BNFCaps">begin-word</em> and
       a <em class="BNFCaps">define-body-word</em>. In some parsing implementations such multiple
       meanings of a token may not be possible. However this is just an implementation issue since
       the meaning of the grammar is clear. <code>method</code> is used as punctuation
       in <var>local-methods</var> and <var>method-definition</var>; since <code>method</code> is not
       a core reserved word, this typically has to be implemented by accepting
       any <em class="BNFCaps">macro-name</em> and checking semantically that the word used is
-      "<code>method</code>." The grammar as presented is not obviously LALR(1), since the required
+      <q><code>method</code>.</q> The grammar as presented is not obviously LALR(1), since the required
       changes would tend to obscure the readability for human beings (especially in macro
       definitions and case-body). The grammar can be made LALR(1) through well-known standard
       transformations implemented by most parser generators.</p>

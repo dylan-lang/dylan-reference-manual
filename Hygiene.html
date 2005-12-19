@@ -125,7 +125,7 @@
 <a name="UID-Macros-1884"></a>
 <h1 class="section-title"><a name="MARKER-9-1268"></a>Hygiene</h1>
 <p><a name="MARKER-2-1269"></a>Dylan macros are always <dfn>hygienic</dfn>. The basic idea is that each <a name="MARKER-2-1270"></a>named value reference in a macro expansion means the same thing as it meant at the place in the original source code from which it was copied into the macro expansion. This is true whether that place was in the macro definition or in the macro call. Because a macro expansion can include macro calls that need further expansion, named value references in one final expansion can come from several different macro definitions and can come from several different macro calls, either to different macros or&mdash;in the case of recursion&mdash;distinct calls to the same macro.</p>
-<p>(Sometimes the property that variable references copied from a macro call mean the same thing in the expansion is called "hygiene" and the property that variable references copied from a macro definition mean the same thing in the expansion is called "<a name="MARKER-2-1271"></a>referential transparency."  We include both properties in the term "hygiene.")</p>
+<p>(Sometimes the property that variable references copied from a macro call mean the same thing in the expansion is called <q>hygiene</q> and the property that variable references copied from a macro definition mean the same thing in the expansion is called <q><a name="MARKER-2-1271"></a>referential transparency.</q>  We include both properties in the term <q>hygiene.</q>)</p>
 <p>Specifically, a macro can bind <a name="MARKER-2-1272"></a>temporary variables in its expansion without the risk of accidentally capturing references in the macro call to another binding with the same name. Furthermore, a macro can reference module bindings in its expansion without the risk of those references accidentally being <a name="MARKER-2-1273"></a>captured by bindings of other variables with the same name that surround the macro call. A macro can reference module bindings in its expansion without worrying that the intended bindings might have different names in a module where the macro is called.</p>
 <p>One way to implement this is for each <var>template-element</var> that is a <em class="BNFCaps">name</em>, <em class="BNFCaps">unary-operator</em>, or <em class="BNFCaps">binary-operator</em> to be replaced in the macro expansion by a special token that plays the same grammatical role as the <em class="BNFCaps">name</em>, <em class="BNFCaps">unary-operator</em>, or <em class="BNFCaps">binary-operator</em> but remembers three pieces of information:</p>
 <ul>
@@ -163,8 +163,8 @@
       <li><var>assignment-operator</var> is a binary-operator whose associated binding is an <var>assignment-operator-name</var>.)</li>
       <li><var>definer-name</var> is a <em class="BNFCaps">define-body-word</em> or <em class="BNFCaps">define-list-word</em>.</li>
       <li><var>variable-name</var> and <var>getter-name</var> are <em class="BNFCaps">name</em>s.</li>
-      <li><var>template</var> is defined in <a href="BNF">Appendix A, "BNF,"</a> on <a href="Phrase_Grammar#MARKER-9-2121">page 429</a>.</li>
-      <li><var>definition-head</var> is defined in <a href="BNF">Appendix A, "BNF,"</a> on <a href="Phrase_Grammar#MARKER-9-2117">page 427</a>.</li>
+      <li><var>template</var> is defined in <a href="BNF">Appendix A, <q>BNF,</q></a> on <a href="Phrase_Grammar#MARKER-9-2121">page 429</a>.</li>
+      <li><var>definition-head</var> is defined in <a href="BNF">Appendix A, <q>BNF,</q></a> on <a href="Phrase_Grammar#MARKER-9-2117">page 427</a>.</li>
       <li>The notation <var>foo</var> <code>##</code> <code>&quot;string&quot;</code> indicates a new token composed of the text of <var>foo</var> concatenated with the string.</li>
     </ul>
   </li>

@@ -124,14 +124,14 @@
 <a name="UID-Macros-2598"></a>
 <h1 class="section-title">Overview</h1>
 <p><a name="MARKER-2-1175"></a>A <a name="MARKER-2-1176"></a>macro is an extension to the core language that can be defined by the user, by the implementation, or as part of the Dylan language specification. Much of the <a name="MARKER-2-1177"></a>grammatical structure of Dylan is built with macros. A macro defines the meaning of one construct in terms of another construct. The compiler substitutes the new construct for the original. The purpose of macros is to allow programmers to extend the Dylan language, for example by creating new control structures or new definitions. Unlike C, Dylan does not intend macros to be used to <a name="MARKER-2-1178"></a>optimize code by inlining. Other parts of the language, such as sealing and <code>define constant</code>, address that need.</p>
-<p>Throughout this chapter, <var>italic font</var> and <em class="BNFCaps">small caps</em> are used to indicate references to the formal grammar given in <a href="BNF">Appendix A, "BNF."</a></p>
+<p>Throughout this chapter, <var>italic font</var> and <em class="BNFCaps">small caps</em> are used to indicate references to the formal grammar given in <a href="BNF">Appendix A, <q>BNF.</q></a></p>
 <a name="HEADING77-3"></a>
 <a name="UID-Macros-5923"></a>
 <h2 class="subsection-title">Compilation and Macro Processing</h2>
 <p><a name="MARKER-2-1179"></a>Compilation consists of six conceptual phases:</p>
 <ol>
-  <li><a name="MARKER-2-1180"></a>Parsing a stream of characters into tokens, according to the lexical grammar in <a href="BNF">Appendix A, "BNF."</a></li>
-  <li><a name="MARKER-2-1181"></a>Parsing a stream of tokens into a program, according to the phrase grammar in <a href="BNF">Appendix A, "BNF."</a></li>
+  <li><a name="MARKER-2-1180"></a>Parsing a stream of characters into tokens, according to the lexical grammar in <a href="BNF">Appendix A, <q>BNF.</q></a></li>
+  <li><a name="MARKER-2-1181"></a>Parsing a stream of tokens into a program, according to the phrase grammar in <a href="BNF">Appendix A, <q>BNF.</q></a></li>
   <li>Macro expansion, which translates the program to a core language.</li>
   <li><a name="MARKER-2-1182"></a>Definition processing, which recognizes special and built-in definitions and builds a compile-time model of the static structure of the program.</li>
   <li>Optimization, which rewrites the program for improved performance.</li>
@@ -139,7 +139,7 @@
 </ol>
 <p>Portions of a program can be <a name="MARKER-2-1183"></a>macro calls. <a name="MARKER-2-1184"></a>Macro expansion replaces a macro call with another construct, which can itself be a macro call or contain macro calls. This expansion process repeats until there are no macro calls remaining in the program, thus macros have no space or speed cost at run time. Of course, expanding macros affects the speed and space cost of compilation.</p>
 <p>A <a name="MARKER-2-1185"></a>macro definition describes both the syntax of a macro call and the process for creating a new construct to replace the macro call. Typically the new construct contains portions of the old one, which can be regarded as <a name="MARKER-2-1186"></a>arguments to the macro. A macro definition consists of a sequence of rewrite rules. The left-hand side of each rule is a pattern that matches a macro call. The right-hand side is a <a name="MARKER-2-1187"></a>template for the expansion of a matching call. <a name="MARKER-2-1188"></a>Pattern variables appearing in the left-hand side act as names for macro arguments. Pattern variables appearing in the right-hand side substitute arguments into the expansion. Macro arguments can be constrained to match specified elements of the Dylan grammar. Auxiliary rule sets enhance the rewrite rule notation with named subrules.</p>
-<p>Some implementations and a future version of the Dylan language specification might allow macro expansions to be produced by compile-time computation using the full Dylan language and an object-oriented representation for programs. Such a "procedural macro" facility is not part of Dylan at this time.</p>
+<p>Some implementations and a future version of the Dylan language specification might allow macro expansions to be produced by compile-time computation using the full Dylan language and an object-oriented representation for programs. Such a <q>procedural macro</q> facility is not part of Dylan at this time.</p>
 <p>The input to, and output from, macro expansion is a <a name="MARKER-2-1189"></a>fragment, which is a sequence of elementary fragments. An elementary fragment is one of the following:</p>
 <ul>
   <li>A token: the output of the lexical grammar. The bracket tokens <code>(</code>, <code>)</code>, <code>[</code>, <code>]</code>, <code>{</code>, <code>}</code>, <code>#(</code>, and <code>#[</code> are not allowed. Core reserved words (except <code>otherwise</code>), <em class="BNFCaps">begin-words</em>, and <em class="BNFCaps">function-words</em> are not allowed unless quoted with backslash.</li>
@@ -147,7 +147,7 @@
   <li>A macro call fragment: a macro call.</li>
   <li>A parsed fragment: a single unit that is not decomposable into its component tokens. It has been fully parsed by the phrase grammar. A parsed fragment is either a function call, a list constant, a vector constant, a definition, or a local declaration.</li>
 </ul>
-<p>The second and third phases of compilation (parsing and macro expansion) are interleaved, not sequential. The parsing phase of the compiler parses a macro call just enough to find its end. See <var>definition-macro-call, statement, function-macro-call, body-fragment, list-fragment,</var> and <var>basic-fragment</var> in <a href="BNF">Appendix A, "BNF."</a> This process of parsing a macro call also parses any macro calls nested inside it. The result is a macro call fragment.</p>
+<p>The second and third phases of compilation (parsing and macro expansion) are interleaved, not sequential. The parsing phase of the compiler parses a macro call just enough to find its end. See <var>definition-macro-call, statement, function-macro-call, body-fragment, list-fragment,</var> and <var>basic-fragment</var> in <a href="BNF">Appendix A, <q>BNF.</q></a> This process of parsing a macro call also parses any macro calls nested inside it. The result is a macro call fragment.</p>
 <p>This loose grammar for macro calls gives users a lot of flexibility to choose the grammar that their macros will accept. For example, the grammar of macro calls doesn't care whether  a bracketed fragment will be interpreted as an argument list, a parameter list, a set of <code>for</code> clauses, or a module import list.</p>
 <p><a name="MARKER-2-1190"></a>The compiler delays computing the expansion of a macro call fragment until it is needed. If an argument to a macro is a macro call, the outer macro call is always expanded first. When the compiler computes the expansion of a macro call fragment, it obeys the macro's definition. Constraints on pattern variables can cause reparsing of portions of the macro call.</p>
 <p><a name="MARKER-2-1191"></a>A <var>constituent</var>, <var>operand</var>, or <var>leaf</var>  that is a macro call expands the macro during or before the definition processing and optimization phases. The compiler brackets the expansion in <code>begin</code> &hellip; <code>end</code>, using the standard binding of <code>begin</code> in the Dylan module, and then reparses it as a <var>statement</var>. This reparsing may discover more macro calls. A parse error while reparsing a macro expansion could indicate an invalid macro definition or an incorrect call to the macro that was not detected during pattern matching. Once the cycle of macro expansion and reparsing has been completed, no tokens, bracketed fragments, or macro call fragments remain and the entire source record has become one parsed fragment.</p>
@@ -158,7 +158,7 @@
   <li>Calls to macros are macro call fragments.</li>
   <li><a name="MARKER-2-1197"></a>List constants and vector constants are parsed fragments.</li>
   <li><a name="MARKER-2-1198"></a>Anything in brackets is a bracketed fragment.</li>
-  <li>If the macro call was not the result of macro expansion, everything else is represented as sequences of tokens. There are a few restrictions on the tokens, for example semicolons must appear in certain places and bare brackets cannot appear; for details see the definition of <var>body-fragment</var>  and <var>list-fragment</var>  in <a href="BNF">Appendix A, "BNF."</a></li>
+  <li>If the macro call was not the result of macro expansion, everything else is represented as sequences of tokens. There are a few restrictions on the tokens, for example semicolons must appear in certain places and bare brackets cannot appear; for details see the definition of <var>body-fragment</var>  and <var>list-fragment</var>  in <a href="BNF">Appendix A, <q>BNF.</q></a></li>
   <li>In a macro call that is the result of macro expansion, additional items can be parsed fragments, due to pattern-variable substitution.</li>
   <li>Many built-in macros expand into implementation-specific parsed fragments.</li>
 </ul>
@@ -172,7 +172,7 @@
   <li>A function call, operator call, slot reference, or element reference that calls something other than a function macro returns a function call fragment.</li>
   <li>Enclosing an expression in parentheses does not change how it parses.</li>
 </ul>
-<p>The term "<a name="MARKER-2-1208"></a>parsed expression fragment" refers to any of the above.</p>
+<p>The term <q><a name="MARKER-2-1208"></a>parsed expression fragment</q> refers to any of the above.</p>
 <p>The parser recognizes parsed fragments as well as raw tokens. The nonterminals <var>definition</var> and <var>local-declaration</var> in the phrase grammar accept parsed fragments of the same kind. The nonterminal <var>operand</var> accepts parsed function call fragments and macro call fragments. The nonterminal <var>literal</var> accepts list constant and vector constant fragments. The nonterminal <var>simple-fragment</var> accepts parsed function call fragments and macro call fragments. The nonterminal <var>macro</var> accepts macro call fragments. The parser expands bracketed fragments into their constituent tokens before parsing them.<a name="MARKER-2-1209"></a></p>
 
 </div>

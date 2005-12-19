@@ -14,6 +14,11 @@
 
 body { padding-left: 8em; max-width: 40em }
 
+/* Quotes: Make sure they're rendered as right/left double quotation marks for US English */
+
+q:before { content: '\201C' }
+q:after  { content: '\201D' }
+
 
 /*
   Errata Notes
