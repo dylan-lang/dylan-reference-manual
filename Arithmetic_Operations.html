@@ -223,10 +223,10 @@
       <a name="UID-Built-In_Functions-410"></a>
       <h1 class="section-title">Arithmetic Operations</h1>
       <p><a name="MARKER-2-1602"></a><a name="MARKER-2-1603"></a>When instances
-      of <code>&lt;rational&gt;</code> and instances of <code>&lt;float&gt;</code> are combined by a
-      numerical function, the instance of <code>&lt;rational&gt;</code> is first converted to an
-      instance of <code>&lt;float&gt;</code> of the same format as the original instance
-      of <code>&lt;float&gt;</code>.</p>
+	of <code>&lt;rational&gt;</code> and instances of <code>&lt;float&gt;</code> are combined by a
+	numerical function, the instance of <code>&lt;rational&gt;</code> is first converted to an
+	instance of <code>&lt;float&gt;</code> of the same format as the original instance
+	of <code>&lt;float&gt;</code>.</p>
       <a name="HEADING100-2"></a>
       <a name="UID-Built-In_Functions-6229"></a>
       <h2 class="subsection-title"><a name="MARKER-2-1604"></a>Properties</h2>
@@ -338,7 +338,8 @@
       <a name="HEADING100-23"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1611">positive?</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1612"></a>Tests for the property of being positive.</p>
+      <p class="short-description"><a name="MARKER-9-1612"></a>Tests for the property of being
+	positive.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -377,7 +378,8 @@
       <a name="HEADING100-31"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1613">negative?</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1614"></a>Tests for the property of being negative.</p>
+      <p class="short-description"><a name="MARKER-9-1614"></a>Tests for the property of being
+	negative.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -416,7 +418,8 @@
       <a name="HEADING100-39"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1615">integral?</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1616"></a>Tests for the property of being integral.</p>
+      <p class="short-description"><a name="MARKER-9-1616"></a>Tests for the property of being
+	integral.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -449,12 +452,12 @@
 	  <h5 class="method-signature"><span class="signature"><code>integral? <var>object</var> </code>
 	      &rArr;<code> <var>false</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
 	  <p>A method is defined for the class <code>&lt;object&gt;</code> that
-	  returns <code>#f</code>.</p>
+	    returns <code>#f</code>.</p>
 	  <a name="HEADING100-47"></a>
 	  <h5 class="method-signature"><span class="signature"><code>integral? <var>real</var> </code>
 	      &rArr;<code> <var>boolean</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
 	  <p>A method is defined for real numbers that is equivalent to <code><var>real</var> =
-	  round(<var>real</var>)</code>.<a name="MARKER-2-1617"></a></p>
+	      round(<var>real</var>)</code>.<a name="MARKER-2-1617"></a></p>
 	</dd>
       </dl>
       <a name="HEADING100-49"></a>
@@ -503,7 +506,8 @@
       <a name="HEADING100-59"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1620">*</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1621"></a>Returns the product of its arguments.</p>
+      <p class="short-description"><a name="MARKER-9-1621"></a>Returns the product of its
+	arguments.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -543,7 +547,8 @@
       <a name="HEADING100-68"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1622">-</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1623"></a>Returns the difference of its arguments.</p>
+      <p class="short-description"><a name="MARKER-9-1623"></a>Returns the difference of its
+	arguments.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -583,7 +588,8 @@
       <a name="HEADING100-77"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1624">/</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1625"></a>Returns the quotient of its arguments.</p>
+      <p class="short-description"><a name="MARKER-9-1625"></a>Returns the quotient of its
+	arguments.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -618,14 +624,18 @@
 	  <h5 class="method-signature"><span class="signature"><code><var>complex1</var> / <var>complex2</var> </code>
 	      &rArr;<code> <var>complex</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
 	  <p>A predefined method returns the quotient of two complex numbers.</p>
-	  <p><a name="MARKER-2-1626"></a><a name="MARKER-2-1627"></a>Division by zero signals an error.</p>
-	  <p>The result of dividing two integers with / is implementation defined. Portable programs should use <code>floor/</code>, <code>ceiling/</code>, <code>round/</code>, or <code>truncate/</code> to divide two integers.</p>
+	  <p><a name="MARKER-2-1626"></a><a name="MARKER-2-1627"></a>Division by zero signals an
+	    error.</p>
+	  <p>The result of dividing two integers with / is implementation defined. Portable programs
+	    should use <code>floor/</code>, <code>ceiling/</code>, <code>round/</code>,
+	    or <code>truncate/</code> to divide two integers.</p>
 	</dd>
       </dl>
       <a name="HEADING100-88"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1628">negative</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1629"></a>Returns the negation of an object.</p>
+      <p class="short-description"><a name="MARKER-9-1629"></a>Returns the negation of an
+	object.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -654,7 +664,8 @@
 	</dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>Returns the negation of its argument. The unary minus operator is equivalent to a call to the <code>negative</code> in the current binding environment.</p>
+	  <p>Returns the negation of its argument. The unary minus operator is equivalent to a call
+	    to the <code>negative</code> in the current binding environment.</p>
 	  <a name="HEADING100-94"></a>
 	  <h5 class="method-signature"><span class="signature"><code>negative <var>real1</var> </code>
 	      &rArr;<code> <var>real2</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
@@ -664,7 +675,8 @@
       <a name="HEADING100-96"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1630">floor</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1631"></a>Truncates a real number toward negative infinity.</p>
+      <p class="short-description"><a name="MARKER-9-1631"></a>Truncates a real number toward
+	negative infinity.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -694,12 +706,15 @@
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>Truncates <var>real1</var> toward negative infinity. The integer part is returned as <var>integer</var>, the remainder is returned as <var>real2</var>.</p></dd>
+	  <p>Truncates <var>real1</var> toward negative infinity. The integer part is returned
+	    as <var>integer</var>, the remainder is returned as <var>real2</var>.</p>
+	</dd>
       </dl>
       <a name="HEADING100-103"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1632">ceiling</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1633"></a>Truncates a real number toward positive infinity.</p>
+      <p class="short-description"><a name="MARKER-9-1633"></a>Truncates a real number toward
+	positive infinity.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -728,12 +743,14 @@
 	    <dd><p>An instance of <code>&lt;real&gt;</code>.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
-	<dd><p>Truncates <var>real1</var> toward positive infinity. The integer part is returned as <var>integer</var>, the remainder is returned as <var>real2</var>.</p></dd>
+	<dd><p>Truncates <var>real1</var> toward positive infinity. The integer part is returned
+	    as <var>integer</var>, the remainder is returned as <var>real2</var>.</p></dd>
       </dl>
       <a name="HEADING100-110"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1634">round</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1635"></a>Rounds a real number toward the nearest mathematical integer.</p>
+      <p class="short-description"><a name="MARKER-9-1635"></a>Rounds a real number toward the
+	nearest mathematical integer.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -762,12 +779,16 @@
 	    <dd><p>An instance of <code>&lt;real&gt;</code>.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
-	<dd><p>Rounds <var>real1</var> toward the nearest mathematical integer. The integer part is returned as <var>integer</var>, the remainder is returned as <var>real2</var>. If <var>real1</var> is exactly between two integers, then the result <var>integer</var> will be a multiple of two.</p></dd>
+	<dd><p>Rounds <var>real1</var> toward the nearest mathematical integer. The integer part is
+	    returned as <var>integer</var>, the remainder is returned
+	    as <var>real2</var>. If <var>real1</var> is exactly between two integers, then the
+	    result <var>integer</var> will be a multiple of two.</p></dd>
       </dl>
       <a name="HEADING100-117"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1636">truncate</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1637"></a>Truncates a real number toward zero.</p>
+      <p class="short-description"><a name="MARKER-9-1637"></a>Truncates a real number toward
+	zero.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -796,12 +817,14 @@
 	    <dd><p>An instance of <code>&lt;real&gt;</code>.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
-	<dd><p>Truncates <var>real1</var> toward zero. The integer part is returned as <var>integer</var>, the remainder is returned as <var>real2</var>.</p></dd>
+	<dd><p>Truncates <var>real1</var> toward zero. The integer part is returned
+	    as <var>integer</var>, the remainder is returned as <var>real2</var>.</p></dd>
       </dl>
       <a name="HEADING100-124"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1638">floor/</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1639"></a>Returns the floor of the quotient of two numbers.</p>
+      <p class="short-description"><a name="MARKER-9-1639"></a>Returns the floor of the quotient of
+	two numbers.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -831,12 +854,15 @@
 	    <dd><p>An instance of <code>&lt;real&gt;</code>.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
-	<dd><p>Divides <var>real2</var> into <var>real1</var> and truncates the result toward negative infinity. The integer part of the result is returned as <var>integer</var>, the remainder is returned as <var>real3</var>.</p></dd>
+	<dd><p>Divides <var>real2</var> into <var>real1</var> and truncates the result toward
+	    negative infinity. The integer part of the result is returned as <var>integer</var>, the
+	    remainder is returned as <var>real3</var>.</p></dd>
       </dl>
       <a name="HEADING100-132"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1640">ceiling/</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1641"></a>Returns the ceiling of the quotient of two numbers.</p>
+      <p class="short-description"><a name="MARKER-9-1641"></a>Returns the ceiling of the quotient
+	of two numbers.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -866,12 +892,15 @@
 	    <dd><p>An instance of <code>&lt;real&gt;</code>.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
-	<dd><p>Divides <var>real2</var> into <var>real1</var> and truncates the result toward positive infinity. The integer part of the result is returned as <var>integer</var>, the remainder is returned as <var>real3</var>.</p></dd>
+	<dd><p>Divides <var>real2</var> into <var>real1</var> and truncates the result toward
+	    positive infinity. The integer part of the result is returned as <var>integer</var>, the
+	    remainder is returned as <var>real3</var>.</p></dd>
       </dl>
       <a name="HEADING100-140"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1642">round/</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1643"></a>Rounds off the quotient of two numbers.</p>
+      <p class="short-description"><a name="MARKER-9-1643"></a>Rounds off the quotient of two
+	numbers.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -901,12 +930,17 @@
 	    <dd><p>An instance of <code>&lt;real&gt;</code>.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
-	<dd><p>Divides <var>real2</var> into <var>real1</var> and rounds the result toward the nearest mathematical integer. The integer part of the result is returned as <var>integer</var>, the remainder is returned as <var>real3</var>. If the result of the division is exactly between two integers, then the result <var>integer</var> will be a multiple of two.</p></dd>
+	<dd><p>Divides <var>real2</var> into <var>real1</var> and rounds the result toward the
+	    nearest mathematical integer. The integer part of the result is returned
+	    as <var>integer</var>, the remainder is returned as <var>real3</var>. If the result of
+	    the division is exactly between two integers, then the result <var>integer</var> will be
+	    a multiple of two.</p></dd>
       </dl>
       <a name="HEADING100-148"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1644">truncate/</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1645"></a>Returns the truncated quotient of two numbers.</p>
+      <p class="short-description"><a name="MARKER-9-1645"></a>Returns the truncated quotient of two
+	numbers.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -936,12 +970,15 @@
 	    <dd><p>An instance of <code>&lt;real&gt;</code>.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
-	<dd><p>Divides <var>real2</var> into <var>real1</var> and truncates the result toward zero. The integer part of the result is returned as <var>integer</var>, the remainder is returned as <var>real3</var>.</p></dd>
+	<dd><p>Divides <var>real2</var> into <var>real1</var> and truncates the result toward
+	    zero. The integer part of the result is returned as <var>integer</var>, the remainder is
+	    returned as <var>real3</var>.</p></dd>
       </dl>
       <a name="HEADING100-156"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1646">modulo</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1647"></a>Returns the second value of <code>floor/</code>.</p>
+      <p class="short-description"><a name="MARKER-9-1647"></a>Returns the second value
+	of <code>floor/</code>.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -975,7 +1012,8 @@
       <a name="HEADING100-163"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1648">remainder</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1649"></a>Returns the second value of <code>truncate/</code>.</p>
+      <p class="short-description"><a name="MARKER-9-1649"></a>Returns the second value
+	of <code>truncate/</code>.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1009,7 +1047,8 @@
       <a name="HEADING100-170"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1650">^</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1651"></a><a name="MARKER-2-1652"></a>Raises an object to a specified power.</p>
+      <p class="short-description"><a name="MARKER-9-1651"></a><a name="MARKER-2-1652"></a>Raises an
+	object to a specified power.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1039,17 +1078,20 @@
 	</dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>Returns <var>object1 </var> raised to the power <var>object2</var>. An error is signaled if both arguments are zero.</p>
+	  <p>Returns <var>object1 </var> raised to the power <var>object2</var>. An error is
+	    signaled if both arguments are zero.</p>
 	  <a name="HEADING100-177"></a>
 	  <h5 class="method-signature"><span class="signature"><code><var>complex</var> ^ <var>integer</var> </code>
 	      &rArr;<code><var>number</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-	  <p>A predefined method raises a complex number to an integral power and returns the result.</p>
+	  <p>A predefined method raises a complex number to an integral power and returns the
+	    result.</p>
 	</dd>
       </dl>
       <a name="HEADING100-179"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1653">abs</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1654"></a>Returns the absolute value of its argument.</p>
+      <p class="short-description"><a name="MARKER-9-1654"></a>Returns the absolute value of its
+	argument.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1088,7 +1130,8 @@
       <a name="HEADING100-187"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1655">logior</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1656"></a><a name="MARKER-2-1657"></a>Returns the bitwise inclusive or of its integer arguments.</p>
+      <p class="short-description"><a name="MARKER-9-1656"></a><a name="MARKER-2-1657"></a>Returns
+	the bitwise inclusive or of its integer arguments.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1121,7 +1164,8 @@
       <a name="HEADING100-193"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1658">logxor</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1659"></a>Returns the bitwise exclusive or of its integer arguments.</p>
+      <p class="short-description"><a name="MARKER-9-1659"></a>Returns the bitwise exclusive or of
+	its integer arguments.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1154,7 +1198,8 @@
       <a name="HEADING100-199"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1660">logand</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1661"></a>Returns the bitwise and of its integer arguments.</p>
+      <p class="short-description"><a name="MARKER-9-1661"></a>Returns the bitwise and of its
+	integer arguments.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1187,7 +1232,8 @@
       <a name="HEADING100-205"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1662">lognot</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1663"></a>Returns the bitwise not of its integer argument.</p>
+      <p class="short-description"><a name="MARKER-9-1663"></a>Returns the bitwise not of its
+	integer argument.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1220,7 +1266,8 @@
       <a name="HEADING100-211"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1664">logbit?</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1665"></a>Tests the value of a particular bit in its integer argument.</p>
+      <p class="short-description"><a name="MARKER-9-1665"></a>Tests the value of a particular bit
+	in its integer argument.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1250,13 +1297,17 @@
 	</dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>Returns true if the <var>index</var>th bit in <var>integer</var>  is a one-bit; otherwise it returns false.</p>
-	  <p>Negative <var>integers</var> are treated as if they were in two's-complement notation.</p></dd>
+	  <p>Returns true if the <var>index</var>th bit in <var>integer</var> is a one-bit;
+	    otherwise it returns false.</p>
+	  <p>Negative <var>integers</var> are treated as if they were in two's-complement
+	    notation.</p>
+	</dd>
       </dl>
       <a name="HEADING100-219"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1666">ash</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1667"></a>Performs an arithmetic shift on its first argument.</p>
+      <p class="short-description"><a name="MARKER-9-1667"></a>Performs an arithmetic shift on its
+	first argument.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1288,14 +1339,14 @@
 	<dd>
 	  <p>Performs an arithmetic shift on the binary representation of <var>integer1</var>.</p>
 	  <p><code>ash</code> shifts <var>integer1</var> arithmetically left by <var>count</var> bit
-	  positions if <var>count</var> is positive, or right <var>count</var> bit positions
-	  if <var>count</var> is negative. The shifted value of the same sign as <var>integer1</var>
-	  is returned.</p>
+	    positions if <var>count</var> is positive, or right <var>count</var> bit positions
+	    if <var>count</var> is negative. The shifted value of the same sign
+	    as <var>integer1</var> is returned.</p>
 	  <p>When <code>ash</code> moves bits to the left, it adds zero-bits at the right. When it
-	  moves them to the right, it discards bits.</p>
+	    moves them to the right, it discards bits.</p>
 	  <p><code>ash</code> is defined to behave as if <var>integer1</var> were represented in
-	  two's complement form, regardless of how integers are represented by the
-	  implementation.</p>
+	    two's complement form, regardless of how integers are represented by the
+	    implementation.</p>
 	  <pre class="code">
 ash(8, 1)
  &rArr;  16
@@ -1307,7 +1358,7 @@ ash(32, -1)
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1669">lcm</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1670"></a>Returns the least common multiple of
-      its two arguments.</p>
+	its two arguments.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1347,7 +1398,8 @@ ash(32, -1)
       <a name="HEADING100-239"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1671">gcd</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1672"></a>Returns the greatest common divisor of its two arguments.</p>
+      <p class="short-description"><a name="MARKER-9-1672"></a>Returns the greatest common divisor
+	of its two arguments.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1381,7 +1433,8 @@ ash(32, -1)
 	  <a name="HEADING100-246"></a>
 	  <h5 class="method-signature"><span class="signature"><code>gcd <var>integer1 integer2</var> </code>
 	      &rArr;<code> <var>integer3</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
-	  <p>A predefined method returns the greatest common divisor of two integers.<a name="MARKER-2-1673"></a></p>
+	  <p>A predefined method returns the greatest common divisor of two
+	    integers.<a name="MARKER-2-1673"></a></p>
 	</dd>
       </dl>
 
@@ -1399,10 +1452,11 @@ ash(32, -1)
 	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
 	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
       </p>
-      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered trademarks of
-      Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-      <p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker">Harlequin
-      WebMaker&reg;</a>, subsequently revised.</p>
+      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+      <p class="footer">Originally generated
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>

@@ -126,29 +126,29 @@
       <a name="UID-Macros-1862"></a>
       <h1 class="section-title">Auxiliary Rule Sets</h1>
       <p><a name="MARKER-2-1265"></a>Auxiliary rule sets are
-      like <a name="MARKER-2-1266"></a>subroutines for rewrite rules. An auxiliary rule set rewrites
-      the value of a pattern variable after it is bound by a pattern and before it is substituted
-      into a template. Auxiliary rule sets only come into play after a pattern has matched; the
-      failure of all patterns in an auxiliary rule set to match causes the entire macro call to be
-      declared invalid, rather than back-tracking and trying the next pattern in the calling rule
-      set.</p>
+	like <a name="MARKER-2-1266"></a>subroutines for rewrite rules. An auxiliary rule set
+	rewrites the value of a pattern variable after it is bound by a pattern and before it is
+	substituted into a template. Auxiliary rule sets only come into play after a pattern has
+	matched; the failure of all patterns in an auxiliary rule set to match causes the entire
+	macro call to be declared invalid, rather than back-tracking and trying the next pattern in
+	the calling rule set.</p>
       <p>See the definition of <var>aux-rule-sets</var>
-      in <a href="Phrase_Grammar#MARKER-9-2122"><q>Auxiliary Rule Sets</q> on page 430</a>.</p>
+	in <a href="Phrase_Grammar#MARKER-9-2122"><q>Auxiliary Rule Sets</q> on page 430</a>.</p>
       <p>A <em class="BNFCaps">symbol</em> flags the beginning of an auxiliary rule set. For
-      readability it is generally written as <code>name:</code> rather
-      than <code>#"name"</code>. The name of the symbol is the same as the name of the pattern
-      variable that is rewritten by this auxiliary rule set. All occurrences of this pattern
-      variable in all rule sets are rewritten. A pattern variable can occur in the very auxiliary
-      rule set that rewrites that pattern variable; this is how you write recursive rewrite rules,
-      which greatly expand the power of pattern-matching.</p>
+	readability it is generally written as <code>name:</code> rather
+	than <code>#"name"</code>. The name of the symbol is the same as the name of the pattern
+	variable that is rewritten by this auxiliary rule set. All occurrences of this pattern
+	variable in all rule sets are rewritten. A pattern variable can occur in the very auxiliary
+	rule set that rewrites that pattern variable; this is how you write recursive rewrite rules,
+	which greatly expand the power of pattern-matching.</p>
       <p>When an auxiliary rule set's pattern variable occurs in a double
-      question-mark <var>pattern-keyword</var>, the auxiliary rule set rewrites each property value
-      in the sequence individually.</p>
+	question-mark <var>pattern-keyword</var>, the auxiliary rule set rewrites each property
+	value in the sequence individually.</p>
       <p>The order of auxiliary rule sets in a macro definition is immaterial.</p>
       <p>The ellipsis <code>...</code> in patterns and templates of an auxiliary rule set means
-      exactly the same thing as the pattern variable that is rewritten by this auxiliary rule
-      set. Using ellipsis instead of the pattern variable can make recursive rewrite rules more
-      readable.<a name="MARKER-2-1267"></a></p>
+	exactly the same thing as the pattern variable that is rewritten by this auxiliary rule
+	set. Using ellipsis instead of the pattern variable can make recursive rewrite rules more
+	readable.<a name="MARKER-2-1267"></a></p>
 
     </div>
 
@@ -165,10 +165,10 @@
 	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
       </p>
       <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
-      registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
       <p class="footer">Originally generated
-      with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
-      revised.</p>
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>
