@@ -419,10 +419,15 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of collections whose keys are consecutive integers starting from zero.</p>
-	  <p><a name="MARKER-2-1404"></a>Sequences must be stable under iteration, and the iteration order must match the order of keys. Thus, the key associated with a sequence's iteration state can be determined by keeping a counter in parallel with the iteration state.</p>
+	  <p><a name="MARKER-2-1404"></a>Sequences must be stable under iteration, and the iteration
+	    order must match the order of keys. Thus, the key associated with a sequence's iteration
+	    state can be determined by keeping a counter in parallel with the iteration state.</p>
 	  <p><code><a name="MARKER-2-1405"></a><a name="MARKER-2-1406"></a><a name="MARKER-2-1407"></a><a name="MARKER-2-1408"></a><a name="MARKER-2-1409"></a><a name="MARKER-2-1410"></a><a name="MARKER-2-1411"></a><a name="MARKER-2-1412"></a><a name="MARKER-2-1413"></a><a name="MARKER-2-1414"></a><a name="MARKER-2-1415"></a><a name="MARKER-2-1416"></a></code>The default methods for <code>add</code>, <code>add-new</code>, <code>remove</code>, <code>choose</code>, <code>choose-by</code>, <code>intersection</code>, <code>union</code>, <code>remove-duplicates</code>, <code>copy-sequence</code>, <code>concatenate</code>, <code>reverse</code>, and <code>sort</code> all return new sequences that are instances of the <code id="MARKER-2-1417">type-for-copy</code> of their primary sequence argument. However, more specialized methods are permitted to choose a more appropriate result class; for example, <code>copy-sequence</code> of a range returns another range, even though the <code>type-for-copy</code> value of a range is the <code>&lt;list&gt;</code> class.</p>
-	  <p><code>&lt;sequence&gt;</code> is disjoint from <code>&lt;explicit-key-collection&gt;</code> because of the sealed domain over the function <code>key-test</code> for <code>&lt;sequence&gt;</code>.</p>
-	  <p>The element type of <code>&lt;sequence&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
+	  <p><code>&lt;sequence&gt;</code> is disjoint
+	    from <code>&lt;explicit-key-collection&gt;</code> because of the sealed domain over the
+	    function <code>key-test</code> for <code>&lt;sequence&gt;</code>.</p>
+	  <p>The element type of <code>&lt;sequence&gt;</code> is <code>indefinite &lArr;
+	      &lt;object&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;sequence&gt;</code> provides the following operations:</p>
@@ -547,11 +552,14 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of collections that may be modified.</p>
-	  <p>Every mutable collection is required to allow modification by implementing <code id="MARKER-2-1419">element-setter</code>.</p>
-	  <p>The element type of <code>&lt;mutable-collection&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
+	  <p>Every mutable collection is required to allow modification by
+	    implementing <code id="MARKER-2-1419">element-setter</code>.</p>
+	  <p>The element type of <code>&lt;mutable-collection&gt;</code> is <code>indefinite &lArr;
+	      &lt;object&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
-	  <p>The class <code>&lt;mutable-collection&gt;</code> provides the following operations:</p>
+	  <p>The class <code>&lt;mutable-collection&gt;</code> provides the following
+	    operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-25</strong>  Functions on &lt;mutable-collection&gt;</caption>
 	    <tr><th class="primary"><p>Function</p>
 	      </th><th><p>Description</p>
@@ -598,10 +606,12 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of explicit-key-collections that can have elements replaced.</p>
-	  <p>The element type of <code>&lt;mutable-explicit-key-collection&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
+	  <p>The element type of <code>&lt;mutable-explicit-key-collection&gt;</code>
+	    is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
-	  <p>The class <code>&lt;mutable-explicit-key-collection&gt;</code> provides the following operations:</p>
+	  <p>The class <code>&lt;mutable-explicit-key-collection&gt;</code> provides the following
+	    operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-29</strong>  Generic Functions on &lt;mutable-explicit-key-collection&gt;</caption>
 	    <tr><th class="primary"><p>Function</p>
 	      </th><th><p>Description</p>
@@ -632,7 +642,8 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of sequences that may be modified.</p>
-	  <p>The element type of <code>&lt;mutable-sequence&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
+	  <p>The element type of <code>&lt;mutable-sequence&gt;</code> is <code>indefinite &lArr;
+	      &lt;object&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;mutable-sequence&gt;</code> provides the following operations:</p>
@@ -674,7 +685,8 @@
       <a name="HEADING93-1195"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1422">&lt;stretchy-collection&gt;</code> </span><span class="attributes-summary">[Open Abstract Class]</span></h4>
       <hr class="item-title" />
-      <p>The class of collections that may grow or shrink to accommodate adding or removing elements.</p>
+      <p>The class of collections that may grow or shrink to accommodate adding or removing
+	elements.</p>
       <dl class="Cliche">
 	<dt><span>Superclasses:</span></dt>
 	<dd><p><code>&lt;collection&gt;</code></p></dd>
@@ -682,19 +694,30 @@
 	<dd><p>None.</p></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>The class of collections that may grow or shrink to accommodate adding or removing elements.</p>
-	  <p><a name="MARKER-2-1423"></a>Stretchy collections allow <code id="MARKER-2-1424">element-setter </code>to be called with a key that is not present in the collection, expanding the collection as necessary to add a new element in that case. Each concrete subclass of <code>&lt;stretchy-collection&gt;</code> must provide or inherit a method for <code>element-setter </code>that behaves as follows when there is not already an element present for the indicated key:</p>
+	  <p>The class of collections that may grow or shrink to accommodate adding or removing
+	    elements.</p>
+	  <p><a name="MARKER-2-1423"></a>Stretchy collections
+	    allow <code id="MARKER-2-1424">element-setter </code>to be called with a key that is not
+	    present in the collection, expanding the collection as necessary to add a new element in
+	    that case. Each concrete subclass of <code>&lt;stretchy-collection&gt;</code> must
+	    provide or inherit a method for <code>element-setter </code>that behaves as follows when
+	    there is not already an element present for the indicated key:</p>
 	  <ul>
-	    <li> If the class is a subclass of <code>&lt;explicit-key-collection&gt;,</code> adds a new element to the collection with the indicated key.</li>
-	    <li>If the class is a subclass of <code>&lt;sequence&gt;,</code> first calls <code>size-setter</code> on the key + 1 and the collection to expand the sequence. The key must be a non-negative integer.</li>
+	    <li> If the class is a subclass of <code>&lt;explicit-key-collection&gt;,</code> adds a
+	      new element to the collection with the indicated key.</li>
+	    <li>If the class is a subclass of <code>&lt;sequence&gt;,</code> first
+	      calls <code>size-setter</code> on the key + 1 and the collection to expand the
+	      sequence. The key must be a non-negative integer.</li>
 	  </ul>
-	  <p>The element type of <code>&lt;stretchy-collection&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p>
+	  <p>The element type of <code>&lt;stretchy-collection&gt;</code> is <code>indefinite &lArr;
+	      &lt;object&gt;</code>.</p>
 	</dd>
       </dl>
       <dl class="Cliche">
 	<dt><span>Operations:</span></dt>
 	<dd>
-	  <p>The class <code>&lt;stretchy-collection&gt;</code> provides the following operations:</p>
+	  <p>The class <code>&lt;stretchy-collection&gt;</code> provides the following
+	    operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-34</strong>  Methods on singleton(&lt;stretchy-collection&gt;)</caption>
 	    <tr><th class="primary"><p>Function</p>
 	      </th><th><p>Description</p>
@@ -711,29 +734,52 @@
       <a name="HEADING93-1240"></a>
       <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1425"></a><a name="MARKER-9-1426"></a><a name="MARKER-2-1427"></a>&lt;array&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Class]</span></h4>
       <hr class="item-title" />
-      <p>The class of sequences whose elements are arranged according to a Cartesian coordinate system.</p>
+      <p>The class of sequences whose elements are arranged according to a Cartesian coordinate
+	system.</p>
       <dl class="Cliche">
 	<dt><span>Superclasses:</span></dt>
 	<dd><p><code>&lt;mutable-sequence&gt;</code></p></dd>
 	<dt><span>Init-keywords:</span></dt>
-	<dd><p>The make method on <code>singleton(&lt;array&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code>&lt;array&gt;</code>.</p></dd>
+	<dd><p>The make method on <code>singleton(&lt;array&gt;)</code> accepts the following
+	    keyword arguments. Note that these are not inherited by subclasses
+	    of <code>&lt;array&gt;</code>.</p></dd>
 	<dd>
 	  <dl>
 	    <dt><code>dimensions:</code></dt>
-	    <dd><p>An instance of <code>&lt;sequence&gt;</code> with elements that are instances of <code>&lt;integer&gt;</code>. This argument specifies the dimensions of the array. The size of the sequence specifies the rank (number of dimensions) of the array, and each integer in the sequence specifies the size of a dimension. This argument is required.</p></dd>
+	    <dd><p>An instance of <code>&lt;sequence&gt;</code> with elements that are instances
+		of <code>&lt;integer&gt;</code>. This argument specifies the dimensions of the
+		array. The size of the sequence specifies the rank (number of dimensions) of the
+		array, and each integer in the sequence specifies the size of a dimension. This
+		argument is required.</p></dd>
 	    <dt><code>fill:</code> </dt>
-	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying an initial value for each element of the array. The default value is <code>#f</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying an initial value for each
+		element of the array. The default value is <code>#f</code>.</p></dd>
 	  </dl>
 	</dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>The class of collections whose elements are arranged according to a Cartesian coordinate system.</p>
-	  <p>An array element is referred to by a (possibly empty) series of indices. The length of the series must equal the rank of the array. Each index must be a non-negative integer less than the corresponding dimension. An array element may alternatively be referred to by an integer, which is interpreted as a row-major index.</p>
-	  <p>Arrays typically use space efficient representations, and the average time required to access a randomly chosen element is typically sublinear to the number of elements.</p>
-	  <p>Whe a multi-dimensional array is created, the concrete class that is actually instantiated cannot be any of the specified subclasses of <code>&lt;array&gt;</code>, which are all one-dimensional. Every implementation must have one or more concrete subclasses of <code>&lt;array&gt;</code> that are used for this purpose. These concrete subclasses have no specified names, and their names are not exported by the Dylan module.</p>
-	  <p><a name="MARKER-2-1428"></a>When a single-dimensional array is created, the array created will be an instance of <code>&lt;vector&gt;</code>.</p>
-	  <p>Each concrete subclass of <code>&lt;array&gt;</code> must either provide or inherit implementations of the functions <code id="MARKER-2-1429">element</code>, <code>element-setter</code>, and <code>dimensions</code>.</p>
-	  <p>The element type of <code>&lt;array&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
+	  <p>The class of collections whose elements are arranged according to a Cartesian
+	    coordinate system.</p>
+	  <p>An array element is referred to by a (possibly empty) series of indices. The length of
+	    the series must equal the rank of the array. Each index must be a non-negative integer
+	    less than the corresponding dimension. An array element may alternatively be referred to
+	    by an integer, which is interpreted as a row-major index.</p>
+	  <p>Arrays typically use space efficient representations, and the average time required to
+	    access a randomly chosen element is typically sublinear to the number of elements.</p>
+	  <p>When a multi-dimensional array is created, the concrete class that is actually
+	    instantiated cannot be any of the specified subclasses of <code>&lt;array&gt;</code>,
+	    which are all one-dimensional. Every implementation must have one or more concrete
+	    subclasses of <code>&lt;array&gt;</code> that are used for this purpose. These concrete
+	    subclasses have no specified names, and their names are not exported by the Dylan
+	    module.</p>
+	  <p><a name="MARKER-2-1428"></a>When a single-dimensional array is created, the array
+	    created will be an instance of <code>&lt;vector&gt;</code>.</p>
+	  <p>Each concrete subclass of <code>&lt;array&gt;</code> must either provide or inherit
+	    implementations of the
+	    functions <code id="MARKER-2-1429">element</code>, <code>element-setter</code>,
+	    and <code>dimensions</code>.</p>
+	  <p>The element type of <code>&lt;array&gt;</code> is <code>indefinite &lArr;
+	      &lt;object&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;array&gt;</code> provides the following operations:</p>
@@ -807,21 +853,30 @@
 	<dt><span>Superclasses:</span></dt>
 	<dd><p><code>&lt;array&gt;</code></p></dd>
 	<dt><span>Init-keywords:</span></dt>
-	<dd><p>The make method on <code>singleton(&lt;vector&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code>&lt;vector&gt;</code>.</p></dd>
+	<dd><p>The make method on <code>singleton(&lt;vector&gt;)</code> accepts the following
+	    keyword arguments. Note that these are not inherited by subclasses
+	    of <code>&lt;vector&gt;</code>.</p></dd>
 	<dd>
 	  <dl>
 	    <dt><code>size:</code> </dt>
-	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the vector. The default value is <code>0</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the
+		vector. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code> </dt>
-	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying an initial value for each element of the vector. The default value is <code>#f</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying an initial value for each
+		element of the vector. The default value is <code>#f</code>.</p></dd>
 	  </dl>
 	</dd>
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of one-dimensional arrays.</p>
-	  <p><code>&lt;vector&gt;</code> has no direct instances; calling <code>make</code> on <code>&lt;vector&gt;</code> returns an instance of <code>&lt;simple-object-vector&gt;</code>.</p>
-	  <p>Each concrete subclass of <code>&lt;vector&gt;</code> must either provide or inherit an implementation of <code id="MARKER-2-1433">size</code> that shadows the method provided by <code>&lt;array&gt;</code>.</p>
-	  <p>The element type of <code>&lt;vector&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
+	  <p><code>&lt;vector&gt;</code> has no direct instances; calling <code>make</code>
+	    on <code>&lt;vector&gt;</code> returns an instance
+	    of <code>&lt;simple-object-vector&gt;</code>.</p>
+	  <p>Each concrete subclass of <code>&lt;vector&gt;</code> must either provide or inherit an
+	    implementation of <code id="MARKER-2-1433">size</code> that shadows the method provided
+	    by <code>&lt;array&gt;</code>.</p>
+	  <p>The element type of <code>&lt;vector&gt;</code> is <code>indefinite &lArr;
+	      &lt;object&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;vector&gt;</code> provides the following operations:</p>
@@ -860,26 +915,43 @@
       <a name="HEADING93-1652"></a>
       <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1434"></a><a name="MARKER-9-1435"></a>&lt;simple-vector&gt;</code> </span><span class="attributes-summary">[Sealed Abstract Instantiable Class]</span></h4>
       <hr class="item-title" />
-      <p>A predefined subclass of <code>&lt;vector&gt;</code> that provides an efficient implementation of fixed-length vectors.</p>
+      <p>A predefined subclass of <code>&lt;vector&gt;</code> that provides an efficient
+	implementation of fixed-length vectors.</p>
       <dl class="Cliche">
 	<dt><span>Superclasses:</span></dt>
 	<dd><p><code>&lt;vector&gt;</code></p></dd>
 	<dt><span>Init-keywords:</span></dt>
-	<dd><p>The make method on <code>singleton(&lt;simple-vector&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code>&lt;simple-vector&gt;</code>.</p></dd>
+	<dd><p>The make method on <code>singleton(&lt;simple-vector&gt;)</code> accepts the
+	    following keyword arguments. Note that these are not inherited by subclasses
+	    of <code>&lt;simple-vector&gt;</code>.</p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
-	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the vector. The default value is <code>0</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the
+		vector. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code> </dt>
-	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying an initial value for each element of the vector. The default value is <code>#f</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying an initial value for each
+		element of the vector. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of simple and efficient vectors.</p>
-	  <p><a name="MARKER-2-1436"></a>The class <code>&lt;simple-vector&gt;</code> provides a constant time implementation for the <code>element</code>  and <code>element-setter </code>functions. This property is shared by all subtypes of <code>&lt;simple-vector&gt;</code>.</p>
-	  <p>Calling <code>make</code> on a <code>&lt;simple-vector&gt;</code> returns an instance of <code>&lt;simple-object-vector&gt;</code>. The size of a simple vector cannot be changed after the simple vector has been created.</p>
-	  <p><a name="MARKER-2-1437"></a>Vector literals (created with the <code>#[</code>&hellip;<code>]</code> syntax) are general instances of <code>&lt;simple-vector&gt;</code>.</p>
-	  <p>The element type of <code>&lt;simple-vector&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p>
-	  <p>The class <code>&lt;simple-object-vector&gt;</code> and the type <code>limited(&lt;simple-vector&gt;, of: &lt;object&gt;)</code> have exactly the same instances, but neither is a subtype of the other. The relationship between them is simply that the <code>make</code> method for the type returns an instance of the class.</p></dd>
+	  <p><a name="MARKER-2-1436"></a>The class <code>&lt;simple-vector&gt;</code> provides a
+	    constant time implementation for the <code>element</code>
+	    and <code>element-setter </code>functions. This property is shared by all subtypes
+	    of <code>&lt;simple-vector&gt;</code>.</p>
+	  <p>Calling <code>make</code> on a <code>&lt;simple-vector&gt;</code> returns an instance
+	    of <code>&lt;simple-object-vector&gt;</code>. The size of a simple vector cannot be
+	    changed after the simple vector has been created.</p>
+	  <p><a name="MARKER-2-1437"></a>Vector literals (created with
+	    the <code>#[</code>&hellip;<code>]</code> syntax) are general instances
+	    of <code>&lt;simple-vector&gt;</code>.</p>
+	  <p>The element type of <code>&lt;simple-vector&gt;</code> is <code>indefinite &lArr;
+	      &lt;object&gt;</code>.</p>
+	  <p>The class <code>&lt;simple-object-vector&gt;</code> and the
+	    type <code>limited(&lt;simple-vector&gt;, of: &lt;object&gt;)</code> have exactly the
+	    same instances, but neither is a subtype of the other. The relationship between them is
+	    simply that the <code>make</code> method for the type returns an instance of the
+	    class.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;simple-vector&gt;</code> provides the following operations:</p>
@@ -915,17 +987,23 @@
 	<dt><span>Superclasses:</span></dt>
 	<dd><p><code>&lt;simple-vector&gt;</code></p></dd>
 	<dt><span>Init-keywords:</span></dt>
-	<dd><p>The class <code>&lt;simple-object-vector&gt;</code> supports the following init-keywords: </p></dd>
+	<dd><p>The class <code>&lt;simple-object-vector&gt;</code> supports the following
+	    init-keywords: </p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
-	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the vector. The default value is <code>0</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the
+		vector. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code> </dt>
-	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each element. The default value is <code>#f</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each
+		element. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>The class <code>&lt;simple-object-vector&gt;</code> represents vectors that may have elements of any type. It provides a constant time implementation for the <code>element</code>  and <code>element-setter </code>functions.</p>
-	  <p>The element type of <code>&lt;simple-object-vector&gt;</code> is<code> &lt;object&gt;</code>.</p></dd>
+	  <p>The class <code>&lt;simple-object-vector&gt;</code> represents vectors that may have
+	    elements of any type. It provides a constant time implementation for
+	    the <code>element</code> and <code>element-setter </code>functions.</p>
+	  <p>The element type of <code>&lt;simple-object-vector&gt;</code> is<code>
+	      &lt;object&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd><p>None.</p></dd>
       </dl>
@@ -937,18 +1015,25 @@
 	<dt><span>Superclasses:</span></dt>
 	<dd><p><code>&lt;vector&gt; &lt;stretchy-collection&gt;</code></p></dd>
 	<dt><span>Init-keywords:</span></dt>
-	<dd><p>The class <code>&lt;stretchy-vector&gt;</code> supports the following init-keywords:</p></dd>
+	<dd><p>The class <code>&lt;stretchy-vector&gt;</code> supports the following
+	    init-keywords:</p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
-	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the initial size of the stretchy vector. The default value is <code>0</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the initial size of the
+		stretchy vector. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code></dt>
-	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each element. The default value is <code>#f</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each
+		element. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of vectors that are stretchy.</p>
-	  <p>Because <code>&lt;stretchy-vector&gt;</code> is abstract and instantiable but has no specified subclasses, every implementation must provide one or more concrete subclass to instantiate. These concrete subclasses have no specified names, and their names are not exported by the Dylan module.</p>
-	  <p>The element type of <code>&lt;simple-vector&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
+	  <p>Because <code>&lt;stretchy-vector&gt;</code> is abstract and instantiable but has no
+	    specified subclasses, every implementation must provide one or more concrete subclass to
+	    instantiate. These concrete subclasses have no specified names, and their names are not
+	    exported by the Dylan module.</p>
+	  <p>The element type of <code>&lt;simple-vector&gt;</code> is <code>indefinite &lArr;
+	      &lt;object&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd><p>The class <code>&lt;stretchy-vector&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-43</strong>  Methods on &lt;stretchy-vector&gt;</caption>
@@ -986,15 +1071,23 @@
 	<dd><p>The class <code>&lt;deque&gt;</code> supports the following init-keywords: </p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
-	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the initial size of the deque. The default value is <code>0</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the initial size of the
+		deque. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code> </dt>
-	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each element. The default value is <code>#f</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each
+		element. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>A subclass of sequence that supports efficient forward and backward iteration, and efficient addition and removal of elements from the beginning or end of the sequence.</p>
-	  <p>Because <code>&lt;deque&gt;</code> is abstract and instantiable but has no specified subclasses, every implementation must provide one or more concrete subclasses to instantiate. These concrete subclasses have no specified names, and their names are not exported by the Dylan module.</p>
-	  <p>The element type of <code>&lt;deque&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
+	  <p>A subclass of sequence that supports efficient forward and backward iteration, and
+	    efficient addition and removal of elements from the beginning or end of the
+	    sequence.</p>
+	  <p>Because <code>&lt;deque&gt;</code> is abstract and instantiable but has no specified
+	    subclasses, every implementation must provide one or more concrete subclasses to
+	    instantiate. These concrete subclasses have no specified names, and their names are not
+	    exported by the Dylan module.</p>
+	  <p>The element type of <code>&lt;deque&gt;</code> is <code>indefinite &lArr;
+	      &lt;object&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;deque&gt;</code> provides the following operations:</p>
@@ -1042,18 +1135,23 @@
       <a name="HEADING93-2045"></a>
       <a name="UID-Built-In_Classes-423"></a>
       <h2 class="subsection-title"><a name="MARKER-2-1443"></a>Lists</h2>
-      <p>Lists are constructed by linking together instances of <code>&lt;pair&gt;</code>. The <a name="MARKER-2-1444"></a>head of a list contains an element, and the <a name="MARKER-2-1445"></a>tail of the list contains a pointer to the next pair in the list. The list ends when the tail of a pair contains something besides another pair.</p>
-      <p>A <dfn id="MARKER-2-1446">proper list</dfn> has a final pair with a tail
-	containing the empty list.</p>
-      <p>An <dfn id="MARKER-2-1447">improper list</dfn> does not have a final pair
-	with a tail containing the empty list, either because the tail of its final pair is not the
-	empty list, or because the list is circular and thus does not have a final pair. Except when
-	their behavior on improper lists is documented explicitly, collection or sequence functions
-	are not guaranteed to return an answer when an improper list is used as a collection or a
+      <p>Lists are constructed by linking together instances
+	of <code>&lt;pair&gt;</code>. The <a name="MARKER-2-1444"></a>head of a list contains an
+	element, and the <a name="MARKER-2-1445"></a>tail of the list contains a pointer to the next
+	pair in the list. The list ends when the tail of a pair contains something besides another
+	pair.</p>
+      <p>A <dfn id="MARKER-2-1446">proper list</dfn> has a final pair with a tail containing the
+	empty list.</p>
+      <p>An <dfn id="MARKER-2-1447">improper list</dfn> does not have a final pair with a tail
+	containing the empty list, either because the tail of its final pair is not the empty list,
+	or because the list is circular and thus does not have a final pair. Except when their
+	behavior on improper lists is documented explicitly, collection or sequence functions are
+	not guaranteed to return an answer when an improper list is used as a collection or a
 	sequence. At the implementation's option, these functions may return the correct result,
 	signal a <code>&lt;type-error&gt;</code>, or (in the case of a circular list) fail to
 	return.</p>
-      <p>When treated as a collection, the elements of a list are the heads of successive pairs in the list.</p>
+      <p>When treated as a collection, the elements of a list are the heads of successive pairs in
+	the list.</p>
       <a name="HEADING93-2050"></a>
       <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1448"></a><a name="MARKER-9-1449"></a>&lt;list&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Abstract Class]</span></h4>
       <hr class="item-title" />
@@ -1062,17 +1160,24 @@
 	<dt><span>Superclasses:</span></dt>
 	<dd><p><code>&lt;mutable-sequence&gt;</code></p></dd>
 	<dt><span>Init-keywords:</span></dt>
-	<dd><p>The make method on <code>singleton(&lt;list&gt;)</code> accepts the following keyword arguments. Note that these are not inherited by subclasses of <code>&lt;list&gt;</code>.</p></dd>
+	<dd><p>The make method on <code>singleton(&lt;list&gt;)</code> accepts the following keyword
+	    arguments. Note that these are not inherited by subclasses
+	    of <code>&lt;list&gt;</code>.</p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
-	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the list. The default value is <code>0</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the list. The
+		default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code> </dt>
-	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each element. The default value is <code>#f</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;object&gt;</code> specifying the initial value for each
+		element. The default value is <code>#f</code>.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of linked lists.</p>
-	  <p>The <code>&lt;list&gt;</code> class is partitioned into two concrete subclasses, <code>&lt;pair&gt;</code> and <code>&lt;empty-list&gt;</code>. Calling make on <code>&lt;list&gt;</code> will return a linked list made from pairs and terminated with the empty list.</p>
+	  <p>The <code>&lt;list&gt;</code> class is partitioned into two concrete
+	    subclasses, <code>&lt;pair&gt;</code> and <code>&lt;empty-list&gt;</code>. Calling make
+	    on <code>&lt;list&gt;</code> will return a linked list made from pairs and terminated
+	    with the empty list.</p>
 	  <p>The element type of <code>&lt;list&gt;</code> is <code>&lt;object&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
@@ -1177,8 +1282,12 @@
 	<dd><p>None.</p></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>The class <code>&lt;empty-list&gt;</code> has only one instance, the empty list. The empty list is a direct instance of <code>&lt;empty-list&gt;</code> and an indirect instance of <code>&lt;list&gt;</code>. Note that <code>&lt;empty-list&gt;</code> is not <code>==</code> to <code>singleton (#())</code>.</p>
-	  <p>The element type of <code>&lt;empty-list&gt;</code> is <code>&lt;object&gt;</code>.</p></dd>
+	  <p>The class <code>&lt;empty-list&gt;</code> has only one instance, the empty list. The
+	    empty list is a direct instance of <code>&lt;empty-list&gt;</code> and an indirect
+	    instance of <code>&lt;list&gt;</code>. Note that <code>&lt;empty-list&gt;</code> is
+	    not <code>==</code> to <code>singleton (#())</code>.</p>
+	  <p>The element type of <code>&lt;empty-list&gt;</code>
+	    is <code>&lt;object&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd><p>None.<a name="MARKER-2-1452"></a></p></dd>
       </dl>
@@ -1196,25 +1305,50 @@
 	<dd><p>The class <code>&lt;range&gt;</code> supports the following init-keywords:</p></dd>
 	<dd><dl>
 	    <dt><code>from:</code> </dt>
-	    <dd><p>An instance of <code>&lt;real&gt;</code> specifying the first value in the range. The default value is <code>0</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;real&gt;</code> specifying the first value in the
+		range. The default value is <code>0</code>.</p></dd>
 	    <dt><code>by:</code> </dt>
-	    <dd><p>An instance of <code>&lt;real&gt;</code> specifying the step between consecutive elements of the range. The default value is <code>1</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;real&gt;</code> specifying the step between consecutive
+		elements of the range. The default value is <code>1</code>.</p></dd>
 	    <dt><code>to: </code></dt>
-	    <dd><p>An instance of <code>&lt;real&gt;</code> specifying an inclusive bound for the range. If <code>by:</code> is positive, the range will include numbers up to and including this value. If <code>by:</code> is negative, the range will include numbers down to to and including this value. <br /><code>to:</code> cannot be specified with <code>above:</code> or <code>below:</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;real&gt;</code> specifying an inclusive bound for the
+		range. If <code>by:</code> is positive, the range will include numbers up to and
+		including this value. If <code>by:</code> is negative, the range will include
+		numbers down to to and including this value. <br /><code>to:</code> cannot be
+		specified with <code>above:</code> or <code>below:</code>.</p></dd>
 	    <dt><code>above: </code></dt>
-	    <dd><p>An instance of <code>&lt;real&gt;</code> specifying an exclusive lower bound for the range. The range will only include numbers above this value, regardless of the sign of <code>by:</code>.<br /><code>above:</code> cannot be specified with <code>to:</code> or <code>below:</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;real&gt;</code> specifying an exclusive lower bound for
+		the range. The range will only include numbers above this value, regardless of the
+		sign of <code>by:</code>.<br />
+		<code>above:</code> cannot be specified with <code>to:</code>
+		or <code>below:</code>.</p></dd>
 	    <dt><code>below: </code></dt>
-	    <dd><p>An instance of <code>&lt;real&gt;</code> specifying an exclusive upper bound for the range. The range will only include numbers below this value, regardless of the sign of <code>by:</code>.<br /><code>below:</code> cannot be specified with <code>to:</code> or <code>above:</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;real&gt;</code> specifying an exclusive upper bound for
+		the range. The range will only include numbers below this value, regardless of the
+		sign of <code>by:</code>.<br /><code>below:</code> cannot be specified
+		with <code>to:</code> or <code>above:</code>.</p></dd>
 	    <dt><code>size:</code> </dt>
-	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the range.</p></dd>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the
+		range.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>The class <code>&lt;range&gt;</code> is used for creating sequences of numbers. Ranges may be infinite in size, and may run from higher numbers to lower numbers.</p>
-	  <p>If <code>size:</code> is specified and none of <code>to:</code>, <code>above:</code> or <code>below:</code> is specified, then the  <code>size:</code> argument determines the size of the range.</p>
-	  <p>If <code>size:</code> is specified and one of <code>to:</code>, <code>above:</code> or <code>below:</code> is specified, than it is an error if the number of elements implied by the <code>to:</code>, <code>above:</code> or <code>below:</code> argument (and the <code>by:</code> argument, if present) does not agree with the number of elements specified by the <code>size:</code> argument.</p>
-	  <p>Because <code>&lt;range&gt;</code> in abstract and instantiable but has no specified subclasses, every implementation must provide one or more concrete subclass to instantiate. These concrete subclasses have no specified names, and their names are not exported by the Dylan module.</p>
-	  <p>The element type of <code>&lt;range&gt;</code> is <code>indefinite &lArr; &lt;real&gt;</code>.</p></dd>
+	  <p>The class <code>&lt;range&gt;</code> is used for creating sequences of numbers. Ranges
+	    may be infinite in size, and may run from higher numbers to lower numbers.</p>
+	  <p>If <code>size:</code> is specified and none of <code>to:</code>, <code>above:</code>
+	    or <code>below:</code> is specified, then the <code>size:</code> argument determines the
+	    size of the range.</p>
+	  <p>If <code>size:</code> is specified and one of <code>to:</code>, <code>above:</code>
+	    or <code>below:</code> is specified, than it is an error if the number of elements
+	    implied by the <code>to:</code>, <code>above:</code> or <code>below:</code> argument
+	    (and the <code>by:</code> argument, if present) does not agree with the number of
+	    elements specified by the <code>size:</code> argument.</p>
+	  <p>Because <code>&lt;range&gt;</code> in abstract and instantiable but has no specified
+	    subclasses, every implementation must provide one or more concrete subclass to
+	    instantiate. These concrete subclasses have no specified names, and their names are not
+	    exported by the Dylan module.</p>
+	  <p>The element type of <code>&lt;range&gt;</code> is <code>indefinite &lArr;
+	      &lt;real&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;range&gt;</code> provides the following operations:</p>
@@ -1275,15 +1409,20 @@
 	<dd><p>The class <code>&lt;string&gt;</code> supports the following init-keywords: </p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
-	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the string. The default value is <code>0</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the
+		string. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code> </dt>
-	    <dd><p>An instance of <code>&lt;character&gt;</code> specifying the initial value for each element. The default value is <code>' ' </code>(space).</p></dd>
+	    <dd><p>An instance of <code>&lt;character&gt;</code> specifying the initial value for
+		each element. The default value is <code>' '</code> (space).</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;string&gt;</code> is used for holding sequences of characters.</p>
-	  <p><code>&lt;string&gt;</code> has no direct instances; calling <code>make</code> on <code>&lt;string&gt;</code> will return an instance of a concrete subclass of <code>&lt;string&gt;</code>.</p>
-	  <p>The element type of <code>&lt;string&gt;</code> is <code>indefinite &lArr; &lt;character&gt;</code>.</p></dd>
+	  <p><code>&lt;string&gt;</code> has no direct instances; calling <code>make</code>
+	    on <code>&lt;string&gt;</code> will return an instance of a concrete subclass
+	    of <code>&lt;string&gt;</code>.</p>
+	  <p>The element type of <code>&lt;string&gt;</code> is <code>indefinite &lArr;
+	      &lt;character&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;string&gt;</code> provides the following operations:</p>
@@ -1325,17 +1464,25 @@
 	<dt><span>Superclasses:</span></dt>
 	<dd><p><code>&lt;string&gt;</code>  <code>&lt;vector&gt;</code></p></dd>
 	<dt><span>Init-keywords:</span></dt>
-	<dd><p>The class <code>&lt;byte-string&gt;</code> supports the following init-keywords: </p></dd>
+	<dd><p>The class <code>&lt;byte-string&gt;</code> supports the following
+	    init-keywords: </p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
-	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the byte string. The default value is <code>0</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the byte
+		string. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code> </dt>
-	    <dd><p>An instance of <code>&lt;character&gt;</code> specifying the initial value for each element. The default value is <code>' ' </code>(space).</p></dd>
+	    <dd><p>An instance of <code>&lt;character&gt;</code> specifying the initial value for
+		each element. The default value is <code>' ' </code>(space).</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>The class <code>&lt;byte-string&gt;</code> represents strings with elements that are eight bit characters. It provides constant time <code>element</code> and <code>element-setter</code> methods.</p>
-	  <p>The element type of <code>&lt;byte-string&gt;</code> is <code>indefinite &lArr; <var>K<em><sub>2</sub></em></var></code> (where <var>K<em><sub>2</sub></em></var> is a subtype of <code>&lt;character&gt;</code>).</p></dd>
+	  <p>The class <code>&lt;byte-string&gt;</code> represents strings with elements that are
+	    eight bit characters. It provides constant time <code>element</code>
+	    and <code>element-setter</code> methods.</p>
+	  <p>The element type of <code>&lt;byte-string&gt;</code> is <code>indefinite
+	      &lArr; <var>K<em><sub>2</sub></em></var></code>
+	    (where <var>K<em><sub>2</sub></em></var> is a subtype
+	    of <code>&lt;character&gt;</code>).</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;byte-string&gt;</code> provides the following operations:</p>
@@ -1360,17 +1507,25 @@
 	<dt><span>Superclasses:</span></dt>
 	<dd><p><code>&lt;string&gt;</code>  <code>&lt;vector&gt;</code></p></dd>
 	<dt><span>Init-keywords:</span></dt>
-	<dd><p>The class <code>&lt;unicode-string&gt;</code> supports the following init-keywords: </p></dd>
+	<dd><p>The class <code>&lt;unicode-string&gt;</code> supports the following
+	    init-keywords: </p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
-	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the unicode string. The default value is <code>0</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;integer&gt;</code> specifying the size of the unicode
+		string. The default value is <code>0</code>.</p></dd>
 	    <dt><code>fill:</code> </dt>
-	    <dd><p>An instance of <code>&lt;character&gt;</code> specifying the initial value for each element. The default value is <code>' ' </code>(space).</p></dd>
+	    <dd><p>An instance of <code>&lt;character&gt;</code> specifying the initial value for
+		each element. The default value is <code>' ' </code>(space).</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>The class <code>&lt;unicode-string&gt;</code> represents strings with elements that are sixteen bit Unicode characters. It provides constant time <code>element</code> and <code>element-setter</code> methods.</p>
-	  <p>The element type of <code>&lt;unicode-string&gt;</code> is <code>indefinite &lArr; <var>K<em><sub>1</sub></em></var></code> (where <var>K<em><sub>1</sub></em></var> is a subtype of <code>&lt;character&gt;</code>).</p></dd>
+	  <p>The class <code>&lt;unicode-string&gt;</code> represents strings with elements that are
+	    sixteen bit Unicode characters. It provides constant time <code>element</code>
+	    and <code>element-setter</code> methods.</p>
+	  <p>The element type of <code>&lt;unicode-string&gt;</code> is <code>indefinite
+	      &lArr; <var>K<em><sub>1</sub></em></var></code>
+	      (where <var>K<em><sub>1</sub></em></var> is a subtype
+	      of <code>&lt;character&gt;</code>).</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;unicode-string&gt;</code> provides the following operations:</p>
@@ -1391,9 +1546,14 @@
       <a name="HEADING93-2809"></a>
       <a name="UID-Built-In_Classes-429"></a>
       <h2 class="subsection-title">Tables</h2>
-      <p><a name="MARKER-2-1460"></a>Also called a hash table, a table is an unordered mapping between arbitrary keys and elements. Tables are the only predefined collections that are unstable under iteration.</p>
-      <p>Tables are stretchy in that they allow the addition and removal of keys. <code>&lt;table&gt;</code> and its subclasses are the only predefined classes that are stretchy but are not stretchy sequences.</p>
-      <p>For a complete description of tables, see <a href="Tables#MARKER-9-1036">"Tables" on page 122</a>.</p>
+      <p><a name="MARKER-2-1460"></a>Also called a hash table, a table is an unordered mapping
+	between arbitrary keys and elements. Tables are the only predefined collections that are
+	unstable under iteration.</p>
+      <p>Tables are stretchy in that they allow the addition and removal of
+	keys. <code>&lt;table&gt;</code> and its subclasses are the only predefined classes that are
+	stretchy but are not stretchy sequences.</p>
+      <p>For a complete description of tables, see <a href="Tables#MARKER-9-1036"><q>Tables</q> on
+	  page 122</a>.</p>
       <a name="HEADING93-2813"></a>
       <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1461"></a><a name="MARKER-9-1462"></a>&lt;table&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Primary Class]</span></h4>
       <hr class="item-title" />
@@ -1405,14 +1565,23 @@
 	<dd><p>The class <code>&lt;table&gt;</code> supports the following init-keyword: </p></dd>
 	<dd><dl>
 	    <dt><code>size:</code> </dt>
-	    <dd><p>An instance of &lt;integer&gt;. If specified, this value provides a hint to the implementation as to the expected number of elements to be stored in the table, which might be used to control how much space to initially allocate for the table. The default value is unspecified.</p></dd>
+	    <dd><p>An instance of &lt;integer&gt;. If specified, this value provides a hint to the
+		implementation as to the expected number of elements to be stored in the table,
+		which might be used to control how much space to initially allocate for the
+		table. The default value is unspecified.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>The class <code>&lt;table&gt;</code> is the only predefined instantiable subclass of <code>&lt;explicit-key-collection&gt;</code>.</p>
-	  <p>Every concrete subclass of <code>&lt;table&gt;</code> must provide or inherit a method for <code>table-protocol</code>. For details, see <a href="Tables#MARKER-9-1036">"Tables" on page 122</a>.</p>
-	  <p><code>&lt;table&gt;</code> has no direct instances; calling <code>make</code> on <code>&lt;table&gt;</code> will return an instance of <code>&lt;object-table&gt;</code>.</p>
-	  <p>The element type of <code>&lt;table&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
+	  <p>The class <code>&lt;table&gt;</code> is the only predefined instantiable subclass
+	    of <code>&lt;explicit-key-collection&gt;</code>.</p>
+	  <p>Every concrete subclass of <code>&lt;table&gt;</code> must provide or inherit a method
+	    for <code>table-protocol</code>. For details,
+	    see <a href="Tables#MARKER-9-1036"><q>Tables</q> on page 122</a>.</p>
+	  <p><code>&lt;table&gt;</code> has no direct instances; calling <code>make</code>
+	    on <code>&lt;table&gt;</code> will return an instance
+	    of <code>&lt;object-table&gt;</code>.</p>
+	  <p>The element type of <code>&lt;table&gt;</code> is <code>indefinite &lArr;
+	      &lt;object&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;table&gt;</code> provides the following operations:</p>
