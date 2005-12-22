@@ -54,7 +54,14 @@
     <div id="header">
       <div id="navigation-header">
 	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation"><a class="previous" title="Go to previous page" href="Program_Structure"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Libraries"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Program_Structure"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+	<p id="basic-navigation">
+	  <a class="previous" title="Go to previous page" href="Program_Structure"><img alt="Previous" src="images/prev.gif" /></a>
+	  <a class="next" title="Go to next page" href="Libraries"><img alt="Next" src="images/next.gif" /></a>
+	  <a class="up" title="Go to start of chapter" href="Program_Structure"><img alt="Up" src="images/up.gif" /></a>
+	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+	</p>
       </div>
 
       <div id="section-header">
@@ -116,61 +123,62 @@
       <a name="UID-Program_Structure-2480"></a>
       <h1 class="section-title"><a name="MARKER-2-361"></a>Modules</h1>
       <p>Modules are used for creating large-scale <a name="MARKER-2-362"></a>namespaces of
-      bindings. The bindings <a name="MARKER-2-363"></a>accessible in a module
-      are <a name="MARKER-2-364"></a>visible to all the code within the module (except where
-      shadowed by a local binding). Only the bindings explicitly <a name="MARKER-2-365"></a>exported
-      are visible from outside the module.</p>
+	bindings. The bindings <a name="MARKER-2-363"></a>accessible in a module
+	are <a name="MARKER-2-364"></a>visible to all the code within the module (except where
+	shadowed by a local binding). Only the bindings
+	explicitly <a name="MARKER-2-365"></a>exported are visible from outside the module.</p>
       <p>Some languages have module systems with distinct support for exporting variables,
-      functions, types, and classes. Dylan modules operate only on bindings. Because functions and
-      classes are commonly named by bindings, access to them is controlled
-      by <a name="MARKER-2-366"></a>controlling access to the bindings that name them. By exporting
-      the binding naming a class or function, a program has effectively exported the class or
-      function. If the binding is not exported, then the class or function is effectively
-      private.<a rel="FOOTNOTE" href="#FOOTNOTE-1"><sup>[1]</sup></a></p>
+	functions, types, and classes. Dylan modules operate only on bindings. Because functions and
+	classes are commonly named by bindings, access to them is controlled
+	by <a name="MARKER-2-366"></a>controlling access to the bindings that name them. By
+	exporting the binding naming a class or function, a program has effectively exported the
+	class or function. If the binding is not exported, then the class or function is effectively
+	private.<a rel="FOOTNOTE" href="#FOOTNOTE-1"><sup>[1]</sup></a></p>
       <p><a name="MARKER-2-367"></a>A <a name="MARKER-2-368"></a>module definition defines the
-      imports and exports of a module, and may specify bindings owned by the module. A complete
-      description of module definitions is given on <a href="Definition_Macros#MARKER-9-2016">page
-      381</a>.</p>
+	imports and exports of a module, and may specify bindings owned by the module. A complete
+	description of module definitions is given on <a href="Definition_Macros#MARKER-9-2016">page
+	  381</a>.</p>
       <a name="HEADING26-4"></a>
       <a name="UID-Program_Structure-1436"></a>
       <h2 class="subsection-title"><a name="MARKER-2-369"></a>Defining Module Bindings</h2>
       <p>A module consists of a set of bindings. A binding may be <dfn id="MARKER-2-370">owned</dfn>
-      by a module, or a module may <dfn id="MARKER-2-371">import</dfn> the binding from another
-      module by <dfn id="MARKER-2-372">using</dfn> the other
-      module. Modules <dfn id="MARKER-2-373">export</dfn> bindings to make them accessible to other
-      modules. Only exported bindings can be imported by other modules.</p>
+	by a module, or a module may <dfn id="MARKER-2-371">import</dfn> the binding from another
+	module by <dfn id="MARKER-2-372">using</dfn> the other
+	module. Modules <dfn id="MARKER-2-373">export</dfn> bindings to make them accessible to
+	other modules. Only exported bindings can be imported by other modules.</p>
       <p>Module-use relationships may not be <a name="MARKER-2-374"></a>circular. To create a common
-      set of bindings for a group of modules, the modules can import the bindings from another
-      module or modules.</p>
+	set of bindings for a group of modules, the modules can import the bindings from another
+	module or modules.</p>
       <p>Within a given module, a <a name="MARKER-2-375"></a>name refers to at most one module
-      binding. It is an error to create or import two or more different bindings with the same name
-      in a single module. If a name does refer to a binding, the binding is said to
-      be <dfn id="MARKER-2-376">accessible</dfn> from the module. Each binding is owned by exactly
-      one module, but it can be accessible from many modules.</p>
+	binding. It is an error to create or import two or more different bindings with the same
+	name in a single module. If a name does refer to a binding, the binding is said to
+	be <dfn id="MARKER-2-376">accessible</dfn> from the module. Each binding is owned by exactly
+	one module, but it can be accessible from many modules.</p>
       <p>Module <a name="MARKER-2-377"></a>bindings are created
-      by <a name="MARKER-2-378"></a>definitions. <dfn id="MARKER-2-379">Explicit definitions</dfn>
-      are created by <code id="MARKER-2-380">define constant</code>, <code id="MARKER-2-381">define
-      variable</code>, <code id="MARKER-2-382">define generic</code>, <code id="MARKER-2-383">define
-      macro</code> and the class name in <code id="MARKER-2-384">define
-      class</code>. <dfn id="MARKER-2-385">Implicit definitions</dfn> are created
-      by <code id="MARKER-2-386">define method </code>and the slot specifications
-      of <code id="MARKER-2-387">define class</code>.</p>
+	by <a name="MARKER-2-378"></a>definitions. <dfn id="MARKER-2-379">Explicit definitions</dfn>
+	are created by <code id="MARKER-2-380">define constant</code>,
+	<code id="MARKER-2-381">define variable</code>,
+	<code id="MARKER-2-382">define generic</code>,
+	<code id="MARKER-2-383">define macro</code> and the class name
+	in <code id="MARKER-2-384">define class</code>. <dfn id="MARKER-2-385">Implicit
+	  definitions</dfn> are created by <code id="MARKER-2-386">define method </code>and the slot
+	specifications of <code id="MARKER-2-387">define class</code>.</p>
       <p>Within a library, a module binding may have no explicit definition or it may have one
-      explicit definition. It may not have more than one explicit definition. If a module binding
-      has no explicit definition, it must have one or more implicit definitions. If it does have an
-      explicit definition, it can have zero or more implicit definitions.</p>
+	explicit definition. It may not have more than one explicit definition. If a module binding
+	has no explicit definition, it must have one or more implicit definitions. If it does have
+	an explicit definition, it can have zero or more implicit definitions.</p>
       <p>A binding may be <a name="MARKER-2-388"></a>declared by
-      the <code id="MARKER-2-389">create</code> clause of a module definition. This does not define
-      the binding, but instead declares that it is owned by the module. Other modules may import the
-      binding from that module. The binding must be defined by one of the modules that imports
-      it.</p>
+	the <code id="MARKER-2-389">create</code> clause of a module definition. This does not
+	define the binding, but instead declares that it is owned by the module. Other modules may
+	import the binding from that module. The binding must be defined by one of the modules that
+	imports it.</p>
       <p>If a binding is not declared by the <code>create</code> clause of a module definition, it
-      is owned by the module in which its explicit definition appears. If it does not have an
-      explicit definition, it is owned by one of the modules in which at least one of its implicit
-      definitions appears; the exact owning module cannot be determined.</p>
+	is owned by the module in which its explicit definition appears. If it does not have an
+	explicit definition, it is owned by one of the modules in which at least one of its implicit
+	definitions appears; the exact owning module cannot be determined.</p>
       <p>It is an error to reference a name for the purpose of getting or setting its value if the
-      name does not designate either a local or module binding in the environment where the
-      reference occurs.<a name="MARKER-2-390"></a></p>
+	name does not designate either a local or module binding in the environment where the
+	reference occurs.<a name="MARKER-2-390"></a></p>
 
     </div>
 
@@ -188,12 +196,19 @@
 
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a class="previous" title="Go to previous page" href="Program_Structure"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Libraries"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Program_Structure"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+      <p class="footer">
+	<a class="previous" title="Go to previous page" href="Program_Structure"><img alt="Previous" src="images/prev.gif" /></a>
+	<a class="next" title="Go to next page" href="Libraries"><img alt="Next" src="images/next.gif" /></a>
+	<a class="up" title="Go to start of chapter" href="Program_Structure"><img alt="Up" src="images/up.gif" /></a>
+	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      </p>
       <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
-      registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
       <p class="footer">Originally generated
-      with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
-      revised.</p>
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>

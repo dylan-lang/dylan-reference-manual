@@ -54,7 +54,14 @@
     <div id="header">
       <div id="navigation-header">
 	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation"><a class="previous" title="Go to previous page" href="Function_Classes"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Built-In_Functions"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+	<p id="basic-navigation">
+	  <a class="previous" title="Go to previous page" href="Function_Classes"><img alt="Previous" src="images/prev.gif" /></a>
+	  <a class="next" title="Go to next page" href="Built-In_Functions"><img alt="Next" src="images/next.gif" /></a>
+	  <a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a>
+	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+	</p>
       </div>
       
       <div id="section-header">
@@ -156,7 +163,8 @@
       <a name="UID-Built-In_Classes-399"></a>
       <h1 class="section-title"><a name="MARKER-9-1472"></a><a name="MARKER-2-1473"></a>Conditions</h1>
       <p>Conditions are used to describe and signal exceptional situations.</p>
-      <p><a href="#MARKER-9-1474">Figure 11-6</a> shows the built-in condition classes and some of their characteristics.</p>
+      <p><a href="#MARKER-9-1474">Figure 11-6</a> shows the built-in condition classes and some of
+	their characteristics.</p>
       <p class="figure"><strong>Figure</strong> <strong>11-6</strong>  <a name="MARKER-9-1474"></a>The Condition Classes</p>
       
       <div class="figure wide" style="min-width: 699px">
@@ -204,14 +212,16 @@
       <a name="HEADING95-5"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1475">&lt;condition&gt;</code> </span><span class="attributes-summary">[Open Abstract Class]</span></h4>
       <hr class="item-title" />
-      <p>The class of objects used by the condition system to connect a signaler with an appropriate handler.</p>
+      <p>The class of objects used by the condition system to connect a signaler with an appropriate
+	handler.</p>
       <dl class="Cliche">
 	<dt><span>Superclasses:</span></dt>
 	<dd><p><code>&lt;object&gt;</code></p></dd>
 	<dt><span>Init-keywords:</span></dt>
 	<dd><p>None.</p></dd>
 	<dt><span>Description:</span></dt>
-	<dd><p>The class of condition objects. A complete description of conditions is given in <a href="Conditions">Chapter 7, <q>Conditions.</q></a></p></dd>
+	<dd><p>The class of condition objects. A complete description of conditions is given
+	    in <a href="Conditions">Chapter 7, <q>Conditions.</q></a></p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;condition&gt;</code> provides the following operations:</p>
@@ -301,28 +311,33 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of serious conditions that represent program errors.</p>
-	  <p><code>&lt;error&gt;</code> is distinct from <code>&lt;serious-condition&gt;</code> so one can establish a handler for errors that does not also trap unpredictable environmental exceptions such as network problems.</p></dd>
+	  <p><code>&lt;error&gt;</code> is distinct from <code>&lt;serious-condition&gt;</code> so
+	    one can establish a handler for errors that does not also trap unpredictable
+	    environmental exceptions such as network problems.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd><p>None.</p></dd>
       </dl>
       <a name="HEADING95-246"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1478">&lt;simple-error&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
       <hr class="item-title" />
-      <p>The class of error conditions that consist of just an error message constructed from a format string and arguments.</p>
+      <p>The class of error conditions that consist of just an error message constructed from a
+	format string and arguments.</p>
       <dl class="Cliche">
 	<dt><span>Superclasses:</span></dt>
 	<dd><p><code>&lt;error&gt;</code></p></dd>
 	<dt class="Cliche2"><span>Init-keywords:</span></dt>
 	<dd><dl>
 	    <dt><code>format-string:</code></dt>
-	    <dd><p>An instance of <code>&lt;string&gt;</code>. A format string describing the error.</p></dd>
+	    <dd><p>An instance of <code>&lt;string&gt;</code>. A format string describing the
+		error.</p></dd>
 	    <dt><code>format-arguments:</code></dt>
-	    <dd><p>An instance of <code>&lt;sequence&gt;</code>. Format
-		arguments to splice into the format string to describe the error.</p></dd>
+	    <dd><p>An instance of <code>&lt;sequence&gt;</code>. Format arguments to splice into the
+		format string to describe the error.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>The class of error conditions that consist of just an error message constructed from a format string and arguments.</p>
+	  <p>The class of error conditions that consist of just an error message constructed from a
+	    format string and arguments.</p>
 	  <p>The recovery protocol of <code>&lt;simple-error&gt;</code> is empty.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
@@ -350,9 +365,11 @@
 	<dt><span>Init-keywords:</span></dt>
 	<dd><dl>
 	    <dt><code>value:</code></dt>
-	    <dd><p>An instance of <code>&lt;object&gt;</code>. The object whose type was checked.</p></dd>
+	    <dd><p>An instance of <code>&lt;object&gt;</code>. The object whose type was
+		checked.</p></dd>
 	    <dt><code>type:</code></dt>
-	    <dd><p>An instance of <code>&lt;type&gt;</code>. The type that was expected. The error was signaled because the object was not of this type.</p></dd>
+	    <dd><p>An instance of <code>&lt;type&gt;</code>. The type that was expected. The error
+		was signaled because the object was not of this type.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
@@ -417,7 +434,9 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of conditions that can be safely ignored.</p>
-	  <p>There is a default handler for <code>&lt;warning&gt;</code> that displays the warning in a user-interface dependent way and then returns <code>#f</code>. The recovery protocol is that any value can be returned and will be ignored.</p></dd>
+	  <p>There is a default handler for <code>&lt;warning&gt;</code> that displays the warning
+	    in a user-interface dependent way and then returns <code>#f</code>. The recovery
+	    protocol is that any value can be returned and will be ignored.</p></dd>
       </dl>
       <a name="HEADING95-406"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1482">&lt;simple-warning&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
@@ -429,9 +448,11 @@
 	<dt class="Cliche2"><span>Init-keywords:</span></dt>
 	<dd><dl>
 	    <dt class="Cliche2"> <code>format-string:</code></dt>
-	    <dd class="Cliche2"><p>An instance of <code>&lt;string&gt;</code>. A format string describing the warning.</p></dd>
+	    <dd class="Cliche2"><p>An instance of <code>&lt;string&gt;</code>. A format string
+		describing the warning.</p></dd>
 	    <dt><code>format-arguments:</code></dt>
-	    <dd class="Cliche2"><p>An instance of <code>&lt;sequence&gt;</code>. Format arguments to splice into the format string to describe the warning.</p></dd>
+	    <dd class="Cliche2"><p>An instance of <code>&lt;sequence&gt;</code>. Format arguments to
+		splice into the format string to describe the warning.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
@@ -464,11 +485,18 @@
 	<dt><span>Superclasses:</span></dt>
 	<dd><p><code>&lt;condition&gt;</code></p></dd>
 	<dt class="Cliche2"><span>Init-keywords:</span></dt>
-	<dd class="Cliche2"><p> <code>condition:</code>  <code>#f</code> or an instance of <code>&lt;condition&gt;</code>. This argument is accepted and ignored by <code>&lt;restart&gt;</code>; some subclasses save the value of this initialization argument and use it to associate a restart with a particular condition from which the restart can recover. No such subclasses are defined as part of the language. Other restarts do not care; they can recover from any condition.</p></dd>
+	<dd class="Cliche2"><p><code>condition:</code> <code>#f</code> or an instance
+	    of <code>&lt;condition&gt;</code>. This argument is accepted and ignored
+	    by <code>&lt;restart&gt;</code>; some subclasses save the value of this initialization
+	    argument and use it to associate a restart with a particular condition from which the
+	    restart can recover. No such subclasses are defined as part of the language. Other
+	    restarts do not care; they can recover from any condition.</p></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of conditions used to correct an unusual situation.</p>
-	  <p>There is a default handler for <code>&lt;restart&gt;</code> that signals an error reporting an attempt to use a restart for which no restart handler was established. The recovery protocol concept is not applicable to restarts.</p></dd>
+	  <p>There is a default handler for <code>&lt;restart&gt;</code> that signals an error
+	    reporting an attempt to use a restart for which no restart handler was established. The
+	    recovery protocol concept is not applicable to restarts.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;restart&gt;</code> provides the following operations:</p>
@@ -500,14 +528,17 @@
 	<dt class="Cliche2"><span>Init-keywords:</span></dt>
 	<dd><dl>
 	    <dt class="Cliche2"><code>format-string:</code></dt>
-	    <dd><p>An instance of <code>&lt;string&gt;</code>. A format string describing the restart.</p></dd>
+	    <dd><p>An instance of <code>&lt;string&gt;</code>. A format string describing the
+		restart.</p></dd>
 	    <dt><code>format-arguments:</code></dt>
-	    <dd><p>An instance of <code>&lt;sequence&gt;</code>. Format arguments to splice into the format string to describe the restart.</p></dd>
+	    <dd><p>An instance of <code>&lt;sequence&gt;</code>. Format arguments to splice into the
+		format string to describe the restart.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>A default class of restarts.</p>
-	  <p>Typical implementations will use the format string and format arguments to produce a description of the restart.</p></dd>
+	  <p>Typical implementations will use the format string and format arguments to produce a
+	    description of the restart.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class &lt;simple-restart&gt; provides the following operations:</p>
@@ -538,7 +569,11 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of conditions used to terminate a computation.</p>
-	  <p>Handlers are expected to terminate execution of the current application command, or similar unit of execution, and return control to something like an application command loop. This is comparable to command-period on the Macintosh. The exact details of this feature depend on the particular environment, of course, but signaling an instance of <code>&lt;abort&gt;</code> is a uniform way to <q>get out.</q></p></dd>
+	  <p>Handlers are expected to terminate execution of the current application command, or
+	    similar unit of execution, and return control to something like an application command
+	    loop. This is comparable to command-period on the Macintosh. The exact details of this
+	    feature depend on the particular environment, of course, but signaling an instance
+	    of <code>&lt;abort&gt;</code> is a uniform way to <q>get out.</q></p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd><p>None.<a name="MARKER-2-1486"></a><a name="MARKER-2-1487"></a></p>
 	  <a name="LINK-Built-In_Classes-lastpage"></a><a name="LINK-Built-In_FunctionsTOC-firstpage"></a></dd>
@@ -551,9 +586,19 @@
 
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a class="previous" title="Go to previous page" href="Function_Classes"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Built-In_Functions"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
-      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-      <p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently revised.</p>
+      <p class="footer">
+	<a class="previous" title="Go to previous page" href="Function_Classes"><img alt="Previous" src="images/prev.gif" /></a>
+	<a class="next" title="Go to next page" href="Built-In_Functions"><img alt="Next" src="images/next.gif" /></a>
+	<a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a>
+	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      </p>
+      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+      <p class="footer">Originally generated
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>

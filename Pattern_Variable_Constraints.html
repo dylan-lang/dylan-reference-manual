@@ -54,7 +54,14 @@
     <div id="header">
       <div id="navigation-header">
 	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation"><a class="previous" title="Go to previous page" href="Patterns"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Templates"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Macros"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+	<p id="basic-navigation">
+	  <a class="previous" title="Go to previous page" href="Patterns"><img alt="Previous" src="images/prev.gif" /></a>
+	  <a class="next" title="Go to next page" href="Templates"><img alt="Next" src="images/next.gif" /></a>
+	  <a class="up" title="Go to start of chapter" href="Macros"><img alt="Up" src="images/up.gif" /></a>
+	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+	</p>
       </div>
 
       <div id="section-header">
@@ -124,14 +131,14 @@
       <a name="UID-Macros-6305"></a>
       <h1 class="section-title"><a name="MARKER-9-1256"></a>Pattern Variable Constraints</h1>
       <p><a name="MARKER-2-1257"></a>Each <var>pattern-variable</var> in the left-hand side of a
-      rule in a macro definition has a constraint associated with it. This prevents the pattern from
-      matching unless the fragment matched to the pattern-variable satisfies the constraint. In most
-      cases it also controls how the matching fragment is parsed.</p>
+	rule in a macro definition has a constraint associated with it. This prevents the pattern
+	from matching unless the fragment matched to the pattern-variable satisfies the
+	constraint. In most cases it also controls how the matching fragment is parsed.</p>
       <p>You specify a constraint in a <var>pattern-variable</var> by suffixing a colon and the
-      constraint name to the pattern variable name. Intervening whitespace is not allowed. As an
-      abbreviation, if a pattern variable has the same name as its constraint,
-      the <var>pattern-variable</var> can be written <code>?:<var>the-name</var></code> instead
-      of <code>?<var>the-name</var>:<var>the-name</var></code>.</p>
+	constraint name to the pattern variable name. Intervening whitespace is not allowed. As an
+	abbreviation, if a pattern variable has the same name as its constraint,
+	the <var>pattern-variable</var> can be written <code>?:<var>the-name</var></code> instead
+	of <code>?<var>the-name</var>:<var>the-name</var></code>.</p>
       <p>The available constraints are listed in <a href="#MARKER-9-1173">Table 10-1</a>.</p>
       <table class="numbered">
 	<caption><strong>Table 10-1</strong>  <a name="MARKER-9-1173"></a>Available constraints</caption>
@@ -183,52 +190,52 @@
       </table>
       <p>Notes:</p>
       <ol>
-	<li>Parsed expression fragments are described on <a href="Macros_Overview#MARKER-9-1199">page
-	146</a>.</li>
+	<li>Parsed expression fragments are described
+	  on <a href="Macros_Overview#MARKER-9-1199">page 146</a>.</li>
 	<li>Where <var>expression</var>, <var>operand</var>, <var>constituents</var>
-	or <var>body</var> appears in the grammar that this constraint accepts, the bound fragment
-	contains a parsed expression fragment, not the original elementary fragments.</li>
+	  or <var>body</var> appears in the grammar that this constraint accepts, the bound fragment
+	  contains a parsed expression fragment, not the original elementary fragments.</li>
 	<li>Parsing stops at an intermediate word.</li>
 	<li>The body is wrapped in <code>begin &hellip; end</code> to make it an expression, using
-	the standard binding of <code>begin</code> in the Dylan module. An empty body defaults
-	to <code>#f</code>.</li>
+	  the standard binding of <code>begin</code> in the Dylan module. An empty body defaults
+	  to <code>#f</code>.</li>
 	<li>A pattern-variable with a <code>macro</code> constraint accepts exactly one elementary
-	fragment, which must be a macro call fragment. It binds the pattern variable to the
-	expansion of the macro.</li>
+	  fragment, which must be a macro call fragment. It binds the pattern variable to the
+	  expansion of the macro.</li>
       </ol>
       <p>Some implementations and a future version of the Dylan language specification might add
-      more constraint choices to this table.</p>
+	more constraint choices to this table.</p>
       <p>When a pattern variable has the same name as an auxiliary rule-set, its constraint defaults
-      to <a name="MARKER-2-1258"></a>wildcard and can be omitted. Otherwise a constraint must be
-      specified in every <var>pattern-variable</var> and <var>pattern-keyword</var>.</p>
+	to <a name="MARKER-2-1258"></a>wildcard and can be omitted. Otherwise a constraint must be
+	specified in every <var>pattern-variable</var> and <var>pattern-keyword</var>.</p>
       <p>A constraint applies only to the specific pattern variable occurrence to which it is
-      attached. It does not constrain other pattern variable occurrences with the same name.</p>
+	attached. It does not constrain other pattern variable occurrences with the same name.</p>
       <a name="HEADING82-144"></a>
       <a name="UID-Macros-5860"></a>
       <h2 class="subsection-title">Intermediate Words</h2>
       <p><a name="MARKER-2-1259"></a>When a <var>pattern-variable </var> has a constraint
-      of <code>body</code> or <code>case-body</code>, its parsing of the fragment stops before any
-      token that is an intermediate word. This allows intermediate words to delimit clauses that
-      have separate bodies, like <code>else</code> and <code>elseif</code> in an <code>if</code>
-      statement. The intermediate words of a macro are identified as follows:</p>
+	of <code>body</code> or <code>case-body</code>, its parsing of the fragment stops before any
+	token that is an intermediate word. This allows intermediate words to delimit clauses that
+	have separate bodies, like <code>else</code> and <code>elseif</code> in an <code>if</code>
+	statement. The intermediate words of a macro are identified as follows:</p>
       <ul>
 	<li>Define a body-variable to be a pattern variable that either has a constraint
-	of <code>body</code> or <code>case-body</code>, or names an auxiliary rule-set where some
-	left-hand side in that rule-set ends in a body-variable. This is a least fixed
-	point<var>, </var> so a recursive auxiliary rule-set does not automatically make its name
-	into a body-variable.  Note that an ellipsis that stands for a pattern variable is a
-	body-variable when that pattern variable is one.
+	  of <code>body</code> or <code>case-body</code>, or names an auxiliary rule-set where some
+	  left-hand side in that rule-set ends in a body-variable. This is a least fixed
+	  point<var>, </var> so a recursive auxiliary rule-set does not automatically make its name
+	  into a body-variable.  Note that an ellipsis that stands for a pattern variable is a
+	  body-variable when that pattern variable is one.
 	</li>
 	<li>Define an intermediate-variable to be a pattern variable that either immediately follows
-	a body-variable in a left-hand side, or appears at the beginning of a left-hand side in an
-	auxiliary rule-set named by an intermediate-variable.
+	  a body-variable in a left-hand side, or appears at the beginning of a left-hand side in an
+	  auxiliary rule-set named by an intermediate-variable.
 	</li>
 	<li>An intermediate word is a <em class="BNFCaps">name</em> that either immediately follows
-	a body-variable in a left-hand side, or occurs at the beginning of a left-hand side in an
-	auxiliary rule-set named by an intermediate-variable. Intermediate words are not reserved,
-	they are just used as delimiters during the parsing for a <var>pattern-variable</var> with
-	a <code>body</code> or <code>case-body</code>
-	constraint.<a name="MARKER-2-1260"></a><a name="MARKER-2-1261"></a>
+	  a body-variable in a left-hand side, or occurs at the beginning of a left-hand side in an
+	  auxiliary rule-set named by an intermediate-variable. Intermediate words are not reserved,
+	  they are just used as delimiters during the parsing for a <var>pattern-variable</var> with
+	  a <code>body</code> or <code>case-body</code>
+	  constraint.<a name="MARKER-2-1260"></a><a name="MARKER-2-1261"></a>
 	</li>
       </ul>
 
@@ -238,12 +245,19 @@
 
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a class="previous" title="Go to previous page" href="Patterns"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Templates"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Macros"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+      <p class="footer">
+	<a class="previous" title="Go to previous page" href="Patterns"><img alt="Previous" src="images/prev.gif" /></a>
+	<a class="next" title="Go to next page" href="Templates"><img alt="Next" src="images/next.gif" /></a>
+	<a class="up" title="Go to start of chapter" href="Macros"><img alt="Up" src="images/up.gif" /></a>
+	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      </p>
       <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
-      registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
       <p class="footer">Originally generated
-      with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
-      revised.</p>
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>

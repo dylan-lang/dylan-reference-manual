@@ -54,7 +54,14 @@
     <div id="header">
       <div id="navigation-header">
 	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation"><a class="previous" title="Go to previous page" href="Reflective_Operations_on_Functions"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Other_Built-In_Objects"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+	<p id="basic-navigation">
+	  <a class="previous" title="Go to previous page" href="Reflective_Operations_on_Functions"><img alt="Previous" src="images/prev.gif" /></a>
+	  <a class="next" title="Go to next page" href="Other_Built-In_Objects"><img alt="Next" src="images/next.gif" /></a>
+	  <a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a>
+	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+	</p>
       </div>
 
       <div id="section-header">
@@ -215,15 +222,15 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>Signals the <var>condition</var>, trying each active dynamic handler, the most recent
-	  first. If all dynamic handlers decline, <code>signal</code>
-	  calls <code>default-handler(<var>condition</var>)</code>. If a handler returns, all the
-	  values that it returned are returned from <code>signal</code>. If <code>signal</code>
-	  returns when <var>condition</var>'s recovery protocol does not allow returning, some
-	  handler has violated protocol; <code>signal</code> does not check for this
-	  error. If <var>condition</var> is a restart, the caller of <code>signal</code> should
-	  always assume that it might return.</p>
+	    first. If all dynamic handlers decline, <code>signal</code>
+	    calls <code>default-handler(<var>condition</var>)</code>. If a handler returns, all the
+	    values that it returned are returned from <code>signal</code>. If <code>signal</code>
+	    returns when <var>condition</var>'s recovery protocol does not allow returning, some
+	    handler has violated protocol; <code>signal</code> does not check for this
+	    error. If <var>condition</var> is a restart, the caller of <code>signal</code> should
+	    always assume that it might return.</p>
 	  <p>The second form signals a condition of
-	  type <code>&lt;simple-warning&gt;</code>.</p></dd>
+	    type <code>&lt;simple-warning&gt;</code>.</p></dd>
       </dl>
       <a name="HEADING107-12"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1920">error</code> </span><span class="attributes-summary">[Function]</span></h4>
@@ -263,9 +270,9 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p><code>error</code> is similar to <code>signal</code> but never returns; if a handler
-	  returns, <code>error</code> invokes the debugger immediately. <code>error</code> is used
-	  to make it clear that a program does not expect to receive control again after signaling a
-	  condition and might enable the compiler to generate slightly more compact code.</p>
+	    returns, <code>error</code> invokes the debugger immediately. <code>error</code> is used
+	    to make it clear that a program does not expect to receive control again after signaling
+	    a condition and might enable the compiler to generate slightly more compact code.</p>
 	  <p>The second form signals a condition of type <code>&lt;simple-error&gt;</code>.</p></dd>
       </dl>
       <a name="HEADING107-21"></a>
@@ -316,14 +323,14 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p><code>cerror</code> is the same as <code>error</code> but first establishes a handler
-	  for<code> &lt;simple-restart&gt;</code>, with a format string
-	  of <var>restart-description</var> and format arguments of a sequence containing
-	  the <var>arguments</var>.</p>
+	    for<code> &lt;simple-restart&gt;</code>, with a format string
+	    of <var>restart-description</var> and format arguments of a sequence containing
+	    the <var>arguments</var>.</p>
 	  <p>If the restart handler is invoked, <code>cerror</code> returns <code>#f</code>;
-	  otherwise, <code>cerror</code> never returns. If <code>cerror</code> returns, the program
-	  should take the corrective actions promised in
-	  the <var>restart-description</var>. <code>cerror</code> is the standard way to signal
-	  correctable errors when no special class of restart condition is required.</p></dd>
+	    otherwise, <code>cerror</code> never returns. If <code>cerror</code> returns, the
+	    program should take the corrective actions promised in
+	    the <var>restart-description</var>. <code>cerror</code> is the standard way to signal
+	    correctable errors when no special class of restart condition is required.</p></dd>
       </dl>
       <a name="HEADING107-32"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1924">break</code> </span><span class="attributes-summary">[Function]</span></h4>
@@ -376,16 +383,17 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>Obtains a condition in the same way as <code>signal</code> but then invokes the
-	  debugger immediately without signaling first. <code>break</code> establishes
-	  a <code>&lt;simple-restart&gt;</code> so the debugger can continue execution. This is
-	  useful for breakpoints. <code>break</code> always returns <code>#f</code>. With no
-	  arguments, a default message string is used.</p>
+	    debugger immediately without signaling first. <code>break</code> establishes
+	    a <code>&lt;simple-restart&gt;</code> so the debugger can continue execution. This is
+	    useful for breakpoints. <code>break</code> always returns <code>#f</code>. With no
+	    arguments, a default message string is used.</p>
 	  <p>The behavior of the debugger is implementation-defined.</p></dd>
       </dl>
       <a name="HEADING107-42"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1926">check-type</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description">Checks an object to ensure that it is an instance of a specified type.</p>
+      <p class="short-description">Checks an object to ensure that it is an instance of a specified
+	type.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -414,9 +422,8 @@
 	  </dl>
 	</dd>
 	<dt><span>Description:</span></dt>
-	<dd><p>Checks <var>value</var> to ensure that it is an instance
-	of <var>type</var>, and signal an error of type <code>&lt;type-error&gt;</code> if it is
-	not.</p></dd>
+	<dd><p>Checks <var>value</var> to ensure that it is an instance of <var>type</var>, and
+	    signal an error of type <code>&lt;type-error&gt;</code> if it is not.</p></dd>
       </dl>
       <a name="HEADING107-49"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1927">abort</code> </span><span class="attributes-summary">[Function]</span></h4>
@@ -437,8 +444,9 @@
 	<dd>
 	  <p>Performs <code>error(make (&lt;abort&gt;))</code>.</p>
 	  <p>This function is provided as a convenient shortcut. The call is to <code>error</code>,
-	  rather than to <code>signal</code>, to guarantee that <code>abort</code> will never
-	  return.</p></dd>
+	    rather than to <code>signal</code>, to guarantee that <code>abort</code> will never
+	    return.</p>
+	</dd>
       </dl>
       <a name="HEADING107-56"></a>
       <a name="UID-Built-In_Functions-423"></a>
@@ -446,7 +454,8 @@
       <a name="HEADING107-57"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1928">default-handler</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1929"></a>Called if no dynamic handler handles a condition.</p>
+      <p class="short-description"><a name="MARKER-9-1929"></a>Called if no dynamic handler handles
+	a condition.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -478,27 +487,27 @@
 	  <a name="HEADING107-63"></a>
 	  <h5 class="method-signature"><span class="signature"><code>default-handler</code> <var>condition</var> &rArr; <var>false</var> </span><span class="attributes-summary">[G.F. Method]</span></h5>
 	  <p class="short-description">A predefined method on <code>&lt;condition&gt;</code> simply
-	  returns <code>#f</code>.</p>
+	    returns <code>#f</code>.</p>
 	  <a name="HEADING107-65"></a>
 	  <h5 class="method-signature"><span class="signature"><code>default-handler</code> <var>serious-condition</var> &rArr; {does not return} </span><span class="attributes-summary">[G.F. Method]</span></h5>
 	  <p class="short-description">A predefined method on <code>&lt;serious-condition&gt;</code>
-	  invokes an implementation-defined debugger.</p>
+	    invokes an implementation-defined debugger.</p>
 	  <a name="HEADING107-67"></a>
 	  <h5 class="method-signature"><span class="signature"><code>default-handler</code> <var>warning</var> &rArr; <var>false</var> </span><span class="attributes-summary">[G.F. Method]</span></h5>
 	  <p class="short-description">A predefined method on <code>&lt;warning&gt;</code> prints
-	  the warning's message in an implementation-defined way and then
-	  returns <code>#f</code>.</p>
+	    the warning's message in an implementation-defined way and then
+	    returns <code>#f</code>.</p>
 	  <a name="HEADING107-69"></a>
 	  <h5 class="method-signature"><span class="signature"><code>default-handler</code> <var>restart</var> &rArr; {does not return} </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
 	  <p class="short-description">A predefined method on <code>&lt;restart&gt;</code> signals
-	  an error.</p>
+	    an error.</p>
 	</dd>
       </dl>
       <a name="HEADING107-71"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1930">restart-query</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1637"></a>Called to query the user and
-      restart.</p>
+	restart.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -528,9 +537,9 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>Engages the interactive user in a dialog and stores the results in slots
-	  of <var>restart</var>.</p>
+	    of <var>restart</var>.</p>
 	  <p>This function is designed to be called from a handler, after making a restart and
-	  before signaling it. The debugger uses <code>restart-query</code>, for example.</p>
+	    before signaling it. The debugger uses <code>restart-query</code>, for example.</p>
 	  <a name="HEADING107-78"></a>
 	  <h5 class="method-signature"><span class="signature"><code>restart-query</code> <var>restart</var> &rArr; <var>object</var> </span><span class="attributes-summary">[G.F. Method]</span></h5>
 	  <p>There is a default method for <code>&lt;restart&gt;</code> that does nothing.</p>
@@ -539,7 +548,8 @@
       <a name="HEADING107-80"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1932">return-query</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1933"></a>Queries the user for values to return.</p>
+      <p class="short-description"><a name="MARKER-9-1933"></a>Queries the user for values to
+	return.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -569,12 +579,13 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>If the recovery protocol of <var>condition</var> allows returning values, this engages
-	  the program user in a dialog and returns the results as any number of values, which the
-	  handler should return.</p>
+	    the program user in a dialog and returns the results as any number of values, which the
+	    handler should return.</p>
 	  <p><code>return-query</code> should not be called if <code>return-allowed?</code>
-	  returns <code>#f</code>. Programs that define condition classes whose recovery protocol
-	  allows returning values should ensure that there is an appropriate method for this
-	  function defined on or inherited by the condition class.</p></dd>
+	    returns <code>#f</code>. Programs that define condition classes whose recovery protocol
+	    allows returning values should ensure that there is an appropriate method for this
+	    function defined on or inherited by the condition class.</p>
+	</dd>
       </dl>
       <a name="HEADING107-87"></a>
       <a name="UID-Built-In_Functions-1650"></a>
@@ -583,7 +594,7 @@
       <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1935"></a><a name="MARKER-2-1936"></a>do-handlers</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1937"></a>Applies a function to all dynamically
-      active handlers.</p>
+	active handlers.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -613,18 +624,19 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>Applies<var> function</var> to all dynamically active handlers, the most recently
-	  established first. <var>function</var> receives four
-	  arguments: <var>type</var>, <var>test</var>, <var>function</var>,
-	  and <var>init-arguments</var>. The arguments describe a dynamically active handler. All
-	  arguments have dynamic extent and must not be modified. <var>test</var> defaults to a
-	  function that always returns <code>#t</code>. <var>init-arguments</var> will be an empty
-	  sequence if it was not supplied by the handler.</p></dd>
+	    established first. <var>function</var> receives four
+	    arguments: <var>type</var>, <var>test</var>, <var>function</var>,
+	    and <var>init-arguments</var>. The arguments describe a dynamically active handler. All
+	    arguments have dynamic extent and must not be modified. <var>test</var> defaults to a
+	    function that always returns <code>#t</code>. <var>init-arguments</var> will be an empty
+	    sequence if it was not supplied by the handler.</p>
+	</dd>
       </dl>
       <a name="HEADING107-94"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1938">return-allowed?</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1939"></a>Returns true if a condition's
-      recovery protocol allows returning values.</p>
+	recovery protocol allows returning values.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -654,21 +666,22 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>Returns <code>#t</code> if the recovery protocol of <var>condition</var> allows
-	  returning values, or <code>#f</code> if it does not.</p>
+	    returning values, or <code>#f</code> if it does not.</p>
 	  <p>There is a default method for <code>&lt;condition&gt;</code> that
-	  returns <code>#f</code>. Programs which define condition classes whose recovery protocol
-	  allows returning values should ensure that there is an appropriate method for this
-	  function defined on or inherited by the condition class.</p>
+	    returns <code>#f</code>. Programs which define condition classes whose recovery protocol
+	    allows returning values should ensure that there is an appropriate method for this
+	    function defined on or inherited by the condition class.</p>
 	  <a name="HEADING107-101"></a>
 	  <h5 class="method-signature"><span class="signature"><code>return-allowed?</code> <var>condition</var> &rArr; <var>false</var> </span><span class="attributes-summary">[G.F. Method]</span></h5>
-	  <p>There is a default method for <code>&lt;condition&gt;</code> that returns <code>#f</code>.</p>
+	  <p>There is a default method for <code>&lt;condition&gt;</code> that
+	    returns <code>#f</code>.</p>
 	</dd>
       </dl>
       <a name="HEADING107-103"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1940">return-description</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1941"></a>Returns a description of a
-      condition's returned values.</p>
+	condition's returned values.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -692,25 +705,27 @@
 	    <dt><var>description</var></dt>
 	    <dd>
               <p><code>#f</code> or an instance of <code>&lt;string&gt;</code> or an instance
-              of <code>&lt;restart&gt;</code>.</p>
+		of <code>&lt;restart&gt;</code>.</p>
 	    </dd>
 	  </dl>
 	</dd>
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>If the recovery protocol of this condition allows returning
-	  values, <code>return-description</code> returns a description of the meaning of returning
-	  values.</p>
+	    values, <code>return-description</code> returns a description of the meaning of
+	    returning values.</p>
 	  <p>This <var>description</var> can be a restart, a string,
-	  or <code>#f</code>. <code>return-description</code> should not be called
-	  if <code>return-allowed?</code> returns <code>#f</code>. If you define your own condition
-	  class whose recovery protocol allows returning values, you need to define a method
-	  for <code>return-description</code> unless the inherited method is suitable.</p></dd>
+	    or <code>#f</code>. <code>return-description</code> should not be called
+	    if <code>return-allowed?</code> returns <code>#f</code>. If you define your own
+	    condition class whose recovery protocol allows returning values, you need to define a
+	    method for <code>return-description</code> unless the inherited method is suitable.</p>
+	</dd>
       </dl>
       <a name="HEADING107-110"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1942">condition-format-string</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-2-1681"></a>Returns the format string of a simple condition.</p>
+      <p class="short-description"><a name="MARKER-2-1681"></a>Returns the format string of a simple
+	condition.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -725,8 +740,8 @@
 	    <dt><var>simple-condition </var></dt>
 	    <dd>
               <p>An instance
-              of <code>&lt;simple-error&gt;</code>, <code>&lt;simple-warning&gt;</code>,
-              or <code>&lt;simple-restart&gt;</code>.</p>
+		of <code>&lt;simple-error&gt;</code>, <code>&lt;simple-warning&gt;</code>,
+		or <code>&lt;simple-restart&gt;</code>.</p>
 	    </dd>
 	  </dl>
 	</dd>
@@ -741,13 +756,13 @@
 	</dd>
 	<dt><span>Description:</span></dt>
 	<dd><p>Returns the format string that was supplied as an initialization argument when
-	the <var>simple-condition</var> was created.</p></dd>
+	    the <var>simple-condition</var> was created.</p></dd>
       </dl>
       <a name="HEADING107-116"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1944">condition-format-arguments</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1945"></a>Returns the format arguments of a
-      simple condition.</p>
+	simple condition.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -762,8 +777,8 @@
 	    <dt><var>simple-condition </var></dt>
 	    <dd>
               <p>An instance
-              of <code>&lt;simple-error&gt;</code>, <code>&lt;simple-warning&gt;</code>,
-              or <code>&lt;simple-restart&gt;</code>.</p>
+		of <code>&lt;simple-error&gt;</code>, <code>&lt;simple-warning&gt;</code>,
+		or <code>&lt;simple-restart&gt;</code>.</p>
 	    </dd>
 	  </dl>
 	</dd>
@@ -779,13 +794,13 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>Returns the sequence of format arguments that was supplied as an initialization
-	  argument when the <var>simple-condition</var> was created.</p></dd>
+	    argument when the <var>simple-condition</var> was created.</p></dd>
       </dl>
       <a name="HEADING107-122"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1946">type-error-value</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1947"></a>Returns the value that was not of the
-      expected type.</p>
+	expected type.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -813,14 +828,14 @@
 	  </dl>
 	</dd>
 	<dt><span>Description:</span></dt>
-	<dd><p>Returns the value that was not of the expected type, and thereby led
-	to the type error.</p></dd>
+	<dd><p>Returns the value that was not of the expected type, and thereby led to the type
+	    error.</p></dd>
       </dl>
       <a name="HEADING107-128"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1948">type-error-expected-type</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1949"></a>Returns the expected type of the type
-      check that led to the type error.</p>
+	check that led to the type error.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -849,9 +864,8 @@
 	</dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>Returns the expected type of the type check that led to the type
-	  error.<a
-	  name="MARKER-2-1950"></a><a name="MARKER-2-1951"></a><a name="MARKER-2-1952"></a></p>
+	  <p>Returns the expected type of the type check that led to the type error.
+	    <a name="MARKER-2-1950"></a><a name="MARKER-2-1951"></a><a name="MARKER-2-1952"></a></p>
 	  <p></p>
 	  <a name="LINK-Built-In_Functions-lastpage"></a><a name="LINK-Built-In_ObjectsTOC-firstpage"></a></dd>
       </dl>
@@ -863,12 +877,19 @@
 
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a class="previous" title="Go to previous page" href="Reflective_Operations_on_Functions"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Other_Built-In_Objects"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+      <p class="footer">
+	<a class="previous" title="Go to previous page" href="Reflective_Operations_on_Functions"><img alt="Previous" src="images/prev.gif" /></a>
+	<a class="next" title="Go to next page" href="Other_Built-In_Objects"><img alt="Next" src="images/next.gif" /></a>
+	<a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a>
+	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      </p>
       <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
-      registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
       <p class="footer">Originally generated
-      with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
-      revised.</p>
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>

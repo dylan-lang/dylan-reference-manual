@@ -54,7 +54,14 @@
     <div id="header">
       <div id="navigation-header">
 	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation"><a class="previous" title="Go to previous page" href="Parameter_Lists_Syntax"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Special_Treatment_of_Names"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+	<p id="basic-navigation">
+	  <a class="previous" title="Go to previous page" href="Parameter_Lists_Syntax"><img alt="Previous" src="images/prev.gif" /></a>
+	  <a class="next" title="Go to next page" href="Special_Treatment_of_Names"><img alt="Next" src="images/next.gif" /></a>
+	  <a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a>
+	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+	</p>
       </div>
 
       <div id="section-header">
@@ -125,53 +132,54 @@
       <a name="UID-Syntax-1520"></a>
       <h1 class="section-title"><a name="MARKER-2-275"></a>Lexical Syntax</h1>
       <p>Dylan source code is a sequence of tokens. <a name="MARKER-2-276"></a>Whitespace is
-      required between tokens if the tokens would otherwise blend together. Whitespace is optional
-      between self-delimiting tokens. Alphabetic case is not significant except within character and
-      string literals.</p>
+	required between tokens if the tokens would otherwise blend together. Whitespace is optional
+	between self-delimiting tokens. Alphabetic case is not significant except within character
+	and string literals.</p>
       <p><dfn id="MARKER-2-277">Whitespace</dfn> can be a space character, a tab character, a
-      newline character, or a comment. Implementations can define additional whitespace
-      characters.</p>
+	newline character, or a comment. Implementations can define additional whitespace
+	characters.</p>
       <p>A <dfn id="MARKER-2-278">comment</dfn> can be single-line or delimited. Although comments
-      count as whitespace, the beginning of a comment can blend with a preceding token, so in
-      general comments should be surrounded by genuine whitespace.</p>
+	count as whitespace, the beginning of a comment can blend with a preceding token, so in
+	general comments should be surrounded by genuine whitespace.</p>
       <p>A <dfn id="MARKER-2-279">single-line comment</dfn> consists of two slash characters in a
-      row, followed by any number of characters up to and including the first newline character or
-      the end of the source record. For example, <code id="MARKER-2-280">// This line is a
-      kludge!</code></p>
+	row, followed by any number of characters up to and including the first newline character or
+	the end of the source record. For example, <code id="MARKER-2-280">// This line is a
+	kludge!</code></p>
       <p>A <dfn id="MARKER-2-281">delimited comment</dfn> consists of a slash character immediately
-      followed by a star character, any number of characters (including complete single-line and
-      complete delimited comments), and finally a star character immediately followed by a slash
-      character. For example, <code id="MARKER-2-282">/* set x to 3 */</code>.</p>
+	followed by a star character, any number of characters (including complete single-line and
+	complete delimited comments), and finally a star character immediately followed by a slash
+	character. For example, <code id="MARKER-2-282">/* set x to 3 */</code>.</p>
       <p>A single-line comment may appear within a delimited comment; occurrences of slash-star or
-      star-slash within the single line comment are ignored.<a name="MARKER-2-283"></a></p>
+	star-slash within the single line comment are ignored.<a name="MARKER-2-283"></a></p>
       <p>A <dfn id="MARKER-2-284">token</dfn> is a name, a #-word, an operator, a number, a
-      character literal, a string literal, a symbol literal, or punctuation.</p>
+	character literal, a string literal, a symbol literal, or punctuation.</p>
       <p>A <dfn id="MARKER-2-285">name</dfn> is one of the following four possibilities:</p>
       <ul>
 	<li>An alphabetic character followed by zero or more name characters.</li>
 	<li>A numeric character followed by two or more name characters including at least two
-	alphabetic characters in a row.</li>
+	  alphabetic characters in a row.</li>
 	<li>A graphic character followed by one or more name characters including at least one
-	alphabetic character.</li>
+	  alphabetic character.</li>
 	<li>A <q>\</q> (backslash) followed by a function operator or another name. </li>
       </ul>
       <p class="Default"><a name="MARKER-2-286"></a>An <dfn id="MARKER-2-287">alphabetic
-      character</dfn> is any of the 26 letters of the Roman alphabet in upper and lower case.</p>
+	  character</dfn> is any of the 26 letters of the Roman alphabet in upper and lower
+	case.</p>
       <p>A <dfn id="MARKER-2-288">numeric character</dfn> is any of the 10 digits.</p>
       <p>A <dfn id="MARKER-2-289">graphic character</dfn> is one of the following:</p>
       <p> <code>!</code> <code>&amp;</code> <code>*</code> <code>&lt;</code> <code>=</code> <code>&gt;</code> <code>|</code> <code>^</code> <code>$</code> <code>%</code> <code>@</code> <code>_</code></p>
       <p>A <dfn id="MARKER-2-290">name character</dfn> is an alphabetic character, a numeric
-      character, a graphic character, or one of the following:</p>
+	character, a graphic character, or one of the following:</p>
       <p><code>-</code> <code>+</code> <code>~</code> <code>?</code> <code>/</code></p>
       <p>The rich set of name characters means that name and operator tokens can blend. Thus Dylan
-      programs usually set off operators with whitespace.</p>
+	programs usually set off operators with whitespace.</p>
       <p>Implementations can add additional characters but programs using them will not be
-      portable.<a name="MARKER-2-291"></a></p>
+	portable.<a name="MARKER-2-291"></a></p>
       <p>A <dfn id="MARKER-2-292">#-word</dfn> is one
-      of <code>#t</code>, <code>#f</code>, <code>#next</code>, <code>#rest</code>, <code>#key</code>,
-      or <code>#all-keys</code>. The first two are literal constants, the others are used in
-      parameter lists. Implementations can add additional implementation-defined #-words, but
-      programmers cannot add their own #-words.</p>
+	of <code>#t</code>, <code>#f</code>, <code>#next</code>, <code>#rest</code>, <code>#key</code>,
+	or <code>#all-keys</code>. The first two are literal constants, the others are used in
+	parameter lists. Implementations can add additional implementation-defined #-words, but
+	programmers cannot add their own #-words.</p>
       <p>An <dfn id="MARKER-2-293">operator</dfn> is one of the following:</p>
       <table>
 	<tr><td><code>+</code></td><td>addition</td></tr>
@@ -194,21 +202,21 @@
       </table>
       <p>Programmers cannot add their own operators.</p>
       <p>A <dfn id="MARKER-2-294">number</dfn> is a decimal integer with an optional leading sign, a
-      binary integer, an octal integer, a hexadecimal integer, a ratio of two decimal integers with
-      an optional leading sign, or a floating-point number. The complete syntax of numbers is given
-      in <a href="Lexical_Grammar#MARKER-9-2105">"Numbers" on page 418</a>. Note that the ratios are
-      not included in the Dylan language. The ratio syntax is reserved for future expansion and for
-      implementation-specific extensions.</p>
+	binary integer, an octal integer, a hexadecimal integer, a ratio of two decimal integers
+	with an optional leading sign, or a floating-point number. The complete syntax of numbers is
+	given in <a href="Lexical_Grammar#MARKER-9-2105">"Numbers" on page 418</a>. Note that the
+	ratios are not included in the Dylan language. The ratio syntax is reserved for future
+	expansion and for implementation-specific extensions.</p>
       <p>A <dfn id="MARKER-2-295">character literal</dfn> is a printing character (including space,
-      but not <code>'</code> or <code>\</code>) or a backslash escape sequence enclosed in a pair of
-      single-quote characters '.</p>
+	but not <code>'</code> or <code>\</code>) or a backslash escape sequence enclosed in a pair
+	of single-quote characters '.</p>
       <p>A <dfn id="MARKER-2-296">string literal</dfn> is a sequence of printing characters
-      (including space, but not <code>&quot;</code> or <code>\</code>) and backslash escape
-      sequences enclosed in a pair of double-quote characters &quot;.</p>
+	(including space, but not <code>&quot;</code> or <code>\</code>) and backslash escape
+	sequences enclosed in a pair of double-quote characters &quot;.</p>
       <p>A <dfn id="MARKER-2-297">backslash escape sequence</dfn> is a backslash followed by a
-      character or character code. A backslash escape sequence in character and string literals
-      allows quoting of the special characters ', &quot;, and \, provides names for control
-      characters, and allows Unicode characters to be specified by their hexadecimal codes.</p>
+	character or character code. A backslash escape sequence in character and string literals
+	allows quoting of the special characters ', &quot;, and \, provides names for control
+	characters, and allows Unicode characters to be specified by their hexadecimal codes.</p>
       <p>The <a name="MARKER-2-298"></a>control characters are:</p>
       <table>
 	<tr><td><code>a</code></td><td>alarm</td></tr>
@@ -221,15 +229,16 @@
 	<tr><td><code>0</code></td><td>null</td></tr>
       </table>
       <p><a name="MARKER-2-299"></a>Unicode characters are represented by a series of hexadecimal
-      digits enclosed in angle brackets. If Unicode does not explicitly define the character
-      represented by the hexadecimal digits, the meaning in Dylan is undefined. If an implementation
-      is not able to represent the entire Unicode character set, and the number specifies a
-      character that is not representable in the implementation, an error must be signaled.</p>
-      <p>For example:   <code>"\&lt;44&gt;\&lt;79&gt;\&lt;6c&gt;\&lt;61&gt;\&lt;6e&gt;" = "Dylan"</code></p>
+	digits enclosed in angle brackets. If Unicode does not explicitly define the character
+	represented by the hexadecimal digits, the meaning in Dylan is undefined. If an
+	implementation is not able to represent the entire Unicode character set, and the number
+	specifies a character that is not representable in the implementation, an error must be
+	signaled.</p>
+      <p>For example: <code>"\&lt;44&gt;\&lt;79&gt;\&lt;6c&gt;\&lt;61&gt;\&lt;6e&gt;" = "Dylan"</code></p>
       <p>A <dfn id="MARKER-2-300">symbol literal</dfn> is a keyword or a unique
-      string. A <dfn id="MARKER-2-301">keyword</dfn> is a name followed immediately by a colon
-      character <q>:</q>. A <dfn id="MARKER-2-302">unique string</dfn> is a sharp sign <q>#</q>
-      followed immediately by a string literal.</p>
+	string. A <dfn id="MARKER-2-301">keyword</dfn> is a name followed immediately by a colon
+	character <q>:</q>. A <dfn id="MARKER-2-302">unique string</dfn> is a sharp sign <q>#</q>
+	followed immediately by a string literal.</p>
       <p><dfn id="MARKER-2-303">Punctuation</dfn> is one of the following:</p>
       <table>
 	<tr><td><code>(</code> <code>)</code></td><td>parentheses</td></tr>
@@ -248,10 +257,10 @@
 	<tr><td><code>...</code></td><td>macro ellipsis</td></tr>
       </table>
       <p>Note that some tokens are both punctuation and operators. This ambiguity is resolved by
-      grammatical context.</p>
+	grammatical context.</p>
       <p><a name="MARKER-2-304"></a>Note also that some punctuation tokens (for example, period and
-      equal sign) are capable of blending into some other tokens. Where this can occur, whitespace
-      must be inserted to delimit the token boundary.<a name="MARKER-2-305"></a></p>
+	equal sign) are capable of blending into some other tokens. Where this can occur, whitespace
+	must be inserted to delimit the token boundary.<a name="MARKER-2-305"></a></p>
 
     </div>
 
@@ -259,12 +268,19 @@
 
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a class="previous" title="Go to previous page" href="Parameter_Lists_Syntax"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Special_Treatment_of_Names"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
-      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered
-      trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+      <p class="footer">
+	<a class="previous" title="Go to previous page" href="Parameter_Lists_Syntax"><img alt="Previous" src="images/prev.gif" /></a>
+	<a class="next" title="Go to next page" href="Special_Treatment_of_Names"><img alt="Next" src="images/next.gif" /></a>
+	<a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a>
+	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      </p>
+      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
       <p class="footer">Originally generated
-      with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
-      revised.</p>
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>

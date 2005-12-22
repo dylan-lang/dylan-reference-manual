@@ -54,7 +54,14 @@
     <div id="header">
       <div id="navigation-header">
 	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation"><a class="previous" title="Go to previous page" href="Object_Classes"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Simple_Object_Classes"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+	<p id="basic-navigation">
+	  <a class="previous" title="Go to previous page" href="Object_Classes"><img alt="Previous" src="images/prev.gif" /></a>
+	  <a class="next" title="Go to next page" href="Simple_Object_Classes"><img alt="Next" src="images/next.gif" /></a>
+	  <a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a>
+	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+	</p>
       </div>
       
       <div id="section-header">
@@ -135,7 +142,8 @@
       <a name="HEADING90-0"></a>
       <a name="UID-Built-In_Classes-20036"></a>
       <h1 class="section-title"><a name="MARKER-2-1368"></a>Types</h1>
-      <p>Types are used to categorize objects. <a href="#MARKER-9-1369">Figure 11-1</a> shows the built-in classes of types and some of their characteristics.</p>
+      <p>Types are used to categorize objects. <a href="#MARKER-9-1369">Figure 11-1</a> shows the
+	built-in classes of types and some of their characteristics.</p>
       <p class="figure"><strong>Figure</strong> <strong>11-1</strong>  <a name="MARKER-9-1369"></a>The Type Classes</p>
       
       <div class="figure" style="min-width: 292px">
@@ -183,7 +191,8 @@
 	<dt><span>Init-keywords:</span></dt>
 	<dd><p>None.</p></dd>
 	<dt><span>Description:</span></dt>
-	<dd><p>The class of all types. All types (including <code>&lt;type&gt;</code> and <code>&lt;class&gt;</code>) are instances of <code>&lt;type&gt;</code>.</p></dd>
+	<dd><p>The class of all types. All types (including <code>&lt;type&gt;</code>
+	    and <code>&lt;class&gt;</code>) are instances of <code>&lt;type&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;type&gt;</code> provides the following operations:</p>
@@ -226,16 +235,14 @@
 	<dd>
 	  <dl>
 	    <dt><code>superclasses:</code></dt>
-	    <dd><p>An instance of <code>&lt;class&gt;</code> or
-		<code>&lt;sequence&gt;</code> specifying the direct superclasses of the class. If it
-		is a sequence, the elements of the sequence must be instances of
-		<code>&lt;class&gt;</code>. The default value is <code>&lt;object&gt;</code>. The
-		meaning of the order of the superclasses is the same as in <code>define
-		  class</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;class&gt;</code> or <code>&lt;sequence&gt;</code>
+		specifying the direct superclasses of the class. If it is a sequence, the elements of
+		the sequence must be instances of <code>&lt;class&gt;</code>. The default value
+		is <code>&lt;object&gt;</code>. The meaning of the order of the superclasses is the same
+		as in <code>define class</code>.</p></dd>
 	    <dt><code>abstract?:</code></dt>
-	    <dd><p>An instance of <code>&lt;boolean&gt;</code> specifying
-		whether the class is abstract or concrete. The default value is
-		<code>#f</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;boolean&gt;</code> specifying whether the class is
+		abstract or concrete. The default value is <code>#f</code>.</p></dd>
 	    <dt><code>slots:</code></dt>
 	    <dd>
 	      <p>An instance of <code>&lt;sequence&gt;</code> containing slot specs, where each
@@ -250,8 +257,8 @@
 		    to this generic function. This option is required.</p></dd>
 		<dt class="RP2.RoutineParam2"><code>setter:</code></dt>
 		<dd class="RP2.RoutineParam2"><p> A generic function of two arguments,
-		    or <code>#f</code> indicating <q>no setter.</q> Unless the allocation of the slot is
-		    virtual, the setter method for the slot will be added to this generic
+		    or <code>#f</code> indicating <q>no setter.</q> Unless the allocation of the
+		    slot is virtual, the setter method for the slot will be added to this generic
 		    function. The default value is <code>#f</code>.</p></dd>
 		<dt class="RP2.RoutineParam2"><code>type:</code></dt>
 		<dd class="RP2.RoutineParam2"><p> A type. Values stored in the slot are restricted
@@ -300,9 +307,15 @@
 	</dd><!-- 'init-keywords:' description -->
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>The class of all classes. All classes (including <code>&lt;class&gt;</code>) are general instances of <code>&lt;class&gt;</code>.</p>
-	  <p>In most programs the majority of classes are created with <code>define class</code>. However, there is nothing to prevent programmers from creating classes by calling <code>make</code>, for example, if they want to create a class without storing it in a module binding, or if they want to create new classes at runtime.</p>
-	  <p>If <code>make</code> is used to create a new class and creating the new class would violate any restrictions specified by sealing directives, then an error of type <code>&lt;sealed-object-error&gt;</code> is signaled.</p></dd>
+	  <p>The class of all classes. All classes (including <code>&lt;class&gt;</code>) are
+	    general instances of <code>&lt;class&gt;</code>.</p>
+	  <p>In most programs the majority of classes are created with <code>define class</code>.
+	    However, there is nothing to prevent programmers from creating classes by
+	    calling <code>make</code>, for example, if they want to create a class without storing
+	    it in a module binding, or if they want to create new classes at runtime.</p>
+	  <p>If <code>make</code> is used to create a new class and creating the new class would
+	    violate any restrictions specified by sealing directives, then an error of
+	    type <code>&lt;sealed-object-error&gt;</code> is signaled.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;class&gt;</code> provides the following operations:</p>
@@ -344,15 +357,19 @@
 	<dt><span>Superclasses:</span></dt>
 	<dd><p><code>&lt;type&gt;</code></p></dd>
 	<dt><span>Init-keywords:</span></dt>
-	<dd><p>The class <code>&lt;singleton&gt;</code> supports the following init-keyword:</p></dd>
+	<dd><p>The class <code>&lt;singleton&gt;</code> supports the following
+	    init-keyword:</p></dd>
 	<dd><dl>
 	    <dt><code>object:</code></dt>
-	    <dd><p>An instance of <code>&lt;object&gt;</code>. The object that the singleton indicates. There is no default for this argument. If it is not supplied, an error will be signaled.</p></dd>
+	    <dd><p>An instance of <code>&lt;object&gt;</code>. The object that the singleton
+		indicates. There is no default for this argument. If it is not supplied, an error
+		will be signaled.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of singletons.</p>
-	  <p>If a singleton for the specified object already exists, implementations may return it rather than allocating a new singleton.</p></dd>
+	  <p>If a singleton for the specified object already exists, implementations may return it
+	    rather than allocating a new singleton.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd><p>None.<a name="MARKER-2-1374"></a></p></dd>
       </dl>
@@ -363,9 +380,19 @@
 
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a class="previous" title="Go to previous page" href="Object_Classes"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Simple_Object_Classes"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
-      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-      <p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently revised.</p>
+      <p class="footer">
+	<a class="previous" title="Go to previous page" href="Object_Classes"><img alt="Previous" src="images/prev.gif" /></a>
+	<a class="next" title="Go to next page" href="Simple_Object_Classes"><img alt="Next" src="images/next.gif" /></a>
+	<a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a>
+	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      </p>
+      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+      <p class="footer">Originally generated
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>

@@ -122,51 +122,51 @@
       <a name="HEADING116-1"></a>
       <h2 class="subsection-title">General Notes</h2>
       <p>Dylan <a name="MARKER-2-2091"></a>syntax can be parsed with
-      an <a name="MARKER-2-2092"></a>LALR(1) <a name="MARKER-2-2093"></a>grammar.</p>
+	an <a name="MARKER-2-2092"></a>LALR(1) <a name="MARKER-2-2093"></a>grammar.</p>
       <p><a name="MARKER-2-2094"></a>This appendix uses some special notation to make the
-      presentation of the grammar more readable.</p>
+	presentation of the grammar more readable.</p>
       <ul>
 	<li>The <sub class="BNF"><i>opt</i></sub> suffix means that the preceding item is
-	optional.</li>
+	  optional.</li>
 	<li>A trailing ellipsis (&hellip;) is used in two different ways to signal possible
-	repetition.
+	  repetition.
 	  <ul>
 	    <li>If there is only one item on the line preceding the ellipsis, the item may appear
-	    one or more times.</li>
+	      one or more times.</li>
 	    <li>If more than one item precedes the ellipsis, the last of these items is designated a
-	    separator; the rest may appear one or more times, with the separator appearing after
-	    each occurrence but the last. (When only one item appears, the separator does not
-	    appear.)</li>
+	      separator; the rest may appear one or more times, with the separator appearing after
+	      each occurrence but the last. (When only one item appears, the separator does not
+	      appear.)</li>
 	  </ul>
 	</li>
 	<li>Identifiers for grammar rules are written with uppercase letters when the identifier is
-	used in the phrase grammar but defined in the lexical grammar.</li>
+	  used in the phrase grammar but defined in the lexical grammar.</li>
 	<li>The grammar does not use distinct identifiers for grammar rules that differ only in
-	alphabetic case.</li>
+	  alphabetic case.</li>
       </ul>
       <p>In the following grammar, some tokens are used multiple ways. For example the hyphen,
-      <q><code>-</code>,</q> is punctuation, a unary operator, and a binary operator; also,
-      <q><code>method</code></q> is a <em class="BNFCaps">begin-word</em> and
-      a <em class="BNFCaps">define-body-word</em>. In some parsing implementations such multiple
-      meanings of a token may not be possible. However this is just an implementation issue since
-      the meaning of the grammar is clear. <code>method</code> is used as punctuation
-      in <var>local-methods</var> and <var>method-definition</var>; since <code>method</code> is not
-      a core reserved word, this typically has to be implemented by accepting
-      any <em class="BNFCaps">macro-name</em> and checking semantically that the word used is
-      <q><code>method</code>.</q> The grammar as presented is not obviously LALR(1), since the required
-      changes would tend to obscure the readability for human beings (especially in macro
-      definitions and case-body). The grammar can be made LALR(1) through well-known standard
-      transformations implemented by most parser generators.</p>
+	<q><code>-</code>,</q> is punctuation, a unary operator, and a binary operator; also,
+	<q><code>method</code></q> is a <em class="BNFCaps">begin-word</em> and
+	a <em class="BNFCaps">define-body-word</em>. In some parsing implementations such multiple
+	meanings of a token may not be possible. However this is just an implementation issue since
+	the meaning of the grammar is clear. <code>method</code> is used as punctuation
+	in <var>local-methods</var> and <var>method-definition</var>; since <code>method</code> is not
+	a core reserved word, this typically has to be implemented by accepting
+	any <em class="BNFCaps">macro-name</em> and checking semantically that the word used is
+	<q><code>method</code>.</q> The grammar as presented is not obviously LALR(1), since the required
+	changes would tend to obscure the readability for human beings (especially in macro
+	definitions and case-body). The grammar can be made LALR(1) through well-known standard
+	transformations implemented by most parser generators.</p>
       <a name="HEADING116-11"></a>
       <h2 class="subsection-title"><a name="MARKER-2-2095"></a>Lexical Notes</h2>
       <p>In the lexical grammar, the various elements that come together to form a single token on
-      the right-hand sides of rules must <var>not</var> be separated by whitespace, so that the end
-      result will be a single token. This is in contrast to the phrase grammar, where each element
-      is already a complete token or a series of complete tokens.</p>
+	the right-hand sides of rules must <var>not</var> be separated by whitespace, so that the end
+	result will be a single token. This is in contrast to the phrase grammar, where each element
+	is already a complete token or a series of complete tokens.</p>
       <p>Arbitrary whitespace is permitted between tokens, but it is required only as necessary to
-      separate tokens that might otherwise blend together.</p>
+	separate tokens that might otherwise blend together.</p>
       <p>Case is not significant except within character and string literals. The grammars do not
-      reflect this, using one case or the other, but it is still true.</p>
+	reflect this, using one case or the other, but it is still true.</p>
 
     </div>
 
@@ -174,12 +174,18 @@
 
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a class="previous" title="Go to previous page" href="Function_Macros"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Lexical_Grammar"><img alt="Next" src="images/next.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+      <p class="footer">
+	<a class="previous" title="Go to previous page" href="Function_Macros"><img alt="Previous" src="images/prev.gif" /></a>
+	<a class="next" title="Go to next page" href="Lexical_Grammar"><img alt="Next" src="images/next.gif" /></a>
+	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      </p>
       <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
-      registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
       <p class="footer">Originally generated
-      with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
-      revised.</p>
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>

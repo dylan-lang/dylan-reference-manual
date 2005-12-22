@@ -54,7 +54,14 @@
     <div id="header">
       <div id="navigation-header">
 	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation"><a class="previous" title="Go to previous page" href="Number_Classes"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Function_Classes"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+	<p id="basic-navigation">
+	  <a class="previous" title="Go to previous page" href="Number_Classes"><img alt="Previous" src="images/prev.gif" /></a>
+	  <a class="next" title="Go to next page" href="Function_Classes"><img alt="Next" src="images/next.gif" /></a>
+	  <a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a>
+	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+	</p>
       </div>
       
       <div id="section-header">
@@ -191,8 +198,11 @@
       <a name="UID-Built-In_Classes-9369"></a>
       <h1 class="section-title"><a name="MARKER-9-1398"></a><a name="MARKER-2-1399"></a>Collections</h1>
       <p>This section describes the built-in collections, Dylan's aggregate data structures.</p>
-      <p>Collections are used to hold groups of objects. Collections support iteration as well as random access through collection keys. An overview of collections is given in <a href="Collections">Chapter 8, <q>Collections.</q></a></p>
-      <p><a href="#MARKER-9-1400">Figure 11-4</a> shows the built-in collection classes and some of their characteristics.</p>
+      <p>Collections are used to hold groups of objects. Collections support iteration as well as
+	random access through collection keys. An overview of collections is given
+	in <a href="Collections">Chapter 8, <q>Collections.</q></a></p>
+      <p><a href="#MARKER-9-1400">Figure 11-4</a> shows the built-in collection classes and some of
+	their characteristics.</p>
       <p class="figure"><strong>Figure</strong> <strong>11-4</strong>  <a name="MARKER-9-1400"></a>The Collection Classes</p>
       
       <div class="figure wide" style="min-width: 715px">
@@ -245,15 +255,12 @@
 	  </tr>
 	</table>
       </div>
-      <p class="errata"><a href="Errata#p207_1"
-			   name="errata_p207_1"><strong>Errata:</strong></a>
-	In the published book, the inheritance line descending
-	from <code>&lt;vector&gt;</code> incorrectly originates
-	from <code>&lt;empty-list&gt;</code> in Figure 11-4.
-	<!-- Although we have kept this online version as close to the
-	     printed edition as possible, including most of the errors,
-	     this particular error has been addressed because it would have
-	     required more effort to repeat the error than to fix it. -->
+      <p class="errata"><a href="Errata#p207_1" name="errata_p207_1"><strong>Errata:</strong></a> In
+	the published book, the inheritance line descending from <code>&lt;vector&gt;</code>
+	incorrectly originates from <code>&lt;empty-list&gt;</code> in Figure 11-4.
+	<!-- Although we have kept this online version as close to the printed edition as possible,
+	     including most of the errors, this particular error has been addressed because it would
+	     have required more effort to repeat the error than to fix it. -->
       </p>
       
       <a name="HEADING93-5"></a>
@@ -271,90 +278,100 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of collections.</p>
-	  <p><code>&lt;collection&gt;</code> is the root class of the collection class hierarchy. It provides a set of basic operations on all collections.</p>
-	  <p>The element type of <code>&lt;collection&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
+	  <p><code>&lt;collection&gt;</code> is the root class of the collection class hierarchy. It
+	    provides a set of basic operations on all collections.</p>
+	  <p>The element type of <code>&lt;collection&gt;</code> is <code>indefinite &lArr;
+	      &lt;object&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;collection&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-16</strong>  Functions on &lt;collection&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>do</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1810">Iterates over one or more collections for side effect.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1810">327</a></p>
-	    </td></tr><tr><td><p> <code>map</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1812">Iterates over one or more collections and collects the results in a freshly allocated collection.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1812">328</a></p>
-	    </td></tr><tr><td><p> <code>map-as</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1814">Iterates over one or more collections and collects the results in a freshly allocated collection of a specified type.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1814">328</a></p>
-	    </td></tr><tr><td><p> <code>map-into</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1816">Iterates over one or more collections and collects the results in an existing mutable collection.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1816">329</a></p>
-	    </td></tr><tr><td><p> <code>any?</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1818">Returns the first true value obtained by iterating over one or more collections.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1818">330</a></p>
-	    </td></tr><tr><td><p> <code>every?</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1821">Returns true if a predicate returns true when applied to all corresponding elements of a set of collections.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1821">331</a></p>
+	    <tr><th class="primary"><p>Function</p></th><th><p>Description</p></th><th><p>Page</p></th></tr>
+	    <tr>
+	      <td><p><code>do</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1810">Iterates over one or more
+		    collections for side effect.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1810">327</a></p></td>
+	    </tr>
+	    <tr>
+	      <td><p><code>map</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1812">Iterates over one or more
+		    collections and collects the results in a freshly allocated collection.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1812">328</a></p>
+	    </td></tr><tr><td><p><code>map-as</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1814">Iterates over one or more
+		    collections and collects the results in a freshly allocated collection of a
+		    specified type.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1814">328</a></p>
+	    </td></tr><tr><td><p><code>map-into</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1816">Iterates over one or more
+		    collections and collects the results in an existing mutable
+		    collection.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1816">329</a></p>
+	    </td></tr><tr><td><p><code>any?</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1818">Returns the first true value
+		    obtained by iterating over one or more collections.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1818">330</a></p>
+	    </td></tr><tr><td><p><code>every?</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1821">Returns true if a predicate
+		    returns true when applied to all corresponding elements of a set of
+		    collections.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1821">331</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-17</strong>  Generic Functions on &lt;collection&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>element</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1720">Returns the collection element associated with a particular key.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1720">300</a></p>
-	    </td></tr><tr><td><p> <code>key-sequence</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1716">Returns a sequence containing the keys of its collection argument.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1716">299</a></p>
-	    </td></tr><tr><td><p> <code>reduce</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1824">Combines the elements of a collection and a seed value into a single value by repeatedly applying a binary function.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1824">331</a></p>
-	    </td></tr><tr><td><p> <code>reduce1</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1826">Combines the elements of a collection into a single value by repeatedly applying a binary function, using the first element of the collection as the seed value.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1826">332</a></p>
-	    </td></tr><tr><td><p> <code>member?</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1834">Returns true if a collection contains a particular value.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1834">334</a></p>
-	    </td></tr><tr><td><p> <code>find-key</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1837">Returns the key in a collection such that the corresponding collection element satisfies a predicate.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1837">335</a></p>
-	    </td></tr><tr><td><p> <code>key-test</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1714">Returns the function used by its collection argument to compare keys.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1714">298</a></p>
-	    </td></tr><tr><td><p> <code>forward-iteration-protocol</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-2-1540">Returns a group of functions used to iterate over the elements of a collection.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-2-1540">337</a></p>
-	    </td></tr><tr><td><p> <code>backward-iteration-protocol</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1850">Returns a group of functions used to iterate over the elements of a collection in reverse order.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1850">339</a></p>
+	    <tr><th class="primary"><p>Function</p></th><th><p>Description</p></th><th><p>Page</p></th></tr>
+	    <tr><td><p><code>element</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1720">Returns the collection element associated with a particular key.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1720">300</a></p>
+	    </td></tr><tr><td><p><code>key-sequence</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1716">Returns a sequence containing the keys of its collection argument.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1716">299</a></p>
+	    </td></tr><tr><td><p><code>reduce</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1824">Combines the elements of a collection and a seed value into a single value by repeatedly applying a binary function.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1824">331</a></p>
+	    </td></tr><tr><td><p><code>reduce1</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1826">Combines the elements of a collection into a single value by repeatedly applying a binary function, using the first element of the collection as the seed value.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1826">332</a></p>
+	    </td></tr><tr><td><p><code>member?</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1834">Returns true if a collection contains a particular value.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1834">334</a></p>
+	    </td></tr><tr><td><p><code>find-key</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1837">Returns the key in a collection such that the corresponding collection element satisfies a predicate.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1837">335</a></p>
+	    </td></tr><tr><td><p><code>key-test</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1714">Returns the function used by its collection argument to compare keys.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1714">298</a></p>
+	    </td></tr><tr><td><p><code>forward-iteration-protocol</code></p></td>
+	      <td><p><a href="Constructing_and_Initializing_Instances#MARKER-2-1540">Returns a group of functions used to iterate over the elements of a collection.</a></p></td>
+	      <td><p><a href="Constructing_and_Initializing_Instances#MARKER-2-1540">337</a></p>
+	    </td></tr><tr><td><p><code>backward-iteration-protocol</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1850">Returns a group of functions used to iterate over the elements of a collection in reverse order.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1850">339</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-18</strong>  Methods on &lt;collection&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>=</code></p>
-	      </td><td><p> <a href="Equality_and_Comparison#MARKER-9-1584">Compares two objects for equality.</a></p>
-	      </td><td><p> <a href="Equality_and_Comparison#MARKER-9-1584">269</a></p>
-	    </td></tr><tr><td><p> <code>empty?</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1700">Returns true if its argument is empty.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1700">294</a></p>
-	    </td></tr><tr><td><p> <code>size</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1702">Returns the size of its argument.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1702">295</a></p>
-	    </td></tr><tr><td><p> <code>shallow-copy</code></p>
-	      </td><td><p> <a href="Coercing_and_Copying_Objects#MARKER-9-1692">Returns a copy of its argument.</a></p>
-	      </td><td><p> <a href="Coercing_and_Copying_Objects#MARKER-9-1692">292</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>=</code></p></td>
+	      <td><p><a href="Equality_and_Comparison#MARKER-9-1584">Compares two objects for equality.</a></p></td>
+	      <td><p><a href="Equality_and_Comparison#MARKER-9-1584">269</a></p>
+	    </td></tr><tr><td><p><code>empty?</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1700">Returns true if its argument is empty.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1700">294</a></p>
+	    </td></tr><tr><td><p><code>size</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1702">Returns the size of its argument.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1702">295</a></p>
+	    </td></tr><tr><td><p><code>shallow-copy</code></p></td>
+	      <td><p><a href="Coercing_and_Copying_Objects#MARKER-9-1692">Returns a copy of its argument.</a></p></td>
+	      <td><p><a href="Coercing_and_Copying_Objects#MARKER-9-1692">292</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-19</strong>  Methods on singleton(&lt;collection&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>limited</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>limited</code></p></td>
+	      <td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p></td>
+	      <td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -378,12 +395,12 @@
 	<dd>
 	  <p>The class <code>&lt;explicit-key-collection&gt;</code> provides the following operation:</p>
 	  <table class="numbered"><caption><strong>Table 11-20</strong>  Methods on singleton(&lt;explicit-key-collection&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>limited</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>limited</code></p></td>
+	      <td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p></td>
+	      <td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -410,108 +427,108 @@
 	<dd>
 	  <p>The class <code>&lt;sequence&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-21</strong>  Functions on &lt;sequence&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>concatenate</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1800">Returns the concatenation of one or more sequences in a sequence of a type determined by the <code>type-for-copy</code> of its first argument.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1800">323</a></p>
-	    </td></tr><tr><td><p> <code>concatenate-as</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1802">Returns the concatenation of one or more sequences in a sequence of a specified type.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1802">324</a></p>
-	    </td></tr><tr><td><p> <code>first</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1728">Returns the first element of a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1728">303</a></p>
-	    </td></tr><tr><td><p> <code>second</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1730">Returns the second element of a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1730">304</a></p>
-	    </td></tr><tr><td><p> <code>third</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1732">Returns the third element of a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1732">304</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>concatenate</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1800">Returns the concatenation of one or more sequences in a sequence of a type determined by the <code>type-for-copy</code> of its first argument.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1800">323</a></p>
+	    </td></tr><tr><td><p><code>concatenate-as</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1802">Returns the concatenation of one or more sequences in a sequence of a specified type.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1802">324</a></p>
+	    </td></tr><tr><td><p><code>first</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1728">Returns the first element of a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1728">303</a></p>
+	    </td></tr><tr><td><p><code>second</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1730">Returns the second element of a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1730">304</a></p>
+	    </td></tr><tr><td><p><code>third</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1732">Returns the third element of a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1732">304</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-22</strong>  Generic Functions on &lt;sequence&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>add</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1754">Adds an element to a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1754">309</a></p>
-	    </td></tr><tr><td><p> <code>add!</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1756">Adds an element to a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1756">310</a></p>
-	    </td></tr><tr><td><p> <code>add-new</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1758">Adds a new element to a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1758">311</a></p>
-	    </td></tr><tr><td><p> <code>add-new!</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1760">Adds a new element to a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1760">312</a></p>
-	    </td></tr><tr><td><p> <code>remove</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1763">Removes an element from a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1763">312</a></p>
-	    </td></tr><tr><td><p> <code>remove!</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1765">Removes an element from a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1765">313</a></p>
-	    </td></tr><tr><td><p> <code>choose</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1828">Returns those elements of a sequence that satisfy a predicate.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1828">333</a></p>
-	    </td></tr><tr><td><p> <code>choose-by</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1831">Returns those elements of a sequence that correspond to those in another sequence that satisfy a predicate.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1831">333</a></p>
-	    </td></tr><tr><td><p> <code>intersection</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1788">Returns the intersection of two sequences.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1788">319</a></p>
-	    </td></tr><tr><td><p> <code>union</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1790">Returns the union of two sequences.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1790">320</a></p>
-	    </td></tr><tr><td><p> <code>remove-duplicates</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1792">Returns a sequence without duplicates.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1792">321</a></p>
-	    </td></tr><tr><td><p> <code>remove-duplicates!</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1794">Returns a sequence without duplicates.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1794">322</a></p>
-	    </td></tr><tr><td><p> <code>copy-sequence</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1797">Returns a freshly allocated copy of some subsequence of a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1797">323</a></p>
-	    </td></tr><tr><td><p> <code>replace-subsequence!</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1804">Replaces a portion of a sequence with the elements of another sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1804">325</a></p>
-	    </td></tr><tr><td><p> <code>reverse</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1778">Returns a sequence with elements in the reverse order of its argument sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1778">316</a></p>
-	    </td></tr><tr><td><p> <code>reverse!</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1780">Returns a sequence with elements in the reverse order of its argument sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1780">317</a></p>
-	    </td></tr><tr><td><p> <code>sort</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1782">Returns a sequence containing the elements of its argument sequence, sorted.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1782">318</a></p>
-	    </td></tr><tr><td><p> <code>sort!</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1784">Returns a sequence containing the elements of its argument sequence, sorted.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1784">318</a></p>
-	    </td></tr><tr><td><p> <code>last</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1740">Returns the last element of a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1740">306</a></p>
-	    </td></tr><tr><td><p> <code>subsequence-position</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1806">Returns the position where a pattern appears in a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1806">326</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>add</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1754">Adds an element to a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1754">309</a></p>
+	    </td></tr><tr><td><p><code>add!</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1756">Adds an element to a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1756">310</a></p>
+	    </td></tr><tr><td><p><code>add-new</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1758">Adds a new element to a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1758">311</a></p>
+	    </td></tr><tr><td><p><code>add-new!</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1760">Adds a new element to a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1760">312</a></p>
+	    </td></tr><tr><td><p><code>remove</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1763">Removes an element from a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1763">312</a></p>
+	    </td></tr><tr><td><p><code>remove!</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1765">Removes an element from a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1765">313</a></p>
+	    </td></tr><tr><td><p><code>choose</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1828">Returns those elements of a sequence that satisfy a predicate.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1828">333</a></p>
+	    </td></tr><tr><td><p><code>choose-by</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1831">Returns those elements of a sequence that correspond to those in another sequence that satisfy a predicate.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1831">333</a></p>
+	    </td></tr><tr><td><p><code>intersection</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1788">Returns the intersection of two sequences.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1788">319</a></p>
+	    </td></tr><tr><td><p><code>union</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1790">Returns the union of two sequences.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1790">320</a></p>
+	    </td></tr><tr><td><p><code>remove-duplicates</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1792">Returns a sequence without duplicates.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1792">321</a></p>
+	    </td></tr><tr><td><p><code>remove-duplicates!</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1794">Returns a sequence without duplicates.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1794">322</a></p>
+	    </td></tr><tr><td><p><code>copy-sequence</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1797">Returns a freshly allocated copy of some subsequence of a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1797">323</a></p>
+	    </td></tr><tr><td><p><code>replace-subsequence!</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1804">Replaces a portion of a sequence with the elements of another sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1804">325</a></p>
+	    </td></tr><tr><td><p><code>reverse</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1778">Returns a sequence with elements in the reverse order of its argument sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1778">316</a></p>
+	    </td></tr><tr><td><p><code>reverse!</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1780">Returns a sequence with elements in the reverse order of its argument sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1780">317</a></p>
+	    </td></tr><tr><td><p><code>sort</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1782">Returns a sequence containing the elements of its argument sequence, sorted.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1782">318</a></p>
+	    </td></tr><tr><td><p><code>sort!</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1784">Returns a sequence containing the elements of its argument sequence, sorted.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1784">318</a></p>
+	    </td></tr><tr><td><p><code>last</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1740">Returns the last element of a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1740">306</a></p>
+	    </td></tr><tr><td><p><code>subsequence-position</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1806">Returns the position where a pattern appears in a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1806">326</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-23</strong>  Methods on &lt;sequence&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>=</code></p>
-	      </td><td><p> <a href="Equality_and_Comparison#MARKER-9-1584">Compares two objects for equality.</a></p>
-	      </td><td><p> <a href="Equality_and_Comparison#MARKER-9-1584">269</a></p>
-	    </td></tr><tr><td><p> <code>key-test</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1714">Returns the function used by its collection argument to compare keys.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1714">298</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>=</code></p>
+	      </td><td><p><a href="Equality_and_Comparison#MARKER-9-1584">Compares two objects for equality.</a></p>
+	      </td><td><p><a href="Equality_and_Comparison#MARKER-9-1584">269</a></p>
+	    </td></tr><tr><td><p><code>key-test</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1714">Returns the function used by its collection argument to compare keys.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1714">298</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-24</strong>  Methods on singleton(&lt;sequence&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>limited</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>limited</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -536,36 +553,36 @@
 	<dd>
 	  <p>The class <code>&lt;mutable-collection&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-25</strong>  Functions on &lt;mutable-collection&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>map-into</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1816">Iterates over one or more collections and collects the results in an existing mutable collection.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1816">329</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>map-into</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1816">Iterates over one or more collections and collects the results in an existing mutable collection.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1816">329</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-26</strong>  Generic Functions on &lt;mutable-collection&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>element-setter</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1722">Sets the collection element associated with a particular key.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1722">301</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>element-setter</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1722">Sets the collection element associated with a particular key.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1722">301</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-27</strong>  Methods on &lt;mutable-collection&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>type-for-copy</code></p>
-	      </td><td><p> <a href="Coercing_and_Copying_Objects#MARKER-9-1694">Returns an appropriate type for creating mutable copies of its argument.</a></p>
-	      </td><td><p> <a href="Coercing_and_Copying_Objects#MARKER-9-1694">292</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>type-for-copy</code></p>
+	      </td><td><p><a href="Coercing_and_Copying_Objects#MARKER-9-1694">Returns an appropriate type for creating mutable copies of its argument.</a></p>
+	      </td><td><p><a href="Coercing_and_Copying_Objects#MARKER-9-1694">292</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-28</strong>  Methods on singleton(&lt;mutable-collection&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>limited</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>limited</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -586,20 +603,20 @@
 	<dd>
 	  <p>The class <code>&lt;mutable-explicit-key-collection&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-29</strong>  Generic Functions on &lt;mutable-explicit-key-collection&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>remove-key!</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1840">Modifies an explicit key collection so it no longer has a particular key.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1840">335</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>remove-key!</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1840">Modifies an explicit key collection so it no longer has a particular key.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1840">335</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-30</strong>  Methods on singleton(&lt;mutable-explicit-key-collection&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>limited</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>limited</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -620,34 +637,34 @@
 	<dd>
 	  <p>The class <code>&lt;mutable-sequence&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-31</strong>  Functions on &lt;mutable-sequence&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>first-setter</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1734">Sets the first element of a mutable sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1734">304</a></p>
-	    </td></tr><tr><td><p> <code>second-setter</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1736">Sets the second element of a mutable sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1736">305</a></p>
-	    </td></tr><tr><td><p> <code>third-setter</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1738">Sets the third element of a mutable sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1738">305</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>first-setter</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1734">Sets the first element of a mutable sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1734">304</a></p>
+	    </td></tr><tr><td><p><code>second-setter</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1736">Sets the second element of a mutable sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1736">305</a></p>
+	    </td></tr><tr><td><p><code>third-setter</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1738">Sets the third element of a mutable sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1738">305</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-32</strong>  Generic Functions on &lt;mutable-sequence&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>last-setter</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1742">Sets the last element of a mutable sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1742">306</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>last-setter</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1742">Sets the last element of a mutable sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1742">306</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-33</strong>  Methods on singleton(&lt;mutable-sequence&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>limited</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>limited</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -679,12 +696,12 @@
 	<dd>
 	  <p>The class <code>&lt;stretchy-collection&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-34</strong>  Methods on singleton(&lt;stretchy-collection&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>limited</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>limited</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -721,61 +738,61 @@
 	<dd>
 	  <p>The class <code>&lt;array&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-35</strong>  Generic Functions on &lt;array&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>rank</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1706">Returns the number of dimensions of an array.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1706">296</a></p>
-	    </td></tr><tr><td><p> <code>row-major-index</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1708">Returns the row-major-index position of an array element.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1708">297</a></p>
-	    </td></tr><tr><td><p> <code>aref</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1724">Returns the array element indicated by a set of indices.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1724">302</a></p>
-	    </td></tr><tr><td><p> <code>aref-setter</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1726">Sets the array element indicated by a set of indices.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1726">302</a></p>
-	    </td></tr><tr><td><p> <code>dimensions</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1710">Returns the dimensions of an array.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1710">297</a></p>
-	    </td></tr><tr><td><p> <code>dimension</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1712">Returns the size of a specified dimension of an array.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1712">298</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>rank</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1706">Returns the number of dimensions of an array.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1706">296</a></p>
+	    </td></tr><tr><td><p><code>row-major-index</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1708">Returns the row-major-index position of an array element.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1708">297</a></p>
+	    </td></tr><tr><td><p><code>aref</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1724">Returns the array element indicated by a set of indices.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1724">302</a></p>
+	    </td></tr><tr><td><p><code>aref-setter</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1726">Sets the array element indicated by a set of indices.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1726">302</a></p>
+	    </td></tr><tr><td><p><code>dimensions</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1710">Returns the dimensions of an array.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1710">297</a></p>
+	    </td></tr><tr><td><p><code>dimension</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1712">Returns the size of a specified dimension of an array.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1712">298</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-36</strong>  Methods on &lt;array&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>size</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1702">Returns the size of its argument.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1702">295</a></p>
-	    </td></tr><tr><td><p> <code>rank</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1706">Returns the number of dimensions of an array.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1706">296</a></p>
-	    </td></tr><tr><td><p> <code>row-major-index</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1708">Returns the row-major-index position of an array element.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1708">297</a></p>
-	    </td></tr><tr><td><p> <code>aref</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1724">Returns the array element indicated by a set of indices.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1724">302</a></p>
-	    </td></tr><tr><td><p> <code>aref-setter</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1726">Sets the array element indicated by a set of indices.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1726">302</a></p>
-	    </td></tr><tr><td><p> <code>dimension</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1712">Returns the size of a specified dimension of an array.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1712">298</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>size</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1702">Returns the size of its argument.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1702">295</a></p>
+	    </td></tr><tr><td><p><code>rank</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1706">Returns the number of dimensions of an array.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1706">296</a></p>
+	    </td></tr><tr><td><p><code>row-major-index</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1708">Returns the row-major-index position of an array element.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1708">297</a></p>
+	    </td></tr><tr><td><p><code>aref</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1724">Returns the array element indicated by a set of indices.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1724">302</a></p>
+	    </td></tr><tr><td><p><code>aref-setter</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1726">Sets the array element indicated by a set of indices.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1726">302</a></p>
+	    </td></tr><tr><td><p><code>dimension</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1712">Returns the size of a specified dimension of an array.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1712">298</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-37</strong>  Methods on singleton(&lt;array&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>make</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1539">Returns a general instance of its first argument.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1539">258</a></p>
-	    </td></tr><tr><td><p> <code>limited</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>make</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">Returns a general instance of its first argument.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">258</a></p>
+	    </td></tr><tr><td><p><code>limited</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -809,34 +826,34 @@
 	<dd>
 	  <p>The class <code>&lt;vector&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-38</strong>  Constructors for &lt;vector&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>vector</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1567">Creates and returns a freshly allocated vector.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1567">267</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>vector</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1567">Creates and returns a freshly allocated vector.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1567">267</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-39</strong>  Methods on &lt;vector&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>dimensions</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1710">Returns the dimensions of an array.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1710">297</a></p>
-	    </td></tr><tr><td><p> <code>element</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1720">Returns the collection element associated with a particular key.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1720">300</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>dimensions</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1710">Returns the dimensions of an array.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1710">297</a></p>
+	    </td></tr><tr><td><p><code>element</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1720">Returns the collection element associated with a particular key.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1720">300</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-40</strong>  Methods on singleton(&lt;vector&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>make</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1539">Returns a general instance of its first argument.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1539">258</a></p>
-	    </td></tr><tr><td><p> <code>limited</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>make</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">Returns a general instance of its first argument.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">258</a></p>
+	    </td></tr><tr><td><p><code>limited</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -867,26 +884,26 @@
 	<dd>
 	  <p>The class <code>&lt;simple-vector&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-41</strong>  Methods on &lt;simple-vector&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>element</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1720">Returns the collection element associated with a particular key.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1720">300</a></p>
-	    </td></tr><tr><td><p> <code>element-setter</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1722">Sets the collection element associated with a particular key.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1722">301</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>element</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1720">Returns the collection element associated with a particular key.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1720">300</a></p>
+	    </td></tr><tr><td><p><code>element-setter</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1722">Sets the collection element associated with a particular key.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1722">301</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-42</strong>  Methods on singleton(&lt;simple-vector&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>make</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1539">Returns a general instance of its first argument.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1539">258</a></p>
-	    </td></tr><tr><td><p> <code>limited</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>make</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">Returns a general instance of its first argument.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">258</a></p>
+	    </td></tr><tr><td><p><code>limited</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -935,23 +952,23 @@
 	<dt><span>Operations:</span></dt>
 	<dd><p>The class <code>&lt;stretchy-vector&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-43</strong>  Methods on &lt;stretchy-vector&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>add!</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1754">Adds an element to a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1754">309</a></p>
-	    </td></tr><tr><td><p> <code>remove!</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1763">Removes an element from a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1765">313</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>add!</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1754">Adds an element to a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1754">309</a></p>
+	    </td></tr><tr><td><p><code>remove!</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1763">Removes an element from a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1765">313</a></p>
 	  </td></tr></table><p class="Anchor"> <a name="MARKER-2-1440"></a></p>
 	  <table class="numbered"><caption><strong>Table 11-44</strong>  Methods on singleton(&lt;stretchy-vector&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>limited</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>limited</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -982,43 +999,43 @@
 	<dd>
 	  <p>The class <code>&lt;deque&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-45</strong>  Generic Functions on &lt;deque&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>push</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1767">Adds an element to the front of a deque.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1767">314</a></p>
-	    </td></tr><tr><td><p> <code>pop</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1769">Removes and returns the first element of a deque.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1769">315</a></p>
-	    </td></tr><tr><td><p> <code>push-last</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1771">Adds an element to the end of a deque.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1771">315</a></p>
-	    </td></tr><tr><td><p> <code>pop-last</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1773">Removes and returns an element from the end of a deque.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1773">315</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>push</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1767">Adds an element to the front of a deque.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1767">314</a></p>
+	    </td></tr><tr><td><p><code>pop</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1769">Removes and returns the first element of a deque.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1769">315</a></p>
+	    </td></tr><tr><td><p><code>push-last</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1771">Adds an element to the end of a deque.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1771">315</a></p>
+	    </td></tr><tr><td><p><code>pop-last</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1773">Removes and returns an element from the end of a deque.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1773">315</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-46</strong>  Methods on &lt;deque&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>add!</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1754">Adds an element to a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1754">309</a></p>
-	    </td></tr><tr><td><p> <code>remove!</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1763">Removes an element from a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1765">313</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>add!</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1754">Adds an element to a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1754">309</a></p>
+	    </td></tr><tr><td><p><code>remove!</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1763">Removes an element from a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1765">313</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-47</strong>  Methods on singleton(&lt;deque&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>limited</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
-	    </td></tr><tr><td><p> <code>make</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1539">Returns a general instance of its first argument.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1539">258</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>limited</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
+	    </td></tr><tr><td><p><code>make</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">Returns a general instance of its first argument.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">258</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -1027,15 +1044,15 @@
       <h2 class="subsection-title"><a name="MARKER-2-1443"></a>Lists</h2>
       <p>Lists are constructed by linking together instances of <code>&lt;pair&gt;</code>. The <a name="MARKER-2-1444"></a>head of a list contains an element, and the <a name="MARKER-2-1445"></a>tail of the list contains a pointer to the next pair in the list. The list ends when the tail of a pair contains something besides another pair.</p>
       <p>A <dfn id="MARKER-2-1446">proper list</dfn> has a final pair with a tail
-      containing the empty list.</p>
+	containing the empty list.</p>
       <p>An <dfn id="MARKER-2-1447">improper list</dfn> does not have a final pair
-      with a tail containing the empty list, either because the tail of its final pair is not the
-      empty list, or because the list is circular and thus does not have a final pair. Except when
-      their behavior on improper lists is documented explicitly, collection or sequence functions
-      are not guaranteed to return an answer when an improper list is used as a collection or a
-      sequence. At the implementation's option, these functions may return the correct result,
-      signal a <code>&lt;type-error&gt;</code>, or (in the case of a circular list) fail to
-      return.</p>
+	with a tail containing the empty list, either because the tail of its final pair is not the
+	empty list, or because the list is circular and thus does not have a final pair. Except when
+	their behavior on improper lists is documented explicitly, collection or sequence functions
+	are not guaranteed to return an answer when an improper list is used as a collection or a
+	sequence. At the implementation's option, these functions may return the correct result,
+	signal a <code>&lt;type-error&gt;</code>, or (in the case of a circular list) fail to
+	return.</p>
       <p>When treated as a collection, the elements of a list are the heads of successive pairs in the list.</p>
       <a name="HEADING93-2050"></a>
       <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1448"></a><a name="MARKER-9-1449"></a>&lt;list&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Abstract Class]</span></h4>
@@ -1061,51 +1078,51 @@
 	<dd>
 	  <p>The class <code>&lt;list&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-48</strong>  Constructors for &lt;list&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>list</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1550">Creates and returns a freshly allocated list.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1550">261</a></p>
-	    </td></tr><tr><td><p> <code>pair</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1552">Creates and returns a freshly allocated pair.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1552">262</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>list</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1550">Creates and returns a freshly allocated list.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1550">261</a></p>
+	    </td></tr><tr><td><p><code>pair</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1552">Creates and returns a freshly allocated pair.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1552">262</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-49</strong>  Functions on &lt;list&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>head</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1744">Returns the head of a list.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1744">307</a></p>
-	    </td></tr><tr><td><p> <code>tail</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1746">Returns the tail of a list.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1746">307</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>head</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1744">Returns the head of a list.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1744">307</a></p>
+	    </td></tr><tr><td><p><code>tail</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1746">Returns the tail of a list.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1746">307</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-50</strong>  Methods on &lt;list&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>size</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1702">Returns the size of its argument.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1702">295</a></p>
-	    </td></tr><tr><td><p> <code>=</code></p>
-	      </td><td><p> <a href="Equality_and_Comparison#MARKER-9-1584">Compares two objects for equality.</a></p>
-	      </td><td><p> <a href="Equality_and_Comparison#MARKER-9-1584">269</a></p>
-	    </td></tr><tr><td><p> <code>add!</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1754">Adds an element to a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1754">309</a></p>
-	    </td></tr><tr><td><p> <code>remove!</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1763">Removes an element from a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1765">313</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>size</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1702">Returns the size of its argument.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1702">295</a></p>
+	    </td></tr><tr><td><p><code>=</code></p>
+	      </td><td><p><a href="Equality_and_Comparison#MARKER-9-1584">Compares two objects for equality.</a></p>
+	      </td><td><p><a href="Equality_and_Comparison#MARKER-9-1584">269</a></p>
+	    </td></tr><tr><td><p><code>add!</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1754">Adds an element to a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1754">309</a></p>
+	    </td></tr><tr><td><p><code>remove!</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1763">Removes an element from a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1765">313</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-51</strong>  Methods on singleton(&lt;list&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>make</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1539">Returns a general instance of its first argument.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1539">258</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>make</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">Returns a general instance of its first argument.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">258</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -1126,23 +1143,23 @@
 	<dd>
 	  <p>The following operations are provided on <code>&lt;pair&gt;</code>:</p>
 	  <table class="numbered"><caption><strong>Table 11-52</strong>  Functions on &lt;pair&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>head-setter</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1748">Sets the head of a pair.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1748">308</a></p>
-	    </td></tr><tr><td><p> <code>tail-setter</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1750">Sets the tail of a pair.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1750">308</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>head-setter</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1748">Sets the head of a pair.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1748">308</a></p>
+	    </td></tr><tr><td><p><code>tail-setter</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1750">Sets the tail of a pair.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1750">308</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-53</strong>  Constructors for &lt;pair&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>pair</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1552">Creates and returns a freshly allocated pair.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1552">262</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>pair</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1552">Creates and returns a freshly allocated pair.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1552">262</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -1203,44 +1220,44 @@
 	  <p>The class <code>&lt;range&gt;</code> provides the following operations:</p>
 	  <p class="Anchor">   </p>
 	  <table class="numbered"><caption><strong>Table 11-54</strong>  Methods on &lt;range&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>member?</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1834">Returns true if a collection contains a particular value.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1834">334</a></p>
-	    </td></tr><tr><td><p> <code>size</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1702">Returns the size of its argument.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1702">295</a></p>
-	    </td></tr><tr><td><p> <code>copy-sequence</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1797">Returns a freshly allocated copy of some subsequence of a sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1797">323</a></p>
-	    </td></tr><tr><td><p> <code>=</code></p>
-	      </td><td><p> <a href="Equality_and_Comparison#MARKER-9-1584">Compares two objects for equality.</a></p>
-	      </td><td><p> <a href="Equality_and_Comparison#MARKER-9-1584">269</a></p>
-	    </td></tr><tr><td><p> <code>reverse</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1778">Returns a sequence with elements in the reverse order of its argument sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1778">316</a></p>
-	    </td></tr><tr><td><p> <code>reverse!</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1780">Returns a sequence with elements in the reverse order of its argument sequence.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1780">317</a></p>
-	    </td></tr><tr><td><p> <code>intersection</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1788">Returns the intersection of two sequences.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1788">319</a></p>
-	    </td></tr><tr><td><p> <code>type-for-copy</code></p>
-	      </td><td><p> <a href="Coercing_and_Copying_Objects#MARKER-9-1694">Returns an appropriate type for creating mutable copies of its argument.</a></p>
-	      </td><td><p> <a href="Coercing_and_Copying_Objects#MARKER-9-1694">292</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>member?</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1834">Returns true if a collection contains a particular value.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1834">334</a></p>
+	    </td></tr><tr><td><p><code>size</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1702">Returns the size of its argument.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1702">295</a></p>
+	    </td></tr><tr><td><p><code>copy-sequence</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1797">Returns a freshly allocated copy of some subsequence of a sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1797">323</a></p>
+	    </td></tr><tr><td><p><code>=</code></p>
+	      </td><td><p><a href="Equality_and_Comparison#MARKER-9-1584">Compares two objects for equality.</a></p>
+	      </td><td><p><a href="Equality_and_Comparison#MARKER-9-1584">269</a></p>
+	    </td></tr><tr><td><p><code>reverse</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1778">Returns a sequence with elements in the reverse order of its argument sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1778">316</a></p>
+	    </td></tr><tr><td><p><code>reverse!</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1780">Returns a sequence with elements in the reverse order of its argument sequence.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1780">317</a></p>
+	    </td></tr><tr><td><p><code>intersection</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1788">Returns the intersection of two sequences.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1788">319</a></p>
+	    </td></tr><tr><td><p><code>type-for-copy</code></p>
+	      </td><td><p><a href="Coercing_and_Copying_Objects#MARKER-9-1694">Returns an appropriate type for creating mutable copies of its argument.</a></p>
+	      </td><td><p><a href="Coercing_and_Copying_Objects#MARKER-9-1694">292</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-55</strong>  Methods on singleton(&lt;range&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>limited</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
-	    </td></tr><tr><td><p> <code>make</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1539">Returns a general instance of its first argument.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1539">258</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>limited</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
+	    </td></tr><tr><td><p><code>make</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">Returns a general instance of its first argument.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">258</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -1271,32 +1288,32 @@
 	<dd>
 	  <p>The class <code>&lt;string&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-56</strong>  Methods on &lt;string&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>&lt;</code></p>
-	      </td><td><p> <a href="Equality_and_Comparison#MARKER-9-1589">Returns true if its first operand is less than its second operand.</a></p>
-	      </td><td><p> <a href="Equality_and_Comparison#MARKER-9-1589">271</a></p>
-	    </td></tr><tr><td><p> <code>as-lowercase</code></p>
-	      </td><td><p> <a href="Coercing_and_Copying_Objects#MARKER-9-1687">Coerces an object to lowercase.</a></p>
-	      </td><td><p> <a href="Coercing_and_Copying_Objects#MARKER-9-1687">291</a></p>
-	    </td></tr><tr><td><p> <code>as-lowercase!</code></p>
-	      </td><td><p> <a href="Arithmetic_Operations#MARKER-2-1671">Coerces an object to lowercase in place.</a></p>
-	      </td><td><p> <a href="Arithmetic_Operations#MARKER-2-1671">291</a></p>
-	    </td></tr><tr><td><p> <code>as-uppercase</code></p>
-	      </td><td><p> <a href="Coercing_and_Copying_Objects#MARKER-9-1683">Coerces an object to uppercase.</a></p>
-	      </td><td><p> <a href="Coercing_and_Copying_Objects#MARKER-9-1683">290</a></p>
-	    </td></tr><tr><td><p> <code>as-uppercase!</code></p>
-	      </td><td><p> <a href="Coercing_and_Copying_Objects#MARKER-9-1685">Coerces an object to uppercase in place.</a></p>
-	      </td><td><p> <a href="Coercing_and_Copying_Objects#MARKER-9-1685">290</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>&lt;</code></p>
+	      </td><td><p><a href="Equality_and_Comparison#MARKER-9-1589">Returns true if its first operand is less than its second operand.</a></p>
+	      </td><td><p><a href="Equality_and_Comparison#MARKER-9-1589">271</a></p>
+	    </td></tr><tr><td><p><code>as-lowercase</code></p>
+	      </td><td><p><a href="Coercing_and_Copying_Objects#MARKER-9-1687">Coerces an object to lowercase.</a></p>
+	      </td><td><p><a href="Coercing_and_Copying_Objects#MARKER-9-1687">291</a></p>
+	    </td></tr><tr><td><p><code>as-lowercase!</code></p>
+	      </td><td><p><a href="Arithmetic_Operations#MARKER-2-1671">Coerces an object to lowercase in place.</a></p>
+	      </td><td><p><a href="Arithmetic_Operations#MARKER-2-1671">291</a></p>
+	    </td></tr><tr><td><p><code>as-uppercase</code></p>
+	      </td><td><p><a href="Coercing_and_Copying_Objects#MARKER-9-1683">Coerces an object to uppercase.</a></p>
+	      </td><td><p><a href="Coercing_and_Copying_Objects#MARKER-9-1683">290</a></p>
+	    </td></tr><tr><td><p><code>as-uppercase!</code></p>
+	      </td><td><p><a href="Coercing_and_Copying_Objects#MARKER-9-1685">Coerces an object to uppercase in place.</a></p>
+	      </td><td><p><a href="Coercing_and_Copying_Objects#MARKER-9-1685">290</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-57</strong>  Methods on singleton(&lt;string&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>limited</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>limited</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -1323,15 +1340,15 @@
 	<dd>
 	  <p>The class <code>&lt;byte-string&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-58</strong>  Methods on &lt;byte-string&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>element</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1720">Returns the collection element associated with a particular key.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1720">300</a></p>
-	    </td></tr><tr><td><p> <code>element-setter</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1722">Sets the collection element associated with a particular key.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1722">301</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>element</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1720">Returns the collection element associated with a particular key.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1720">300</a></p>
+	    </td></tr><tr><td><p><code>element-setter</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1722">Sets the collection element associated with a particular key.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1722">301</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -1359,15 +1376,15 @@
 	  <p>The class <code>&lt;unicode-string&gt;</code> provides the following operations:</p>
 	  <p class="Anchor"> <a name="MARKER-2-1459"></a></p>
 	  <table class="numbered"><caption><strong>Table 11-59</strong>  Methods on &lt;unicode-string&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>element</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1720">Returns the collection element associated with a particular key.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1720">300</a></p>
-	    </td></tr><tr><td><p> <code>element-setter</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1722">Sets the collection element associated with a particular key.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1722">301</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>element</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1720">Returns the collection element associated with a particular key.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1720">300</a></p>
+	    </td></tr><tr><td><p><code>element-setter</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1722">Sets the collection element associated with a particular key.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1722">301</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -1400,49 +1417,49 @@
 	<dd>
 	  <p>The class <code>&lt;table&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-60</strong>  Generic Functions on &lt;table&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>table-protocol</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1852">Returns functions used to implement the iteration protocol for tables.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1852">340</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>table-protocol</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1852">Returns functions used to implement the iteration protocol for tables.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1852">340</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-61</strong>  Methods on &lt;table&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>forward-iteration-protocol</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-2-1540">Returns a group of functions used to iterate over the elements of a collection.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-2-1540">337</a></p>
-	    </td></tr><tr><td><p> <code>table-protocol</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1852">Returns functions used to implement the iteration protocol for tables.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1852">340</a></p>
-	    </td></tr><tr><td><p> <code>remove-key!</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1840">Modifies an explicit key collection so it no longer has a particular key.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1840">335</a></p>
-	    </td></tr><tr><td><p> <code>element</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1720">Returns the collection element associated with a particular key.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1720">300</a></p>
-	    </td></tr><tr><td><p> <code>element-setter</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1722">Sets the collection element associated with a particular key.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1722">301</a></p>
-	    </td></tr><tr><td><p> <code>size</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1702">Returns the size of its argument.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1702">295</a></p>
-	    </td></tr><tr><td><p> <code>key-test</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1714">Returns the function used by its collection argument to compare keys.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1714">298</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>forward-iteration-protocol</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-2-1540">Returns a group of functions used to iterate over the elements of a collection.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-2-1540">337</a></p>
+	    </td></tr><tr><td><p><code>table-protocol</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1852">Returns functions used to implement the iteration protocol for tables.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1852">340</a></p>
+	    </td></tr><tr><td><p><code>remove-key!</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1840">Modifies an explicit key collection so it no longer has a particular key.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1840">335</a></p>
+	    </td></tr><tr><td><p><code>element</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1720">Returns the collection element associated with a particular key.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1720">300</a></p>
+	    </td></tr><tr><td><p><code>element-setter</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1722">Sets the collection element associated with a particular key.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1722">301</a></p>
+	    </td></tr><tr><td><p><code>size</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1702">Returns the size of its argument.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1702">295</a></p>
+	    </td></tr><tr><td><p><code>key-test</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1714">Returns the function used by its collection argument to compare keys.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1714">298</a></p>
 	  </td></tr></table>
 	  <table class="numbered"><caption><strong>Table 11-62</strong>  Methods on singleton(&lt;table&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>limited</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
-	    </td></tr><tr><td><p> <code>make</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1539">Returns a general instance of its first argument.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1539">258</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>limited</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
+	    </td></tr><tr><td><p><code>make</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">Returns a general instance of its first argument.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">258</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -1457,26 +1474,31 @@
 	<dd><p>None.</p></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>Calling <code>make</code> on <code>&lt;table&gt;</code> will return a general instance of <code>&lt;object-table&gt;</code>. Because <code>&lt;object-table&gt;</code> is abstract and instantiable but has no specified subclasses, every implementation must provide one or more concrete subclasses to instantiate. These concrete subclasses have no specified names, and their names are not exported by the Dylan module.</p>
-	  <p>The element type of <code>&lt;object-table&gt;</code> is <code>indefinite &lArr; &lt;object&gt;</code>.</p></dd>
+	  <p>Calling <code>make</code> on <code>&lt;table&gt;</code> will return a general instance
+	    of <code>&lt;object-table&gt;</code>. Because <code>&lt;object-table&gt;</code> is
+	    abstract and instantiable but has no specified subclasses, every implementation must
+	    provide one or more concrete subclasses to instantiate. These concrete subclasses have
+	    no specified names, and their names are not exported by the Dylan module.</p>
+	  <p>The element type of <code>&lt;object-table&gt;</code> is <code>indefinite &lArr;
+	      &lt;object&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;object-table&gt;</code> provides the following operations:</p>
 	  <table class="numbered"><caption><strong>Table 11-63</strong>  Methods on &lt;object-table&gt;</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>table-protocol</code></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1852">Returns functions used to implement the iteration protocol for tables.</a></p>
-	      </td><td><p> <a href="Collection_Operations#MARKER-9-1852">340</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>table-protocol</code></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1852">Returns functions used to implement the iteration protocol for tables.</a></p>
+	      </td><td><p><a href="Collection_Operations#MARKER-9-1852">340</a></p>
 	  </td></tr></table><p class="Anchor"> <a name="MARKER-2-1464"></a><a name="MARKER-2-1465"></a></p>
 	  <table class="numbered"><caption><strong>Table 11-64</strong>  Methods on singleton(&lt;object-table&gt;)</caption>
-	    <tr><th class="primary"><p> Function</p>
-	      </th><th><p> Description</p>
-	      </th><th><p> Page</p>
-	    </th></tr><tr><td><p> <code>limited</code></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
-	      </td><td><p> <a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
+	    <tr><th class="primary"><p>Function</p>
+	      </th><th><p>Description</p>
+	      </th><th><p>Page</p>
+	    </th></tr><tr><td><p><code>limited</code></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a limited subtype of a class.</a></p>
+	      </td><td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p>
 	  </td></tr></table>
 	</dd>
       </dl>
@@ -1486,9 +1508,19 @@
 
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a class="previous" title="Go to previous page" href="Number_Classes"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Function_Classes"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
-      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-      <p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently revised.</p>
+      <p class="footer">
+	<a class="previous" title="Go to previous page" href="Number_Classes"><img alt="Previous" src="images/prev.gif" /></a>
+	<a class="next" title="Go to next page" href="Function_Classes"><img alt="Next" src="images/next.gif" /></a>
+	<a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a>
+	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      </p>
+      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+      <p class="footer">Originally generated
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>

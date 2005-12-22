@@ -54,7 +54,14 @@
     <div id="header">
       <div id="navigation-header">
 	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation"><a class="previous" title="Go to previous page" href="Collection_Operations"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Functional_Operations"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+	<p id="basic-navigation">
+	  <a class="previous" title="Go to previous page" href="Collection_Operations"><img alt="Previous" src="images/prev.gif" /></a>
+	  <a class="next" title="Go to next page" href="Functional_Operations"><img alt="Next" src="images/next.gif" /></a>
+	  <a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a>
+	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+	</p>
       </div>
 
       <div id="section-header">
@@ -129,11 +136,14 @@
       <a name="HEADING103-0"></a>
       <a name="UID-Built-In_Functions-419"></a>
       <h1 class="section-title"><a name="MARKER-9-1858"></a>Reflective Operations on Types</h1>
-      <p>The following functions return information on types and test type membership. They provide part of the implementation of the type protocol, as described in <a href="Type_Protocol#MARKER-9-536">"The Type Protocol" beginning on page 49</a>.</p>
+      <p>The following functions return information on types and test type membership. They provide
+	part of the implementation of the type protocol, as described
+	in <a href="Type_Protocol#MARKER-9-536">"The Type Protocol" beginning on page 49</a>.</p>
       <a name="HEADING103-2"></a>
       <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1859"></a><a name="MARKER-2-1860"></a>instance?</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1861"></a>Tests whether an object is an instance of a type.</p>
+      <p class="short-description"><a name="MARKER-9-1861"></a>Tests whether an object is an
+	instance of a type.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -167,7 +177,8 @@
       <a name="HEADING103-9"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1862">subtype?</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1863"></a>Tests whether a type is a subtype of another type.</p>
+      <p class="short-description"><a name="MARKER-9-1863"></a>Tests whether a type is a subtype of
+	another type.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -196,7 +207,9 @@
 	  </dl>
 	</dd>
 	<dt><span>Description:</span></dt>
-	<dd><p>Returns true if <var>type1 </var> is a subtype of <var>type2</var>. Subtype rules are given in <a href="Type_Protocol#MARKER-9-536">"The Type Protocol" on page 49</a>.</p></dd>
+	<dd><p>Returns true if <var>type1 </var> is a subtype of <var>type2</var>. Subtype rules are
+	    given in <a href="Type_Protocol#MARKER-9-536">"The Type Protocol" on page
+	      49</a>.</p></dd>
       </dl>
       <a name="HEADING103-16"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1864">object-class</code> </span><span class="attributes-summary">[Function]</span></h4>
@@ -229,12 +242,13 @@
 	  </dl>
 	</dd>
 	<dt><span>Description:</span></dt>
-	<dd><p>Returns the class of which <var>object</var>  is a direct instance.</p></dd>
+	<dd><p>Returns the class of which <var>object</var> is a direct instance.</p></dd>
       </dl>
       <a name="HEADING103-22"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1866">all-superclasses</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1867"></a>Returns the class precedence list a class.</p>
+      <p class="short-description"><a name="MARKER-9-1867"></a>Returns the class precedence list a
+	class.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -257,19 +271,28 @@
 	  <dl>
 	    <dt><var>sequence</var></dt>
 	    <dd>
-              <p>An instance of <code>&lt;sequence&gt;</code>. Each element in the sequence is an instance of <code>&lt;class&gt;</code>.</p>
+              <p>An instance of <code>&lt;sequence&gt;</code>. Each element in the sequence is an
+		instance of <code>&lt;class&gt;</code>.</p>
 	    </dd>
 	  </dl>
 	</dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>Returns the class precedence list of <var>class</var>. This is an ordered sequence of<var>class</var> and all its superclasses, as described in <a href="Classes#MARKER-9-590">"Computing the Class Precedence List" on page 54</a>.</p>
-	  <p>The result <var>sequence</var> should never be destructively modified. Doing so may cause unpredictable behavior. If <var>class</var> is sealed, an implementation may choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than returning the sequence of all superclasses.</p></dd>
+	  <p>Returns the class precedence list of <var>class</var>. This is an ordered sequence
+	    of<var>class</var> and all its superclasses, as described
+	    in <a href="Classes#MARKER-9-590">"Computing the Class Precedence List" on page
+	      54</a>.</p>
+	  <p>The result <var>sequence</var> should never be destructively modified. Doing so may
+	    cause unpredictable behavior. If <var>class</var> is sealed, an implementation may
+	    choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than
+	    returning the sequence of all superclasses.</p>
+	</dd>
       </dl>
       <a name="HEADING103-29"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1868">direct-superclasses</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1869"></a>Returns the direct superclasses of a class.</p>
+      <p class="short-description"><a name="MARKER-9-1869"></a>Returns the direct superclasses of a
+	class.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -292,19 +315,29 @@
 	  <dl>
 	    <dt><var>sequence</var></dt>
 	    <dd>
-              <p>An instance of <code>&lt;sequence&gt;</code>. Each element in the sequence is an instance of <code>&lt;class&gt;</code>.</p>
+              <p>An instance of <code>&lt;sequence&gt;</code>. Each element in the sequence is an
+		instance of <code>&lt;class&gt;</code>.</p>
 	    </dd>
 	  </dl>
 	</dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>Returns the direct superclasses of <var>class</var>  in a sequence. These are the classes that were passed as arguments to <code>make</code> or <code>define class</code> when the <var>class</var> was created. The order of the classes in the sequence is the same as the order in which they were passed to <code>define class</code> or <code>make</code> when <var>class</var> was created.</p>
-	  <p>The result <var>sequence</var> should never be destructively modified. Doing so may cause unpredictable behavior. If <var>class</var> is sealed, an implementation may choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than returning the direct superclasses.</p></dd>
+	  <p>Returns the direct superclasses of <var>class</var> in a sequence. These are the
+	    classes that were passed as arguments to <code>make</code> or <code>define class</code>
+	    when the <var>class</var> was created. The order of the classes in the sequence is the
+	    same as the order in which they were passed to <code>define class</code>
+	    or <code>make</code> when <var>class</var> was created.</p>
+	  <p>The result <var>sequence</var> should never be destructively modified. Doing so may
+	    cause unpredictable behavior. If <var>class</var> is sealed, an implementation may
+	    choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than
+	    returning the direct superclasses.</p>
+	</dd>
       </dl>
       <a name="HEADING103-36"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1870">direct-subclasses</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1871"></a>Returns the direct subclasses of a class.</p>
+      <p class="short-description"><a name="MARKER-9-1871"></a>Returns the direct subclasses of a
+	class.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -327,14 +360,21 @@
 	  <dl>
 	    <dt><var>sequence</var></dt>
 	    <dd>
-              <p>An instance of <code>&lt;sequence&gt;</code>. Each element in the sequence is an instance of <code>&lt;class&gt;</code>.</p>
+              <p>An instance of <code>&lt;sequence&gt;</code>. Each element in the sequence is an
+		instance of <code>&lt;class&gt;</code>.</p>
 	    </dd>
 	  </dl>
 	</dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p>Returns the direct subclasses of  <var>class</var>  in a sequence. These are the classes that have <var>class</var> as a direct superclass. The order of the classes in the sequence is not significant.</p>
-	  <p>The result <var>sequence</var> should never be destructively modified. Doing so may cause unpredictable behavior. If <var>class</var> is sealed, an implementation may choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than returning the direct subclasses.<a name="MARKER-2-1872"></a></p></dd>
+	  <p>Returns the direct subclasses of <var>class</var> in a sequence. These are the classes
+	    that have <var>class</var> as a direct superclass. The order of the classes in the
+	    sequence is not significant.</p>
+	  <p>The result <var>sequence</var> should never be destructively modified. Doing so may
+	    cause unpredictable behavior. If <var>class</var> is sealed, an implementation may
+	    choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than
+	    returning the direct subclasses.<a name="MARKER-2-1872"></a></p>
+	</dd>
       </dl>
 
     </div>
@@ -343,9 +383,19 @@
 
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a class="previous" title="Go to previous page" href="Collection_Operations"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Functional_Operations"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
-      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-      <p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently revised.</p>
+      <p class="footer">
+	<a class="previous" title="Go to previous page" href="Collection_Operations"><img alt="Previous" src="images/prev.gif" /></a>
+	<a class="next" title="Go to next page" href="Functional_Operations"><img alt="Next" src="images/next.gif" /></a>
+	<a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a>
+	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      </p>
+      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+      <p class="footer">Originally generated
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>

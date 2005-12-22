@@ -1,146 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
-<head>
-  
-  <!-- Relative Navigation -->
-  
-  <link rel="up" href="Introduction" />
-  <link rel="prev" href="Background_and_Goals" />
-  <link rel="next" href="Manual_Notation" />
-  
-  <!-- Absolute Navigation -->
-  
-  <link rel="top" href="Title" />
-  <link rel="start first" href="." />
-  <link rel="copyright" href="Copyrights" />
-  <link rel="contents" href="Contents" />
-  <link rel="glossary" href="Glossary" />
-  <link rel="index" href="Index" />
-  <link rel="last author" href="Colophon" />
-  
-  <!-- Chapters -->
-  
-  <link rel="chapter" title="About This Book" href="Preface" />
-  <link rel="chapter" title="1 Introduction" href="Introduction" />
-  <link rel="chapter" title="2 Syntax" href="Syntax" />
-  <link rel="chapter" title="3 Program Structure" href="Program_Structure" />
-  <link rel="chapter" title="4 Program Control" href="Program_Control" />
-  <link rel="chapter" title="5 Types and Classes" href="Types_and_Classes" />
-  <link rel="chapter" title="6 Functions" href="Functions" />
-  <link rel="chapter" title="7 Conditions" href="Conditions" />
-  <link rel="chapter" title="8 Collections" href="Collections" />
-  <link rel="chapter" title="9 Sealing" href="Sealing" />
-  <link rel="chapter" title="10 Macros" href="Macros" />
-  <link rel="chapter" title="11 The Built-In Classes" href="Built-In_Classes" />
-  <link rel="chapter" title="12 The Built-In Functions" href="Built-In_Functions" />
-  <link rel="chapter" title="13 Other Built-In Objects" href="Other_Built-In_Objects" />
-  <link rel="chapter" title="14 The Built-In Macros and Special Definitions" href="Built-In_Macros_and_Special_Definitions" />
-  
-  <!-- Appendices -->
-  
-  <link rel="appendix" title="A BNF" href="BNF" />
-  <link rel="appendix" title="B Exported Names" href="Exported_Names" />
-  
-  <!-- Stylesheet -->
-  
-  <link rel="stylesheet" href="drm.css" type="text/css" />
+  <head>
+    
+    <!-- Relative Navigation -->
+    
+    <link rel="up" href="Introduction" />
+    <link rel="prev" href="Background_and_Goals" />
+    <link rel="next" href="Manual_Notation" />
+    
+    <!-- Absolute Navigation -->
+    
+    <link rel="top" href="Title" />
+    <link rel="start first" href="." />
+    <link rel="copyright" href="Copyrights" />
+    <link rel="contents" href="Contents" />
+    <link rel="glossary" href="Glossary" />
+    <link rel="index" href="Index" />
+    <link rel="last author" href="Colophon" />
+    
+    <!-- Chapters -->
+    
+    <link rel="chapter" title="About This Book" href="Preface" />
+    <link rel="chapter" title="1 Introduction" href="Introduction" />
+    <link rel="chapter" title="2 Syntax" href="Syntax" />
+    <link rel="chapter" title="3 Program Structure" href="Program_Structure" />
+    <link rel="chapter" title="4 Program Control" href="Program_Control" />
+    <link rel="chapter" title="5 Types and Classes" href="Types_and_Classes" />
+    <link rel="chapter" title="6 Functions" href="Functions" />
+    <link rel="chapter" title="7 Conditions" href="Conditions" />
+    <link rel="chapter" title="8 Collections" href="Collections" />
+    <link rel="chapter" title="9 Sealing" href="Sealing" />
+    <link rel="chapter" title="10 Macros" href="Macros" />
+    <link rel="chapter" title="11 The Built-In Classes" href="Built-In_Classes" />
+    <link rel="chapter" title="12 The Built-In Functions" href="Built-In_Functions" />
+    <link rel="chapter" title="13 Other Built-In Objects" href="Other_Built-In_Objects" />
+    <link rel="chapter" title="14 The Built-In Macros and Special Definitions" href="Built-In_Macros_and_Special_Definitions" />
+    
+    <!-- Appendices -->
+    
+    <link rel="appendix" title="A BNF" href="BNF" />
+    <link rel="appendix" title="B Exported Names" href="Exported_Names" />
+    
+    <!-- Stylesheet -->
+    
+    <link rel="stylesheet" href="drm.css" type="text/css" />
 
-  <title>Language Overview &mdash; 1. Introduction &mdash; The DRM</title>
-</head>
-<body>
+    <title>Language Overview &mdash; 1. Introduction &mdash; The DRM</title>
+  </head>
+  <body>
 
-<div id="header">
-<div id="navigation-header">
-    <p id="book-title">The Dylan Reference Manual</p>
-    <p id="basic-navigation"><a class="previous" title="Go to previous page" href="Background_and_Goals"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Manual_Notation"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Introduction"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
-  </div>
+    <div id="header">
+      <div id="navigation-header">
+	<p id="book-title">The Dylan Reference Manual</p>
+	<p id="basic-navigation">
+	  <a class="previous" title="Go to previous page" href="Background_and_Goals"><img alt="Previous" src="images/prev.gif" /></a>
+	  <a class="next" title="Go to next page" href="Manual_Notation"><img alt="Next" src="images/next.gif" /></a>
+	  <a class="up" title="Go to start of chapter" href="Introduction"><img alt="Up" src="images/up.gif" /></a>
+	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+	</p>
+      </div>
 
-<div id="section-header">
-  <p id="section-prefix">Chapter 1</p>
-  <p id="section-name">Introduction</p>
-</div>
+      <div id="section-header">
+	<p id="section-prefix">Chapter 1</p>
+	<p id="section-name">Introduction</p>
+      </div>
 
-<div id="navigation-TOC">
-  <ul class="front-matter">
-    <li><a href="Title">Start</a></li>
-    <li><a href="Contents">Contents</a></li>
-    <li><a href="Preface">About This Book</a></li>
-  </ul>
-  <ol class="chapters">
-    <li><a href="Introduction">Introduction</a>
-      <ul>
-	<li><a href="Background_and_Goals">Background and Goals</a></li>
-	<li id="current">Language Overview</li>
-	<li><a href="Manual_Notation">Manual Notation</a></li>
-      </ul>
-    </li>
-    <li><a href="Syntax">Syntax</a></li>
-    <li><a href="Program_Structure">Program Structure</a></li>
-    <li><a href="Program_Control">Program Control</a></li>
-    <li><a href="Types_and_Classes">Types and Classes</a></li>
-    <li><a href="Functions">Functions</a></li>
-    <li><a href="Conditions">Conditions</a></li>
-    <li><a href="Collections">Collections</a></li>
-    <li><a href="Sealing">Sealing</a></li>
-    <li><a href="Macros">Macros</a></li>
-    <li><a href="Built-In_Classes">The Built-In Classes</a></li>
-    <li><a href="Built-In_Functions">The Built-In Functions</a></li>
-    <li><a href="Other_Built-In_Objects">Other Built-In Objects</a></li>
-    <li><a href="Built-In_Macros_and_Special_Definitions">The Built-In Macros and Special Definitions</a></li>
-  </ol>
-  <ol class="appendices">
-    <li><a href="BNF">BNF</a></li>
-    <li><a href="Exported_Names">Exported Names</a></li>
-  </ol>
-  <ul class="back-matter">
-    <li><a href="Glossary">Glossary</a></li>
-    <li><a href="Index">Index</a></li>
-    <li><a href="Colophon">Colophon</a></li>
-  </ul>
-  <ul class="errata">
-    <li><a href="Errata">Errata</a></li>
-  </ul>
-</div>
+      <div id="navigation-TOC">
+	<ul class="front-matter">
+	  <li><a href="Title">Start</a></li>
+	  <li><a href="Contents">Contents</a></li>
+	  <li><a href="Preface">About This Book</a></li>
+	</ul>
+	<ol class="chapters">
+	  <li><a href="Introduction">Introduction</a>
+	    <ul>
+	      <li><a href="Background_and_Goals">Background and Goals</a></li>
+	      <li id="current">Language Overview</li>
+	      <li><a href="Manual_Notation">Manual Notation</a></li>
+	    </ul>
+	  </li>
+	  <li><a href="Syntax">Syntax</a></li>
+	  <li><a href="Program_Structure">Program Structure</a></li>
+	  <li><a href="Program_Control">Program Control</a></li>
+	  <li><a href="Types_and_Classes">Types and Classes</a></li>
+	  <li><a href="Functions">Functions</a></li>
+	  <li><a href="Conditions">Conditions</a></li>
+	  <li><a href="Collections">Collections</a></li>
+	  <li><a href="Sealing">Sealing</a></li>
+	  <li><a href="Macros">Macros</a></li>
+	  <li><a href="Built-In_Classes">The Built-In Classes</a></li>
+	  <li><a href="Built-In_Functions">The Built-In Functions</a></li>
+	  <li><a href="Other_Built-In_Objects">Other Built-In Objects</a></li>
+	  <li><a href="Built-In_Macros_and_Special_Definitions">The Built-In Macros and Special Definitions</a></li>
+	</ol>
+	<ol class="appendices">
+	  <li><a href="BNF">BNF</a></li>
+	  <li><a href="Exported_Names">Exported Names</a></li>
+	</ol>
+	<ul class="back-matter">
+	  <li><a href="Glossary">Glossary</a></li>
+	  <li><a href="Index">Index</a></li>
+	  <li><a href="Colophon">Colophon</a></li>
+	</ul>
+	<ul class="errata">
+	  <li><a href="Errata">Errata</a></li>
+	</ul>
+      </div>
 
-<hr />
+      <hr />
 
-</div>
+    </div>
 
-<div id="content">
-<a name="HEADING7-0"></a>
-<a name="UID-Introduction-1948"></a>
-<h1 class="section-title">Language Overview</h1>
-<p>Dylan is written in a very regular syntax. In addition to making the language easier to read and write, the layered composition of the syntax supports a macro system that is language-aware. The macro system does not simply perform text substitution, but rather performs syntax fragment substitution. This allows the extension of the language within bounds that are safe, semantically well-defined, and in accord with the <q>syntactic flavor</q> of the language.</p>
-<p>Bindings (Dylan's analog to variables) are lexically scoped and fully resolved at compile time. Binding names are not retained in running programs. The module system allows bindings to be private or shared. Names can be changed upon import to a module, so the possibility of irreconcilable name conflicts among separately developed modules is eliminated. Modules can provide multiple interfaces to the same code base, decreasing the chance of exposing a client to inappropriate interfaces.</p>
-<p>Flow of control is supported through polymorphic function calls, a variety of conditional and iteration constructs, and a nonlocal transfer mechanism with protected regions.</p>
-<p>All objects are <a name="MARKER-2-170"></a>first class, including numbers, classes and functions. This means that  all objects can be used as arguments to functions, returned as values, and stored in data structures, and all are subject to introspection. All objects are typed, and type-safety is guaranteed, either through compile-time or runtime type checking. There are no facilities for <a name="MARKER-2-171"></a>deallocating objects. Objects are deallocated automatically when they can no longer be reached by a program.</p>
-<p>Types are used to categorize and specify the behavior of objects. An object may be an instance of any number of types. Classes are a particular kind of type used to define the structure and inheritance of instances. Every Dylan object is a direct instance of exactly one class, and a general instance of that class and each of its superclasses. The root of the class hierarchy (and of the type hierarchy) is a class called <code>&lt;object&gt;</code>.</p>
-<p>Values associated with an instance are stored in slots of the instance.</p>
-<p>Classes do not define scopes for names. Names are scoped by modules and local binding declarations.</p>
-<p>Functions are the active portions of Dylan programs. Functions accept zero or more arguments and return zero or more values. Functions are specialized to accept arguments of particular types, and will signal an error if they are called with arguments that are not instances of those types. The return values of functions are similarly type-checked.</p>
-<p>A method is a basic unit of callable code. When a method is called, it creates local bindings for its arguments and executes a body in the resulting environment. A method can be called directly by a program or indirectly through a generic function that contains it.</p>
-<p>A generic function contains a number of methods. When a generic function is called, it finds the methods that are applicable to the arguments, and passes control to the most specific of those methods.</p>
-<p>Slots are accessed through functions. This ensures that instances present an abstract interface to their clients, which assists both in polymorphism and in program redesign.</p>
-<p>Sealing declarations allow the programmer to declare portions of the class hierarchy and set of functions to be invariant. This supports the enforcement of protocols, compile-time resolution of polymorphic behavior, and efficient inline slot access. Portions of a program that are not sealed can be extended at run time or by additional libraries.</p>
-<p>Dylan includes a number of predefined libraries, including an exception system, collections, arithmetic, higher-order functions, and introspection.</p>
-<p>The exception system is object-based. It uses calling semantics (thereby allowing recovery)  but also provides exiting handlers.</p>
-<p>The collection system includes a number of predefined collection classes and operations built on a simple iteration protocol. Additional classes defined in terms of this protocol have access to the full suite of collection operations.</p>
-<p>Arithmetic is fully object-based and extensible.</p>
-<p>A library of higher-order operations on functions supports function composition.</p>
-<p>A library of introspective functions supports the run time examination of objects, including classes and functions.</p>
+    <div id="content">
+      <a name="HEADING7-0"></a>
+      <a name="UID-Introduction-1948"></a>
+      <h1 class="section-title">Language Overview</h1>
+      <p>Dylan is written in a very regular syntax. In addition to making the language easier to
+	read and write, the layered composition of the syntax supports a macro system that is
+	language-aware. The macro system does not simply perform text substitution, but rather
+	performs syntax fragment substitution. This allows the extension of the language within
+	bounds that are safe, semantically well-defined, and in accord with the <q>syntactic
+	flavor</q> of the language.</p>
+      <p>Bindings (Dylan's analog to variables) are lexically scoped and fully resolved at compile
+	time. Binding names are not retained in running programs. The module system allows bindings
+	to be private or shared. Names can be changed upon import to a module, so the possibility of
+	irreconcilable name conflicts among separately developed modules is eliminated. Modules can
+	provide multiple interfaces to the same code base, decreasing the chance of exposing a
+	client to inappropriate interfaces.</p>
+      <p>Flow of control is supported through polymorphic function calls, a variety of conditional
+	and iteration constructs, and a nonlocal transfer mechanism with protected regions.</p>
+      <p>All objects are <a name="MARKER-2-170"></a>first class, including numbers, classes and
+	functions. This means that all objects can be used as arguments to functions, returned as
+	values, and stored in data structures, and all are subject to introspection. All objects are
+	typed, and type-safety is guaranteed, either through compile-time or runtime type
+	checking. There are no facilities for <a name="MARKER-2-171"></a>deallocating
+	objects. Objects are deallocated automatically when they can no longer be reached by a
+	program.</p>
+      <p>Types are used to categorize and specify the behavior of objects. An object may be an
+	instance of any number of types. Classes are a particular kind of type used to define the
+	structure and inheritance of instances. Every Dylan object is a direct instance of exactly
+	one class, and a general instance of that class and each of its superclasses. The root of
+	the class hierarchy (and of the type hierarchy) is a class
+	called <code>&lt;object&gt;</code>.</p>
+      <p>Values associated with an instance are stored in slots of the instance.</p>
+      <p>Classes do not define scopes for names. Names are scoped by modules and local binding
+	declarations.</p>
+      <p>Functions are the active portions of Dylan programs. Functions accept zero or more
+	arguments and return zero or more values. Functions are specialized to accept arguments of
+	particular types, and will signal an error if they are called with arguments that are not
+	instances of those types. The return values of functions are similarly type-checked.</p>
+      <p>A method is a basic unit of callable code. When a method is called, it creates local
+	bindings for its arguments and executes a body in the resulting environment. A method can be
+	called directly by a program or indirectly through a generic function that contains it.</p>
+      <p>A generic function contains a number of methods. When a generic function is called, it
+	finds the methods that are applicable to the arguments, and passes control to the most
+	specific of those methods.</p>
+      <p>Slots are accessed through functions. This ensures that instances present an abstract
+	interface to their clients, which assists both in polymorphism and in program redesign.</p>
+      <p>Sealing declarations allow the programmer to declare portions of the class hierarchy and
+	set of functions to be invariant. This supports the enforcement of protocols, compile-time
+	resolution of polymorphic behavior, and efficient inline slot access. Portions of a program
+	that are not sealed can be extended at run time or by additional libraries.</p>
+      <p>Dylan includes a number of predefined libraries, including an exception system,
+	collections, arithmetic, higher-order functions, and introspection.</p>
+      <p>The exception system is object-based. It uses calling semantics (thereby allowing recovery)
+	but also provides exiting handlers.</p>
+      <p>The collection system includes a number of predefined collection classes and operations
+	built on a simple iteration protocol. Additional classes defined in terms of this protocol
+	have access to the full suite of collection operations.</p>
+      <p>Arithmetic is fully object-based and extensible.</p>
+      <p>A library of higher-order operations on functions supports function composition.</p>
+      <p>A library of introspective functions supports the run time examination of objects,
+	including classes and functions.</p>
 
-</div>
+    </div>
 
-<div id="footer">
+    <div id="footer">
 
-<hr class="footer" />
-<address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-<p class="footer"><a class="previous" title="Go to previous page" href="Background_and_Goals"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Manual_Notation"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Introduction"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
-<p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-<p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently revised.</p>
+      <hr class="footer" />
+      <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
+      <p class="footer">
+	<a class="previous" title="Go to previous page" href="Background_and_Goals"><img alt="Previous" src="images/prev.gif" /></a>
+	<a class="next" title="Go to next page" href="Manual_Notation"><img alt="Next" src="images/next.gif" /></a>
+	<a class="up" title="Go to start of chapter" href="Introduction"><img alt="Up" src="images/up.gif" /></a>
+	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      </p>
+      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+      <p class="footer">Originally generated
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
-</div>
-</body>
+    </div>
+  </body>
 </html>

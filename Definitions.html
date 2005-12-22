@@ -54,7 +54,14 @@
     <div id="header">
       <div id="navigation-header">
 	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation"><a class="previous" title="Go to previous page" href="Bodies"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Local_Declarations"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+	<p id="basic-navigation">
+	  <a class="previous" title="Go to previous page" href="Bodies"><img alt="Previous" src="images/prev.gif" /></a>
+	  <a class="next" title="Go to next page" href="Local_Declarations"><img alt="Next" src="images/next.gif" /></a>
+	  <a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a>
+	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+	</p>
       </div>
 
       <div id="section-header">
@@ -125,29 +132,29 @@
       <a name="UID-Syntax-1444"></a>
       <h1 class="section-title">Definitions</h1>
       <p>A <dfn id="MARKER-2-234">definition</dfn> is either a call to a user-defined defining
-      macro, a call to a built-in defining macro, or a special definition. Typically, a definition
-      defines a binding in the module containing the definition. Some definitions define more than
-      one binding, and some do not define any bindings.</p>
+	macro, a call to a built-in defining macro, or a special definition. Typically, a definition
+	defines a binding in the module containing the definition. Some definitions define more than
+	one binding, and some do not define any bindings.</p>
       <p>A <dfn id="MARKER-2-235">user-defined defining macro</dfn> is a macro that defines a
-      definition in terms of other constructs. A call to a user-defined defining macro always begins
-      with the word <code>define</code> and includes the name of the defining macro. This name when
-      suffixed by <q><code>-definer</code></q> is the name of a visible binding whose value is the
-      defining macro. The rest of the syntax of a call to a user-defined defining macro is
-      determined by the particular macro. Some definitions include a body. Advanced programmers
-      often define new defining macros as part of structuring a program in a readable and modular
-      way.</p>
+	definition in terms of other constructs. A call to a user-defined defining macro always
+	begins with the word <code>define</code> and includes the name of the defining macro. This
+	name when suffixed by <q><code>-definer</code></q> is the name of a visible binding whose
+	value is the defining macro. The rest of the syntax of a call to a user-defined defining
+	macro is determined by the particular macro. Some definitions include a body. Advanced
+	programmers often define new defining macros as part of structuring a program in a readable
+	and modular way.</p>
       <p>A <dfn id="MARKER-2-236">built-in defining macro</dfn> is like a user-defined defining
-      macro but is specified as part of the Dylan language. There are eight built-in defining
-      macros: <code>define class</code>, <code>define constant</code>, <code>define
-      generic</code>, <code>define domain</code>, <code>define library</code>, <code>define
-      method</code>, <code>define module</code>, and <code>define variable</code>.</p>
+	macro but is specified as part of the Dylan language. There are eight built-in defining
+	macros: <code>define class</code>, <code>define constant</code>, <code>define
+	generic</code>, <code>define domain</code>, <code>define library</code>, <code>define
+	method</code>, <code>define module</code>, and <code>define variable</code>.</p>
       <p>A <dfn id="MARKER-2-237">special definition</dfn> is a definition construct that is built
-      into the grammar of Dylan. There is only one special definition: <code>define
-      macro</code>.</p>
+	into the grammar of Dylan. There is only one special definition: <code>define
+	macro</code>.</p>
       <p>An implementation can add new kinds of definitions as language extensions. Such definitions
-      may be implemented as special definitions. However, they will more commonly take the form of
-      user-defined definition macros that are the values of bindings exported by
-      implementation-defined modules.</p>
+	may be implemented as special definitions. However, they will more commonly take the form of
+	user-defined definition macros that are the values of bindings exported by
+	implementation-defined modules.</p>
 
     </div>
 
@@ -155,12 +162,19 @@
 
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a class="previous" title="Go to previous page" href="Bodies"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Local_Declarations"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
-      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered
-      trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+      <p class="footer">
+	<a class="previous" title="Go to previous page" href="Bodies"><img alt="Previous" src="images/prev.gif" /></a>
+	<a class="next" title="Go to next page" href="Local_Declarations"><img alt="Next" src="images/next.gif" /></a>
+	<a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a>
+	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      </p>
+      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
       <p class="footer">Originally generated
-      with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
-      revised.</p>
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>

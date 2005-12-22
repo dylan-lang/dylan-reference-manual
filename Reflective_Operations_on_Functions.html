@@ -54,7 +54,14 @@
     <div id="header">
       <div id="navigation-header">
 	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation"><a class="previous" title="Go to previous page" href="Function_Application"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Operations_on_Conditions"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+	<p id="basic-navigation">
+	  <a class="previous" title="Go to previous page" href="Function_Application"><img alt="Previous" src="images/prev.gif" /></a>
+	  <a class="next" title="Go to next page" href="Operations_on_Conditions"><img alt="Next" src="images/next.gif" /></a>
+	  <a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a>
+	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+	</p>
       </div>
 
       <div id="section-header">
@@ -138,7 +145,7 @@
       <h4 class="item-title"><code><a name="MARKER-2-1893"></a><a name="MARKER-2-1894"></a>generic-function-methods</code> <span class="attributes-summary">[Function]</span> </h4>
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1895"></a>Returns the methods of a generic
-      function.</p>
+	function.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -162,23 +169,25 @@
 	    <dt><var>sequence</var></dt>
 	    <dd>
               <p>An instance of <code>&lt;sequence&gt;</code>. Each element in the sequence is an
-              instance of <code>&lt;method&gt;</code>.</p>
+		instance of <code>&lt;method&gt;</code>.</p>
 	    </dd>
 	  </dl>
 	</dd>
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>Returns a sequence of all of the methods in <var>generic-function</var>. The order of
-	  the methods in the sequence is not significant. The sequence returned should never be
-	  destructively modified. Doing so may cause unpredictable behavior.</p>
+	    the methods in the sequence is not significant. The sequence returned should never be
+	    destructively modified. Doing so may cause unpredictable behavior.</p>
 	  <p>If <var>generic-function</var> is sealed, an implementation may choose not to return a
-	  sequence of methods, but instead signal an error of
-	  type <code>&lt;sealed-object-error&gt;</code>.</p></dd>
+	    sequence of methods, but instead signal an error of
+	    type <code>&lt;sealed-object-error&gt;</code>.</p>
+	</dd>
       </dl>
       <a name="HEADING106-9"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1896">add-method</code>   </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1897"></a>Adds a method to a generic function.</p>
+      <p class="short-description"><a name="MARKER-9-1897"></a>Adds a method to a generic
+	function.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -210,28 +219,29 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>Adds <var>method</var> to <var>generic-function</var>, thereby modifying
-	  the <var>generic-function</var>.</p>
+	    the <var>generic-function</var>.</p>
 	  <p>Programs do not commonly call <code>add-method</code> directly. It is called
-	  by <code>define method</code>.</p>
+	    by <code>define method</code>.</p>
 	  <p>If you add a method to a generic function, and the generic function already has a
-	  method with the exact same specializers, then the old method is replaced with the new
-	  one.</p>
+	    method with the exact same specializers, then the old method is replaced with the new
+	    one.</p>
 	  <p>A single method may be added to any number of generic functions.</p>
 	  <p><code>add-method</code> returns two values. The first is the new <var>method</var>. The
-	  second will be either the method in <var>generic-function</var> that is being replaced
-	  by <var>method</var>, or it will be <code>#f</code> if no method is being replaced.</p>
+	    second will be either the method in <var>generic-function</var> that is being replaced
+	    by <var>method</var>, or it will be <code>#f</code> if no method is being replaced.</p>
 	  <p><code>add-method</code> may signal an error of
-	  type <code>&lt;sealed-object-error&gt;</code> if adding the method or replacing an
-	  existing method would cause a sealing violation.</p>
+	    type <code>&lt;sealed-object-error&gt;</code> if adding the method or replacing an
+	    existing method would cause a sealing violation.</p>
 	  <p>If <var>generic-function</var> is sealed, or if <var>method</var> is in a sealed domain
-	  of <var>generic-function</var>, then an error of
-	  type <code>&lt;sealed-object-error&gt;</code> is signaled.</p></dd>
+	    of <var>generic-function</var>, then an error of
+	    type <code>&lt;sealed-object-error&gt;</code> is signaled.</p>
+	</dd>
       </dl>
       <a name="HEADING106-23"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1898">generic-function-mandatory-keywords</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1899"></a>Returns the mandatory keywords of a
-      generic function, if any.</p>
+	generic function, if any.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -261,18 +271,20 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>If <var>generic-function</var> accepts keyword
-	  arguments, <code>generic-function-mandatory-keywords</code> returns a collection of the
-	  mandatory keywords for <var>generic-function</var>. This collection will be empty if the
-	  generic function accepts keywords but does not have any mandatory
-	  keywords. <code>generic-function-mandatory-keywords</code> returns <code>#f</code>
-	  if <var>generic-function</var> does not accept keyword arguments.</p>
+	    arguments, <code>generic-function-mandatory-keywords</code> returns a collection of the
+	    mandatory keywords for <var>generic-function</var>. This collection will be empty if the
+	    generic function accepts keywords but does not have any mandatory
+	    keywords. <code>generic-function-mandatory-keywords</code> returns <code>#f</code>
+	    if <var>generic-function</var> does not accept keyword arguments.</p>
 	  <p>The collection returned should never be destructively modified. Doing so may cause
-	  unpredictable behavior.</p></dd>
+	    unpredictable behavior.</p>
+	</dd>
       </dl>
       <a name="HEADING106-30"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1900">function-specializers</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1901"></a>Returns the specializers of a function.</p>
+      <p class="short-description"><a name="MARKER-9-1901"></a>Returns the specializers of a
+	function.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -296,24 +308,26 @@
 	    <dt><var>sequence</var></dt>
 	    <dd>
               <p>An instance of <code>&lt;sequence&gt;</code>. The elements of the sequence are
-              instances of <code>&lt;type&gt;</code>.</p>
+		instances of <code>&lt;type&gt;</code>.</p>
 	    </dd>
 	  </dl>
 	</dd>
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>Returns a sequence of the specializers for <var>function</var>. The length of the
-	  sequence will equal the number of required arguments of <var>function</var>. The first
-	  element of the sequence will be the specializer of the first argument
-	  of <var>function</var>, the second will be the specializer of the second argument, and so
-	  on.</p>
+	    sequence will equal the number of required arguments of <var>function</var>. The first
+	    element of the sequence will be the specializer of the first argument
+	    of <var>function</var>, the second will be the specializer of the second argument, and
+	    so on.</p>
 	  <p>The sequence returned should never be destructively modified. Doing so may cause
-	  unpredictable behavior.</p></dd>
+	    unpredictable behavior.</p>
+	</dd>
       </dl>
       <a name="HEADING106-37"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1902">function-arguments</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1903"></a>Returns information about the arguments accepted by a function.</p>
+      <p class="short-description"><a name="MARKER-9-1903"></a>Returns information about the
+	arguments accepted by a function.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -342,12 +356,13 @@
 	    <dd><p>An instance of <code>&lt;boolean&gt;</code>.</p></dd>
 	    <dt><var>kwd-sequence</var></dt>
 	    <dd>
-	      <p class="errata right"><a href="Errata#p354_1"
-					 name="errata_p354_1"><strong>Errata:</strong></a>
-		<code>&lt;keyword&gt;</code> should be <code>&lt;symbol&gt;</code>.</p>
+	      <p class="errata right">
+		<a href="Errata#p354_1" name="errata_p354_1"><strong>Errata:</strong></a>
+		<code>&lt;keyword&gt;</code> should be <code>&lt;symbol&gt;</code>.
+	      </p>
 	      <p>Either <code>#f</code> or the symbol <code>#"all"</code> or an instance
-	      of <code>&lt;collection&gt;</code> whose elements are instances
-	      of <code>&lt;keyword&gt;</code>.</p>
+		of <code>&lt;collection&gt;</code> whose elements are instances
+		of <code>&lt;keyword&gt;</code>.</p>
 	    </dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
@@ -355,24 +370,25 @@
 	  <p>Returns three values:</p>
 	  <ul>
 	    <li><var>required-number</var> is the number of required arguments accepted by the
-	    function.</li>
+	      function.</li>
 	    <li><var>rest-boolean</var> indicates whether the function accepts a variable number of
-	    arguments.</li>
+	      arguments.</li>
 	    <li><var>kwd-sequence</var> indicates whether the function accepts keyword arguments. If
-	    the value is <code>#f</code> then the function does not accept keyword
-	    arguments. Otherwise, the function does accept keyword arguments, and the value is
-	    either a collection of the keywords that are permissible for any call to the function,
-	    or the symbol <code>#"all"</code> if all keywords are permitted by the function.</li>
+	      the value is <code>#f</code> then the function does not accept keyword
+	      arguments. Otherwise, the function does accept keyword arguments, and the value is
+	      either a collection of the keywords that are permissible for any call to the function,
+	      or the symbol <code>#"all"</code> if all keywords are permitted by the function.</li>
 	  </ul>
 	  <p>Note that particular calls to a generic function may accept additional keywords not
-	  included in the third value returned by <code>function-arguments</code>, by virtue of
-	  their being recognized by applicable methods.</p>
+	    included in the third value returned by <code>function-arguments</code>, by virtue of
+	    their being recognized by applicable methods.</p>
 	</dd>
       </dl>
       <a name="HEADING106-49"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1904">function-return-values</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1905"></a>Returns information about the values returned by a function.</p>
+      <p class="short-description"><a name="MARKER-9-1905"></a>Returns information about the values
+	returned by a function.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -396,31 +412,32 @@
 	    <dt><var>return-value-types</var></dt>
 	    <dd>
               <p>An instance of <code>&lt;sequence&gt;</code>. The elements of the sequence are
-              instances of <code>&lt;type&gt;</code>.</p>
+		instances of <code>&lt;type&gt;</code>.</p>
 	    </dd>
 	    <dt><var>rest-return-value</var></dt>
 	    <dd><p>An instance of <code>&lt;type&gt;</code>
-	    or <code>#f</code>.</p></dd>
+		or <code>#f</code>.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd><p>Returns two values:</p>
 	  <ul>
 	    <li><var>return-value-types</var> is a sequence of the types of values returned by the
-	    function. The length of the sequence equals the number of required return values of the
-	    function. The first element of the sequence is the type of the first return value, the
-	    second is the type of the second return value, etc. This sequence returned should never
-	    be destructively modified. Doing so may cause unpredictable behavior.</li>
+	      function. The length of the sequence equals the number of required return values of
+	      the function. The first element of the sequence is the type of the first return value,
+	      the second is the type of the second return value, etc. This sequence returned should
+	      never be destructively modified. Doing so may cause unpredictable behavior.</li>
 	    <li><var>rest-return-value</var> indicates whether the function returns a variable
-	    number of values and, if so, the type of values that may be returned after the required
-	    return values. If the function does not return a variable number of
-	    values, <code>#f</code> is returned; otherwise a type is returned.</li>
+	      number of values and, if so, the type of values that may be returned after the
+	      required return values. If the function does not return a variable number of
+	      values, <code>#f</code> is returned; otherwise a type is returned.</li>
 	  </ul>
 	</dd>
       </dl>
       <a name="HEADING106-58"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1906">applicable-method?</code>    </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1907"></a>Tests if a function is applicable to sample arguments.</p>
+      <p class="short-description"><a name="MARKER-9-1907"></a>Tests if a function is applicable to
+	sample arguments.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -451,21 +468,22 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>Returns true if <var>function</var> is a method that would be applicable
-	  to <var>sample-args</var> or if it is a generic function that contains a method that would
-	  be applicable to <var>sample-args</var>.</p>
+	    to <var>sample-args</var> or if it is a generic function that contains a method that
+	    would be applicable to <var>sample-args</var>.</p>
 	  <p>Note that if <var>function</var> is a generic function, then calling it with
-	  the <var>sample-args</var> may still signal an error, even
-	  if <code>applicable-method?</code> returns true. This is because the generic function may
-	  contain methods that are ambiguous relative to
-	  the <var>sample-args</var>. See <a href="Method_Dispatch#MARKER-9-849">"Method
-	  Specificity" on page 96</a> for a complete description of ambiguous methods.</p>
+	    the <var>sample-args</var> may still signal an error, even
+	    if <code>applicable-method?</code> returns true. This is because the generic function
+	    may contain methods that are ambiguous relative to
+	    the <var>sample-args</var>. See <a href="Method_Dispatch#MARKER-9-849"><q>Method
+	      Specificity</q> on page 96</a> for a complete description of ambiguous methods.</p>
 	  <p>If <var>function</var> is a sealed generic function, <code>applicable-method?</code>
-	  may signal an error of type <code>&lt;sealed-object-error&gt;</code>.</p></dd>
+	    may signal an error of type <code>&lt;sealed-object-error&gt;</code>.</p></dd>
       </dl>
       <a name="HEADING106-67"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1908">sorted-applicable-methods</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1909"></a>Returns all the methods in a generic function that are applicable to sample arguments, sorted in order of specificity.</p>
+      <p class="short-description"><a name="MARKER-9-1909"></a>Returns all the methods in a generic
+	function that are applicable to sample arguments, sorted in order of specificity.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -490,29 +508,31 @@
 	    <dt><var>sorted-methods </var></dt>
 	    <dd>
               <p>An instance of <code>&lt;sequence&gt;</code>. Elements of the sequence are
-              instances of <code>&lt;method&gt;</code>.</p>
+		instances of <code>&lt;method&gt;</code>.</p>
 	    </dd>
 	    <dt><var>unsorted-methods</var></dt>
-	    <dd><p>An instance of <code>&lt;sequence&gt;</code>. Elements of
-	    the collection are instances of <code>&lt;method&gt;</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;sequence&gt;</code>. Elements of the collection are
+		instances of <code>&lt;method&gt;</code>.</p></dd>
 	</dl></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>Returns two sequences that, taken together, contain the methods
-	  in <var>generic-function</var> that are applicable to
-	  the <var>sample-args</var>. <var>sorted-methods</var> contains methods that are more
-	  specific than every method that follows them. <var>unsorted-methods</var> begins at the
-	  first point of ambiguity; it contains the methods that cannot be sorted.</p>
+	    in <var>generic-function</var> that are applicable to
+	    the <var>sample-args</var>. <var>sorted-methods</var> contains methods that are more
+	    specific than every method that follows them. <var>unsorted-methods</var> begins at the
+	    first point of ambiguity; it contains the methods that cannot be sorted.</p>
 	  <p>The sequences returned should never be destructively modified. Doing so may cause
-	  unpredictable behavior.</p>
+	    unpredictable behavior.</p>
 	  <p>If <var>generic-function</var> is sealed, an implementation may choose not to return
-	  two sequences of methods, but instead signal an error of
-	  type <code>&lt;sealed-object-error&gt;</code>.</p></dd>
+	    two sequences of methods, but instead signal an error of
+	    type <code>&lt;sealed-object-error&gt;</code>.</p>
+	</dd>
       </dl>
       <a name="HEADING106-77"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1910">find-method</code>    </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1911"></a>Returns the method in a generic function that has particular specializers.</p>
+      <p class="short-description"><a name="MARKER-9-1911"></a>Returns the method in a generic
+	function that has particular specializers.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -529,8 +549,8 @@
               <p>An instance of <code>&lt;generic-function&gt;</code>.</p>
 	    </dd>
 	    <dt><var>specializers</var></dt>
-	    <dd><p>An instance of <code>&lt;sequence&gt;</code>. Elements of
-	    the sequence are instances of <code>&lt;type&gt;</code>.</p></dd>
+	    <dd><p>An instance of <code>&lt;sequence&gt;</code>. Elements of the sequence are
+		instances of <code>&lt;type&gt;</code>.</p></dd>
 	</dl></dd>
 	<dt><span>Values:</span></dt>
 	<dd>
@@ -544,16 +564,18 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>Returns the method in <var>generic-function</var> that has the specializers
-	  in <var>specializers</var> as its specializers. The specializers must match exactly for a
-	  method to be returned.</p>
+	    in <var>specializers</var> as its specializers. The specializers must match exactly for
+	    a method to be returned.</p>
 	  <p>If <var>generic-function</var> is sealed, an implementation may choose to signal an
-	  error of type <code>&lt;sealed-object-error&gt;</code> rather than return a
-	  value.</p></dd>
+	    error of type <code>&lt;sealed-object-error&gt;</code> rather than return a
+	    value.</p>
+	</dd>
       </dl>
       <a name="HEADING106-85"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1912">remove-method</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1913"></a>Removes a method from a generic function.</p>
+      <p class="short-description"><a name="MARKER-9-1913"></a>Removes a method from a generic
+	function.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -584,12 +606,12 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>Removes <var>method</var> from <var>generic-function</var> and
-	  returns <var>method</var>.</p>
+	    returns <var>method</var>.</p>
 	  <p>This operation modifies the <var>generic-function</var>.</p>
 	  <p>If <var>generic-function</var> is sealed, or if <var>method</var> is in a sealed domain
-	  of <var>generic-function</var>, then an error of
-	  type <code>&lt;sealed-object-error&gt;</code> is
-	  signaled.<a name="MARKER-2-1914"></a><code><a name="MARKER-2-1915"></a></code>
+	    of <var>generic-function</var>, then an error of
+	    type <code>&lt;sealed-object-error&gt;</code> is
+	    signaled.<a name="MARKER-2-1914"></a><code><a name="MARKER-2-1915"></a></code>
 	  </p>
 	</dd>
       </dl>
@@ -600,12 +622,19 @@
 
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a class="previous" title="Go to previous page" href="Function_Application"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Operations_on_Conditions"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+      <p class="footer">
+	<a class="previous" title="Go to previous page" href="Function_Application"><img alt="Previous" src="images/prev.gif" /></a>
+	<a class="next" title="Go to next page" href="Operations_on_Conditions"><img alt="Next" src="images/next.gif" /></a>
+	<a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a>
+	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      </p>
       <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
-      registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
       <p class="footer">Originally generated
-      with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
-      revised.</p>
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>

@@ -54,7 +54,14 @@
     <div id="header">
       <div id="navigation-header">
 	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation"><a class="previous" title="Go to previous page" href="Arithmetic_Operations"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Collection_Operations"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+	<p id="basic-navigation">
+	  <a class="previous" title="Go to previous page" href="Arithmetic_Operations"><img alt="Previous" src="images/prev.gif" /></a>
+	  <a class="next" title="Go to next page" href="Collection_Operations"><img alt="Next" src="images/next.gif" /></a>
+	  <a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a>
+	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+	</p>
       </div>
 
       <div id="section-header">
@@ -210,7 +217,7 @@
 	    <dt><var>object</var></dt>
 	    <dd>
               <p>An instance of <code>&lt;object&gt;</code>; the same object that was passed in as
-              an argument.</p>
+		an argument.</p>
 	    </dd>
 	  </dl>
 	</dd>
@@ -244,7 +251,7 @@
 	    <dt><var>the-values</var></dt>
 	    <dd>
               <p>Zero or more instances of <code>&lt;object&gt;</code>; the objects that were passed
-              as arguments.</p>
+		as arguments.</p>
 	    </dd>
 	  </dl>
 	</dd>
@@ -295,38 +302,38 @@ values(1, 2, 3);
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>Coerces <var>object</var> to <var>type</var>. That is, it returns an instance
-	  of <var>type</var> that has the same contents as <var>object</var>. If <var>object</var>
-	  is already an instance of <var>type</var>, it is returned unchanged. In general, the value
-	  returned may or may not be freshly allocated.</p>
+	    of <var>type</var> that has the same contents as <var>object</var>. If <var>object</var>
+	    is already an instance of <var>type</var>, it is returned unchanged. In general, the
+	    value returned may or may not be freshly allocated.</p>
 	  <p>Predefined methods allow coercion between integers and characters, between strings and
-	  symbols, and between collection types. No methods are predefined for other
-	  classes. Programs may define additional methods.</p>
+	    symbols, and between collection types. No methods are predefined for other
+	    classes. Programs may define additional methods.</p>
 	  <a name="HEADING101-24"></a>
 	  <h5 class="method-signature"><span class="signature"><code>as <var>collection-type collection</var> </code>
 	      &rArr;<code> <var>instance-of-collection-type</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
 	  <p>When converting between collection types, the return value will have the same number of
-	  elements as <var>collection</var>. If the <var>collection</var> is an instance
-	  of <code>&lt;sequence&gt;</code> and the <var>collection-type</var> is a subtype
-	  of <code>&lt;sequence&gt;</code>, the elements will be in the same order. The individual
-	  elements may also undergo some conversion. The specific collection types for
-	  which <code>as</code> is defined is implementation defined.</p>
+	    elements as <var>collection</var>. If the <var>collection</var> is an instance
+	    of <code>&lt;sequence&gt;</code> and the <var>collection-type</var> is a subtype
+	    of <code>&lt;sequence&gt;</code>, the elements will be in the same order. The individual
+	    elements may also undergo some conversion. The specific collection types for
+	    which <code>as</code> is defined is implementation defined.</p>
 	  <a name="HEADING101-26"></a>
 	  <h5 class="method-signature"><span class="signature"><code>as <em>(singleton (&lt;integer&gt;))</em> <var>character</var> </code>
 	      &rArr;<code> <var>integer</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
 	  <p>This method on <code>as</code> returns a numeric equivalent
-	  for <var>character</var>. The integer returned is implementation dependent.</p>
+	    for <var>character</var>. The integer returned is implementation dependent.</p>
 	  <a name="HEADING101-28"></a>
 	  <h5 class="method-signature"><span class="signature"><code>as <em>(singleton (&lt;character&gt;))</em> <var>integer</var> </code>
 	      &rArr;<code> <var>character</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
 	  <p>This method on <code>as</code> returns the character equivalent
-	  to <var>integer</var>. The meaning of <var>integer</var> is implementation dependent.</p>
+	    to <var>integer</var>. The meaning of <var>integer</var> is implementation dependent.</p>
 	  <a name="HEADING101-30"></a>
 	  <h5 class="method-signature"><span class="signature"><code>as <em>(singleton (&lt;symbol&gt;))</em> <var>string</var> </code>
 	      &rArr;<code> <var>symbol</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
 	  <p>This method on <code>as</code> returns the symbol that has the
-	  name <var>string</var>. If the symbol does not yet exist, it is created. This method
-	  on <code>as</code> will always return the same symbol for strings of the same characters,
-	  without regard to alphabetic case.</p>
+	    name <var>string</var>. If the symbol does not yet exist, it is created. This method
+	    on <code>as</code> will always return the same symbol for strings of the same
+	    characters, without regard to alphabetic case.</p>
 	  <pre class="code">
 as (&lt;symbol&gt;, "foo")
 <code> &rArr;</code>  #"foo"
@@ -385,8 +392,8 @@ as (&lt;string&gt;, #"Foo")
 	  <h5 class="method-signature"><span class="signature"><code>as-uppercase <var>character</var> </code>
 	      &rArr;<code> <var>uppercase-character</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
 	  <p>This method returns the uppercase equivalent
-	  for <var>character</var>. If <var>character</var> already is uppercase or does not exist
-	  in two cases, it is returned unchanged.</p>
+	    for <var>character</var>. If <var>character</var> already is uppercase or does not exist
+	    in two cases, it is returned unchanged.</p>
 	  <a name="HEADING101-46"></a>
 	  <h5 class="method-signature"><span class="signature"><code>as-uppercase <var>string</var> </code>
 	      &rArr;<code> <var>new-string</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
@@ -420,7 +427,7 @@ as (&lt;string&gt;, #"Foo")
 	    <dt><var>object</var></dt>
 	    <dd>
               <p>An instance of <code>&lt;object&gt;</code>; the same object that was passed in as
-              an argument.</p>
+		an argument.</p>
 	    </dd>
 	  </dl>
 	</dd>
@@ -428,12 +435,12 @@ as (&lt;string&gt;, #"Foo")
 	<dd>
 	  <p>Coerces an object to uppercase in place and returns the modified object.</p>
 	  <p><var>object</var> may be modified by this operation, and the result will
-	  be <code>==</code> to the <var>object</var>.</p>
+	    be <code>==</code> to the <var>object</var>.</p>
 	  <a name="HEADING101-55"></a>
 	  <h5 class="method-signature"><span class="signature"><code>as-uppercase! <var>string</var> </code>
 	      &rArr;<code> <var>string</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
 	  <p>This method is equivalent to <code>map-into(<var>string</var>,
-	  as-uppercase, <var>string</var>)</code>.</p>
+	      as-uppercase, <var>string</var>)</code>.</p>
 	</dd>
       </dl>
       <a name="HEADING101-57"></a>
@@ -474,8 +481,8 @@ as (&lt;string&gt;, #"Foo")
 	  <h5 class="method-signature"><span class="signature"><code>as-lowercase <var>character</var> </code>
 	      &rArr;<code> <var>lowercase-character</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
 	  <p>The <code>&lt;character&gt;</code> method on <code>as-lowercase</code> returns the
-	  lowercase equivalent for <var>character</var>. If <var>character</var> already is
-	  lowercase or does not exist in two cases, it is returned unchanged.</p>
+	    lowercase equivalent for <var>character</var>. If <var>character</var> already is
+	    lowercase or does not exist in two cases, it is returned unchanged.</p>
 	  <a name="HEADING101-66"></a>
 	  <h5 class="method-signature"><span class="signature"><code>as-lowercase <var>string</var> </code>
 	      &rArr;<code> <var>new-string</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
@@ -509,7 +516,7 @@ as (&lt;string&gt;, #"Foo")
 	    <dt><var>object</var></dt>
 	    <dd>
               <p>An instance of <code>&lt;object&gt;</code>; the same object that was passed in as
-              an argument.</p>
+		an argument.</p>
 	    </dd>
 	  </dl>
 	</dd>
@@ -517,7 +524,7 @@ as (&lt;string&gt;, #"Foo")
 	<dd>
 	  <p>Coerces an object to lowercase in place and returns the modified object.</p>
 	  <p><var>object</var> may be modified by this operation, and the result will
-	  be <code>==</code> to the <var>object</var>.</p>
+	    be <code>==</code> to the <var>object</var>.</p>
 	  <a name="HEADING101-75"></a>
 	  <h5 class="method-signature"><span class="signature"><code>as-lowercase! <var>string</var> </code>
 	      &rArr;<code> <var>string</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
@@ -560,22 +567,22 @@ as (&lt;string&gt;, #"Foo")
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>Returns a new object that has the same contents as <var>object1</var>. The contents are
-	  not copied but are the same objects contained in <var>object1</var>.</p>
+	    not copied but are the same objects contained in <var>object1</var>.</p>
 	  <p>There is a predefined method for instances of <code>&lt;collection&gt;</code>. For
-	  other classes, the programmer must provide a method.</p>
+	    other classes, the programmer must provide a method.</p>
 	  <a name="HEADING101-85"></a>
 	  <h5 class="method-signature"><span class="signature"><code>shallow-copy <var>collection</var> </code>
 	      &rArr;<code> <var>new-collection</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
 	  <p>The method for <code>&lt;collection&gt;</code> creates a new object by
-	  calling <code>make</code> on the <code>type-for-copy</code> of <var>collection</var> and
-	  filling it with the same elements as <var>collection</var>.</p>
+	    calling <code>make</code> on the <code>type-for-copy</code> of <var>collection</var> and
+	    filling it with the same elements as <var>collection</var>.</p>
 	</dd>
       </dl>
       <a name="HEADING101-87"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-1693">type-for-copy</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1694"></a>Returns an appropriate type for
-      creating mutable copies of its argument.</p>
+	creating mutable copies of its argument.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -606,30 +613,30 @@ as (&lt;string&gt;, #"Foo")
 	<dd>
 	  <p>Returns an appropriate type for creating mutable copies of <var>object</var>.</p>
 	  <p>The <code>type-for-copy</code> value of a collection must be an instantiable subtype
-	  of <code>&lt;mutable-collection&gt;</code>. For collections that are themselves mutable,
-	  the collection's actual class is generally the most appropriate (assuming it is
-	  instantiable). The <code>type-for-copy</code> value for a sequence should be a subtype
-	  of <code>&lt;sequence&gt;</code>, and the <code>type-for-copy</code> value of an
-	  explicit-key-collection should be a subtype
-	  of <code>&lt;explicit-key-collection&gt;</code>.</p>
+	    of <code>&lt;mutable-collection&gt;</code>. For collections that are themselves mutable,
+	    the collection's actual class is generally the most appropriate (assuming it is
+	    instantiable). The <code>type-for-copy</code> value for a sequence should be a subtype
+	    of <code>&lt;sequence&gt;</code>, and the <code>type-for-copy</code> value of an
+	    explicit-key-collection should be a subtype
+	    of <code>&lt;explicit-key-collection&gt;</code>.</p>
 	  <a name="HEADING101-94"></a>
 	  <h5 class="method-signature"><span class="signature"><code>type-for-copy <var>object</var> </code>
 	      &rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
 	  <p>The method on <code>&lt;object&gt;</code> returns the result of
-	  calling <code>object-class</code> on the <var>object</var>.</p>
+	    calling <code>object-class</code> on the <var>object</var>.</p>
 	  <a name="HEADING101-96"></a>
 	  <h5 class="method-signature"><span class="signature"><code>type-for-copy <var>mutable-collection</var> </code>
 	      &rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[G.F. Method]</span></h5>
 	  <p>The method on <code>&lt;mutable-collection&gt;</code> returns the result of
-	  calling <code>object-class</code> on the <var>mutable-collection</var>.</p>
+	    calling <code>object-class</code> on the <var>mutable-collection</var>.</p>
 	  <a name="HEADING101-98"></a>
 	  <h5 class="method-signature"><span class="signature"><code>type-for-copy <var>limited-collection</var> </code>
 	      &rArr;<code> <var>type</var></code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
 	  <p>For a type <var>L<em><sub>1</sub></em></var> created by <code>limited(<var>C</var>,
-	  of: <var>T</var>, size: <var>S</var>)</code> where <var>C</var> is
-	  not <code>&lt;range&gt;</code>, <code>type-for-copy</code> of an object made by
-	  instantiating <var>L<em><sub>1</sub></em></var> returns a
-	  type <var>L<em><sub>2</sub></em></var> that satisfies each of the following:</p>
+	      of: <var>T</var>, size: <var>S</var>)</code> where <var>C</var> is
+	    not <code>&lt;range&gt;</code>, <code>type-for-copy</code> of an object made by
+	    instantiating <var>L<em><sub>1</sub></em></var> returns a
+	    type <var>L<em><sub>2</sub></em></var> that satisfies each of the following:</p>
 	  <ul>
 	    <li><var>L<em><sub>2</sub></em></var> is either a class or a limited collection type.</li>
 	    <li><var>L<em><sub>2</sub></em></var> is a subtype of <var>C</var>.</li>
@@ -644,9 +651,9 @@ as (&lt;string&gt;, #"Foo")
 	  <h5 class="method-signature"><span class="signature"><code>type-for-copy <var>limited-range</var> </code>
 	      &rArr;<code> &lt;list&gt;</code> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
 	  <p>The method on instances
-	  of <code>limited(singleton(&lt;range&gt;)</code>&hellip;<code>)</code>
-	  returns <code>&lt;list&gt;</code>, the same as for any instance
-	  of <code>&lt;range&gt;</code>.<a name="MARKER-2-1695"></a></p>
+	    of <code>limited(singleton(&lt;range&gt;)</code>&hellip;<code>)</code>
+	    returns <code>&lt;list&gt;</code>, the same as for any instance
+	    of <code>&lt;range&gt;</code>.<a name="MARKER-2-1695"></a></p>
 	</dd>
       </dl>
 
@@ -656,11 +663,19 @@ as (&lt;string&gt;, #"Foo")
 
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a class="previous" title="Go to previous page" href="Arithmetic_Operations"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Collection_Operations"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+      <p class="footer">
+	<a class="previous" title="Go to previous page" href="Arithmetic_Operations"><img alt="Previous" src="images/prev.gif" /></a>
+	<a class="next" title="Go to next page" href="Collection_Operations"><img alt="Next" src="images/next.gif" /></a>
+	<a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a>
+	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      </p>
       <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
-      registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-      <p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker">Harlequin
-      WebMaker&reg;</a>, subsequently revised.</p>
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+      <p class="footer">Originally generated
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>

@@ -54,7 +54,14 @@
     <div id="header">
       <div id="navigation-header">
 	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation"><a class="previous" title="Go to previous page" href="Expressions"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Parameter_Lists_Syntax"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+	<p id="basic-navigation">
+	  <a class="previous" title="Go to previous page" href="Expressions"><img alt="Previous" src="images/prev.gif" /></a>
+	  <a class="next" title="Go to next page" href="Parameter_Lists_Syntax"><img alt="Next" src="images/next.gif" /></a>
+	  <a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a>
+	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+	</p>
       </div>
 
       <div id="section-header">
@@ -124,24 +131,24 @@
       <a name="HEADING18-0"></a>
       <a name="UID-Syntax-1509"></a>
       <h1 class="section-title">Statements</h1>
-      <p><a name="MARKER-9-269"></a> A <dfn id="MARKER-2-270">statement</dfn> is a call to a
-      statement macro. It begins with the name of a visible binding whose value is a statement
-      macro. The statement ends with the word <code>end</code> optionally followed by the same name
-      that began the statement. In between is a program fragment whose syntax is determined by the
-      macro definition. Typically this fragment includes an optional body; for example, <code>if
-      (ship.ready?) embark(passenger, ship) end if</code>.</p>
+      <p><a name="MARKER-9-269"></a>A <dfn id="MARKER-2-270">statement</dfn> is a call to a
+	statement macro. It begins with the name of a visible binding whose value is a statement
+	macro. The statement ends with the word <code>end</code> optionally followed by the same
+	name that began the statement. In between is a program fragment whose syntax is determined
+	by the macro definition. Typically this fragment includes an optional body; for
+	example, <code>if (ship.ready?) embark(passenger, ship) end if</code>.</p>
       <p>A <dfn id="MARKER-2-271">statement macro</dfn> can be built-in or user-defined.</p>
       <p>A <dfn id="MARKER-2-272">user-defined statement macro</dfn> is a macro that defines how to
-      implement a statement in terms of other constructs. Advanced programmers often define new
-      statement macros as part of structuring a program in a readable and modular way.</p>
+	implement a statement in terms of other constructs. Advanced programmers often define new
+	statement macros as part of structuring a program in a readable and modular way.</p>
       <p>A <dfn id="MARKER-2-273">built-in statement macro</dfn> is like a user-defined statement
-      macro but is specified as part of the Dylan language. There are nine built-in statement
-      macros: <code>begin</code>, <code>block</code>,
-      <code>case</code>, <code>for</code>, <code>if</code>, <code>select</code>, <code>unless</code>,
-      <code>until</code>, and <code>while</code>.</p>
+	macro but is specified as part of the Dylan language. There are nine built-in statement
+	macros: <code>begin</code>, <code>block</code>,
+	<code>case</code>, <code>for</code>, <code>if</code>, <code>select</code>, <code>unless</code>,
+	<code>until</code>, and <code>while</code>.</p>
       <p>An implementation can add new kinds of statements as language extensions. Such a statement
-      takes the form of a user-defined statement macro that is the value of a binding exported by an
-      implementation-defined module.</p>
+	takes the form of a user-defined statement macro that is the value of a binding exported by
+	an implementation-defined module.</p>
 
     </div>
 
@@ -149,12 +156,19 @@
 
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a class="previous" title="Go to previous page" href="Expressions"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Parameter_Lists_Syntax"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
-      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered
-      trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+      <p class="footer">
+	<a class="previous" title="Go to previous page" href="Expressions"><img alt="Previous" src="images/prev.gif" /></a>
+	<a class="next" title="Go to next page" href="Parameter_Lists_Syntax"><img alt="Next" src="images/next.gif" /></a>
+	<a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a>
+	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      </p>
+      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
       <p class="footer">Originally generated
-      with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
-      revised.</p>
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>

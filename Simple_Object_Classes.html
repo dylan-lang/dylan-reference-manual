@@ -54,7 +54,14 @@
     <div id="header">
       <div id="navigation-header">
 	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation"><a class="previous" title="Go to previous page" href="Type_Classes"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Number_Classes"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+	<p id="basic-navigation">
+	  <a class="previous" title="Go to previous page" href="Type_Classes"><img alt="Previous" src="images/prev.gif" /></a>
+	  <a class="next" title="Go to next page" href="Number_Classes"><img alt="Next" src="images/next.gif" /></a>
+	  <a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a>
+	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+	</p>
       </div>
       
       <div id="section-header">
@@ -135,7 +142,9 @@
       <a name="HEADING91-0"></a>
       <a name="UID-Built-In_Classes-373"></a>
       <h1 class="section-title"><a name="MARKER-2-1375"></a>Simple Objects</h1>
-      <p>Simple objects are sealed, uninstantiable, and concrete. They are often represented by program literals. <a href="#MARKER-9-1376">Figure 11-2</a> shows the built-in classes of simple objects.</p>
+      <p>Simple objects are sealed, uninstantiable, and concrete. They are often represented by
+	program literals. <a href="#MARKER-9-1376">Figure 11-2</a> shows the built-in classes of
+	simple objects.</p>
       <p class="figure"><strong>Figure</strong> <strong>11-2</strong>  <a name="MARKER-9-1376"></a>The Simple Object Classes</p>
       
       <div class="figure" style="min-width: 454px">
@@ -183,7 +192,8 @@
 	<dt><span>Init-keywords:</span></dt>
 	<dd><p>None.</p></dd>
 	<dt><span>Description:</span></dt>
-	<dd><p>The class of characters. All characters are instances of <code>&lt;character&gt;</code>.</p></dd>
+	<dd><p>The class of characters. All characters are instances
+	    of <code>&lt;character&gt;</code>.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;character&gt;</code> provides the following operations:</p>
@@ -218,7 +228,12 @@
 	<dt><span>Init-keywords:</span></dt>
 	<dd><p>None.</p></dd>
 	<dt><span>Description:</span></dt>
-	<dd><p>The <code>&lt;symbol&gt;</code> class provides a built-in, non-case-sensitive dictionary that associates a string with a unique immutable object that can be compared with <code>==</code> (which should be faster than calling a string-comparison routine). This dictionary is accessed through the <code>as</code> function:<code> as(&lt;symbol&gt;, <var>string)</var></code> and <code>as(&lt;string&gt;, <var>symbol)</var></code>. Any string can be used.</p></dd>
+	<dd><p>The <code>&lt;symbol&gt;</code> class provides a built-in, non-case-sensitive
+	    dictionary that associates a string with a unique immutable object that can be compared
+	    with <code>==</code> (which should be faster than calling a string-comparison
+	    routine). This dictionary is accessed through the <code>as</code> function:
+	    <code>as(&lt;symbol&gt;, <var>string)</var></code>
+	    and <code>as(&lt;string&gt;, <var>symbol)</var></code>. Any string can be used.</p></dd>
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;symbol&gt;</code> provides the following operation:</p>
@@ -247,7 +262,11 @@
 	<dt><span>Operations:</span></dt>
 	<dd><p>None.</p></dd>
 	<dt><span>Description:</span></dt>
-	<dd><p>The class of boolean values. The literal constants <code>#t</code> and <code>#f</code> are general instances of <code>&lt;boolean&gt;</code>. Note that for the purposes of conditional expressions, all objects besides <code>#f</code> count as true. (This does not imply any other objects are instances of <code>&lt;boolean&gt;</code>.)<a name="MARKER-2-1380"></a></p></dd>
+	<dd><p>The class of boolean values. The literal constants <code>#t</code>
+	    and <code>#f</code> are general instances of <code>&lt;boolean&gt;</code>. Note that for
+	    the purposes of conditional expressions, all objects besides <code>#f</code> count as
+	    true. (This does not imply any other objects are instances
+	    of <code>&lt;boolean&gt;</code>.)<a name="MARKER-2-1380"></a></p></dd>
       </dl>
 
     </div>
@@ -256,9 +275,19 @@
 
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a class="previous" title="Go to previous page" href="Type_Classes"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Number_Classes"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
-      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-      <p class="footer">Originally generated with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently revised.</p>
+      <p class="footer">
+	<a class="previous" title="Go to previous page" href="Type_Classes"><img alt="Previous" src="images/prev.gif" /></a>
+	<a class="next" title="Go to next page" href="Number_Classes"><img alt="Next" src="images/next.gif" /></a>
+	<a class="up" title="Go to start of chapter" href="Built-In_Classes"><img alt="Up" src="images/up.gif" /></a>
+	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      </p>
+      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+      <p class="footer">Originally generated
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>

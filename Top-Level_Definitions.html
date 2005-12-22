@@ -54,7 +54,14 @@
     <div id="header">
       <div id="navigation-header">
 	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation"><a class="previous" title="Go to previous page" href="Special_Treatment_of_Names"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Dylan_Interchange_Format"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
+	<p id="basic-navigation">
+	  <a class="previous" title="Go to previous page" href="Special_Treatment_of_Names"><img alt="Previous" src="images/prev.gif" /></a>
+	  <a class="next" title="Go to next page" href="Dylan_Interchange_Format"><img alt="Next" src="images/next.gif" /></a>
+	  <a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a>
+	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+	</p>
       </div>
 
       <div id="section-header">
@@ -125,18 +132,19 @@
       <a name="UID-Syntax-1543"></a>
       <h1 class="section-title"><a name="MARKER-2-314"></a>Top-Level Definitions</h1>
       <p>Dylan's built-in defining macros and special definitons can only be used at top level. When
-      the expansion of a user-defined macro includes a call to a built-in defining macro or special
-      definition, the user-defined macro also can only be used at top level.</p>
+	the expansion of a user-defined macro includes a call to a built-in defining macro or
+	special definition, the user-defined macro also can only be used at top level.</p>
       <p><a name="MARKER-2-315"></a>A constituent is at <dfn>top level</dfn> if and only if it is a
-      direct constituent of a body, no preceding constituent of that body is a local declaration,
-      and the body is either the body of a source record or the body of a <code>begin</code>
-      statement that is itself a constituent at top level. When a constituent appears inside a call
-      to a macro, whether that constituent is at top level must be determined after macro
-      expansion.</p>
+	direct constituent of a body, no preceding constituent of that body is a local declaration,
+	and the body is either the body of a source record or the body of a <code>begin</code>
+	statement that is itself a constituent at top level. When a constituent appears inside a
+	call to a macro, whether that constituent is at top level must be determined after macro
+	expansion.</p>
       <p>The effect of the above rule is that a constituent at top level is not in the scope of any
-      local declarations, is not subject to any condition handlers other than default handlers, and
-      is not affected by any flow of control constructs such as conditionals and iterations. This
-      restriction enhances the <a name="MARKER-2-316"></a>static nature of definitions.</p>
+	local declarations, is not subject to any condition handlers other than default handlers,
+	and is not affected by any flow of control constructs such as conditionals and
+	iterations. This restriction enhances the <a name="MARKER-2-316"></a>static nature of
+	definitions.</p>
 
     </div>
 
@@ -144,12 +152,19 @@
 
       <hr class="footer" />
       <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer"><a class="previous" title="Go to previous page" href="Special_Treatment_of_Names"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Dylan_Interchange_Format"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
-      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered
-      trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+      <p class="footer">
+	<a class="previous" title="Go to previous page" href="Special_Treatment_of_Names"><img alt="Previous" src="images/prev.gif" /></a>
+	<a class="next" title="Go to next page" href="Dylan_Interchange_Format"><img alt="Next" src="images/next.gif" /></a>
+	<a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a>
+	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
+	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
+	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      </p>
+      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
+	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
       <p class="footer">Originally generated
-      with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
-      revised.</p>
+	with <a href="http://www.harlequin.com/webmaker">Harlequin WebMaker&reg;</a>, subsequently
+	revised.</p>
 
     </div>
   </body>
