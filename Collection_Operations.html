@@ -1483,10 +1483,6 @@ x
 	  <p>Sets the tail of <var>pair</var> to contain <var>object</var> and
 	    returns <var>object</var>.</p>
 	  <p><var>pair</var> is modified by this operation.</p>
-	  <p class="errata right"><a href="Errata#p309_1"
-				     name="errata_p309_1"><strong>Errata:</strong></a> The
-	    final value of <code>x</code> should be:<br />
-	    <code>#(4 . "dot")</code></p>
 	  <pre class="code">
 define variable x = list (4, 5, 6)
 tail (x) := #(9, 8, 7)
@@ -1496,7 +1492,12 @@ x
 tail (x) := "dot"
 <code> &rArr;</code>  "dot"
 x
-<code> &rArr;</code>  #(4, 9, 8 . "dot")<a name="MARKER-2-1751"></a></pre>
+<code> &rArr;</code>  #(4 . "dot")<a name="MARKER-2-1751"></a></pre>
+	  <p class="errata">
+	    <a href="Errata#p309_1" name="errata_p309_1"><strong>Errata:</strong></a> In the
+	    published book, the final value of <code>x</code> is incorrect: <code>#(4, 9, 8 .
+	      "dot")</code>
+	  </p>
 	</dd>
       </dl>
       <a name="HEADING102-253"></a>
@@ -2654,13 +2655,10 @@ concatenate-as (&lt;string&gt;, #('n', 'o', 'n'), #('f', 'a', 't'))
 	    of <var>target-sequence</var> are replaced by all the elements
 	    of <var>insert-sequence</var>. The subsequence to be overridden begins at
 	    index <var>start</var> and ends at index <var>end</var>.</p>
-	  <p class="errata left"><a href="Errata#p325_1"
-				    name="errata_p325_1"><strong>Errata:</strong></a>
-	    <var>source-sequence</var> should be <var>target-sequence</var>.</p>
 	  <p><var>result-sequence</var> may or may not share structure
-	    with <var>source-sequence</var> or <var>insert-sequence</var>, and it may or may not
-	    be <code>==</code> to <var>source-sequence</var>
-	    or <var>insert-sequence</var>. <var>source-sequence</var> may or may not be modified by
+	    with <var>target-sequence</var> or <var>insert-sequence</var>, and it may or may not
+	    be <code>==</code> to <var>target-sequence</var>
+	    or <var>insert-sequence</var>. <var>target-sequence</var> may or may not be modified by
 	    the operation. <var>insert-sequence</var> will not be modified by this operation.</p>
 	  <pre class="code">
 define variable *original* = list ("a", "b", "c", "d", "e")
@@ -2671,6 +2669,11 @@ define variable *original* = list ("a", "b", "c", "d", "e")
 *new* := replace-subsequence! (*new*, #("a", "b", "c"), 
                                       start: 2, end: 4))
     #("x", "y", "a", "b", "c", "x", "y", "z")</pre>
+	  <p class="errata">
+	    <a href="Errata#p325_1" name="errata_p325_1"><strong>Errata:</strong></a> In the
+	    published book, <var>target-sequence</var> is incorrectly written
+	    as <var>source-sequence</var>.
+	  </p>
 	</dd>
       </dl>
       <a name="HEADING102-500"></a>
@@ -2886,15 +2889,16 @@ map (\+,
 	    number of corresponding elements in the <var>collections</var>. If all
 	    the <var>collections</var> are sequences (including <var>new-collection</var>),
 	    processing is done in the natural order.</p>
-	  <p class="errata right"><a href="Errata#p329_1"
-				     name="errata_p329_1"><strong>Errata:</strong></a>
-	    The result should be a vector:<br />
-	    <code>#[101, 102, 203, 204]</code></p>
 	  <pre class="code">
 map-as (&lt;vector&gt;, \+,
         #(100, 100, 200, 200),
         #(1, 2, 3, 4))
-<code> &rArr;</code>  #(101, 102, 203, 204)</pre>
+<code> &rArr;</code>  #[101, 102, 203, 204]</pre>
+	  <p class="errata">
+	    <a href="Errata#p329_1" name="errata_p329_1"><strong>Errata:</strong></a> In the
+	    published book, the result is incorrectly written as a list instead of a
+	    vector: <code>#(101, 102, 203, 204)</code>
+	  </p>
 	</dd>
       </dl>
       <a name="HEADING102-544"></a>

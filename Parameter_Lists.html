@@ -454,17 +454,16 @@ end method family;
 	type <code>&lt;number&gt;</code>. It declares a return value of
 	type <code>&lt;object&gt;</code>. To specify a type, both the name and the type must be
 	specified. If only one is given, it is taken as the name.</p>
-      <p class="errata left">
-	<a href="Errata#p93_1" name="errata_p93_1"><strong>Errata:</strong></a> The return value
-	declaration should be:<br />
-	<code>=&gt; &lt;number&gt;;</code>
-      </p>
       <pre class="code">
 define method average (x :: &lt;number&gt;, y :: &lt;number&gt;)
- =&gt; avg :: &lt;number&gt;;
+ =&gt; &lt;number&gt;;
  truncate/((x + y), 2);
 end method;
 </pre>
+      <p class="errata">
+	<a href="Errata#p93_1" name="errata_p93_1"><strong>Errata:</strong></a> In the published
+	book, the return value declaration is incorrect: <code>=&gt; avg :: &lt;number&gt;;</code>
+      </p>
       <a name="HEADING49-84"></a>
       <a name="UID-Functions-2334"></a>
       <h2 class="subsection-title"><a name="MARKER-9-837"></a>Parameter List Congruency</h2>

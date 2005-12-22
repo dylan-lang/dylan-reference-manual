@@ -295,14 +295,10 @@ sort(person-list,
 	methods. The method that is returned is <dfn id="MARKER-2-779">closed over</dfn>
 	the <code>score</code> parameter. Each time this method is called, it updates
 	the <code>score</code> parameter and returns its new value.</p>
-      <p class="errata left">
-	<a href="Errata#p83_1" name="errata_p83_1"><strong>Errata:</strong></a>
-	<code>points</code> should be named <code>score</code>.
-      </p>
       <pre class="code">
-define method make-score (points :: &lt;number&gt;)
+define method make-score (score :: &lt;number&gt;)
   method (increase :: &lt;number&gt;)
-    points := points + increase;
+    score := score + increase;
   end method;
 end method make-score;
 
@@ -325,6 +321,11 @@ score-david(0)
 	each closure returned by <code>make-score</code> refers to a different binding. In this way,
 	assignments to the variable made by one closure do not affect the value of the variable
 	visible to other closures.</p>
+      <p class="errata">
+	<a href="Errata#p83_1" name="errata_p83_1"><strong>Errata:</strong></a> In the published
+	book, the <code>score</code> parameter is incorrectly written as <code>points</code>
+	in <code>method make-score</code>.
+      </p>
       <p>The following example defines a method for <code>double</code> that works on
 	functions. When you double a function, you get back a method that accepts arguments and
 	calls the function twice, passing the same arguments both times. The method that is returned
@@ -347,7 +348,7 @@ double-david(10)
 score-david(0)
  &rArr;  140<a name="MARKER-2-780"></a><a name="MARKER-2-781"></a>
 </pre>
-
+      
     </div>
 
     <div id="footer">

@@ -370,19 +370,20 @@ define generic cut-hair (subject :: &lt;animal&gt;, new-length :: &lt;number&gt;
 	  <p>The use of the same name for a parameter and return value indicates that the parameter
 	    is returned as the value. This is only a convention; it is not enforced by the
 	    language.</p>
-	  <p class="errata left">
-	    <a href="Errata#p377_1" name="errata_p377_1"><strong>Errata:</strong></a>
-	    <q><a href="Parameter_Lists#MARKER-2-813" title="Definition of permit">permit</a></q>
-	    should be <q><a href="Parameter_Lists#MARKER-2-808" title="Definition of
-	    recognize">recognize</a></q>.
-	  </p>
 	  <p>The following example defines a generic function with one required parameter and one
 	    mandatory keyword parameter, <code>strength:</code>. Methods added to the generic
 	    function must have one required parameter, they must accept keyword arguments, and they
-	    must permit the keyword argument <code>strength:</code>.</p>
+	    must recognize the keyword argument <code>strength:</code>.</p>
 	  <pre class="code">
 define generic brew (brand :: &lt;coffee-brand&gt;, #key strength)
                              =&gt; (coffee :: &lt;coffee&gt;) </pre>
+	  <p class="errata">
+	    <a href="Errata#p377_1" name="errata_p377_1"><strong>Errata:</strong></a> In the
+	    published book, the word
+	    <q><a href="Parameter_Lists#MARKER-2-813" title="Definition of permit">permit</a></q>
+	    is incorrectly used instead of
+	    <q><a href="Parameter_Lists#MARKER-2-808" title="Definition of recognize">recognize</a></q>.
+	  </p>
 	</dd>
       </dl>
       <a name="HEADING112-196"></a>

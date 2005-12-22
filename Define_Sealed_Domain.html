@@ -168,14 +168,10 @@
 	</li>
       </ol>
       <p>The third constraint is illustrated by the following example:</p>
-      <p class="errata left">
-	<a href="Errata#p136_1" name="errata_p136_1"><strong>Errata:</strong></a>
-	Missing <code>open</code> in generic and class definitions.
-      </p>
       <pre class="code">
-define generic m (x);
-define class &lt;t&gt; (&lt;object&gt;) end class &lt;t&gt;;
-define class &lt;s&gt; (&lt;object&gt;) end class &lt;s&gt;;
+define open generic m (x);
+define open class &lt;t&gt; (&lt;object&gt;) end class &lt;t&gt;;
+define open class &lt;s&gt; (&lt;object&gt;) end class &lt;s&gt;;
 define method m (s :: &lt;s&gt;) end method m;
 define sealed domain m (&lt;t&gt;);
 
@@ -187,6 +183,11 @@ define class &lt;c&gt; (&lt;s&gt;, &lt;t&gt;) end class &lt;c&gt;;
 	of <code>&lt;c&gt;</code>, the method defined on <code>m</code> is not within the domain
 	declared by the <code>define sealed domain</code>, but with the definition
 	of <code>&lt;c&gt;</code> the method is within that domain.</p>
+      <p class="errata">
+	<a href="Errata#p136_1" name="errata_p136_1"><strong>Errata:</strong></a> In the published
+	book, <code>open</code> is missing from the definitions of <code>generic m</code>,
+	<code>class &lt;t&gt;</code>, and <code>class &lt;s&gt;</code>.
+      </p>
       <a name="HEADING75-13"></a>
       <a name="UID-Sealing-2154"></a>
       <h2 class="subsection-title">Rationale</h2>
@@ -323,28 +324,21 @@ define sealed domain sides-setter (&lt;integer&gt;, &lt;polygon&gt;);<a name="MA
       </ul>
       <p>The following example illustrates why this condition is necessary.</p>
       <p>Library <var>L<em><sub>1</sub></em></var> defines and exports the following:</p>
-      <p class="errata left">
-	<a href="Errata#p140_1" name="errata_p140_1"><strong>Errata:</strong></a>
-	Missing <code>open</code> in generic and class definitions.
-      </p>
       <pre class="code">
-define generic g (x)
-define class &lt;c1&gt; (&lt;object&gt;) end class &lt;c1&gt;;
+define open generic g (x)
+define open class &lt;c1&gt; (&lt;object&gt;) end class &lt;c1&gt;;
 </pre>
       <p>Library <var>L<em><sub>2</sub></em></var> uses <var>L<em><sub>1</sub></em></var> and
 	defines the following</p>
       <pre class="code">
-define class &lt;c2&gt; (&lt;c1&gt;) end class &lt;c2&gt;;
+define open class &lt;c2&gt; (&lt;c1&gt;) end class &lt;c2&gt;;
 define method g (x :: &lt;c2&gt;) end method;
 define sealed domain g (&lt;c2&gt;)
 </pre>
       <p>Library <var>L<em><sub>3</sub></em></var> uses <var>L<em><sub>1</sub></em></var> and
 	defines the following</p>
-      <p class="errata left">
-	<a href="Errata#p140_2" name="errata_p140_2"><strong>Errata:</strong></a>
-	<code>&lt;c&gt;</code> should be <code>&lt;c1&gt;</code>.</p>
       <pre class="code">
-define method g (x :: &lt;c&gt;) end method;
+define method g (x :: &lt;c1&gt;) end method;
 </pre>
       <p>Libraries <var>L<em><sub>2</sub></em></var> and <var>L<em><sub>3</sub></em></var> are
 	developed independently, and have no knowledge of each other. An application that attempts
@@ -357,6 +351,16 @@ define method g (x :: &lt;c&gt;) end method;
 	the compilation
 	of <var>L<em><sub>3</sub></em></var>.<a
 	name="MARKER-2-1138"></a><a name="MARKER-2-1139"></a></p>
+      <p class="errata">
+	<a href="Errata#p140_1" name="errata_p140_1"><strong>Errata:</strong></a> In the published
+	book, <code>open</code> is missing from the definitions of <code>generic g</code>, <code>class
+	  &lt;c1&gt;</code>, and <code>class &lt;c2&gt;</code>.
+      </p>
+      <p class="errata">
+	<a href="Errata#p140_2" name="errata_p140_2"><strong>Errata:</strong></a> In the published
+	book, <code>method g (x :: &lt;c1&gt;)</code> is incorrectly specialized
+	on <code>&lt;c&gt;</code>.
+      </p>
       <a name="LINK-Sealing-lastpage"></a><a name="LINK-MacrosTOC-firstpage"></a><a name="UID-MacrosTOC-714"></a>
       <a name="LINK-MacrosTOC-lastpage"></a>
     </div>

@@ -178,15 +178,10 @@
 	    of <var>argument</var> and <var>more-arguments</var> must be a sequence. This sequence
 	    is not passed as a single argument to <var>function</var>. Instead, its elements are
 	    taken individually as arguments to <var>function</var>.</p>
-	  <p class="errata right">
-	    <a href="Errata#p351_1" name="errata_p351_1"><strong>Errata:</strong></a> Missing
-	    commas. Should be:<br />
-	    <code>apply(min, 5, 7, list(3, 1, 4))</code>
-	  </p>
 	  <pre class="code">
 apply(max, list(3, 1, 4, 1, 5, 9))
   &rArr;  9
-apply(min 5, 7 list(3, 1, 4))
+apply(min, 5, 7, list(3, 1, 4))
   &rArr;  1
 define constant make-string =
        method (#rest init-args) =&gt; string :: &lt;string&gt;;
@@ -194,6 +189,10 @@ define constant make-string =
        end;
 make-string(fill: 'a', size: 10)
   &rArr;  "aaaaaaaaaa" </pre>
+	  <p class="errata">
+	    <a href="Errata#p351_1" name="errata_p351_1"><strong>Errata:</strong></a> In the
+	    published book, commas are missing: <code>apply(min 5, 7 list(3, 1, 4))</code>
+	  </p>
 	</dd>
       </dl>
 
