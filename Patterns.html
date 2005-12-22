@@ -227,10 +227,10 @@
       <p>A <var id="MARKER-2-1243">pattern-variable</var> matches a fragment as follows:</p>
       <ul>
 	<li>When the constraint is a wildcard constraint
-	  (see <a href="Pattern_Variable_Constraints#MARKER-9-1256">"Pattern Variable Constraints"
-	    on page 157</a>), the pattern variable consumes some initial subsequence of the fragment,
-	  using a backup and retry algorithm. First, the wildcard consumes no elementary fragments,
-	  and matching continues with the next <var>simple-pattern</var> in
+	  (see <a href="Pattern_Variable_Constraints#MARKER-9-1256"><q>Pattern Variable
+	      Constraints</q> on page 157</a>), the pattern variable consumes some initial subsequence
+	  of the fragment, using a backup and retry algorithm. First, the wildcard consumes no
+	  elementary fragments, and matching continues with the next <var>simple-pattern</var> in
 	  the <var>pattern-sequence</var>. If any <var>simple-pattern</var> in the
 	  current <var>pattern-sequence</var> fails to match, back up to the wildcard, consume one
 	  more elementary fragment than before, and retry matching the rest of
@@ -242,11 +242,12 @@
 	  a <var>pattern-sequence</var> to be a wildcard.</li>
 	<li>When the constraint is other than a wildcard constraint, the pattern variable consumes
 	  as much of the fragment as can be parsed by the grammar specified for the constraint
-	  in <a href="Pattern_Variable_Constraints#MARKER-9-1256">"Pattern Variable Constraints" on
-	    page 157</a>. If the parsing fails, the pattern match fails. The pattern variable binds to
-	  the fragment specified in <a href="Pattern_Variable_Constraints#MARKER-9-1256">"Pattern
-	    Variable Constraints."</a>  This can be a parsed fragment rather than the original
-	  sequence of elementary fragments.</li>
+	  in <a href="Pattern_Variable_Constraints#MARKER-9-1256"><q>Pattern Variable
+	      Constraints</q> on page 157</a>. If the parsing fails, the pattern match fails. The
+	  pattern variable binds to the fragment specified
+	  in <a href="Pattern_Variable_Constraints#MARKER-9-1256"><q>Pattern Variable
+	      Constraints.</q></a> This can be a parsed fragment rather than the original sequence of
+	  elementary fragments.</li>
 	<li>The ellipsis <var>pattern-variable</var>, <code>...</code>, can only be used in an
 	  auxiliary rule set. It represents a pattern variable with the same name as the current
 	  rule set and a wildcard constraint.</li>
@@ -270,8 +271,8 @@
 	  has a non-wildcard constraint, parse the <var>value</var> part of each property according
 	  to this constraint, fail if the parsing fails or does not consume the
 	  entire <var>value</var> part, and substitute the fragment specified
-	  in <a href="Pattern_Variable_Constraints#MARKER-9-1256">"Pattern Variable Constraints" on
-	    page 157</a> for the <var>value</var> part.</li>
+	  in <a href="Pattern_Variable_Constraints#MARKER-9-1256"><q>Pattern Variable
+	      Constraints</q> on page 157</a> for the <var>value</var> part.</li>
 	<li>Each <var>pattern-keyword</var> in the <var>property-list-pattern</var> binds a pattern
 	  variable as follows:
 	  <ul>
@@ -283,8 +284,8 @@
 	      the <var>pattern-keyword</var> has a non-wildcard constraint, parse the
 	      property's <var>value</var> according to this constraint, fail if the parsing fails or
 	      does not consume the entire <var>value</var> , and bind the pattern variable to the
-	      fragment specified in <a href="Pattern_Variable_Constraints#MARKER-9-1256">"Pattern
-		Variable Constraints" on page 157</a>. If the <var>pattern-keyword</var> has a
+	      fragment specified in <a href="Pattern_Variable_Constraints#MARKER-9-1256"><q>Pattern
+		  Variable Constraints</q> on page 157</a>. If the <var>pattern-keyword</var> has a
 	      wildcard constraint, bind the pattern variable to the
 	      property's <var>value</var>.</li>
 	    <li>A double <a name="MARKER-2-1248"></a>question mark finds every property with a

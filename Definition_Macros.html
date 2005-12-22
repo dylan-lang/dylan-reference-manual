@@ -347,14 +347,15 @@ define constant $start-time :: &lt;integer&gt; = get-current-time(); </pre>
 	    the <var>adjectives</var>, <var>parameter-list</var> and <var>options</var>.</p>
 	  <p>The <var>adjectives</var> specify whether the generic function is sealed. A complete
 	    description of generic function sealing is given
-	    in <a href="Declaring_Characteristics_of_Generic_Functions#MARKER-9-1116">"Declaring
-	    Characteristics of Generic Functions" on page 135</a>.</p>
+	    in <a href="Declaring_Characteristics_of_Generic_Functions#MARKER-9-1116"><q>Declaring
+		Characteristics of Generic Functions</q> on page 135</a>.</p>
 	  <p>The <var>parameter-list</var> specifies the parameters and return values of the generic
 	    function and thereby constrains which methods may be added to it. For a complete
-	    description of these constraints, see <a href="Parameter_Lists#MARKER-9-837">"Parameter
-	    List Congruency" on page 93</a>. A generic function parameter list may not include a
-	    next-method parameter, and its keyword parameters may include neither type specializers
-	    nor default initial values.</p>
+	    description of these constraints,
+	    see <a href="Parameter_Lists#MARKER-9-837"><q>Parameter List Congruency</q> on page
+	      93</a>. A generic function parameter list may not include a next-method parameter, and
+	    its keyword parameters may include neither type specializers nor default initial
+	    values.</p>
 	  <p>The <var>options </var>are alternating keywords and values. No options are defined by
 	    the language. They may be supplied by individual implementations.</p>
 	  <p>The following example defines a generic function of two required arguments and one
@@ -433,15 +434,15 @@ define generic brew (brand :: &lt;coffee-brand&gt;, #key strength)
 	    method</code> will create a new generic function or extend an old one, as needed.</p>
 	  <p>The <var>adjective</var> allows a sealing declaration to be made about the generic
 	    function to which the method is added. The effect of this adjective is described
-	    in <a href="Define_Sealed_Domain#MARKER-9-1131">"Abbreviations for Define Sealed Domain"
-	    on page 138</a>.</p>
+	    in <a href="Define_Sealed_Domain#MARKER-9-1131"><q>Abbreviations for Define Sealed
+		Domain</q> on page 138</a>.</p>
 	  <p>The <var>parameter-list</var> describes the parameters and return values of the method,
 	    including their number and type. The method can be called only with arguments that match
 	    the types of the parameters, and the method will always return values in the quantity
 	    and typed declared. Methods added to a generic function must have parameter lists that
 	    are congruent with the generic function's parameter list. A complete description of
-	    parameter lists is given in <a href="Parameter_Lists#MARKER-9-782">"Parameter Lists" on
-	    page 84</a>.</p>
+	    parameter lists is given in <a href="Parameter_Lists#MARKER-9-782"><q>Parameter
+		Lists</q> on page 84</a>.</p>
 	  <p>When the method is called, new local bindings are created for the parameters,
 	    initialized to the arguments of the call. The <var>body</var> is then executed in the
 	    environment containing these bindings.</p>
@@ -546,29 +547,29 @@ end method tune </pre>
 	    exclusive, <code>primary</code> and <code>free</code> are mutually exclusive,
 	    and <code>sealed</code> and <code>open</code> are mutually exclusive. Additional
 	    implementation-defined adjectives may be
-	    supported. See <a href="Declaring_Characteristics_of_Classes#MARKER-9-1106">"Declaring
-	    Characteristics of Classes" on page 134</a> for a complete description of these
+	    supported. See <a href="Declaring_Characteristics_of_Classes#MARKER-9-1106"><q>Declaring
+		Characteristics of Classes</q> on page 134</a> for a complete description of these
 	    adjectives.</p>
 	  <p>The <var>superclasses</var> are the classes from which the new class directly
 	    inherits. The rules of inheritance are described
-	    in <a href="Classes#MARKER-9-583">"Class Inheritance" on page 53</a>
-	    and <a href="Classes#MARKER-9-590">"Computing the Class Precedence List" on page
-	    54</a>.</p>
+	    in <a href="Classes#MARKER-9-583"><q>Class Inheritance</q> on page 53</a>
+	    and <a href="Classes#MARKER-9-590"><q>Computing the Class Precedence List</q> on page
+	      54</a>.</p>
 	  <p>The <var>init-expression</var>, <var>required-init-keyword-option</var>, <var>init-value-option</var>,
 	    and <var>init-function-option</var> are all mutually exclusive in a
 	    single <var>slot-spec</var>, <var>init-arg-spec</var>,
 	    or <var>inherited-slot-spec</var>.</p>
 	  <p>Each <var>slot-spec</var> describes a slot specification in the class. Slot
-	    specifications are described in <a href="Slots#MARKER-9-610">"Slot Specifications" on
-	    page 58</a></p>
+	    specifications are described in <a href="Slots#MARKER-9-610"><q>Slot Specifications</q>
+	      on page 58</a></p>
 	  <p>Each <var>init-arg-spec</var> describes the handling of an initialization argument
 	    specification of the class. Initialization argument specifications are described
-	    in <a href="Instance_Creation_and_Initialization#MARKER-9-680">"Initialization Argument
-	    Specifications" on page 68</a>.</p>
+	    in <a href="Instance_Creation_and_Initialization#MARKER-9-680"><q>Initialization
+		Argument Specifications</q> on page 68</a>.</p>
 	  <p>Each <var>inherited-slot-spec</var> describes an inherited slot specification of the
 	    class. Inherited slot specifications are described
-	    in <a href="Instance_Creation_and_Initialization#MARKER-9-677">"Inherited Slot
-	    Specifications" on page 67</a>.</p></dd>
+	    in <a href="Instance_Creation_and_Initialization#MARKER-9-677"><q>Inherited Slot
+		Specifications</q> on page 67</a>.</p></dd>
       </dl>
       <a name="HEADING112-240"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-2015">define module</code> </span><span class="attributes-summary">[Definition]</span></h4>
@@ -924,8 +925,8 @@ dylan-gx
 	    the domain indicated by the <var>types</var>. For a complete description of the rules
 	    governing <code>define sealed domain</code> and the implications of a <code>define
 	    sealed domain</code> definition,
-	    see <a href="Define_Sealed_Domain#MARKER-9-1123">"Define Sealed Domain" on page
-	    135</a>.</p>
+	    see <a href="Define_Sealed_Domain#MARKER-9-1123"><q>Define Sealed Domain</q> on page
+	      135</a>.</p>
 	  <ul>
 	    <li><var>generic-function</var> is the name of a module binding containing an explicitly
 	      defined generic function.</li>

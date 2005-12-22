@@ -151,7 +151,7 @@
 	a <dfn id="MARKER-2-790">next-method parameter</dfn>. They also may
 	include <dfn id="MARKER-2-791">return value declarations</dfn>.</p>
       <p>The complete syntax of parameter lists is given
-	in <a href="Phrase_Grammar#MARKER-9-2115">"Methods" on page 426</a>.</p>
+	in <a href="Phrase_Grammar#MARKER-9-2115"><q>Methods</q> on page 426</a>.</p>
       <p>Required parameters correspond to arguments that must be supplied when a function is
 	called. The arguments are supplied in a fixed order and must appear before any other
 	arguments.</p>
@@ -186,15 +186,15 @@
 	specified by the programmer, <code>define method</code> inserts one with the
 	name <code>next-method</code>. If an explicit next-method parameter is given, it must come
 	after the required parameters and before the rest and keyword parameters. Details of using
-	next-method are given in <a href="Method_Dispatch#MARKER-9-858">"Calling Less Specific
-	  Methods" on page 98</a>.<a name="MARKER-2-799"></a></p>
+	next-method are given in <a href="Method_Dispatch#MARKER-9-858"><q>Calling Less Specific
+	    Methods</q> on page 98</a>.<a name="MARKER-2-799"></a></p>
       <a name="HEADING49-14"></a>
       <a name="UID-Functions-2273"></a>
       <h2 class="subsection-title"><a name="MARKER-9-800"></a>Kinds of Parameter Lists</h2>
       <p><a name="MARKER-2-801"></a>Each function (generic function or method) has an argument
 	passing protocol specified by its parameter list. The argument passing protocol for a method
 	must be compatible with the argument passing protocol of any generic function to which it is
-	added, as described in <a href="#MARKER-9-837">"Parameter List Congruency" on page
+	added, as described in <a href="#MARKER-9-837"><q>Parameter List Congruency</q> on page
 	  93</a>.</p>
       <p>The argument passing protocol of a function can be described in one of the following
 	ways:</p>
@@ -382,7 +382,7 @@ end method find-food;<a name="MARKER-2-828"></a><a name="MARKER-2-829"></a></pre
 	parameter list and are separated from the parameters by <code>=&gt;</code>. For each return
 	value, a value declaration can specify a name and an operand or just a name if the type
 	is <code>&lt;object&gt;</code>. The complete syntax of value declarations is given
-	in <a href="Phrase_Grammar#MARKER-9-2115">"Methods" on page 426</a>.</p>
+	in <a href="Phrase_Grammar#MARKER-9-2115"><q>Methods</q> on page 426</a>.</p>
       <p>The result of executing the operand at the time the function is defined is a type, called
 	a <dfn id="MARKER-2-832">value type</dfn>. The name never comes into scope. It is included
 	for documentation and for syntactic consistency with parameters. It is valid for the same
@@ -414,10 +414,10 @@ end method find-food;<a name="MARKER-2-828"></a><a name="MARKER-2-829"></a></pre
 	  values are discarded and not returned.</li>
       </ul>
       <p><a name="MARKER-2-836"></a>Because of the parameter list congruency rules for value
-	declarations (see <a href="#MARKER-9-837">"Parameter List Congruency" on page 93</a>) the
-	values returned by a generic function do not have to be checked by the generic function. The
-	check inside a method will always be enough to verify that the return values are valid for
-	the generic function.</p>
+	declarations (see <a href="#MARKER-9-837"><q>Parameter List Congruency</q> on page 93</a>)
+	the values returned by a generic function do not have to be checked by the generic
+	function. The check inside a method will always be enough to verify that the return values
+	are valid for the generic function.</p>
       <pre class="code">
 define method average (x :: &lt;number&gt;, y :: &lt;number&gt;)
  =&gt; mean :: &lt;number&gt;;
