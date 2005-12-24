@@ -132,38 +132,50 @@
 	of <dfn id="MARKER-2-955">format arguments</dfn>. Upper and lower case letters are
 	equivalent in these format directives. The inserted value is formatted according to the
 	following table:<a rel="FOOTNOTE" href="#FOOTNOTE-4"><sup>[4]</sup></a></p>
-      <table class="numbered"><caption><strong>Table 7-1</strong>  Format Directives</caption>
-	<tr><th><p>Directive</p>
-	  </th><th><p>Argument Type</p>
-	  </th><th><p>Textual Format</p>
-	</th></tr><tr><td><p><code id="MARKER-2-885">%d</code></p>
-	  </td><td><p><code>&lt;integer&gt;</code></p>
-	  </td><td><p>decimal number</p>
-	</td></tr><tr><td><p><code>%b</code></p>
-	  </td><td><p><code>&lt;integer&gt;</code></p>
-	  </td><td><p>binary number</p>
-	</td></tr><tr><td><p><code>%o</code></p>
-	  </td><td><p><code>&lt;integer&gt;</code></p>
-	  </td><td><p>octal number</p>
-	</td></tr><tr><td><p><code>%x</code></p>
-	  </td><td><p><code>&lt;integer&gt;</code></p>
-	  </td><td><p>hexadecimal number</p>
-	</td></tr><tr><td><p><code>%c</code></p>
-	  </td><td><p><code>&lt;character&gt;</code></p>
-	  </td><td><p>character (with no quotes)</p>
-	</td></tr><tr><td><p><code>%s</code></p>
-	  </td><td><p><code>&lt;string&gt;</code></p>
-	  </td><td><p>string (with no quotes)</p>
-	</td></tr><tr><td><p><code>%s</code></p>
-	  </td><td><p><code>&lt;condition&gt;</code></p>
-	  </td><td><p>condition message (with no quotes)</p>
-	</td></tr><tr><td><p><code>%=</code></p>
-	  </td><td><p><code>&lt;object&gt;</code></p>
-	  </td><td><p>unspecified, but works with any object</p>
-	</td></tr><tr><td><p><code>%%</code></p>
-	  </td><td><p>none</p>
-	  </td><td><p>literal <code>%</code></p>
-      </td></tr></table>
+      <table class="numbered">
+	<caption><strong>Table 7-1</strong> Format Directives</caption>
+	<tr>
+	  <th><p>Directive</p></th>
+	  <th><p>Argument Type</p></th>
+	  <th><p>Textual Format</p></th>
+	</tr><tr>
+	  <td><p><code id="MARKER-2-885">%d</code></p></td>
+	  <td><p><code>&lt;integer&gt;</code></p></td>
+	  <td><p>decimal number</p></td>
+	</tr><tr>
+	  <td><p><code>%b</code></p></td>
+	  <td><p><code>&lt;integer&gt;</code></p></td>
+	  <td><p>binary number</p></td>
+	</tr><tr>
+	  <td><p><code>%o</code></p></td>
+	  <td><p><code>&lt;integer&gt;</code></p></td>
+	  <td><p>octal number</p></td>
+	</tr><tr>
+	  <td><p><code>%x</code></p></td>
+	  <td><p><code>&lt;integer&gt;</code></p></td>
+	  <td><p>hexadecimal number</p></td>
+	</tr><tr>
+	  <td><p><code>%c</code></p></td>
+	  <td><p><code>&lt;character&gt;</code></p></td>
+	  <td><p>character (with no quotes)</p></td>
+	</tr><tr>
+	  <td><p><code>%s</code></p></td>
+	  <td><p><code>&lt;string&gt;</code></p></td>
+	  <td><p>string (with no quotes)</p></td>
+	</tr><tr>
+	  <td><p><code>%s</code></p></td>
+	  <td><p><code>&lt;condition&gt;</code></p></td>
+	  <td><p>condition message (with no quotes)</p></td>
+	</tr><tr>
+	  <td><p><code>%=</code></p></td>
+	  <td><p><code>&lt;object&gt;</code></p></td>
+	  <td><p>unspecified, but works with any object</p></td>
+	</tr><tr>
+	  <td><p><code>%%</code></p></td>
+	  <td><p>none</p></td>
+	  <td><p>literal <code>%</code></p></td>
+	</tr>
+      </table>
       <p>The text printed by the <code>%=</code> format directive for any given object is
 	implementation-defined. The behavior when a format argument is not of the type specified in
 	the table above is implementation-defined. The behavior when too many or too few format

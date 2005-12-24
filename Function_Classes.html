@@ -199,83 +199,142 @@
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;function&gt;</code> provides the following operations:</p>
-	  <table class="numbered"><caption><strong>Table 11-65</strong>  Functions on &lt;function&gt;</caption>
-	    <tr><th class="primary"><p>Function</p>
-	      </th><th><p>Description</p>
-	      </th><th><p>Page</p>
-	    </th></tr><tr><td><p><code>compose</code></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-2-1755">Returns the composition of one or more functions.</a></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-2-1755">346</a></p>
-	    </td></tr><tr><td><p><code>complement</code></p>
-	      </td><td><p><a href="Functional_Operations#MARKER-9-1878">Returns a function that expresses the complement of a predicate.</a></p>
-	      </td><td><p><a href="Functional_Operations#MARKER-9-1878">346</a></p>
-	    </td></tr><tr><td><p><code>disjoin</code></p>
-	      </td><td><p><a href="Functional_Operations#MARKER-9-1880">Returns a function that expresses the disjunction of one or more predicates.</a></p>
-	      </td><td><p><a href="Functional_Operations#MARKER-9-1880">347</a></p>
-	    </td></tr><tr><td><p><code>conjoin</code></p>
-	      </td><td><p><a href="Functional_Operations#MARKER-9-1882">Returns a function that expresses the conjunction of one or more predicates.</a></p>
-	      </td><td><p><a href="Functional_Operations#MARKER-9-1882">347</a></p>
-	    </td></tr><tr><td><p><code>curry</code></p>
-	      </td><td><p><a href="Functional_Operations#MARKER-9-1884">Returns a function based on an existing function and a number of default initial arguments.</a></p>
-	      </td><td><p><a href="Functional_Operations#MARKER-9-1884">348</a></p>
-	    </td></tr><tr><td><p><code>rcurry</code></p>
-	      </td><td><p><a href="Functional_Operations#MARKER-9-1886">Returns a function based on an existing function and a number of default final arguments.</a></p>
-	      </td><td><p><a href="Functional_Operations#MARKER-9-1886">349</a></p>
-	    </td></tr><tr><td><p><code>function-specializers</code></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1901">Returns the specializers of a function.</a></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1901">353</a></p>
-	    </td></tr><tr><td><p><code>function-arguments</code></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1903">Returns information about the arguments accepted by a function.</a></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1903">354</a></p>
-	    </td></tr><tr><td><p><code>function-return-values</code></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1905">Returns information about the values returned by a function.</a></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1905">354</a></p>
-	    </td></tr><tr><td><p><code>applicable-method?</code></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1907">Tests if a function is applicable to sample arguments.</a></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1907">355</a></p>
-	    </td></tr><tr><td><p><code>apply</code></p>
-	      </td><td><p><a href="Function_Application#MARKER-9-1891">Applies a function to arguments.</a></p>
-	      </td><td><p><a href="Function_Application#MARKER-9-1891">350</a></p>
-	    </td></tr><tr><td><p><code>do</code></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1810">Iterates over one or more collections for side effect.</a></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1810">327</a></p>
-	    </td></tr><tr><td><p><code>map</code></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1812">Iterates over one or more collections and collects the results in a freshly allocated collection.</a></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1812">328</a></p>
-	    </td></tr><tr><td><p><code>map-as</code></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1814">Iterates over one or more collections and collects the results in a freshly allocated collection of a specified type.</a></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1814">328</a></p>
-	    </td></tr><tr><td><p><code>map-into</code></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1816">Iterates over one or more collections and collects the results in an existing mutable collection.</a></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1816">329</a></p>
-	    </td></tr><tr><td><p><code>any?</code></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1818">Returns the first true value obtained by iterating over one or more collections.</a></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1818">330</a></p>
-	    </td></tr><tr><td><p><code>every?</code></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1821">Returns true if a predicate returns true when applied to all corresponding elements of a set of collections.</a></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1821">331</a></p>
-	    </td></tr><tr><td><p><code>reduce</code></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1824">Combines the elements of a collection and a seed value into a single value by repeatedly applying a binary function.</a></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1824">331</a></p>
-	    </td></tr><tr><td><p><code>reduce1</code></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1826">Combines the elements of a collection into a single value by repeatedly applying a binary function, using the first element of the collection as the seed value.</a></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1826">332</a></p>
-	    </td></tr><tr><td><p><code>find-key</code></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1837">Returns the key in a collection such that the corresponding collection element satisfies a predicate.</a></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1837">335</a></p>
-	    </td></tr><tr><td><p><code>replace-elements!</code></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1842">Replaces those collection elements that satisfy a predicate.</a></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1842">336</a></p>
-	    </td></tr><tr><td><p><code>choose</code></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1828">Returns those elements of a sequence that satisfy a predicate.</a></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1828">333</a></p>
-	    </td></tr><tr><td><p><code>choose-by</code></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1831">Returns those elements of a sequence that correspond to those in another sequence that satisfy a predicate.</a></p>
-	      </td><td><p><a href="Collection_Operations#MARKER-9-1831">333</a></p>
-	    </td></tr><tr><td><p><code>do-handlers</code></p>
-	      </td><td><p><a href="Operations_on_Conditions#MARKER-9-1937">Applies a function to all dynamically active handlers.</a></p>
-	      </td><td><p><a href="Operations_on_Conditions#MARKER-9-1937">362</a></p>
-	  </td></tr></table>
+	  <table class="numbered">
+	    <caption><strong>Table 11-65</strong> Functions on &lt;function&gt;</caption>
+	    <tr>
+	      <th class="primary"><p>Function</p></th>
+	      <th><p>Description</p></th>
+	      <th><p>Page</p></th>
+	    </tr><tr>
+	      <td><p><code>compose</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-2-1755">Returns the composition of one or
+		    more functions.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-2-1755">346</a></p></td>
+	    </tr><tr>
+	      <td><p><code>complement</code></p></td>
+	      <td><p><a href="Functional_Operations#MARKER-9-1878">Returns a function that expresses
+		    the complement of a predicate.</a></p></td>
+	      <td><p><a href="Functional_Operations#MARKER-9-1878">346</a></p></td>
+	    </tr><tr>
+	      <td><p><code>disjoin</code></p></td>
+	      <td><p><a href="Functional_Operations#MARKER-9-1880">Returns a function that expresses
+		    the disjunction of one or more predicates.</a></p></td>
+	      <td><p><a href="Functional_Operations#MARKER-9-1880">347</a></p></td>
+	    </tr><tr>
+	      <td><p><code>conjoin</code></p></td>
+	      <td><p><a href="Functional_Operations#MARKER-9-1882">Returns a function that expresses
+		    the conjunction of one or more predicates.</a></p></td>
+	      <td><p><a href="Functional_Operations#MARKER-9-1882">347</a></p></td>
+	    </tr><tr>
+	      <td><p><code>curry</code></p></td>
+	      <td><p><a href="Functional_Operations#MARKER-9-1884">Returns a function based on an
+		    existing function and a number of default initial arguments.</a></p></td>
+	      <td><p><a href="Functional_Operations#MARKER-9-1884">348</a></p></td>
+	    </tr><tr>
+	      <td><p><code>rcurry</code></p></td>
+	      <td><p><a href="Functional_Operations#MARKER-9-1886">Returns a function based on an
+		    existing function and a number of default final arguments.</a></p></td>
+	      <td><p><a href="Functional_Operations#MARKER-9-1886">349</a></p></td>
+	    </tr><tr>
+	      <td><p><code>function-specializers</code></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1901">Returns the
+		    specializers of a function.</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1901">353</a></p></td>
+	    </tr><tr>
+	      <td><p><code>function-arguments</code></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1903">Returns information
+		    about the arguments accepted by a function.</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1903">354</a></p></td>
+	    </tr><tr>
+	      <td><p><code>function-return-values</code></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1905">Returns information
+		    about the values returned by a function.</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1905">354</a></p></td>
+	    </tr><tr>
+	      <td><p><code>applicable-method?</code></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1907">Tests if a function
+		    is applicable to sample arguments.</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1907">355</a></p></td>
+	    </tr><tr>
+	      <td><p><code>apply</code></p></td>
+	      <td><p><a href="Function_Application#MARKER-9-1891">Applies a function to
+		    arguments.</a></p></td>
+	      <td><p><a href="Function_Application#MARKER-9-1891">350</a></p></td>
+	    </tr><tr>
+	      <td><p><code>do</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1810">Iterates over one or more
+		    collections for side effect.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1810">327</a></p></td>
+	    </tr><tr>
+	      <td><p><code>map</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1812">Iterates over one or more
+		    collections and collects the results in a freshly allocated
+		    collection.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1812">328</a></p></td>
+	    </tr><tr>
+	      <td><p><code>map-as</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1814">Iterates over one or more
+		    collections and collects the results in a freshly allocated collection of a
+		    specified type.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1814">328</a></p></td>
+	    </tr><tr>
+	      <td><p><code>map-into</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1816">Iterates over one or more
+		    collections and collects the results in an existing mutable
+		    collection.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1816">329</a></p></td>
+	    </tr><tr>
+	      <td><p><code>any?</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1818">Returns the first true value
+		    obtained by iterating over one or more collections.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1818">330</a></p></td>
+	    </tr><tr>
+	      <td><p><code>every?</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1821">Returns true if a predicate
+		    returns true when applied to all corresponding elements of a set of
+		    collections.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1821">331</a></p></td>
+	    </tr><tr>
+	      <td><p><code>reduce</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1824">Combines the elements of a
+		    collection and a seed value into a single value by repeatedly applying a binary
+		    function.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1824">331</a></p></td>
+	    </tr><tr>
+	      <td><p><code>reduce1</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1826">Combines the elements of a
+		    collection into a single value by repeatedly applying a binary function, using
+		    the first element of the collection as the seed value.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1826">332</a></p></td>
+	    </tr><tr>
+	      <td><p><code>find-key</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1837">Returns the key in a collection
+		    such that the corresponding collection element satisfies a
+		    predicate.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1837">335</a></p></td>
+	    </tr><tr>
+	      <td><p><code>replace-elements!</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1842">Replaces those collection
+		    elements that satisfy a predicate.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1842">336</a></p></td>
+	    </tr><tr>
+	      <td><p><code>choose</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1828">Returns those elements of a
+		    sequence that satisfy a predicate.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1828">333</a></p></td>
+	    </tr><tr>
+	      <td><p><code>choose-by</code></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1831">Returns those elements of a
+		    sequence that correspond to those in another sequence that satisfy a
+		    predicate.</a></p></td>
+	      <td><p><a href="Collection_Operations#MARKER-9-1831">333</a></p></td>
+	    </tr><tr>
+	      <td><p><code>do-handlers</code></p></td>
+	      <td><p><a href="Operations_on_Conditions#MARKER-9-1937">Applies a function to all
+		    dynamically active handlers.</a></p></td>
+	      <td><p><a href="Operations_on_Conditions#MARKER-9-1937">362</a></p></td>
+	    </tr>
+	  </table>
 	</dd>
       </dl>
       <a name="HEADING94-367"></a>
@@ -344,29 +403,45 @@
 	<dt><span>Operations:</span></dt>
 	<dd>
 	  <p>The class <code>&lt;generic-function&gt;</code> provides the following operations:</p>
-	  <table class="numbered"><caption><strong>Table 11-66</strong>  Functions on &lt;generic-function&gt;</caption>
-	    <tr><th class="primary"><p>Function</p>
-	      </th><th><p>Description</p>
-	      </th><th><p>Page</p>
-	    </th></tr><tr><td><p><code>generic-function-methods</code></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1895">Returns the methods of a generic function.</a></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1895">351</a></p>
-	    </td></tr><tr><td><p><code>add-method</code></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1897">Adds a method to a generic function.</a></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1897">352</a></p>
-	    </td></tr><tr><td><p><code>generic-function-mandatory-keywords</code></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1899">Returns the mandatory keywords of a generic function, if any.</a></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1899">353</a></p>
-	    </td></tr><tr><td><p><code>sorted-applicable-methods</code></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1909">Returns all the methods in a generic function that are applicable to sample arguments, sorted in order of specificity.</a></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1909">356</a></p>
-	    </td></tr><tr><td><p><code>find-method</code></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1911">Returns the method in a generic function that has particular specializers.</a></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1911">356</a></p>
-	    </td></tr><tr><td><p><code>remove-method</code></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1913">Removes a method from a generic function.</a></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1913">357</a></p>
-	  </td></tr></table>
+	  <table class="numbered">
+	    <caption><strong>Table 11-66</strong> Functions on &lt;generic-function&gt;</caption>
+	    <tr>
+	      <th class="primary"><p>Function</p></th>
+	      <th><p>Description</p></th>
+	      <th><p>Page</p></th>
+	    </tr><tr>
+	      <td><p><code>generic-function-methods</code></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1895">Returns the methods
+		    of a generic function.</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1895">351</a></p></td>
+	    </tr><tr>
+	      <td><p><code>add-method</code></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1897">Adds a method to a
+		    generic function.</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1897">352</a></p></td>
+	    </tr><tr>
+	      <td><p><code>generic-function-mandatory-keywords</code></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1899">Returns the
+		    mandatory keywords of a generic function, if any.</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1899">353</a></p></td>
+	    </tr><tr>
+	      <td><p><code>sorted-applicable-methods</code></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1909">Returns all the
+		    methods in a generic function that are applicable to sample arguments, sorted in
+		    order of specificity.</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1909">356</a></p></td>
+	    </tr><tr>
+	      <td><p><code>find-method</code></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1911">Returns the method
+		    in a generic function that has particular specializers.</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1911">356</a></p></td>
+	    </tr><tr>
+	      <td><p><code>remove-method</code></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1913">Removes a method
+		    from a generic function.</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1913">357</a></p></td>
+	    </tr>
+	  </table>
 	</dd>
       </dl>
       <a name="HEADING94-490"></a>
@@ -388,17 +463,24 @@
 	<dd>
 	  <p>The class <code>&lt;method&gt;</code> provides the following operations:</p>
 	  <p class="Anchor"><a name="MARKER-2-1471"></a></p>
-	  <table class="numbered"><caption><strong>Table 11-67</strong>  Functions on &lt;method&gt;</caption>
-	    <tr><th class="primary"><p>Function</p>
-	      </th><th><p>Description</p>
-	      </th><th><p>Page</p>
-	    </th></tr><tr><td><p><code>add-method</code></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1897">Adds a method to a generic function.</a></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1897">352</a></p>
-	    </td></tr><tr><td><p><code>remove-method</code></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1913">Removes a method from a generic function.</a></p>
-	      </td><td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1913">357</a></p>
-	  </td></tr></table>
+	  <table class="numbered">
+	    <caption><strong>Table 11-67</strong> Functions on &lt;method&gt;</caption>
+	    <tr>
+	      <th class="primary"><p>Function</p></th>
+	      <th><p>Description</p></th>
+	      <th><p>Page</p></th>
+	    </tr><tr>
+	      <td><p><code>add-method</code></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1897">Adds a method to a
+		    generic function.</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1897">352</a></p></td>
+	    </tr><tr>
+	      <td><p><code>remove-method</code></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1913">Removes a method
+		    from a generic function.</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Functions#MARKER-9-1913">357</a></p></td>
+	    </tr>
+	  </table>
 	</dd>
       </dl>
     </div>
