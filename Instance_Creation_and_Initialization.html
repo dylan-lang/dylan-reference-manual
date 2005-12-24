@@ -211,8 +211,10 @@ end class
 define method make (the-class == &lt;dog&gt;, #rest init-args, #key)
   apply(make, &lt;yorkshire-terrier&gt;, init-args)
 end
+
+make(&lt;dog&gt;)
+ &rArr; {instance of &lt;yorkshire-terrier&gt;}
 </pre>
-      <p><code>make(&lt;dog&gt;)<br />&rArr;  {instance of &lt;yorkshire-terrier&gt;}</code></p>
       <p><code>make</code> is not required to return a newly allocated instance. It may return a
 	previously created instance if that is appropriate. If a new instance is
 	allocated, <code>make</code> will call <code>initialize</code> on the instance before
