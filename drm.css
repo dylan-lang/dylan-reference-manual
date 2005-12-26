@@ -888,7 +888,11 @@ div.figure.wide
             margin-left: -8em
           }
 
-table.class-attributes-legend		          { margin-top: 1em; border-collapse: collapse }
+table.class-attributes-legend		          {
+						    margin-top: 1em;
+						    border-collapse: collapse;
+						    font-size: smaller
+						  }
 table.class-attributes-legend td    	          { padding: 0 3px 0 0 }
 table.class-attributes-legend td.description + td { padding-left: 2em }
 
