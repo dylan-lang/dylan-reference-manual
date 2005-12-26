@@ -290,7 +290,7 @@ body.section-start #section-name { display: none }
 */
 
 #navigation-footer, /* migrate tags to use this id, then delete the second selector */
-#footer > address + p.footer { display: none }
+#footer address + p.footer { display: none }
 
 
 
@@ -447,13 +447,13 @@ p[class~="Modelsw/Sub"] { margin-top: 10em }
 */
 
 /* the copyrights page goes out to the left edge of the paper and has a small font */
-div#content.copyrights { margin-left: -8em; font-size: smaller }
+#content.copyrights { margin-left: -8em; font-size: smaller }
 
 /* Warranty */
-div#warranty { padding-top: 1em; padding-bottom: 1em; font-weight: bold } 
+#warranty { padding-top: 1em; padding-bottom: 1em; font-weight: bold } 
 
 /* ISBN and Library of Congress information */
-div#ISBN-LOC { border-top: 1px solid }
+#ISBN-LOC { border-top: 1px solid }
 
 /* layout LOC info without space between paragraphs, and with proper indenting */
 p[class~="0LOC"] { margin-bottom: 0.5em; font-weight: bold }
@@ -461,7 +461,7 @@ p[class~="1LOC"], p[class~="2LOC"] { margin: 0 auto }
 
 /* float ISBN and LOC info left-to-right */
 p[class~="0ISBN/LC"] { float: left; margin-right: 4em }
-div#LOC { float: left; max-width: 28em; margin-right: 1em }
+#LOC { float: left; max-width: 28em; margin-right: 1em }
 p[class~="3LOC"] { clear: both; float: right; text-align: center; margin-top: -1em }
 
 /*
@@ -469,7 +469,7 @@ p[class~="3LOC"] { clear: both; float: right; text-align: center; margin-top: -1
   horizontal rule is rendered at the same (very narrow) width as the "CIP" float
   above it, despite the fact that we have a "clear: both" on the surrounding DIV.
 */
-div#footer > hr:first-child { clear:both; width: 100%  }
+#footer hr { clear:both; width: 100%  }
 
 
 /*
