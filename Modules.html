@@ -127,13 +127,14 @@
 	are <a name="MARKER-2-364"></a>visible to all the code within the module (except where
 	shadowed by a local binding). Only the bindings
 	explicitly <a name="MARKER-2-365"></a>exported are visible from outside the module.</p>
-      <p>Some languages have module systems with distinct support for exporting variables,
-	functions, types, and classes. Dylan modules operate only on bindings. Because functions and
-	classes are commonly named by bindings, access to them is controlled
-	by <a name="MARKER-2-366"></a>controlling access to the bindings that name them. By
-	exporting the binding naming a class or function, a program has effectively exported the
-	class or function. If the binding is not exported, then the class or function is effectively
-	private.<a rel="FOOTNOTE" href="#FOOTNOTE-1"><sup>[1]</sup></a></p>
+      <p id="FOOTNOTE-ANCHOR-1">Some languages have module systems with distinct support for
+	exporting variables, functions, types, and classes. Dylan modules operate only on
+	bindings. Because functions and classes are commonly named by bindings, access to them is
+	controlled by <a name="MARKER-2-366"></a>controlling access to the bindings that name
+	them. By exporting the binding naming a class or function, a program has effectively
+	exported the class or function. If the binding is not exported, then the class or function
+	is effectively
+	private.<a rel="footnote" href="#FOOTNOTE-1" title="Footnote 1"><sup>*</sup></a></p>
       <p><a name="MARKER-2-367"></a>A <a name="MARKER-2-368"></a>module definition defines the
 	imports and exports of a module, and may specify bindings owned by the module. A complete
 	description of module definitions is given on <a href="Definition_Macros#MARKER-9-2016">page
@@ -186,8 +187,8 @@
     <div id="footnotes">
       <hr />
 
-      <a name="FOOTNOTE-1"><sup>[1]</sup></a> This privacy can sometimes be circumvented through
-      certain introspective operations.
+      <p id="FOOTNOTE-1"><a href="#FOOTNOTE-ANCHOR-1"><sup>*</sup></a> This privacy can sometimes be
+	circumvented through certain introspective operations.</p>
 
     </div>
 

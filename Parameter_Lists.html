@@ -158,10 +158,10 @@
       <p>Each required parameter may be a name or a name <dfn id="MARKER-2-792">specialized</dfn> by
 	a type. Specifying a type declares that supplied argument must be a general instance of that
 	type.</p>
-      <p>A rest parameter allows a function to accept an unlimited number of
-	arguments.<a rel="FOOTNOTE" href="#FOOTNOTE-3"><sup>[3]</sup></a> After the required
-	arguments of a function have been supplied, any additional arguments are collected in a
-	sequence, which is passed as the value of the rest
+      <p id="FOOTNOTE-ANCHOR-3">A rest parameter allows a function to accept an unlimited number of
+	arguments.<a rel="footnote" href="#FOOTNOTE-3" title="Footnote 3"><sup>*</sup></a> After the
+	required arguments of a function have been supplied, any additional arguments are collected
+	in a sequence, which is passed as the value of the rest
 	parameter. <a name="MARKER-2-793"></a>This sequence may be immutable, and it may or may not
 	be freshly allocated. The types of rest parameters cannot be declared.</p>
       <p><a name="MARKER-2-794"></a><a name="MARKER-2-795"></a>Keyword parameters correspond to
@@ -544,8 +544,9 @@ end method;
     <div id="footnotes">
       <hr />
 
-      <p><a name="FOOTNOTE-3"><sup>[3]</sup></a> In practice, an implementation may place a
-	reasonable limit on the number of arguments that may be passed to any function.</p>
+      <p id="FOOTNOTE-3"><a href="#FOOTNOTE-ANCHOR-3"><sup>*</sup></a> In practice, an
+	implementation may place a reasonable limit on the number of arguments that may be passed to
+	any function.</p>
 
     </div>
 

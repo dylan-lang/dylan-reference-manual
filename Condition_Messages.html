@@ -124,14 +124,15 @@
       <h1 class="section-title"><a name="MARKER-9-951"></a>Condition Messages</h1>
       <p><a name="MARKER-2-952"></a>Some condition classes provide a message to communicate the
 	meaning of the condition to the program user.</p>
-      <p>Condition messages are constructed using <dfn id="MARKER-2-953">format strings</dfn>. A
-	format string is a string template into which values can be inserted to construct a
-	message. The two-character <dfn id="MARKER-2-954">format
-	directives</dfn> <code>%d</code>, <code>%b</code>, <code>%o</code>, <code>%x</code>, <code>%c</code>, <code>%s</code>,
-	and <code>%=</code> are replaced by the corresponding element of the associated sequence
+      <p id="FOOTNOTE-ANCHOR-4">Condition messages are constructed
+	using <dfn id="MARKER-2-953">format strings</dfn>. A format string is a string template into
+	which values can be inserted to construct a message. The two-character
+	<dfn id="MARKER-2-954">format directives</dfn> <code>%d</code>, <code>%b</code>,
+	<code>%o</code>, <code>%x</code>, <code>%c</code>, <code>%s</code>, and <code>%=</code> are
+	replaced by the corresponding element of the associated sequence
 	of <dfn id="MARKER-2-955">format arguments</dfn>. Upper and lower case letters are
 	equivalent in these format directives. The inserted value is formatted according to the
-	following table:<a rel="FOOTNOTE" href="#FOOTNOTE-4"><sup>[4]</sup></a></p>
+	following table:<a rel="footnote" href="#FOOTNOTE-4" title="Footnote 4"><sup>*</sup></a></p>
       <table class="numbered">
 	<caption><strong>Table 7-1</strong> Format Directives</caption>
 	<tr>
@@ -199,9 +200,9 @@
     <div id="footnotes">
       <hr />
 
-      <p><a name="FOOTNOTE-4"><sup>[4]</sup></a> These format directives are designed for
-	compatibility with C's <code>printf</code>, with some omissions and with the addition
-	of <code>%=</code>.</p>
+      <p id="FOOTNOTE-4"><a href="#FOOTNOTE-ANCHOR-4"><sup>*</sup></a> These format directives are
+	designed for compatibility with C's <code>printf</code>, with some omissions and with the
+	addition of <code>%=</code>.</p>
 
     </div>
 

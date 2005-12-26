@@ -135,12 +135,13 @@
 	slot, so one instance can have one value in the slot and another instance can have another
 	value. Some slots are shared among instances, as described
 	in <a href="#MARKER-9-629"><q>Slot Allocation</q> on page 60</a>.</p>
-      <p><a name="MARKER-2-601"></a>All slot access is performed by function calls.<a rel="FOOTNOTE" href="#FOOTNOTE-2"><sup>[2]</sup></a>
-	The method that returns the value of a slot is called the <dfn id="MARKER-2-602">getter
-	  method</dfn>, and the method that sets the value of a slot is called
-	the <dfn id="MARKER-2-603">setter method</dfn>. The getter and setter methods are added to
-	generic functions. When defining a class, you specify slots by specifying the generic
-	functions to which the getter and setter methods should be added.</p>
+      <p id="FOOTNOTE-ANCHOR-2"><a name="MARKER-2-601"></a>All slot access is performed by function
+	calls.<a rel="footnote" href="#FOOTNOTE-2" title="Footnote 2"><sup>*</sup></a> The method
+	that returns the value of a slot is called the <dfn id="MARKER-2-602">getter method</dfn>,
+	and the method that sets the value of a slot is called the <dfn id="MARKER-2-603">setter
+	  method</dfn>. The getter and setter methods are added to generic functions. When defining a
+	class, you specify slots by specifying the generic functions to which the getter and setter
+	methods should be added.</p>
       <p>For example, the class definition for <code>&lt;point&gt;</code> might be</p>
       <pre class="code">
 define class &lt;point&gt; (&lt;object&gt;)
@@ -402,8 +403,8 @@ end method;<a name="MARKER-2-654"></a><a name="MARKER-2-655"></a>
     <div id="footnotes">
       <hr />
 
-      <p><a name="FOOTNOTE-2"><sup>[2]</sup></a> This is in contrast to some other languages where
-	slots are accessed through named value references.</p>
+      <p id="FOOTNOTE-2"><a href="#FOOTNOTE-ANCHOR-2"><sup>*</sup></a> This is in contrast to some
+	other languages where slots are accessed through named value references.</p>
 
     </div>
 
