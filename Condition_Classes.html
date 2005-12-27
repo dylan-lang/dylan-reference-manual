@@ -169,13 +169,15 @@
 	<a name="MARKER-9-1474"></a>The Condition Classes</p>
       
       <div class="figure wide" style="min-width: 699px">
+	<!-- min-width is necessary to prevent the surrounding box from being layed out narrower
+	     than the image in smaller viewports -->
 	<map id="condition-classes-map" name="condition-classes-map">
-	  <!-- NAME is necessary for compatibility with some buggy user agents that don't
-	       work when there's just ID here. -->
-	  <!-- This map is adapted from drm_Figure_11-6_Condition_Classes_map.html,
-	       which is generated from the corresponding OmniGraffle file. If the
-	       .graffle file is updated, export to HTML and update the map areas here.
-	       Be sure to add " /" at the end of the AREA tags to make it valid XHTML. -->
+	  <!-- The redundant NAME attribute is necessary for compatibility with some buggy user
+	       agents that don't find the map by ID and associate it with the image. -->
+	  <!-- This map is adapted from drm_Figure_11-6_Condition_Classes_map.html, which is
+	       generated from the corresponding OmniGraffle file. If the .graffle file is updated,
+	       export to HTML and update the map areas here.  Be sure to add " /" at the end of the
+	       AREA tags to make it valid XHTML. -->
 	  <area alt="class sealed-object-error" coords="326,386,452,429" href="#HEADING95-358" />
 	  <area alt="class type-error" coords="164,386,290,429" href="#HEADING95-302" />
 	  <area alt="class simple-error" coords="2,386,128,429" href="#HEADING95-246" />

@@ -207,13 +207,15 @@
 	<a name="MARKER-9-1400"></a>The Collection Classes</p>
       
       <div class="figure wide" style="min-width: 715px">
+	<!-- min-width is necessary to prevent the surrounding box from being layed out narrower
+	     than the image in smaller viewports -->
 	<map id="collection-classes-map" name="collection-classes-map">
-	  <!-- NAME is necessary for compatibility with some buggy user agents that don't
-	       work when there's just ID here. -->
-	  <!-- This map is adapted from drm_Figure_11-4_Collection_Classes_map.html,
-	       which is generated from the corresponding OmniGraffle file. If the
-	       .graffle file is updated, export to HTML and update the map areas here.
-	       Be sure to add " /" at the end of the AREA tags to make it valid XHTML. -->
+	  <!-- The redundant NAME attribute is necessary for compatibility with some buggy user
+	       agents that don't find the map by ID and associate it with the image. -->
+	  <!-- This map is adapted from drm_Figure_11-4_Collection_Classes_map.html, which is
+	       generated from the corresponding OmniGraffle file. If the .graffle file is updated,
+	       export to HTML and update the map areas here.  Be sure to add " /" at the end of the
+	       AREA tags to make it valid XHTML. -->
 	  <area alt="class simple-object-vector" coords="143,576,275,619" href="#HEADING93-1761" />
 	  <area alt="class unicode-string" coords="587,505,713,548" href="#HEADING93-2752" />
 	  <area alt="class byte-string" coords="452,505,578,548" href="#HEADING93-2695" />

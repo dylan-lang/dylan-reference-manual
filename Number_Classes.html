@@ -169,13 +169,15 @@
 	<a name="MARKER-9-1382"></a>The Number Classes</p>
       
       <div class="figure wide" style="min-width: 616px">
+	<!-- min-width is necessary to prevent the surrounding box from being layed out narrower
+	     than the image in smaller viewports -->
 	<map id="number-classes-map" name="number-classes-map">
-	  <!-- NAME is necessary for compatibility with some buggy user agents that don't
-	       work when there's just ID here. -->
-	  <!-- This map is adapted from drm_Figure_11-3_Number_Classes_map.html,
-	       which is generated from the corresponding OmniGraffle file. If the
-	       .graffle file is updated, export to HTML and update the map areas here.
-	       Be sure to add " /" at the end of the AREA tags to make it valid XHTML. -->
+	  <!-- The redundant NAME attribute is necessary for compatibility with some buggy user
+	       agents that don't find the map by ID and associate it with the image. -->
+	  <!-- This map is adapted from drm_Figure_11-3_Number_Classes_map.html, which is generated
+	       from the corresponding OmniGraffle file. If the .graffle file is updated, export to
+	       HTML and update the map areas here.  Be sure to add " /" at the end of the AREA tags
+	       to make it valid XHTML. -->
 	  <area alt="class integer" coords="488,397,614,440" href="#HEADING92-444" />
 	  <area alt="class extended-float" coords="326,397,452,440" href="#HEADING92-430" />
 	  <area alt="class double-float" coords="164,397,290,440" href="#HEADING92-424" />
