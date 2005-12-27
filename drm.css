@@ -23,37 +23,13 @@ q:after  { content: '\201D' }
 /*
   Errata Notes
 
-  They can be displayed inline, within the left margin, or floating within
-  the right of the body content.
+  Displayed in a yellow box with "Errata" in the header.
 */
 
 p.errata {
 	  padding: 0 0.5em 0.5em 0.5em; margin-top: 0.5em;
 	  background-color: #ffa; border: 1px solid #dd8;
 	  font-size: smaller; font-family: sans-serif;
-	 }
-p.errata.left {
-	  position: absolute; left: 0;
-	  width: 7.5em;
-	 }
-/*
-   When printing, Firefox (as of 1.5) places all the absolutely positioned
-   elements on pages two and later on top of each other on the first
-   page. As a workaround, use a float instead.
-
-   NOTE: We could simplify things and just use 'float: left' for the
-   onscreen display, as well; however, in Safari (as of 2.0.2) the links in
-   errata boxes aren't clickable if we use a float.
-*/
-@media print {
-  p.errata.left {
-                 float: left; position: static; margin-left: -9.5em;
-                }
-}
-
-p.errata.right {
-	  float: right; margin-top: 0; margin-left: 1em;
-	  max-width: 20em;
 	 }
 /* hide the "Errata:" tag in the text and replace it with an "Errata" header line */
 p.errata > a:first-child strong {
@@ -245,14 +221,18 @@ body.section-start #section-name { display: none }
   #navigation-TOC a:hover { text-decoration: underline }
 
 
-  /*
-     Some example code to place a block at the bottom of the viewport, with
-     a highlight background color. I intend to add something like this in
-     the future to use for meta comments, such as errata.
-  */
+  /* Some experimental code to place meta notes at the bottom of the viewport. */
 /*
-  p[class~="Modelsw/Sub"] { position: fixed; bottom: 0; left: 15.5em; right: 0; margin: 0 0 0 1px; padding: 0.5em 2em; background-color: #ffa; border-top: 1px solid #dd8 }
-  p[class~="Modelsw/Sub"]:before { float: left; content: "Note:" url("some-image"); margin-right: 1em; font-variant: small-caps   }
+  p.meta-note		{
+  			 position: fixed; bottom: 0; left: 17em; right: 0;
+			 margin: 0 0 0 1px; padding: 0.5em 2em;
+			 background-color: #ffa; border-top: 1px solid #dd8;
+			}
+  p.meta-note:before	{
+  			 content: "Note:" url("some-image");
+  			 float: left; margin-right: 1em;
+			 font-variant: small-caps;
+			}
 */
 
 } /* @media screen */
@@ -442,7 +422,24 @@ h1.book-title + p       { font-size: larger }
 p.author                { font-size: x-large; margin-top: 3em; margin-bottom: 2em  }
 
 /* move the "[This HTML....in 1996]" notice down */
-p[class~="Modelsw/Sub"] { margin-top: 10em }
+p#online-version { margin-top: 10em }
+
+/* format "meta notes" -- notes about the DRM or about the online DRM -- as yellow boxes with a
+   "Note:" header */
+.meta-note 	  {
+		   padding: 0 0.5em 0.5em 0.5em; margin-top: 0.5em;
+		   background-color: #ffa;
+		   border: 1px solid #dd8;
+		   font-family: sans-serif;
+		   font-size: smaller;
+		  }
+.meta-note:before {
+		   content: "Note:";
+		   display: block;
+		   margin: 0 -0.5em 0.5em -0.5em; padding: 0.25em 0.5em;
+		   background-color: #dd8;
+		   font-weight: bold;
+		  }
 
 
 /*
