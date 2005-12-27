@@ -335,9 +335,9 @@ values(1, 2, 3)
 	    on <code>as</code> will always return the same symbol for strings of the same
 	    characters, without regard to alphabetic case.</p>
 	  <pre class="code">
-as (&lt;symbol&gt;, "foo")
+as(&lt;symbol&gt;, "foo")
 <code> &rArr;</code>  #"foo"
-#"FOO" == as (&lt;symbol&gt;, "foo")
+#"FOO" == as(&lt;symbol&gt;, "foo")
 <code> &rArr;</code>  #t
 #"Foo"
 <code> &rArr;</code>  #"foo"</pre>
@@ -347,7 +347,7 @@ as (&lt;symbol&gt;, "foo")
 	  <p>This method on <code>as</code> returns the name of the symbol, which will be a
 	  string.</p>
 	  <pre class="code">
-as (&lt;string&gt;, #"Foo")
+as(&lt;string&gt;, #"Foo")
 <code> &rArr;</code>  "Foo"</pre>
 	</dd>
       </dl>

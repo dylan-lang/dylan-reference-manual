@@ -147,20 +147,16 @@
 	additional constructs as valid definitions, by creating a
 	new <em class="BNFCaps">define-body-word</em> that is recognized by the following grammar
 	line:</p>
-      <div class="BNF">
-	<dl>
-	  <dt><var>definition-macro-call:</var></dt>
-	  <dd><code>define</code> <i>modifiers<em><sub>opt</sub></em></i> <em class="BNFCaps">define-body-word</em> <i>body-fragment<em><sub>opt</sub></em></i> <var>definition-tail</var></dd>
-	</dl>
-      </div>
+      <dl class="BNF">
+	<dt><var>definition-macro-call:</var></dt>
+	<dd><code>define</code> <i>modifiers<em><sub>opt</sub></em></i> <em class="BNFCaps">define-body-word</em> <i>body-fragment<em><sub>opt</sub></em></i> <var>definition-tail</var></dd>
+      </dl>
       <p>or by creating a new <em class="BNFCaps">define-list-word</em> that is recognized by the
 	following grammar line:</p>
-      <div class="BNF">
-	<dl>
-	  <dt><var>definition-macro-call:</var></dt>
-	  <dd><code>define</code> <i>modifiers<em><sub>opt</sub></em></i> <em class="BNFCaps">define-list-word</em> <i>list-fragment<em><sub>opt</sub></em></i></dd>
-	</dl>
-      </div>
+      <dl class="BNF">
+	<dt><var>definition-macro-call:</var></dt>
+	<dd><code>define</code> <i>modifiers<em><sub>opt</sub></em></i> <em class="BNFCaps">define-list-word</em> <i>list-fragment<em><sub>opt</sub></em></i></dd>
+      </dl>
       <p>This allows programmers to extend Dylan by defining new kinds of definitions. The syntax of
 	the definition must be parseable by one of these two predefined grammar rules. The first
 	handles body-style definitions like <code>define class</code>, <code>define method</code>,
@@ -180,32 +176,28 @@
 	of the Dylan phrase grammar to recognize additional constructs as valid statements by
 	creating a new <em class="BNFCaps">begin-word</em> that is recognized by the following
 	grammar line:</p>
-      <div class="BNF">
-	<dl>
-	  <dt><var>statement:</var></dt>
-	  <dd>
-	    <p><em class="BNFCaps">begin-word</em> <i>body-fragment<em><sub>opt</sub></em></i> <var>end-clause</var></p>
-	  </dd>
-	</dl>
-      </div>
+      <dl class="BNF">
+	<dt><var>statement:</var></dt>
+	<dd>
+	  <p><em class="BNFCaps">begin-word</em> <i>body-fragment<em><sub>opt</sub></em></i> <var>end-clause</var></p>
+	</dd>
+      </dl>
       <p>The new <em class="BNFCaps">begin-word</em> becomes a reserved word in each module where
 	the macro definition is visible. It can only be used at the beginning and end of this new
 	statement.<a name="MARKER-2-1219"></a></p>
       <a name="HEADING78-13"></a>
       <a name="UID-Macros-1569"></a>
       <h2 class="subsection-title">Function Macros</h2>
-      <p><a name="MARKER-2-1220"></a>A function macro extends
-	the <var>function-macro-call </var>production of the Dylan phrase grammar to recognize
-	additional constructs by creating a new <em class="BNFCaps">function-word</em> that is
-	recognized by the following grammar line:</p>
-      <div class="BNF">
-	<dl>
-	  <dt><var>function-macro-call:</var></dt>
-	  <dd>
-	    <p><em class="BNFCaps">function-word</em> <code>(</code> <i>body-fragment<em><sub>opt</sub></em></i> <code>)</code></p>
-	  </dd>
-	</dl>
-      </div>
+      <p><a name="MARKER-2-1220"></a>A function macro extends the <var>function-macro-call</var>
+	production of the Dylan phrase grammar to recognize additional constructs by creating a
+	new <em class="BNFCaps">function-word</em> that is recognized by the following grammar
+	line:</p>
+      <dl class="BNF">
+	<dt><var>function-macro-call:</var></dt>
+	<dd>
+	  <p><em class="BNFCaps">function-word</em> <code>(</code> <i>body-fragment<em><sub>opt</sub></em></i> <code>)</code></p>
+	</dd>
+      </dl>
       <p>In addition, a function macro can be invoked by any of the shorthand syntax constructs
 	available for invoking functions. In this case, the arguments are always parsed expression
 	fragments, as described on <a href="Macros_Overview#MARKER-9-1199">page 146</a>.</p>
