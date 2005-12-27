@@ -11,31 +11,27 @@
   <body>
     <h1>DRM Errata</h1>
     <blockquote>
-      <p>This page contains a listing of typos and other errors in
-	the Dylan Reference Manual. If you find additional errors,
-	<a href="mailto:gd-hackers@gwydiondylan.org">please let us know</a>. Questions
-	about Dylan, suggestions for improvements to the language, and
-	general discussion should be directed to the <a href="mailto:info-dylan-request@ai.mit.edu">Dylan
-	  mailing list</a>, or to <a href="news:comp.lang.dylan">the Dylan newsgroup</a>.</p>
-      <p>This page was originally created by Andrew Shalit (and was extended by the Gwydion Dylan Maintainers later on).
-	He writes:</p>
-      <p>Thanks go to <a href="mailto:tree@tiac.net">Tom Emerson</a>,
-	for suggesting that I put together this page, and for supplying me
-	with an initial list of typos.</p>
+      <p>This page contains a listing of typos and other errors in the Dylan Reference Manual. If
+	you find additional errors,
+	<a href="mailto:gd-hackers@gwydiondylan.org">please let us know</a>. Questions about Dylan,
+	suggestions for improvements to the language, and general discussion should be directed to
+	the <a href="mailto:info-dylan-request@ai.mit.edu">Dylan mailing list</a>, or
+	to <a href="news:comp.lang.dylan">the Dylan newsgroup</a>.</p>
+      <p>This page was originally created by Andrew Shalit (and was extended by the Gwydion Dylan
+	Maintainers later on). He writes:</p>
+      <blockquote>Thanks go to <a href="mailto:tree@tiac.net">Tom Emerson</a>, for suggesting that I
+	put together this page, and for supplying me with an initial list of typos.</blockquote>
     </blockquote>   
     <hr />
     <h2>Semantically Significant Errors</h2>
 
     <ul>
-      <li><a href="Operators#errata_p37_1" name="p37_1">p. 37</a> should include
-	a horizontal rule immediately above the entry for <tt>:=</tt>. In other
-	words, the precedence of
-	<tt>:=</tt> is lower than that of <tt>|</tt> and
-	<tt>&amp;</tt>.</li>
+      <li id="p37-1"><a href="Operators#errata-p37-1">p. 37</a> should include a horizontal rule
+	immediately above the entry for <tt>:=</tt>. In other words, the precedence of <tt>:=</tt>
+	is lower than that of <tt>|</tt> and <tt>&amp;</tt>.</li>
       
-      <li><a href="Union_Types#errata_p73_1" name="p73_1">p. 73</a>, the last
-	paragraph explaining the subtype relationships of <tt>type-union</tt>
-	reads
+      <li id="p73-1"><a href="Union_Types#errata-p73-1">p. 73</a>, the last paragraph explaining
+	the subtype relationships of <tt>type-union</tt> reads
 
 	<ul>
 	  <li>
@@ -53,7 +49,7 @@
 	
       </li>
       
-      <li><a href="Limited_Types#errata_p73_2" name="p73_2">p. 73</a>, the example
+      <li id="p73-2"><a href="Limited_Types#errata-p73-2">p. 73</a>, the example
 	code illustrating limited types reads
 
 	<ul>
@@ -68,12 +64,12 @@
 	
       </li>
       
-      <li><a href="Functions_Overview#errata_p83_1" name="p83_1">p. 83</a>,
+      <li id="p83-1"><a href="Functions_Overview#errata-p83-1">p. 83</a>,
 	<q>Closures</q>. The second paragraph in this section talks about
 	the <tt>score</tt> parameter, while the code actually uses a parameter
 	called <tt>points</tt>.</li>
 
-      <li><a href="Parameter_Lists#errata_p93_1" name="p93_1">p. 93</a>, in the
+      <li id="p93-1"><a href="Parameter_Lists#errata-p93-1">p. 93</a>, in the
 	second definition of method <tt>average</tt>, the return value
 	declaration is incorrect; it contains both a binding name and a type
 	
@@ -92,7 +88,7 @@
 	
       </li>
       
-      <li><a href="Define_Sealed_Domain#errata_p136_1" name="p136_1">p. 136</a>, the
+      <li id="p136-1"><a href="Define_Sealed_Domain#errata-p136-1">p. 136</a>, the
 	illustration of the third constraint implied by <tt>define sealed
 	  domain</tt> should include open declarations for the initial classes
 	and the generic function, as follows
@@ -135,41 +131,41 @@
 	  (directly or indirectly) L2, and therefore has access to the class
 	  <tt>&lt;c&gt;</tt> before the domain is sealed.</p></li>
       
-      <li><a href="Define_Sealed_Domain#errata_p140_1" name="p140_1">p. 140</a>, the
+      <li id="p140-1"><a href="Define_Sealed_Domain#errata-p140-1">p. 140</a>, the
 	classes and generic function should be declared <tt>open</tt>.</li>
       
-      <li><a href="Define_Sealed_Domain#errata_p140_2" name="p140_2">p. 140</a>, the
+      <li id="p140-2"><a href="Define_Sealed_Domain#errata-p140-2">p. 140</a>, the
 	final method should be defined on <tt>&lt;c1&gt;</tt>, not
 	on <tt>&lt;c&gt;</tt>.</li>
       
-      <li><a href="Number_Classes#errata_p198_1" name="p198_1">p. 198</a>, the
+      <li id="p198-1"><a href="Number_Classes#errata-p198-1">p. 198</a>, the
 	number classes diagram shows a <tt>&lt;complex-number&gt;</tt>
 	class. This class is actually named <tt>&lt;complex&gt;</tt>.</li>
       
-      <li><a href="Collection_Classes#errata_p207_1" name="p207_1">p. 207</a>, the
+      <li id="p207-1"><a href="Collection_Classes#errata-p207-1">p. 207</a>, the
 	collection classes diagram has an arrow leading to various vector &amp;
 	string classes from <tt>&lt;empty-list&gt;</tt>. It should actually
 	lead from <tt>&lt;vector&gt;</tt>.</li>
       
-      <li><a href="Constructing_and_Initializing_Instances#errata_p263_1" name="p263_1">p. 263</a>, the
+      <li id="p263-1"><a href="Constructing_and_Initializing_Instances#errata-p263-1">p. 263</a>, the
 	default value for the <i>by</i> argument to <tt>make</tt>
 	of <tt>&lt;range&gt;</tt> should be <tt>1</tt>, not <tt>0</tt>.</li>
       
-      <li><a href="Collection_Operations#errata_p309_1" name="p309_1">p. 309</a>, in the
+      <li id="p309-1"><a href="Collection_Operations#errata-p309-1">p. 309</a>, in the
 	example for tail-setter, the final value of <tt>x</tt> should
 	be <tt>#(4&nbsp;.&nbsp;"dot")</tt>, not <tt>#(4,&nbsp;9,&nbsp;8, .
 	  "dot")</tt>.</li>
       
-      <li><a href="Collection_Operations#errata_p325_1" name="p325_1">p. 325</a>, in the
+      <li id="p325-1"><a href="Collection_Operations#errata-p325-1">p. 325</a>, in the
 	description of <tt>replace-subsequence!</tt>, the
 	parameter <i>target-sequence</i> is erroneously refered to
 	as <i>source-sequence</i> in the last paragraph.</li>
       
-      <li><a href="Collection_Operations#errata_p329_1" name="p329_1">p. 329</a>, in the
+      <li id="p329-1"><a href="Collection_Operations#errata-p329-1">p. 329</a>, in the
 	example for <tt>map-as</tt>, the return value should be <tt>#[101, 102,
 	  203, 204]</tt> rather than <tt>#(101, 102, 203, 204)</tt>.</li>
       
-      <li><a href="Function_Application#errata_p351_1" name="p351_1">p. 351</a>, the
+      <li id="p351-1"><a href="Function_Application#errata-p351-1">p. 351</a>, the
 	second use of <tt>apply</tt> reads
 	
 	<ul>
@@ -185,13 +181,13 @@
 	<p>(Note the additional comma after the number <tt>7</tt> in the
 	  correct version.)</p></li>
       
-      <li><a href="Reflective_Operations_on_Functions#errata_p354_1" name="p354_1">p. 354</a>, in the
+      <li id="p354-1"><a href="Reflective_Operations_on_Functions#errata-p354-1">p. 354</a>, in the
 	description of the third value returned by <tt>function-arguments</tt>,
 	the obsolete binding name <tt>&lt;keyword&gt;</tt> is used. The
 	name <tt>&lt;symbol&gt;</tt> should be substituted for the
 	name <tt>&lt;keyword&gt;</tt>.</li>
       
-      <li><a href="Definition_Macros#errata_p377_1" name="p377_1">p. 377</a>, the use of the
+      <li id="p377-1"><a href="Definition_Macros#errata-p377-1">p. 377</a>, the use of the
 	word <q>permit</q> in the last sentence describing the final example is incorrect. The
 	word <q>recognize</q> should be used instead, yielding
 	
@@ -206,7 +202,7 @@
 	  <q>recognize</q> as given on page 94, in the description of parameter list congruency.</p>
       </li>
 
-      <li><a href="Statement_Macros#errata_p406_1" name="p406_1">p. 406</a>, in the
+      <li id="p406-1"><a href="Statement_Macros#errata-p406-1">p. 406</a>, in the
 	second code example of the <tt>block</tt> statement,
 	the <tt>cleanup</tt> and <tt>exception</tt> clauses are incorrectly
 	ordered. <tt>cleanup</tt> must come before <tt>exception</tt> clauses.

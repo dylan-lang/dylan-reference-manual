@@ -28,13 +28,13 @@ q:after  { content: '\201D' }
 */
 
 p.errata {
-	 padding: 0 0.5em 0.5em 0.5em; margin-top: 0.5em;
-	 background-color: #ffa; border: 1px solid #dd8;
-	 font-size: smaller; font-family: sans-serif;
+	  padding: 0 0.5em 0.5em 0.5em; margin-top: 0.5em;
+	  background-color: #ffa; border: 1px solid #dd8;
+	  font-size: smaller; font-family: sans-serif;
 	 }
 p.errata.left {
-  	 position: absolute; left: 0;
-	 width: 7.5em;
+	  position: absolute; left: 0;
+	  width: 7.5em;
 	 }
 /*
    When printing, Firefox (as of 1.5) places all the absolutely positioned
@@ -47,25 +47,25 @@ p.errata.left {
 */
 @media print {
   p.errata.left {
-                float: left; position: static; margin-left: -9.5em;
+                 float: left; position: static; margin-left: -9.5em;
                 }
 }
 
 p.errata.right {
-	 float: right; margin-top: 0; margin-left: 1em;
-	 max-width: 20em;
+	  float: right; margin-top: 0; margin-left: 1em;
+	  max-width: 20em;
 	 }
 /* hide the "Errata:" tag in the text and replace it with an "Errata" header line */
-p.errata > a:first-child > strong:first-child {
+p.errata > a:first-child strong {
 	 display: none
 	}
 p.errata > a:first-child:before {
-	content: "Errata";
+	 content: "Errata"
 	}
 p.errata > a:first-child {
-	display: block; margin: 0 -0.5em 0.5em -0.5em; padding: 0.25em 0.5em;
-	background-color: #dd8;
-	font-weight: bold;
+	 display: block; margin: 0 -0.5em 0.5em -0.5em; padding: 0.25em 0.5em;
+	 background-color: #dd8;
+	 font-weight: bold;
 	}
 
 
