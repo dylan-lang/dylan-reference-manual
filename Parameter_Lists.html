@@ -268,7 +268,7 @@ end method;
       <p>Specialization constrains the values that may be passed as the value of a parameter. The
 	function can be called only with arguments that are instances of the specializers of the
 	corresponding parameters.</p>
-      <p>Specialization is useful in three way:</p>
+      <p>Specialization is useful in three ways:</p>
       <ul>
 	<li>It makes the intent of the program clear. It indicates to the compiler and to anyone
 	  reading the code that an error is signaled if an argument is not of the specializer
@@ -486,7 +486,8 @@ end method;
       </ul>
       <p>In addition, the value declarations must be congruent, defined as follows:</p>
       <ul>
-	<li>If the generic function's parameter list does not contain a rest value declaration, then
+	<li>If the generic function's parameter list does not contain a rest value declaration,
+	  then:
 	  <ul>
 	    <li>The method's parameter list must not contain a rest value declaration.</li>
 	    <li>The two parameter lists must contain the same number of required value
