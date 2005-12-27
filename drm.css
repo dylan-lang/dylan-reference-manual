@@ -432,6 +432,9 @@ h4.item-title var  { font-family: sans-serif }
   Title page
 */
 
+/* the title page goes out to the left edge of the paper */
+#content.title-page { margin-left: -4em }
+
 /* big book title */
 h1.book-title + p       { font-size: larger }
 
