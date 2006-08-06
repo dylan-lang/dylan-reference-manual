@@ -1,48 +1,104 @@
 /*
-   Style sheet for the Dylan Reference Manual
+   Base style sheet for the Dylan Reference Manual
+
+   This contains CSS rules used by all other stylesheets.
 */
 
 
-/* Debugging: Uncomment this to see all the boxes. */
+/* Debugging: Uncomment these lines to see all the boxes. */
+/*
+* { outline: 2px dotted red }
+* * { outline: 2px dotted green }
+* * * { outline: 2px dotted orange }
+* * * * { outline: 2px dotted blue }
+* * * * * { outline: 1px solid red }
+* * * * * * { outline: 1px solid green }
+* * * * * * * { outline: 1px solid orange }
+* * * * * * * * { outline: 1px solid blue }
+*/
 
-/* * { border: 1px solid red } */
+/* Debugging: Uncomment these lines to see the page content bounds */
+/*
+body     { background-color: #EEE }
+#content {
+           margin-left: 1pc; margin-top: 1pc;
+           background-color: white;
+           border-style: solid;
+           border-width: 1px 2px 2px 1px;
+           border-color: silver gray gray silver;
+           }
+*/
 
 
 /*
   General Document Formatting
 */
 
-body { padding-left: 8em; max-width: 40em }
+#content {
+           padding-left: 8em;
+           max-width: 34.5em;
+           /* (34.5em produces the same line breaks as the printed DRM
+              when used with 10pt Palatino, approximately the same font
+              used in the book. Though we don't actually force the body
+              font, if someone sets their browser to use 10pt Palatino
+              they'll get something very close to the printed version.
+              I also occasionally set the font while editing the DRM to
+              try to match the book layout as closely as possible.) */
+         }
 
-/* Quotes: Make sure they're rendered as right/left double quotation marks for US English */
+/*
+   Some experimental code to try to match the typography of the printed DRM.
+   In general, we try to avoid specifying exact fonts and sizes, preferring
+   instead to let the user's browser settings determine the precise
+   formatting. Consider adding another user-selectable stylesheet that
+   mimics the printed DRM more closely.
+*/
+/*
+   #content { font-family: Palatino, serif; font-size: 10pt; line-height: 1.25em; }
+*/
+
+
+/*
+   Only underline links when hovering, because there are a ton of them
+   and underlining them all the time makes things harder to read.
+*/
+
+#content a:link,
+#content a:visited       { text-decoration: none }
+#content a:link:hover,
+#content a:visited:hover { text-decoration: underline }
+
+
+/* Quotes: Render as right/left double quotation marks */
 
 q:before { content: '\201C' }
 q:after  { content: '\201D' }
 
 
 /*
-  Errata Notes
+  Notes/Errata
 
-  Displayed in a yellow box with "Errata" in the header.
+  Displayed in a yellow box with a tag (e.g., "Note:", "Errata:") in the
+  header.
 */
 
-p.errata {
-	  padding: 0 0.5em 0.5em 0.5em; margin-top: 0.5em;
-	  background-color: #ffa; border: 1px solid #dd8;
-	  font-size: smaller; font-family: sans-serif;
-	 }
-/* hide the "Errata:" tag in the text and replace it with an "Errata" header line */
-p.errata > a:first-child strong {
-	 display: none
-	}
-p.errata > a:first-child:before {
-	 content: "Errata"
-	}
-p.errata > a:first-child {
-	 display: block; margin: 0 -0.5em 0.5em -0.5em; padding: 0.25em 0.5em;
-	 background-color: #dd8;
-	 font-weight: bold;
-	}
+.meta-note,
+.errata-note        {
+                      padding: 0 0.5em 0.5em;
+                      background-color: #ffa;
+                      border: 1px solid #dd8;
+                      font-family: sans-serif;
+                      font-size: smaller;
+                    }
+.meta-note   .note-tag,
+.errata-note .note-tag
+                    {
+                      display: block;
+                      margin: 0 -0.5em 0.5em;
+                      padding: 0.25em 0.5em;
+                      background-color: #dd8;
+                      font-weight: bold;
+                    }
 
 
 /*
@@ -74,166 +130,16 @@ body.section-start #section-header p:first-child
 body.section-start #section-name { display: none }
 
 
-/*
-   Hide horizontal rules that are in the page header. They're used to
-   provide separation in the absence of CSS.
-*/
-#header hr { display: none }
+#book-title     {
+                  /* Gill Sans isn't the same font as the printed DRM,
+                     but it's a good approximation */
+                  color: #606; font-family: "Gill Sans"; font-weight: bold;
+                }
 
-
-
-/* On-screen, present interactive navigation elements. */
 
 @media screen {
 
-  /* Leave room for navigation UI and margins inside a window */
-
-  body           { position: absolute; left: 17em; margin-right: 1pc }
-
-  /* The book cover image */
-
-  img#book-cover { border: 2px solid; margin-top: 2pc }
-
-  /* Navigation header at the top/left of the viewport */
-
-  #navigation-header
-                 {
-                   position: fixed; top: 0; left: 0; height: 6em;
-                   font: medium sans-serif; width: 17em;
-                   margin: 0;
-		   border-right: 1px solid #ddd;
-                 }
-  #book-title
-                 {
-                   position: absolute; top: 0; left: 0; right: 0; height: 3em;
-                   margin: 0;
-                   /* place the book cover in the background to include some of
-                      the color of the printed DRM  */
-                   background: white url("images/drm-background") repeat-x 50% 45%;
-                   /* this variation fills the background with the cover logo;
-                      it has a certain appeal, but it's hard to make the title
-                      text readable over it */
-                   /*background: white url("images/drm-cover") repeat-x 90% 65%;*/
-                 }
-  #basic-navigation
-                 {
-                   position: absolute; top: 3em; left: 0; right: 0; height: 3em;
-                   margin: 0;
-                 }
-
-  /* "mini-TOC" navigation area at the left of the viewport */
-
-  #navigation-TOC
-                 {
-                   overflow: auto;
-                   position: fixed; top: 6em; left: 0; bottom: 0;
-                   font: medium sans-serif; width: 15.5em;
-                   margin: 0;
-                   padding-left: 1.5em; padding-top: 1em;
-		   border-right: 1px solid #ddd;
-                   background: #eee;
-                 }
-
-  /*
-    Basic Navigation
-    
-    The basic navigation links are placed at very specific positions in the
-    top/left navigation area. In addition, the HTML contains button images,
-    which are okay when viewing without a style sheet, but we replace them
-    with text here, which looks better, gives us more control over
-    appearance and is scalable.
-  */
-
-  /* general */
-  #navigation-header { text-align: center }
-
-  /* title */
-  #book-title        {
-                       white-space: nowrap; overflow: hidden; /* prevent line breaks */
-                       padding-top: 0.3em;
-                       /* Gill Sans isn't the same font as the printed DRM,
-                          but it's a good approximation */
-                       color: #606; font: bold 1em "Gill Sans";
-                     }
-
-/*
-   I think this is supposed to affect the size of the "content:" text,
-   below, but it doesn't in Safari/OmniWeb/WebCore; it works in FireFox. So
-   instead, we explicitly specify the font size where the content text is
-   generated, below.
-*/
-/*  #basic-navigation *:first-line { font-size: smaller } */
-
-  /* links */
-  #basic-navigation a                  { text-decoration: none }
-  #basic-navigation a:hover            { text-decoration: underline }
-
-  #basic-navigation a.previous,
-  #basic-navigation a.next             { color: white }
-
-  #basic-navigation a.previous:active,
-  #basic-navigation a.next:active      { color: silver }
-
-  /*
-    the "start of section" button is somewhat redundant when using CSS,
-    since the chapter link is readily visible in the navigation area, so
-    let's hide it to reduce UI complexity
-  */
-  #basic-navigation .up                { display: none }
-
-  /* button layout */
-  #basic-navigation *                  { position: absolute }
-  #basic-navigation .previous          { top: 0;   bottom: 50%;  left: 0;   width: 51% }
-  #basic-navigation .next              { top: 0;   bottom: 50%; width: 51%; right: 0   }
-  #basic-navigation .start             { top: 50%; bottom: 0;    left: 0;   width: 34% }
-  #basic-navigation .contents          { top: 50%; bottom: 0;    left: 33%; right: 33% }
-  #basic-navigation .index             { top: 50%; bottom: 0;   width: 34%; right: 0   }
-
-  /* button appearance */
-  #basic-navigation .previous,
-  #basic-navigation .next              {
-                                         color: silver; background-color: gray;
-                                         border-top: 1px solid silver;
-                                         padding-top: 0.2em;
-                                       }
-  #basic-navigation .start,
-  #basic-navigation .contents,
-  #basic-navigation .index             {
-                                         background-color: #ddd;
-                                         border-top: 1px solid #444;
-                                         border-bottom: 1px solid silver;
-                                         padding-top: 0.2em;
-                                       }
-
-  /* replace button images with text */
-  #basic-navigation img                { display: none }
-  #basic-navigation .previous:before   { content: "\2190  Previous"; font-size: smaller }
-  #basic-navigation .next:before       { content: "Next Page \2192"; font-size: smaller }
-  #basic-navigation .start:before      { content: "Start"; font-size: smaller }
-  #basic-navigation .contents:before   { content: "Contents"; font-size: smaller }
-  #basic-navigation .index:before      { content: "Index"; font-size: smaller }
-
-
-  /* TOC in the navigation area */
-
-  /* don't underline navigation links; keeps things readable */
-  #navigation-TOC a       { text-decoration: none }
-  #navigation-TOC a:hover { text-decoration: underline }
-
-
-  /* Some experimental code to place meta notes at the bottom of the viewport. */
-/*
-  p.meta-note		{
-  			 position: fixed; bottom: 0; left: 17em; right: 0;
-			 margin: 0 0 0 1px; padding: 0.5em 2em;
-			 background-color: #ffa; border-top: 1px solid #dd8;
-			}
-  p.meta-note:before	{
-  			 content: "Note:" url("some-image");
-  			 float: left; margin-right: 1em;
-			 font-variant: small-caps;
-			}
-*/
+  img#book-cover { border: 2px solid; margin-top: 2pc; }
 
 } /* @media screen */
 
@@ -243,11 +149,11 @@ body.section-start #section-name { display: none }
 
 @media print {
 
-  /* hide navigation elements */
-  #navigation-header, #navigation-TOC { display: none }
-
+  /* hide interactive navigation elements */
+  #header { display: none }
+  
   /* print links like plain text */
-  a { text-decoration: none; color: inherit }
+  a { text-decoration: none; border-bottom: none; color: inherit }
 
 } /* @media print */
 
@@ -255,22 +161,27 @@ body.section-start #section-name { display: none }
 
 /* Footnotes */
 
-#footnotes { margin-top: 4em; margin-left: -5em; font-size: smaller }
-#footnotes hr { display: none }
+#footnotes    {
+                margin-top: 4em;
+                margin-left: -4em;
+              }
+#footnotes hr { display: none      }
+#footnotes p  { font-size: smaller }
 
 
 
 /* Page Footer */
 
-#footer { clear: both; padding-top: 10em; font-size: smaller  }
+#footer { clear: both; margin-top: 10em; font-size: smaller; }
 
 /*
-   Hide navigation footer; it is only useful when floating navigation
-   buttons via CSS are not available.
+   Hide navigation footer; it is only useful when floating navigation links
+   via CSS are not available (in which case, the navigation header will
+   scroll out of view, and when the user gets to the bottom of the page the
+   navigation footer will allow them to continue to the next).
 */
 
-#navigation-footer, /* migrate tags to use this id, then delete the second selector */
-#footer address + p.footer { display: none }
+#navigation-footer { display: none }
 
 
 
@@ -331,7 +242,7 @@ h1.index-title           { padding-bottom: 2em }
 
 h1.section-title             { margin-left: -3.5em }
 h1.section-title, h2, h3, h4 {
-                               padding-top: 1em; padding-bottom: 3px;
+                               padding-top: 1em; padding-bottom: 0.4em;
                                border-bottom: 1px solid
                              }
 h2, h3, h4, h5, h6           { font-family: sans-serif }
@@ -413,33 +324,16 @@ h4.item-title var  { font-family: sans-serif }
 */
 
 /* the title page goes out to the left edge of the paper */
-#content.title-page { margin-left: -4em }
+#content.title-page { padding-left: 1em; max-width: 41.5em; }
 
 /* big book title */
-h1.book-title + p       { font-size: larger }
+h1.book-title + p   { font-size: larger }
 
 /* big author's name */
-p.author                { font-size: x-large; margin-top: 3em; margin-bottom: 2em  }
+p.author            { font-size: x-large; margin-top: 3em; margin-bottom: 2em  }
 
-/* move the "[This HTML....in 1996]" notice down */
-p#online-version { margin-top: 10em }
-
-/* format "meta notes" -- notes about the DRM or about the online DRM -- as yellow boxes with a
-   "Note:" header */
-.meta-note 	  {
-		   padding: 0 0.5em 0.5em 0.5em; margin-top: 0.5em;
-		   background-color: #ffa;
-		   border: 1px solid #dd8;
-		   font-family: sans-serif;
-		   font-size: smaller;
-		  }
-.meta-note:before {
-		   content: "Note:";
-		   display: block;
-		   margin: 0 -0.5em 0.5em -0.5em; padding: 0.25em 0.5em;
-		   background-color: #dd8;
-		   font-weight: bold;
-		  }
+/* move the "This HTML....in 1996" notice down */
+p#online-version    { margin-top: 10em }
 
 
 /*
@@ -447,7 +341,8 @@ p#online-version { margin-top: 10em }
 */
 
 /* the copyrights page goes out to the left edge of the paper and has a small font */
-#content.copyrights { margin-left: -8em; font-size: smaller }
+#content.copyrights { padding-left: 1em; max-width: 41.5em; }
+#content.copyrights p { font-size: smaller }
 
 /* Warranty */
 #warranty { padding-top: 1em; padding-bottom: 1em; font-weight: bold } 
@@ -463,13 +358,14 @@ p[class~="1LOC"], p[class~="2LOC"] { margin: 0 auto }
 p[class~="0ISBN/LC"] { float: left; margin-right: 4em }
 #LOC { float: left; max-width: 28em; margin-right: 1em }
 p[class~="3LOC"] { clear: both; float: right; text-align: center; margin-top: -1em }
+p[class~="3LOC"] + * { clear: both }
 
 /*
   A work-around for an apparent Safari/OmniWeb/WebCore bug in which the
   horizontal rule is rendered at the same (very narrow) width as the "CIP" float
   above it, despite the fact that we have a "clear: both" on the surrounding DIV.
 */
-#footer hr { clear:both; width: 100%  }
+#footer hr { clear: both; width: 100% }
 
 
 /*
@@ -478,23 +374,23 @@ p[class~="3LOC"] { clear: both; float: right; text-align: center; margin-top: -1
 
 /* bring the first item up closer to the bottom of the section heading */
 h1.contents-title { margin-bottom: 0 }
-h2#about   { margin-top: 0; padding-top: 0 }
+h2#about          { margin-top: 0; padding-top: 0 }
 
 /* out-dent the number/name of each section to the left, along with the horizontal rule */
-body.contents h2 {
-                   margin-left: -5em; padding-left: 5em;
-                   margin-bottom: 0.25em;
-                 }
+body.contents h2  {
+                    margin-left: -5em; padding-left: 5em;
+                    margin-bottom: 0.25em;
+                  }
 body.contents h2 > span
-                 {
-                   float: left; margin-left: -5em;
-                 }
+                  {
+                    float: left; margin-left: -5em;
+                  }
 /* make the section label smaller/lighter;
    doing this with a nested SPAN keeps the baselines aligned */
 body.contents h2 > span > span
-                 {
-                   font-weight: normal; font-size: smaller;
-                 }
+                  {
+                    font-weight: normal; font-size: smaller;
+                  }
 
 /*
    Hide all but the top-level TOC items. The HTML goes three levels deep, but
@@ -511,14 +407,14 @@ body.contents ul.TOC ul { display: none }
 */
 
 /* bring the first item up closer to the bottom of the section heading */
-h1.back-title { margin-bottom: 0 }
-dl.Glossary dt:first-child { margin-top: 0.5em }
-dl.Glossary   { margin-top: 0.5em }
+h1.back-title              { margin-bottom: 0     }
+dl.Glossary dt:first-child { margin-top:    0.5em }
+dl.Glossary                { margin-top:    0.5em }
 
 /* Glossary definitions place the term and definition close together, flush left */
 
-dl.Glossary dt   { margin-top: 1em }
-dl.Glossary dd   { margin-left: 0 }
+dl.Glossary dt             { margin-top:  1em }
+dl.Glossary dd             { margin-left: 0   }
 
 
 /*
@@ -533,7 +429,7 @@ div.wm-div-index li { margin: 0 }
 
 /* bring the first item up closer to the bottom of the section heading */
 h1.index-title { margin-bottom: 0 }
-h2#symbols { margin-top: 0.2em; padding-top: 0 }
+h2#symbols     { margin-top: 0.2em; padding-top: 0 }
 
 
 
@@ -545,19 +441,20 @@ h2#symbols { margin-top: 0.2em; padding-top: 0 }
   is about zero), and use squares for the first level bullets.
 */
 
-ul                 { padding-left: 1.25em; margin-left: 0 }
-ol                 { padding-left: 1.5em;  margin-left: 0 }
+#content ul        { padding-left: 1.25em; margin-left: 0 }
+#content ol        { padding-left: 1.5em;  margin-left: 0 }
 
-ul                 { list-style-type: square }
-ul ul,    ol ul    { list-style-type: circle }
+#content ul        { list-style-type: square }
+#content ul ul,
+#content ol ul     { list-style-type: circle }
 
-li                 { margin-top: 0.75em }
-li li              { margin-top: 0.5em  }
+li        { margin-top: 0.75em }
+li li     { margin-top: 0.5em  }
 
 /* The DRM uses hollow squares for second level lists. Do this by replacing
    the item marker with a Unicode "square" character. */
-ul ul,
-ol ul              { list-style-type: none }
+#content ul ul,
+#content ol ul     { list-style-type: none }
 #content ul ul li:before,
 #content ol ul li:before
                    {
@@ -581,115 +478,44 @@ ol ul              { list-style-type: none }
    layout error, but for now, we'll maintain parity with the printed
    DRM. We do this by not marking the first-level list item with a
    bullet. */
-ul.no-bullet       { list-style-type: none }
+#content ul.no-bullet       { list-style-type: none }
 
 /* Contents, Index and navigation lists are formatted more compactly. */
 
 /* no space between items */
-ul.TOC li,
-ul.index li        { margin-top: 0 }
-
-/* little space between items */
-#navigation-TOC > ul > li,
-#navigation-TOC > ol > li
-                   { margin: 0.25em auto }
-#navigation-TOC > ol
-                   { margin: 0 auto }
-
-/* somewhat shallow indents to maximize horizontal space and minimize line wrapping */
-#navigation-TOC > ul ul,
-#navigation-TOC > ol ul
-                   { padding-left: 0.5em }
-
-/* use bullets, numbers, letters for different groups of the navigation "mini-TOC" */
-ul.front-matter,
-ul.back-matter     {
-                     list-style-type: square;
-                     padding-left: 1em;
-                     margin: 0;
-                   }
-#navigation-TOC ol { padding-left: 1em }
-
-#navigation-TOC > ul > li > ul,
-#navigation-TOC > ol > li > ul
-                   {
-                     list-style-type: none;
-                     font-size: smaller
-                   }
-#navigation-TOC > ul > li > ul li:before,
-#navigation-TOC > ol > li > ul li:before
-                   { content: "" }
-#navigation-TOC > ul > li ul > li > ul,
-#navigation-TOC > ol > li ul > li > ul,
-#navigation-TOC > ul > li ul > li > ul > li > ul,
-#navigation-TOC > ol > li ul > li > ul > li > ul
-                   { list-style-type: none }
-#navigation-TOC > ul > li ul > li > ul li:before,
-#navigation-TOC > ol > li ul > li > ul li:before,
-#navigation-TOC > ul > li ul > li > ul > li > ul li:before,
-#navigation-TOC > ol > li ul > li > ul > li > ul li:before
-                   { content: "" }
-
-/* appendices are labeled with letters; the errata section has a distinguishing bullet */
-ol.appendices      { list-style-type: upper-latin }
-ul.errata          {
-                     list-style-type: circle; padding-left: 1em;
-                     margin-top: 0;
-                     /* this is a little kludgey, since it depends on ul.errata being at
-                        the bottom of the list, but this gets us some padding at the
-                        bottom of the navigation area -- padding-bottom on
-                        #navigation-TOC seems to be ignored, even though top, left and
-                        right all work as expected */
-                     padding-bottom: 1em;
-                   }
-
-/* highlight the current page in the navigation area */
-li#current         { font-weight: bold   }
-li#current li      { font-weight: normal }
-
-
-/* no space between wrapped lines; helps group them together visually */
-ul.page-toc li ul li { line-height: 100% }
+#content ul.TOC   li,
+#content ul.index li        { margin-top: 0 }
 
 /* no margin above lists, no bullets */
-ul.TOC,      ul.TOC ul,
-ul.index,    ul.index ul,
-ul.page-toc, ul.page-toc ul
+#content ul.TOC,
+#content ul.TOC ul,
+#content ul.index,
+#content ul.index ul
                    {
                      margin-top: 0;
                      list-style-type: none;
                    }
 /* "#content" is necessary for these selectors in order for ul.TOC and
-   ul.index to override the global "#content ul" settings in Firefox (1.5);
-   "#content" can be omitted in Safari (as of 2.0.2). I don't know which is
-   correct, but it's not a big deal to include the id in the selector; it
-   just would have been nice to simplify these selectors and make them
-   match the surrounding ones. */
-#content ul.TOC li:before,   #content ul.TOC ul li:before,
-#content ul.index li:before, #content ul.index ul li:before,
-ul.page-toc li:before,       ul.page-toc ul li:before
+   ul.index to override the global "#content ul" settings; otherwise, we
+   could simplify these selectors a little, since they have associated
+   classes. */
+#content ul.TOC      li:before,
+#content ul.TOC      ul li:before,
+#content ul.index    li:before,
+#content ul.index    ul li:before
                    {
                      float: none;
                      margin: 0;
                      content: "";
                    }
 
-/* Don't indent the first level of TOC and index lists */
-ul.TOC,
-ul.index           { padding-left: 0 }
+/* don't indent the first level of TOC and index lists */
+#content ul.TOC,
+#content ul.index  { padding-left: 0 }
 
-/* hide GF method entries and attributes summaries */
-ul.page-toc li.gf-method,
-ul.page-toc span.attributes-summary { display: none }
-
-/* grid layout for Index letters */
-ul.horizontal,
-ul.vertical           { list-style-type: none }
-ul.horizontal li      { margin-top: 0 }
-ul.horizontal a       { float: left; width: 1.5em; text-align: center }
-ul.horizontal + *     { clear: left }
-/* make it easier to target and click the letters by putting them in light boxes */
-ul.horizontal a       { background-color: #ddd; margin: 1px }
+/* hide GF method entries and attributes summaries in the "mini-TOC" */
+ul.page-TOC .gf-methods,
+ul.page-TOC .attributes-summary { display: none }
 
 
 
@@ -723,7 +549,7 @@ dl p { border-left: 2px solid red }
                }
 #content > dl.Cliche > dd      { margin-left: 0; margin: 1em auto }
 /* Why is this here? It causes some paragraphs to abut the text above. */
-#content > dl.Cliche > dd > p  {  margin-top: 0 }
+/*#content > dl.Cliche > dd > p  {  margin-top: 0 }*/
 
 /* second-level DTs outdent and have a fixed width */
 #content > dl.Cliche > dd > dl > dt
@@ -833,14 +659,6 @@ table.numbered th.primary + th + th { width:  2em } /* fix the width of the last
                                                        that the middle column gets any
                                                        additional space allocated to it */
 
-/*
-   Don't underline links in the Description column, because it's a lot of
-   text and makes it harder to read.
-*/
-
-table.numbered td:first-child + td a       { text-decoration: none }
-table.numbered td:first-child + td a:hover { text-decoration: underline }
-
 
 /*
   The generated table contents wrap each cell with a paragraph tag (which
@@ -893,8 +711,8 @@ table.class-attributes-legend		          {
 						    border-collapse: collapse;
 						    font-size: smaller
 						  }
-table.class-attributes-legend td    	          { padding: 0 3px 0 0 }
-table.class-attributes-legend td.description + td { padding-left: 2em }
+table.class-attributes-legend td    	          { padding: 0 0.3em 0 0 }
+table.class-attributes-legend td.description + td { padding-left: 2em    }
 
 
 

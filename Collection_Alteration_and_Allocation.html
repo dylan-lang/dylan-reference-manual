@@ -43,74 +43,83 @@
     <link rel="appendix" title="A BNF" href="BNF" />
     <link rel="appendix" title="B Exported Names" href="Exported_Names" />
     
-    <!-- Stylesheet -->
+    <!-- Stylesheets -->
     
-    <link rel="stylesheet" href="drm.css" type="text/css" />
+    <link rel="stylesheet" href="styles/common.css" type="text/css" />
+    <link rel="stylesheet" href="styles/nav-top-fixed.css" type="text/css" media="handheld" />
+    <link rel="stylesheet" href="styles/nav-left-fixed.css" type="text/css" media="screen" title="Navigation at Left" />
+    <link rel="stylesheet alternate" href="styles/nav-top-fixed.css" type="text/css" media="screen" title="Navigation at Top" />
 
     <title>Collection Alteration and Allocation &mdash; 8. Collections &mdash; The DRM</title>
   </head>
-  <body>
+  <body class="content">
 
     <div id="header">
       <div id="navigation-header">
-	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation">
-	  <a class="previous" title="Go to previous page" href="Mutability"><img alt="Previous" src="images/prev.gif" /></a>
-	  <a class="next" title="Go to next page" href="Collection_Alignment"><img alt="Next" src="images/next.gif" /></a>
-	  <a class="up" title="Go to start of chapter" href="Collections"><img alt="Up" src="images/up.gif" /></a>
-	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
-	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
-	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
-	</p>
-      </div>
-
-      <div id="navigation-TOC">
-	<ul class="front-matter">
-	  <li><a href="Title">Start</a></li>
-	  <li><a href="Contents">Contents</a></li>
-	  <li><a href="Preface">About This Book</a></li>
-	</ul>
-	<ol class="chapters">
-	  <li><a href="Introduction">Introduction</a></li>
-	  <li><a href="Syntax">Syntax</a></li>
-	  <li><a href="Program_Structure">Program Structure</a></li>
-	  <li><a href="Program_Control">Program Control</a></li>
-	  <li><a href="Types_and_Classes">Types and Classes</a></li>
-	  <li><a href="Functions">Functions</a></li>
-	  <li><a href="Conditions">Conditions</a></li>
-	  <li><a href="Collections">Collections</a>
-	    <ul>
-	      <li><a href="Collections_Overview">Overview</a></li>
-	      <li><a href="Collection_Keys">Collection Keys</a></li>
-	      <li><a href="Iteration_Stability_and_Natural_Order">Iteration Stability and Natural Order</a></li>
-	      <li><a href="Mutability">Mutability</a></li>
-	      <li id="current">Collection Alteration and Allocation</li>
-	      <li><a href="Collection_Alignment">Collection Alignment</a></li>
-	      <li><a href="Defining_a_New_Collection_Class">Defining a New Collection Class</a></li>
-	      <li><a href="Tables">Tables</a></li>
-	      <li><a href="Element_Types">Element Types</a></li>
-	      <li><a href="Limited_Collection_Types">Limited Collection Types</a></li>
-	    </ul>
-	  </li>
-	  <li><a href="Sealing">Sealing</a></li>
-	  <li><a href="Macros">Macros</a></li>
-	  <li><a href="Built-In_Classes">The Built-In Classes</a></li>
-	  <li><a href="Built-In_Functions">The Built-In Functions</a></li>
-	  <li><a href="Other_Built-In_Objects">Other Built-In Objects</a></li>
-	  <li><a href="Built-In_Macros_and_Special_Definitions">The Built-In Macros and Special Definitions</a></li>
-	</ol>
-	<ol class="appendices">
-	  <li><a href="BNF">BNF</a></li>
-	  <li><a href="Exported_Names">Exported Names</a></li>
-	</ol>
-	<ul class="back-matter">
-	  <li><a href="Glossary">Glossary</a></li>
-	  <li><a href="Index">Index</a></li>
-	  <li><a href="Colophon">Colophon</a></li>
-	</ul>
-	<ul class="errata">
-	  <li><a href="Errata">Errata</a></li>
-	</ul>
+	<div id="navigation-top">
+	  <div class="background">
+	    <p id="book-title">
+	    <img class="book-icon" alt="" src="images/color-square-small.png" width="22" height="21" />
+	    <a href="Title"><img class="book-title" alt="The Dylan Reference Manual" src="images/book-title.png" width="343" height="28" /></a>
+	  </p>
+	  <p id="navigation-core">
+	    <a class="previous" title="Previous Page" href="Mutability"><span>&larr; Previous</span></a>
+	    <a class="next" title="Next Page" href="Collection_Alignment"><span>Next Page &rarr;</span></a>
+	    <a class="up" title="Chapter Start" href="Collections"><span>Up</span></a>
+	    <a class="start" title="Start of Book" href="Title"><span>Start</span></a>
+	    <a class="contents" title="Contents" href="Contents"><span>Contents</span></a>
+	    <a class="index" title="Index" href="Index"><span>Index</span></a>
+	  </p>
+	</div>
+	</div>
+	<div id="navigation-TOC">
+	  <ul class="front-matter">
+	    <li id="book-start"><a href="Title">Start</a></li>
+	    <li><a href="Contents">Contents</a></li>
+	    <li><a href="Preface">About This Book</a></li>
+	  </ul>
+	  <ol class="chapters">
+	    <li><a href="Introduction">Introduction</a></li>
+	    <li><a href="Syntax">Syntax</a></li>
+	    <li><a href="Program_Structure">Program Structure</a></li>
+	    <li><a href="Program_Control">Program Control</a></li>
+	    <li><a href="Types_and_Classes">Types and Classes</a></li>
+	    <li><a href="Functions">Functions</a></li>
+	    <li><a href="Conditions">Conditions</a></li>
+	    <li class="current parent"><a href="Collections">Collections</a>
+	      <ul class="sections">
+		<li><a href="Collections_Overview">Overview</a></li>
+		<li><a href="Collection_Keys">Collection Keys</a></li>
+		<li><a href="Iteration_Stability_and_Natural_Order">Iteration Stability and Natural Order</a></li>
+		<li><a href="Mutability">Mutability</a></li>
+		<li id="current"><span>Collection Alteration and Allocation</span></li>
+		<li><a href="Collection_Alignment">Collection Alignment</a></li>
+		<li><a href="Defining_a_New_Collection_Class">Defining a New Collection Class</a></li>
+		<li><a href="Tables">Tables</a></li>
+		<li><a href="Element_Types">Element Types</a></li>
+		<li><a href="Limited_Collection_Types">Limited Collection Types</a></li>
+	      </ul>
+	    </li>
+	    <li><a href="Sealing">Sealing</a></li>
+	    <li><a href="Macros">Macros</a></li>
+	    <li><a href="Built-In_Classes">The Built-In Classes</a></li>
+	    <li><a href="Built-In_Functions">The Built-In Functions</a></li>
+	    <li><a href="Other_Built-In_Objects">Other Built-In Objects</a></li>
+	    <li><a href="Built-In_Macros_and_Special_Definitions">The Built-In Macros and Special Definitions</a></li>
+	  </ol>
+	  <ol class="appendices">
+	    <li><a href="BNF">BNF</a></li>
+	    <li><a href="Exported_Names">Exported Names</a></li>
+	  </ol>
+	  <ul class="back-matter">
+	    <li><a href="Glossary">Glossary</a></li>
+	    <li><a href="Index">Index</a></li>
+	    <li><a href="Colophon">Colophon</a></li>
+	  </ul>
+	  <ul class="errata">
+	    <li><a href="Errata">Errata</a></li>
+	  </ul>
+	</div>
       </div>
 
       <hr />
@@ -162,19 +171,19 @@ list(1) == list(1)<a name="MARKER-2-1020"></a>
 
     <div id="footer">
 
-      <hr class="footer" />
-      <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer">
-	<a class="previous" title="Go to previous page" href="Mutability"><img alt="Previous" src="images/prev.gif" /></a>
-	<a class="next" title="Go to next page" href="Collection_Alignment"><img alt="Next" src="images/next.gif" /></a>
-	<a class="up" title="Go to start of chapter" href="Collections"><img alt="Up" src="images/up.gif" /></a>
-	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
-	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
-	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      <hr />
+      <address>The Dylan Reference Manual - 7 Apr 1998</address>
+      <p id="navigation-footer">
+	<a class="previous" title="Previous Page" href="Mutability"><span>&larr; Previous</span></a>
+	<a class="next" title="Next Page" href="Collection_Alignment"><span>Next Page &rarr;</span></a>
+	<a class="up" title="Chapter Start" href="Collections"><span>Up</span></a>
+	<a class="start" title="Start of Book" href="Title"><span>Start</span></a>
+	<a class="contents" title="Contents" href="Contents"><span>Contents</span></a>
+	<a class="index" title="Index" href="Index"><span>Index</span></a>
       </p>
-      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
-	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-      <p class="footer">Originally generated with Harlequin WebMaker&reg;, subsequently revised.</p>
+      <p>Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered
+	trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+      <p>Originally generated with Harlequin WebMaker&reg;, subsequently revised.</p>
 
     </div>
   </body>

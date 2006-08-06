@@ -43,72 +43,88 @@
     <link rel="appendix" title="A BNF" href="BNF" />
     <link rel="appendix" title="B Exported Names" href="Exported_Names" />
     
-    <!-- Stylesheet -->
+    <!-- Stylesheets -->
     
-    <link rel="stylesheet" href="drm.css" type="text/css" />
+    <link rel="stylesheet" href="styles/common.css" type="text/css" />
+    <link rel="stylesheet" href="styles/nav-top-fixed.css" type="text/css" media="handheld" />
+    <link rel="stylesheet" href="styles/nav-left-fixed.css" type="text/css" media="screen" title="Navigation at Left" />
+    <link rel="stylesheet alternate" href="styles/nav-top-fixed.css" type="text/css" media="screen" title="Navigation at Top" />
 
     <title>Dylan Interchange Format &mdash; 2. Syntax &mdash; The DRM</title>
   </head>
-  <body>
+  <body class="content">
 
     <div id="header">
       <div id="navigation-header">
-	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation"><a class="previous" title="Go to previous page" href="Top-Level_Definitions"><img alt="Previous" src="images/prev.gif" /></a> <a class="next" title="Go to next page" href="Naming_Conventions"><img alt="Next" src="images/next.gif" /></a> <a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a> <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a> <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a> <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a></p>
-      </div>
-
-      <div id="navigation-TOC">
-	<ul class="front-matter">
-	  <li><a href="Title">Start</a></li>
-	  <li><a href="Contents">Contents</a></li>
-	  <li><a href="Preface">About This Book</a></li>
-	</ul>
-	<ol class="chapters">
-	  <li><a href="Introduction">Introduction</a></li>
-	  <li><a href="Syntax">Syntax</a>
-	    <ul>
-	      <li><a href="Syntax_Overview">Overview</a></li>
-	      <li><a href="Libraries_and_Modules">Libraries and Modules</a></li>
-	      <li><a href="Bindings">Bindings</a></li>
-	      <li><a href="Macros_Syntax">Macros</a></li>
-	      <li><a href="Bodies">Bodies</a></li>
-	      <li><a href="Definitions">Definitions</a></li>
-	      <li><a href="Local_Declarations">Local Declarations</a></li>
-	      <li><a href="Expressions">Expressions</a></li>
-	      <li><a href="Statements">Statements</a></li>
-	      <li><a href="Parameter_Lists_Syntax">Parameter Lists</a></li>
-	      <li><a href="Lexical_Syntax">Lexical Syntax</a></li>
-	      <li><a href="Special_Treatment_of_Names">Special Treatment of Names</a></li>
-	      <li><a href="Top-Level_Definitions">Top-Level Definitions</a></li>
-	      <li id="current">Dylan Interchange Format</li>
-	      <li><a href="Naming_Conventions">Naming Conventions</a></li>
-	    </ul>
-	  </li>
-	  <li><a href="Program_Structure">Program Structure</a></li>
-	  <li><a href="Program_Control">Program Control</a></li>
-	  <li><a href="Types_and_Classes">Types and Classes</a></li>
-	  <li><a href="Functions">Functions</a></li>
-	  <li><a href="Conditions">Conditions</a></li>
-	  <li><a href="Collections">Collections</a></li>
-	  <li><a href="Sealing">Sealing</a></li>
-	  <li><a href="Macros">Macros</a></li>
-	  <li><a href="Built-In_Classes">The Built-In Classes</a></li>
-	  <li><a href="Built-In_Functions">The Built-In Functions</a></li>
-	  <li><a href="Other_Built-In_Objects">Other Built-In Objects</a></li>
-	  <li><a href="Built-In_Macros_and_Special_Definitions">The Built-In Macros and Special Definitions</a></li>
-	</ol>
-	<ol class="appendices">
-	  <li><a href="BNF">BNF</a></li>
-	  <li><a href="Exported_Names">Exported Names</a></li>
-	</ol>
-	<ul class="back-matter">
-	  <li><a href="Glossary">Glossary</a></li>
-	  <li><a href="Index">Index</a></li>
-	  <li><a href="Colophon">Colophon</a></li>
-	</ul>
-	<ul class="errata">
-	  <li><a href="Errata">Errata</a></li>
-	</ul>
+	<div id="navigation-top">
+	  <div class="background">
+	    <p id="book-title">
+	    <img class="book-icon" alt="" src="images/color-square-small.png" width="22" height="21" />
+	    <a href="Title"><img class="book-title" alt="The Dylan Reference Manual" src="images/book-title.png" width="343" height="28" /></a>
+	  </p>
+	  <p id="navigation-core">
+	    <a class="previous" title="Previous Page" href="Top-Level_Definitions"><span>&larr; Previous</span></a>
+	    <a class="next" title="Next Page" href="Naming_Conventions"><span>Next Page &rarr;</span></a>
+	    <a class="up" title="Chapter Start" href="Syntax"><span>Up</span></a>
+	    <a class="start" title="Start of Book" href="Title"><span>Start</span></a>
+	    <a class="contents" title="Contents" href="Contents"><span>Contents</span></a>
+	    <a class="index" title="Index" href="Index"><span>Index</span></a>
+	  </p>
+	</div>
+	</div>
+	<div id="navigation-TOC">
+	  <ul class="front-matter">
+	    <li id="book-start"><a href="Title">Start</a></li>
+	    <li><a href="Contents">Contents</a></li>
+	    <li><a href="Preface">About This Book</a></li>
+	  </ul>
+	  <ol class="chapters">
+	    <li><a href="Introduction">Introduction</a></li>
+	    <li class="current parent"><a href="Syntax">Syntax</a>
+	      <ul class="sections">
+		<li><a href="Syntax_Overview">Overview</a></li>
+		<li><a href="Libraries_and_Modules">Libraries and Modules</a></li>
+		<li><a href="Bindings">Bindings</a></li>
+		<li><a href="Macros_Syntax">Macros</a></li>
+		<li><a href="Bodies">Bodies</a></li>
+		<li><a href="Definitions">Definitions</a></li>
+		<li><a href="Local_Declarations">Local Declarations</a></li>
+		<li><a href="Expressions">Expressions</a></li>
+		<li><a href="Statements">Statements</a></li>
+		<li><a href="Parameter_Lists_Syntax">Parameter Lists</a></li>
+		<li><a href="Lexical_Syntax">Lexical Syntax</a></li>
+		<li><a href="Special_Treatment_of_Names">Special Treatment of Names</a></li>
+		<li><a href="Top-Level_Definitions">Top-Level Definitions</a></li>
+		<li id="current"><span>Dylan Interchange Format</span></li>
+		<li><a href="Naming_Conventions">Naming Conventions</a></li>
+	      </ul>
+	    </li>
+	    <li><a href="Program_Structure">Program Structure</a></li>
+	    <li><a href="Program_Control">Program Control</a></li>
+	    <li><a href="Types_and_Classes">Types and Classes</a></li>
+	    <li><a href="Functions">Functions</a></li>
+	    <li><a href="Conditions">Conditions</a></li>
+	    <li><a href="Collections">Collections</a></li>
+	    <li><a href="Sealing">Sealing</a></li>
+	    <li><a href="Macros">Macros</a></li>
+	    <li><a href="Built-In_Classes">The Built-In Classes</a></li>
+	    <li><a href="Built-In_Functions">The Built-In Functions</a></li>
+	    <li><a href="Other_Built-In_Objects">Other Built-In Objects</a></li>
+	    <li><a href="Built-In_Macros_and_Special_Definitions">The Built-In Macros and Special Definitions</a></li>
+	  </ol>
+	  <ol class="appendices">
+	    <li><a href="BNF">BNF</a></li>
+	    <li><a href="Exported_Names">Exported Names</a></li>
+	  </ol>
+	  <ul class="back-matter">
+	    <li><a href="Glossary">Glossary</a></li>
+	    <li><a href="Index">Index</a></li>
+	    <li><a href="Colophon">Colophon</a></li>
+	  </ul>
+	  <ul class="errata">
+	    <li><a href="Errata">Errata</a></li>
+	  </ul>
+	</div>
       </div>
 
       <hr />
@@ -131,32 +147,47 @@
       <p>The code body consists of a <a name="MARKER-2-322"></a>source record.</p>
       <p>The file header consists of one or more keyword-value pairs, as follows:</p>
       <ul>
-	<li>A <a name="MARKER-2-323"></a>keyword is a letter, followed by zero or more letters, digits, and hyphens, followed by a colon. It contains only characters from the ISO 646 7-bit character set, and is case-independent.</li>
+	<li>A <a name="MARKER-2-323"></a>keyword is a letter, followed by zero or more letters,
+	  digits, and hyphens, followed by a colon. It contains only characters from the ISO 646
+	  7-bit character set, and is case-independent.</li>
 	<li>A keyword begins on a new line, and cannot be preceded by whitespace.</li>
-	<li>All text (excluding whitespace) between the keyword and the next newline is considered to be the value. Additional lines can be added by having the additional lines start with whitespace. Leading whitespace is ignored on all lines.</li>
+	<li>All text (excluding whitespace) between the keyword and the next newline is considered
+	  to be the value. Additional lines can be added by having the additional lines start with
+	  whitespace. Leading whitespace is ignored on all lines.</li>
 	<li>The meaning of the value is determined by the keyword.</li>
-	<li>Implementations must recognize and handle standardized keywords properly, unless the specification for a keyword explicitly states that it can be ignored.</li>
-	<li>When importing a file, implementations are free to ignore any nonstandard keyword-value pairs that they do not recognize.</li>
-	<li>When exporting a file, implementations must use standard keywords properly. Implementations are free to use nonstandard keywords. </li>
-	<li>The definition of a keyword may specify that the keyword may occur more than once in a single file header. If it does not, then it is an error for the keyword to occur more than once. If it does, it should specify the meaning of multiple occurrences. </li>
+	<li>Implementations must recognize and handle standardized keywords properly, unless the
+	  specification for a keyword explicitly states that it can be ignored.</li>
+	<li>When importing a file, implementations are free to ignore any nonstandard keyword-value
+	  pairs that they do not recognize.</li>
+	<li>When exporting a file, implementations must use standard keywords
+	  properly. Implementations are free to use nonstandard keywords. </li>
+	<li>The definition of a keyword may specify that the keyword may occur more than once in a
+	  single file header. If it does not, then it is an error for the keyword to occur more than
+	  once. If it does, it should specify the meaning of multiple occurrences. </li>
       </ul>
       <p class="Default">The file header cannot contain comments, or other Dylan source code.</p>
-      <p><a name="MARKER-2-324"></a>Blank lines may not appear in the file header. A blank line defines the end of the file header and the beginning of the code body. The blank line is not part of the code body. (A <q>blank line</q> is a line consisting of zero or more space or tab characters, ending in a newline character.)</p>
+      <p><a name="MARKER-2-324"></a>Blank lines may not appear in the file header. A blank line
+	defines the end of the file header and the beginning of the code body. The blank line is not
+	part of the code body. (A <q>blank line</q> is a line consisting of zero or more space or
+	tab characters, ending in a newline character.)</p>
       <p>The following standard keywords are defined:</p>
       <a name="HEADING23-15"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-325">language:</code> <var>language-name</var> </span><span class="attributes-summary">[Header keyword]</span></h4>
       <hr class="item-title" />
-      <p>The source record in the file is written in the named language. The only portable value for this keyword is <code>infix-dylan</code>.</p>
+      <p>The source record in the file is written in the named language. The only portable value for
+	this keyword is <code>infix-dylan</code>.</p>
       <a name="HEADING23-17"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-326">module:</code> <var>module-name</var> </span><span class="attributes-summary">[Header keyword]</span></h4>
       <hr class="item-title" />
-      <p>The source record in the file is associated with the named module. This keyword is required.</p>
+      <p>The source record in the file is associated with the named module. This keyword is
+	required.</p>
       <a name="HEADING23-19"></a>
       <h4 class="item-title"><span class="signature"><code id="MARKER-2-327">author:</code> <var>text</var> </span><span class="attributes-summary">[Header keyword]</span><br />
 	<span class="signature"><code id="MARKER-2-328">copyright:</code> <var>text</var> </span><span class="attributes-summary">[Header keyword]</span><br />
 	<span class="signature"><code id="MARKER-2-329">version:</code> <var>text</var> </span><span class="attributes-summary">[Header keyword]</span></h4>
       <hr class="item-title" />
-      <p>These are provided for standardization. They are optional, and can be ignored by the implementation.</p>
+      <p>These are provided for standardization. They are optional, and can be ignored by the
+	implementation.</p>
       <p>A typical Dylan source file might look like this:</p>
       <pre class="code">
 module: quickdraw
@@ -173,20 +204,20 @@ define constant $black-color = ...
     
     <div id="footer">
       
-      <hr class="footer" />
-      <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer">
-	<a class="previous" title="Go to previous page"
-	href="Top-Level_Definitions"><img alt="Previous" src="images/prev.gif" /></a>
-	<a class="next" title="Go to next page" href="Naming_Conventions"><img alt="Next" src="images/next.gif" /></a>
-	<a class="up" title="Go to start of chapter" href="Syntax"><img alt="Up" src="images/up.gif" /></a>
-	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
-	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
-	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      <hr />
+      <address>The Dylan Reference Manual - 7 Apr 1998</address>
+      <p id="navigation-footer">
+	<a class="previous" title="Previous Page"
+	href="Top-Level_Definitions"><span>&larr; Previous</span></a>
+	<a class="next" title="Next Page" href="Naming_Conventions"><span>Next Page &rarr;</span></a>
+	<a class="up" title="Chapter Start" href="Syntax"><span>Up</span></a>
+	<a class="start" title="Start of Book" href="Title"><span>Start</span></a>
+	<a class="contents" title="Contents" href="Contents"><span>Contents</span></a>
+	<a class="index" title="Index" href="Index"><span>Index</span></a>
       </p>
-      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
-	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-      <p class="footer">Originally generated with Harlequin WebMaker&reg;, subsequently revised.</p>
+      <p>Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered
+	trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+      <p>Originally generated with Harlequin WebMaker&reg;, subsequently revised.</p>
 
     </div>
   </body>

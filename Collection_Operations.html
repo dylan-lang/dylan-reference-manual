@@ -43,293 +43,302 @@
     <link rel="appendix" title="A BNF" href="BNF" />
     <link rel="appendix" title="B Exported Names" href="Exported_Names" />
     
-    <!-- Stylesheet -->
+    <!-- Stylesheets -->
     
-    <link rel="stylesheet" href="drm.css" type="text/css" />
+    <link rel="stylesheet" href="styles/common.css" type="text/css" />
+    <link rel="stylesheet" href="styles/nav-top-fixed.css" type="text/css" media="handheld" />
+    <link rel="stylesheet" href="styles/nav-left-fixed.css" type="text/css" media="screen" title="Navigation at Left" />
+    <link rel="stylesheet alternate" href="styles/nav-top-fixed.css" type="text/css" media="screen" title="Navigation at Top" />
 
     <title>Collection Operations &mdash; 12. The Built-in Functions &mdash; The DRM</title>
   </head>
-  <body>
+  <body class="content">
 
     <div id="header">
       <div id="navigation-header">
-	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation">
-	  <a class="previous" title="Go to previous page" href="Coercing_and_Copying_Objects"><img alt="Previous" src="images/prev.gif" /></a>
-	  <a class="next" title="Go to next page" href="Reflective_Operations_on_Types"><img alt="Next" src="images/next.gif" /></a>
-	  <a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a>
-	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
-	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
-	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
-	</p>
-      </div>
-
-      <div id="navigation-TOC">
-	<ul class="front-matter">
-	  <li><a href="Title">Start</a></li>
-	  <li><a href="Contents">Contents</a></li>
-	  <li><a href="Preface">About This Book</a></li>
-	</ul>
-	<ol class="chapters">
-	  <li><a href="Introduction">Introduction</a></li>
-	  <li><a href="Syntax">Syntax</a></li>
-	  <li><a href="Program_Structure">Program Structure</a></li>
-	  <li><a href="Program_Control">Program Control</a></li>
-	  <li><a href="Types_and_Classes">Types and Classes</a></li>
-	  <li><a href="Functions">Functions</a></li>
-	  <li><a href="Conditions">Conditions</a></li>
-	  <li><a href="Collections">Collections</a></li>
-	  <li><a href="Sealing">Sealing</a></li>
-	  <li><a href="Macros">Macros</a></li>
-	  <li><a href="Built-In_Classes">The Built-In Classes</a></li>
-	  <li><a href="Built-In_Functions">The Built-In Functions</a>
-	    <ul>
-	      <li><a href="Built-In_Functions_Overview">Overview</a></li>
-	      <li><a href="Constructing_and_Initializing_Instances">Constructing and Initializing Instances</a></li>
-	      <li><a href="Equality_and_Comparison">Equality and Comparison</a></li>
-	      <li><a href="Arithmetic_Operations">Arithmetic Operations</a></li>
-	      <li><a href="Coercing_and_Copying_Objects">Coercing and Copying Objects</a></li>
-	      <li id="current">Collection Operations
-		<ul class="page-toc">
-		  <li><a href="#HEADING102-3">Collection Properties</a>
-		    <ul>
-		      <li><a href="#HEADING102-4"><code>empty?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-10"><code>empty?</code>   <var>collection</var> &rArr;  <var>boolean</var> <span class="attributes-summary">[G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-12"><code>size</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-18"><code>size</code> <var>collection</var> &rArr; <var>integer-or-false</var> <span class="attributes-summary">[G.F. Method]</span></a></li>
-			  <li class="gf-method"><a href="#HEADING102-20"><code>size</code> <var>array</var> &rArr; <var>size</var>  <span class="attributes-summary">[G.F. Method]</span></a></li>
-			  <li class="gf-method"><a href="#HEADING102-23"><code>size</code>  <var>list</var>  &rArr;  <var>integer-or-false</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			  <li class="gf-method"><a href="#HEADING102-25"><code>size</code>   <var>range</var> &rArr;  <var>size</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			  <li class="gf-method"><a href="#HEADING102-27"><code>size</code>   <var>table</var> &rArr;  <var>size</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-29"><code>size-setter</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		      <li><a href="#HEADING102-40"><code>rank</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-46"><code>rank</code> <var>array</var> &rArr; <var>rank</var> <span class="attributes-summary">[G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-48"><code>row-major-index</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-56"><code>row-major-index</code> <var>array</var> #rest <var>subscripts</var> &rArr; <var>index</var>  <span class="attributes-summary">[G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-58"><code>dimensions</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-64"><code>dimensions</code> <var>vector</var> &rArr;  <var>sequence</var> <span class="attributes-summary">[G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-66"><code>dimension</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-74"><code>dimension</code> <var>array axis</var> &rArr; <var>dimension</var>   <span class="attributes-summary">[G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-76"><code>key-test</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-83"><code>key-test</code> <var>sequence</var>  &rArr; <var>test-function</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			  <li class="gf-method"><a href="#HEADING102-85"><code>key-test</code> <var>table</var>  &rArr; <var>test-function</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-87"><code>key-sequence</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		    </ul>
-		  </li>
-		  <li><a href="#HEADING102-95">Selecting Elements</a>
-		    <ul>
-		      <li><a href="#HEADING102-96"><code>element</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-105"><code>element</code> <var>simple-vector  index</var> #key <var>default</var> &rArr;  <var>element</var>  <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			  <li class="gf-method"><a href="#HEADING102-107"><code>element</code> <var>unicode-string index</var> #key <var>default</var>  &rArr;  <var>character</var>   <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			  <li class="gf-method"><a href="#HEADING102-109"><code>element</code> <var>byte-string index</var> #key <var>default</var>  &rArr;  <var>character</var>       <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			  <li class="gf-method"><a href="#HEADING102-111"><code>element</code> <var>table key</var> #key <var>default</var>  &rArr;  <var>element</var>       <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-113"><code>element-setter</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-125"><code>element-setter</code>  new-element simple-vector  index  <span class="attributes-summary">[Sealed G.F. Method]</span> &rArr;  new-element </a></li>
-			  <li class="gf-method"><a href="#HEADING102-127"><code>element-setter</code>   new-value table key  <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			  <li class="gf-method"><a href="#HEADING102-129"><code>element-setter</code>  character unicode-string index   <span class="attributes-summary">[Sealed G.F. Method]</span> &rArr;  character</a></li>
-			  <li class="gf-method"><a href="#HEADING102-131"><code>element-setter</code>  <var>character byte-string index</var> &rArr;  <var>character</var>  <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-133"><code>aref</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-141"><code>aref</code> <var>array</var> #rest <var>indices</var> &rArr; <var>element</var>  <span class="attributes-summary">[G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-143"><code>aref-setter</code>   <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-153"><code>aref-setter</code> <var>new-value   array</var>  #rest <var>indices</var> &rArr; <var>new-value</var>  <span class="attributes-summary">[G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-155"><code>first</code> <span class="attributes-summary">[Function]</span></a></li>
-		      <li><a href="#HEADING102-163"><code>second</code> <span class="attributes-summary">[Function]</span></a></li>
-		      <li><a href="#HEADING102-170"><code>third</code> <span class="attributes-summary">[Function]</span></a></li>
-		      <li><a href="#HEADING102-177"><code>first-setter</code> <span class="attributes-summary">[Function]</span></a></li>
-		      <li><a href="#HEADING102-185"><code>second-setter</code> <span class="attributes-summary">[Function]</span></a></li>
-		      <li><a href="#HEADING102-192"><code>third-setter</code> <span class="attributes-summary">[Function]</span></a></li>
-		      <li><a href="#HEADING102-199"><code>last</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		      <li><a href="#HEADING102-208"><code>last-setter</code>      <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		      <li><a href="#HEADING102-219"><code>head</code> <span class="attributes-summary">[Function]</span></a></li>
-		      <li><a href="#HEADING102-227"><code>tail</code> <span class="attributes-summary">[Function]</span></a></li>
-		      <li><a href="#HEADING102-235"><code>head-setter</code> <span class="attributes-summary">[Function]</span></a></li>
-		      <li><a href="#HEADING102-244"><code>tail-setter</code> <span class="attributes-summary">[Function]</span></a></li>
-		    </ul>
-		  </li>
-		  <li><a href="#HEADING102-253">Adding and Removing Elements</a>
-		    <ul>
-		      <li><a href="#HEADING102-254"><code>add</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		      <li><a href="#HEADING102-264"><code>add!</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-274"><code>add!</code>   <var>deque new-value</var>  &rArr; <var>deque</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			  <li class="gf-method"><a href="#HEADING102-276"><code>add!</code>   <var>stretchy-vector new-element</var>  &rArr; <var>stretchy-vector</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			  <li class="gf-method"><a href="#HEADING102-278"><code>add!</code>   <var>list element</var> &rArr;  <var>pair</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-280"><code>add-new</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		      <li><a href="#HEADING102-291"><code>add-new!</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		      <li><a href="#HEADING102-302"><code>remove</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		      <li><a href="#HEADING102-314"><code>remove!</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-325"><code>remove!</code>   <var>deque value</var> #key <var>test count</var>   &rArr; <var>deque</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			  <li class="gf-method"><a href="#HEADING102-327"><code>remove!</code>   stretchy-vector element #key test count   <span class="attributes-summary">[Sealed G.F. Method]</span> &rArr; stretchy-vector</a></li>
-			  <li class="gf-method"><a href="#HEADING102-329"><code>remove!</code>   <var>list element</var> #key <var>test count</var>  &rArr;  <var>list</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-331"><code>push</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		      <li><a href="#HEADING102-339"><code>pop</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		      <li><a href="#HEADING102-346"><code>push-last</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		      <li><a href="#HEADING102-354"><code>pop-last</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		    </ul>
-		  </li>
-		  <li><a href="#HEADING102-361">Reordering Elements</a>
-		    <ul>
-		      <li><a href="#HEADING102-362"><code>reverse</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-371"><code>reverse</code>   <var>range</var> &rArr;  <var>new-range</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-373"><code>reverse!</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-382"><code>reverse!</code>   <var>range</var> &rArr;  <var>range</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-384"><code>sort</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		      <li><a href="#HEADING102-395"><code>sort!</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		    </ul>
-		  </li>
-		  <li><a href="#HEADING102-407">Set Operations</a>
-		    <ul>
-		      <li><a href="#HEADING102-408"><code>intersection</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-419"><code>intersection</code>   <var>range1 range2</var>  #key <var>test</var> &rArr;  <var>range</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-421"><code>union</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		      <li><a href="#HEADING102-433"><code>remove-duplicates</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		      <li><a href="#HEADING102-443"><code>remove-duplicates!</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		    </ul>
-		  </li>
-		  <li><a href="#HEADING102-453">Subsequence Operations</a>
-		    <ul>
-		      <li><a href="#HEADING102-454"><code>copy-sequence</code>  <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-463"><code>copy-sequence</code>   <var>range</var> #key <var>start end</var> &rArr;  <var>new-range</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-465"><code>concatenate</code>  <span class="attributes-summary">[Function]</span></a></li>
-		      <li><a href="#HEADING102-475"><code>concatenate-as</code>    <span class="attributes-summary">[Function]</span></a></li>
-		      <li><a href="#HEADING102-486"><code>replace-subsequence!</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		      <li><a href="#HEADING102-500"><code>subsequence-position</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		    </ul>
-		  </li>
-		  <li><a href="#HEADING102-511">Mapping and Reducing</a>
-		    <ul>
-		      <li><a href="#HEADING102-512">Simple Mapping</a>
-			<ul>
-			  <li><a href="#HEADING102-515"><code>do</code> <span class="attributes-summary">[Function]</span></a></li>
-			  <li><a href="#HEADING102-524"><code>map</code>   <span class="attributes-summary">[Function]</span></a></li>
-			  <li><a href="#HEADING102-534"><code>map-as</code> <span class="attributes-summary">[Function]</span> </a></li>
-			  <li><a href="#HEADING102-544"><code>map-into</code> <span class="attributes-summary">[Function]</span></a></li>
-			  <li><a href="#HEADING102-558"><code>any?</code>    <span class="attributes-summary">[Function]</span></a></li>
-			  <li><a href="#HEADING102-568"><code>every?</code>  <span class="attributes-summary">[Function]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-578">Extensible Mapping Functions</a>
-			<ul>
-			  <li><a href="#HEADING102-579"><code>reduce</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-			  <li><a href="#HEADING102-590"><code>reduce1</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-			  <li><a href="#HEADING102-601"><code>choose</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-			  <li><a href="#HEADING102-609"><code>choose-by</code>   <span class="attributes-summary">[Open Generic Function]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-618">Other Mapping Functions</a>
-			<ul>
-			  <li><a href="#HEADING102-619"><code>member?</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			    <ul>
-			      <li class="gf-method"><a href="#HEADING102-629"><code>member?</code>  <var>val range</var>  #key <var>test</var> &rArr;  <var>boolean</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			    </ul>
-			  </li>
-			  <li><a href="#HEADING102-631"><code>find-key</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-			  <li><a href="#HEADING102-642"><code>remove-key!</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			    <ul>
-			      <li class="gf-method"><a href="#HEADING102-650"><code>remove-key!</code> <var>table key</var>   &rArr; <var>table</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			    </ul>
-			  </li>
-			  <li><a href="#HEADING102-652"><code>replace-elements!</code>  <span class="attributes-summary">[Open Generic Function]</span></a></li>
-			  <li><a href="#HEADING102-663"><code>fill!</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-			</ul>
-		      </li>
-		    </ul>
-		  </li>
-		  <li><a href="#HEADING102-674">The Iteration Protocol</a>
-		    <ul>
-		      <li><a href="#HEADING102-675"><code>forward-iteration-protocol</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			<ul>
-			  <li class="gf-method"><a href="#HEADING102-703"><code>forward-iteration-protocol</code> <var>table</var>    &rArr;  <var>initial-state limit next-state finished-state? current-key current-element current-element-setter copy-state</var>  <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			</ul>
-		      </li>
-		      <li><a href="#HEADING102-705"><code>backward-iteration-protocol</code> <span class="attributes-summary">[Open Generic Function]</span></a></li>
-		      <li><a href="#HEADING102-719">The Table Protocol</a>
-			<ul>
-			  <li><a href="#HEADING102-721"><code>table-protocol</code> <span class="attributes-summary">[Open Generic Function]</span></a>
-			    <ul>
-			      <li class="gf-method"><a href="#HEADING102-732"><code>table-protocol</code> <var>object-table</var>   &rArr; <var>test-function  hash-function</var> <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
-			    </ul>
-			  </li>
-			  <li><a href="#HEADING102-736"><code>merge-hash-codes</code> <span class="attributes-summary">[Function]</span></a></li>
-			  <li><a href="#HEADING102-749"><code>object-hash</code> <span class="attributes-summary">[Function]</span></a></li>
-			</ul>
-		      </li>
-		    </ul>
-		  </li>
-		</ul>
-	      </li>
-	      <li><a href="Reflective_Operations_on_Types">Reflective Operations on Types</a></li>
-	      <li><a href="Functional_Operations">Functional Operations</a></li>
-	      <li><a href="Function_Application">Function Application</a></li>
-	      <li><a href="Reflective_Operations_on_Functions">Reflective Operations on Functions</a></li>
-	      <li><a href="Operations_on_Conditions">Operations on Conditions</a></li>
-	    </ul>
-	  </li>
-	  <li><a href="Other_Built-In_Objects">Other Built-In Objects</a></li>
-	  <li><a href="Built-In_Macros_and_Special_Definitions">The Built-In Macros and Special Definitions</a></li>
-	</ol>
-	<ol class="appendices">
-	  <li><a href="BNF">BNF</a></li>
-	  <li><a href="Exported_Names">Exported Names</a></li>
-	</ol>
-	<ul class="back-matter">
-	  <li><a href="Glossary">Glossary</a></li>
-	  <li><a href="Index">Index</a></li>
-	  <li><a href="Colophon">Colophon</a></li>
-	</ul>
-	<ul class="errata">
-	  <li><a href="Errata">Errata</a></li>
-	</ul>
+	<div id="navigation-top">
+	  <div class="background">
+	    <p id="book-title">
+	    <img class="book-icon" alt="" src="images/color-square-small.png" width="22" height="21" />
+	    <a href="Title"><img class="book-title" alt="The Dylan Reference Manual" src="images/book-title.png" width="343" height="28" /></a>
+	  </p>
+	  <p id="navigation-core">
+	    <a class="previous" title="Previous Page" href="Coercing_and_Copying_Objects"><span>&larr; Previous</span></a>
+	    <a class="next" title="Next Page" href="Reflective_Operations_on_Types"><span>Next Page &rarr;</span></a>
+	    <a class="up" title="Chapter Start" href="Built-In_Functions"><span>Up</span></a>
+	    <a class="start" title="Start of Book" href="Title"><span>Start</span></a>
+	    <a class="contents" title="Contents" href="Contents"><span>Contents</span></a>
+	    <a class="index" title="Index" href="Index"><span>Index</span></a>
+	  </p>
+	</div>
+	</div>
+	<div id="navigation-TOC">
+	  <ul class="front-matter">
+	    <li id="book-start"><a href="Title">Start</a></li>
+	    <li><a href="Contents">Contents</a></li>
+	    <li><a href="Preface">About This Book</a></li>
+	  </ul>
+	  <ol class="chapters">
+	    <li><a href="Introduction">Introduction</a></li>
+	    <li><a href="Syntax">Syntax</a></li>
+	    <li><a href="Program_Structure">Program Structure</a></li>
+	    <li><a href="Program_Control">Program Control</a></li>
+	    <li><a href="Types_and_Classes">Types and Classes</a></li>
+	    <li><a href="Functions">Functions</a></li>
+	    <li><a href="Conditions">Conditions</a></li>
+	    <li><a href="Collections">Collections</a></li>
+	    <li><a href="Sealing">Sealing</a></li>
+	    <li><a href="Macros">Macros</a></li>
+	    <li><a href="Built-In_Classes">The Built-In Classes</a></li>
+	    <li class="current parent"><a href="Built-In_Functions">The Built-In Functions</a>
+	      <ul class="sections">
+		<li><a href="Built-In_Functions_Overview">Overview</a></li>
+		<li><a href="Constructing_and_Initializing_Instances">Constructing and Initializing Instances</a></li>
+		<li><a href="Equality_and_Comparison">Equality and Comparison</a></li>
+		<li><a href="Arithmetic_Operations">Arithmetic Operations</a></li>
+		<li><a href="Coercing_and_Copying_Objects">Coercing and Copying Objects</a></li>
+		<li id="current" class="subsections"><span>Collection Operations</span>
+		  <ul class="page-TOC">
+		    <li class="subsections"><a href="#HEADING102-3">Collection Properties</a>
+		      <ul>
+			<li><a href="#HEADING102-4"><code>empty?</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-10"><code>empty?</code>   <var>collection</var> &rArr;  <var>boolean</var><span class="attributes-summary"> [G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-12"><code>size</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-18"><code>size</code> <var>collection</var> &rArr; <var>integer-or-false</var><span class="attributes-summary"> [G.F. Method]</span></a></li>
+			    <li><a href="#HEADING102-20"><code>size</code> <var>array</var> &rArr; <var>size</var><span class="attributes-summary"> [G.F. Method]</span></a></li>
+			    <li><a href="#HEADING102-23"><code>size</code>  <var>list</var>  &rArr;  <var>integer-or-false</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			    <li><a href="#HEADING102-25"><code>size</code>   <var>range</var> &rArr;  <var>size</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			    <li><a href="#HEADING102-27"><code>size</code>   <var>table</var> &rArr;  <var>size</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-29"><code>size-setter</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			<li><a href="#HEADING102-40"><code>rank</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-46"><code>rank</code> <var>array</var> &rArr; <var>rank</var><span class="attributes-summary"> [G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-48"><code>row-major-index</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-56"><code>row-major-index</code> <var>array</var> #rest <var>subscripts</var> &rArr; <var>index</var><span class="attributes-summary"> [G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-58"><code>dimensions</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-64"><code>dimensions</code> <var>vector</var> &rArr;  <var>sequence</var><span class="attributes-summary"> [G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-66"><code>dimension</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-74"><code>dimension</code> <var>array axis</var> &rArr; <var>dimension</var><span class="attributes-summary"> [G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-76"><code>key-test</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-83"><code>key-test</code> <var>sequence</var>  &rArr; <var>test-function</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			    <li><a href="#HEADING102-85"><code>key-test</code> <var>table</var>  &rArr; <var>test-function</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-87"><code>key-sequence</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+		      </ul>
+		    </li>
+		    <li class="subsections"><a href="#HEADING102-95">Selecting Elements</a>
+		      <ul>
+			<li><a href="#HEADING102-96"><code>element</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-105"><code>element</code> <var>simple-vector  index</var> #key <var>default</var> &rArr;  <var>element</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			    <li><a href="#HEADING102-107"><code>element</code> <var>unicode-string index</var> #key <var>default</var>  &rArr;  <var>character</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			    <li><a href="#HEADING102-109"><code>element</code> <var>byte-string index</var> #key <var>default</var>  &rArr;  <var>character</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			    <li><a href="#HEADING102-111"><code>element</code> <var>table key</var> #key <var>default</var>  &rArr;  <var>element</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-113"><code>element-setter</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-125"><code>element-setter</code>  new-element simple-vector  index  <span class="attributes-summary">[Sealed G.F. Method]</span> &rArr;  new-element </a></li>
+			    <li><a href="#HEADING102-127"><code>element-setter</code>   new-value table key  <span class="attributes-summary">[Sealed G.F. Method]</span></a></li>
+			    <li><a href="#HEADING102-129"><code>element-setter</code>  character unicode-string index   <span class="attributes-summary">[Sealed G.F. Method]</span> &rArr;  character</a></li>
+			    <li><a href="#HEADING102-131"><code>element-setter</code>  <var>character byte-string index</var> &rArr;  <var>character</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-133"><code>aref</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-141"><code>aref</code> <var>array</var> #rest <var>indices</var> &rArr; <var>element</var><span class="attributes-summary"> [G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-143"><code>aref-setter</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-153"><code>aref-setter</code> <var>new-value   array</var>  #rest <var>indices</var> &rArr; <var>new-value</var><span class="attributes-summary"> [G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-155"><code>first</code><span class="attributes-summary"> [Function]</span></a></li>
+			<li><a href="#HEADING102-163"><code>second</code><span class="attributes-summary"> [Function]</span></a></li>
+			<li><a href="#HEADING102-170"><code>third</code><span class="attributes-summary"> [Function]</span></a></li>
+			<li><a href="#HEADING102-177"><code>first-setter</code><span class="attributes-summary"> [Function]</span></a></li>
+			<li><a href="#HEADING102-185"><code>second-setter</code><span class="attributes-summary"> [Function]</span></a></li>
+			<li><a href="#HEADING102-192"><code>third-setter</code><span class="attributes-summary"> [Function]</span></a></li>
+			<li><a href="#HEADING102-199"><code>last</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			<li><a href="#HEADING102-208"><code>last-setter</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			<li><a href="#HEADING102-219"><code>head</code><span class="attributes-summary"> [Function]</span></a></li>
+			<li><a href="#HEADING102-227"><code>tail</code><span class="attributes-summary"> [Function]</span></a></li>
+			<li><a href="#HEADING102-235"><code>head-setter</code><span class="attributes-summary"> [Function]</span></a></li>
+			<li><a href="#HEADING102-244"><code>tail-setter</code><span class="attributes-summary"> [Function]</span></a></li>
+		      </ul>
+		    </li>
+		    <li class="subsections"><a href="#HEADING102-253">Adding and Removing Elements</a>
+		      <ul>
+			<li><a href="#HEADING102-254"><code>add</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			<li><a href="#HEADING102-264"><code>add!</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-274"><code>add!</code>   <var>deque new-value</var>  &rArr; <var>deque</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			    <li><a href="#HEADING102-276"><code>add!</code>   <var>stretchy-vector new-element</var>  &rArr; <var>stretchy-vector</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			    <li><a href="#HEADING102-278"><code>add!</code>   <var>list element</var> &rArr;  <var>pair</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-280"><code>add-new</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			<li><a href="#HEADING102-291"><code>add-new!</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			<li><a href="#HEADING102-302"><code>remove</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			<li><a href="#HEADING102-314"><code>remove!</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-325"><code>remove!</code>   <var>deque value</var> #key <var>test count</var>   &rArr; <var>deque</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			    <li><a href="#HEADING102-327"><code>remove!</code>   stretchy-vector element #key test count   <span class="attributes-summary">[Sealed G.F. Method]</span> &rArr; stretchy-vector</a></li>
+			    <li><a href="#HEADING102-329"><code>remove!</code>   <var>list element</var> #key <var>test count</var>  &rArr;  <var>list</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-331"><code>push</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			<li><a href="#HEADING102-339"><code>pop</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			<li><a href="#HEADING102-346"><code>push-last</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			<li><a href="#HEADING102-354"><code>pop-last</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+		      </ul>
+		    </li>
+		    <li class="subsections"><a href="#HEADING102-361">Reordering Elements</a>
+		      <ul>
+			<li><a href="#HEADING102-362"><code>reverse</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-371"><code>reverse</code>   <var>range</var> &rArr;  <var>new-range</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-373"><code>reverse!</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-382"><code>reverse!</code>   <var>range</var> &rArr;  <var>range</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-384"><code>sort</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			<li><a href="#HEADING102-395"><code>sort!</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+		      </ul>
+		    </li>
+		    <li class="subsections"><a href="#HEADING102-407">Set Operations</a>
+		      <ul>
+			<li><a href="#HEADING102-408"><code>intersection</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-419"><code>intersection</code>   <var>range1 range2</var>  #key <var>test</var> &rArr;  <var>range</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-421"><code>union</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			<li><a href="#HEADING102-433"><code>remove-duplicates</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			<li><a href="#HEADING102-443"><code>remove-duplicates!</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+		      </ul>
+		    </li>
+		    <li class="subsections"><a href="#HEADING102-453">Subsequence Operations</a>
+		      <ul>
+			<li><a href="#HEADING102-454"><code>copy-sequence</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-463"><code>copy-sequence</code>   <var>range</var> #key <var>start end</var> &rArr;  <var>new-range</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-465"><code>concatenate</code><span class="attributes-summary"> [Function]</span></a></li>
+			<li><a href="#HEADING102-475"><code>concatenate-as</code><span class="attributes-summary"> [Function]</span></a></li>
+			<li><a href="#HEADING102-486"><code>replace-subsequence!</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			<li><a href="#HEADING102-500"><code>subsequence-position</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+		      </ul>
+		    </li>
+		    <li class="subsections"><a href="#HEADING102-511">Mapping and Reducing</a>
+		      <ul>
+			<li class="subsections"><a href="#HEADING102-512">Simple Mapping</a>
+			  <ul>
+			    <li><a href="#HEADING102-515"><code>do</code><span class="attributes-summary"> [Function]</span></a></li>
+			    <li><a href="#HEADING102-524"><code>map</code><span class="attributes-summary"> [Function]</span></a></li>
+			    <li><a href="#HEADING102-534"><code>map-as</code><span class="attributes-summary"> [Function]</span> </a></li>
+			    <li><a href="#HEADING102-544"><code>map-into</code><span class="attributes-summary"> [Function]</span></a></li>
+			    <li><a href="#HEADING102-558"><code>any?</code><span class="attributes-summary"> [Function]</span></a></li>
+			    <li><a href="#HEADING102-568"><code>every?</code><span class="attributes-summary"> [Function]</span></a></li>
+			  </ul>
+			</li>
+			<li class="subsections"><a href="#HEADING102-578">Extensible Mapping Functions</a>
+			  <ul>
+			    <li><a href="#HEADING102-579"><code>reduce</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			    <li><a href="#HEADING102-590"><code>reduce1</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			    <li><a href="#HEADING102-601"><code>choose</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			    <li><a href="#HEADING102-609"><code>choose-by</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			  </ul>
+			</li>
+			<li class="subsections"><a href="#HEADING102-618">Other Mapping Functions</a>
+			  <ul>
+			    <li><a href="#HEADING102-619"><code>member?</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			      <ul class="gf-methods">
+				<li><a href="#HEADING102-629"><code>member?</code>  <var>val range</var>  #key <var>test</var> &rArr;  <var>boolean</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			      </ul>
+			    </li>
+			    <li><a href="#HEADING102-631"><code>find-key</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			    <li><a href="#HEADING102-642"><code>remove-key!</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			      <ul class="gf-methods">
+				<li><a href="#HEADING102-650"><code>remove-key!</code> <var>table key</var>   &rArr; <var>table</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			      </ul>
+			    </li>
+			    <li><a href="#HEADING102-652"><code>replace-elements!</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			    <li><a href="#HEADING102-663"><code>fill!</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			  </ul>
+			</li>
+		      </ul>
+		    </li>
+		    <li class="subsections"><a href="#HEADING102-674">The Iteration Protocol</a>
+		      <ul>
+			<li><a href="#HEADING102-675"><code>forward-iteration-protocol</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			  <ul class="gf-methods">
+			    <li><a href="#HEADING102-703"><code>forward-iteration-protocol</code> <var>table</var>    &rArr;  <var>initial-state limit next-state finished-state? current-key current-element current-element-setter copy-state</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			  </ul>
+			</li>
+			<li><a href="#HEADING102-705"><code>backward-iteration-protocol</code><span class="attributes-summary"> [Open Generic Function]</span></a></li>
+			<li class="subsections"><a href="#HEADING102-719">The Table Protocol</a>
+			  <ul>
+			    <li><a href="#HEADING102-721"><code>table-protocol</code><span class="attributes-summary"> [Open Generic Function]</span></a>
+			      <ul class="gf-methods">
+				<li><a href="#HEADING102-732"><code>table-protocol</code> <var>object-table</var>   &rArr; <var>test-function  hash-function</var><span class="attributes-summary"> [Sealed G.F. Method]</span></a></li>
+			      </ul>
+			    </li>
+			    <li><a href="#HEADING102-736"><code>merge-hash-codes</code><span class="attributes-summary"> [Function]</span></a></li>
+			    <li><a href="#HEADING102-749"><code>object-hash</code><span class="attributes-summary"> [Function]</span></a></li>
+			  </ul>
+			</li>
+		      </ul>
+		    </li>
+		  </ul>
+		</li>
+		<li><a href="Reflective_Operations_on_Types">Reflective Operations on Types</a></li>
+		<li><a href="Functional_Operations">Functional Operations</a></li>
+		<li><a href="Function_Application">Function Application</a></li>
+		<li><a href="Reflective_Operations_on_Functions">Reflective Operations on Functions</a></li>
+		<li><a href="Operations_on_Conditions">Operations on Conditions</a></li>
+	      </ul>
+	    </li>
+	    <li><a href="Other_Built-In_Objects">Other Built-In Objects</a></li>
+	    <li><a href="Built-In_Macros_and_Special_Definitions">The Built-In Macros and Special Definitions</a></li>
+	  </ol>
+	  <ol class="appendices">
+	    <li><a href="BNF">BNF</a></li>
+	    <li><a href="Exported_Names">Exported Names</a></li>
+	  </ol>
+	  <ul class="back-matter">
+	    <li><a href="Glossary">Glossary</a></li>
+	    <li><a href="Index">Index</a></li>
+	    <li><a href="Colophon">Colophon</a></li>
+	  </ul>
+	  <ul class="errata">
+	    <li><a href="Errata">Errata</a></li>
+	  </ul>
+	</div>
       </div>
 
       <hr />
@@ -1493,9 +1502,9 @@ tail (x) := "dot"
 <code> &rArr;</code>  "dot"
 x
 <code> &rArr;</code>  #(4 . "dot")<a name="MARKER-2-1751"></a></pre>
-	  <p class="errata" id="errata-p309-1">
-	    <a href="Errata#p309-1"><strong>Errata:</strong></a> In the published book, the final
-	    value of <code>x</code> is incorrect: <code>#(4, 9, 8 . "dot")</code>
+	  <p class="errata-note" id="errata-p309-1">
+	    <a class="note-tag" href="Errata#p309-1"><strong>Errata:</strong></a> In the published
+	    book, the final value of <code>x</code> is incorrect: <code>#(4, 9, 8 . "dot")</code>
 	  </p>
 	</dd>
       </dl>
@@ -2661,15 +2670,18 @@ concatenate-as (&lt;string&gt;, #('n', 'o', 'n'), #('f', 'a', 't'))
 	    the operation. <var>insert-sequence</var> will not be modified by this operation.</p>
 	  <pre class="code">
 define variable *original* = list ("a", "b", "c", "d", "e")
+
 *new* := replace-subsequence! (*original*, #("x", "y", "z"), end: 1))
     #("x", "y", "z", "b", "c", "d", "e")
+
 *new* := replace-subsequence! (*new*, #("x", "y", "z"), start: 4))
     #("x", "y", "z", "b", "x", "y", "z")
+
 *new* := replace-subsequence! (*new*, #("a", "b", "c"), 
                                       start: 2, end: 4))
     #("x", "y", "a", "b", "c", "x", "y", "z")</pre>
-	  <p class="errata" id="errata-p325-1">
-	    <a href="Errata#p325-1"><strong>Errata:</strong></a> In the published
+	  <p class="errata-note" id="errata-p325-1">
+	    <a class="note-tag" href="Errata#p325-1"><strong>Errata:</strong></a> In the published
 	    book, <var>target-sequence</var> is incorrectly written as <var>source-sequence</var>.
 	  </p>
 	</dd>
@@ -2840,7 +2852,7 @@ map (\+,
 	</dd>
       </dl>
       <a name="HEADING102-534"></a>
-      <h4 class="item-title"><code id="MARKER-2-1813">map-as</code> <span class="attributes-summary">[Function]</span> </h4>
+      <h4 class="item-title"><code id="MARKER-2-1813">map-as</code><span class="attributes-summary"> [Function]</span> </h4>
       <hr class="item-title" />
       <p class="short-description"><a name="MARKER-9-1814"></a>Iterates over one or more collections and collects the results in a freshly allocated collection of a specified type.</p>
       <dl class="Cliche">
@@ -2892,9 +2904,10 @@ map-as (&lt;vector&gt;, \+,
         #(100, 100, 200, 200),
         #(1, 2, 3, 4))
 <code> &rArr;</code>  #[101, 102, 203, 204]</pre>
-	  <p class="errata" id="errata-p329-1">
-	    <a href="Errata#p329-1"><strong>Errata:</strong></a> In the published book, the result
-	    is incorrectly written as a list instead of a vector: <code>#(101, 102, 203, 204)</code>
+	  <p class="errata-note" id="errata-p329-1">
+	    <a class="note-tag" href="Errata#p329-1"><strong>Errata:</strong></a> In the published
+	    book, the result is incorrectly written as a list instead of a vector: <code>#(101, 102,
+	    203, 204)</code>
 	  </p>
 	</dd>
       </dl>
@@ -3861,19 +3874,19 @@ end method table-protocol; </pre>
 
     <div id="footer">
 
-      <hr class="footer" />
-      <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer">
-	<a class="previous" title="Go to previous page" href="Coercing_and_Copying_Objects"><img alt="Previous" src="images/prev.gif" /></a>
-	<a class="next" title="Go to next page" href="Reflective_Operations_on_Types"><img alt="Next" src="images/next.gif" /></a>
-	<a class="up" title="Go to start of chapter" href="Built-In_Functions"><img alt="Up" src="images/up.gif" /></a>
-	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
-	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
-	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      <hr />
+      <address>The Dylan Reference Manual - 7 Apr 1998</address>
+      <p id="navigation-footer">
+	<a class="previous" title="Previous Page" href="Coercing_and_Copying_Objects"><span>&larr; Previous</span></a>
+	<a class="next" title="Next Page" href="Reflective_Operations_on_Types"><span>Next Page &rarr;</span></a>
+	<a class="up" title="Chapter Start" href="Built-In_Functions"><span>Up</span></a>
+	<a class="start" title="Start of Book" href="Title"><span>Start</span></a>
+	<a class="contents" title="Contents" href="Contents"><span>Contents</span></a>
+	<a class="index" title="Index" href="Index"><span>Index</span></a>
       </p>
-      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
-	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-      <p class="footer">Originally generated with Harlequin WebMaker&reg;, subsequently revised.</p>
+      <p>Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered
+	trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+      <p>Originally generated with Harlequin WebMaker&reg;, subsequently revised.</p>
 
     </div>
   </body>

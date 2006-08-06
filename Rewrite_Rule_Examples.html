@@ -43,122 +43,131 @@
     <link rel="appendix" title="A BNF" href="BNF" />
     <link rel="appendix" title="B Exported Names" href="Exported_Names" />
     
-    <!-- Stylesheet -->
+    <!-- Stylesheets -->
     
-    <link rel="stylesheet" href="drm.css" type="text/css" />
+    <link rel="stylesheet" href="styles/common.css" type="text/css" />
+    <link rel="stylesheet" href="styles/nav-top-fixed.css" type="text/css" media="handheld" />
+    <link rel="stylesheet" href="styles/nav-left-fixed.css" type="text/css" media="screen" title="Navigation at Left" />
+    <link rel="stylesheet alternate" href="styles/nav-top-fixed.css" type="text/css" media="screen" title="Navigation at Top" />
 
     <title>Rewrite Rule Examples &mdash; 10. Macros &mdash; The DRM</title>
   </head>
-  <body>
+  <body class="content">
 
     <div id="header">
       <div id="navigation-header">
-	<p id="book-title">The Dylan Reference Manual</p>
-	<p id="basic-navigation">
-	  <a class="previous" title="Go to previous page" href="Hygiene"><img alt="Previous" src="images/prev.gif" /></a>
-	  <a class="next" title="Go to next page" href="Built-In_Classes"><img alt="Next" src="images/next.gif" /></a>
-	  <a class="up" title="Go to start of chapter" href="Macros"><img alt="Up" src="images/up.gif" /></a>
-	  <a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
-	  <a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
-	  <a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
-	</p>
-      </div>
-
-      <div id="navigation-TOC">
-	<ul class="front-matter">
-	  <li><a href="Title">Start</a></li>
-	  <li><a href="Contents">Contents</a></li>
-	  <li><a href="Preface">About This Book</a></li>
-	</ul>
-	<ol class="chapters">
-	  <li><a href="Introduction">Introduction</a></li>
-	  <li><a href="Syntax">Syntax</a></li>
-	  <li><a href="Program_Structure">Program Structure</a></li>
-	  <li><a href="Program_Control">Program Control</a></li>
-	  <li><a href="Types_and_Classes">Types and Classes</a></li>
-	  <li><a href="Functions">Functions</a></li>
-	  <li><a href="Conditions">Conditions</a></li>
-	  <li><a href="Collections">Collections</a></li>
-	  <li><a href="Sealing">Sealing</a></li>
-	  <li><a href="Macros">Macros</a>
-	    <ul>
-	      <li><a href="Macros_Overview">Overview</a></li>
-	      <li><a href="Extensible_Grammar">Extensible Grammar</a></li>
-	      <li><a href="Macro_Names">Macro Names</a></li>
-	      <li><a href="Rewrite_Rules">Rewrite Rules</a></li>
-	      <li><a href="Patterns">Patterns</a></li>
-	      <li><a href="Pattern_Variable_Constraints">Pattern Variable Constraints</a></li>
-	      <li><a href="Templates">Templates</a></li>
-	      <li><a href="Auxiliary_Rule_Sets">Auxiliary Rule Sets</a></li>
-	      <li><a href="Hygiene">Hygiene</a></li>
-	      <li id="current">Rewrite Rule Examples
-		<ul class="page-toc">
-		  <li><a href="#HEADING86-3">Statement Macros</a>
-		    <ul>
-		      <li><a href="#HEADING86-4">Begin</a></li>
-		      <li><a href="#HEADING86-6">Block</a></li>
-		      <li><a href="#HEADING86-11">Case</a></li>
-		      <li><a href="#HEADING86-13">For</a></li>
-		      <li><a href="#HEADING86-30">If</a></li>
-		      <li><a href="#HEADING86-32">Method</a></li>
-		      <li><a href="#HEADING86-34">Select</a></li>
-		      <li><a href="#HEADING86-40">Unless</a></li>
-		      <li><a href="#HEADING86-42">Until</a></li>
-		      <li><a href="#HEADING86-44">While</a></li>
-		    </ul>
-		  </li>
-		  <li><a href="#HEADING86-46">Definition Macros</a>
-		    <ul>
-		      <li><a href="#HEADING86-47">Define Class</a></li>
-		      <li><a href="#HEADING86-51">Define Constant</a></li>
-		      <li><a href="#HEADING86-53">Define Domain</a></li>
-		      <li><a href="#HEADING86-56">Define Generic</a></li>
-		      <li><a href="#HEADING86-59">Define Library</a></li>
-		      <li><a href="#HEADING86-63">Define Method</a></li>
-		      <li><a href="#HEADING86-65">Define Module</a></li>
-		      <li><a href="#HEADING86-69">Define Variable</a></li>
-		    </ul>
-		  </li>
-		  <li><a href="#HEADING86-71">Operator Function Macros</a>
-		    <ul>
-		      <li><a href="#HEADING86-72">&amp;</a></li>
-		      <li><a href="#HEADING86-74">|</a></li>
-		      <li><a href="#HEADING86-76">:=</a></li>
-		    </ul>
-		  </li>
-		  <li><a href="#HEADING86-78">Additional Examples</a>
-		    <ul>
-		      <li><a href="#HEADING86-80">Test and Test-setter</a></li>
-		      <li><a href="#HEADING86-84">Transform!</a></li>
-		      <li><a href="#HEADING86-87">Formatting-table</a></li>
-		      <li><a href="#HEADING86-90">With-input-context</a></li>
-		      <li><a href="#HEADING86-95">Define Command</a></li>
-		      <li><a href="#HEADING86-107">Get-resource</a></li>
-		      <li><a href="#HEADING86-110">Completing-from-suggestions</a></li>
-		      <li><a href="#HEADING86-113">Define Jump-instruction</a></li>
-		    </ul>
-		  </li>
-		</ul>
-	      </li>
-	    </ul>
-	  </li>
-	  <li><a href="Built-In_Classes">The Built-In Classes</a></li>
-	  <li><a href="Built-In_Functions">The Built-In Functions</a></li>
-	  <li><a href="Other_Built-In_Objects">Other Built-In Objects</a></li>
-	  <li><a href="Built-In_Macros_and_Special_Definitions">The Built-In Macros and Special Definitions</a></li>
-	</ol>
-	<ol class="appendices">
-	  <li><a href="BNF">BNF</a></li>
-	  <li><a href="Exported_Names">Exported Names</a></li>
-	</ol>
-	<ul class="back-matter">
-	  <li><a href="Glossary">Glossary</a></li>
-	  <li><a href="Index">Index</a></li>
-	  <li><a href="Colophon">Colophon</a></li>
-	</ul>
-	<ul class="errata">
-	  <li><a href="Errata">Errata</a></li>
-	</ul>
+	<div id="navigation-top">
+	  <div class="background">
+	    <p id="book-title">
+	    <img class="book-icon" alt="" src="images/color-square-small.png" width="22" height="21" />
+	    <a href="Title"><img class="book-title" alt="The Dylan Reference Manual" src="images/book-title.png" width="343" height="28" /></a>
+	  </p>
+	  <p id="navigation-core">
+	    <a class="previous" title="Previous Page" href="Hygiene"><span>&larr; Previous</span></a>
+	    <a class="next" title="Next Page" href="Built-In_Classes"><span>Next Page &rarr;</span></a>
+	    <a class="up" title="Chapter Start" href="Macros"><span>Up</span></a>
+	    <a class="start" title="Start of Book" href="Title"><span>Start</span></a>
+	    <a class="contents" title="Contents" href="Contents"><span>Contents</span></a>
+	    <a class="index" title="Index" href="Index"><span>Index</span></a>
+	  </p>
+	</div>
+	</div>
+	<div id="navigation-TOC">
+	  <ul class="front-matter">
+	    <li id="book-start"><a href="Title">Start</a></li>
+	    <li><a href="Contents">Contents</a></li>
+	    <li><a href="Preface">About This Book</a></li>
+	  </ul>
+	  <ol class="chapters">
+	    <li><a href="Introduction">Introduction</a></li>
+	    <li><a href="Syntax">Syntax</a></li>
+	    <li><a href="Program_Structure">Program Structure</a></li>
+	    <li><a href="Program_Control">Program Control</a></li>
+	    <li><a href="Types_and_Classes">Types and Classes</a></li>
+	    <li><a href="Functions">Functions</a></li>
+	    <li><a href="Conditions">Conditions</a></li>
+	    <li><a href="Collections">Collections</a></li>
+	    <li><a href="Sealing">Sealing</a></li>
+	    <li class="current parent"><a href="Macros">Macros</a>
+	      <ul class="sections">
+		<li><a href="Macros_Overview">Overview</a></li>
+		<li><a href="Extensible_Grammar">Extensible Grammar</a></li>
+		<li><a href="Macro_Names">Macro Names</a></li>
+		<li><a href="Rewrite_Rules">Rewrite Rules</a></li>
+		<li><a href="Patterns">Patterns</a></li>
+		<li><a href="Pattern_Variable_Constraints">Pattern Variable Constraints</a></li>
+		<li><a href="Templates">Templates</a></li>
+		<li><a href="Auxiliary_Rule_Sets">Auxiliary Rule Sets</a></li>
+		<li><a href="Hygiene">Hygiene</a></li>
+		<li id="current" class="subsections"><span>Rewrite Rule Examples</span>
+		  <ul class="page-TOC">
+		    <li class="subsections"><a href="#HEADING86-3">Statement Macros</a>
+		      <ul>
+			<li><a href="#HEADING86-4">Begin</a></li>
+			<li><a href="#HEADING86-6">Block</a></li>
+			<li><a href="#HEADING86-11">Case</a></li>
+			<li><a href="#HEADING86-13">For</a></li>
+			<li><a href="#HEADING86-30">If</a></li>
+			<li><a href="#HEADING86-32">Method</a></li>
+			<li><a href="#HEADING86-34">Select</a></li>
+			<li><a href="#HEADING86-40">Unless</a></li>
+			<li><a href="#HEADING86-42">Until</a></li>
+			<li><a href="#HEADING86-44">While</a></li>
+		      </ul>
+		    </li>
+		    <li class="subsections"><a href="#HEADING86-46">Definition Macros</a>
+		      <ul>
+			<li><a href="#HEADING86-47">Define Class</a></li>
+			<li><a href="#HEADING86-51">Define Constant</a></li>
+			<li><a href="#HEADING86-53">Define Domain</a></li>
+			<li><a href="#HEADING86-56">Define Generic</a></li>
+			<li><a href="#HEADING86-59">Define Library</a></li>
+			<li><a href="#HEADING86-63">Define Method</a></li>
+			<li><a href="#HEADING86-65">Define Module</a></li>
+			<li><a href="#HEADING86-69">Define Variable</a></li>
+		      </ul>
+		    </li>
+		    <li class="subsections"><a href="#HEADING86-71">Operator Function Macros</a>
+		      <ul>
+			<li><a href="#HEADING86-72">&amp;</a></li>
+			<li><a href="#HEADING86-74">|</a></li>
+			<li><a href="#HEADING86-76">:=</a></li>
+		      </ul>
+		    </li>
+		    <li class="subsections"><a href="#HEADING86-78">Additional Examples</a>
+		      <ul>
+			<li><a href="#HEADING86-80">Test and Test-setter</a></li>
+			<li><a href="#HEADING86-84">Transform!</a></li>
+			<li><a href="#HEADING86-87">Formatting-table</a></li>
+			<li><a href="#HEADING86-90">With-input-context</a></li>
+			<li><a href="#HEADING86-95">Define Command</a></li>
+			<li><a href="#HEADING86-107">Get-resource</a></li>
+			<li><a href="#HEADING86-110">Completing-from-suggestions</a></li>
+			<li><a href="#HEADING86-113">Define Jump-instruction</a></li>
+		      </ul>
+		    </li>
+		  </ul>
+		</li>
+	      </ul>
+	    </li>
+	    <li><a href="Built-In_Classes">The Built-In Classes</a></li>
+	    <li><a href="Built-In_Functions">The Built-In Functions</a></li>
+	    <li><a href="Other_Built-In_Objects">Other Built-In Objects</a></li>
+	    <li><a href="Built-In_Macros_and_Special_Definitions">The Built-In Macros and Special Definitions</a></li>
+	  </ol>
+	  <ol class="appendices">
+	    <li><a href="BNF">BNF</a></li>
+	    <li><a href="Exported_Names">Exported Names</a></li>
+	  </ol>
+	  <ul class="back-matter">
+	    <li><a href="Glossary">Glossary</a></li>
+	    <li><a href="Index">Index</a></li>
+	    <li><a href="Colophon">Colophon</a></li>
+	  </ul>
+	  <ul class="errata">
+	    <li><a href="Errata">Errata</a></li>
+	  </ul>
+	</div>
       </div>
 
       <hr />
@@ -793,19 +802,19 @@ define jump-instruction eq cr-bit: 2, commutative?: #t end;
 
     <div id="footer">
 
-      <hr class="footer" />
-      <address class="footer">The Dylan Reference Manual - 7 Apr 1998</address>
-      <p class="footer">
-	<a class="previous" title="Go to previous page" href="Hygiene"><img alt="Previous" src="images/prev.gif" /></a>
-	<a class="next" title="Go to next page" href="Built-In_Classes"><img alt="Next" src="images/next.gif" /></a>
-	<a class="up" title="Go to start of chapter" href="Macros"><img alt="Up" src="images/up.gif" /></a>
-	<a class="start" title="Go to start of book" href="Title"><img alt="Top" src="images/top.gif" /></a>
-	<a class="contents" title="Go to table of contents" href="Contents"><img alt="Contents" src="images/content.gif" /></a>
-	<a class="index" title="Go to index" href="Index"><img alt="index" src="images/index.gif" /></a>
+      <hr />
+      <address>The Dylan Reference Manual - 7 Apr 1998</address>
+      <p id="navigation-footer">
+	<a class="previous" title="Previous Page" href="Hygiene"><span>&larr; Previous</span></a>
+	<a class="next" title="Next Page" href="Built-In_Classes"><span>Next Page &rarr;</span></a>
+	<a class="up" title="Chapter Start" href="Macros"><span>Up</span></a>
+	<a class="start" title="Start of Book" href="Title"><span>Start</span></a>
+	<a class="contents" title="Contents" href="Contents"><span>Contents</span></a>
+	<a class="index" title="Index" href="Index"><span>Index</span></a>
       </p>
-      <p class="footer">Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are
-	registered trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
-      <p class="footer">Originally generated with Harlequin WebMaker&reg;, subsequently revised.</p>
+      <p>Copyright Apple Computer, Inc. 1996. Apple&reg; and the Apple logo are registered
+	trademarks of Apple Computer, Inc. Used with permission. All Rights Reserved.</p>
+      <p>Originally generated with Harlequin WebMaker&reg;, subsequently revised.</p>
 
     </div>
   </body>
