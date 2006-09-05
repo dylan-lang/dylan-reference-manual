@@ -19,8 +19,8 @@
 	to <a href="news:comp.lang.dylan">the Dylan newsgroup</a>.</p>
       <p>This page was originally created by Andrew Shalit (and was extended by the Gwydion Dylan
 	Maintainers later on). He writes:</p>
-      <blockquote>Thanks go to <a href="mailto:tree@tiac.net">Tom Emerson</a>, for suggesting that I
-	put together this page, and for supplying me with an initial list of typos.</blockquote>
+      <blockquote><p>Thanks go to <a href="mailto:tree@tiac.net">Tom Emerson</a>, for suggesting that I
+	put together this page, and for supplying me with an initial list of typos.</p></blockquote>
     </blockquote>   
     <hr />
     <h2>Semantically Significant Errors</h2>
@@ -39,13 +39,17 @@
 	subtype relationships of <tt>type-union</tt> reads
 
 	<blockquote>
+	  <p>
 	  <code>subtype?(type-union*(s<sub>1</sub>...s<sub>m</sub>)  type-union*(t<sub>1</sub>...t<sub>n</sub>))</code>
+    </p>
 	</blockquote>
 	
 	<p>is missing a comma and should read</p>
 
 	<blockquote>
-	  <code>subtype?(type-union*(s<sub>1</sub>...s<sub>m</sub>), type-union*(t<sub>1</sub>...t<sub>n</sub>))</code>
+	  <p>
+	    <code>subtype?(type-union*(s<sub>1</sub>...s<sub>m</sub>), type-union*(t<sub>1</sub>...t<sub>n</sub>))</code>
+    </p>
 	</blockquote>
       </li>
       
@@ -53,13 +57,17 @@
 	limited types reads
 
 	<blockquote>
-	  <tt>limited(&lt;integer&gt; ,min: 0 max: 255)</tt>
+	  <p>
+	    <tt>limited(&lt;integer&gt; ,min: 0 max: 255)</tt>
+    </p>
 	</blockquote>
 	
 	<p>it should read</p>
 
 	<blockquote>
-	  <tt>limited(&lt;integer&gt;, min: 0, max: 255)</tt>
+    <p>
+	    <tt>limited(&lt;integer&gt;, min: 0, max: 255)</tt>
+    </p>
 	</blockquote>
       </li>
       
@@ -72,7 +80,9 @@
 	binding name and a type
 	
 	<blockquote>
-	  <tt> => avg :: &lt;number&gt;;</tt>
+	  <p>
+	    <tt> =&gt; avg :: &lt;number&gt;;</tt>
+    </p>
 	</blockquote>
 
 	<p>but the example is meant to illustrate how, if you do not provide both, the first word is
@@ -80,7 +90,9 @@
 	  declaration should read</p>
 	
 	<blockquote>
-	  <tt> => &lt;number&gt;;</tt>
+	  <p>
+	    <tt> =&gt; &lt;number&gt;;</tt>
+    </p>
 	</blockquote>
       </li>
       
@@ -89,16 +101,18 @@
 	declarations for the initial classes and the generic function, as follows
 	
 	<blockquote>
-	  <tt>define open generic m ( x ) ;<br />
-	    define open class &lt;t&gt; ( &lt;object&gt;) end class
-	    &lt;t&gt;;<br />
-	    define open class &lt;s&gt; ( &lt;object&gt;) end class
-	    &lt;s&gt;;<br />
-	    define method m ( s :: &lt;s&gt; ) end method m ;<br />
-	    define sealed domain m ( &lt;t&gt; );<br />
-	    &nbsp;<br />
-	    define class &lt;c&gt; ( &lt;s&gt; , &lt;t&gt; ) end;
-	  </tt>
+	  <p>
+  	  <tt>define open generic m ( x ) ;<br />
+  	    define open class &lt;t&gt; ( &lt;object&gt;) end class
+  	    &lt;t&gt;;<br />
+  	    define open class &lt;s&gt; ( &lt;object&gt;) end class
+  	    &lt;s&gt;;<br />
+  	    define method m ( s :: &lt;s&gt; ) end method m ;<br />
+  	    define sealed domain m ( &lt;t&gt; );<br />
+  	    &nbsp;<br />
+  	    define class &lt;c&gt; ( &lt;s&gt; , &lt;t&gt; ) end;
+  	  </tt>
+    </p>
 	</blockquote>
 	
 	<p>In addition, the phrase, <q>The definition of <tt>&lt;c&gt;</tt> would be valid if it
@@ -160,13 +174,17 @@
 	of <tt>apply</tt> reads
 	
 	<blockquote>
-	  <tt>apply(min 5, 7 list(3, 1, 4))</tt>
+	  <p>
+	    <tt>apply(min 5, 7 list(3, 1, 4))</tt>
+    </p>
 	</blockquote>
 	
 	<p>it should read</p>
 	
 	<blockquote>
-	  <tt>apply(min, 5, 7, list(3, 1, 4))</tt>
+    <p>
+	    <tt>apply(min, 5, 7, list(3, 1, 4))</tt>
+    </p>
 	</blockquote>
 	
 	<p>(Note the additional comma after the number <tt>7</tt> in the correct version.)</p>
@@ -182,9 +200,11 @@
 	word <q>recognize</q> should be used instead, yielding
 	
 	<blockquote>
-	  Methods added to the generic function must have one required parameter, they must
-	  accept keyword arguments, and they must recognize the keyword
-	  argument <tt>strength:</tt>.
+	  <p>
+  	  Methods added to the generic function must have one required parameter, they must
+  	  accept keyword arguments, and they must recognize the keyword
+  	  argument <tt>strength:</tt>.
+    </p>
 	</blockquote>
 	
 	<p>This change follows the definitions of the terms <q>permit</q> and <q>recognize</q> as
@@ -201,21 +221,25 @@
     <h2>Simple Typos</h2>
 
     <ul>
-      <li>p. 42, the first occurrence of the two characters <tt>=></tt> should be a double-arrow
+      <li>p. 42, the first occurrence of the two characters <tt>=&gt;</tt> should be a double-arrow
 	&rArr;.</li>
 
       <li>p. 44, the sentence describing execution order of operator calls reads
 	
 	<blockquote>
-	  The time of the binding specified by the operand (e.g. <tt>+</tt> or <tt>*</tt>) is
-	  unspecified.
+	  <p>
+	    The time of the binding specified by the operand (e.g. <tt>+</tt> or <tt>*</tt>) is
+	    unspecified.
+    </p>
 	</blockquote>
 	
 	<p><q>operand</q> should be <q>operator</q>, yielding</p>
 	
 	<blockquote>
-	  The time of the binding specified by the operator (e.g. <tt>+</tt> or <tt>*</tt>) is
-	  unspecified.
+	  <p>
+	    The time of the binding specified by the operator (e.g. <tt>+</tt> or <tt>*</tt>) is
+	    unspecified.
+    </p>
 	</blockquote>
       </li>
       
@@ -224,20 +248,26 @@
       <li>p. 88, the sentence before the enumerated list reads
 	
 	<blockquote>
-	  Specialization is useful in three way:
+    <p>
+	    Specialization is useful in three way:
+    </p>
 	</blockquote>
 	
 	<p>it is missing an <q>s</q> and should read</p>
 	
 	<blockquote>
-	  Specialization is useful in three ways:
+    <p>
+	    Specialization is useful in three ways:
+    </p>
 	</blockquote>
       </li>
 
       <li>p. 94, there should be a colon at the end of
 
 	<blockquote>
-	  If the generic function's parameter list does not contain a rest value declaration, then
+	  <p>
+	    If the generic function's parameter list does not contain a rest value declaration, then
+    </p>
 	</blockquote>
       </li>
 
@@ -251,15 +281,19 @@
       <li>p. 203, the description of <tt>&lt;extended-float&gt;</tt> reads
 	
 	<blockquote>
-	  This class is intended but not required to provide more precision
-	  that <tt>&lt;double-float&gt;</tt>.
+	  <p>
+	    This class is intended but not required to provide more precision
+	    that <tt>&lt;double-float&gt;</tt>.
+    </p>
 	</blockquote>
 	
 	<p><q>that</q> should be <q>than</q>, yielding</p>
 	
 	<blockquote>
-	  This class is intended but not required to provide more precision
-	  than <tt>&lt;double-float&gt;</tt>.
+	  <p>
+	    This class is intended but not required to provide more precision
+	    than <tt>&lt;double-float&gt;</tt>.
+    </p>
 	</blockquote>
       </li>
       
@@ -284,46 +318,60 @@
       <li>p. 344, the summary of <tt>all-superclasses</tt> reads
 	
 	<blockquote>
-	  Returns the class precedence list a class
+	  <p>
+	    Returns the class precedence list a class
+    </p>
 	</blockquote>
 	
 	<p>it is missing the word <q>of</q> and should read</p>
 	
 	<blockquote>
-	  Returns the class precedence list of a class
+    <p>
+	    Returns the class precedence list of a class
+    </p>
 	</blockquote>
       </li>
       
       <li>p. 389, the sentence fragment reading
 	
 	<blockquote>
-	  so it cannot being excluded
+    <p>
+	    so it cannot being excluded
+    </p>
 	</blockquote>
 	
 	<p>should read</p>
 	
 	<blockquote>
-	  so it cannot be excluded
+	  <p>
+	    so it cannot be excluded
+    </p>
 	</blockquote>
       </li>
 
       <li>p. 391, there should be a space between <q><tt>let</tt></q> and <q><tt>(</tt></q> here:
 
 	<blockquote>
-	  <tt>let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount);</tt>
+	  <p>
+	    <tt>let(whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount);</tt>
+    </p>
 	</blockquote>
       </li>
       
       <li>p. 393, the second paragraph begins
 	
 	<blockquote>
-	  The <i>handler</i> is function
+    <p>
+	    The <i>handler</i> is function
+    </p>
 	</blockquote>
 	
 	<p>it is missing the word <q>a</q> and should read</p>
 	
 	<blockquote>
-	  The <i>handler</i> is a function
+    <p>
+	    The <i>handler</i> is a function
+    </p>
 	</blockquote>
       </li>
 
