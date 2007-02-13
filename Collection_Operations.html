@@ -3763,10 +3763,15 @@ end method do1;</pre>
 	  <p>The method for <code>&lt;object-table&gt;</code> could be written as</p>
 	  <pre class="code">
 define method table-protocol (table :: &lt;object-table&gt;)
-      =&gt; test-function :: &lt;function&gt;, 
-         hash-function :: &lt;function&gt;;
+      =&gt; (test-function :: &lt;function&gt;, 
+          hash-function :: &lt;function&gt;)
   values(\==, object-hash);
 end method table-protocol; </pre>
+	  <p class="errata-note" id="errata-p341-1">
+	    <a class="note-tag" href="Errata#p341-1"><strong>Errata:</strong></a> In the published
+	    book, the <code>table-protocol</code> method signature is missing parentheses around the
+	    result values.</code>
+	  </p>
 	</dd>
       </dl>
       <a name="HEADING102-736"></a>
