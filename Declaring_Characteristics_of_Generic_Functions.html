@@ -127,29 +127,29 @@
 	<p id="section-name">Sealing</p>
       </div>
 
-      <a name="HEADING74-0"></a>
+      <a name="HEADING-74-0"></a>
       <a name="UID-Sealing-1215"></a>
-      <h1 class="section-title"><a name="MARKER-9-1116"></a>Declaring Characteristics of Generic Functions</h1>
-      <p><a name="MARKER-2-1117"></a><a name="MARKER-2-1118"></a>A generic function definition may
+      <h1 class="section-title"><a name="XREF-1116"></a>Declaring Characteristics of Generic Functions</h1>
+      <p><a name="IX-1117"></a><a name="IX-1118"></a>A generic function definition may
 	include either the adjective <code>sealed</code> or the adjective <code>open</code>. These
 	adjectives declare whether the generic function is sealed.</p>
       <p>If a generic function is sealed then no additional methods other than those explicitly
 	known in the same library may be added to the generic function and no methods may be removed
 	from it. Thus, it is an error to define a method for a sealed generic function in some
 	library other than the one which defined the sealed generic function, or to
-	apply <code id="MARKER-2-1119">add-method</code>
-	or <code id="MARKER-2-1120">remove-method</code> to a sealed generic function. An open
+	apply <code id="IX-1119">add-method</code>
+	or <code id="IX-1120">remove-method</code> to a sealed generic function. An open
 	generic function does not prohibit these operations.</p>
       <p>When explicitly defining a generic function, the default is for the generic function to be
 	sealed. It can be declared to be open by using the <code>open</code> adjective in the
 	generic function definition. A generic function that has no explicit definition but has an
 	implicit definition provided by explicit definitions of generic function methods or slot
 	accessors is also sealed. A generic function created
-	using <code id="MARKER-2-1121">make</code> of <code>&lt;generic-function&gt;</code> is
+	using <code id="IX-1121">make</code> of <code>&lt;generic-function&gt;</code> is
 	open. There is no specified way to create a sealed generic function
 	using <code>make.</code></p>
       <p>Additional restrictions on the ability to add methods to a generic function may be imposed
-	by <code>define sealed domain</code>.<a name="MARKER-2-1122"></a></p>
+	by <code>define sealed domain</code>.<a name="IX-1122"></a></p>
 
     </div>
 

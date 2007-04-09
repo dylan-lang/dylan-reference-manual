@@ -90,7 +90,7 @@
 		<li><a href="Parameter_Lists">Parameter Lists</a></li>
 		<li id="current" class="subsections"><span>Method Dispatch</span>
 		  <ul class="page-TOC">
-		    <li><a href="#HEADING50-32">Calling Less Specific Methods</a></li>
+		    <li><a href="#HEADING-50-32">Calling Less Specific Methods</a></li>
 		  </ul>
 		</li>
 		<li><a href="Operations_on_Functions">Operations on Functions</a></li>
@@ -130,27 +130,27 @@
 	<p id="section-name">Functions</p>
       </div>
 
-      <a name="HEADING50-0"></a>
+      <a name="HEADING-50-0"></a>
       <a name="UID-Functions-2196"></a>
-      <h1 class="section-title"><a name="MARKER-9-844"></a>Method Dispatch</h1>
-      <p><a name="MARKER-2-845"></a>When a <a name="MARKER-2-846"></a>generic function is called,
+      <h1 class="section-title"><a name="XREF-844"></a>Method Dispatch</h1>
+      <p><a name="IX-845"></a>When a <a name="IX-846"></a>generic function is called,
 	the generic function uses the types of the arguments to determine which methods to
 	call. This process is called <dfn>method dispatch</dfn>.</p>
       <p>Method dispatch occurs in three phases. First, all
-	the <a name="MARKER-2-847"></a><a name="MARKER-2-848"></a>applicable methods are
+	the <a name="IX-847"></a><a name="IX-848"></a>applicable methods are
 	selected. Next, the applicable methods are sorted by specificity. Finally, the most specific
 	method is called.</p>
-      <a name="HEADING50-3"></a>
-      <h3 class="sub-subsection-title"><a name="MARKER-9-849"></a>Method Specificity</h3>
-      <p><a name="MARKER-2-850"></a>For any two methods <var>A</var> and <var>B</var> that are
+      <a name="HEADING-50-3"></a>
+      <h3 class="sub-subsection-title"><a name="XREF-849"></a>Method Specificity</h3>
+      <p><a name="IX-850"></a>For any two methods <var>A</var> and <var>B</var> that are
 	applicable to a given generic function call, one method may be <dfn>more specific than</dfn>
-	the other, or the methods may be <dfn id="MARKER-2-851">ambiguous methods</dfn>.</p>
+	the other, or the methods may be <dfn id="IX-851">ambiguous methods</dfn>.</p>
       <p>To order two methods <var>A</var> and <var>B</var> with respect to a particular set of
 	arguments, compare each of <var>A</var>'s specializers with <var>B</var>'s specializer in
 	the corresponding position using the argument that was supplied for that position. The
 	comparison works in the following way.</p>
       <ul>
-	<li><a name="MARKER-2-852"></a><a name="MARKER-2-853"></a>If the specializers are type
+	<li><a name="IX-852"></a><a name="IX-853"></a>If the specializers are type
 	  equivalent, then <var>A</var> and <var>B</var> are unordered at the current argument
 	  position. That is, this argument position provides no information about the order of the
 	  two methods.</li>
@@ -164,14 +164,14 @@
 	  current argument position.</li>
 	<li>Otherwise, the methods are unordered in the current argument position.</li>
       </ul>
-      <p><a name="MARKER-2-854"></a>The method <var>A</var> is more specific than the
+      <p><a name="IX-854"></a>The method <var>A</var> is more specific than the
 	method <var>B</var> if and only if <var>A</var> precedes <var>B</var> in at least one
 	argument position, and <var>B</var> does not precede <var>A</var> in any argument
 	position. Similarly, <var>B</var> is more specific than <var>A</var> if and only
 	if <var>B</var> precedes <var>A</var> in at least one argument position, and <var>A</var>
 	does not precede <var>B</var> in any argument position. If neither of these cases apply
 	then <var>A</var> and <var>B</var> are ambiguous methods.</p>
-      <p><a name="MARKER-2-855"></a>When the applicable methods are sorted by specificity, the
+      <p><a name="IX-855"></a>When the applicable methods are sorted by specificity, the
 	sorted list is divided into two parts, each possibly empty. The first part contains methods
 	that are more specific than every method that follows them. The second part (which cannot
 	itself be sorted) begins at the first point of ambiguity; there are at least two methods
@@ -228,7 +228,7 @@ end method;
 	be called first, while calling the generic function on a being of
 	type <code>&lt;vulcan&gt;</code> would cause the method for <code>&lt;intelligent&gt;</code>
 	to be called first.</p>
-      <p><a name="MARKER-2-856"></a>The order of arguments is not significant when computing method
+      <p><a name="IX-856"></a>The order of arguments is not significant when computing method
 	specificity. Given the above class definitions, the following methods are unambiguous when
 	their generic function is called on two beings of type <code>&lt;vulcan&gt; </code>or two
 	beings of type <code>&lt;human&gt;</code>, but the methods are ambiguous when the call
@@ -243,12 +243,12 @@ define method superior-being (a :: &lt;intelligent&gt;,
 define method superior-being (a :: &lt;humanoid&gt;,
                               b :: &lt;humanoid&gt;)
   best-looking-being (a, b)
-  end method;<a name="MARKER-2-857"></a>
+  end method;<a name="IX-857"></a>
 </pre>
-      <a name="HEADING50-32"></a>
+      <a name="HEADING-50-32"></a>
       <a name="UID-Functions-2171"></a>
-      <h2 class="subsection-title"><a name="MARKER-9-858"></a>Calling Less Specific Methods</h2>
-      <p><a name="MARKER-2-859"></a>In many situations, a subtype wants to modify the behavior of a
+      <h2 class="subsection-title"><a name="XREF-858"></a>Calling Less Specific Methods</h2>
+      <p><a name="IX-859"></a>In many situations, a subtype wants to modify the behavior of a
 	method, rather than replace it completely; it wants to perform some work but also use the
 	inherited behavior. This can be accomplished with <dfn>next-method</dfn>. Next-method is a
 	function that, when called, invokes the next most specific method applicable in the generic
@@ -259,7 +259,7 @@ define method superior-being (a :: &lt;humanoid&gt;,
 	current method did not exist.</p>
       <p>If there are no more methods available, the next-method parameter will be bound to the
 	value <code>#f</code> instead of to a method.</p>
-      <a name="HEADING50-36"></a>
+      <a name="HEADING-50-36"></a>
       <h3 class="sub-subsection-title">Passing Different Arguments to Next-Method</h3>
       <p>In the usual case, next-method is called with no arguments. This indicates that the
 	next-method should be passed the same arguments that were supplied to the current
@@ -268,15 +268,15 @@ define method superior-being (a :: &lt;humanoid&gt;,
 	next-method. However, if you pass different arguments, the new arguments must result in the
 	same ordered sequence of applicable methods as the original arguments. Otherwise, the
 	program behavior is undefined.</p>
-      <p><a name="MARKER-2-860"></a>In some cases, the methods in a generic function accept
+      <p><a name="IX-860"></a>In some cases, the methods in a generic function accept
 	different keyword arguments. In such cases, it's convenient for the methods also to accept a
 	rest parameter. That way, all the keyword/value pairs passed to the generic function are
 	captured in the rest parameter. By using <code>apply</code>, the next-method can be invoked
 	with the complete set of arguments. (This technique is only necessary, of course, when the
 	method calls next-method and passes arguments explicitly.)</p>
-      <p><a name="MARKER-2-861"></a>As usual, if there are duplicates of a given keyword argument,
+      <p><a name="IX-861"></a>As usual, if there are duplicates of a given keyword argument,
 	the leftmost occurrence is used. This allows keyword arguments to be easily overridden.</p>
-      <a name="HEADING50-41"></a>
+      <a name="HEADING-50-41"></a>
       <h3 class="sub-subsection-title">The Next-Method Parameter</h3>
       <p>The value of the next-method parameter is supplied by the generic function dispatch
 	mechanism. When a method is called by its generic function, the generic function dispatch
@@ -288,7 +288,7 @@ define method superior-being (a :: &lt;humanoid&gt;,
 	this if you are creating a method that you plan to add to a generic function, and you want
 	this method to be able to call next-method. You can also supply the next-method parameter
 	when using <code>define method</code>, in cases where you want to give the parameter a
-	different name.<a name="MARKER-2-862"></a><a name="MARKER-2-863"></a></p>
+	different name.<a name="IX-862"></a><a name="IX-863"></a></p>
 
     </div>
 

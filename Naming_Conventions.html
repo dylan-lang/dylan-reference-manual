@@ -136,18 +136,18 @@
 	<p id="section-name">Syntax</p>
       </div>
 
-      <a name="HEADING24-0"></a>
+      <a name="HEADING-24-0"></a>
       <a name="UID-Syntax-1171"></a>
-      <h1 class="section-title"><a name="MARKER-2-330"></a>Naming Conventions</h1>
+      <h1 class="section-title"><a name="IX-330"></a>Naming Conventions</h1>
       <p>Several conventions for naming module bindings help programmers identify the purposes of
-	bindings. In general, the names of <a name="MARKER-2-331"></a>bindings do not affect the
+	bindings. In general, the names of <a name="IX-331"></a>bindings do not affect the
 	semantics of a program, but are simply used to
-	improve <a name="MARKER-2-332"></a>readability. (The exceptions to this rule are the
+	improve <a name="IX-332"></a>readability. (The exceptions to this rule are the
 	<q><code>-definer</code></q> suffix used by definition macros, and
 	the <q><code>-setter</code></q> suffix, described later in this section.)</p>
       <ul>
-	<li>Module bindings used to hold <a name="MARKER-2-333"></a>types begin and end
-	  with <a name="MARKER-2-334"></a>angle brackets.</li>
+	<li>Module bindings used to hold <a name="IX-333"></a>types begin and end
+	  with <a name="IX-334"></a>angle brackets.</li>
       </ul>
       <pre class="code">
 &lt;window&gt;
@@ -157,8 +157,8 @@
 &lt;stream&gt;
 &lt;list&gt;</pre>
       <ul>
-	<li><a name="MARKER-2-335"></a>Variable module bindings begin and end
-	  with <a name="MARKER-2-336"></a>asterisks. </li>
+	<li><a name="IX-335"></a>Variable module bindings begin and end
+	  with <a name="IX-336"></a>asterisks. </li>
       </ul>
       <pre class="code">
 *parse-level*
@@ -166,15 +166,15 @@
 *machine-state*
 *window-count*</pre>
       <ul>
-	<li>Program <a name="MARKER-2-337"></a>constants begin with
-	  a <a name="MARKER-2-338"></a>dollar sign.</li>
+	<li>Program <a name="IX-337"></a>constants begin with
+	  a <a name="IX-338"></a>dollar sign.</li>
       </ul>
       <pre class="code">
 $pi
 $end-of-file</pre>
       <ul>
-	<li>The names of most <a name="MARKER-2-339"></a>predicate functions end with
-	  a <a name="MARKER-2-340"></a>question mark. Predicates are functions that return a true or
+	<li>The names of most <a name="IX-339"></a>predicate functions end with
+	  a <a name="IX-340"></a>question mark. Predicates are functions that return a true or
 	  false value.</li>
       </ul>
       <pre class="code">
@@ -182,9 +182,9 @@ subclass?
 even?
 instance?</pre>
       <ul>
-	<li><a name="MARKER-2-341"></a><a name="MARKER-9-342"></a>Operations that return a value
+	<li><a name="IX-341"></a><a name="XREF-342"></a>Operations that return a value
 	  similar to one of their arguments and that also destructively modify the argument end in
-	  a <code id="MARKER-2-343">!</code>. (It will often also be the case that
+	  a <code id="IX-343">!</code>. (It will often also be the case that
 	  destructive and non-destructive variations of the function exist.) <code>!</code> isn't a
 	  universal warning that an operation is destructive. Destructive functions that return other
 	  values (like <code>-setter</code> functions and <code>pop</code>) don't need to use
@@ -194,9 +194,9 @@ instance?</pre>
 reverse!
 sort!</pre>
       <ul>
-	<li><a name="MARKER-2-344"></a><a name="MARKER-2-345"></a>Operations that retrieve a value
-	  from a location are called <dfn id="MARKER-2-346">getters</dfn>. Operations that store into
-	  a location are called <dfn id="MARKER-2-347">setters</dfn>. In general, getters and setters
+	<li><a name="IX-344"></a><a name="IX-345"></a>Operations that retrieve a value
+	  from a location are called <dfn id="IX-346">getters</dfn>. Operations that store into
+	  a location are called <dfn id="IX-347">setters</dfn>. In general, getters and setters
 	  come in pairs. Setter binding names are derived by appending <q><code>-setter</code></q> to
 	  the corresponding getter binding name. This convention is used to generate setter names
 	  automatically, and it is used by <code>:=</code>, the assignment operator, to find the
@@ -206,7 +206,7 @@ sort!</pre>
 element      element-setter
 size         size-setter
 color        color-setter
-	<a name="MARKER-2-348"></a>
+	<a name="IX-348"></a>
 	<a name="LINK-Syntax-lastpage"></a><a name="LINK-Program_StructureTOC-firstpage"></a></pre>
       <a name="UID-Program_StructureTOC-388"></a>
       <a name="LINK-Program_StructureTOC-lastpage"></a>

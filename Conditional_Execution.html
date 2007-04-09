@@ -90,7 +90,7 @@
 		<li><a href="Assignment">Assignment</a></li>
 		<li id="current" class="subsections"><span>Conditional Execution</span>
 		  <ul class="page-TOC">
-		    <li><a href="#HEADING33-105">True and False</a></li>
+		    <li><a href="#HEADING-33-105">True and False</a></li>
 		  </ul>
 		</li>
 		<li><a href="Iteration">Iteration</a></li>
@@ -135,9 +135,9 @@
 	<p id="section-name">Program Control</p>
       </div>
 
-      <a name="HEADING33-0"></a>
+      <a name="HEADING-33-0"></a>
       <a name="UID-Program_Control-2526"></a>
-      <h1 class="section-title"><a name="MARKER-2-459"></a>Conditional Execution</h1>
+      <h1 class="section-title"><a name="IX-459"></a>Conditional Execution</h1>
       <p>There are a number of statements and function macros that can be used to conditionally
 	execute code. These are described in detail
 	in <a href="Built-In_Macros_and_Special_Definitions">Chapter 14, <q>The Built-In Macros and
@@ -150,51 +150,51 @@
 	  <th><p>Page</p></th>
 	</tr><tr>
 	  <td><p><code>if</code></p></td>
-	  <td><p><a href="Statement_Macros#MARKER-9-2044">Executes an implicit body if the value of
+	  <td><p><a href="Statement_Macros#XREF-2044">Executes an implicit body if the value of
 		a test is true or an alternate if the test is false.</a></p></td>
-	  <td><p><a href="Statement_Macros#MARKER-9-2044">395</a></p></td>
+	  <td><p><a href="Statement_Macros#XREF-2044">395</a></p></td>
 	</tr><tr>
 	  <td><p><code>unless</code></p></td>
-	  <td><p><a href="Statement_Macros#MARKER-9-2046">Executes an implicit body unless the value
+	  <td><p><a href="Statement_Macros#XREF-2046">Executes an implicit body unless the value
 		of a test is true.</a></p></td>
-	  <td><p><a href="Statement_Macros#MARKER-9-2046">396</a></p></td>
+	  <td><p><a href="Statement_Macros#XREF-2046">396</a></p></td>
 	</tr><tr>
 	  <td><p><code>case</code></p></td>
-	  <td><p><a href="Statement_Macros#MARKER-9-2048">Executes a number of tests until one is
+	  <td><p><a href="Statement_Macros#XREF-2048">Executes a number of tests until one is
 		true, and then executes an implicit body associated with the true test.</a></p></td>
-	  <td><p><a href="Statement_Macros#MARKER-9-2048">397</a></p></td>
+	  <td><p><a href="Statement_Macros#XREF-2048">397</a></p></td>
 	</tr><tr>
 	  <td><p><code>select</code></p></td>
-	  <td><p><a href="Statement_Macros#MARKER-9-2050">Compares a target object to a series of
+	  <td><p><a href="Statement_Macros#XREF-2050">Compares a target object to a series of
 		potential matches, and executes an implicit body associated with the first match
 		found.</a></p></td>
-	  <td><p><a href="Statement_Macros#MARKER-9-2050">398</a></p></td>
+	  <td><p><a href="Statement_Macros#XREF-2050">398</a></p></td>
 	</tr><tr>
 	  <td><p><code>|</code></p></td>
-	  <td><p><a href="Function_Macros#MARKER-9-2076">Returns the value of the first of two
+	  <td><p><a href="Function_Macros#XREF-2076">Returns the value of the first of two
 		operands that is true.</a> This is a logical or operation.</p></td>
-	  <td><p><a href="Function_Macros#MARKER-9-2075">412</a></p></td>
+	  <td><p><a href="Function_Macros#XREF-2075">412</a></p></td>
 	</tr><tr>
 	  <td><p><code>&amp;</code></p></td>
-	  <td><p><a href="Function_Macros#MARKER-9-2079">If the value of a first operand is true,
+	  <td><p><a href="Function_Macros#XREF-2079">If the value of a first operand is true,
 		executes a second operand and returns its values.</a> This is a logical and
 		operation.</p></td>
-	  <td><p><a href="Function_Macros#MARKER-9-2079">412</a></p></td>
+	  <td><p><a href="Function_Macros#XREF-2079">412</a></p></td>
 	</tr>
       </table>
-      <a name="HEADING33-105"></a>
+      <a name="HEADING-33-105"></a>
       <a name="UID-Program_Control-1352"></a>
-      <h2 class="subsection-title"><a name="MARKER-2-460"></a>True and False</h2>
+      <h2 class="subsection-title"><a name="IX-460"></a>True and False</h2>
       <p>For the purposes of conditional execution, there is a single object that counts as false,
 	and all other objects count as true.</p>
-      <p>The <a name="MARKER-2-461"></a>false object is the
-	constant <code id="MARKER-2-462">#f</code>. There is a canonical true
-	object, <code id="MARKER-2-463">#t</code>, which can be used for clarity of
+      <p>The <a name="IX-461"></a>false object is the
+	constant <code id="IX-462">#f</code>. There is a canonical true
+	object, <code id="IX-463">#t</code>, which can be used for clarity of
 	code. <code>#t</code> and <code>#f</code> are instances of the
-	class <code id="MARKER-2-464">&lt;boolean&gt;</code>.</p>
+	class <code id="IX-464">&lt;boolean&gt;</code>.</p>
       <p>Because all values besides <code>#f</code> count as true, the term <q>true or false</q> is
 	not equivalent to <q><code>#t</code> or <code>#f</code></q>.</p>
-      <p>The operator <code id="MARKER-2-465">~</code> is used for logical negation. If its operand
+      <p>The operator <code id="IX-465">~</code> is used for logical negation. If its operand
 	is true, it returns <code>#f</code>. If its operand is <code>#f</code>, it
 	returns <code>#t</code>.</p>
 

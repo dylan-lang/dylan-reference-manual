@@ -88,8 +88,8 @@
 	      <ul class="sections">
 		<li id="current" class="subsections"><span>Overview</span>
 		  <ul class="page-TOC">
-		    <li><a href="#HEADING48-7">Generic Functions</a></li>
-		    <li><a href="#HEADING48-17">Methods</a></li>
+		    <li><a href="#HEADING-48-7">Generic Functions</a></li>
+		    <li><a href="#HEADING-48-17">Methods</a></li>
 		  </ul>
 		</li>
 		<li><a href="Parameter_Lists">Parameter Lists</a></li>
@@ -131,47 +131,47 @@
 	<p id="section-name">Functions</p>
       </div>
 
-      <a name="HEADING48-0"></a>
+      <a name="HEADING-48-0"></a>
       <a name="UID-Functions-2150"></a>
-      <h1 class="section-title"><a name="MARKER-2-745"></a>Overview</h1>
+      <h1 class="section-title"><a name="IX-745"></a>Overview</h1>
       <p>All operations in Dylan are functions.</p>
-      <p><a name="MARKER-2-746"></a>Functions accept zero or more arguments, and return zero or more
-	values. The <dfn id="MARKER-2-747">parameter list</dfn> of the function describes the number
+      <p><a name="IX-746"></a>Functions accept zero or more arguments, and return zero or more
+	values. The <dfn id="IX-747">parameter list</dfn> of the function describes the number
 	and types of the arguments that the function accepts, and the number and types of the values
 	it returns.</p>
       <p>There are two kinds of functions, methods and generic functions. Both are invoked in the
 	same way. The caller does not need to know whether the function it is calling is a method or
 	a generic function.</p>
-      <p><a name="MARKER-2-748"></a>A method is the basic unit of executable code. A method accepts
+      <p><a name="IX-748"></a>A method is the basic unit of executable code. A method accepts
 	a number of arguments, creates local bindings for them, executes an implicit body in the
 	scope of these bindings, and then returns a number of values.</p>
-      <p><a name="MARKER-2-749"></a>A generic function contains a number of methods. When a generic
+      <p><a name="IX-749"></a>A generic function contains a number of methods. When a generic
 	function is called, it compares the arguments it received with the parameter lists of the
 	methods it contains. It selects the most appropriate method and invokes it on the
-	arguments. This technique of <dfn id="MARKER-2-750">method dispatch</dfn> is the basic
+	arguments. This technique of <dfn id="IX-750">method dispatch</dfn> is the basic
 	mechanism of polymorphism in Dylan.</p>
       <p>All Dylan functions are objects, instances
-	of <code id="MARKER-2-751">&lt;function&gt;</code>. Generic functions are instances
-	of <code id="MARKER-2-752">&lt;generic-function&gt;</code> and methods are instances
-	of <code id="MARKER-2-753">&lt;method&gt;</code>.</p>
-      <a name="HEADING48-7"></a>
+	of <code id="IX-751">&lt;function&gt;</code>. Generic functions are instances
+	of <code id="IX-752">&lt;generic-function&gt;</code> and methods are instances
+	of <code id="IX-753">&lt;method&gt;</code>.</p>
+      <a name="HEADING-48-7"></a>
       <a name="UID-Functions-2158"></a>
       <h2 class="subsection-title">Generic Functions</h2>
-      <p><a name="MARKER-2-754"></a><a name="MARKER-2-755"></a>Generic functions can be created
-	with <code>define generic</code> or by calling <code id="MARKER-2-756">make</code> on the
+      <p><a name="IX-754"></a><a name="IX-755"></a>Generic functions can be created
+	with <code>define generic</code> or by calling <code id="IX-756">make</code> on the
 	class <code>&lt;generic-function&gt;</code>. They are most often created with <code>define
 	generic</code>.</p>
-      <p><a name="MARKER-2-757"></a>Generic functions may also be created implicitly
-	by <code id="MARKER-2-758">define method</code> or by <a name="MARKER-2-759"></a>slot
+      <p><a name="IX-757"></a>Generic functions may also be created implicitly
+	by <code id="IX-758">define method</code> or by <a name="IX-759"></a>slot
 	specifications in class definitions.</p>
-      <p><a name="MARKER-2-760"></a>A generic function definition includes a parameter list, which
+      <p><a name="IX-760"></a>A generic function definition includes a parameter list, which
 	constrains the methods that can be added to the generic function; some aspects of the
 	parameter must be matched by any method added. In addition, a generic function parameter
 	list may specify that all keyword arguments are permitted in a call to the generic
 	function.</p>
-      <p>Parameter list congruency is described on <a href="Parameter_Lists#MARKER-9-837">page
+      <p>Parameter list congruency is described on <a href="Parameter_Lists#XREF-837">page
 	  93</a>. The complete syntax of <code>define generic</code> is given
-	  on <a href="Definition_Macros#MARKER-9-2007">page 376</a>.</p>
+	  on <a href="Definition_Macros#XREF-2007">page 376</a>.</p>
       <p>The following definition defines a generic function that accepts a single required
 	argument. All methods added to this generic function must also accept a single required
 	argument.</p>
@@ -187,14 +187,14 @@ define generic average (n1 :: &lt;number&gt;, n2 :: &lt;number&gt;)
 </pre>
       <p>Generic functions created with <code>define generic</code> may be sealed or open. For
 	details of this option,
-	see <a href="Declaring_Characteristics_of_Generic_Functions#MARKER-9-1116"><q>Declaring
-	    Characteristics of Generic Functions</q> on page 135</a>.<a name="MARKER-2-761"></a></p>
-      <a name="HEADING48-17"></a>
+	see <a href="Declaring_Characteristics_of_Generic_Functions#XREF-1116"><q>Declaring
+	    Characteristics of Generic Functions</q> on page 135</a>.<a name="IX-761"></a></p>
+      <a name="HEADING-48-17"></a>
       <a name="UID-Functions-2162"></a>
-      <h2 class="subsection-title"><a name="MARKER-9-762"></a>Methods</h2>
-      <p><a name="MARKER-2-763"></a>Methods can be created with <code id="MARKER-2-764">define
-	  method</code>, <code id="MARKER-2-765">local</code>,
-	  and <code id="MARKER-2-766">method</code> program constituents. <code>define method</code>
+      <h2 class="subsection-title"><a name="XREF-762"></a>Methods</h2>
+      <p><a name="IX-763"></a>Methods can be created with <code id="IX-764">define
+	  method</code>, <code id="IX-765">local</code>,
+	  and <code id="IX-766">method</code> program constituents. <code>define method</code>
 	  is used to define a method and add it to a generic function in a module
 	  binding. <code>local</code> is used to create local bindings that contain self-recursive
 	  and mutually recursive methods. <code>method</code> is used to create and return methods
@@ -202,19 +202,19 @@ define generic average (n1 :: &lt;number&gt;, n2 :: &lt;number&gt;)
 	  other data structure. Methods are also created for slot getters and setters when a class
 	  is created.</p>
       <p>Methods cannot be created with <code>make</code>.</p>
-      <p><a name="MARKER-2-767"></a>The parameters and return values of a method are described in
+      <p><a name="IX-767"></a>The parameters and return values of a method are described in
 	its parameter list. The specializers in the parameter list declare the types of the
 	arguments acceptable to the method. The method can be called only with arguments that match
 	the specializers of the parameters. A complete description of parameter lists is given
-	in <a href="Parameter_Lists#MARKER-9-782"><q>Parameter Lists</q> on page 84</a>.</p>
+	in <a href="Parameter_Lists#XREF-782"><q>Parameter Lists</q> on page 84</a>.</p>
       <p>When the method is invoked, it executes its implicit body. Statements in the implicit body
 	are executed in order, in an environment that contains the parameters bound to the
 	arguments.</p>
       <p>Methods may be invoked directly (used as functions), or indirectly through the invocation
 	of a generic function.</p>
-      <a name="HEADING48-23"></a>
+      <a name="HEADING-48-23"></a>
       <h3 class="sub-subsection-title">Methods in Generic Functions</h3>
-      <p><code id="MARKER-2-768">define method</code> creates a method and adds it to a generic
+      <p><code id="IX-768">define method</code> creates a method and adds it to a generic
 	function in a module variable. If the module variable indicated is not already defined, it
 	is defined as with <code>define generic</code>. Thus, <code>define method</code> will create
 	a new generic function or extend an old one, as needed. Methods added to a generic function
@@ -230,15 +230,15 @@ end method;
 </pre>
       <p><code>define method</code> allows the programmer to control aspects of the sealing of the
 	generic function to which the method is added. For more details,
-	see <a href="Define_Sealed_Domain#MARKER-9-1131"><q>Abbreviations for Define Sealed
+	see <a href="Define_Sealed_Domain#XREF-1131"><q>Abbreviations for Define Sealed
 	    Domain</q> on page 138</a>.</p>
-      <p><a name="MARKER-2-769"></a>A generic function with no required parameters can contain a
+      <p><a name="IX-769"></a>A generic function with no required parameters can contain a
 	single method. Adding a new method has the effect of replacing the existing method.</p>
       <p>The complete syntax of <code>define method</code> is given
-	on <a href="Definition_Macros#MARKER-9-2010">page 377</a>.<a name="MARKER-2-770"></a></p>
-      <a name="HEADING48-30"></a>
+	on <a href="Definition_Macros#XREF-2010">page 377</a>.<a name="IX-770"></a></p>
+      <a name="HEADING-48-30"></a>
       <h3 class="sub-subsection-title">Local Methods</h3>
-      <p><code id="MARKER-2-771">local</code> is used for creating methods in local bindings. A
+      <p><code id="IX-771">local</code> is used for creating methods in local bindings. A
 	single <code>local</code> declaration may create one or more such methods. These methods may
 	be self-recursive and they may be mutually recursive with other methods created by the
 	same <code>local</code> declaration.</p>
@@ -247,7 +247,7 @@ end method;
 	bindings. In this way, the methods can refer to themselves and to other methods created by
 	the same <code>local</code> declaration.</p>
       <p>The complete syntax of <code>local</code> is given
-	on <a href="Local_Declaration_Macros#MARKER-9-2035">page 391</a>.</p>
+	on <a href="Local_Declaration_Macros#XREF-2035">page 391</a>.</p>
       <pre class="code">
 define method newtons-sqrt (x :: &lt;number&gt;)
    local method sqrt1 (guess)
@@ -265,12 +265,12 @@ define method newtons-sqrt (x :: &lt;number&gt;)
            (guess + (x / guess)) / 2
          end improve;
     sqrt1 (1)
-end method newtons-sqrt;<a name="MARKER-2-772"></a>
+end method newtons-sqrt;<a name="IX-772"></a>
 </pre>
-      <a name="HEADING48-35"></a>
+      <a name="HEADING-48-35"></a>
       <h3 class="sub-subsection-title">Bare Methods</h3>
-      <p><a name="MARKER-2-773"></a><a name="MARKER-2-774"></a>Methods can also be created and used
-	directly with the <code id="MARKER-2-775">method</code> statement.</p>
+      <p><a name="IX-773"></a><a name="IX-774"></a>Methods can also be created and used
+	directly with the <code id="IX-775">method</code> statement.</p>
       <p>Methods created directly can be stored in module variables, passed as arguments to generic
 	functions, stored in data structures, or immediately invoked.</p>
       <p>The following example creates a method and stores it in the module variable square. It is
@@ -293,15 +293,15 @@ sort(person-list,
       <p>Methods created directly with the <code>method</code> statement may be called directly or
 	they may be added to generic functions. Usually, however, when you want to add a method to a
 	generic function, you create and add the method in a single declarative step,
-	with <code>define method</code>.<a name="MARKER-2-776"></a></p>
-      <a name="HEADING48-43"></a>
+	with <code>define method</code>.<a name="IX-776"></a></p>
+      <a name="HEADING-48-43"></a>
       <h3 class="sub-subsection-title">Closures</h3>
-      <p><a name="MARKER-2-777"></a>Methods created with <code>method</code> or <code>local</code>
+      <p><a name="IX-777"></a>Methods created with <code>method</code> or <code>local</code>
 	can be passed to functions and returned from functions. In both cases, the methods retain
 	access to the lexical context in which they were created. Such methods are
 	called <dfn>closures</dfn>.</p>
-      <p><a name="MARKER-2-778"></a>The following example defines a function that returns score-card
-	methods. The method that is returned is <dfn id="MARKER-2-779">closed over</dfn>
+      <p><a name="IX-778"></a>The following example defines a function that returns score-card
+	methods. The method that is returned is <dfn id="IX-779">closed over</dfn>
 	the <code>score</code> parameter. Each time this method is called, it updates
 	the <code>score</code> parameter and returns its new value.</p>
       <pre class="code">
@@ -355,7 +355,7 @@ score-david(0)
 double-david(10)
  &rArr;  140
 score-david(0)
- &rArr;  140<a name="MARKER-2-780"></a><a name="MARKER-2-781"></a>
+ &rArr;  140<a name="IX-780"></a><a name="IX-781"></a>
 </pre>
       
     </div>

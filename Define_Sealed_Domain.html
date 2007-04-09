@@ -95,10 +95,10 @@
 		<li><a href="Declaring_Characteristics_of_Generic_Functions">Declaring Characteristics of Generic Functions</a></li>
 		<li id="current" class="subsections"><span>Define Sealed Domain</span>
 		  <ul class="page-TOC">
-		    <li><a href="#HEADING75-13">Rationale</a></li>
-		    <li><a href="#HEADING75-24">Pseudosubtype Examples</a></li>
-		    <li><a href="#HEADING75-27">Abbreviations for Define Sealed Domain</a></li>
-		    <li><a href="#HEADING75-38">Implied Restrictions on Method Definitions</a></li>
+		    <li><a href="#HEADING-75-13">Rationale</a></li>
+		    <li><a href="#HEADING-75-24">Pseudosubtype Examples</a></li>
+		    <li><a href="#HEADING-75-27">Abbreviations for Define Sealed Domain</a></li>
+		    <li><a href="#HEADING-75-38">Implied Restrictions on Method Definitions</a></li>
 		  </ul>
 		</li>
 	      </ul>
@@ -134,20 +134,20 @@
 	<p id="section-name">Sealing</p>
       </div>
 
-      <a name="HEADING75-0"></a>
+      <a name="HEADING-75-0"></a>
       <a name="UID-Sealing-2976"></a>
-      <h1 class="section-title"><a name="MARKER-9-1123"></a>Define Sealed Domain</h1>
-      <p><code><a name="MARKER-2-1124"></a><a name="MARKER-2-1125"></a>define sealed domain</code>
+      <h1 class="section-title"><a name="XREF-1123"></a>Define Sealed Domain</h1>
+      <p><code><a name="IX-1124"></a><a name="IX-1125"></a>define sealed domain</code>
 	is used to make specific portions of a generic function and of the class hierarchy invariant
 	without disallowing all future changes. The arguments to <code>define sealed domain</code>
 	are an explicitly known generic function and a series of types, one for each required
 	argument of the generic function.</p>
       <p>The complete syntax of <code>define</code> <code>sealed domain</code> is given
-	on <a href="Definition_Macros#MARKER-9-2024">page 388</a>.</p>
+	on <a href="Definition_Macros#XREF-2024">page 388</a>.</p>
       <p>A <code>define sealed domain</code> definition in a library <var>L</var> for a generic
 	function <var>G</var> with
 	types <var>T<em><sub>1</sub></em>&hellip;T<em><sub>n</sub></em></var> imposes the
-	following <a name="MARKER-2-1126"></a>constraints on programs:</p>
+	following <a name="IX-1126"></a>constraints on programs:</p>
       <ol>
 	<li>A method <var>M</var> that is congruent to <var>G</var> and that is not an explicitly
 	  known method in <var>L</var> may be added to <var>G</var> only if at least one of the
@@ -197,10 +197,10 @@ define class &lt;c&gt; (&lt;s&gt;, &lt;t&gt;) end class &lt;c&gt;;
 	book, <code>open</code> is missing from the definitions of <code>generic m</code>,
 	<code>class &lt;t&gt;</code>, and <code>class &lt;s&gt;</code>.
       </p>
-      <a name="HEADING75-13"></a>
+      <a name="HEADING-75-13"></a>
       <a name="UID-Sealing-2154"></a>
       <h2 class="subsection-title">Rationale</h2>
-      <p><code id="MARKER-2-1127">define sealed domain</code> permits the compiler to assume certain
+      <p><code id="IX-1127">define sealed domain</code> permits the compiler to assume certain
 	properties of the program that can be computed based on explicitly known classes and
 	methods, with a guarantee that an attempt to violate any of those assumptions will be
 	detected.</p>
@@ -252,11 +252,11 @@ define class &lt;c&gt; (&lt;s&gt;, &lt;t&gt;) end class &lt;c&gt;;
       <p>Rule 3 does not need to address the possibility of multiple inheritance being used to
 	combine classes involved in the element types of limited collection classes. Changes to the
 	disjointness relationships between element types does not affect the relationships between
-	collection types with those element types.<a name="MARKER-2-1128"></a></p>
-      <a name="HEADING75-24"></a>
+	collection types with those element types.<a name="IX-1128"></a></p>
+      <a name="HEADING-75-24"></a>
       <a name="UID-Sealing-2173"></a>
       <h2 class="subsection-title">Pseudosubtype Examples</h2>
-      <p><a name="MARKER-2-1129"></a>Suppose <var>A</var> and <var>B</var> are disjoint subclasses
+      <p><a name="IX-1129"></a>Suppose <var>A</var> and <var>B</var> are disjoint subclasses
 	of <code>&lt;collection&gt;</code>, <var>S<em><sub>i</sub></em></var>
 	is <code>limited(<var>A</var>, of: <var>T</var>)</code>,
 	and <var>T<em><sub>i</sub></em></var> is <code>limited(<var>B</var>,
@@ -281,11 +281,11 @@ define class &lt;c&gt; (&lt;s&gt;, &lt;t&gt;) end class &lt;c&gt;;
 	  disjoint from both <var>S<em><sub>i</sub></em></var>
 	  and <var>T<em><sub>i</sub></em></var>, and so is not blocked. This example shows the need
 	  for the non-disjointness requirement in the definition of
-	  pseudosubtype.<a name="MARKER-2-1130"></a></p>
-      <a name="HEADING75-27"></a>
+	  pseudosubtype.<a name="IX-1130"></a></p>
+      <a name="HEADING-75-27"></a>
       <a name="UID-Sealing-1419"></a>
-      <h2 class="subsection-title"><a name="MARKER-9-1131"></a>Abbreviations for Define Sealed Domain</h2>
-      <p><code><a name="MARKER-2-1132"></a><a name="MARKER-2-1133"></a>define sealed method</code>
+      <h2 class="subsection-title"><a name="XREF-1131"></a>Abbreviations for Define Sealed Domain</h2>
+      <p><code><a name="IX-1132"></a><a name="IX-1133"></a>define sealed method</code>
 	defines a method on a generic function and also seals the generic function for the types
 	that are the specializers of the method.</p>
       <p>The following two program fragments are equivalent: </p>
@@ -302,7 +302,7 @@ define method insert (source :: &lt;list&gt;, i :: &lt;object&gt;)
 end method insert;
 define sealed domain insert (&lt;list&gt;, &lt;object&gt;);
 </pre>
-      <p>The <code id="MARKER-2-1134">sealed slot</code> option to <code>define class</code> defines
+      <p>The <code id="IX-1134">sealed slot</code> option to <code>define class</code> defines
 	a slot and also makes the getter generic function sealed over the class, and the setter
 	generic function, if there is one, sealed over the type of the slot and the class.</p>
       <p>The following two program fragments are equivalent:</p>
@@ -317,12 +317,12 @@ define class &lt;polygon&gt; (&lt;shape&gt;)
   slot sides :: &lt;integer&gt;, required-init-keyword: sides:;
 end class &lt;polygon&gt;;
 define sealed domain sides (&lt;polygon&gt;);
-define sealed domain sides-setter (&lt;integer&gt;, &lt;polygon&gt;);<a name="MARKER-2-1135"></a>
+define sealed domain sides-setter (&lt;integer&gt;, &lt;polygon&gt;);<a name="IX-1135"></a>
 </pre>
-      <a name="HEADING75-38"></a>
+      <a name="HEADING-75-38"></a>
       <a name="UID-Sealing-1853"></a>
       <h2 class="subsection-title">Implied Restrictions on Method Definitions</h2>
-      <p><a name="MARKER-2-1136"></a>To avoid potential <a name="MARKER-2-1137"></a>sealing
+      <p><a name="IX-1136"></a>To avoid potential <a name="IX-1137"></a>sealing
 	violations among separately developed libraries, one of the following conditions should be
 	true for every method <var>M</var> defined in a library <var>L</var>:</p>
       <ul>
@@ -359,7 +359,7 @@ define method g (x :: &lt;c1&gt;) end method;
 	of <var>L<em><sub>2</sub></em></var>), it is appropriate to issue a warning but not disallow
 	the compilation
 	of <var>L<em><sub>3</sub></em></var>.<a
-	name="MARKER-2-1138"></a><a name="MARKER-2-1139"></a></p>
+	name="IX-1138"></a><a name="IX-1139"></a></p>
       <p class="errata-note" id="errata-p140-1">
 	<a class="note-tag" href="Errata#p140-1"><strong>Errata:</strong></a> In the published
 	book, <code>open</code> is missing from the definitions of <code>generic g</code>,

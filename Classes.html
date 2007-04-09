@@ -89,10 +89,10 @@
 		<li><a href="Type_Protocol">The Type Protocol</a></li>
 		<li id="current" class="subsections"><span>Classes</span>
 		  <ul class="page-TOC">
-		    <li><a href="#HEADING41-5">Features of Classes</a></li>
-		    <li><a href="#HEADING41-11">Creating Classes</a></li>
-		    <li><a href="#HEADING41-19">Class Inheritance</a></li>
-		    <li><a href="#HEADING41-25">Computing the Class Precedence List</a></li>
+		    <li><a href="#HEADING-41-5">Features of Classes</a></li>
+		    <li><a href="#HEADING-41-11">Creating Classes</a></li>
+		    <li><a href="#HEADING-41-19">Class Inheritance</a></li>
+		    <li><a href="#HEADING-41-25">Computing the Class Precedence List</a></li>
 		  </ul>
 		</li>
 		<li><a href="Slots">Slots</a></li>
@@ -137,57 +137,57 @@
 	<p id="section-name">Types and Classes</p>
       </div>
 
-      <a name="HEADING41-0"></a>
+      <a name="HEADING-41-0"></a>
       <a name="UID-Types_and_Classes-361"></a>
-      <h1 class="section-title"><a name="MARKER-2-561"></a>Classes</h1>
-      <p><a name="MARKER-2-562"></a>Classes are used to define the inheritance, structure, and
+      <h1 class="section-title"><a name="IX-561"></a>Classes</h1>
+      <p><a name="IX-562"></a>Classes are used to define the inheritance, structure, and
 	initialization of objects.</p>
-      <p>Every object is a <dfn id="MARKER-2-563">direct instance</dfn> of exactly one class, and a
-	general instance of the <dfn id="MARKER-2-564">general superclasses</dfn> of that class.</p>
-      <p>A class determines which <dfn id="MARKER-2-565">slots</dfn> its instances have. Slots are
+      <p>Every object is a <dfn id="IX-563">direct instance</dfn> of exactly one class, and a
+	general instance of the <dfn id="IX-564">general superclasses</dfn> of that class.</p>
+      <p>A class determines which <dfn id="IX-565">slots</dfn> its instances have. Slots are
 	the local storage available within instances. They are used to store the state of
 	objects.</p>
       <p>Classes determine how their instances are initialized by using
-	the <dfn id="MARKER-2-566">initialization protocol</dfn>.</p>
-      <a name="HEADING41-5"></a>
+	the <dfn id="IX-566">initialization protocol</dfn>.</p>
+      <a name="HEADING-41-5"></a>
       <a name="UID-Types_and_Classes-5438"></a>
-      <h2 class="subsection-title"><a name="MARKER-2-567"></a>Features of Classes</h2>
+      <h2 class="subsection-title"><a name="IX-567"></a>Features of Classes</h2>
       <p>There are four features of classes. These features relate to each other, but can be
 	declared independently.</p>
       <ul>
-	<li>A class can be <dfn id="MARKER-2-568">abstract</dfn>
-	  or <dfn id="MARKER-2-569">concrete</dfn>. If the class is concrete, it can have direct
+	<li>A class can be <dfn id="IX-568">abstract</dfn>
+	  or <dfn id="IX-569">concrete</dfn>. If the class is concrete, it can have direct
 	  instances. If it is abstract, it cannot have direct instances, but only indirect
 	  instances.</li>
-	<li>A class can be <dfn id="MARKER-2-570">instantiable</dfn>
-	  or <dfn id="MARKER-2-571">uninstantiable</dfn>. If the class is instantiable, it can be
+	<li>A class can be <dfn id="IX-570">instantiable</dfn>
+	  or <dfn id="IX-571">uninstantiable</dfn>. If the class is instantiable, it can be
 	  used as the first argument to <code>make</code>. If it is uninstantiable, it cannot be
 	  used as the first argument to <code>make</code>.</li>
-	<li>A class can be <dfn id="MARKER-2-572">primary</dfn>
-	  or <dfn id="MARKER-2-573">free</dfn>. This controls how a class can be used for multiple
+	<li>A class can be <dfn id="IX-572">primary</dfn>
+	  or <dfn id="IX-573">free</dfn>. This controls how a class can be used for multiple
 	  inheritance. For a full description of this feature,
-	  see <a href="Declaring_Characteristics_of_Classes#MARKER-9-1106"><q>Declaring
+	  see <a href="Declaring_Characteristics_of_Classes#XREF-1106"><q>Declaring
 	  Characteristics of Classes</q> on page 134</a>.</li>
-	<li>A class can be <dfn id="MARKER-2-574">sealed</dfn>
-	  or <dfn id="MARKER-2-575">open</dfn>. This controls whether a class can be subclassed
+	<li>A class can be <dfn id="IX-574">sealed</dfn>
+	  or <dfn id="IX-575">open</dfn>. This controls whether a class can be subclassed
 	  outside the library where it is defined. For a full description of this feature,
-	  see <a href="Declaring_Characteristics_of_Classes#MARKER-9-1106"><q>Declaring
-	  Characteristics of Classes</q> on page 134</a>.<a name="MARKER-2-576"></a></li>
+	  see <a href="Declaring_Characteristics_of_Classes#XREF-1106"><q>Declaring
+	  Characteristics of Classes</q> on page 134</a>.<a name="IX-576"></a></li>
       </ul>
-      <a name="HEADING41-11"></a>
+      <a name="HEADING-41-11"></a>
       <a name="UID-Types_and_Classes-2532"></a>
-      <h2 class="subsection-title"><a name="MARKER-2-577"></a>Creating Classes</h2>
-      <p>New classes may be created by calling <code id="MARKER-2-578">make</code>
-	on <code>&lt;class&gt;</code>, or with the definition <code id="MARKER-2-579">define
+      <h2 class="subsection-title"><a name="IX-577"></a>Creating Classes</h2>
+      <p>New classes may be created by calling <code id="IX-578">make</code>
+	on <code>&lt;class&gt;</code>, or with the definition <code id="IX-579">define
 	class</code>. In most programs the latter is more commonly used.</p>
       <p>When a class is created with <code>make</code>, it is instantiated and returned just like
 	any other object. The options available when creating a class with <code>make</code> are
-	described on <a href="Type_Classes#MARKER-9-1372">page 191</a>.</p>
-      <p><a name="MARKER-2-580"></a>When a class is created with <code>define class</code> it is
+	described on <a href="Type_Classes#XREF-1372">page 191</a>.</p>
+      <p><a name="IX-580"></a>When a class is created with <code>define class</code> it is
 	used to initialize a new module binding. <code>define class</code> allows the specification
 	of superclasses, slots, initialization behavior, and options related to sealing. The
 	complete syntax of <code>define class</code> is given
-	on <a href="Definition_Macros#MARKER-9-2013">page 378</a>.</p>
+	on <a href="Definition_Macros#XREF-2013">page 378</a>.</p>
       <p>The following simple class definition creates a class named by the module
 	binding <code>&lt;new&gt;</code>. The class inherits from <code>&lt;object&gt;</code> and
 	does not specify any slots.</p>
@@ -199,45 +199,45 @@ end class &lt;new&gt;;
 	superclasses. Again, there are no slots defined by the class.</p>
       <pre class="code">
 define class &lt;color-window&gt; (&lt;palette&gt;, &lt;window&gt;)
-end class &lt;color-window&gt;;<a name="MARKER-2-581"></a>
+end class &lt;color-window&gt;;<a name="IX-581"></a>
 </pre>
-      <a name="HEADING41-19"></a>
+      <a name="HEADING-41-19"></a>
       <a name="UID-Types_and_Classes-5460"></a>
-      <h2 class="subsection-title"><a name="MARKER-2-582"></a><a name="MARKER-9-583"></a>Class Inheritance</h2>
-      <p>When a class is created, its <dfn id="MARKER-2-584">direct superclasses</dfn> are
+      <h2 class="subsection-title"><a name="IX-582"></a><a name="XREF-583"></a>Class Inheritance</h2>
+      <p>When a class is created, its <dfn id="IX-584">direct superclasses</dfn> are
 	specified. The new class directly inherits from these classes; it is
-	a <dfn id="MARKER-2-585">direct subclass</dfn> of each of these classes. There can be no
+	a <dfn id="IX-585">direct subclass</dfn> of each of these classes. There can be no
 	duplicates in the direct superclasses of a class.</p>
       <p>The subclass relationship is transitive. If a class <var>C</var> is a direct subclass
 	of <var>C<em><sub>1</sub></em></var>, <var>C<em><sub>1</sub></em></var> is a direct subclass
 	of <var>C<em><sub>2</sub></em></var>, and <var>C<em><sub>2</sub></em></var> is a direct
 	subclass of <var>C<em><sub>3</sub></em></var>, then <var>C</var> is
-	an <dfn id="MARKER-2-586">indirect subclass</dfn> of <var>C<em><sub>2</sub></em></var>
-	and <var>C<em><sub>3</sub></em></var>. A <dfn id="MARKER-2-587">general subclass</dfn> is a
+	an <dfn id="IX-586">indirect subclass</dfn> of <var>C<em><sub>2</sub></em></var>
+	and <var>C<em><sub>3</sub></em></var>. A <dfn id="IX-587">general subclass</dfn> is a
 	direct or indirect subclass.</p>
-      <p>Inheritance cannot be <a name="MARKER-2-588"></a>circular. A class cannot be its own
+      <p>Inheritance cannot be <a name="IX-588"></a>circular. A class cannot be its own
 	general subclass.</p>
       <p>A class is a subtype of each of its general superclasses.</p>
-      <p>Every class is a general subclass of <code>&lt;object&gt;</code>.<a name="MARKER-2-589"></a></p>
-      <a name="HEADING41-25"></a>
+      <p>Every class is a general subclass of <code>&lt;object&gt;</code>.<a name="IX-589"></a></p>
+      <a name="HEADING-41-25"></a>
       <a name="UID-Types_and_Classes-7969"></a>
-      <h2 class="subsection-title"><a name="MARKER-9-590"></a><a name="MARKER-2-591"></a>Computing the Class Precedence List</h2>
-      <p>The definition of a class specifies a <a name="MARKER-2-592"></a>total ordering on that
-	class and its direct superclasses. This ordering is called the <dfn id="MARKER-2-593">local
+      <h2 class="subsection-title"><a name="XREF-590"></a><a name="IX-591"></a>Computing the Class Precedence List</h2>
+      <p>The definition of a class specifies a <a name="IX-592"></a>total ordering on that
+	class and its direct superclasses. This ordering is called the <dfn id="IX-593">local
 	precedence order</dfn>. In the local precedence order:</p>
       <ul>
 	<li>The class precedes its direct superclasses.</li>
 	<li>Each direct superclass precedes all other direct superclasses that follow it in the
 	  sequence of direct superclasses given in the class definition.</li>
       </ul>
-      <p>The <dfn id="MARKER-2-594">class precedence list</dfn> for a class <var>C</var> is a total
+      <p>The <dfn id="IX-594">class precedence list</dfn> for a class <var>C</var> is a total
 	ordering on <var>C</var> and its superclasses that is consistent with the local precedence
 	order of <var>C</var> and with the class precedence lists of its superclasses. (Two lists
 	are consistent if for every <var>A</var> and <var>B</var> that are each members of both
 	lists, either <var>A</var> precedes <var>B</var> in both or <var>B</var>
 	precedes <var>A</var> in both.) The class precedence list is used in determining the order
 	of specificity of methods based on the types they are specialized on when dispatching; for
-	details, see <a href="Method_Dispatch#MARKER-9-844"><q>Method Dispatch</q> on page 95</a>.</p>
+	details, see <a href="Method_Dispatch#XREF-844"><q>Method Dispatch</q> on page 95</a>.</p>
       <p>Sometimes there are several such consistent total orderings on <var>C</var> and its
 	superclasses. Dylan uses a deterministic algorithm to compute the class precedence list, which
 	chooses one of the consistent total orderings.</p>
@@ -255,7 +255,7 @@ end class &lt;color-window&gt;;<a name="MARKER-2-581"></a>
 	class. Computing the class precedence list for <var>C</var> requires computing the class
 	precedence lists for its superclasses. This does not lead to infinite recursion because
 	circular class inheritance is prohibited.</p>
-      <p><a name="MARKER-2-595"></a>Note that because the class precedence lists of the direct
+      <p><a name="IX-595"></a>Note that because the class precedence lists of the direct
 	superclasses are consistent with their local precedence orders and with the class precedence
 	lists of their direct superclasses, and so on, the class precedence list for <var>C</var> is
 	consistent with the local precedence orders and class precedence lists of all its superclasses
@@ -322,7 +322,7 @@ define constant compute-class-linearization =
       <p>Note that the selection rule from above is enforced because <code>any?</code> uses the
 	natural iteration order for sequences and returns the first true value it encounters when
 	searching the reversed partially computed class precedence
-	list.<a name="MARKER-2-596"></a><a name="MARKER-2-597"></a><a name="MARKER-2-598"></a></p>
+	list.<a name="IX-596"></a><a name="IX-597"></a><a name="IX-598"></a></p>
 
     </div>
 

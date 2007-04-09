@@ -100,12 +100,12 @@
 		<li><a href="Collection_Operations">Collection Operations</a></li>
 		<li id="current"><span>Reflective Operations on Types</span>
 		  <ul class="page-TOC">
-		    <li><a href="#HEADING103-2"><code>instance?</code><span class="attributes-summary"> [Function]</span></a></li>
-		    <li><a href="#HEADING103-9"><code>subtype?</code><span class="attributes-summary"> [Function]</span></a></li>
-		    <li><a href="#HEADING103-16"><code>object-class</code><span class="attributes-summary"> [Function]</span></a></li>
-		    <li><a href="#HEADING103-22"><code>all-superclasses</code><span class="attributes-summary"> [Function]</span></a></li>
-		    <li><a href="#HEADING103-29"><code>direct-superclasses</code><span class="attributes-summary"> [Function]</span></a></li>
-		    <li><a href="#HEADING103-36"><code>direct-subclasses</code><span class="attributes-summary"> [Function]</span></a></li>
+		    <li><a href="#HEADING-103-2"><code>instance?</code><span class="attributes-summary"> [Function]</span></a></li>
+		    <li><a href="#HEADING-103-9"><code>subtype?</code><span class="attributes-summary"> [Function]</span></a></li>
+		    <li><a href="#HEADING-103-16"><code>object-class</code><span class="attributes-summary"> [Function]</span></a></li>
+		    <li><a href="#HEADING-103-22"><code>all-superclasses</code><span class="attributes-summary"> [Function]</span></a></li>
+		    <li><a href="#HEADING-103-29"><code>direct-superclasses</code><span class="attributes-summary"> [Function]</span></a></li>
+		    <li><a href="#HEADING-103-36"><code>direct-subclasses</code><span class="attributes-summary"> [Function]</span></a></li>
 		  </ul>
 		</li>
 		<li><a href="Functional_Operations">Functional Operations</a></li>
@@ -142,17 +142,17 @@
 	<p id="section-name">The Built-In Functions</p>
       </div>
 
-      <a name="HEADING103-0"></a>
+      <a name="HEADING-103-0"></a>
       <a name="UID-Built-In_Functions-419"></a>
-      <h1 class="section-title"><a name="MARKER-9-1858"></a>Reflective Operations on Types</h1>
+      <h1 class="section-title"><a name="XREF-1858"></a>Reflective Operations on Types</h1>
       <p>The following functions return information on types and test type membership. They provide
 	part of the implementation of the type protocol, as described
-	in <a href="Type_Protocol#MARKER-9-536"><q>The Type Protocol</q> beginning on page
+	in <a href="Type_Protocol#XREF-536"><q>The Type Protocol</q> beginning on page
 	  49</a>.</p>
-      <a name="HEADING103-2"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1859"></a><a name="MARKER-2-1860"></a>instance?</code> </span><span class="attributes-summary">[Function]</span></h4>
+      <a name="HEADING-103-2"></a>
+      <h4 class="item-title"><span class="signature"><code><a name="IX-1859"></a><a name="IX-1860"></a>instance?</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1861"></a>Tests whether an object is an
+      <p class="short-description"><a name="XREF-1861"></a>Tests whether an object is an
 	instance of a type.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
@@ -184,10 +184,10 @@
 	<dt><span>Description:</span></dt>
 	<dd><p>Returns true if <var>object</var> is a general instance of <var>type</var>.</p></dd>
       </dl>
-      <a name="HEADING103-9"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1862">subtype?</code> </span><span class="attributes-summary">[Function]</span></h4>
+      <a name="HEADING-103-9"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-1862">subtype?</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1863"></a>Tests whether a type is a subtype of
+      <p class="short-description"><a name="XREF-1863"></a>Tests whether a type is a subtype of
 	another type.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
@@ -218,13 +218,13 @@
 	</dd>
 	<dt><span>Description:</span></dt>
 	<dd><p>Returns true if <var>type1 </var> is a subtype of <var>type2</var>. Subtype rules are
-	    given in <a href="Type_Protocol#MARKER-9-536"><q>The Type Protocol</q> on page
+	    given in <a href="Type_Protocol#XREF-536"><q>The Type Protocol</q> on page
 	      49</a>.</p></dd>
       </dl>
-      <a name="HEADING103-16"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1864">object-class</code> </span><span class="attributes-summary">[Function]</span></h4>
+      <a name="HEADING-103-16"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-1864">object-class</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1865"></a>Returns the class of an object.</p>
+      <p class="short-description"><a name="XREF-1865"></a>Returns the class of an object.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -254,10 +254,10 @@
 	<dt><span>Description:</span></dt>
 	<dd><p>Returns the class of which <var>object</var> is a direct instance.</p></dd>
       </dl>
-      <a name="HEADING103-22"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1866">all-superclasses</code> </span><span class="attributes-summary">[Function]</span></h4>
+      <a name="HEADING-103-22"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-1866">all-superclasses</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1867"></a>Returns the class precedence list of
+      <p class="short-description"><a name="XREF-1867"></a>Returns the class precedence list of
 	a class.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
@@ -290,7 +290,7 @@
 	<dd>
 	  <p>Returns the class precedence list of <var>class</var>. This is an ordered sequence
 	    of<var>class</var> and all its superclasses, as described
-	    in <a href="Classes#MARKER-9-590"><q>Computing the Class Precedence List</q> on page
+	    in <a href="Classes#XREF-590"><q>Computing the Class Precedence List</q> on page
 	      54</a>.</p>
 	  <p>The result <var>sequence</var> should never be destructively modified. Doing so may
 	    cause unpredictable behavior. If <var>class</var> is sealed, an implementation may
@@ -298,10 +298,10 @@
 	    returning the sequence of all superclasses.</p>
 	</dd>
       </dl>
-      <a name="HEADING103-29"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1868">direct-superclasses</code> </span><span class="attributes-summary">[Function]</span></h4>
+      <a name="HEADING-103-29"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-1868">direct-superclasses</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1869"></a>Returns the direct superclasses of a
+      <p class="short-description"><a name="XREF-1869"></a>Returns the direct superclasses of a
 	class.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
@@ -343,10 +343,10 @@
 	    returning the direct superclasses.</p>
 	</dd>
       </dl>
-      <a name="HEADING103-36"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1870">direct-subclasses</code> </span><span class="attributes-summary">[Function]</span></h4>
+      <a name="HEADING-103-36"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-1870">direct-subclasses</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-1871"></a>Returns the direct subclasses of a
+      <p class="short-description"><a name="XREF-1871"></a>Returns the direct subclasses of a
 	class.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
@@ -383,7 +383,7 @@
 	  <p>The result <var>sequence</var> should never be destructively modified. Doing so may
 	    cause unpredictable behavior. If <var>class</var> is sealed, an implementation may
 	    choose to signal an error of type <code>&lt;sealed-object-error&gt;</code> rather than
-	    returning the direct subclasses.<a name="MARKER-2-1872"></a></p>
+	    returning the direct subclasses.<a name="IX-1872"></a></p>
 	</dd>
       </dl>
 

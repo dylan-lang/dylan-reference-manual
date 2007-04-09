@@ -132,10 +132,10 @@
 	<p id="section-name">Macros</p>
       </div>
 
-      <a name="HEADING83-0"></a>
+      <a name="HEADING-83-0"></a>
       <a name="UID-Macros-1805"></a>
       <h1 class="section-title">Templates</h1>
-      <p><a name="MARKER-2-1262"></a>Approximately speaking, a template has the same structure as
+      <p><a name="IX-1262"></a>Approximately speaking, a template has the same structure as
 	what it constructs, but contains pattern variables that will be replaced by fragments
 	extracted from the macro call. Thus a template in the <var>main-rule-set</var> looks like
 	the macro expansion.</p>
@@ -144,14 +144,14 @@
 	balanced: <code>()</code>, <code>[]</code>, <code>{}</code>, <code>#()</code>,
 	and <code>#[]</code>. Substitution for pattern variables produces a sequence of tokens and
 	other elementary fragments.</p>
-      <p><a name="MARKER-2-1263"></a>Note that using unparsed token sequences as templates allows a
+      <p><a name="IX-1263"></a>Note that using unparsed token sequences as templates allows a
 	macro expansion to contain macro calls without creating any inter-dependencies between
 	macros. Since the template is not parsed at macro definition time, any macros called in the
 	template do not have to be defined first, and macros can be compiled independently of each
 	other. This simplifies the implementation at the minor cost of deferring some error checking
 	from when a macro is defined until the time when the macro is called.</p>
       <p>The grammar for templates is the definition of <var>template </var>
-	in <a href="Phrase_Grammar#MARKER-9-2119"><q>Templates</q> on page 429</a>.</p>
+	in <a href="Phrase_Grammar#XREF-2119"><q>Templates</q> on page 429</a>.</p>
       <p>All <var>template-elements</var> other than <var>substitution</var> are copied directly
 	into the macro expansion. The various kinds of <var>substitution</var> insert something else
 	into the macro expansion, as follows:</p>
@@ -195,7 +195,7 @@
       <p>When a template contains a <var>separator</var> immediately followed by
 	a <var>substitution</var>, and the fragment inserted into the macro expansion by
 	the <var>substitution</var> is empty, the separator is removed from the macro
-	expansion.<a name="MARKER-2-1264"></a></p>
+	expansion.<a name="IX-1264"></a></p>
 
     </div>
 

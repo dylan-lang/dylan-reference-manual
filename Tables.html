@@ -132,21 +132,21 @@
 	<p id="section-name">Collections</p>
       </div>
 
-      <a name="HEADING67-0"></a>
+      <a name="HEADING-67-0"></a>
       <a name="UID-Collections-2785"></a>
-      <h1 class="section-title"><a name="MARKER-9-1036"></a>Tables</h1>
-      <p><a name="MARKER-2-1037"></a>Tables map arbitrary keys to elements. Table keys may be any
+      <h1 class="section-title"><a name="XREF-1036"></a>Tables</h1>
+      <p><a name="IX-1037"></a>Tables map arbitrary keys to elements. Table keys may be any
 	object, including complex objects such as strings. All tables are instances
-	of <code id="MARKER-2-1038">&lt;table&gt;</code>. <code>&lt;table&gt;</code> is the only
+	of <code id="IX-1038">&lt;table&gt;</code>. <code>&lt;table&gt;</code> is the only
 	instantiable subclass of <code>&lt;explicit-key-collection&gt;</code> defined by
 	Dylan. Tables are unstable under iteration.</p>
-      <p><a name="MARKER-2-1039"></a>The iteration protocol for tables is implemented in terms of
-	the function <code id="MARKER-2-1040">table-protocol</code>. Every concrete subclass
+      <p><a name="IX-1039"></a>The iteration protocol for tables is implemented in terms of
+	the function <code id="IX-1040">table-protocol</code>. Every concrete subclass
 	of <code>&lt;table&gt;</code> must provide or inherit a method
 	for <code>table-protocol</code>. This function accepts a table as an argument, and returns
 	an equivalence predicate and hash-function, as described below.</p>
-      <p>The <dfn id="MARKER-2-1041">equivalence predicate</dfn> of a table is used to compare
-	keys. (It is the table's <a name="MARKER-2-1042"></a>key test.)  The table maps keys that
+      <p>The <dfn id="IX-1041">equivalence predicate</dfn> of a table is used to compare
+	keys. (It is the table's <a name="IX-1042"></a>key test.)  The table maps keys that
 	are equivalent under the predicate to the same table element. An equivalence predicate is a
 	boolean function of two arguments that returns true if and only if the arguments are
 	considered to be the same according to some specified criteria. For a function to be used as
@@ -161,11 +161,11 @@
 	  and <var>F</var><code>(<var>Y</var>,<var>Z</var>)</code> are true
 	  then <var>F</var><code>(<var>X</var>,<var>Z</var>)</code> must be true.</li>
       </ul>
-      <p>An <dfn id="MARKER-2-1043">equivalence class</dfn> (for an equivalence predicate) is a set
+      <p>An <dfn id="IX-1043">equivalence class</dfn> (for an equivalence predicate) is a set
 	of objects, or potential objects, that are all the same under the specified equivalence
 	predicate and different from all objects not in the class. (This use of the
 	term <q>class</q> does not refer to Dylan classes.)</p>
-      <p>An object is said to be <dfn id="MARKER-2-1044">visibly modified</dfn> with respect to an
+      <p>An object is said to be <dfn id="IX-1044">visibly modified</dfn> with respect to an
 	equivalence predicate if the modification changes the equivalence class of the object. The
 	modifications that are visible to an equivalence predicate are determined by the definition
 	of the predicate. (For example, changing a character in a string would be a visible
@@ -182,11 +182,11 @@
 	<li>Some object <var>Z</var> that is in the same equivalence class (as determined by the
 	  test function) as <var>X</var> after the modification of <var>X</var>.</li>
       </ul>
-      <p>Each table also has an associated <dfn id="MARKER-2-1045">hash function</dfn>, which is a
+      <p>Each table also has an associated <dfn id="IX-1045">hash function</dfn>, which is a
 	function that relates table keys and table elements by
-	computing <dfn id="MARKER-2-1046">hash codes</dfn>. A hash code is a conceptual object
-	consisting of a <dfn id="MARKER-2-1047">hash id</dfn> and its
-	associated <dfn id="MARKER-2-1048">hash state</dfn>. (It is not an actual Dylan object.)  A
+	computing <dfn id="IX-1046">hash codes</dfn>. A hash code is a conceptual object
+	consisting of a <dfn id="IX-1047">hash id</dfn> and its
+	associated <dfn id="IX-1048">hash state</dfn>. (It is not an actual Dylan object.)  A
 	hash id is an integer encoding of an object. A hash state is an object of
 	implementation-dependent type that is associated with a particular hash id and can be used
 	by the implementation to determine whether the hash id has been invalidated. A hash function
@@ -198,14 +198,14 @@
 	<li>The domain of the hash function must include the domain of valid arguments to the
 	  corresponding equivalence predicate. A hash function need not be defined for all Dylan
 	  objects, only those that are acceptable as arguments to the equivalence predicate.</li>
-	<li><a name="MARKER-9-1049"></a>All objects in a given equivalence class have the same
+	<li><a name="XREF-1049"></a>All objects in a given equivalence class have the same
 	  (<code>=</code>) valid hash id, where validity is determined from the associated hash
 	  state.</li>
       </ul>
       <p>In addition, a hash function should have the property that the hash ids computed by it are
 	well distributed over the range of possible values. That is, it should be unlikely that two
 	randomly chosen equivalence classes have the same valid hash
-	id.<a name="MARKER-2-1050"></a></p>
+	id.<a name="IX-1050"></a></p>
 
     </div>
 

@@ -130,15 +130,15 @@
 	<p id="section-name">Types and Classes</p>
       </div>
 
-      <a name="HEADING44-0"></a>
+      <a name="HEADING-44-0"></a>
       <a name="UID-Types_and_Classes-1555"></a>
-      <h1 class="section-title"><a name="MARKER-2-697"></a>Singletons</h1>
+      <h1 class="section-title"><a name="IX-697"></a>Singletons</h1>
       <p>Singleton types are used to indicate individual objects. When determining whether a
 	singleton specializer matches a given object, the object must be <code>==</code> to the
 	object used to create the singleton.</p>
       <p>A singleton for an object is created by passing the object to the
 	function <code>singleton</code>, or by calling the function <code>make</code> on the
-	class <code id="MARKER-2-698">&lt;singleton&gt;</code>.</p>
+	class <code id="IX-698">&lt;singleton&gt;</code>.</p>
       <p>Singleton methods are considered more specific than methods defined on an object's
 	class. Singletons are the most specific specializer.</p>
       <pre class="code">
@@ -156,7 +156,7 @@ define method double (thing == #"cup")
   #"pint"
 end method
 double (#"cup")
-<code> &rArr;</code>  #"pint"<a name="MARKER-2-699"></a>
+<code> &rArr;</code>  #"pint"<a name="IX-699"></a>
 </pre>
 
     </div>

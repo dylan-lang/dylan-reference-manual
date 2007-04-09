@@ -137,82 +137,82 @@
 	<p id="section-name">Syntax</p>
       </div>
 
-      <a name="HEADING17-0"></a>
+      <a name="HEADING-17-0"></a>
       <a name="UID-Syntax-1456"></a>
       <h1 class="section-title">Expressions</h1>
-      <p>An <dfn id="MARKER-2-245">expression</dfn> is a construct that is executed for the values
+      <p>An <dfn id="IX-245">expression</dfn> is a construct that is executed for the values
 	it returns and/or the side-effects that it performs. The <q>active</q> portions of a Dylan
 	program are expressions. An expression is either a literal constant, a named value
 	reference, a function call, a unary operator call, a binary operator call, an element
 	reference, a slot reference, a parenthesized expression, or a statement.</p>
-      <p>An <dfn id="MARKER-2-246">operand</dfn> is a restricted expression: it cannot be a unary or
+      <p>An <dfn id="IX-246">operand</dfn> is a restricted expression: it cannot be a unary or
 	binary operator call nor a symbol literal. The other seven forms of expression are
 	allowed. Operands appear in situations in the grammar where an expression is desirable but
 	the full generality of expressions would make the grammar ambiguous.</p>
-      <p>A <dfn id="MARKER-2-247">literal constant</dfn> directly represents an object. Literal
+      <p>A <dfn id="IX-247">literal constant</dfn> directly represents an object. Literal
 	constants are available for numbers, characters, strings, symbols, boolean values, pairs,
 	lists, and vectors. For example:</p>
       <table>
 	<tr>
-	  <td class="primary"><p><a name="MARKER-2-207"></a>number</p></td>
+	  <td class="primary"><p><a name="IX-207"></a>number</p></td>
 	  <td><p><code>123, 1.5, -4.0, #x1f4e</code></p></td>
 	</tr><tr>
-	  <td><p><a name="MARKER-2-208"></a>character</p></td>
+	  <td><p><a name="IX-208"></a>character</p></td>
 	  <td><p><code>'a', '\n'</code></p></td>
 	</tr><tr>
-	  <td><p><a name="MARKER-2-209"></a>string</p></td>
+	  <td><p><a name="IX-209"></a>string</p></td>
 	  <td><p><code>"foo", "line 1\nline 2"</code></p></td>
 	</tr><tr>
-	  <td><p><a name="MARKER-2-210"></a>symbol</p></td>
+	  <td><p><a name="IX-210"></a>symbol</p></td>
 	  <td><p><code>test:, #"red"</code></p></td>
 	</tr><tr>
-	  <td><p><a name="MARKER-2-211"></a>boolean value</p></td>
-	  <td><p><code><a name="MARKER-2-212"></a>#t, <a name="MARKER-2-213"></a>#f</code></p></td>
+	  <td><p><a name="IX-211"></a>boolean value</p></td>
+	  <td><p><code><a name="IX-212"></a>#t, <a name="IX-213"></a>#f</code></p></td>
 	</tr><tr>
-	  <td><p><a name="MARKER-2-214"></a>pair</p></td>
+	  <td><p><a name="IX-214"></a>pair</p></td>
 	  <td><p><code>#(1 . "one")</code></p></td>
 	</tr><tr>
-	  <td><p><a name="MARKER-2-215"></a>list</p></td>
-	  <td><p><code><a name="MARKER-2-216"></a>#(1, 2, 3)</code></p></td>
+	  <td><p><a name="IX-215"></a>list</p></td>
+	  <td><p><code><a name="IX-216"></a>#(1, 2, 3)</code></p></td>
 	</tr><tr>
-	  <td><p><a name="MARKER-2-217"></a>vector</p></td>
-	  <td><p><code><a name="MARKER-2-218"></a>#[1, 2, 3]</code></p></td>
+	  <td><p><a name="IX-217"></a>vector</p></td>
+	  <td><p><code><a name="IX-218"></a>#[1, 2, 3]</code></p></td>
 	</tr>
       </table>
-      <p>Literal constants are <a name="MARKER-2-248"></a>immutable. Attempting to modify an
+      <p>Literal constants are <a name="IX-248"></a>immutable. Attempting to modify an
 	immutable object has undefined consequences. Immutable objects may share structure. Literal
 	constants that are equal may or may not be identical.</p>
-      <p>A symbol can be indicated in two ways: as a <a name="MARKER-2-249"></a>keyword (for
-	example, <code>test:</code>) or as a <a name="MARKER-2-250"></a>unique string (for
+      <p>A symbol can be indicated in two ways: as a <a name="IX-249"></a>keyword (for
+	example, <code>test:</code>) or as a <a name="IX-250"></a>unique string (for
 	example, <code>#"red"</code>). The difference is purely syntactic; the choice is provided to
 	promote program readability.</p>
       <p>A string literal can be broken across lines by writing two string literals in a row,
 	separated only by whitespace; they are automatically concatenated (without a newline
-	character).<a name="MARKER-2-251"></a></p>
-      <p>A <dfn id="MARKER-2-252">named value reference</dfn> returns the value of a visible binding
+	character).<a name="IX-251"></a></p>
+      <p>A <dfn id="IX-252">named value reference</dfn> returns the value of a visible binding
 	given its name; for example, <code>foo</code>. The referenced binding can be a module
 	binding (either constant or variable) or a local binding established by a local declaration
 	or by a parameter list. The value of the binding must not be a macro.</p>
-      <p>A <dfn id="MARKER-2-253">reserved word</dfn> is a syntactic token that has the form of a
+      <p>A <dfn id="IX-253">reserved word</dfn> is a syntactic token that has the form of a
 	name but is reserved by the Dylan language and so cannot be given a binding and cannot be
 	used as a named value reference. There are seven reserved words in Dylan:
-	<code id="MARKER-2-254">define</code>,
-	<code id="MARKER-2-255">end</code>,
-	<code id="MARKER-2-256">handler</code>,
-	<code id="MARKER-2-257">let</code>,
-	<code id="MARKER-2-258">local</code>,
-	<code id="MARKER-2-259">macro</code>, and <code id="MARKER-2-260">otherwise</code>.</p>
-      <p>A <dfn id="MARKER-2-261">function call</dfn> applies a function to arguments, and returns
+	<code id="IX-254">define</code>,
+	<code id="IX-255">end</code>,
+	<code id="IX-256">handler</code>,
+	<code id="IX-257">let</code>,
+	<code id="IX-258">local</code>,
+	<code id="IX-259">macro</code>, and <code id="IX-260">otherwise</code>.</p>
+      <p>A <dfn id="IX-261">function call</dfn> applies a function to arguments, and returns
 	whatever values the function returns. The function is indicated by an operand and can be a
 	generic function, a method, or a function macro. The arguments are separated by commas and
 	enclosed in parentheses. For example, <code>f(x, y)</code>. For readability, the comma can
 	be omitted between the two arguments in a keyword/value pair, for example <code>element(c,
 	k, default: d)</code> is a function call with four arguments.</p>
-      <p><a name="MARKER-2-262"></a>A <dfn id="MARKER-2-263">unary operator call</dfn> consists of
+      <p><a name="IX-262"></a>A <dfn id="IX-263">unary operator call</dfn> consists of
 	an operand preceded by one of the two unary operators: <code>-</code> (arithmetic negation)
 	or <code>~</code> (logical negation); for example, <code>- x</code>. A unary operator call
 	is actually an abbreviated notation for a function call.</p>
-      <p>A <dfn id="MARKER-2-264">binary operator call</dfn> consists of two expressions separated
+      <p>A <dfn id="IX-264">binary operator call</dfn> consists of two expressions separated
 	by one of the binary operators: <code>+</code> (addition), <code>-</code>
 	(subtraction), <code>*</code> (multiplication), <code>/</code> (division), <code>^</code>
 	(exponentiation), <code>=</code> (equality), <code>==</code> (identity), <code>&lt;</code>
@@ -223,19 +223,19 @@
 	together, they are grouped by rules of precedence and associativity and by parentheses
 	&mdash; for example, <code>(a - b) * x + c * x ^ 2</code>. A binary operator call is
 	actually an abbreviated notation for a function call or function-macro call. The rules of
-	precedence are given in <a href="Operators#MARKER-9-427">Table 4-1, <q>Operators,</q> on
-	page 37</a>.<a name="MARKER-2-265"></a></p>
-      <p>An <dfn id="MARKER-2-266">element reference</dfn> consists of an operand that indicates a
+	precedence are given in <a href="Operators#XREF-427">Table 4-1, <q>Operators,</q> on
+	page 37</a>.<a name="IX-265"></a></p>
+      <p>An <dfn id="IX-266">element reference</dfn> consists of an operand that indicates a
 	collection and an expression in square brackets that indicates a key. Instead of a key,
 	there can be multiple expressions separated by commas that indicate array indices; for
 	example, <code>c[k]</code> or <code>a[i, j]</code>. This is actually an abbreviated notation
 	for a function call.</p>
-      <p>A <dfn id="MARKER-2-267">slot reference</dfn> is another abbreviated notation for a
+      <p>A <dfn id="IX-267">slot reference</dfn> is another abbreviated notation for a
 	function call. It consists of an operand that indicates an object, a period, and a named
 	value reference that indicates a one-argument function to apply to the object. Typically the
 	function is a slot getter but this is not required, as
 	in <code>airplane.wingspan</code>.</p>
-      <p>A <dfn id="MARKER-2-268">parenthesized expression</dfn> is any expression inside
+      <p>A <dfn id="IX-268">parenthesized expression</dfn> is any expression inside
 	parentheses. The parentheses have no significance except to group the arguments of an
 	operator or to turn a general expression into an operand; for example, <code>(a + b) *
 	c</code>.</p>

@@ -94,7 +94,7 @@
 		<li><a href="Multiple_Values">Multiple Values</a></li>
 		<li id="current" class="subsections"><span>Order of Execution</span>
 		  <ul class="page-TOC">
-		    <li><a href="#HEADING37-5">Execution Order Within Expressions</a></li>
+		    <li><a href="#HEADING-37-5">Execution Order Within Expressions</a></li>
 		  </ul>
 		</li>
 	      </ul>
@@ -135,29 +135,29 @@
 	<p id="section-name">Program Control</p>
       </div>
 
-      <a name="HEADING37-0"></a>
+      <a name="HEADING-37-0"></a>
       <a name="UID-Program_Control-1422"></a>
-      <h1 class="section-title"><a name="MARKER-2-484"></a><a name="MARKER-9-485"></a>Order of Execution</h1>
-      <p>Order of execution is defined for the <a name="MARKER-2-486"></a>constituents within a
+      <h1 class="section-title"><a name="IX-484"></a><a name="XREF-485"></a>Order of Execution</h1>
+      <p>Order of execution is defined for the <a name="IX-486"></a>constituents within a
 	body. With some exceptions noted below, this execution order is left-to-right.</p>
-      <p><a name="MARKER-2-487"></a>Definitions form the overall structure of a program and are not
+      <p><a name="IX-487"></a>Definitions form the overall structure of a program and are not
 	said to execute. In particular, module bindings are not created in any order, but all exist
 	when program execution commences. To the extent that these bindings must be initialized by
 	the values of some expressions that cannot be analyzed at compile time, references to the
 	bindings are constrained by the execution order of the expressions within the surrounding
 	body.</p>
-      <p><a name="MARKER-2-488"></a>Dylan implementations are encouraged to allow forward references
+      <p><a name="IX-488"></a>Dylan implementations are encouraged to allow forward references
 	to module bindings whenever possible.</p>
       <p>The order of execution of the components of a call to a user-defined macro is determined by
 	the macro.</p>
-      <a name="HEADING37-5"></a>
+      <a name="HEADING-37-5"></a>
       <a name="UID-Program_Control-3893"></a>
-      <h2 class="subsection-title"><a name="MARKER-2-489"></a>Execution Order Within Expressions</h2>
+      <h2 class="subsection-title"><a name="IX-489"></a>Execution Order Within Expressions</h2>
       <p>In general, execution within an expression proceeds left-to-right. The chief exception to
-	this rule is the <a name="MARKER-2-490"></a>assignment operator, which is executed
+	this rule is the <a name="IX-490"></a>assignment operator, which is executed
 	right-to-left.</p>
       <ul>
-	<li><a name="MARKER-2-491"></a>In a standard function call, the function operand is executed
+	<li><a name="IX-491"></a>In a standard function call, the function operand is executed
 	  first, followed by the argument expressions. (Remember, the function need not be a named
 	  value reference, but can be a more complex operand). After the function operand has been
 	  executed and each of the argument expressions has been executed, the function is applied
@@ -165,19 +165,19 @@
 	  <pre class="code">
 one(two, three, four) </pre>
 	</li>
-	<li><a name="MARKER-2-492"></a>In slot references, the object operand is executed first,
+	<li><a name="IX-492"></a>In slot references, the object operand is executed first,
 	  followed by the function named value reference. Then the function is applied to the
 	  object.
 	  <pre class="code">
 one.two </pre>
 	</li>
-	<li><a name="MARKER-2-493"></a>In element references, the collection operand is executed
+	<li><a name="IX-493"></a>In element references, the collection operand is executed
 	  first, followed by the key expressions in order. Then the element access is performed. The
 	  execution time of the binding <code>element</code> or <code>aref</code> is unspecified.
 	  <pre class="code">
 one[two, three] </pre>
 	</li>
-	<li><a name="MARKER-2-494"></a>In an operator call, the operands are executed
+	<li><a name="IX-494"></a>In an operator call, the operands are executed
 	  left-to-right. The execution time of the binding specified by the operator
 	  (e.g. <code>+</code> or <code>*</code>) is unspecified.
 	  <pre class="code">
@@ -198,7 +198,7 @@ element-setter(one, two, three)
 two[three] := one
 
 aref-setter(one, two, three, four)
-two[three, four] := one<a name="MARKER-2-495"></a><a name="MARKER-2-496"></a></pre>
+two[three, four] := one<a name="IX-495"></a><a name="IX-496"></a></pre>
 	</li>
       </ul>
       <a name="LINK-Program_Control-lastpage"></a><a name="LINK-Types_and_ClassesTOC-firstpage"></a>

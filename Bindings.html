@@ -137,21 +137,21 @@
 	<p id="section-name">Syntax</p>
       </div>
 
-      <a name="HEADING12-0"></a>
+      <a name="HEADING-12-0"></a>
       <a name="UID-Syntax-1434"></a>
       <h1 class="section-title">Bindings</h1>
-      <p>A <dfn id="MARKER-2-225">binding</dfn> is an association of a name with a value. The
+      <p>A <dfn id="IX-225">binding</dfn> is an association of a name with a value. The
 	bindings in a module persist for the life of the program execution. The scope of such a
 	binding is its module. That is, the binding is visible to all source-records in the
 	module. A module can export bindings and can import bindings from other modules. Only an
 	exported binding can be imported. A binding is visible to all source-records in a module
 	that imports it.</p>
-      <p>A binding may be <dfn id="MARKER-2-226">specialized</dfn>. This restricts the types of
+      <p>A binding may be <dfn id="IX-226">specialized</dfn>. This restricts the types of
 	values that may be held in the binding. An error will be signaled on any attempt to
 	initialize or assign the binding to a value that is not of the correct type.</p>
-      <p>A binding is either <dfn id="MARKER-2-227">constant</dfn>
-	or <dfn id="MARKER-2-228">variable</dfn>. A constant
-	(or <a name="MARKER-2-229"></a>read-only) binding always has the same value. In contrast, a
+      <p>A binding is either <dfn id="IX-227">constant</dfn>
+	or <dfn id="IX-228">variable</dfn>. A constant
+	(or <a name="IX-229"></a>read-only) binding always has the same value. In contrast, a
 	variable (or writable) binding can have its value changed, using the assignment
 	operator <code>:=</code>. Most bindings in a typical Dylan module are constant.</p>
 

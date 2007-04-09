@@ -95,19 +95,19 @@
 		<li><a href="Object_Classes">Objects</a></li>
 		<li id="current" class="subsections"><span>Types</span>
 		  <ul class="page-TOC">
-		    <li class="subsections"><a href="#HEADING90-3">General Types</a>
+		    <li class="subsections"><a href="#HEADING-90-3">General Types</a>
 		      <ul>
-			<li><a href="#HEADING90-4"><code>&lt;type&gt;</code><span class="attributes-summary"> [Sealed Abstract Class]</span></a></li>
+			<li><a href="#HEADING-90-4"><code>&lt;type&gt;</code><span class="attributes-summary"> [Sealed Abstract Class]</span></a></li>
 		      </ul>
 		    </li>
-		    <li class="subsections"><a href="#HEADING90-106">Classes</a>
+		    <li class="subsections"><a href="#HEADING-90-106">Classes</a>
 		      <ul>
-			<li><a href="#HEADING90-107"><code>&lt;class&gt;</code><span class="attributes-summary"> [Sealed Instantiable Class]</span></a></li>
+			<li><a href="#HEADING-90-107"><code>&lt;class&gt;</code><span class="attributes-summary"> [Sealed Instantiable Class]</span></a></li>
 		      </ul>
 		    </li>
-		    <li class="subsections"><a href="#HEADING90-238">Singletons</a>
+		    <li class="subsections"><a href="#HEADING-90-238">Singletons</a>
 		      <ul>
-			<li><a href="#HEADING90-239"><code>&lt;singleton&gt;</code><span class="attributes-summary"> [Sealed Instantiable Class]</span></a></li>
+			<li><a href="#HEADING-90-239"><code>&lt;singleton&gt;</code><span class="attributes-summary"> [Sealed Instantiable Class]</span></a></li>
 		      </ul>
 		    </li>
 		  </ul>
@@ -148,13 +148,13 @@
 	<p id="section-name">The Built-In Classes</p>
       </div>
 
-      <a name="HEADING90-0"></a>
+      <a name="HEADING-90-0"></a>
       <a name="UID-Built-In_Classes-20036"></a>
-      <h1 class="section-title"><a name="MARKER-2-1368"></a>Types</h1>
-      <p>Types are used to categorize objects. <a href="#MARKER-9-1369">Figure 11-1</a> shows the
+      <h1 class="section-title"><a name="IX-1368"></a>Types</h1>
+      <p>Types are used to categorize objects. <a href="#XREF-1369">Figure 11-1</a> shows the
 	built-in classes of types and some of their characteristics.</p>
       <p class="figure"><strong>Figure</strong> <strong>11-1</strong>
-	<a name="MARKER-9-1369"></a>The Type Classes</p>
+	<a name="XREF-1369"></a>The Type Classes</p>
       
       <div class="figure" style="min-width: 292px">
 	<!-- min-width is necessary to prevent the surrounding box from being layed out narrower
@@ -166,10 +166,10 @@
 	       from the corresponding OmniGraffle file. If the .graffle file is updated, export to
 	       HTML and update the map areas here.  Be sure to add " /" at the end of the AREA tags
 	       to make it valid XHTML. -->
-	  <area alt="class singleton" coords="164,160,290,203" href="#HEADING90-239" />
-	  <area alt="class class" coords="2,160,128,203" href="#HEADING90-107" />
-	  <area alt="class type" coords="83,81,209,124" href="#HEADING90-4" />
-	  <area alt="class object" coords="83,2,209,45" href="Object_Classes#HEADING89-1" />
+	  <area alt="class singleton" coords="164,160,290,203" href="#HEADING-90-239" />
+	  <area alt="class class" coords="2,160,128,203" href="#HEADING-90-107" />
+	  <area alt="class type" coords="83,81,209,124" href="#HEADING-90-4" />
+	  <area alt="class object" coords="83,2,209,45" href="Object_Classes#HEADING-89-1" />
 	</map>
 	<img alt="Type Class Hierarchy" src="images/drm_Figure_11-1_Type_Classes"
 	     width="292" height="205" usemap="#type-classes-map" />
@@ -190,11 +190,11 @@
 	</table>
       </div>
       
-      <a name="HEADING90-3"></a>
+      <a name="HEADING-90-3"></a>
       <a name="UID-Built-In_Classes-7027"></a>
       <h2 class="subsection-title">General Types</h2>
-      <a name="HEADING90-4"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1370">&lt;type&gt;</code> </span><span class="attributes-summary">[Sealed Abstract Class]</span></h4>
+      <a name="HEADING-90-4"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-1370">&lt;type&gt;</code> </span><span class="attributes-summary">[Sealed Abstract Class]</span></h4>
       <hr class="item-title" />
       <p>The class of all types, including classes and other types.</p>
       <dl class="Cliche">
@@ -216,19 +216,19 @@
 	      <th><p>Page</p></th>
 	    </tr><tr>
 	      <td><p><code>instance?</code></p></td>
-	      <td><p><a href="Reflective_Operations_on_Types#MARKER-9-1861">Tests whether an object
+	      <td><p><a href="Reflective_Operations_on_Types#XREF-1861">Tests whether an object
 		    is an instance of a type.</a></p></td>
-	      <td><p><a href="Reflective_Operations_on_Types#MARKER-9-1861">343</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Types#XREF-1861">343</a></p></td>
 	    </tr><tr>
 	      <td><p><code>subtype?</code></p></td>
-	      <td><p><a href="Reflective_Operations_on_Types#MARKER-9-1863">Tests whether a type is
+	      <td><p><a href="Reflective_Operations_on_Types#XREF-1863">Tests whether a type is
 		    a subtype of another type.</a></p></td>
-	      <td><p><a href="Reflective_Operations_on_Types#MARKER-9-1863">343</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Types#XREF-1863">343</a></p></td>
 	    </tr><tr>
 	      <td><p><code>type-union</code></p></td>
-	      <td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1564">Returns the
+	      <td><p><a href="Constructing_and_Initializing_Instances#XREF-1564">Returns the
 		    union of two or more types.</a></p></td>
-	      <td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1564">266</a></p></td>
+	      <td><p><a href="Constructing_and_Initializing_Instances#XREF-1564">266</a></p></td>
 	    </tr>
 	  </table>
 	  <p class="Anchor"></p>
@@ -240,18 +240,18 @@
 	      <th><p>Page</p></th>
 	    </tr><tr>
 	      <td><p><code>make</code></p></td>
-	      <td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">Returns a
+	      <td><p><a href="Constructing_and_Initializing_Instances#XREF-1539">Returns a
 		    general instance of its first argument.</a></p></td>
-	      <td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">258</a></p></td>
+	      <td><p><a href="Constructing_and_Initializing_Instances#XREF-1539">258</a></p></td>
 	    </tr>
 	  </table>
 	</dd>
       </dl>
-      <a name="HEADING90-106"></a>
+      <a name="HEADING-90-106"></a>
       <a name="UID-Built-In_Classes-8996"></a>
       <h2 class="subsection-title">Classes</h2>
-      <a name="HEADING90-107"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="MARKER-2-1371"></a><a name="MARKER-9-1372"></a>&lt;class&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
+      <a name="HEADING-90-107"></a>
+      <h4 class="item-title"><span class="signature"><code><a name="IX-1371"></a><a name="XREF-1372"></a>&lt;class&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
       <hr class="item-title" />
       <p>The class of all Dylan classes.</p>
       <dl class="Cliche">
@@ -354,24 +354,24 @@
 	      <th><p>Page</p></th>
 	    </tr><tr>
 	      <td><p><code>all-superclasses</code></p></td>
-	      <td><p><a href="Reflective_Operations_on_Types#MARKER-9-1867">Returns the class
+	      <td><p><a href="Reflective_Operations_on_Types#XREF-1867">Returns the class
 		    precedence list a class.</a></p></td>
-	      <td><p><a href="Reflective_Operations_on_Types#MARKER-9-1867">344</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Types#XREF-1867">344</a></p></td>
 	    </tr><tr>
 	      <td><p><code>direct-superclasses</code></p></td>
-	      <td><p><a href="Reflective_Operations_on_Types#MARKER-9-1869">Returns the direct
+	      <td><p><a href="Reflective_Operations_on_Types#XREF-1869">Returns the direct
 		    superclasses of a class.</a></p></td>
-	      <td><p><a href="Reflective_Operations_on_Types#MARKER-9-1869">345</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Types#XREF-1869">345</a></p></td>
 	    </tr><tr>
 	      <td><p><code>direct-subclasses</code></p></td>
-	      <td><p><a href="Reflective_Operations_on_Types#MARKER-9-1871">Returns the direct
+	      <td><p><a href="Reflective_Operations_on_Types#XREF-1871">Returns the direct
 		    subclasses of a class.</a></p></td>
-	      <td><p><a href="Reflective_Operations_on_Types#MARKER-9-1871">345</a></p></td>
+	      <td><p><a href="Reflective_Operations_on_Types#XREF-1871">345</a></p></td>
 	    </tr><tr>
 	      <td><p><code>limited</code></p></td>
-	      <td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">Returns a
+	      <td><p><a href="Constructing_and_Initializing_Instances#XREF-1559">Returns a
 		    limited subtype of a class.</a></p></td>
-	      <td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1559">263</a></p></td>
+	      <td><p><a href="Constructing_and_Initializing_Instances#XREF-1559">263</a></p></td>
 	    </tr>
 	  </table>
 	  <table class="numbered">
@@ -382,18 +382,18 @@
 	      <th><p>Page</p></th>
 	    </tr><tr>
 	      <td><p><code>make</code></p></td>
-	      <td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1539">Returns a
+	      <td><p><a href="Constructing_and_Initializing_Instances#XREF-1539">Returns a
 		    general instance of its first argument.</a></p></td>
-	      <td><p><a href="Constructing_and_Initializing_Instances#MARKER-9-1541">259</a></p></td>
+	      <td><p><a href="Constructing_and_Initializing_Instances#XREF-1541">259</a></p></td>
 	    </tr>
 	  </table>
 	</dd>
       </dl>
-      <a name="HEADING90-238"></a>
+      <a name="HEADING-90-238"></a>
       <a name="UID-Built-In_Classes-14542"></a>
       <h2 class="subsection-title">Singletons</h2>
-      <a name="HEADING90-239"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-1373">&lt;singleton&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
+      <a name="HEADING-90-239"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-1373">&lt;singleton&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Class]</span></h4>
       <hr class="item-title" />
       <p>The class of types that indicate a single object.</p>
       <dl class="Cliche">
@@ -414,7 +414,7 @@
 	  <p>If a singleton for the specified object already exists, implementations may return it
 	    rather than allocating a new singleton.</p></dd>
 	<dt><span>Operations:</span></dt>
-	<dd><p>None.<a name="MARKER-2-1374"></a></p></dd>
+	<dd><p>None.<a name="IX-1374"></a></p></dd>
       </dl>
 
     </div>

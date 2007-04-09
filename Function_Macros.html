@@ -100,15 +100,15 @@
 		<li><a href="Statement_Macros">Statements</a></li>
 		<li id="current" class="subsections"><span>Function Macros</span>
 		  <ul class="page-TOC">
-		    <li class="subsections"><a href="#HEADING115-63">Assignment</a>
+		    <li class="subsections"><a href="#HEADING-115-63">Assignment</a>
 		      <ul>
-			<li><a href="#HEADING115-64"><code>:=</code><span class="attributes-summary">[Function Macro]</span></a></li>
+			<li><a href="#HEADING-115-64"><code>:=</code><span class="attributes-summary">[Function Macro]</span></a></li>
 		      </ul>
 		    </li>
-		    <li class="subsections"><a href="#HEADING115-92">Conditional Execution</a>
+		    <li class="subsections"><a href="#HEADING-115-92">Conditional Execution</a>
 		      <ul>
-			<li><a href="#HEADING115-93"><code>|</code><span class="attributes-summary"> [Function Macro]</span></a></li>
-			<li><a href="#HEADING115-100"><code>&amp;</code><span class="attributes-summary"> [Function Macro]</span></a></li>
+			<li><a href="#HEADING-115-93"><code>|</code><span class="attributes-summary"> [Function Macro]</span></a></li>
+			<li><a href="#HEADING-115-100"><code>&amp;</code><span class="attributes-summary"> [Function Macro]</span></a></li>
 		      </ul>
 		    </li>
 		  </ul>
@@ -141,10 +141,10 @@
 	<p id="section-name">The Built-In Macros and Special Definitions</p>
       </div>
 
-      <a name="HEADING115-0"></a>
+      <a name="HEADING-115-0"></a>
       <a name="UID-Built-In_Macros-5344"></a>
-      <h1 class="section-title"><a name="MARKER-9-2068"></a>Function Macros</h1>
-      <p><a name="MARKER-2-2069"></a>Function macros provide syntax for assignment and for
+      <h1 class="section-title"><a name="XREF-2068"></a>Function Macros</h1>
+      <p><a name="IX-2069"></a>Function macros provide syntax for assignment and for
 	conditional execution. These three built-in function macros may be called using
 	function-call syntax or operator syntax.</p>
       <table class="numbered">
@@ -155,27 +155,27 @@
 	  <th><p>Page</p></th>
 	</tr><tr>
 	  <td><p><code>:=</code></p></td>
-	  <td><p><a href="#MARKER-9-2072">Stores a new value in a location.</a></p></td>
-	  <td><p><a href="#MARKER-9-2072">409</a></p></td>
+	  <td><p><a href="#XREF-2072">Stores a new value in a location.</a></p></td>
+	  <td><p><a href="#XREF-2072">409</a></p></td>
 	</tr><tr>
 	  <td><p><code>|</code></p></td>
-	  <td><p><a href="#MARKER-9-2076">Returns the value of the first of two operands that is
+	  <td><p><a href="#XREF-2076">Returns the value of the first of two operands that is
 		true.</a></p></td>
-	  <td><p><a href="#MARKER-9-2075">412</a></p></td>
+	  <td><p><a href="#XREF-2075">412</a></p></td>
 	</tr><tr>
 	  <td><p><code>&amp;</code></p></td>
-	  <td><p><a href="#MARKER-9-2079">If the value of a first operand is true, executes a second
+	  <td><p><a href="#XREF-2079">If the value of a first operand is true, executes a second
 		operand and returns its values.</a></p></td>
-	  <td><p><a href="#MARKER-9-2079">412</a></p></td>
+	  <td><p><a href="#XREF-2079">412</a></p></td>
 	</tr>
       </table>
-      <a name="HEADING115-63"></a>
+      <a name="HEADING-115-63"></a>
       <a name="UID-Built-In_Macros-5569"></a>
-      <h2 class="subsection-title"><a name="MARKER-2-2070"></a>Assignment</h2>
-      <a name="HEADING115-64"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-2071">:=</code> </span><span class="attributes-summary">[Function Macro]</span></h4>
+      <h2 class="subsection-title"><a name="IX-2070"></a>Assignment</h2>
+      <a name="HEADING-115-64"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-2071">:=</code> </span><span class="attributes-summary">[Function Macro]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-2072"></a>Stores a new value in a location.</p>
+      <p class="short-description"><a name="XREF-2072"></a>Stores a new value in a location.</p>
       <dl class="Cliche">
 	<dt><span>Macro Call:</span></dt>
 	<dd><p><var>place</var> <code>:=</code> <var>new-value</var></p></dd>
@@ -205,7 +205,7 @@
 	  <p>The <var>new-value</var> of an assignment statement is executed first, followed by
 	    the <var>place</var> (assuming the <var>place</var> requires any execution, which will
 	    only be true if it is not a binding name).</p>
-	  <a name="HEADING115-75"></a>
+	  <a name="HEADING-115-75"></a>
 	  <h5 class="description-subsection-title">Assignment to a binding</h5>
 	  <p>If <var>place</var> is a binding name, then <var>new-value</var> is stored in the
 	    binding. It is an error if there is no binding corresponding
@@ -220,7 +220,7 @@ define variable *number* = 10;
 <code> &rArr;</code>  20
 *number*
 <code> &rArr;</code>  20 </pre>
-	  <a name="HEADING115-78"></a>
+	  <a name="HEADING-115-78"></a>
 	  <h5 class="description-subsection-title">Assignment to a function or function macro</h5>
 	  <p>If <var>place</var> has the syntax of a function call, then <code>:=</code> will invoke
 	    the corresponding setter function. Given a binding named <var>fun</var>, the
@@ -253,7 +253,7 @@ end</pre>
 	    name. If <code>name-setter</code> is a macro, it is responsible for the order of
 	    execution of <code>arg1,&hellip;argn</code>.</p>
 	  <p>The same considerations apply to <code>arg.name := new-value</code>.</p>
-	  <a name="HEADING115-89"></a>
+	  <a name="HEADING-115-89"></a>
 	  <h5 class="description-subsection-title">Assignment to element references</h5>
 	  <p>Just as <code>[]</code> can be used as syntax for <code>element</code>
 	    and <code>aref</code>, <code>[]</code> and <code>:=</code> can be used as syntax
@@ -262,17 +262,17 @@ end</pre>
 	  <pre class="code">
 foo[2] := "quux"
 element (foo, 2) := "quux"
-element-setter ("quux", foo, 2).<a name="MARKER-2-2073"></a> </pre>
+element-setter ("quux", foo, 2).<a name="IX-2073"></a> </pre>
 	</dd>
       </dl>
-      <a name="HEADING115-92"></a>
+      <a name="HEADING-115-92"></a>
       <a name="UID-Built-In_Macros-5614"></a>
       <h2 class="subsection-title">Conditional Execution</h2>
-      <a name="HEADING115-93"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-2074">|</code> </span><span class="attributes-summary">[Function Macro]</span></h4>
+      <a name="HEADING-115-93"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-2074">|</code> </span><span class="attributes-summary">[Function Macro]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-2075"></a>Returns the value of the first of two
-	operands that is true.<a name="MARKER-9-2076"></a></p>
+      <p class="short-description"><a name="XREF-2075"></a>Returns the value of the first of two
+	operands that is true.<a name="XREF-2076"></a></p>
       <dl class="Cliche">
 	<dt><span>Macro Call:</span></dt>
 	<dd><p><var>one</var> <code>|</code> <var>another</var></p></dd>
@@ -288,15 +288,15 @@ element-setter ("quux", foo, 2).<a name="MARKER-2-2073"></a> </pre>
 	<dt><span>Values:</span></dt>
 	<dd><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
 	<dt><span>Description:</span></dt>
-	<dd><p><code>|</code> (<a name="MARKER-2-2077"></a>logical or) executes <var>one</var>. If
+	<dd><p><code>|</code> (<a name="IX-2077"></a>logical or) executes <var>one</var>. If
 	    the first value of <var>one</var> is true, that value is returned and <var>another</var>
 	    is not executed. Otherwise <var>another</var> is executed and its values are
 	    returned.</p></dd>
       </dl>
-      <a name="HEADING115-100"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-2078">&amp;</code>  </span><span class="attributes-summary">[Function Macro]</span></h4>
+      <a name="HEADING-115-100"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-2078">&amp;</code>  </span><span class="attributes-summary">[Function Macro]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-2079"></a>If the value of a first operand is
+      <p class="short-description"><a name="XREF-2079"></a>If the value of a first operand is
 	true, executes a second operand and returns its values.</p>
       <dl class="Cliche">
 	<dt><span>Macro Call:</span></dt>
@@ -317,11 +317,11 @@ element-setter ("quux", foo, 2).<a name="MARKER-2-2073"></a> </pre>
 	<dt><span>Values:</span></dt>
 	<dd><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
 	<dt><span>Description:</span></dt>
-	<dd><p><code>&amp;</code> (<a name="MARKER-2-2080"></a>logical and)
+	<dd><p><code>&amp;</code> (<a name="IX-2080"></a>logical and)
 	    executes <var>one</var>. If the first value returned by <var>one</var> is
 	    false, <code>#f</code> is returned and <var>another</var> is not
 	    executed. Otherwise, <var>another</var> is executed and its values are
-	    returned.<a name="MARKER-2-2081"></a></p>
+	    returned.<a name="IX-2081"></a></p>
 	  <a name="LINK-Built-In_Macros-lastpage"></a></dd>
       </dl>
 

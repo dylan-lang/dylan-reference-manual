@@ -91,9 +91,9 @@
 		<li><a href="Slots">Slots</a></li>
 		<li id="current" class="subsections"><span>Instance Creation and Initialization</span>
 		  <ul class="page-TOC">
-		    <li><a href="#HEADING43-2">Overview</a></li>
-		    <li><a href="#HEADING43-37">Inherited Slot Specifications</a></li>
-		    <li><a href="#HEADING43-44">Initialization Argument Specifications</a></li>
+		    <li><a href="#HEADING-43-2">Overview</a></li>
+		    <li><a href="#HEADING-43-37">Inherited Slot Specifications</a></li>
+		    <li><a href="#HEADING-43-44">Initialization Argument Specifications</a></li>
 		  </ul>
 		</li>
 		<li><a href="Singletons">Singletons</a></li>
@@ -136,15 +136,15 @@
 	<p id="section-name">Types and Classes</p>
       </div>
 
-      <a name="HEADING43-0"></a>
+      <a name="HEADING-43-0"></a>
       <a name="UID-Types_and_Classes-1987"></a>
-      <h1 class="section-title"><a name="MARKER-2-656"></a><a name="MARKER-2-657"></a><a name="MARKER-9-658"></a>Instance Creation and Initialization</h1>
+      <h1 class="section-title"><a name="IX-656"></a><a name="IX-657"></a><a name="XREF-658"></a>Instance Creation and Initialization</h1>
       <p>The creation and initialization of instances is controlled by the generic
-	functions <code id="MARKER-2-659">initialize</code> and <code id="MARKER-2-660">make</code>,
+	functions <code id="IX-659">initialize</code> and <code id="IX-660">make</code>,
 	using initialization information supplied by the class definition and by keyword arguments
 	in the call to <code>make</code>. Much of this behavior is supplied by the
 	default <code>make</code> method defined on <code>&lt;class&gt;</code>.</p>
-      <a name="HEADING43-2"></a>
+      <a name="HEADING-43-2"></a>
       <a name="UID-Types_and_Classes-1989"></a>
       <h2 class="subsection-title">Overview</h2>
       <p>Instance creation and initialization proceeds through the following steps:</p>
@@ -155,12 +155,12 @@
 	  method specialized with a singleton specializer. This enables the user method to get at
 	  all the arguments to <code>make</code>, and to provide actual instantiation and
 	  initializations based on them. For example, a singleton method on
-	  an <a name="MARKER-2-661"></a>abstract class can reinvoke <code>make</code> on a concrete
+	  an <a name="IX-661"></a>abstract class can reinvoke <code>make</code> on a concrete
 	  subclass of the abstract class, passing along the same or augmented initialization
 	  arguments.</li>
 	<li>The default <code>make</code> method examines its keyword arguments, which are known as
-	  the <a name="MARKER-2-662"></a> supplied initialization arguments. It then produces a set
-	  of <a name="MARKER-2-663"></a>defaulted initialization arguments by augmenting the
+	  the <a name="IX-662"></a> supplied initialization arguments. It then produces a set
+	  of <a name="IX-663"></a>defaulted initialization arguments by augmenting the
 	  supplied initialization arguments with any additional initialization arguments for which
 	  default values are defined by the class or any of its superclasses.<br />If the supplied
 	  initialization arguments contains duplicate keywords, <code>make</code> will use the
@@ -169,7 +169,7 @@
 	<li>The default <code>make</code> method signals an error if any required init-keyword is
 	  absent from the defaulted initialization arguments, or if any of the defaulted
 	  initialization arguments are not valid for initialization of that
-	  class. An <a name="MARKER-2-664"></a>initialization argument is valid if it is specified
+	  class. An <a name="IX-664"></a>initialization argument is valid if it is specified
 	  as an init-keyword in a slot specification or initialization argument specification, or if
 	  it is permitted by one or more of the <code>initialize</code> methods applicable to an
 	  instance of the class.</li>
@@ -192,7 +192,7 @@
 	  initialized instance and the defaulted initialization arguments. Methods on initialize can
 	  access these arguments by accepting them as keyword parameters or in a rest parameter. If
 	  they are accepted in a rest parameter and the defaulted initialization arguments
-	  contained <a name="MARKER-2-665"></a>duplicate keywords, it is undefined whether any
+	  contained <a name="IX-665"></a>duplicate keywords, it is undefined whether any
 	  entries other than the leftmost for that keyword will be present.</li>
 	<li>Each <code>initialize</code> method typically calls <code>next-method</code>, and then
 	  performs its own initializations. (Note that it won't have to initialize slots that were
@@ -200,14 +200,14 @@
 	<li>The default <code>make</code> method ignores the value of the call
 	  to <code>initialize</code> and returns the instance.</li>
       </ul>
-      <p><a name="MARKER-2-666"></a>The values of virtual slots are not automatically initialized
+      <p><a name="IX-666"></a>The values of virtual slots are not automatically initialized
 	when a new instance is created. The programmer must perform any necessary
 	initialization. This would usually be done inside a method
 	on <code>initialize</code>. Because the values of virtual slots are often computed from
 	other values at run-time, many virtual slots will not require any explicit
 	initialization.</p>
-      <a name="HEADING43-17"></a>
-      <h3 class="sub-subsection-title"><a name="MARKER-2-667"></a>Additional Behavior of Make and Initialize</h3>
+      <a name="HEADING-43-17"></a>
+      <h3 class="sub-subsection-title"><a name="IX-667"></a>Additional Behavior of Make and Initialize</h3>
       <p>The object returned by <code>make</code> is guaranteed to be a general instance of the
 	first argument to <code>make</code>, but not necessarily a direct instance. This liberality
 	allows <code>make</code> to be called on an abstract class; it can instantiate and return a
@@ -236,20 +236,20 @@ make(&lt;dog&gt;)
 	next-method.</p>
       <p>The default <code>make</code> method signals an error if its first argument is an abstract
 	class. An instantiable abstract class must override this method with its own method
-	for <code>make</code>.<a name="MARKER-2-668"></a></p>
-      <a name="HEADING43-27"></a>
+	for <code>make</code>.<a name="IX-668"></a></p>
+      <a name="HEADING-43-27"></a>
       <h3 class="sub-subsection-title">Initialization of Class Allocated Slots</h3>
-      <p><a name="MARKER-2-669"></a>The initalization of slots with allocation class or
+      <p><a name="IX-669"></a>The initalization of slots with allocation class or
 	each-subclass is performed in the following way:</p>
       <ul>
 	<li>If the slot is not keyword initializable and the class definition does not include an
 	  init specification for the slot, the slot remains uninitialized until it is explicitly
 	  assigned by the program.</li>
-	<li><a name="MARKER-2-670"></a>If the slot is not keyword initializable and the class
+	<li><a name="IX-670"></a>If the slot is not keyword initializable and the class
 	  definition does include an init specification for the slot, the slot is initialized from
 	  the init specification before or during the creation of the first instance of the
 	  class.</li>
-	<li><a name="MARKER-2-671"></a>If the slot is keyword initializable and the class definition
+	<li><a name="IX-671"></a>If the slot is keyword initializable and the class definition
 	  also includes an init specification for the slot, the slot may be initialized or assigned
 	  by the default method of <code>make</code> whenever an instance is created, as follows:
 	  <ul>
@@ -260,23 +260,23 @@ make(&lt;dog&gt;)
 	    <li>If the corresponding initialization argument is present in the defaulted
 	      initialization arguments of the call to <code>make</code>, then the slot is set to the
 	      value of that initialization argument, regardless of whether the slot was previously
-	      initialized.<a name="MARKER-2-672"></a></li>
+	      initialized.<a name="IX-672"></a></li>
 	  </ul>
 	</li>
       </ul>
-      <a name="HEADING43-34"></a>
+      <a name="HEADING-43-34"></a>
       <h3 class="sub-subsection-title">Testing the Initialization of a Slot</h3>
-      <p><a name="MARKER-2-673"></a>A program can test to see whether a slot has been initialized,
-	using the <code id="MARKER-2-674">slot-initialized?</code> function, described
-	on <a href="Constructing_and_Initializing_Instances#MARKER-9-1546">page 261</a>. There is no
+      <p><a name="IX-673"></a>A program can test to see whether a slot has been initialized,
+	using the <code id="IX-674">slot-initialized?</code> function, described
+	on <a href="Constructing_and_Initializing_Instances#XREF-1546">page 261</a>. There is no
 	portable mechanism for resetting a slot to the uninitialized state once it has been
 	initialized.</p>
       <p>To support the <code>slot-initialized?</code> protocol in a virtual slot, programmers must
 	define a method for <code>slot-initialized?</code> that specializes on the getter of the
-	slot and the class.<a name="MARKER-2-675"></a></p>
-      <a name="HEADING43-37"></a>
+	slot and the class.<a name="IX-675"></a></p>
+      <a name="HEADING-43-37"></a>
       <a name="UID-Types_and_Classes-3606"></a>
-      <h2 class="subsection-title"><a name="MARKER-2-676"></a><a name="MARKER-9-677"></a>Inherited Slot Specifications</h2>
+      <h2 class="subsection-title"><a name="IX-676"></a><a name="XREF-677"></a>Inherited Slot Specifications</h2>
       <p>An inherited slot specification is used to provide an init specification for a slot
 	inherited from a superclass. It can add an init specification if one was not already
 	present, or it can override an existing init specification.</p>
@@ -297,15 +297,15 @@ define class &lt;animal&gt; (&lt;object&gt;)
 end class;
 define class &lt;spider&gt; (&lt;animal&gt;)
   inherited slot n-legs, init-value: 8;
-end class;<a name="MARKER-2-678"></a>
+end class;<a name="IX-678"></a>
 </pre>
-      <a name="HEADING43-44"></a>
+      <a name="HEADING-43-44"></a>
       <a name="UID-Types_and_Classes-2990"></a>
-      <h2 class="subsection-title"><a name="MARKER-2-679"></a><a name="MARKER-9-680"></a>Initialization Argument Specifications</h2>
+      <h2 class="subsection-title"><a name="IX-679"></a><a name="XREF-680"></a>Initialization Argument Specifications</h2>
       <p>Initialization argument specifications provide options for the handling of initialization
 	arguments. They appear in <code>define class</code> forms, and have a syntax similar to that
 	of slot specifications.</p>
-      <p><a name="MARKER-2-681"></a><a name="MARKER-2-682"></a>Initialization argument
+      <p><a name="IX-681"></a><a name="IX-682"></a>Initialization argument
 	specifications allow the type of an initialization argument to be restricted, they allow an
 	initialization argument to be declared to be required, and they allow the specification of a
 	default value for an initialization argument.</p>
@@ -315,17 +315,17 @@ end class;<a name="MARKER-2-678"></a>
 	value for an initialization argument, and it can restrict the type of the argument or make
 	it required, but it does not by itself cause the argument to be used when initializing an
 	instance.</p>
-      <p><a name="MARKER-2-683"></a>There are two kinds of initialization argument specifications:
+      <p><a name="IX-683"></a>There are two kinds of initialization argument specifications:
 	required initialization argument specifications, and optional initialization argument
 	specifications.</p>
       <p>A required initialization argument specification asserts that the initialization argument
 	must be present in the defaulted initialization arguments. The default <code>make</code>
 	method will signal an error if no such initialization argument is present.</p>
-      <p><a name="MARKER-2-684"></a>An optional initialization argument specification can be used to
+      <p><a name="IX-684"></a>An optional initialization argument specification can be used to
 	specify a default value for the initialization argument, using an init specification. When a
 	call to <code>make</code> does not specify the initialization argument, the
 	default <code>make</code> method will add it to the defaulted initialization arguments with
-	the value of the init specification.<a name="MARKER-2-685"></a></p>
+	the value of the init specification.<a name="IX-685"></a></p>
       <p>The type argument has the same meaning in both kinds of initialization argument
 	specification: it restricts the type of that initialization argument. Note that this is not
 	the same thing as restricting the type of the slot.</p>
@@ -358,14 +358,14 @@ end class &lt;astronaut&gt;;
 	includes an init specification and also includes an initialization argument specification
 	for the same keyword that is either required or provides a default value. These error
 	situations are all indications of code that can never be
-	reached.<a name="MARKER-2-686"></a></p>
-      <a name="HEADING43-57"></a>
-      <h3 class="sub-subsection-title"><a name="MARKER-2-687"></a>Initialization Argument Inheritance</h3>
+	reached.<a name="IX-686"></a></p>
+      <a name="HEADING-43-57"></a>
+      <h3 class="sub-subsection-title"><a name="IX-687"></a>Initialization Argument Inheritance</h3>
       <p>The inheritance of initialization argument specifications is defined as follows.</p>
       <ul>
 	<li>A slot specification that supplies an init-keyword <var>K</var> by
-	  using <code id="MARKER-2-688">required-init-keyword:</code> is treated as if the
-	  initialization argument specification <code id="MARKER-2-689">required
+	  using <code id="IX-688">required-init-keyword:</code> is treated as if the
+	  initialization argument specification <code id="IX-689">required
 	  keyword</code> <var>K</var> had been specified in the class definition.</li>
 	<li>A slot specification that supplies both an init-keyword and also an init specification
 	  is not equivalent to an initialization argument specification that includes both the
@@ -376,13 +376,13 @@ end class &lt;astronaut&gt;;
 	<li>If the initialization argument is being specified for the first time (it is not
 	  inherited from any superclass) there are three factors to consider:
 	  <ul>
-	    <li>The <code id="MARKER-2-690">type:</code> argument, which defaults
+	    <li>The <code id="IX-690">type:</code> argument, which defaults
 	      to <code>&lt;object&gt;</code>, specifies the required type of the initialization
 	      argument. (This does not specify the type of the slot.)</li>
-	    <li>If the initialization argument is specified with <code id="MARKER-2-691">required
+	    <li>If the initialization argument is specified with <code id="IX-691">required
 		keyword</code> then it is required, otherwise it is optional.</li>
 	    <li>If the initialization argument is specified
-	      with <code id="MARKER-2-692">keyword</code>, then it can provide an init specification
+	      with <code id="IX-692">keyword</code>, then it can provide an init specification
 	      that is used by the default <code>make</code> method to provide a default value for
 	      the initialization argument in the defaulted initialization arguments.</li>
 	  </ul>
@@ -408,14 +408,14 @@ end class &lt;astronaut&gt;;
 	      initial value specification is used.</li>
 	  </ul>
 	</li>
-	<li><a name="MARKER-2-693"></a>When an initialization argument specification is being
+	<li><a name="IX-693"></a>When an initialization argument specification is being
 	  inherited from multiple superclasses, if the superclasses have exactly the same definition
 	  for the initialization argument, then that definition can simply be inherited. If the
 	  definitions differ, then the class that combines these other classes must provide an
 	  initialization argument specification that is compatible with all of the inherited ones,
 	  as described
 	  above.<a
-	  name="MARKER-2-694"></a><a name="MARKER-2-695"></a><a name="MARKER-2-696"></a></li>
+	  name="IX-694"></a><a name="IX-695"></a><a name="IX-696"></a></li>
       </ul>
 
     </div>

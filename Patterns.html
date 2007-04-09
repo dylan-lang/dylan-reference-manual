@@ -96,9 +96,9 @@
 		<li><a href="Rewrite_Rules">Rewrite Rules</a></li>
 		<li id="current" class="subsections"><span>Patterns</span>
 		  <ul class="page-TOC">
-		    <li><a href="#HEADING81-32">Special Rules for Definitions</a></li>
-		    <li><a href="#HEADING81-36">Special Rules for Statements</a></li>
-		    <li><a href="#HEADING81-38">Special Rules for Function Macros</a></li>
+		    <li><a href="#HEADING-81-32">Special Rules for Definitions</a></li>
+		    <li><a href="#HEADING-81-36">Special Rules for Statements</a></li>
+		    <li><a href="#HEADING-81-38">Special Rules for Function Macros</a></li>
 		  </ul>
 		</li>
 		<li><a href="Pattern_Variable_Constraints">Pattern Variable Constraints</a></li>
@@ -138,10 +138,10 @@
 	<p id="section-name">Macros</p>
       </div>
 
-      <a name="HEADING81-0"></a>
+      <a name="HEADING-81-0"></a>
       <a name="UID-Macros-1648"></a>
       <h1 class="section-title">Patterns</h1>
-      <p><a name="MARKER-2-1237"></a>Approximately speaking, a pattern looks like the construct that
+      <p><a name="IX-1237"></a>Approximately speaking, a pattern looks like the construct that
 	it matches, but contains pattern variables that bind to portions of the construct. Hence, a
 	left-hand side in the <var>main-rule-set</var> looks like a macro call. However, the grammar
 	of patterns is not the same as the grammar of programs, but contains just what is required
@@ -171,7 +171,7 @@
 	  succeeds and the last subfragment is empty. If the fragment contains more than N
 	  semicolons, the extra semicolons will be in the last subfragment.</li>
       </ul>
-      <p>A <var id="MARKER-2-1238">pattern-list</var> matches a fragment as follows:</p>
+      <p>A <var id="IX-1238">pattern-list</var> matches a fragment as follows:</p>
       <ul>
 	<li>If the pattern-list consists of just a pattern-sequence, go to the next step. If the
 	  pattern-list consists of just a property-list-pattern, go to that step. Otherwise divide
@@ -186,7 +186,7 @@
 	  subfragment. Note that the subdivision algorithms for commas and semicolons are
 	  identical.</li>
       </ul>
-      <p>A <var id="MARKER-2-1239">pattern-sequence</var> matches a fragment as follows:</p>
+      <p>A <var id="IX-1239">pattern-sequence</var> matches a fragment as follows:</p>
       <ul>
 	<li>Consider each simple-pattern in the pattern-sequence in turn from left to right. Each
 	  simple-pattern matches an initial subsequence of the fragment and consumes that
@@ -195,7 +195,7 @@
 	  the fragment is not entirely consumed after all simple-patterns have been matched. There
 	  is a special backup and retry rule for wildcards, described below.</li>
       </ul>
-      <p>A <var id="MARKER-2-1240">simple-pattern</var> matches a fragment as follows:</p>
+      <p>A <var id="IX-1240">simple-pattern</var> matches a fragment as follows:</p>
       <ul>
 	<li>A <em class="BNFCaps">name</em> or <code>=&gt;</code> consumes one elementary fragment,
 	  which must be identical to the <var>simple-pattern</var>. A <em class="BNFCaps">name</em>
@@ -204,7 +204,7 @@
 	  word <code>otherwise</code>, an <code>=&gt;</code> is optional in both the pattern and the
 	  fragment. Presence or absence of the arrow in either place makes no difference to
 	  matching.</li>
-	<li>A <var id="MARKER-2-1241">bracketed-pattern</var> matches and consumes
+	<li>A <var id="IX-1241">bracketed-pattern</var> matches and consumes
 	  a <var>bracketed-fragment</var>. If the enclosed <var>pattern</var> is omitted, the
 	  enclosed <var>body-fragment</var> must be empty, otherwise the enclosed <var>pattern</var>
 	  must match the enclosed <var>body-fragment</var> (which can be empty). The type of
@@ -212,7 +212,7 @@
 	  the <var>bracketed-fragment</var> must be the same as the type of brackets in
 	  the <var>bracketed-pattern</var>.</li>
       </ul>
-      <p>A <var id="MARKER-2-1242">binding-pattern</var> matches a fragment as follows:</p>
+      <p>A <var id="IX-1242">binding-pattern</var> matches a fragment as follows:</p>
       <ul>
 	<li><var>pattern-variable</var> <code>::</code> <var>pattern-variable</var> consumes as much
 	  of the fragment as can be parsed by the grammar for <var>variable. </var>It matches the
@@ -233,10 +233,10 @@
 	  pattern-variables the same as the first kind of <var>binding-pattern</var> and it matches
 	  the third pattern-variable the same as the second kind of <var>binding-pattern</var>.</li>
       </ul>
-      <p>A <var id="MARKER-2-1243">pattern-variable</var> matches a fragment as follows:</p>
+      <p>A <var id="IX-1243">pattern-variable</var> matches a fragment as follows:</p>
       <ul>
 	<li>When the constraint is a wildcard constraint
-	  (see <a href="Pattern_Variable_Constraints#MARKER-9-1256"><q>Pattern Variable
+	  (see <a href="Pattern_Variable_Constraints#XREF-1256"><q>Pattern Variable
 	      Constraints</q> on page 157</a>), the pattern variable consumes some initial subsequence
 	  of the fragment, using a backup and retry algorithm. First, the wildcard consumes no
 	  elementary fragments, and matching continues with the next <var>simple-pattern</var> in
@@ -251,23 +251,23 @@
 	  a <var>pattern-sequence</var> to be a wildcard.</li>
 	<li>When the constraint is other than a wildcard constraint, the pattern variable consumes
 	  as much of the fragment as can be parsed by the grammar specified for the constraint
-	  in <a href="Pattern_Variable_Constraints#MARKER-9-1256"><q>Pattern Variable
+	  in <a href="Pattern_Variable_Constraints#XREF-1256"><q>Pattern Variable
 	      Constraints</q> on page 157</a>. If the parsing fails, the pattern match fails. The
 	  pattern variable binds to the fragment specified
-	  in <a href="Pattern_Variable_Constraints#MARKER-9-1256"><q>Pattern Variable
+	  in <a href="Pattern_Variable_Constraints#XREF-1256"><q>Pattern Variable
 	      Constraints.</q></a> This can be a parsed fragment rather than the original sequence of
 	  elementary fragments.</li>
 	<li>The ellipsis <var>pattern-variable</var>, <code>...</code>, can only be used in an
 	  auxiliary rule set. It represents a pattern variable with the same name as the current
 	  rule set and a wildcard constraint.</li>
       </ul>
-      <p>A <var id="MARKER-2-1244">property-list-pattern</var> matches a fragment as follows:</p>
+      <p>A <var id="IX-1244">property-list-pattern</var> matches a fragment as follows:</p>
       <ul>
 	<li>Parse the fragment using the grammar
 	  for <var>property-list<em><sub>opt</sub></em></var>. If the parsing fails or does not
 	  consume the entire fragment, the pattern match fails.</li>
 	<li>If the <var>property-list-pattern</var>
-	  contains <code id="MARKER-2-1245">#key</code> and does not
+	  contains <code id="IX-1245">#key</code> and does not
 	  contain <code>#all-keys</code>, the match fails if the <em class="BNFCaps">symbol</em>
 	  part of any property is not the <em class="BNFCaps">name</em> in
 	  some <var>pattern-keyword</var> in the <var>property-list-pattern</var>. Comparison of
@@ -275,17 +275,17 @@
 	  ignores backslash quoting, and is unaffected by the lexical context of
 	  the <em class="BNFCaps">name</em>.</li>
 	<li>If the <var>property-list-pattern</var>
-	  contains <code id="MARKER-2-1246">#rest</code>, bind the pattern variable
+	  contains <code id="IX-1246">#rest</code>, bind the pattern variable
 	  immediately following <code>#rest</code> to the entire fragment. If the pattern variable
 	  has a non-wildcard constraint, parse the <var>value</var> part of each property according
 	  to this constraint, fail if the parsing fails or does not consume the
 	  entire <var>value</var> part, and substitute the fragment specified
-	  in <a href="Pattern_Variable_Constraints#MARKER-9-1256"><q>Pattern Variable
+	  in <a href="Pattern_Variable_Constraints#XREF-1256"><q>Pattern Variable
 	      Constraints</q> on page 157</a> for the <var>value</var> part.</li>
 	<li>Each <var>pattern-keyword</var> in the <var>property-list-pattern</var> binds a pattern
 	  variable as follows:
 	  <ul>
-	    <li>A single <a name="MARKER-2-1247">question mark</a> finds the first property
+	    <li>A single <a name="IX-1247">question mark</a> finds the first property
 	      whose <em class="BNFCaps">symbol</em> is the <em class="BNFCaps">name</em> of
 	      the <var>pattern-keyword</var>. Comparison of a <em class="BNFCaps">symbol</em> to
 	      a <em class="BNFCaps">name</em> is case-insensitive, ignores backslash quoting, and is
@@ -293,11 +293,11 @@
 	      the <var>pattern-keyword</var> has a non-wildcard constraint, parse the
 	      property's <var>value</var> according to this constraint, fail if the parsing fails or
 	      does not consume the entire <var>value</var> , and bind the pattern variable to the
-	      fragment specified in <a href="Pattern_Variable_Constraints#MARKER-9-1256"><q>Pattern
+	      fragment specified in <a href="Pattern_Variable_Constraints#XREF-1256"><q>Pattern
 		  Variable Constraints</q> on page 157</a>. If the <var>pattern-keyword</var> has a
 	      wildcard constraint, bind the pattern variable to the
 	      property's <var>value</var>.</li>
-	    <li>A double <a name="MARKER-2-1248"></a>question mark finds every property with a
+	    <li>A double <a name="IX-1248"></a>question mark finds every property with a
 	      matching <em class="BNFCaps">symbol</em>, processes each property's <var>value</var>
 	      as for a single question mark, and binds the pattern variable to a sequence of the
 	      values, preserving the order of properties in the input fragment. This sequence can
@@ -316,10 +316,10 @@
 	  macro expansion; it is a parsed expression fragment that is used instead of a fragment
 	  from the macro call. The default is not subject to a pattern variable constraint.</li>
       </ul>
-      <a name="HEADING81-32"></a>
+      <a name="HEADING-81-32"></a>
       <a name="UID-Macros-1752"></a>
       <h2 class="subsection-title">Special Rules for Definitions</h2>
-      <p><a name="MARKER-2-1249"></a>A list-style definition parses as the core reserved
+      <p><a name="IX-1249"></a>A list-style definition parses as the core reserved
 	word <code>define</code>, an optional sequence of modifiers,
 	a <em class="BNFCaps">define-list-word</em>, and a
 	possibly-empty <var>list-fragment. </var>The left-hand side of
@@ -353,11 +353,11 @@
 	following it in the macro call are checked during parsing, and so do not participate in the
 	pattern match.</p>
       <p>It is an error for a <var>definition-head</var> to contain more than one
-	wildcard.<a name="MARKER-2-1250"></a></p>
-      <a name="HEADING81-36"></a>
+	wildcard.<a name="IX-1250"></a></p>
+      <a name="HEADING-81-36"></a>
       <a name="UID-Macros-1760"></a>
       <h2 class="subsection-title">Special Rules for Statements</h2>
-      <p><a name="MARKER-2-1251"></a>A statement parses as a <em class="BNFCaps">begin-word</em>, a
+      <p><a name="IX-1251"></a>A statement parses as a <em class="BNFCaps">begin-word</em>, a
 	possibly-empty <var>body-fragment,</var> the core reserved word <code>end</code>, and an
 	optional repetition of the <em class="BNFCaps">begin-word</em>. The left-hand side of
 	a <var>statement-rule</var> matches this by matching the <var>pattern</var> to
@@ -370,11 +370,11 @@
 	might have been changed by renaming the macro during module importing. The
 	word <code>end</code> and the optional item following it in the macro call are checked
 	during parsing, and so do not participate in the pattern
-	match.<a name="MARKER-2-1252"></a></p>
-      <a name="HEADING81-38"></a>
+	match.<a name="IX-1252"></a></p>
+      <a name="HEADING-81-38"></a>
       <a name="UID-Macros-1764"></a>
       <h2 class="subsection-title">Special Rules for Function Macros</h2>
-      <p><a name="MARKER-2-1253"></a>A call to a function macro parses as
+      <p><a name="IX-1253"></a>A call to a function macro parses as
 	a <em class="BNFCaps">function-word</em> followed by a parenthesized,
 	possibly-empty <var>body-fragment</var>. The left-hand side of a <var>function-rule</var>
 	matches this by matching the <var>pattern</var> to the <var>body-fragment. </var>If the rule
@@ -385,10 +385,10 @@
 	the rule are just decoration and do not participate in the pattern match.</p>
       <p>A function macro can also be invoked by any of the shorthand syntax constructs available
 	for invoking functions. In this case, the arguments are always parsed expression fragments,
-	as described on <a href="Macros_Overview#MARKER-9-1199">page 146</a>. However, the left-hand
+	as described on <a href="Macros_Overview#XREF-1199">page 146</a>. However, the left-hand
 	side of a function-rule has to use function-macro-call syntax even if the macro is intended
 	to be called by operator, slot reference, or element reference
-	syntax.<a name="MARKER-2-1254"></a><a name="MARKER-2-1255"></a></p>
+	syntax.<a name="IX-1254"></a><a name="IX-1255"></a></p>
 
     </div>
 

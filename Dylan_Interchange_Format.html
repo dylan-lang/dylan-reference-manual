@@ -137,17 +137,17 @@
 	<p id="section-name">Syntax</p>
       </div>
 
-      <a name="HEADING23-0"></a>
+      <a name="HEADING-23-0"></a>
       <a name="UID-Syntax-1728"></a>
-      <h1 class="section-title"><a name="MARKER-9-317"></a>Dylan Interchange Format</h1>
-      <p>The <dfn id="MARKER-2-318">Dylan interchange format</dfn> is a standard file format for
-	publishing Dylan <a name="MARKER-2-319"></a>source code. Such a file has two parts,
-	the <dfn id="MARKER-2-320">file header</dfn> and the <dfn id="MARKER-2-321">code
+      <h1 class="section-title"><a name="XREF-317"></a>Dylan Interchange Format</h1>
+      <p>The <dfn id="IX-318">Dylan interchange format</dfn> is a standard file format for
+	publishing Dylan <a name="IX-319"></a>source code. Such a file has two parts,
+	the <dfn id="IX-320">file header</dfn> and the <dfn id="IX-321">code
 	  body</dfn>. The file header comes before the code body.</p>
-      <p>The code body consists of a <a name="MARKER-2-322"></a>source record.</p>
+      <p>The code body consists of a <a name="IX-322"></a>source record.</p>
       <p>The file header consists of one or more keyword-value pairs, as follows:</p>
       <ul>
-	<li>A <a name="MARKER-2-323"></a>keyword is a letter, followed by zero or more letters,
+	<li>A <a name="IX-323"></a>keyword is a letter, followed by zero or more letters,
 	  digits, and hyphens, followed by a colon. It contains only characters from the ISO 646
 	  7-bit character set, and is case-independent.</li>
 	<li>A keyword begins on a new line, and cannot be preceded by whitespace.</li>
@@ -166,25 +166,25 @@
 	  once. If it does, it should specify the meaning of multiple occurrences. </li>
       </ul>
       <p class="Default">The file header cannot contain comments, or other Dylan source code.</p>
-      <p><a name="MARKER-2-324"></a>Blank lines may not appear in the file header. A blank line
+      <p><a name="IX-324"></a>Blank lines may not appear in the file header. A blank line
 	defines the end of the file header and the beginning of the code body. The blank line is not
 	part of the code body. (A <q>blank line</q> is a line consisting of zero or more space or
 	tab characters, ending in a newline character.)</p>
       <p>The following standard keywords are defined:</p>
-      <a name="HEADING23-15"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-325">language:</code> <var>language-name</var> </span><span class="attributes-summary">[Header keyword]</span></h4>
+      <a name="HEADING-23-15"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-325">language:</code> <var>language-name</var> </span><span class="attributes-summary">[Header keyword]</span></h4>
       <hr class="item-title" />
       <p>The source record in the file is written in the named language. The only portable value for
 	this keyword is <code>infix-dylan</code>.</p>
-      <a name="HEADING23-17"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-326">module:</code> <var>module-name</var> </span><span class="attributes-summary">[Header keyword]</span></h4>
+      <a name="HEADING-23-17"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-326">module:</code> <var>module-name</var> </span><span class="attributes-summary">[Header keyword]</span></h4>
       <hr class="item-title" />
       <p>The source record in the file is associated with the named module. This keyword is
 	required.</p>
-      <a name="HEADING23-19"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-327">author:</code> <var>text</var> </span><span class="attributes-summary">[Header keyword]</span><br />
-	<span class="signature"><code id="MARKER-2-328">copyright:</code> <var>text</var> </span><span class="attributes-summary">[Header keyword]</span><br />
-	<span class="signature"><code id="MARKER-2-329">version:</code> <var>text</var> </span><span class="attributes-summary">[Header keyword]</span></h4>
+      <a name="HEADING-23-19"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-327">author:</code> <var>text</var> </span><span class="attributes-summary">[Header keyword]</span><br />
+	<span class="signature"><code id="IX-328">copyright:</code> <var>text</var> </span><span class="attributes-summary">[Header keyword]</span><br />
+	<span class="signature"><code id="IX-329">version:</code> <var>text</var> </span><span class="attributes-summary">[Header keyword]</span></h4>
       <hr class="item-title" />
       <p>These are provided for standardization. They are optional, and can be ignored by the
 	implementation.</p>

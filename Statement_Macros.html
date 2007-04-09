@@ -99,26 +99,26 @@
 		<li><a href="Local_Declaration_Macros">Local Declarations</a></li>
 		<li id="current" class="subsections"><span>Statements</span>
 		  <ul class="page-TOC">
-		    <li class="subsections"><a href="#HEADING114-162">Conditionals</a>
+		    <li class="subsections"><a href="#HEADING-114-162">Conditionals</a>
 		      <ul>
-			<li><a href="#HEADING114-164"><code>if</code><span class="attributes-summary"> [Statement]</span></a></li>
-			<li><a href="#HEADING114-181"><code>unless</code><span class="attributes-summary"> [Statement]</span></a></li>
-			<li><a href="#HEADING114-190"><code>case</code><span class="attributes-summary"> [Statement]</span></a></li>
-			<li><a href="#HEADING114-201"><code>select</code><span class="attributes-summary"> [Statement]</span></a></li>
+			<li><a href="#HEADING-114-164"><code>if</code><span class="attributes-summary"> [Statement]</span></a></li>
+			<li><a href="#HEADING-114-181"><code>unless</code><span class="attributes-summary"> [Statement]</span></a></li>
+			<li><a href="#HEADING-114-190"><code>case</code><span class="attributes-summary"> [Statement]</span></a></li>
+			<li><a href="#HEADING-114-201"><code>select</code><span class="attributes-summary"> [Statement]</span></a></li>
 		      </ul>
 		    </li>
-		    <li class="subsections"><a href="#HEADING114-220">Iteration Constructs</a>
+		    <li class="subsections"><a href="#HEADING-114-220">Iteration Constructs</a>
 		      <ul>
-			<li><a href="#HEADING114-221"><code>while</code><span class="attributes-summary"> [Statement]</span></a></li>
-			<li><a href="#HEADING114-229"><code>until</code><span class="attributes-summary"> [Statement]</span></a></li>
-			<li><a href="#HEADING114-237"><code>for</code><span class="attributes-summary"> [Statement]</span></a></li>
+			<li><a href="#HEADING-114-221"><code>while</code><span class="attributes-summary"> [Statement]</span></a></li>
+			<li><a href="#HEADING-114-229"><code>until</code><span class="attributes-summary"> [Statement]</span></a></li>
+			<li><a href="#HEADING-114-237"><code>for</code><span class="attributes-summary"> [Statement]</span></a></li>
 		      </ul>
 		    </li>
-		    <li class="subsections"><a href="#HEADING114-280">Other Statement Macros</a>
+		    <li class="subsections"><a href="#HEADING-114-280">Other Statement Macros</a>
 		      <ul>
-			<li><a href="#HEADING114-281"><code>begin</code><span class="attributes-summary"> [Statement]</span></a></li>
-			<li><a href="#HEADING114-287"><code>block</code><span class="attributes-summary"> [Statement]</span></a></li>
-			<li><a href="#HEADING114-324"><code>method</code><span class="attributes-summary"> [Statement]</span></a></li>
+			<li><a href="#HEADING-114-281"><code>begin</code><span class="attributes-summary"> [Statement]</span></a></li>
+			<li><a href="#HEADING-114-287"><code>block</code><span class="attributes-summary"> [Statement]</span></a></li>
+			<li><a href="#HEADING-114-324"><code>method</code><span class="attributes-summary"> [Statement]</span></a></li>
 		      </ul>
 		    </li>
 		  </ul>
@@ -152,10 +152,10 @@
 	<p id="section-name">The Built-In Macros and Special Definitions</p>
       </div>
 
-      <a name="HEADING114-0"></a>
+      <a name="HEADING-114-0"></a>
       <a name="UID-Built-In_Macros-2670"></a>
       <h1 class="section-title">Statements</h1>
-      <p><a name="MARKER-2-2041"></a>Statements are used to implement a variety of program
+      <p><a name="IX-2041"></a>Statements are used to implement a variety of program
 	constructs.</p>
       <p>Many statements include an optional implicit body, which may contain one or more
 	constituents separated by semicolons. When an implicit body is executed, the expressions in
@@ -170,63 +170,63 @@
 	  <th><p>Page</p></th>
 	</tr><tr>
 	  <td><p><code>if</code></p></td>
-	  <td><p><a href="#MARKER-9-2044">Executes an implicit body if the value of a test is true
+	  <td><p><a href="#XREF-2044">Executes an implicit body if the value of a test is true
 		or an alternate if the test is false.</a></p></td>
-	  <td><p><a href="#MARKER-9-2044">395</a></p></td>
+	  <td><p><a href="#XREF-2044">395</a></p></td>
 	</tr><tr>
 	  <td><p><code>unless</code></p></td>
-	  <td><p><a href="#MARKER-9-2046">Executes an implicit body unless the value of a test is
+	  <td><p><a href="#XREF-2046">Executes an implicit body unless the value of a test is
 		true.</a></p></td>
-	  <td><p><a href="#MARKER-9-2046">396</a></p></td>
+	  <td><p><a href="#XREF-2046">396</a></p></td>
 	</tr><tr>
 	  <td><p><code>case</code></p></td>
-	  <td><p><a href="#MARKER-9-2048">Executes a number of tests until one is true, and then
+	  <td><p><a href="#XREF-2048">Executes a number of tests until one is true, and then
 		executes an implicit body associated with the true test.</a></p></td>
-	  <td><p><a href="#MARKER-9-2048">397</a></p></td>
+	  <td><p><a href="#XREF-2048">397</a></p></td>
 	</tr><tr>
 	  <td><p><code>select</code></p></td>
-	  <td><p><a href="#MARKER-9-2050">Compares a target object to a series of potential matches,
+	  <td><p><a href="#XREF-2050">Compares a target object to a series of potential matches,
 		and executes an implicit body associated with the first match found.</a></p></td>
-	  <td><p><a href="#MARKER-9-2050">398</a></p></td>
+	  <td><p><a href="#XREF-2050">398</a></p></td>
 	</tr><tr>
 	  <td><p><code>while</code></p></td>
-	  <td><p><a href="#MARKER-9-2054">Repeatedly executes a body until a test expression is
+	  <td><p><a href="#XREF-2054">Repeatedly executes a body until a test expression is
 		false.</a></p></td>
-	  <td><p><a href="#MARKER-9-2054">399</a></p></td>
+	  <td><p><a href="#XREF-2054">399</a></p></td>
 	</tr><tr>
 	  <td><p><code>until</code></p></td>
-	  <td><p><a href="#MARKER-9-2056">Repeatedly executes a body until a test expression is
+	  <td><p><a href="#XREF-2056">Repeatedly executes a body until a test expression is
 		true.</a></p></td>
-	  <td><p><a href="#MARKER-9-2056">400</a></p></td>
+	  <td><p><a href="#XREF-2056">400</a></p></td>
 	</tr><tr>
 	  <td><p><code>for</code></p></td>
-	  <td><p><a href="#MARKER-9-2058">Performs general iteration over a body, updating bindings
+	  <td><p><a href="#XREF-2058">Performs general iteration over a body, updating bindings
 		and performing end tests on each iteration.</a></p></td>
-	  <td><p><a href="#MARKER-9-2058">400</a></p></td>
+	  <td><p><a href="#XREF-2058">400</a></p></td>
 	</tr><tr>
 	  <td><p><code>begin</code></p></td>
-	  <td><p><a href="#MARKER-9-2061">Executes expressions in a body, in order.</a></p></td>
-	  <td><p><a href="#MARKER-9-2061">404</a></p></td>
+	  <td><p><a href="#XREF-2061">Executes expressions in a body, in order.</a></p></td>
+	  <td><p><a href="#XREF-2061">404</a></p></td>
 	</tr><tr>
 	  <td><p><code>block</code></p></td>
-	  <td><p><a href="#MARKER-9-2063">Executes a body with several options for nonstandard flow
+	  <td><p><a href="#XREF-2063">Executes a body with several options for nonstandard flow
 		of control.</a></p></td>
-	  <td><p><a href="#MARKER-9-2063">404</a></p></td>
+	  <td><p><a href="#XREF-2063">404</a></p></td>
 	</tr><tr>
 	  <td><p><code>method</code></p></td>
-	  <td><p><a href="#MARKER-9-2066">Creates and returns a method.</a></p></td>
-	  <td><p><a href="#MARKER-9-2066">408</a></p></td>
+	  <td><p><a href="#XREF-2066">Creates and returns a method.</a></p></td>
+	  <td><p><a href="#XREF-2066">408</a></p></td>
 	</tr>
       </table>
-      <a name="HEADING114-162"></a>
+      <a name="HEADING-114-162"></a>
       <a name="UID-Built-In_Macros-10641"></a>
       <h2 class="subsection-title">Conditionals</h2>
-      <p><a name="MARKER-2-2042"></a>The following statements are used to perform conditional
+      <p><a name="IX-2042"></a>The following statements are used to perform conditional
 	execution.</p>
-      <a name="HEADING114-164"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-2043">if</code> </span><span class="attributes-summary">[Statement]</span></h4>
+      <a name="HEADING-114-164"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-2043">if</code> </span><span class="attributes-summary">[Statement]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-2044"></a>Executes an implicit body if the
+      <p class="short-description"><a name="XREF-2044"></a>Executes an implicit body if the
 	value of a test is true or an alternate if the test is false.</p>
       <dl class="Cliche">
 	<dt><span>Macro Call:</span></dt>
@@ -301,10 +301,10 @@ else
 end if; </pre>
 	</dd>
       </dl>
-      <a name="HEADING114-181"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-2045">unless</code> </span><span class="attributes-summary">[Statement]</span></h4>
+      <a name="HEADING-114-181"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-2045">unless</code> </span><span class="attributes-summary">[Statement]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-2046"></a>Executes an implicit body unless the
+      <p class="short-description"><a name="XREF-2046"></a>Executes an implicit body unless the
 	value of a test is true.</p>
       <dl class="Cliche">
 	<dt><span>Macro Call:</span></dt>
@@ -336,10 +336,10 @@ unless(detect-gas? (nose))
 end unless </pre>
 	</dd>
       </dl>
-      <a name="HEADING114-190"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-2047">case</code> </span><span class="attributes-summary">[Statement]</span></h4>
+      <a name="HEADING-114-190"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-2047">case</code> </span><span class="attributes-summary">[Statement]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-2048"></a>Executes a number of tests until one
+      <p class="short-description"><a name="XREF-2048"></a>Executes a number of tests until one
 	is true, and then executes an implicit body associated with the true test.</p>
       <dl class="Cliche">
 	<dt><span>Macro Call:</span></dt>
@@ -391,10 +391,10 @@ case
 end case; </pre>
 	</dd>
       </dl>
-      <a name="HEADING114-201"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-2049">select</code> </span><span class="attributes-summary">[Statement]</span></h4>
+      <a name="HEADING-114-201"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-2049">select</code> </span><span class="attributes-summary">[Statement]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-2050"></a>Compares a target object to a series
+      <p class="short-description"><a name="XREF-2050"></a>Compares a target object to a series
 	of potential matches, and executes an implicit body associated with the first match
 	found.</p>
       <dl class="Cliche">
@@ -462,16 +462,16 @@ select ( my-object by instance? )
   &lt;window&gt;, &lt;view&gt;, &lt;rectangle&gt; =&gt; "a graphical object";
   &lt;number&gt;, &lt;string&gt;, &lt;list&gt; =&gt; "a computational object";
   otherwise =&gt; "I don't know";
-end select<a name="MARKER-2-2051"></a> </pre>
+end select<a name="IX-2051"></a> </pre>
 	</dd>
       </dl>
-      <a name="HEADING114-220"></a>
+      <a name="HEADING-114-220"></a>
       <a name="UID-Built-In_Macros-1898"></a>
-      <h2 class="subsection-title"><a name="MARKER-2-2052"></a>Iteration Constructs</h2>
-      <a name="HEADING114-221"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-2053">while</code>  </span><span class="attributes-summary">[Statement]</span></h4>
+      <h2 class="subsection-title"><a name="IX-2052"></a>Iteration Constructs</h2>
+      <a name="HEADING-114-221"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-2053">while</code>  </span><span class="attributes-summary">[Statement]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-2054"></a>Repeatedly executes a body until a
+      <p class="short-description"><a name="XREF-2054"></a>Repeatedly executes a body until a
 	test expression is false.</p>
       <dl class="Cliche">
 	<dt><span>Macro Call:</span></dt>
@@ -499,10 +499,10 @@ end select<a name="MARKER-2-2051"></a> </pre>
 	    and <code>while</code> returns <code>#f</code>.</p>
 	</dd>
       </dl>
-      <a name="HEADING114-229"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-2055">until</code> </span><span class="attributes-summary">[Statement]</span></h4>
+      <a name="HEADING-114-229"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-2055">until</code> </span><span class="attributes-summary">[Statement]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-2056"></a>Repeatedly executes a body until a
+      <p class="short-description"><a name="XREF-2056"></a>Repeatedly executes a body until a
 	test expression is true.</p>
       <dl class="Cliche">
 	<dt><span>Macro Call:</span></dt>
@@ -534,10 +534,10 @@ end select<a name="MARKER-2-2051"></a> </pre>
 	    returns <code>#f</code>.</p>
 	</dd>
       </dl>
-      <a name="HEADING114-237"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-2057">for</code> </span><span class="attributes-summary">[Statement]</span></h4>
+      <a name="HEADING-114-237"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-2057">for</code> </span><span class="attributes-summary">[Statement]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-2058"></a>Performs general iteration over a
+      <p class="short-description"><a name="XREF-2058"></a>Performs general iteration over a
 	body, updating bindings and performing end tests on each iteration.</p>
       <dl class="Cliche">
 	<dt><span>Macro Call:</span></dt>
@@ -698,16 +698,16 @@ for (i from 0 below 100,
      zombies from 0 below 100,
      normals from 100 above 0 by -1)
    population[i] := zombies + normals
-end;<a name="MARKER-2-2059"></a> </pre>
+end;<a name="IX-2059"></a> </pre>
 	</dd>
       </dl>
-      <a name="HEADING114-280"></a>
+      <a name="HEADING-114-280"></a>
       <a name="UID-Built-In_Macros-13876"></a>
       <h2 class="subsection-title">Other Statement Macros</h2>
-      <a name="HEADING114-281"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-2060">begin</code> </span><span class="attributes-summary">[Statement]</span></h4>
+      <a name="HEADING-114-281"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-2060">begin</code> </span><span class="attributes-summary">[Statement]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-2061"></a>Executes expressions in a body, in
+      <p class="short-description"><a name="XREF-2061"></a>Executes expressions in a body, in
 	order.</p>
       <dl class="Cliche">
 	<dt><span>Macro Call:</span></dt>
@@ -730,10 +730,10 @@ end;<a name="MARKER-2-2059"></a> </pre>
 	    are returned. If there are no expressions in the body, <code>#f</code> is
 	    returned.</p></dd>
       </dl>
-      <a name="HEADING114-287"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-2062">block</code> </span><span class="attributes-summary">[Statement]</span></h4>
+      <a name="HEADING-114-287"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-2062">block</code> </span><span class="attributes-summary">[Statement]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-2063"></a>Executes a body with several options
+      <p class="short-description"><a name="XREF-2063"></a>Executes a body with several options
 	for nonstandard flow of control.</p>
       <dl class="Cliche">
 	<dt><span>Macro Call:</span></dt>
@@ -781,7 +781,7 @@ end;<a name="MARKER-2-2059"></a> </pre>
 	<dd><p>Zero or more instances of <code>&lt;object&gt;</code>.</p></dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p><code id="MARKER-2-2064">block</code> executes the expressions in
+	  <p><code id="IX-2064">block</code> executes the expressions in
 	    the <var>block-body</var> in order, and then executes the
 	    optional <var>afterwards-clause</var> and <var>cleanup-clause</var>. Unless there is a
 	    nonlocal exit, block returns the values of the <var>block-body</var>, or <code>#f</code>
@@ -842,7 +842,7 @@ end block </pre>
 	    book, the <code>cleanup</code> and <code>exception</code> clauses are incorrectly
 	    ordered. <code>cleanup</code> must come before <code>exception</code> clauses.
 	  </p>
-	  <a name="HEADING114-310"></a>
+	  <a name="HEADING-114-310"></a>
 	  <h5 class="description-subsection-title">Dynamic Extent of Block Features</h5>
 	  <p>A block installs features that are active for different portions of the execution of
 	    the block.</p>
@@ -854,7 +854,7 @@ end block </pre>
 	    <li>During the execution of a handler installed by an exception clause, the exit
 	      procedure is active.</li>
 	  </ul>
-	  <a name="HEADING114-315"></a>
+	  <a name="HEADING-114-315"></a>
 	  <h5 class="description-subsection-title">Intervening Cleanup Clauses</h5>
 	  <p>When an exit procedure is called, it initiates a nonlocal exit out of its establishing
 	    block. Before the nonlocal exit can complete, however, the cleanup clauses of
@@ -876,7 +876,7 @@ end block </pre>
 	  <p>All exception clauses are executed in the same dynamic environment. None of the
 	    handlers established in the block are visible during the execution of one of the
 	    handlers. This can be thought of as parallel installation of the handlers.</p>
-	  <a name="HEADING114-320"></a>
+	  <a name="HEADING-114-320"></a>
 	  <h5 class="description-subsection-title">Restrictions on the use of exit procedures</h5>
 	  <p>The exit procedure is a first-class object. Specifically, it can be passed as an
 	    argument to functions, stored in data structures, and so on. Its use is not restricted
@@ -899,10 +899,10 @@ foo(5)
   {error or other undefined consequences}</pre>
 	</dd>
       </dl>
-      <a name="HEADING114-324"></a>
-      <h4 class="item-title"><span class="signature"><code id="MARKER-2-2065">method</code> </span><span class="attributes-summary">[Statement]</span></h4>
+      <a name="HEADING-114-324"></a>
+      <h4 class="item-title"><span class="signature"><code id="IX-2065">method</code> </span><span class="attributes-summary">[Statement]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="MARKER-9-2066"></a>Creates and returns a method.</p>
+      <p class="short-description"><a name="XREF-2066"></a>Creates and returns a method.</p>
       <dl class="Cliche">
 	<dt><span>Macro Call:</span></dt>
 	<dd><p><code>method</code> <var>parameter-list</var> <strong class="re">[</strong> <var>body</var> <strong class="re">]</strong> <code>end</code> <strong class="re">[</strong> <code>method</code> <strong class="re">]</strong></p></dd>
@@ -920,8 +920,8 @@ foo(5)
 	<dt><span>Description:</span></dt>
 	<dd><p><code>method</code> creates and returns a method specified by
 	    the <var>parameter-list</var> and <var>body</var>. For a complete description of
-	    methods, see <a href="Functions_Overview#MARKER-9-762"><q>Methods</q> on page
-	      80</a>.<a name="MARKER-2-2067"></a></p>
+	    methods, see <a href="Functions_Overview#XREF-762"><q>Methods</q> on page
+	      80</a>.<a name="IX-2067"></a></p>
 	</dd>
       </dl>
 

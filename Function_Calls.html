@@ -87,9 +87,9 @@
 		<li><a href="Program_Control_Overview">Overview</a></li>
 		<li id="current" class="subsections"><span>Function Calls</span>
 		  <ul class="page-TOC">
-		    <li><a href="#HEADING30-1">General Syntax</a></li>
-		    <li><a href="#HEADING30-16">Slot Reference</a></li>
-		    <li><a href="#HEADING30-22">Element Reference</a></li>
+		    <li><a href="#HEADING-30-1">General Syntax</a></li>
+		    <li><a href="#HEADING-30-16">Slot Reference</a></li>
+		    <li><a href="#HEADING-30-22">Element Reference</a></li>
 		  </ul>
 		</li>
 		<li><a href="Operators">Operators</a></li>
@@ -137,12 +137,12 @@
 	<p id="section-name">Program Control</p>
       </div>
 
-      <a name="HEADING30-0"></a>
+      <a name="HEADING-30-0"></a>
       <a name="UID-Program_Control-4699"></a>
-      <h1 class="section-title"><a name="MARKER-2-430"></a>Function Calls</h1>
-      <a name="HEADING30-1"></a>
+      <h1 class="section-title"><a name="IX-430"></a>Function Calls</h1>
+      <a name="HEADING-30-1"></a>
       <a name="UID-Program_Control-1538"></a>
-      <h2 class="subsection-title"><a name="MARKER-2-431"></a>General Syntax</h2>
+      <h2 class="subsection-title"><a name="IX-431"></a>General Syntax</h2>
       <p>The general syntax for function calls is</p>
       <p><code><var>function</var>(<var>arg1</var>, <var>arg2</var>, <var>&hellip;</var> <var>argn</var>)</code></p>
       <p><var>function</var> has the syntax of an operand and is the function to be
@@ -180,9 +180,9 @@ end
 	also accept a variable number of <q>rest</q> arguments.</p>
       <p>A complete description of functions, parameter lists, and function calling is given
 	in <a href="Functions">Chapter 6, <q>Functions.</q></a></p>
-      <a name="HEADING30-16"></a>
+      <a name="HEADING-30-16"></a>
       <a name="UID-Program_Control-1278"></a>
-      <h2 class="subsection-title"><a name="MARKER-2-432"></a>Slot Reference<a name="MARKER-2-433"></a></h2>
+      <h2 class="subsection-title"><a name="IX-432"></a>Slot Reference<a name="IX-433"></a></h2>
       <p>Dylan provides a shorthand syntax for functions that accept one argument. The
 	syntax <code><var>argument</var>.<var>function</var></code> applies <var>function</var>
 	to <var>argument</var>. This syntax is commonly used for slot reference, to access
@@ -200,11 +200,11 @@ position(window)
 	of a window.</p>
       <pre class="code">
 window.root-view.origin
-origin(root-view(window))<a name="MARKER-2-434"></a>
+origin(root-view(window))<a name="IX-434"></a>
 </pre>
-      <a name="HEADING30-22"></a>
+      <a name="HEADING-30-22"></a>
       <a name="UID-Program_Control-1292"></a>
-      <h2 class="subsection-title"><a name="MARKER-2-435"></a>Element Reference<a name="MARKER-2-436"></a></h2>
+      <h2 class="subsection-title"><a name="IX-435"></a>Element Reference<a name="IX-436"></a></h2>
       <p>Dylan provides a shorthand syntax for element reference. The
 	syntax <code><var>sequence</var>[<var>i</var>]</code> is equivalent to the function
 	call <code>element(<var>sequence</var>, <var>i</var>)</code>. The
@@ -220,7 +220,7 @@ element(*all-windows*, 0)
 aref(*tic-tac-toe*, 1, 2)
 </pre>
       <p>The names <code>element</code> and <code>aref</code> are looked up in the environment of
-	the element reference expression.<a name="MARKER-2-437"></a></p>
+	the element reference expression.<a name="IX-437"></a></p>
 
     </div>
 

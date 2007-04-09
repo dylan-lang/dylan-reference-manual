@@ -88,8 +88,8 @@
 		<li><a href="Types_and_Classes_Overview">Overview</a></li>
 		<li id="current" class="subsections"><span>The Type Protocol</span>
 		  <ul class="page-TOC">
-		    <li><a href="#HEADING40-14">Base Types and Pseudosubtypes</a></li>
-		    <li><a href="#HEADING40-19">Type Disjointness</a></li>
+		    <li><a href="#HEADING-40-14">Base Types and Pseudosubtypes</a></li>
+		    <li><a href="#HEADING-40-19">Type Disjointness</a></li>
 		  </ul>
 		</li>
 		<li><a href="Classes">Classes</a></li>
@@ -135,25 +135,25 @@
 	<p id="section-name">Types and Classes</p>
       </div>
 
-      <a name="HEADING40-0"></a>
+      <a name="HEADING-40-0"></a>
       <a name="UID-Types_and_Classes-1198"></a>
-      <h1 class="section-title"><a name="MARKER-9-536"></a><a name="MARKER-2-537"></a>The Type Protocol</h1>
+      <h1 class="section-title"><a name="XREF-536"></a><a name="IX-537"></a>The Type Protocol</h1>
       <p>The type protocol comprises the following:</p>
       <ul>
-	<li><a name="MARKER-2-538"></a>All types may be used as specializers for method parameters,
+	<li><a name="IX-538"></a>All types may be used as specializers for method parameters,
 	  bindings, and slots.</li>
-	<li><code><a name="MARKER-2-539"></a>instance?(<var>object</var>, <var>type</var>)</code>
+	<li><code><a name="IX-539"></a>instance?(<var>object</var>, <var>type</var>)</code>
 	  tests type membership.</li>
-	<li><code><a name="MARKER-2-540"></a>subtype?(<var>type1</var>, <var>type2</var>)</code>
+	<li><code><a name="IX-540"></a>subtype?(<var>type1</var>, <var>type2</var>)</code>
 	  tests type inclusion.</li>
-	<li><code><a name="MARKER-2-541"></a>make(<var>type</var> <var>&hellip;</var>)</code> makes
+	<li><code><a name="IX-541"></a>make(<var>type</var> <var>&hellip;</var>)</code> makes
 	  an instance. This operation is only supported if the type is instantiable.</li>
-	<li><a name="MARKER-2-542"></a>Type objects are immutable.</li>
-	<li><a name="MARKER-2-543"></a>If two type objects are equivalent and are not classes, it is
+	<li><a name="IX-542"></a>Type objects are immutable.</li>
+	<li><a name="IX-543"></a>If two type objects are equivalent and are not classes, it is
 	  unspecified whether they are <code>==</code>.</li>
       </ul>
-      <p><a name="MARKER-2-544"></a>The following is an informal description of type relationships:
-	The function <code id="MARKER-2-545">subtype?</code> defines a partial ordering of all
+      <p><a name="IX-544"></a>The following is an informal description of type relationships:
+	The function <code id="IX-545">subtype?</code> defines a partial ordering of all
 	types. Type <var>t<em><sub>1</sub></em></var> is a subtype of
 	type <var>t<em><sub>2</sub></em></var>
 	(i.e., <code>subtype?(<var>t<em><sub>1</sub></em></var>, <var>t<em><sub>2</sub></em></var>)</code>
@@ -161,36 +161,36 @@
 	of <var>t<em><sub>1</sub></em></var> but not an instance
 	of <var>t<em><sub>2</sub></em></var>. It follows that every type is a subtype of itself. Two
 	types <var>t<em><sub>1</sub></em></var> and <var>t<em><sub>2</sub></em></var> are said to
-	be <dfn id="MARKER-2-546">equivalent types</dfn>
+	be <dfn id="IX-546">equivalent types</dfn>
 	if <code>subtype?(<var>t<em><sub>1</sub></em></var>, <var>t<em><sub>2</sub></em></var>)</code>
 	and <code>subtype?(<var>t<em><sub>2</sub></em></var>, <var>t<em><sub>1</sub></em></var>)</code>
 	are both true. <var>t<em><sub>1</sub></em></var> is said to be
-	a <dfn id="MARKER-2-547">proper subtype</dfn> of <var>t<em><sub>2</sub></em></var>
+	a <dfn id="IX-547">proper subtype</dfn> of <var>t<em><sub>2</sub></em></var>
 	if <var>t<em><sub>1</sub></em></var> is a subtype of <var>t<em><sub>2</sub></em></var>
 	and <var>t<em><sub>2</sub></em></var> is not a subtype
 	of <var>t<em><sub>1</sub></em></var>.</p>
       <p><code>subtype?</code> on classes is defined by inheritance. A class is a subtype of itself
 	and of its general superclasses.</p>
-      <p><code>subtype?</code> on <a name="MARKER-2-548"></a>singletons is defined by object type
+      <p><code>subtype?</code> on <a name="IX-548"></a>singletons is defined by object type
 	and identity. If <var>x</var> is an object and <var>t</var> is a
 	type, <code>subtype?(singleton(<var>x</var>), <var>t</var>)</code> will be true only
 	if <code>instance?(<var>x</var>, <var>t</var>)</code> is true.</p>
       <p><code>subtype?</code> rules for union types are given
-	in <a href="Union_Types#MARKER-9-701"><q>Union Types</q> on page
+	in <a href="Union_Types#XREF-701"><q>Union Types</q> on page
 	  72</a>. <code>subtype?</code>  rules for limited integer types are given
-	in <a href="Limited_Types#MARKER-9-710"><q>Limited Integer Types</q> on page
+	in <a href="Limited_Types#XREF-710"><q>Limited Integer Types</q> on page
 	  74</a>. <code>subtype?</code> rules for limited collection types are given
-	in <a href="Limited_Collection_Types#MARKER-9-1060"><q>Limited Collection Types</q> on page
+	in <a href="Limited_Collection_Types#XREF-1060"><q>Limited Collection Types</q> on page
 	  126</a>.</p>
-      <p><code id="MARKER-2-549">&lt;object&gt;</code> is the root of the type hierarchy. All
+      <p><code id="IX-549">&lt;object&gt;</code> is the root of the type hierarchy. All
 	objects are instances of <code>&lt;object&gt;</code>, and all types are subtypes
 	of <code>&lt;object&gt;</code>.</p>
       <p>A number of operations on types are described
-	in <a href="Reflective_Operations_on_Types#MARKER-9-1858"><q>Reflective Operations on
+	in <a href="Reflective_Operations_on_Types#XREF-1858"><q>Reflective Operations on
 	    Types</q> on page 343</a>.</p>
-      <a name="HEADING40-14"></a>
+      <a name="HEADING-40-14"></a>
       <a name="UID-Types_and_Classes-4914"></a>
-      <h2 class="subsection-title"><a name="MARKER-2-550"></a>Base Types and Pseudosubtypes</h2>
+      <h2 class="subsection-title"><a name="IX-550"></a>Base Types and Pseudosubtypes</h2>
       <p>Every type has a <dfn>base type</dfn>. The base type for a class is the class itself. The
 	base type of a singleton is the singleton itself. The base type of a union is the union of
 	the base types of its component types. The base type of a limited
@@ -208,25 +208,25 @@
 	not a limited type or some other nonstandard type, then pseudosubtype is the same as
 	subtype.</p>
       <p>Base types and pseudosubtypes are used in the rules for sealing, described
-	in <a href="Sealing">Chapter 9, <q>Sealing.</q></a><a name="MARKER-2-551"></a></p>
-      <a name="HEADING40-19"></a>
+	in <a href="Sealing">Chapter 9, <q>Sealing.</q></a><a name="IX-551"></a></p>
+      <a name="HEADING-40-19"></a>
       <a name="UID-Types_and_Classes-4893"></a>
-      <h2 class="subsection-title"><a name="MARKER-2-552"></a><a name="MARKER-9-553"></a>Type Disjointness</h2>
+      <h2 class="subsection-title"><a name="IX-552"></a><a name="XREF-553"></a>Type Disjointness</h2>
       <p>Informally, two types are disjoint if there can be no object that is an instance of both
 	types. Formally, the disjointness of types is specified by the following set of rules. (Some
 	of these rules reference definitions given
-	in <a href="Limited_Types#MARKER-9-710"><q>Limited Integer Types</q> on page
-	  74</a>, <a href="Element_Types#MARKER-9-1051"><q>Element Types</q> on page 124</a>
-	and <a href="Limited_Collection_Types#MARKER-9-1060"><q>Limited Collection Types</q> on page
+	in <a href="Limited_Types#XREF-710"><q>Limited Integer Types</q> on page
+	  74</a>, <a href="Element_Types#XREF-1051"><q>Element Types</q> on page 124</a>
+	and <a href="Limited_Collection_Types#XREF-1060"><q>Limited Collection Types</q> on page
 	  126</a>.)</p>
       <ul>
-	<li>Two <a name="MARKER-2-554"></a>classes are disjoint if they have no common
+	<li>Two <a name="IX-554"></a>classes are disjoint if they have no common
 	  subclasses.</li>
-	<li>A <a name="MARKER-2-555"></a>union type is disjoint from another type if all of the
+	<li>A <a name="IX-555"></a>union type is disjoint from another type if all of the
 	  union type's component types are disjoint from that other type.</li>
-	<li>A <a name="MARKER-2-556"></a>singleton type is disjoint from another type if the
+	<li>A <a name="IX-556"></a>singleton type is disjoint from another type if the
 	  singleton's object is not an instance of that other type.</li>
-	<li>A <a name="MARKER-2-557"></a>limited collection type is disjoint from a class if their
+	<li>A <a name="IX-557"></a>limited collection type is disjoint from a class if their
 	  base types are disjoint, or the class is a subclass of <code>&lt;collection&gt;</code> and
 	  its element type is definite and not equivalent to the limited collection type's element
 	  type, or the class is a subclass of <code>&lt;collection&gt;</code> and its element type
@@ -243,7 +243,7 @@
 	<li>A limited integer type is disjoint from a class if their base types are disjoint or the
 	  class is a subclass of <code>&lt;integer&gt;</code> whose range is disjoint from the
 	  limited integer type's range.
-	  <a name="MARKER-2-558"></a><a name="MARKER-2-559"></a><a name="MARKER-2-560"></a></li>
+	  <a name="IX-558"></a><a name="IX-559"></a><a name="IX-560"></a></li>
       </ul>
 
     </div>

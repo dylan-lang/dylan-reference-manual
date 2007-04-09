@@ -93,9 +93,9 @@
 		<li><a href="Macros_Overview">Overview</a></li>
 		<li id="current" class="subsections"><span>Extensible Grammar</span>
 		  <ul class="page-TOC">
-		    <li><a href="#HEADING78-2">Definition Macros</a></li>
-		    <li><a href="#HEADING78-9">Statement Macros</a></li>
-		    <li><a href="#HEADING78-13">Function Macros</a></li>
+		    <li><a href="#HEADING-78-2">Definition Macros</a></li>
+		    <li><a href="#HEADING-78-9">Statement Macros</a></li>
+		    <li><a href="#HEADING-78-13">Function Macros</a></li>
 		  </ul>
 		</li>
 		<li><a href="Macro_Names">Macro Names</a></li>
@@ -138,20 +138,20 @@
 	<p id="section-name">Macros</p>
       </div>
 
-      <a name="HEADING78-0"></a>
+      <a name="HEADING-78-0"></a>
       <a name="UID-Macros-1543"></a>
       <h1 class="section-title">Extensible Grammar</h1>
-      <p><a name="MARKER-2-1210"></a><a name="MARKER-2-1211"></a>There are three kinds of macros:
+      <p><a name="IX-1210"></a><a name="IX-1211"></a>There are three kinds of macros:
 	definition macros, which extend the available set of
-	definitions; <a name="MARKER-2-1212"></a>statement macros, which extend the available set of
-	statements; and <a name="MARKER-2-1213"></a>function macros, which syntactically resemble
-	function calls but are more flexible. <a name="MARKER-2-1214"></a>Named value references
-	and <a name="MARKER-2-1215"></a>local declarations cannot be macro calls. Only statements,
+	definitions; <a name="IX-1212"></a>statement macros, which extend the available set of
+	statements; and <a name="IX-1213"></a>function macros, which syntactically resemble
+	function calls but are more flexible. <a name="IX-1214"></a>Named value references
+	and <a name="IX-1215"></a>local declarations cannot be macro calls. Only statements,
 	function calls, and definitions are extensible.</p>
-      <a name="HEADING78-2"></a>
+      <a name="HEADING-78-2"></a>
       <a name="UID-Macros-1546"></a>
       <h2 class="subsection-title">Definition Macros</h2>
-      <p><a name="MARKER-2-1216"></a>A definition macro extends
+      <p><a name="IX-1216"></a>A definition macro extends
 	the <var>definition-macro-call </var>production of the Dylan phrase grammar to recognize
 	additional constructs as valid definitions, by creating a
 	new <em class="BNFCaps">define-body-word</em> that is recognized by the following grammar
@@ -177,11 +177,11 @@
 	module where the macro definition is visible. In particular
 	a <em class="BNFCaps">define-body-word</em> or <em class="BNFCaps">define-list-word</em>
 	cannot be used as a modifier in a definition. It can still be used as a
-	variable-name.<a name="MARKER-2-1217"></a></p>
-      <a name="HEADING78-9"></a>
+	variable-name.<a name="IX-1217"></a></p>
+      <a name="HEADING-78-9"></a>
       <a name="UID-Macros-1562"></a>
       <h2 class="subsection-title">Statement Macros</h2>
-      <p><a name="MARKER-2-1218"></a>A statement macro extends the <var>statement</var> production
+      <p><a name="IX-1218"></a>A statement macro extends the <var>statement</var> production
 	of the Dylan phrase grammar to recognize additional constructs as valid statements by
 	creating a new <em class="BNFCaps">begin-word</em> that is recognized by the following
 	grammar line:</p>
@@ -193,11 +193,11 @@
       </dl>
       <p>The new <em class="BNFCaps">begin-word</em> becomes a reserved word in each module where
 	the macro definition is visible. It can only be used at the beginning and end of this new
-	statement.<a name="MARKER-2-1219"></a></p>
-      <a name="HEADING78-13"></a>
+	statement.<a name="IX-1219"></a></p>
+      <a name="HEADING-78-13"></a>
       <a name="UID-Macros-1569"></a>
       <h2 class="subsection-title">Function Macros</h2>
-      <p><a name="MARKER-2-1220"></a>A function macro extends the <var>function-macro-call</var>
+      <p><a name="IX-1220"></a>A function macro extends the <var>function-macro-call</var>
 	production of the Dylan phrase grammar to recognize additional constructs by creating a
 	new <em class="BNFCaps">function-word</em> that is recognized by the following grammar
 	line:</p>
@@ -209,10 +209,10 @@
       </dl>
       <p>In addition, a function macro can be invoked by any of the shorthand syntax constructs
 	available for invoking functions. In this case, the arguments are always parsed expression
-	fragments, as described on <a href="Macros_Overview#MARKER-9-1199">page 146</a>.</p>
+	fragments, as described on <a href="Macros_Overview#XREF-1199">page 146</a>.</p>
       <p>The new <em class="BNFCaps">function-word</em> becomes a reserved word in each module where
 	the macro definition is visible. It can only be used at the beginning of a macro
-	call.<a name="MARKER-2-1221"></a><a name="MARKER-2-1222"></a></p>
+	call.<a name="IX-1221"></a><a name="IX-1222"></a></p>
 
     </div>
 

@@ -137,12 +137,12 @@
 	<p id="section-name">Syntax</p>
       </div>
 
-      <a name="HEADING16-0"></a>
+      <a name="HEADING-16-0"></a>
       <a name="UID-Syntax-1450"></a>
       <h1 class="section-title">Local Declarations</h1>
-      <p>A <dfn id="MARKER-2-238">local declaration</dfn> is a construct that
-	establishes <a name="MARKER-2-239"></a>local bindings
-	or <a name="MARKER-2-240"></a>condition handlers whose scope is the remainder of the body
+      <p>A <dfn id="IX-238">local declaration</dfn> is a construct that
+	establishes <a name="IX-239"></a>local bindings
+	or <a name="IX-240"></a>condition handlers whose scope is the remainder of the body
 	following the local declaration.</p>
       <p>Unlike module bindings, local bindings are established during program execution, each time
 	the local declaration is executed. They persist for as long as code in their scope is
@@ -153,17 +153,17 @@
 	assignment within that scope, the local binding is effectively constant.</p>
       <p>A local binding shadows any module binding with the same name and any surrounding local
 	binding with the same name. The innermost binding is the one referenced.</p>
-      <p><a name="MARKER-2-241"></a>Macros cannot be shadowed. Hence, the name of a local binding
+      <p><a name="IX-241"></a>Macros cannot be shadowed. Hence, the name of a local binding
 	cannot be the name of a macro.</p>
       <p>There are three kinds of local declaration: local value bindings (<code>let</code>), local
 	method bindings (<code>local</code>), and condition handler establishment (<code>let
 	  handler</code>).</p>
-      <p>The <dfn id="MARKER-2-242">local value bindings</dfn> construct, <code>let</code>, executes
+      <p>The <dfn id="IX-242">local value bindings</dfn> construct, <code>let</code>, executes
 	an expression and locally binds names to the values returned by that expression.</p>
-      <p>The <dfn id="MARKER-2-243">local method bindings</dfn> construct, <code>local</code>,
+      <p>The <dfn id="IX-243">local method bindings</dfn> construct, <code>local</code>,
 	locally binds names to bare methods. These bindings are visible in the remainder of the body
 	and also inside the methods, permitting recursion.</p>
-      <p>The <dfn id="MARKER-2-244">condition handler establishing</dfn> construct,
+      <p>The <dfn id="IX-244">condition handler establishing</dfn> construct,
 	<code>let handler</code>, establishes a function to be called if a condition of a given type
 	is signaled during the execution of the remainder of the body or anything the body
 	calls. The handler is disestablished as soon as the body returns. Unlike the other two kinds

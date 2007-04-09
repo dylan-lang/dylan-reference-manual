@@ -90,7 +90,7 @@
 	      <ul class="sections">
 		<li id="current" class="subsections"><span>Overview</span>
 		  <ul class="page-TOC">
-		    <li><a href="#HEADING60-4">The Iteration Protocol</a></li>
+		    <li><a href="#HEADING-60-4">The Iteration Protocol</a></li>
 		  </ul>
 		</li>
 		<li><a href="Collection_Keys">Collection Keys</a></li>
@@ -136,54 +136,54 @@
 	<p id="section-name">Collections</p>
       </div>
 
-      <a name="HEADING60-0"></a>
+      <a name="HEADING-60-0"></a>
       <a name="UID-Collections-2757"></a>
       <h1 class="section-title">Overview</h1>
-      <p><a name="MARKER-2-983"></a>Collections are aggregate <a name="MARKER-2-984"></a>data
-	structures that map from <dfn id="MARKER-2-985">keys</dfn>
-	to <dfn id="MARKER-2-986">elements</dfn>. All collections are instances of the
-	class <code id="MARKER-2-987">&lt;collection&gt;</code>.</p>
+      <p><a name="IX-983"></a>Collections are aggregate <a name="IX-984"></a>data
+	structures that map from <dfn id="IX-985">keys</dfn>
+	to <dfn id="IX-986">elements</dfn>. All collections are instances of the
+	class <code id="IX-987">&lt;collection&gt;</code>.</p>
       <p><code>&lt;collection&gt;</code> has two covering
-	subclasses: <code id="MARKER-2-988">&lt;sequence&gt;</code>
-	and <code id="MARKER-2-989">&lt;explicit-key-collection&gt;</code>. Every concrete subclass
+	subclasses: <code id="IX-988">&lt;sequence&gt;</code>
+	and <code id="IX-989">&lt;explicit-key-collection&gt;</code>. Every concrete subclass
 	of <code>&lt;collection&gt;</code> must also be a subclass of <code>&lt;sequence&gt;</code>
-	or <code>&lt;explicit-key-collection&gt;</code>. <dfn id="MARKER-2-990">Sequences</dfn> use
-	successive non-negative integers as keys; <dfn id="MARKER-2-991">explicit key
+	or <code>&lt;explicit-key-collection&gt;</code>. <dfn id="IX-990">Sequences</dfn> use
+	successive non-negative integers as keys; <dfn id="IX-991">explicit key
 	  collections</dfn> may use any object as a key. Both of these classes have predefined
 	subclasses and may be additionally subclassed by
-	programmers. See <a href="Collection_Classes#MARKER-9-1398"><q>Collections</q> on page
+	programmers. See <a href="Collection_Classes#XREF-1398"><q>Collections</q> on page
 	  206</a> for a complete description of these classes.</p>
       <p>A large number of functions are available on collections, including functions for
 	iteration, mapping, random access of elements, sorting, filtering,
-	etc. See <a href="Collection_Operations#MARKER-9-1696"><q>Collection Operations</q> on page
+	etc. See <a href="Collection_Operations#XREF-1696"><q>Collection Operations</q> on page
 	  294</a> for a complete description of these functions.</p>
-      <a name="HEADING60-4"></a>
+      <a name="HEADING-60-4"></a>
       <a name="UID-Collections-6197"></a>
       <h2 class="subsection-title">The Iteration Protocol</h2>
-      <p><a name="MARKER-2-992"></a>All collections implement an <dfn>iteration protocol</dfn> that
+      <p><a name="IX-992"></a>All collections implement an <dfn>iteration protocol</dfn> that
 	allows iteration to be specified abstractly. Many higher level operations on collections can
 	be defined in terms of only the iteration protocol. For many programs these higher level
 	operations are sufficient; they will not need to use the iteration protocol directly. The
 	iteration protocol is used by programs defining new collection types, and for certain types
 	of iteration that cannot be handled by the built-in higher level operations.</p>
-      <p>The iteration protocol centers on the notion of a <q><a name="MARKER-2-993"></a>state</q>
+      <p>The iteration protocol centers on the notion of a <q><a name="IX-993"></a>state</q>
 	object for an iteration. Each collection class chooses its own most appropriate
 	representation for an iteration state, and only the functions of the iteration protocol are
 	affected by this choice.</p>
-      <p><a name="MARKER-2-994"></a>Use of the iteration protocol is based on the assumption that
+      <p><a name="IX-994"></a>Use of the iteration protocol is based on the assumption that
 	the collection over which iteration occurs remains static for the duration of the
 	iteration. That is, arbitrary changes to a mutable collection while an iteration is in
 	progress may cause the iteration to produce unpredictable results.</p>
       <p>With notable exceptions, two or more iterations over the same collection are not guaranteed
 	to produce the same values in the same order, even if the collection is unaltered. For
-	details, see <a href="Iteration_Stability_and_Natural_Order#MARKER-9-1001"><q>Iteration
+	details, see <a href="Iteration_Stability_and_Natural_Order#XREF-1001"><q>Iteration
 	    Stability and Natural Order</q></a> as follows.</p>
       <p>The built-in collection functions are implemented in terms of the iteration protocol. When
 	defining a new collection class, a programmer need only define the iteration protocol for
 	the class. Once this is done, instances of the class can be used with all the built-in
 	collection functions. Of course, in some cases it will be more efficient to define methods
 	on these functions optimized for the new class, rather than relying on the default
-	implementation based on the iteration protocol.<a name="MARKER-2-995"></a></p>
+	implementation based on the iteration protocol.<a name="IX-995"></a></p>
 
     </div>
 

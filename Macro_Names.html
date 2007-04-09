@@ -132,51 +132,51 @@
 	<p id="section-name">Macros</p>
       </div>
 
-      <a name="HEADING79-0"></a>
+      <a name="HEADING-79-0"></a>
       <a name="UID-Macros-1593"></a>
       <h1 class="section-title">Macro Names</h1>
-      <p><a name="MARKER-2-1223"></a>A macro is named by a <a name="MARKER-2-1224"></a>constant
+      <p><a name="IX-1223"></a>A macro is named by a <a name="IX-1224"></a>constant
 	module binding. The macro is available to be called in any scope where this binding is
-	accessible. <a name="MARKER-2-1225"></a>Macro names can be exported and can be renamed
+	accessible. <a name="IX-1225"></a>Macro names can be exported and can be renamed
 	during module importing just like any other module binding. Macro bindings are constant and
 	cannot be changed by the assignment operator <code>:=</code>.</p>
       <p>The name bound to a definition macro is the
 	macro's <em class="BNFCaps">define-body-word</em>
 	or <em class="BNFCaps">define-list-word</em> suffixed
-	by <q><code id="MARKER-2-1226">-definer</code></q>. This suffixing convention is analogous
+	by <q><code id="IX-1226">-definer</code></q>. This suffixing convention is analogous
 	to the naming convention for setters and allows
 	the <em class="BNFCaps">define-body-word</em> or <em class="BNFCaps">define-list-word</em>
 	to be used for another purpose. The name bound to a statement macro is the
 	macro's <em class="BNFCaps">begin-word</em>. The name bound to a function macro is the
 	macro's <em class="BNFCaps">function-word</em>.</p>
-      <p>A <a name="MARKER-2-1227"></a>named value reference is not allowed when the value of the
+      <p>A <a name="IX-1227"></a>named value reference is not allowed when the value of the
 	binding is a macro, because macros are not run-time objects.</p>
       <p>A macro cannot be named by a local binding. Macro definitions are always scoped to
 	modules.</p>
-      <p>Attempting to create a <a name="MARKER-2-1228"></a>local binding that shadows a binding to
+      <p>Attempting to create a <a name="IX-1228"></a>local binding that shadows a binding to
 	a macro is an error.</p>
-      <p><a name="MARKER-2-1229"></a>Reserved words created by a macro definition are reserved in
+      <p><a name="IX-1229"></a>Reserved words created by a macro definition are reserved in
 	any module where the binding that names the macro is accessible. In other modules, the same
 	words are ordinary names. Each module has an associated syntax table used when parsing code
 	associated with that module. The syntax table controls the lexical analyzer's assignment of
 	names to the <em class="BNFCaps">define-body-word</em>,
 	<em class="BNFCaps">define-list-word</em>, <em class="BNFCaps">begin-word</em>,
-	and <em class="BNFCaps">function-word</em> categories. <a name="MARKER-2-1230"></a>Importing
+	and <em class="BNFCaps">function-word</em> categories. <a name="IX-1230"></a>Importing
 	a macro into a module makes the same modifications to that module's syntax table that would
 	be made by defining that macro in the module. If a definition macro is renamed when it is
 	imported, the <em class="BNFCaps">define-body-word</em>
 	or <em class="BNFCaps">define-list-word</em> derives from the new name. If the new name does
 	not end in <q><code>-definer</code></q>, the imported macro cannot be called.</p>
       <p>A <em class="BNFCaps">name</em> or <em class="BNFCaps">unreserved-name</em> in the lexical
-	grammar can be a <a name="MARKER-2-1231"></a>backslash ('<code>\</code>') character followed
+	grammar can be a <a name="IX-1231"></a>backslash ('<code>\</code>') character followed
 	by a word. This prevents the word from being recognized as a reserved word during parsing,
 	but does not change which binding the word names. Quoting the name of a statement or
 	function macro with a backslash allows the name to be mentioned without calling the macro,
 	for example to export it from a module.</p>
       <p>When a binding that names a macro is exported from a module that is exported from a
 	library, clients of that library can call the macro. Information derived from the macro
-	definition goes into the <a name="MARKER-2-1232"></a>library export information part of the
-	library description.<a name="MARKER-2-1233"></a></p>
+	definition goes into the <a name="IX-1232"></a>library export information part of the
+	library description.<a name="IX-1233"></a></p>
 
     </div>
 
