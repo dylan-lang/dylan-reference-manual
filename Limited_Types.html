@@ -151,21 +151,19 @@
       </p>
       <a name="HEADING-46-3"></a>
       <a name="UID-Types_and_Classes-3852"></a>
-      <h2 class="subsection-title">Limited Type Constructor</h2>
-      <p><a name="IX-708"></a>Limited types are created with the generic
-	function <code id="IX-709">limited</code>. The first argument to limited is a
-	class. Depending on the class, additional keyword arguments are allowed to specify the
-	constraints of the limited type.</p>
+      <h2 class="subsection-title"><a name="IX-708">Limited Type Constructor</a></h2>
+      <p>Limited types are created with the generic function <code id="IX-709">limited</code>. The
+	first argument to limited is a class. Depending on the class, additional keyword arguments
+	are allowed to specify the constraints of the limited type.</p>
       <p>Not all classes support <code>limited</code>; the methods for <code>limited</code> are
 	documented individually beginning
 	on <a href="Constructing_and_Initializing_Instances#XREF-1559">page 263</a>.</p>
       <a name="HEADING-46-6"></a>
       <a name="UID-Types_and_Classes-3861"></a>
-      <h2 class="subsection-title"><a name="XREF-710"></a>Limited Integer Types</h2>
-      <p><a name="IX-711"></a>Limited integer types are subtypes
-	of <code id="IX-712">&lt;integer&gt;</code> containing integers that fall within a
-	specifed range. The range is specified by <code>min:</code> and <code>max:</code> keyword
-	arguments to <code>limited</code>.</p>
+      <h2 class="subsection-title"><a name="XREF-710"></a><a name="IX-711">Limited Integer Types</a></h2>
+      <p>Limited integer types are subtypes of <code id="IX-712">&lt;integer&gt;</code> containing
+	integers that fall within a specifed range. The range is specified by <code>min:</code>
+	and <code>max:</code> keyword arguments to <code>limited</code>.</p>
       <p>For example:</p>
       <pre>
 // accepts integers between -1000 and 1000 inclusive.
@@ -179,9 +177,9 @@ define method f (x :: limited(&lt;integer&gt;, min: 1))
   &hellip;
   end method f;</pre>
       <a name="HEADING-46-11"></a>
-      <h3 class="sub-subsection-title">Limited Integer Type Protocol</h3>
-      <p><a name="IX-713"></a>If <var>w</var>, <var>x</var>, <var>y</var>, and <var>z</var>
-	are integers, the following equivalences hold:</p>
+      <h3 class="sub-subsection-title"><a name="IX-713">Limited Integer Type Protocol</a></h3>
+      <p>If <var>w</var>, <var>x</var>, <var>y</var>, and <var>z</var> are integers, the following
+	equivalences hold:</p>
       <ul>
 	<li><code>instance?(<var>x</var>, limited(&lt;integer&gt;, min: <var>y</var>,
 	    max: <var>z</var>))</code> will be true if and only if <code>instance?(<var>x</var>,
@@ -204,11 +202,10 @@ define method f (x :: limited(&lt;integer&gt;, min: 1))
       </ul>
       <a name="HEADING-46-19"></a>
       <a name="UID-Types_and_Classes-3901"></a>
-      <h2 class="subsection-title">Limited Collection Types</h2>
-      <p><a name="IX-716"></a>Limited collection types are subtypes
-	of <code id="IX-717">&lt;collection&gt;</code> (and of subclasses
-	of <code>&lt;collection&gt;</code>) that are constrained to be a specified size and/or to
-	contain elements of a specified type.</p>
+      <h2 class="subsection-title"><a name="IX-716">Limited Collection Types</a></h2>
+      <p>Limited collection types are subtypes of <code id="IX-717">&lt;collection&gt;</code> (and
+	of subclasses of <code>&lt;collection&gt;</code>) that are constrained to be a specified
+	size and/or to contain elements of a specified type.</p>
       <p>A complete description of limited collection types is given
 	in <a href="Limited_Collection_Types#XREF-1060"><q>Limited Collection Types</q> on page
 	  126</a> in <a href="Collections">Chapter

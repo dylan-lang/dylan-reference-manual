@@ -134,18 +134,17 @@
 
       <a name="HEADING-83-0"></a>
       <a name="UID-Macros-1805"></a>
-      <h1 class="section-title">Templates</h1>
-      <p><a name="IX-1262"></a>Approximately speaking, a template has the same structure as
-	what it constructs, but contains pattern variables that will be replaced by fragments
-	extracted from the macro call. Thus a template in the <var>main-rule-set</var> looks like
-	the macro expansion.</p>
+      <h1 class="section-title"><a name="IX-1262">Templates</a></h1>
+      <p>Approximately speaking, a template has the same structure as what it constructs, but
+	contains pattern variables that will be replaced by fragments extracted from the macro
+	call. Thus a template in the <var>main-rule-set</var> looks like the macro expansion.</p>
       <p>However, templates do not have a full grammar. A template is essentially any sequence of
 	tokens and <var>substitutions</var> in which all of Dylan's brackets are
 	balanced: <code>()</code>, <code>[]</code>, <code>{}</code>, <code>#()</code>,
 	and <code>#[]</code>. Substitution for pattern variables produces a sequence of tokens and
 	other elementary fragments.</p>
-      <p><a name="IX-1263"></a>Note that using unparsed token sequences as templates allows a
-	macro expansion to contain macro calls without creating any inter-dependencies between
+      <p>Note that using unparsed token sequences as templates <a name="IX-1263">allows a macro
+	expansion to contain macro calls</a> without creating any inter-dependencies between
 	macros. Since the template is not parsed at macro definition time, any macros called in the
 	template do not have to be defined first, and macros can be compiled independently of each
 	other. This simplifies the implementation at the minor cost of deferring some error checking

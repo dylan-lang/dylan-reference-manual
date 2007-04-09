@@ -139,11 +139,11 @@
 
       <a name="HEADING-20-0"></a>
       <a name="UID-Syntax-1520"></a>
-      <h1 class="section-title"><a name="IX-275"></a>Lexical Syntax</h1>
-      <p>Dylan source code is a sequence of tokens. <a name="IX-276"></a>Whitespace is
-	required between tokens if the tokens would otherwise blend together. Whitespace is optional
-	between self-delimiting tokens. Alphabetic case is not significant except within character
-	and string literals.</p>
+      <h1 class="section-title"><a name="IX-275">Lexical Syntax</a></h1>
+      <p>Dylan source code is a sequence of tokens. <a name="IX-276">Whitespace is required between
+	tokens if the tokens would otherwise blend together.</a> Whitespace is optional between
+	self-delimiting tokens. Alphabetic case is not significant except within character and
+	string literals.</p>
       <p><dfn id="IX-277">Whitespace</dfn> can be a space character, a tab character, a
 	newline character, or a comment. Implementations can define additional whitespace
 	characters.</p>
@@ -226,7 +226,7 @@
 	character or character code. A backslash escape sequence in character and string literals
 	allows quoting of the special characters ', &quot;, and \, provides names for control
 	characters, and allows Unicode characters to be specified by their hexadecimal codes.</p>
-      <p>The <a name="IX-298"></a>control characters are:</p>
+      <p>The <a name="IX-298">control characters</a> are:</p>
       <table>
 	<tr><td><code>a</code></td><td>alarm</td></tr>
 	<tr><td><code>b</code></td><td>backspace</td></tr>
@@ -237,8 +237,8 @@
 	<tr><td><code>t</code></td><td>tab</td></tr>
 	<tr><td><code>0</code></td><td>null</td></tr>
       </table>
-      <p><a name="IX-299"></a>Unicode characters are represented by a series of hexadecimal
-	digits enclosed in angle brackets. If Unicode does not explicitly define the character
+      <p><a name="IX-299">Unicode characters are represented by a series of hexadecimal digits
+	enclosed in angle brackets.</a> If Unicode does not explicitly define the character
 	represented by the hexadecimal digits, the meaning in Dylan is undefined. If an
 	implementation is not able to represent the entire Unicode character set, and the number
 	specifies a character that is not representable in the implementation, an error must be
@@ -267,8 +267,8 @@
       </table>
       <p>Note that some tokens are both punctuation and operators. This ambiguity is resolved by
 	grammatical context.</p>
-      <p><a name="IX-304"></a>Note also that some punctuation tokens (for example, period and
-	equal sign) are capable of blending into some other tokens. Where this can occur, whitespace
+      <p><a name="IX-304">Note also that some punctuation tokens (for example, period and equal
+	sign) are capable of blending into some other tokens.</a> Where this can occur, whitespace
 	must be inserted to delimit the token boundary.<a name="IX-305"></a></p>
 
     </div>

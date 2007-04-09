@@ -137,48 +137,48 @@
 
       <a name="HEADING-37-0"></a>
       <a name="UID-Program_Control-1422"></a>
-      <h1 class="section-title"><a name="IX-484"></a><a name="XREF-485"></a>Order of Execution</h1>
-      <p>Order of execution is defined for the <a name="IX-486"></a>constituents within a
+      <h1 class="section-title"><a name="XREF-485"></a><a name="IX-484">Order of Execution</a></h1>
+      <p>Order of execution is defined for the <a name="IX-486">constituents</a> within a
 	body. With some exceptions noted below, this execution order is left-to-right.</p>
-      <p><a name="IX-487"></a>Definitions form the overall structure of a program and are not
-	said to execute. In particular, module bindings are not created in any order, but all exist
+      <p><a name="IX-487">Definitions form the overall structure of a program and are not
+	said to execute.</a> In particular, module bindings are not created in any order, but all exist
 	when program execution commences. To the extent that these bindings must be initialized by
 	the values of some expressions that cannot be analyzed at compile time, references to the
 	bindings are constrained by the execution order of the expressions within the surrounding
 	body.</p>
-      <p><a name="IX-488"></a>Dylan implementations are encouraged to allow forward references
+      <p>Dylan implementations are encouraged to allow <a name="IX-488">forward references</a>
 	to module bindings whenever possible.</p>
       <p>The order of execution of the components of a call to a user-defined macro is determined by
 	the macro.</p>
       <a name="HEADING-37-5"></a>
       <a name="UID-Program_Control-3893"></a>
-      <h2 class="subsection-title"><a name="IX-489"></a>Execution Order Within Expressions</h2>
+      <h2 class="subsection-title"><a name="IX-489">Execution Order Within Expressions</a></h2>
       <p>In general, execution within an expression proceeds left-to-right. The chief exception to
-	this rule is the <a name="IX-490"></a>assignment operator, which is executed
+	this rule is the <a name="IX-490">assignment operator</a>, which is executed
 	right-to-left.</p>
       <ul>
-	<li><a name="IX-491"></a>In a standard function call, the function operand is executed
-	  first, followed by the argument expressions. (Remember, the function need not be a named
+	<li><a name="IX-491">In a standard function call, the function operand is executed
+	  first, followed by the argument expressions.</a> (Remember, the function need not be a named
 	  value reference, but can be a more complex operand). After the function operand has been
 	  executed and each of the argument expressions has been executed, the function is applied
 	  to the arguments.
 	  <pre class="code">
 one(two, three, four) </pre>
 	</li>
-	<li><a name="IX-492"></a>In slot references, the object operand is executed first,
-	  followed by the function named value reference. Then the function is applied to the
+	<li><a name="IX-492">In slot references, the object operand is executed first,
+	  followed by the function named value reference.</a> Then the function is applied to the
 	  object.
 	  <pre class="code">
 one.two </pre>
 	</li>
-	<li><a name="IX-493"></a>In element references, the collection operand is executed
-	  first, followed by the key expressions in order. Then the element access is performed. The
+	<li><a name="IX-493">In element references, the collection operand is executed
+	  first, followed by the key expressions in order.</a> Then the element access is performed. The
 	  execution time of the binding <code>element</code> or <code>aref</code> is unspecified.
 	  <pre class="code">
 one[two, three] </pre>
 	</li>
-	<li><a name="IX-494"></a>In an operator call, the operands are executed
-	  left-to-right. The execution time of the binding specified by the operator
+	<li><a name="IX-494">In an operator call, the operands are executed
+	  left-to-right.</a> The execution time of the binding specified by the operator
 	  (e.g. <code>+</code> or <code>*</code>) is unspecified.
 	  <pre class="code">
 one + two - three </pre>

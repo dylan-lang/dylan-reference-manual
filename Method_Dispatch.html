@@ -132,28 +132,28 @@
 
       <a name="HEADING-50-0"></a>
       <a name="UID-Functions-2196"></a>
-      <h1 class="section-title"><a name="XREF-844"></a>Method Dispatch</h1>
-      <p><a name="IX-845"></a>When a <a name="IX-846"></a>generic function is called,
-	the generic function uses the types of the arguments to determine which methods to
-	call. This process is called <dfn>method dispatch</dfn>.</p>
+      <h1 class="section-title"><a name="XREF-844"></a><a name="IX-845">Method Dispatch</a></h1>
+      <p>When a <a name="IX-846">generic function is called</a>, the generic function uses the types
+	of the arguments to determine which methods to call. This process is called <dfn>method
+	dispatch</dfn>.</p>
       <p>Method dispatch occurs in three phases. First, all
-	the <a name="IX-847"></a><a name="IX-848"></a>applicable methods are
-	selected. Next, the applicable methods are sorted by specificity. Finally, the most specific
-	method is called.</p>
+	the <a name="IX-848"></a><a name="IX-847">applicable methods</a> are selected. Next, the
+	applicable methods are sorted by specificity. Finally, the most specific method is
+	called.</p>
       <a name="HEADING-50-3"></a>
-      <h3 class="sub-subsection-title"><a name="XREF-849"></a>Method Specificity</h3>
-      <p><a name="IX-850"></a>For any two methods <var>A</var> and <var>B</var> that are
-	applicable to a given generic function call, one method may be <dfn>more specific than</dfn>
-	the other, or the methods may be <dfn id="IX-851">ambiguous methods</dfn>.</p>
+      <h3 class="sub-subsection-title"><a name="XREF-849"></a><a name="IX-850">Method Specificity</a></h3>
+      <p>For any two methods <var>A</var> and <var>B</var> that are applicable to a given generic
+	function call, one method may be <dfn>more specific than</dfn> the other, or the methods may
+	be <dfn id="IX-851">ambiguous methods</dfn>.</p>
       <p>To order two methods <var>A</var> and <var>B</var> with respect to a particular set of
 	arguments, compare each of <var>A</var>'s specializers with <var>B</var>'s specializer in
 	the corresponding position using the argument that was supplied for that position. The
 	comparison works in the following way.</p>
       <ul>
-	<li><a name="IX-852"></a><a name="IX-853"></a>If the specializers are type
-	  equivalent, then <var>A</var> and <var>B</var> are unordered at the current argument
-	  position. That is, this argument position provides no information about the order of the
-	  two methods.</li>
+	<li>If the specializers are <a name="IX-852">type equivalent</a>, then <var>A</var>
+	  and <var>B</var> are <a name="IX-853">unordered</a> at the current argument position. That
+	  is, this argument position provides no information about the order of the two
+	  methods.</li>
 	<li>Otherwise, if the specializer of <var>A</var> is a subtype of the specializer
 	  of <var>B</var>, then <var>A</var> precedes <var>B</var> at the current argument
 	  position.</li>
@@ -171,14 +171,13 @@
 	if <var>B</var> precedes <var>A</var> in at least one argument position, and <var>A</var>
 	does not precede <var>B</var> in any argument position. If neither of these cases apply
 	then <var>A</var> and <var>B</var> are ambiguous methods.</p>
-      <p><a name="IX-855"></a>When the applicable methods are sorted by specificity, the
-	sorted list is divided into two parts, each possibly empty. The first part contains methods
-	that are more specific than every method that follows them. The second part (which cannot
-	itself be sorted) begins at the first point of ambiguity; there are at least two methods
-	that could equally well go first in the second part. When a generic function is called, if
-	the first part of the sorted applicable methods is empty then an error is
-	signaled. Similarly, if the last method in the first part attempts to call next-method, an
-	error is signaled.</p>
+      <p>When the applicable methods are <a name="IX-855">sorted by specificity</a>, the sorted list
+	is divided into two parts, each possibly empty. The first part contains methods that are
+	more specific than every method that follows them. The second part (which cannot itself be
+	sorted) begins at the first point of ambiguity; there are at least two methods that could
+	equally well go first in the second part. When a generic function is called, if the first
+	part of the sorted applicable methods is empty then an error is signaled. Similarly, if the
+	last method in the first part attempts to call next-method, an error is signaled.</p>
       <p>Consider the following class definitions:</p>
       <pre class="code">
 define class &lt;sentient&gt; (&lt;life-form&gt;) end class;
@@ -228,10 +227,10 @@ end method;
 	be called first, while calling the generic function on a being of
 	type <code>&lt;vulcan&gt;</code> would cause the method for <code>&lt;intelligent&gt;</code>
 	to be called first.</p>
-      <p><a name="IX-856"></a>The order of arguments is not significant when computing method
-	specificity. Given the above class definitions, the following methods are unambiguous when
-	their generic function is called on two beings of type <code>&lt;vulcan&gt; </code>or two
-	beings of type <code>&lt;human&gt;</code>, but the methods are ambiguous when the call
+      <p><a name="IX-856">The order of arguments is not significant when computing method
+	specificity.</a> Given the above class definitions, the following methods are unambiguous
+	when their generic function is called on two beings of type <code>&lt;vulcan&gt; </code>or
+	two beings of type <code>&lt;human&gt;</code>, but the methods are ambiguous when the call
 	includes one being of type <code>&lt;vulcan&gt; </code>and one of
 	type <code>&lt;human&gt;</code>.</p>
       <pre class="code">
@@ -247,14 +246,14 @@ define method superior-being (a :: &lt;humanoid&gt;,
 </pre>
       <a name="HEADING-50-32"></a>
       <a name="UID-Functions-2171"></a>
-      <h2 class="subsection-title"><a name="XREF-858"></a>Calling Less Specific Methods</h2>
-      <p><a name="IX-859"></a>In many situations, a subtype wants to modify the behavior of a
-	method, rather than replace it completely; it wants to perform some work but also use the
-	inherited behavior. This can be accomplished with <dfn>next-method</dfn>. Next-method is a
-	function that, when called, invokes the next most specific method applicable in the generic
-	function. The next-method is the value of the <code>#next</code> parameter. Normally this
-	parameter is named <code>next-method</code>, though it can have other names at the
-	programmer's discretion.</p>
+      <h2 class="subsection-title"><a name="XREF-858"></a><a name="IX-859">Calling Less Specific Methods</a></h2>
+      <p>In many situations, a subtype wants to modify the behavior of a method, rather than replace
+	it completely; it wants to perform some work but also use the inherited behavior. This can
+	be accomplished with <dfn>next-method</dfn>. Next-method is a function that, when called,
+	invokes the next most specific method applicable in the generic function. The next-method is
+	the value of the <code>#next</code> parameter. Normally this parameter is
+	named <code>next-method</code>, though it can have other names at the programmer's
+	discretion.</p>
       <p>One can think of next-method as invoking the method that would have been called if the
 	current method did not exist.</p>
       <p>If there are no more methods available, the next-method parameter will be bound to the
@@ -274,8 +273,8 @@ define method superior-being (a :: &lt;humanoid&gt;,
 	captured in the rest parameter. By using <code>apply</code>, the next-method can be invoked
 	with the complete set of arguments. (This technique is only necessary, of course, when the
 	method calls next-method and passes arguments explicitly.)</p>
-      <p><a name="IX-861"></a>As usual, if there are duplicates of a given keyword argument,
-	the leftmost occurrence is used. This allows keyword arguments to be easily overridden.</p>
+      <p>As usual, if there are <a name="IX-861">duplicates of a given keyword argument</a>, the
+	leftmost occurrence is used. This allows keyword arguments to be easily overridden.</p>
       <a name="HEADING-50-41"></a>
       <h3 class="sub-subsection-title">The Next-Method Parameter</h3>
       <p>The value of the next-method parameter is supplied by the generic function dispatch

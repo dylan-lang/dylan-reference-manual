@@ -137,15 +137,15 @@
 
       <a name="HEADING-42-0"></a>
       <a name="UID-Types_and_Classes-2625"></a>
-      <h1 class="section-title"><a name="IX-599"></a>Slots</h1>
+      <h1 class="section-title"><a name="IX-599">Slots</a></h1>
       <p>Slots are the interface to information about instances. They correspond to
-	the <a name="IX-600"></a>fields or instance variables of other object-oriented
+	the <a name="IX-600">fields or instance variables</a> of other object-oriented
 	programming languages. By default, each instance of the class has private storage for each
 	slot, so one instance can have one value in the slot and another instance can have another
 	value. Some slots are shared among instances, as described
 	in <a href="#XREF-629"><q>Slot Allocation</q> on page 60</a>.</p>
-      <p id="FOOTNOTE-ANCHOR-2"><a name="IX-601"></a>All slot access is performed by function
-	calls.<a rel="footnote" href="#FOOTNOTE-2" title="Footnote 2"><sup>*</sup></a> The method
+      <p id="FOOTNOTE-ANCHOR-2"><a name="IX-601">All slot access is performed by function
+	calls.</a><a rel="footnote" href="#FOOTNOTE-2" title="Footnote 2"><sup>*</sup></a> The method
 	that returns the value of a slot is called the <dfn id="IX-602">getter method</dfn>,
 	and the method that sets the value of a slot is called the <dfn id="IX-603">setter
 	  method</dfn>. The getter and setter methods are added to generic functions. When defining a
@@ -177,16 +177,16 @@ horizontal-setter(10, my-point)
 horizontal(my-point) := 10
 my-point.horizontal := 10
 </pre>
-      <p><a name="IX-604"></a>A slot setter method returns its new value argument.</p>
+      <p><a name="IX-604">A slot setter method returns its new value argument.</a></p>
       <a name="HEADING-42-11"></a>
       <a name="UID-Types_and_Classes-1861"></a>
-      <h2 class="subsection-title"><a name="IX-605"></a>Slot Inheritance</h2>
+      <h2 class="subsection-title"><a name="IX-605">Slot Inheritance</a></h2>
       <p>Slots are inherited from superclasses.</p>
       <p>The collection of all the getter and setter generic functions for slots specified in a
 	class or inherited from its superclasses must not contain any duplicates.</p>
-      <p><a name="IX-606"></a><a name="IX-607"></a>If a superclass is inherited through
-	multiple paths, its slots are inherited once. For example, if class <var>A</var> has direct
-	superclasses <var>B</var> and <var>C</var>, and both <var>B</var> and <var>C</var>
+      <p>If a superclass is <a name="IX-606">inherited through multiple paths</a>,
+	its <a name="IX-607">slots are inherited once</a>. For example, if class <var>A</var> has
+	direct superclasses <var>B</var> and <var>C</var>, and both <var>B</var> and <var>C</var>
 	have <var>D</var> as a direct superclass, <var>A</var> inherits from <var>D</var> both
 	through <var>B</var> and through <var>C</var>, but the slots defined by <var>D</var> are
 	only counted once. Because of this, multiple inheritance does not by itself create any
@@ -205,20 +205,19 @@ my-point.horizontal := 10
 	to the name of the getter.</p>
       <p>A number of other options are available in slot specifications:</p>
       <ul>
-	<li><a name="IX-612"></a>An initial value for the slot may be specified with
+	<li>An <a name="IX-612">initial value for the slot</a> may be specified with
 	  an <dfn id="IX-613">init specification</dfn>.</li>
-	<li><a name="IX-614"></a>An init-keyword may be specified. This allows a value for the
-	  slot to be supplied when an instance is created.</li>
-	<li><a name="IX-615"></a>Slot allocation may be specified. This controls whether
-	  storage for the slot is allocated in each instance, or some other way. </li>
-	<li><a name="IX-616"></a>A slot may be specifed as constant. There will be no setter
-	  for the slot.</li>
-	<li><a name="IX-617"></a>A type may be specified. The value of the slot will be
-	  constrained to be an instance of that type.</li>
-	<li><a name="IX-618"></a>A sealing directive may be
-	  specified. See <a href="Define_Sealed_Domain#XREF-1123"><q>Define Sealed Domain</q> on
-	    page 135</a> for a complete description of the sealing constraints imposed by this
-	  directive.</li>
+	<li><a name="IX-614">An init-keyword may be specified.</a> This allows a value for the slot
+	  to be supplied when an instance is created.</li>
+	<li><a name="IX-615">Slot allocation may be specified.</a> This controls whether storage for
+	  the slot is allocated in each instance, or some other way. </li>
+	<li><a name="IX-616">A slot may be specifed as constant.</a> There will be no setter for the
+	  slot.</li>
+	<li><a name="IX-617">A type may be specified.</a> The value of the slot will be constrained
+	  to be an instance of that type.</li>
+	<li><a name="IX-618">A sealing directive may be specified.</a>
+	  See <a href="Define_Sealed_Domain#XREF-1123"><q>Define Sealed Domain</q> on page 135</a>
+	  for a complete description of the sealing constraints imposed by this directive.</li>
       </ul>
       <p>For the complete syntax of slot specifications, see the reference entry of <code>define
 	  class</code> on <a href="Definition_Macros#XREF-2013">page 378</a>.</p>
@@ -232,7 +231,7 @@ define class &lt;window&gt; (&lt;view&gt;)
 end class &lt;window&gt;;
 </pre>
       <a name="HEADING-42-29"></a>
-      <h3 class="sub-subsection-title"><a name="IX-619"></a><a name="XREF-620"></a>Init Specifications</h3>
+      <h3 class="sub-subsection-title"><a name="IX-619"><a name="XREF-620"></a>Init Specifications</a></h3>
       <p>An init specification provides a default initial value for a slot. It can do this directly
 	(if it is an init specification of a slot) or it can do it indirectly by providing a default
 	value for an init-keyword (if it is an init specification of an init-keyword).</p>
@@ -254,7 +253,7 @@ end class &lt;window&gt;;
       <p>In general, an <var>init-function</var> will be called and an <var>init-expression</var>
 	will be executed only if its value will actually be used.<a name="IX-624"></a></p>
       <a name="HEADING-42-37"></a>
-      <h3 class="sub-subsection-title"><a name="IX-625"></a>Init-Keywords</h3>
+      <h3 class="sub-subsection-title"><a name="IX-625">Init-Keywords</a></h3>
       <p>An init-keyword allows the value of a slot to be specified by a keyword argument in the
 	call to <code>make</code> when an instance is created. An init-keyword may be optional or
 	required.</p>
@@ -263,7 +262,7 @@ end class &lt;window&gt;;
       <p>If an init-keyword is specified, the slot is said to be
 	<dfn id="IX-627">keyword initializable</dfn>.</p>
       <a name="HEADING-42-41"></a>
-      <h3 class="sub-subsection-title"><a name="IX-628"></a><a name="XREF-629"></a>Slot Allocation</h3>
+      <h3 class="sub-subsection-title"><a name="XREF-629"></a><a name="IX-628">Slot Allocation</a></h3>
       <p>Options for slot allocation include <code id="IX-630">instance</code>,
 	<code id="IX-631">class</code>, <code id="IX-632">each-subclass</code>,
 	and <code id="IX-633">virtual</code>.</p>
@@ -286,12 +285,12 @@ end class &lt;window&gt;;
 	be performed in a method
 	on <code id="IX-637">initialize</code>.<a name="IX-638"></a></p>
       <a name="HEADING-42-47"></a>
-      <h3 class="sub-subsection-title"><a name="IX-639"></a>Constant Slots</h3>
+      <h3 class="sub-subsection-title"><a name="IX-639">Constant Slots</a></h3>
       <p>Specifying a slot as constant is equivalent to specifying <code>setter: #f</code>. If the
 	constant adjective is supplied, it is an error to supply an explicit value for
 	the <code>setter:</code> keyword in the slot specification. Such slots can only be given
-	values at instance creation time (with an <a name="IX-640"></a>init specification
-	or <a name="IX-641"></a>init-keyword).</p>
+	values at instance creation time (with an <a name="IX-640">init specification</a>
+	or <a name="IX-641">init-keyword</a>).</p>
       <pre class="code">
 define class &lt;person&gt; (&lt;being&gt;)
   constant slot birthplace, required-init-keyword: birthplace:;
@@ -306,20 +305,20 @@ define class &lt;hair-trigger&gt; (&lt;object&gt;)
 end class &lt;hair-trigger&gt;;<a name="IX-642"></a>
 </pre>
       <a name="HEADING-42-52"></a>
-      <h3 class="sub-subsection-title"><a name="IX-643"></a>Specializing Slots</h3>
-      <p>Slots may be specialized by <a name="IX-644"></a>declaring the type of the slot when
+      <h3 class="sub-subsection-title"><a name="IX-643">Specializing Slots</a></h3>
+      <p>Slots may be specialized by <a name="IX-644">declaring the type of the slot</a> when
 	a class is created. Specializing a slot has the following effects on the getter and setter
 	methods of the slot:</p>
       <ul>
-	<li><a name="IX-645"></a>The automatically defined slot getter method has its single
+	<li>The automatically defined <a name="IX-645">slot getter method</a> has its single
 	  parameter specialized on the class that specified the slot and has
-	  a <a name="IX-646"></a>return value declaration that indicates that it returns a
-	  single value of the type specified for the slot.</li>
-	<li><a name="IX-647"></a>The automatically defined slot setter method has its instance
+	  a <a name="IX-646">return value declaration</a> that indicates that it returns a single
+	  value of the type specified for the slot.</li>
+	<li>The automatically defined <a name="IX-647">slot setter method</a> has its instance
 	  argument specialized on the class that specified the slot, has its new-value argument
-	  specialized on the type specified for the slot, and has
-	  a <a name="IX-648"></a>return value declaration that indicates that it returns a
-	  single value of the type specified for the slot.</li>
+	  specialized on the type specified for the slot, and has a <a name="IX-648">return value
+	  declaration</a> that indicates that it returns a single value of the type specified for
+	  the slot.</li>
       </ul>
       <p>The following example demonstrates how an explicitly defined setter method can be used to
 	coerce a slot value of the wrong type (<code>&lt;sequence&gt;</code>) to the right type
@@ -341,22 +340,21 @@ end class &lt;hair-trigger&gt;;<a name="IX-642"></a>
 	that is a <code>&lt;simple-object-vector&gt;</code>, which invokes the slot setter
 	method.<a name="IX-649"></a></p>
       <a name="HEADING-42-61"></a>
-      <h3 class="sub-subsection-title">Overriding Slots in Subclasses</h3>
-      <p><a name="IX-650"></a>Some slot options related to instance initialization can be
-	overridden in subclasses. The mechanisms for doing this are described
+      <h3 class="sub-subsection-title"><a name="IX-650">Overriding Slots in Subclasses</a></h3>
+      <p>Some slot options related to instance initialization can be overridden in subclasses. The
+	mechanisms for doing this are described
 	in <a href="Instance_Creation_and_Initialization#XREF-677"><q>Inherited Slot
-	    Specifications</q> on page 67</a> and
+	Specifications</q> on page 67</a> and
 	in <a href="Instance_Creation_and_Initialization#XREF-680"><q>Initialization Argument
-	    Specifications</q> on page 68</a>.</p>
+	Specifications</q> on page 68</a>.</p>
       <a name="HEADING-42-63"></a>
-      <h3 class="sub-subsection-title">Using Slots</h3>
-      <p><a name="IX-651"></a><a name="IX-652"></a>Because slots are accessed through
-	methods in generic functions, they appear to clients just like any other methods in generic
-	functions. It is possible for a value to be stored in a slot in instances of one class, but
-	computed from auxiliary values by instances of another class. <a name="IX-653"></a>It
-	is possible to filter the value of a slot when it is retrieved or stored. In all of these
-	cases, the interface to the value is a function call, thus hiding the implementation details
-	from clients.</p>
+      <h3 class="sub-subsection-title"><a name="IX-651">Using Slots</a></h3>
+      <p>Because slots are <a name="IX-652">accessed through methods in generic functions</a>, they
+	appear to clients just like any other methods in generic functions. It is possible for a
+	value to be stored in a slot in instances of one class, but computed from auxiliary values
+	by instances of another class. It is possible to <a name="IX-653">filter the value of a
+	slot</a> when it is retrieved or stored. In all of these cases, the interface to the value
+	is a function call, thus hiding the implementation details from clients.</p>
       <p>In the following example, the class <code>&lt;view&gt;</code> stores <code>position</code>
 	directly, while <code>&lt;displaced-view&gt;</code> performs a transformation on the value
 	of the slot when storing or retrieving it.</p>

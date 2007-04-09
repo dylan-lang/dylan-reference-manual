@@ -126,23 +126,23 @@
 
       <a name="HEADING-27-0"></a>
       <a name="UID-Program_Structure-1450"></a>
-      <h1 class="section-title"><a name="IX-391"></a>Libraries</h1>
+      <h1 class="section-title"><a name="IX-391">Libraries</a></h1>
       <p>A library consists of the following parts:</p>
       <ul>
-	<li>A <a name="IX-392"></a>library definition. This specifies a name for the library;
+	<li>A <a name="IX-392">library definition</a>. This specifies a name for the library;
 	  a set of modules that are exported from the library for use by other libraries; a set of
 	  other libraries that are used by the library being defined; and a set of modules that are
-	  imported from the used libraries. <a name="IX-393"></a>To allow separate
-	  compilation, library-use relationships may not be circular. A complete description of
+	  imported from the used libraries. <a name="IX-393">To allow separate
+	  compilation, library-use relationships may not be circular.</a> A complete description of
 	  library definitions is given on <a href="Definition_Macros#XREF-2020">page
 	  386</a>.</li>
-	<li>The association of <a name="IX-394"></a>source code with the library. The
+	<li>The association of <a name="IX-394">source code</a> with the library. The
 	  mechanism by which this association is made is controlled by the programming environment
 	  and is implementation-defined.</li>
 	<li>The association of executable code with the library. The mechanism by which this
 	  association is made is implementation-defined. The mechanism by which the compiler is
 	  invoked to produce the executable code is implementation-defined.</li>
-	<li><a name="IX-395"></a>The export information of the library. The format of this
+	<li><a name="IX-395">The export information of the library.</a> The format of this
 	  information and the mechanism by which it is associated with the library is
 	  implementation-defined. The export information comprises the information required to
 	  process the source code of another library that imports the library.
@@ -154,21 +154,21 @@
 	    exporting library and is retained in the library export information of the exporting
 	    library.</p></li>
       </ul>
-      <p class="Default"><a name="IX-396"></a>Exporting a module from a library makes all of
+      <p class="Default"><a name="IX-396">Exporting a module</a> from a library makes all of
 	the bindings exported by the module available for import by modules in other libraries.</p>
-      <p><a name="IX-397"></a>Importing a module into a library allows the module to be used
+      <p><a name="IX-397">Importing a module</a> into a library allows the module to be used
 	by modules defined within the library. This gives the library's modules access to the
 	bindings of the module being imported.</p>
       <p>Importing a module into a library does not allow source records in the importing library to
 	be contained in the imported module.</p>
-      <p><a name="IX-398"></a>Each implementation must provide a library
-	named <code>dylan</code> that exports a module named <code>dylan</code>. That module must
-	export exactly those bindings documented as being part of the Dylan language, and the values
-	of those bindings must be as specified by the Dylan language. The <code>dylan</code> library
-	is permitted to export additional implementation-defined modules.</p>
-      <p><a name="IX-399"></a><a name="IX-400"></a>Each library contains an implicitly
-	defined module whose name is <code>dylan-user</code>. Within this module, all the bindings
-	specified by the Dylan language are accessible using their specified names. Additional
+      <p><a name="IX-398">Each implementation must provide a library named <code>dylan</code> that
+	exports a module named <code>dylan</code>.</a> That module must export exactly those
+	bindings documented as being part of the Dylan language, and the values of those bindings
+	must be as specified by the Dylan language. The <code>dylan</code> library is permitted to
+	export additional implementation-defined modules.</p>
+      <p><a name="IX-400">Each library contains an implicitly defined module whose name
+	is <code id="IX-399">dylan-user</code>.</a> Within this module, all the bindings specified
+	by the Dylan language are accessible using their specified names. Additional
 	implementation-dependent bindings may also be accessible from this
 	module.<a name="IX-401"></a><a name="IX-402"></a></p>
       <a name="LINK-Program_Structure-lastpage"></a><a name="LINK-Program_ControlTOC-firstpage"></a><a name="UID-Program_ControlTOC-656"></a>

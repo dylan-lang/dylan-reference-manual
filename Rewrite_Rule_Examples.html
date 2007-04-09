@@ -182,10 +182,10 @@
 
       <a name="HEADING-86-0"></a>
       <a name="UID-Macros-6935"></a>
-      <h1 class="section-title">Rewrite Rule Examples</h1>
-      <p><a name="IX-1281"></a>The following definitions of all of the built-in macros are
-	provided as examples. This section is not intended to be a tutorial on how to write macros,
-	just a collection of demonstrations of some of the tricks.</p>
+      <h1 class="section-title"><a name="IX-1281">Rewrite Rule Examples</a></h1>
+      <p>The following definitions of all of the built-in macros are provided as examples. This
+	section is not intended to be a tutorial on how to write macros, just a collection of
+	demonstrations of some of the tricks.</p>
       <p>The built-in macros cannot really be implemented this way; for example <code>if</code>
 	and <code>case</code> cannot really both be implemented by expanding to the other. Certain
 	built-in macros cannot be implemented with rewrite rules or necessarily rewrite into
@@ -195,14 +195,14 @@
       <a name="UID-Macros-6941"></a>
       <h2 class="subsection-title">Statement Macros</h2>
       <a name="HEADING-86-4"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1282"></a>Begin</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1282">Begin</a></h3>
       <pre class="code">
 define macro begin
   { begin ?:body end } =&gt; { ?body }
 end;
 </pre>
       <a name="HEADING-86-6"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1283"></a>Block</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1283">Block</a></h3>
       <pre class="code">
 define macro block
   { block () ?ebody end }
@@ -236,7 +236,7 @@ define macro block
 end;
 </pre>
       <a name="HEADING-86-11"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1284"></a>Case</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1284">Case</a></h3>
       <pre class="code">
 define macro case
   { case ?:case-body end }            =&gt; { ?case-body }
@@ -248,7 +248,7 @@ define macro case
 end;
 </pre>
       <a name="HEADING-86-13"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1285"></a>For</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1285">For</a></h3>
       <pre class="code">
 // This macro has three auxiliary macros, whose definitions follow
 define macro for
@@ -376,7 +376,7 @@ define macro for-aux2
 end;
 </pre>
       <a name="HEADING-86-30"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1286"></a>If</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1286">If</a></h3>
       <pre class="code">
 define macro if
   { if (?test:expression) ?:body ?elses end }
@@ -391,7 +391,7 @@ define macro if
 end;
 </pre>
       <a name="HEADING-86-32"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1287"></a>Method</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1287">Method</a></h3>
       <pre class="code">
 define macro method
   { method (?parameters:*) =&gt; (?results:*) ; ?:body end }     =&gt;  <var>id</var>
@@ -402,7 +402,7 @@ define macro method
 end;
 </pre>
       <a name="HEADING-86-34"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1288"></a>Select</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1288">Select</a></h3>
       <pre class="code">
 define macro select
   { select (?what) ?:case-body end } =&gt; { ?what; ?case-body }
@@ -428,7 +428,7 @@ define macro select
 end;
 </pre>
       <a name="HEADING-86-40"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1289"></a>Unless</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1289">Unless</a></h3>
       <pre class="code">
 define macro unless
   { unless (?test:expression) ?:body end }
@@ -436,7 +436,7 @@ define macro unless
 end;
 </pre>
       <a name="HEADING-86-42"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1290"></a>Until</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1290">Until</a></h3>
       <pre class="code">
 define macro until
   { until (?test:expression) ?:body end }
@@ -450,7 +450,7 @@ define macro until
 end;
 </pre>
       <a name="HEADING-86-44"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1291"></a>While</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1291">While</a></h3>
       <pre class="code">
 define macro while
   { while (?test:expression) ?:body end }
@@ -467,7 +467,7 @@ end;
       <a name="UID-Macros-7223"></a>
       <h2 class="subsection-title">Definition Macros</h2>
       <a name="HEADING-86-47"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1292"></a>Define Class</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1292">Define Class</a></h3>
       <pre class="code">
 define macro class-definer
   { define ?mods:* class ?:name (?supers) ?slots end }  =&gt;  <var>id</var>
@@ -496,7 +496,7 @@ define macro class-definer
 end;
 </pre>
       <a name="HEADING-86-51"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1293"></a>Define Constant</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1293">Define Constant</a></h3>
       <pre class="code">
 define macro constant-definer
   { define ?modifiers:* constant
@@ -506,7 +506,7 @@ define macro constant-definer
 end;
 </pre>
       <a name="HEADING-86-53"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1294"></a>Define Domain</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1294">Define Domain</a></h3>
       <pre class="code">
 define macro domain-definer
   { define sealed domain ?:name ( ?types ) }            =&gt;  <var>id</var>
@@ -516,7 +516,7 @@ define macro domain-definer
 end;
 </pre>
       <a name="HEADING-86-56"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1295"></a>Define Generic</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1295">Define Generic</a></h3>
       <pre class="code">
 define macro generic-definer
   { define ?mods:* generic ?:name ?rest:* }             =&gt;  <var>id</var>
@@ -527,7 +527,7 @@ define macro generic-definer
 end;
 </pre>
       <a name="HEADING-86-59"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1296"></a>Define Library</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1296">Define Library</a></h3>
       <pre class="code">
 define macro library-definer
   { define library ?:name ?items end }                  =&gt;  <var>id</var>
@@ -541,7 +541,7 @@ define macro library-definer
 end;
 </pre>
       <a name="HEADING-86-63"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1297"></a>Define Method</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1297">Define Method</a></h3>
       <pre class="code">
 define macro method-definer
   { define ?mods:* method ?:name ?rest end }            =&gt;  <var>id</var>
@@ -554,7 +554,7 @@ define macro method-definer
 end;
 </pre>
       <a name="HEADING-86-65"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1298"></a>Define Module</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1298">Define Module</a></h3>
       <pre class="code">
 define macro module-definer
   { define module ?:name ?items end }                   =&gt;  <var>id</var>
@@ -569,7 +569,7 @@ define macro module-definer
 end;
 </pre>
       <a name="HEADING-86-69"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1299"></a>Define Variable</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1299">Define Variable</a></h3>
       <pre class="code">
 define macro variable-definer
   { define ?modifiers:* variable
@@ -582,7 +582,7 @@ end;
       <a name="UID-Macros-7337"></a>
       <h2 class="subsection-title">Operator Function Macros</h2>
       <a name="HEADING-86-72"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1300"></a>&amp;</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1300">&amp;</a></h3>
       <pre class="code">
 define macro \&amp;
   { \&amp;(?first:expression, ?second:expression) }
@@ -590,7 +590,7 @@ define macro \&amp;
 end;
 </pre>
       <a name="HEADING-86-74"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1301"></a>|</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1301">|</a></h3>
       <pre class="code">
 define macro \|
   { \|(?first:expression, ?second:expression) }
@@ -599,7 +599,7 @@ define macro \|
 end;
 </pre>
       <a name="HEADING-86-76"></a>
-      <h3 class="sub-subsection-title"><a name="IX-1302"></a>:=</h3>
+      <h3 class="sub-subsection-title"><a name="IX-1302">:=</a></h3>
       <pre class="code">
 define macro \:=
   { \:=(?place:macro, ?value:expression) }              =&gt;  <var>id</var>

@@ -138,27 +138,25 @@
 
       <a name="HEADING-49-0"></a>
       <a name="UID-Functions-2254"></a>
-      <h1 class="section-title"><a name="XREF-782"></a>Parameter Lists</h1>
-      <p><a name="IX-783"></a>The parameter list of a function describes the number and types
-	of the arguments that the function accepts, and the number and types of the values it
-	returns.</p>
-      <p><a name="IX-784"></a>The parameter list of a generic function is used to define the
-	overall protocol of the generic function. It constrains the methods that may be added to the
-	generic function, through the parameter list congruency rules described
-	on <a href="#XREF-837">page 93</a>. It may also specify that calls to the generic
-	function may contain any keyword arguments.</p>
-      <p><a name="IX-785"></a>The parameter list of a method specifies the types of arguments
-	to which the method is applicable, and declares local bindings to which those arguments will
-	be bound during the execution of the body of the method. It may also declare the return
-	value types of the method.</p>
+      <h1 class="section-title"><a name="XREF-782"></a><a name="IX-783">Parameter Lists</a></h1>
+      <p>The parameter list of a function describes the number and types of the arguments that the
+	function accepts, and the number and types of the values it returns.</p>
+      <p>The <a name="IX-784">parameter list of a generic function</a> is used to define the overall
+	protocol of the generic function. It constrains the methods that may be added to the generic
+	function, through the parameter list congruency rules described on <a href="#XREF-837">page
+	93</a>. It may also specify that calls to the generic function may contain any keyword
+	arguments.</p>
+      <p>The <a name="IX-785">parameter list of a method</a> specifies the types of arguments to
+	which the method is applicable, and declares local bindings to which those arguments will be
+	bound during the execution of the body of the method. It may also declare the return value
+	types of the method.</p>
       <a name="HEADING-49-4"></a>
       <a name="UID-Functions-4841"></a>
-      <h2 class="subsection-title">Kinds of Parameters</h2>
-      <p><a name="IX-786"></a>Dylan parameter lists support <dfn id="IX-787">required
-	  parameters</dfn>, <dfn id="IX-788">rest
-	  parameters</dfn>, <dfn id="IX-789">keyword parameters</dfn>, and sometimes
-	a <dfn id="IX-790">next-method parameter</dfn>. They also may
-	include <dfn id="IX-791">return value declarations</dfn>.</p>
+      <h2 class="subsection-title"><a name="IX-786">Kinds of Parameters</a></h2>
+      <p>Dylan parameter lists support <dfn id="IX-787">required
+	  parameters</dfn>, <dfn id="IX-788">rest parameters</dfn>, <dfn id="IX-789">keyword
+	  parameters</dfn>, and sometimes a <dfn id="IX-790">next-method parameter</dfn>. They also
+	  may include <dfn id="IX-791">return value declarations</dfn>.</p>
       <p>The complete syntax of parameter lists is given
 	in <a href="Phrase_Grammar#XREF-2115"><q>Methods</q> on page 426</a>.</p>
       <p>Required parameters correspond to arguments that must be supplied when a function is
@@ -171,10 +169,10 @@
 	arguments.<a rel="footnote" href="#FOOTNOTE-3" title="Footnote 3"><sup>*</sup></a> After the
 	required arguments of a function have been supplied, any additional arguments are collected
 	in a sequence, which is passed as the value of the rest
-	parameter. <a name="IX-793"></a>This sequence may be immutable, and it may or may not
+	parameter. <a name="IX-793">This sequence may be immutable</a>, and it may or may not
 	be freshly allocated. The types of rest parameters cannot be declared.</p>
-      <p><a name="IX-794"></a><a name="IX-795"></a>Keyword parameters correspond to
-	arguments that are optional and may be given in any order. Symbols are used among the
+      <p><a name="IX-794">Keyword parameters</a> correspond to
+	<a name="IX-795">arguments that are optional</a> and may be given in any order. Symbols are used among the
 	arguments to guide matching of arguments to parameters. These symbols are usually written in
 	keyword syntax and so they are known as keywords. Keyword arguments can only be supplied
 	after all required arguments are supplied. Keyword parameters may be specialized,
@@ -189,22 +187,21 @@
       <p>If <code>#rest</code> and <code>#key</code> are used in the same parameter
 	list, <code>#rest</code> must come first. The rest parameter will be bound to a sequence
 	containing all the keyword arguments and their corresponding values.</p>
-      <p><a name="IX-798"></a>A next-method parameter is indicated by the
-	token <code>#next</code>, followed by the name of the parameter. It is not normally
-	necessary to specify a next-method parameter explicitly. If a next-method parameter is not
-	specified by the programmer, <code>define method</code> inserts one with the
+      <p>A <a name="IX-798">next-method parameter</a> is indicated by the token <code>#next</code>,
+	followed by the name of the parameter. It is not normally necessary to specify a next-method
+	parameter explicitly. If a next-method parameter is not specified by the
+	programmer, <code>define method</code> inserts one with the
 	name <code>next-method</code>. If an explicit next-method parameter is given, it must come
 	after the required parameters and before the rest and keyword parameters. Details of using
 	next-method are given in <a href="Method_Dispatch#XREF-858"><q>Calling Less Specific
-	    Methods</q> on page 98</a>.<a name="IX-799"></a></p>
+	Methods</q> on page 98</a>.<a name="IX-799"></a></p>
       <a name="HEADING-49-14"></a>
       <a name="UID-Functions-2273"></a>
-      <h2 class="subsection-title"><a name="XREF-800"></a>Kinds of Parameter Lists</h2>
-      <p><a name="IX-801"></a>Each function (generic function or method) has an argument
-	passing protocol specified by its parameter list. The argument passing protocol for a method
-	must be compatible with the argument passing protocol of any generic function to which it is
-	added, as described in <a href="#XREF-837"><q>Parameter List Congruency</q> on page
-	  93</a>.</p>
+      <h2 class="subsection-title"><a name="XREF-800"></a><a name="IX-801">Kinds of Parameter Lists</a></h2>
+      <p>Each function (generic function or method) has an argument passing protocol specified by
+	its parameter list. The argument passing protocol for a method must be compatible with the
+	argument passing protocol of any generic function to which it is added, as described
+	in <a href="#XREF-837"><q>Parameter List Congruency</q> on page 93</a>.</p>
       <p>The argument passing protocol of a function can be described in one of the following
 	ways:</p>
       <ul>
@@ -256,16 +253,16 @@
 	pairs. This check is performed by the generic function or next-method, and is made relative
 	to the call as a whole, not relative to an individual method or the methods remaining to be
 	called.</p>
-      <p><a name="IX-815"></a>A call to a function may supply the same keyword argument more
-	than once. When this is done, the leftmost keyword/value pair is
+      <p><a name="IX-815">A call to a function may supply the same keyword argument more than
+	once.</a> When this is done, the leftmost keyword/value pair is
 	used.<a name="IX-816"></a></p>
       <a name="HEADING-49-32"></a>
       <a name="UID-Functions-2288"></a>
-      <h2 class="subsection-title">Specializing Required Parameters</h2>
-      <p><a name="IX-817"></a>When you define a generic function or method, you may specify
-	the types of the arguments appropriate for the generic function or method. This is
-	called <dfn id="IX-818">specializing</dfn> the generic function or method, or
-	specializing the parameters of the generic function or method.</p>
+      <h2 class="subsection-title"><a name="IX-817">Specializing Required Parameters</a></h2>
+      <p>When you define a generic function or method, you may specify the types of the arguments
+	appropriate for the generic function or method. This is
+	called <dfn id="IX-818">specializing</dfn> the generic function or method, or specializing
+	the parameters of the generic function or method.</p>
       <p>The following example defines a method specialized on <code>&lt;number&gt;</code>. The
 	method will be applicable when <code>double</code> is called on a general instance
 	of <code>&lt;number&gt;</code>.</p>
@@ -283,10 +280,10 @@ end method;
 	  reading the code that an error is signaled if an argument is not of the specializer
 	  type.</li>
 	<li>It allows the compiler to perform additional optimizations.</li>
-	<li><a name="IX-819"></a>It is used to control method dispatch. By defining methods on
-	  the same generic function with different specializers, you can define behavior applicable
-	  to different sets of types. A generic function chooses among its methods on the basis of
-	  the methods' specializers. The generic function chooses the method whose specializers most
+	<li><a name="IX-819">It is used to control method dispatch.</a> By defining methods on the
+	  same generic function with different specializers, you can define behavior applicable to
+	  different sets of types. A generic function chooses among its methods on the basis of the
+	  methods' specializers. The generic function chooses the method whose specializers most
 	  closely match the types of the arguments.</li>
       </ul>
       <p>Syntactically, specializers are operands. These operands are executed once when the
@@ -299,21 +296,21 @@ end method;
 	calling <code>singleton</code> in the current lexical scope.<a name="IX-820"></a></p>
       <a name="HEADING-49-44"></a>
       <a name="UID-Functions-2308"></a>
-      <h2 class="subsection-title">Keyword Parameters</h2>
-      <p><a name="IX-821"></a>The syntax of a keyword parameter is:</p>
+      <h2 class="subsection-title"><a name="IX-821">Keyword Parameters</a></h2>
+      <p>The syntax of a keyword parameter is:</p>
       <p><strong style="font-size: larger">[</strong> <var>keyword</var> <strong style="font-size: larger">]</strong> <var>name</var> <strong style="font-size: larger">[</strong> <code>::</code> <var>operand</var> <strong style="font-size: larger">]</strong> <strong style="font-size: larger">[</strong> <code>=</code> <var>expression</var> <strong style="font-size: larger">]</strong></p>
       <p>If <var>keyword</var> is not supplied, then <var>name</var> is used to indicate both the
 	keyword and the name of the parameter. If the <var>keyword</var> and <var>name</var> are
 	given independently, the <var>keyword</var> is used when calling the method, and
 	the <var>name</var> is used as the name of the parameter inside the body of the method.</p>
-      <p><a name="IX-822"></a>The <var>expression</var> supplies a default value for the
-	parameter. It is used when the method is called and the keyword is not supplied. It is
-	executed each time the method is called and the corresponding keyword argument is not
-	supplied. If no <var>expression</var> is specified, the parameter corresponding to an
-	unsupplied keyword argument is initialized
-	to <code id="IX-823">#f</code>. The <var>expression</var> is executed in a scope that
-	includes all the preceding parameters, including required parameters, the rest parameter (if
-	any), the preceding keyword parameters, and the next-method parameter (if any).</p>
+      <p><a name="IX-822">The <var>expression</var> supplies a default value for the parameter.</a>
+	It is used when the method is called and the keyword is not supplied. It is executed each
+	time the method is called and the corresponding keyword argument is not supplied. If
+	no <var>expression</var> is specified, the parameter corresponding to an unsupplied keyword
+	argument is initialized to <code id="IX-823">#f</code>. The <var>expression</var> is
+	executed in a scope that includes all the preceding parameters, including required
+	parameters, the rest parameter (if any), the preceding keyword parameters, and the
+	next-method parameter (if any).</p>
       <p>In the following example, all three keyword parameters have default values, and all three
 	use the same name for the keyword and the parameter.</p>
       <pre class="code">
@@ -326,9 +323,9 @@ end method;
       <p>The caller can choose which keyword arguments to supply and what order to supply them
 	in:</p>
       <pre class="code">
-percolate (brand: #"ja<a name="IX-824"></a>va", cups: 10);
+percolate (brand: #"<a name="IX-824">java</a>", cups: 10);
 percolate (strength: #"strong",
-           brand: #"st<a name="IX-825"></a>arbucks",
+           brand: #"<a name="IX-825">starbucks</a>",
             cups: 1);</pre>
       <p>The following method has two keyword parameters. In each, the name of the keyword and the
 	name of the parameter is specified separately. The first keyword parameter has a default
@@ -353,11 +350,11 @@ layout(my-widget, size: query-user-for-size() );
 	following call to <code>layout</code> will signal an error:</p>
       <p><code>layout(position: 100, size: 500);</code></p>
       <a name="HEADING-49-59"></a>
-      <h3 class="sub-subsection-title">Types for Keyword Parameters</h3>
-      <p><a name="IX-827"></a>When a type is indicated for a keyword parameter in a method, it
-	is the same as establishing a type for a local binding. Specifically, the types of any
-	keyword parameters are not used for method dispatch. Keyword parameter types are not allowed
-	in generic function definitions, and do not figure into parameter list congruency.</p>
+      <h3 class="sub-subsection-title"><a name="IX-827">Types for Keyword Parameters</a></h3>
+      <p>When a type is indicated for a keyword parameter in a method, it is the same as
+	establishing a type for a local binding. Specifically, the types of any keyword parameters
+	are not used for method dispatch. Keyword parameter types are not allowed in generic
+	function definitions, and do not figure into parameter list congruency.</p>
       <p>The following two method definitions are equivalent:</p>
       <pre class="code">
 method (#key X :: &lt;integer&gt;)
@@ -386,7 +383,7 @@ define method find-food (#key hint :: &lt;restaurant&gt;
 end method find-food;<a name="IX-828"></a><a name="IX-829"></a></pre>
       <a name="HEADING-49-68"></a>
       <a name="UID-Functions-2324"></a>
-      <h2 class="subsection-title"><a name="IX-830"></a>Return Value Declarations<a name="IX-831"></a></h2>
+      <h2 class="subsection-title"><a name="IX-830">Return Value Declarations</a><a name="IX-831"></a></h2>
       <p>Parameter lists may include value declarations. Value declarations come at the end of the
 	parameter list and are separated from the parameters by <code>=&gt;</code>. For each return
 	value, a value declaration can specify a name and an operand or just a name if the type
@@ -422,11 +419,11 @@ end method find-food;<a name="IX-828"></a><a name="IX-829"></a></pre>
 	  than the number of required value declarations in the function's parameter-list, the extra
 	  values are discarded and not returned.</li>
       </ul>
-      <p><a name="IX-836"></a>Because of the parameter list congruency rules for value
-	declarations (see <a href="#XREF-837"><q>Parameter List Congruency</q> on page 93</a>)
-	the values returned by a generic function do not have to be checked by the generic
-	function. The check inside a method will always be enough to verify that the return values
-	are valid for the generic function.</p>
+      <p>Because of the <a name="IX-836">parameter list congruency rules</a> for value declarations
+	(see <a href="#XREF-837"><q>Parameter List Congruency</q> on page 93</a>) the values
+	returned by a generic function do not have to be checked by the generic function. The check
+	inside a method will always be enough to verify that the return values are valid for the
+	generic function.</p>
       <pre class="code">
 define method average (x :: &lt;number&gt;, y :: &lt;number&gt;)
  =&gt; mean :: &lt;number&gt;;
@@ -475,10 +472,10 @@ end method;
       </p>
       <a name="HEADING-49-84"></a>
       <a name="UID-Functions-2334"></a>
-      <h2 class="subsection-title"><a name="XREF-837"></a>Parameter List Congruency</h2>
-      <p><a name="IX-838"></a>For any given generic function, the generic function and all
-	methods for that function must have <dfn>congruent parameter lists</dfn>. Two parameter
-	lists are congruent if they satisfy the following conditions:</p>
+      <h2 class="subsection-title"><a name="XREF-837"></a><a name="IX-838">Parameter List Congruency</a></h2>
+      <p>For any given generic function, the generic function and all methods for that function must
+	have <dfn>congruent parameter lists</dfn>. Two parameter lists are congruent if they satisfy
+	the following conditions:</p>
       <ul>
 	<li>They have the same number of required arguments.</li>
 	<li>Each of the method's parameter specializers is a subtype of the corresponding parameter
@@ -522,11 +519,11 @@ end method;
       </ul>
       <a name="HEADING-49-102"></a>
       <a name="UID-Functions-3556"></a>
-      <h2 class="subsection-title">Parameter Lists of Implicitly Defined Generic Functions</h2>
-      <p><a name="IX-841"></a>As a general principle, the parameter list of an implicitly
-	defined generic function will impose as few constraints as possible on the methods that may
-	be added. If a more constrained generic function definition is desired, an explicit
-	definition should be used.</p>
+      <h2 class="subsection-title"><a name="IX-841">Parameter Lists of Implicitly Defined Generic Functions</a></h2>
+      <p>As a general principle, the parameter list of an implicitly defined generic function will
+	impose as few constraints as possible on the methods that may be added. If a more
+	constrained generic function definition is desired, an explicit definition should be
+	used.</p>
       <p>The parameter list of an implicitly defined generic function is determined by its method
 	definitions. These method definitions include both methods defined using <code>define
 	method</code> and slot getter and setter methods defined using <code>define

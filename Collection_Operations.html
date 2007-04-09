@@ -353,10 +353,10 @@
 
       <a name="HEADING-102-0"></a>
       <a name="UID-Built-In_Functions-3130"></a>
-      <h1 class="section-title"><a name="XREF-1696"></a>Collection Operations</h1>
-      <p><a name="IX-1697"></a>The generic functions described in this section have predefined
-	methods for the built-in collection classes (and sequence classes, where appropriate). The
-	details of these predefined methods have not yet been specified.</p>
+      <h1 class="section-title"><a name="XREF-1696"></a><a name="IX-1697">Collection Operations</a></h1>
+      <p>The generic functions described in this section have predefined methods for the built-in
+	collection classes (and sequence classes, where appropriate). The details of these
+	predefined methods have not yet been specified.</p>
       <p>Note to implementors: Functions such as <code>map</code>, <code>map-as</code> that return a
 	new collection cannot rely on the type they instantiate having a valid default
 	for <code>fill:</code>. Therefore, when the size of the result is nonzero, these functions
@@ -365,11 +365,11 @@
 	making the collection.</p>
       <a name="HEADING-102-3"></a>
       <a name="UID-Built-In_Functions-21096"></a>
-      <h2 class="subsection-title">Collection Properties</h2>
+      <h2 class="subsection-title"><a name="IX-1698">Collection Properties</a></h2>
       <a name="HEADING-102-4"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="IX-1698"></a><a name="IX-1699"></a>empty?</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="IX-1699">empty?</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1700"></a>Returns true if its argument is empty.</p>
+      <p class="short-description"><a name="XREF-1700">Returns true if its argument is empty.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -468,7 +468,7 @@ reduce(\*, 1, dimensions (array))</pre>
       <a name="HEADING-102-29"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1703">size-setter</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1704"></a>Sets the size of an object.</p>
+      <p class="short-description"><a name="XREF-1704">Sets the size of an object.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -520,7 +520,7 @@ reduce(\*, 1, dimensions (array))</pre>
       <a name="HEADING-102-40"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1705">rank</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1706"></a>Returns the number of dimensions of an array.</p>
+      <p class="short-description"><a name="XREF-1706">Returns the number of dimensions of an array.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -559,7 +559,7 @@ reduce(\*, 1, dimensions (array))</pre>
       <a name="HEADING-102-48"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1707">row-major-index</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1708"></a>Returns the row-major-index position of an array element.</p>
+      <p class="short-description"><a name="XREF-1708">Returns the row-major-index position of an array element.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -604,7 +604,7 @@ reduce(\*, 1, dimensions (array))</pre>
       <a name="HEADING-102-58"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1709">dimensions</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1710"></a>Returns the dimensions of an array.</p>
+      <p class="short-description"><a name="XREF-1710">Returns the dimensions of an array.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -646,7 +646,7 @@ reduce(\*, 1, dimensions (array))</pre>
       <a name="HEADING-102-66"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1711">dimension</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1712"></a>Returns the size of a specified dimension of an array.</p>
+      <p class="short-description"><a name="XREF-1712">Returns the size of a specified dimension of an array.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -690,7 +690,7 @@ reduce(\*, 1, dimensions (array))</pre>
       <a name="HEADING-102-76"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1713">key-test</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1714"></a>Returns the function used by its collection argument to compare keys.</p>
+      <p class="short-description"><a name="XREF-1714">Returns the function used by its collection argument to compare keys.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -782,11 +782,11 @@ reduce(\*, 1, dimensions (array))</pre>
       </dl>
       <a name="HEADING-102-95"></a>
       <a name="UID-Built-In_Functions-415"></a>
-      <h2 class="subsection-title">Selecting Elements</h2>
+      <h2 class="subsection-title"><a name="IX-1719">Selecting Elements</a></h2>
       <a name="HEADING-102-96"></a>
-      <h4 class="item-title"><span class="signature"><code id="IX-1718"><a name="IX-1719"></a>element</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="IX-1718">element</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><code><a name="XREF-1720"></a></code>Returns the collection element associated with a particular key.</p>
+      <p class="short-description"><a name="XREF-1720">Returns the collection element associated with a particular key.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -845,7 +845,7 @@ reduce(\*, 1, dimensions (array))</pre>
       <a name="HEADING-102-113"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1721">element-setter</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1722"></a>Sets the collection element associated with a particular key.</p>
+      <p class="short-description"><a name="XREF-1722">Sets the collection element associated with a particular key.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -919,7 +919,7 @@ reduce(\*, 1, dimensions (array))</pre>
       <a name="HEADING-102-133"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1723">aref</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1724"></a>Returns the array element indicated by a set of indices.</p>
+      <p class="short-description"><a name="XREF-1724">Returns the array element indicated by a set of indices.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -964,7 +964,7 @@ reduce(\*, 1, dimensions (array))</pre>
       <a name="HEADING-102-143"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1725">aref-setter </code>  </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1726"></a>Sets the array element indicated by a set of indices.</p>
+      <p class="short-description"><a name="XREF-1726">Sets the array element indicated by a set of indices.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1014,7 +1014,7 @@ reduce(\*, 1, dimensions (array))</pre>
       <a name="HEADING-102-155"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1727">first</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1728"></a>Returns the first element of a sequence.</p>
+      <p class="short-description"><a name="XREF-1728">Returns the first element of a sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1052,7 +1052,7 @@ reduce(\*, 1, dimensions (array))</pre>
       <a name="HEADING-102-163"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1729">second</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1730"></a>Returns the second element of a sequence.</p>
+      <p class="short-description"><a name="XREF-1730">Returns the second element of a sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1087,7 +1087,7 @@ reduce(\*, 1, dimensions (array))</pre>
       <a name="HEADING-102-170"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1731">third</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1732"></a>Returns the third element of a sequence.</p>
+      <p class="short-description"><a name="XREF-1732">Returns the third element of a sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1122,7 +1122,7 @@ reduce(\*, 1, dimensions (array))</pre>
       <a name="HEADING-102-177"></a>
       <h4 class="item-title"><span class="signature"><code id="XREF-1637">first-setter</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1734"></a>Sets the first element of a mutable sequence.</p>
+      <p class="short-description"><a name="XREF-1734">Sets the first element of a mutable sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1162,7 +1162,7 @@ reduce(\*, 1, dimensions (array))</pre>
       <a name="HEADING-102-185"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1735">second-setter</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1736"></a>Sets the second element of a mutable sequence.</p>
+      <p class="short-description"><a name="XREF-1736">Sets the second element of a mutable sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1198,7 +1198,7 @@ reduce(\*, 1, dimensions (array))</pre>
       <a name="HEADING-102-192"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1737">third-setter</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1738"></a>Sets the third element of a mutable sequence.</p>
+      <p class="short-description"><a name="XREF-1738">Sets the third element of a mutable sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1276,7 +1276,7 @@ last (#("emperor", "of", "china"))
       <a name="HEADING-102-208"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1741">last-setter</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1742"></a>Sets the last element of a mutable sequence.</p>
+      <p class="short-description"><a name="XREF-1742">Sets the last element of a mutable sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1329,7 +1329,7 @@ last (my-empty-vector) := 4
       <a name="HEADING-102-219"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1743">head</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1744"></a>Returns the head of a list.</p>
+      <p class="short-description"><a name="XREF-1744">Returns the head of a list.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1372,7 +1372,7 @@ head (#())
       <a name="HEADING-102-227"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1745">tail</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1746"></a>Returns the tail of a list.</p>
+      <p class="short-description"><a name="XREF-1746">Returns the tail of a list.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1415,7 +1415,7 @@ tail (#())
       <a name="HEADING-102-235"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1747">head-setter</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1748"></a>Sets the head of a pair.</p>
+      <p class="short-description"><a name="XREF-1748">Sets the head of a pair.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1459,7 +1459,7 @@ x
       <a name="HEADING-102-244"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1749">tail-setter</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1750"></a>Sets the tail of a pair.</p>
+      <p class="short-description"><a name="XREF-1750">Sets the tail of a pair.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1510,11 +1510,11 @@ x
       </dl>
       <a name="HEADING-102-253"></a>
       <a name="UID-Built-In_Functions-29552"></a>
-      <h2 class="subsection-title">Adding and Removing Elements</h2>
+      <h2 class="subsection-title"><a name="IX-1752">Adding and Removing Elements</a></h2>
       <a name="HEADING-102-254"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="IX-1752"></a><a name="IX-1753"></a>add</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="IX-1753">add</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1754"></a>Adds an element to a sequence.</p>
+      <p class="short-description"><a name="XREF-1754">Adds an element to a sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1562,7 +1562,7 @@ add (*numbers*, 1)
       <a name="HEADING-102-264"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1755">add!</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1756"></a>Adds an element to a sequence.</p>
+      <p class="short-description"><a name="XREF-1756">Adds an element to a sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1629,7 +1629,7 @@ add! (*numbers*, 1)
       <a name="HEADING-102-280"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1757">add-new</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1758"></a>Adds a new element to a sequence.</p>
+      <p class="short-description"><a name="XREF-1758">Adds a new element to a sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1681,7 +1681,7 @@ add-new (#(3, 4, 5), 4)
       <a name="HEADING-102-291"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1759">add-new!</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1760"></a>Adds a new element to a sequence.</p>
+      <p class="short-description"><a name="XREF-1760">Adds a new element to a sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1733,7 +1733,7 @@ add-new! (list (3, 4, 5), 4)
       <a name="HEADING-102-302"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1761">remove</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="IX-1762"></a><a name="XREF-1763"></a>Removes an element from a sequence.</p>
+      <p class="short-description"><a name="IX-1762"></a><a name="XREF-1763">Removes an element from a sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1793,7 +1793,7 @@ define variable *new-list* = remove(*old-list*, 1)
       <a name="HEADING-102-314"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1764">remove!</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1765"></a>Removes an element from a sequence.</p>
+      <p class="short-description"><a name="XREF-1765">Removes an element from a sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1860,7 +1860,7 @@ define variable *new-list* = remove(*old-list*, 1)
       <a name="HEADING-102-331"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1766">push</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1767"></a>Adds an element to the front of a deque.</p>
+      <p class="short-description"><a name="XREF-1767">Adds an element to the front of a deque.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1897,7 +1897,7 @@ define variable *new-list* = remove(*old-list*, 1)
       <a name="HEADING-102-339"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1768">pop</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1769"></a>Removes and returns the first element of a deque.</p>
+      <p class="short-description"><a name="XREF-1769">Removes and returns the first element of a deque.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1932,7 +1932,7 @@ define variable *new-list* = remove(*old-list*, 1)
       <a name="HEADING-102-346"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1770">push-last</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1771"></a>Adds an element to the end of a deque.</p>
+      <p class="short-description"><a name="XREF-1771">Adds an element to the end of a deque.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -1969,7 +1969,7 @@ define variable *new-list* = remove(*old-list*, 1)
       <a name="HEADING-102-354"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1772">pop-last</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1773"></a>Removes and returns an element from the end of a deque.</p>
+      <p class="short-description"><a name="XREF-1773">Removes and returns an element from the end of a deque.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2004,11 +2004,11 @@ define variable *new-list* = remove(*old-list*, 1)
       </dl>
       <a name="HEADING-102-361"></a>
       <a name="UID-Built-In_Functions-9856"></a>
-      <h2 class="subsection-title"><a name="IX-1776"></a>Reordering Elements</h2>
+      <h2 class="subsection-title"><a name="IX-1776">Reordering Elements</a></h2>
       <a name="HEADING-102-362"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1777">reverse</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1778"></a>Returns a sequence with elements in the reverse order of its argument sequence.</p>
+      <p class="short-description"><a name="XREF-1778">Returns a sequence with elements in the reverse order of its argument sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2060,7 +2060,7 @@ reverse(*x*)
       <a name="HEADING-102-373"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1779">reverse!</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1780"></a>Returns a sequence with elements in the reverse order of its argument sequence.</p>
+      <p class="short-description"><a name="XREF-1780">Returns a sequence with elements in the reverse order of its argument sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2118,7 +2118,7 @@ reverse!(*x*)
       <a name="HEADING-102-384"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1781">sort</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1782"></a>Returns a sequence containing the elements of its argument sequence, sorted.</p>
+      <p class="short-description"><a name="XREF-1782">Returns a sequence containing the elements of its argument sequence, sorted.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2178,7 +2178,7 @@ sort (*numbers*)
       <a name="HEADING-102-395"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1783">sort!</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1784"></a>Returns a sequence containing the elements of its argument sequence, sorted.</p>
+      <p class="short-description"><a name="XREF-1784">Returns a sequence containing the elements of its argument sequence, sorted.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2243,11 +2243,11 @@ sort! (*numbers*)
       </dl>
       <a name="HEADING-102-407"></a>
       <a name="UID-Built-In_Functions-2737"></a>
-      <h2 class="subsection-title"><a name="IX-1786"></a>Set Operations</h2>
+      <h2 class="subsection-title"><a name="IX-1786">Set Operations</a></h2>
       <a name="HEADING-102-408"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1787">intersection</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1788"></a>Returns the intersection of two sequences.</p>
+      <p class="short-description"><a name="XREF-1788">Returns the intersection of two sequences.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2305,7 +2305,7 @@ sort! (*numbers*)
       <a name="HEADING-102-421"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1789">union</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1790"></a>Returns the union of two sequences.</p>
+      <p class="short-description"><a name="XREF-1790">Returns the union of two sequences.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2360,7 +2360,7 @@ union (#("butter", "flour", "sugar", "salt", "eggs"),
       <a name="HEADING-102-433"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1791">remove-duplicates</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1792"></a>Returns a sequence without duplicates.</p>
+      <p class="short-description"><a name="XREF-1792">Returns a sequence without duplicates.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2412,7 +2412,7 @@ or
       <a name="HEADING-102-443"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1793">remove-duplicates!</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1794"></a>Returns a sequence without duplicates.</p>
+      <p class="short-description"><a name="XREF-1794">Returns a sequence without duplicates.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2469,9 +2469,9 @@ or
       <a name="UID-Built-In_Functions-2699"></a>
       <h2 class="subsection-title">Subsequence Operations</h2>
       <a name="HEADING-102-454"></a>
-      <h4 class="item-title"><span class="signature"><code id="IX-1796">copy-sequence </code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+      <h4 class="item-title"><span class="signature"><a name="IX-1798"></a><code id="IX-1796">copy-sequence</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1797"></a><a name="IX-1798"></a>Returns a freshly allocated copy of some subsequence of a sequence.</p>
+      <p class="short-description"><a name="XREF-1797">Returns a freshly allocated copy of some subsequence of a sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2514,15 +2514,17 @@ hamlet == copy-sequence (hamlet)
 copy-sequence (hamlet, start: 2, end: 4)
 <code> &rArr;</code>  #("or", "not")</pre>
 	  <a name="HEADING-102-463"></a>
-	  <h5 class="method-signature"><span class="signature"><code>copy-sequence</code>   <var>range</var> <code>#key</code> <var>start end</var> &rArr;  <var>new-range</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
+	  <h5 class="method-signature"><span class="signature"><code>copy-sequence</code> <var>range</var> <code>#key</code> <var>start end</var> &rArr; <var>new-range</var> </span><span class="attributes-summary">[Sealed G.F. Method]</span></h5>
 	  <p>When applied to a range, <code>copy-sequence</code> returns another range, even though
 	    the <code>type-for-copy</code> of a range is the <code>&lt;list&gt;</code> class.</p>
 	</dd>
       </dl>
       <a name="HEADING-102-465"></a>
-      <h4 class="item-title"><span class="signature"><code id="IX-1799">concatenate</code>  </span><span class="attributes-summary">[Function]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="IX-1799">concatenate</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1800"></a>Returns the concatenation of one or more sequences in a sequence of a type determined by the <code>type-for-copy</code> of its first argument.</p>
+      <p class="short-description"><a name="XREF-1800">Returns the concatenation of one or more
+	  sequences in a sequence of a type determined by the <code>type-for-copy</code> of its first
+	  argument.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2569,9 +2571,9 @@ concatenate ("low-", "calorie")
 	</dd>
       </dl>
       <a name="HEADING-102-475"></a>
-      <h4 class="item-title"><span class="signature"><code id="IX-1801">concatenate-as   </code> </span><span class="attributes-summary">[Function]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="IX-1801">concatenate-as</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1802"></a>Returns the concatenation of one or more sequences in a sequence of a specified type.</p>
+      <p class="short-description"><a name="XREF-1802">Returns the concatenation of one or more sequences in a sequence of a specified type.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2622,7 +2624,7 @@ concatenate-as (&lt;string&gt;, #('n', 'o', 'n'), #('f', 'a', 't'))
       <a name="HEADING-102-486"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1803">replace-subsequence!</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1804"></a>Replaces a portion of a sequence with the elements of another sequence.</p>
+      <p class="short-description"><a name="XREF-1804">Replaces a portion of a sequence with the elements of another sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2689,7 +2691,7 @@ define variable *original* = list ("a", "b", "c", "d", "e")
       <a name="HEADING-102-500"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1805">subsequence-position</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1806"></a>Returns the position where a pattern appears in a sequence.</p>
+      <p class="short-description"><a name="XREF-1806">Returns the position where a pattern appears in a sequence.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2741,10 +2743,10 @@ subsequence-position ("Ralph Waldo Emerson", "Waldo")
       </dl>
       <a name="HEADING-102-511"></a>
       <a name="UID-Built-In_Functions-3007"></a>
-      <h2 class="subsection-title">Mapping and Reducing</h2>
+      <h2 class="subsection-title"><a name="IX-1808">Mapping and Reducing</a></h2>
       <a name="HEADING-102-512"></a>
       <h3 class="sub-subsection-title">Simple Mapping</h3>
-      <p><a name="IX-1807"></a><a name="IX-1808"></a>The following mapping functions
+      <p>The following <a name="IX-1807">mapping functions</a>
 	(<code>do</code>, <code>map</code>, <code>map-as</code>, <code>map-into</code>, <code>any?</code>, <code>every?</code>)
 	iterate over a number of source collections. Each time through the iteration, a function is
 	applied to one element from each of the source collections. The number of arguments to the
@@ -2753,7 +2755,7 @@ subsequence-position ("Ralph Waldo Emerson", "Waldo")
       <a name="HEADING-102-515"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1809">do</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1810"></a>Iterates over one or more collections for side effect.</p>
+      <p class="short-description"><a name="XREF-1810">Iterates over one or more collections for side effect.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2801,9 +2803,9 @@ do (method (a b) print (a + b) end,
 	</dd>
       </dl>
       <a name="HEADING-102-524"></a>
-      <h4 class="item-title"><span class="signature"><code id="IX-1811">map</code>   </span><span class="attributes-summary">[Function]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="IX-1811">map</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1812"></a>Iterates over one or more collections and collects the results in a freshly allocated collection.</p>
+      <p class="short-description"><a name="XREF-1812">Iterates over one or more collections and collects the results in a freshly allocated collection.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2852,9 +2854,9 @@ map (\+,
 	</dd>
       </dl>
       <a name="HEADING-102-534"></a>
-      <h4 class="item-title"><code id="IX-1813">map-as</code><span class="attributes-summary"> [Function]</span> </h4>
+      <h4 class="item-title"><code id="IX-1813">map-as</code> <span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1814"></a>Iterates over one or more collections and collects the results in a freshly allocated collection of a specified type.</p>
+      <p class="short-description"><a name="XREF-1814">Iterates over one or more collections and collects the results in a freshly allocated collection of a specified type.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2914,7 +2916,7 @@ map-as (&lt;vector&gt;, \+,
       <a name="HEADING-102-544"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1815">map-into</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1816"></a>Iterates over one or more collections and collects the results in an existing mutable collection.</p>
+      <p class="short-description"><a name="XREF-1816">Iterates over one or more collections and collects the results in an existing mutable collection.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -2979,9 +2981,9 @@ x
 	</dd>
       </dl>
       <a name="HEADING-102-558"></a>
-      <h4 class="item-title"><span class="signature"><code id="IX-1817">any?  </code>  </span><span class="attributes-summary">[Function]</span></h4>
+      <h4 class="item-title"><span class="signature"><a name="IX-1819"></a><code id="IX-1817">any?</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1818"></a><a name="IX-1819"></a>Returns the first true value obtained by iterating over one or more collections.</p>
+      <p class="short-description"><a name="XREF-1818">Returns the first true value obtained by iterating over one or more collections.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -3029,9 +3031,9 @@ any? (even?, #(1, 3, 5, 7))
 	</dd>
       </dl>
       <a name="HEADING-102-568"></a>
-      <h4 class="item-title"><span class="signature"><code id="IX-1820">every? </code> </span><span class="attributes-summary">[Function]</span></h4>
+      <h4 class="item-title"><span class="signature"><a name="IX-1822"></a><code id="IX-1820">every?</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1821"></a><a name="IX-1822"></a>Returns true if a predicate returns true when applied to all corresponding elements of a set of collections.</p>
+      <p class="short-description"><a name="XREF-1821">Returns true if a predicate returns true when applied to all corresponding elements of a set of collections.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -3083,7 +3085,7 @@ every? (odd?, #(1, 3, 5, 7))
       <a name="HEADING-102-579"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1823">reduce</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1824"></a>Combines the elements of a collection and a seed value into a single value by repeatedly applying a binary function.</p>
+      <p class="short-description"><a name="XREF-1824">Combines the elements of a collection and a seed value into a single value by repeatedly applying a binary function.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -3138,7 +3140,7 @@ reduce (max, high-score, #(3, 12, 9, 8, 8, 6))
       <a name="HEADING-102-590"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1825">reduce1</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1826"></a>Combines the elements of a collection into a single value by repeatedly applying a binary function, using the first element of the collection as the seed value.</p>
+      <p class="short-description"><a name="XREF-1826">Combines the elements of a collection into a single value by repeatedly applying a binary function, using the first element of the collection as the seed value.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -3184,9 +3186,9 @@ reduce1 (\+, #(1, 2, 3, 4, 5))
 	</dd>
       </dl>
       <a name="HEADING-102-601"></a>
-      <h4 class="item-title"><span class="signature"><code id="IX-1827">choose</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+      <h4 class="item-title"><span class="signature"><a name="IX-1829"></a><code id="IX-1827">choose</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1828"></a><a name="IX-1829"></a>Returns those elements of a sequence that satisfy a predicate.</p>
+      <p class="short-description"><a name="XREF-1828">Returns those elements of a sequence that satisfy a predicate.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -3225,9 +3227,9 @@ choose (even?, #(3, 1, 4, 1, 5, 8, 9))
 	</dd>
       </dl>
       <a name="HEADING-102-609"></a>
-      <h4 class="item-title"><span class="signature"><code id="IX-1830">choose-by  </code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+      <h4 class="item-title"><span class="signature"><a name="IX-1832"></a><code id="IX-1830">choose-by</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1831"></a><a name="IX-1832"></a>Returns those elements of a sequence that correspond to those in another sequence that satisfy a predicate.</p>
+      <p class="short-description"><a name="XREF-1831">Returns those elements of a sequence that correspond to those in another sequence that satisfy a predicate.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -3272,9 +3274,9 @@ choose-by (even?, range (from: 1),
       <a name="HEADING-102-618"></a>
       <h3 class="sub-subsection-title">Other Mapping Functions</h3>
       <a name="HEADING-102-619"></a>
-      <h4 class="item-title"><span class="signature"><code id="IX-1833">member?</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+      <h4 class="item-title"><span class="signature"><a name="IX-1835"></a><code id="IX-1833">member?</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1834"></a>Returns true if a collection contains a particular value.</p>
+      <p class="short-description"><a name="XREF-1834">Returns true if a collection contains a particular value.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -3307,8 +3309,8 @@ choose-by (even?, range (from: 1),
 	</dd>
 	<dt><span>Description:</span></dt>
 	<dd>
-	  <p><a name="IX-1835"></a>Returns true if <var>collection</var>
-	    contains <var>value</var> as determined by <var>test</var>. Otherwise returns false.</p>
+	  <p>Returns true if <var>collection</var> contains <var>value</var> as determined
+	    by <var>test</var>. Otherwise returns false.</p>
 	  <p>The <var>test</var> function may be noncommutative: it is always called
 	    with <var>value</var> as its first argument and an element from <var>collection</var> as
 	    its second argument.</p>
@@ -3325,9 +3327,9 @@ member? (#"banana", flavors)
 	</dd>
       </dl>
       <a name="HEADING-102-631"></a>
-      <h4 class="item-title"><span class="signature"><code id="IX-1836">find-key</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+      <h4 class="item-title"><span class="signature"><a name="IX-1838"></a><code id="IX-1836">find-key</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1837"></a><a name="IX-1838"></a>Returns the key in a collection such that the corresponding collection element satisfies a predicate.</p>
+      <p class="short-description"><a name="XREF-1837">Returns the key in a collection such that the corresponding collection element satisfies a predicate.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -3385,7 +3387,7 @@ flavors[1]
       <a name="HEADING-102-642"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1839">remove-key!</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1840"></a>Modifies an explicit key collection so it no longer has a particular key.</p>
+      <p class="short-description"><a name="XREF-1840">Modifies an explicit key collection so it no longer has a particular key.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -3427,9 +3429,9 @@ flavors[1]
 	</dd>
       </dl>
       <a name="HEADING-102-652"></a>
-      <h4 class="item-title"><span class="signature"><code id="IX-1841">replace-elements! </code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="IX-1841">replace-elements!</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1842"></a>Replaces those collection elements that satisfy a predicate.</p>
+      <p class="short-description"><a name="XREF-1842">Replaces those collection elements that satisfy a predicate.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -3481,7 +3483,7 @@ replace-elements! (numbers, odd?, double)
       <a name="HEADING-102-663"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1843">fill!</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1844"></a>Fills a collection with a specified value.</p>
+      <p class="short-description"><a name="XREF-1844">Fills a collection with a specified value.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -3530,11 +3532,11 @@ fill! (numbers, 3, start: 2)
       </dl>
       <a name="HEADING-102-674"></a>
       <a name="UID-Built-In_Functions-418"></a>
-      <h2 class="subsection-title">The Iteration Protocol</h2>
+      <h2 class="subsection-title"><a name="IX-1847">The Iteration Protocol</a></h2>
       <a name="HEADING-102-675"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="IX-1846"></a><a name="IX-1847"></a>forward-iteration-protocol</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="IX-1846">forward-iteration-protocol</code></span> <span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="IX-1540"></a>Returns a group of functions used to iterate over the elements of a collection.</p>
+      <p class="short-description"><a name="XREF-1540">Returns a group of functions used to iterate over the elements of a collection.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -3650,7 +3652,7 @@ end method do1;</pre>
       <a name="HEADING-102-705"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1849">backward-iteration-protocol</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1850"></a>Returns a group of functions used to iterate over the elements of a collection in reverse order.</p>
+      <p class="short-description"><a name="XREF-1850">Returns a group of functions used to iterate over the elements of a collection in reverse order.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -3710,8 +3712,8 @@ end method do1;</pre>
       <a name="HEADING-102-721"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1851">table-protocol</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1852"></a>Returns functions used to implement
-	the iteration protocol for tables.</p>
+      <p class="short-description"><a name="XREF-1852">Returns functions used to implement the
+	iteration protocol for tables.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -3835,7 +3837,7 @@ end method table-protocol; </pre>
       <a name="HEADING-102-749"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1854">object-hash</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1855"></a>The hash function for the equivalence predicate <code>==</code>.</p>
+      <p class="short-description"><a name="XREF-1855">The hash function for the equivalence predicate <code>==</code>.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>

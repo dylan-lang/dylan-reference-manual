@@ -146,10 +146,10 @@
 	  357</a>.</p>
       <a name="HEADING-56-3"></a>
       <a name="UID-Conditions-2155"></a>
-      <h2 class="subsection-title">Stack Model</h2>
-      <p><a name="IX-925"></a>Condition handlers are installed dynamically, with more recent
+      <h2 class="subsection-title"><a name="IX-925">Stack Model</a></h2>
+      <p>Condition handlers are installed dynamically, with more recent
 	handlers shadowing previously installed handlers. In addition, exception handling often
-	involves the use of <a name="IX-926"></a>nonlocal exits. For these reasons it is
+	involves the use of <a name="IX-926">nonlocal exits</a>. For these reasons it is
 	useful to describe the behavior of the exception system using the following terms from the
 	stack model of function calling.</p>
       <ul>
@@ -167,7 +167,7 @@
 	  signaling unit prior to the call to <code>signal</code>.</li>
       </ul>
       <p class="figure"><strong>Figure</strong> <strong>7-1</strong>
-	<a name="XREF-931"></a>The Stack Model</p>
+	<a name="XREF-931">The Stack Model</a></p>
 
       <div class="figure" style="min-width: 399px">
 	<!-- min-width is necessary to prevent the surrounding box from being layed out narrower
@@ -181,11 +181,11 @@
 	active <code>block</code> statement.<a name="IX-932"></a></p>
       <a name="HEADING-56-11"></a>
       <a name="UID-Conditions-2820"></a>
-      <h2 class="subsection-title">Recovery and Exits</h2>
-      <p><a name="IX-933"></a>There are two ways to handle an exception: by recovery or by
+      <h2 class="subsection-title"><a name="IX-933">Recovery and Exits</a></h2>
+      <p>There are two ways to handle an exception: by recovery or by
 	exit. Recovery involves making some repair to the program state and leaving control in the
-	signaling unit. Exit involves <a name="IX-934"></a>transferring control outside of the
-	signaling unit through the use of a <a name="IX-935"></a>nonlocal exit.</p>
+	signaling unit. Exit involves <a name="IX-934">transferring control</a> outside of the
+	signaling unit through the use of a <a name="IX-935">nonlocal exit</a>.</p>
       <p>The simplest way to handle an exception is to exit the signaling unit by taking a nonlocal
 	exit to a target established in the outside stack. The <code>exception</code> clause of
 	the <code id="IX-936">block</code> statement provides a convenient mechanism for
@@ -270,8 +270,8 @@ end method;<a name="IX-937"></a>
 </pre>
       <a name="HEADING-56-22"></a>
       <a name="UID-Conditions-2199"></a>
-      <h2 class="subsection-title">Restarts</h2>
-      <p><a name="IX-938"></a><a name="IX-939"></a>Recovering or exiting can be
+      <h2 class="subsection-title"><a name="IX-939">Restarts</a></h2>
+      <p><a name="IX-938">Recovering</a> or exiting can be
 	accomplished directly, or a more formal mechanism called <dfn>restarting</dfn> can be
 	used. Using restarts provides more assurance that the handler and the signaling unit agree
 	on the meaning of what they are doing and provides some isolation of the handler from names
@@ -279,20 +279,20 @@ end method;<a name="IX-937"></a>
       <p>A handler restarts by signaling a restart. All restarts are instances
 	of <code id="IX-940">&lt;restart&gt;</code>. Any values needed for recovery are passed
 	in the restart (that is, in initialization arguments that the restart remembers, typically
-	in slots). The restart is handled by a <a name="IX-941"></a>restart handler that
-	either <a name="IX-942"></a>returns or takes a <a name="IX-943"></a>nonlocal
-	exit. If the restart handler returns some values, <code>signal</code> returns those values
+	in slots). The restart is handled by a <a name="IX-941">restart handler</a> that
+	either <a name="IX-942">returns</a> or takes a <a name="IX-943">nonlocal
+	exit</a>. If the restart handler returns some values, <code>signal</code> returns those values
 	and the handler that called <code>signal</code> also returns them. The call
 	to <code>signal</code> from the signaling unit that signaled the original condition returns
 	the same values, and the signaling unit recovers as directed by those
 	values.<a name="IX-944"></a></p>
       <a name="HEADING-56-25"></a>
       <a name="UID-Conditions-1894"></a>
-      <h2 class="subsection-title">Recovery Protocols</h2>
-      <p><a name="IX-945"></a>For every condition class there should be a <dfn>recovery
-	  protocol</dfn> that defines the meaning of <a name="IX-946"></a>handling by
-	returning, the meaning of the <a name="IX-947"></a>values returned, and
-	which <a name="IX-948"></a>restart handlers are supposed to be established by the
+      <h2 class="subsection-title"><a name="IX-945">Recovery Protocols</a></h2>
+      <p>For every condition class there should be a <dfn>recovery
+	  protocol</dfn> that defines the meaning of <a name="IX-946">handling by
+	returning</a>, the meaning of the <a name="IX-947">values returned</a>, and
+	which <a name="IX-948">restart handlers</a> are supposed to be established by the
 	signaling unit. The recovery protocol tells the handler what to expect from the
 	signaler. For many condition classes, this is the empty protocol: handling by returning
 	isn't allowed, and no particular restart handlers are provided. In this case only handling
@@ -317,7 +317,7 @@ end method;<a name="IX-937"></a>
 	which recovery facilities are actually available, but this is different from (and sometimes
 	is a superset of) the recovery facilities guaranteed by a recovery protocol always to be
 	available.</p>
-      <p>The <a name="IX-949"></a>debugger is the condition handler of last resort. It
+      <p>The <a name="IX-949">debugger</a> is the condition handler of last resort. It
 	receives control if no program-provided handler handles a serious condition. (This is true
 	even if the debugger provided cannot analyze or intervene in the execution of programs but
 	can only abort or restart them. The debugger might be merely a <q>core dumper,</q> a <q>bomb

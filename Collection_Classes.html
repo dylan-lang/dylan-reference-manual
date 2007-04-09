@@ -205,7 +205,7 @@
 
       <a name="HEADING-93-0"></a>
       <a name="UID-Built-In_Classes-9369"></a>
-      <h1 class="section-title"><a name="XREF-1398"></a><a name="IX-1399"></a>Collections</h1>
+      <h1 class="section-title"><a name="XREF-1398"></a><a name="IX-1399">Collections</a></h1>
       <p>This section describes the built-in collections, Dylan's aggregate data structures.</p>
       <p>Collections are used to hold groups of objects. Collections support iteration as well as
 	random access through collection keys. An overview of collections is given
@@ -213,7 +213,7 @@
       <p><a href="#XREF-1400">Figure 11-4</a> shows the built-in collection classes and some of
 	their characteristics.</p>
       <p class="figure"><strong>Figure</strong> <strong>11-4</strong>
-	<a name="XREF-1400"></a>The Collection Classes</p>
+	<a name="XREF-1400">The Collection Classes</a></p>
       
       <div class="figure wide" style="min-width: 715px">
 	<!-- min-width is necessary to prevent the surrounding box from being layed out narrower
@@ -383,9 +383,9 @@
 	      <td><p><a href="Collection_Operations#XREF-1714">298</a></p></td>
 	    </tr><tr>
 	      <td><p><code>forward-iteration-protocol</code></p></td>
-	      <td><p><a href="Constructing_and_Initializing_Instances#IX-1540">Returns a group
-		    of functions used to iterate over the elements of a collection.</a></p></td>
-	      <td><p><a href="Constructing_and_Initializing_Instances#IX-1540">337</a></p></td>
+	      <td><p><a href="Collection_Operations#XREF-1540">Returns a group of functions used to
+		    iterate over the elements of a collection.</a></p></td>
+	      <td><p><a href="Collection_Operations#XREF-1540">337</a></p></td>
 	    </tr><tr>
 	      <td><p><code>backward-iteration-protocol</code></p></td>
 	      <td><p><a href="Collection_Operations#XREF-1850">Returns a group of functions used
@@ -489,7 +489,7 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of collections whose keys are consecutive integers starting from zero.</p>
-	  <p><a name="IX-1404"></a>Sequences must be stable under iteration, and the iteration
+	  <p><a name="IX-1404">Sequences must be stable under iteration</a>, and the iteration
 	    order must match the order of keys. Thus, the key associated with a sequence's iteration
 	    state can be determined by keeping a counter in parallel with the iteration state.</p>
 	  <p><code><a name="IX-1405"></a><a name="IX-1406"></a><a name="IX-1407"></a><a name="IX-1408"></a><a name="IX-1409"></a><a name="IX-1410"></a><a name="IX-1411"></a><a name="IX-1412"></a><a name="IX-1413"></a><a name="IX-1414"></a><a name="IX-1415"></a><a name="IX-1416"></a></code>
@@ -901,8 +901,8 @@
 	<dd>
 	  <p>The class of collections that may grow or shrink to accommodate adding or removing
 	    elements.</p>
-	  <p><a name="IX-1423"></a>Stretchy collections
-	    allow <code id="IX-1424">element-setter </code>to be called with a key that is not
+	  <p><a name="IX-1423">Stretchy collections</a>
+	    allow <code id="IX-1424">element-setter</code> to be called with a key that is not
 	    present in the collection, expanding the collection as necessary to add a new element in
 	    that case. Each concrete subclass of <code>&lt;stretchy-collection&gt;</code> must
 	    provide or inherit a method for <code>element-setter </code>that behaves as follows when
@@ -941,9 +941,9 @@
       </dl>
       <a name="HEADING-93-1239"></a>
       <a name="UID-Built-In_Classes-420"></a>
-      <h2 class="subsection-title">Arrays</h2>
+      <h2 class="subsection-title"><a name="IX-1425">Arrays</a></h2>
       <a name="HEADING-93-1240"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="IX-1425"></a><a name="XREF-1426"></a><a name="IX-1427"></a>&lt;array&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><a name="XREF-1426"></a><code id="IX-1427">&lt;array&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Class]</span></h4>
       <hr class="item-title" />
       <p>The class of sequences whose elements are arranged according to a Cartesian coordinate
 	system.</p>
@@ -983,7 +983,7 @@
 	    subclasses of <code>&lt;array&gt;</code> that are used for this purpose. These concrete
 	    subclasses have no specified names, and their names are not exported by the Dylan
 	    module.</p>
-	  <p><a name="IX-1428"></a>When a single-dimensional array is created, the array
+	  <p>When a <a name="IX-1428">single-dimensional array</a> is created, the array
 	    created will be an instance of <code>&lt;vector&gt;</code>.</p>
 	  <p>Each concrete subclass of <code>&lt;array&gt;</code> must either provide or inherit
 	    implementations of the
@@ -1092,9 +1092,9 @@
       </dl>
       <a name="HEADING-93-1510"></a>
       <a name="UID-Built-In_Classes-16948"></a>
-      <h2 class="subsection-title">Vectors</h2>
+      <h2 class="subsection-title"><a name="IX-1430">Vectors</a></h2>
       <a name="HEADING-93-1511"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="IX-1430"></a><a name="IX-1431"></a><a name="XREF-1432"></a>&lt;vector&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><a name="XREF-1432"></a><code id="IX-1431">&lt;vector&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Class]</span></h4>
       <hr class="item-title" />
       <p>The class of arrays of rank one (i.e., exactly one dimension).</p>
       <dl class="Cliche">
@@ -1180,7 +1180,7 @@
 	</dd>
       </dl>
       <a name="HEADING-93-1652"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="IX-1434"></a><a name="XREF-1435"></a>&lt;simple-vector&gt;</code> </span><span class="attributes-summary">[Sealed Abstract Instantiable Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><a name="XREF-1435"></a><code id="IX-1434">&lt;simple-vector&gt;</code> </span><span class="attributes-summary">[Sealed Abstract Instantiable Class]</span></h4>
       <hr class="item-title" />
       <p>A predefined subclass of <code>&lt;vector&gt;</code> that provides an efficient
 	implementation of fixed-length vectors.</p>
@@ -1202,14 +1202,14 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of simple and efficient vectors.</p>
-	  <p><a name="IX-1436"></a>The class <code>&lt;simple-vector&gt;</code> provides a
-	    constant time implementation for the <code>element</code>
-	    and <code>element-setter </code>functions. This property is shared by all subtypes
-	    of <code>&lt;simple-vector&gt;</code>.</p>
+	  <p><a name="IX-1436">The class <code>&lt;simple-vector&gt;</code> provides a constant time
+	    implementation for the <code>element</code> and <code>element-setter</code>
+	    functions. This property is shared by all subtypes
+	    of <code>&lt;simple-vector&gt;</code>.</a></p>
 	  <p>Calling <code>make</code> on a <code>&lt;simple-vector&gt;</code> returns an instance
 	    of <code>&lt;simple-object-vector&gt;</code>. The size of a simple vector cannot be
 	    changed after the simple vector has been created.</p>
-	  <p><a name="IX-1437"></a>Vector literals (created with
+	  <p><a name="IX-1437">Vector literals</a> (created with
 	    the <code>#[</code>&hellip;<code>]</code> syntax) are general instances
 	    of <code>&lt;simple-vector&gt;</code>.</p>
 	  <p>The element type of <code>&lt;simple-vector&gt;</code> is <code>indefinite &lArr;
@@ -1356,7 +1356,7 @@
       <a name="UID-Built-In_Classes-25928"></a>
       <h2 class="subsection-title">Deques</h2>
       <a name="HEADING-93-1863"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="IX-1441"></a><a name="XREF-1442"></a>&lt;deque&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Primary Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><a name="XREF-1442"></a><code id="IX-1441">&lt;deque&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Primary Class]</span></h4>
       <hr class="item-title" />
       <p>The class of double-ended queues.</p>
       <dl class="Cliche">
@@ -1454,12 +1454,11 @@
       </dl>
       <a name="HEADING-93-2045"></a>
       <a name="UID-Built-In_Classes-423"></a>
-      <h2 class="subsection-title"><a name="IX-1443"></a>Lists</h2>
+      <h2 class="subsection-title"><a name="IX-1443">Lists</a></h2>
       <p>Lists are constructed by linking together instances
-	of <code>&lt;pair&gt;</code>. The <a name="IX-1444"></a>head of a list contains an
-	element, and the <a name="IX-1445"></a>tail of the list contains a pointer to the next
-	pair in the list. The list ends when the tail of a pair contains something besides another
-	pair.</p>
+	of <code>&lt;pair&gt;</code>. The <a name="IX-1444">head</a> of a list contains an element,
+	and the <a name="IX-1445">tail</a> of the list contains a pointer to the next pair in the
+	list. The list ends when the tail of a pair contains something besides another pair.</p>
       <p>A <dfn id="IX-1446">proper list</dfn> has a final pair with a tail containing the
 	empty list.</p>
       <p>An <dfn id="IX-1447">improper list</dfn> does not have a final pair with a tail
@@ -1473,7 +1472,7 @@
       <p>When treated as a collection, the elements of a list are the heads of successive pairs in
 	the list.</p>
       <a name="HEADING-93-2050"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="IX-1448"></a><a name="XREF-1449"></a>&lt;list&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Abstract Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><a name="XREF-1449"></a><code id="IX-1448">&lt;list&gt;</code> </span><span class="attributes-summary">[Sealed Instantiable Abstract Class]</span></h4>
       <hr class="item-title" />
       <p>The class of linked lists.</p>
       <dl class="Cliche">
@@ -1657,7 +1656,7 @@
       <a name="UID-Built-In_Classes-427"></a>
       <h2 class="subsection-title">Ranges</h2>
       <a name="HEADING-93-2364"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="IX-1453"></a><a name="XREF-1454"></a>&lt;range&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Primary Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><a name="XREF-1454"></a><code id="IX-1453">&lt;range&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Primary Class]</span></h4>
       <hr class="item-title" />
       <p>The class of arithmetic sequences.</p>
       <dl class="Cliche">
@@ -1785,9 +1784,9 @@
       </dl>
       <a name="HEADING-93-2560"></a>
       <a name="UID-Built-In_Classes-428"></a>
-      <h2 class="subsection-title">Strings</h2>
+      <h2 class="subsection-title"><a name="IX-1456">Strings</a></h2>
       <a name="HEADING-93-2561"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="IX-1455"></a><a name="IX-1456"></a>&lt;string&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><code id="IX-1455">&lt;string&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Class]</span></h4>
       <hr class="item-title" />
       <p>The class of sequences with elements that are characters.</p>
       <dl class="Cliche">
@@ -1965,17 +1964,16 @@
       </dl>
       <a name="HEADING-93-2809"></a>
       <a name="UID-Built-In_Classes-429"></a>
-      <h2 class="subsection-title">Tables</h2>
-      <p><a name="IX-1460"></a>Also called a hash table, a table is an unordered mapping
-	between arbitrary keys and elements. Tables are the only predefined collections that are
-	unstable under iteration.</p>
+      <h2 class="subsection-title"><a name="IX-1460">Tables</a></h2>
+      <p>Also called a hash table, a table is an unordered mapping between arbitrary keys and
+	elements. Tables are the only predefined collections that are unstable under iteration.</p>
       <p>Tables are stretchy in that they allow the addition and removal of
 	keys. <code>&lt;table&gt;</code> and its subclasses are the only predefined classes that are
 	stretchy but are not stretchy sequences.</p>
       <p>For a complete description of tables, see <a href="Tables#XREF-1036"><q>Tables</q> on
 	  page 122</a>.</p>
       <a name="HEADING-93-2813"></a>
-      <h4 class="item-title"><span class="signature"><code><a name="IX-1461"></a><a name="XREF-1462"></a>&lt;table&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Primary Class]</span></h4>
+      <h4 class="item-title"><span class="signature"><a name="XREF-1462"></a><code id="IX-1461">&lt;table&gt;</code> </span><span class="attributes-summary">[Open Abstract Instantiable Primary Class]</span></h4>
       <hr class="item-title" />
       <p>The class of tables (also known as hash tables).</p>
       <dl class="Cliche">
@@ -2026,18 +2024,18 @@
 	      <th><p>Page</p></th>
 	    </tr><tr>
 	      <td><p><code>forward-iteration-protocol</code></p></td>
-	      <td><p><a href="Constructing_and_Initializing_Instances#IX-1540">Returns a group
-		    of functions used to iterate over the elements of a collection.</a></p></td>
-	      <td><p><a href="Constructing_and_Initializing_Instances#IX-1540">337</a></p></td>
+	      <td><p><a href="Collection_Operations#XREF-1540">Returns a group of functions used to
+		    iterate over the elements of a collection.</a></p></td>
+	      <td><p><a href="Collection_Operations#XREF-1540">337</a></p></td>
 	    </tr><tr>
 	      <td><p><code>table-protocol</code></p></td>
-	      <td><p><a href="Collection_Operations#XREF-1852">Returns functions used to
-		    implement the iteration protocol for tables.</a></p></td>
+	      <td><p><a href="Collection_Operations#XREF-1852">Returns functions used to implement
+		    the iteration protocol for tables.</a></p></td>
 	      <td><p><a href="Collection_Operations#XREF-1852">340</a></p></td>
 	    </tr><tr>
 	      <td><p><code>remove-key!</code></p></td>
-	      <td><p><a href="Collection_Operations#XREF-1840">Modifies an explicit key
-		    collection so it no longer has a particular key.</a></p></td>
+	      <td><p><a href="Collection_Operations#XREF-1840">Modifies an explicit key collection
+		    so it no longer has a particular key.</a></p></td>
 	      <td><p><a href="Collection_Operations#XREF-1840">335</a></p></td>
 	    </tr><tr>
 	      <td><p><code>element</code></p></td>

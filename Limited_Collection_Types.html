@@ -138,10 +138,10 @@
 
       <a name="HEADING-69-0"></a>
       <a name="UID-Collections-3802"></a>
-      <h1 class="section-title"><a name="XREF-1060"></a>Limited Collection Types</h1>
-      <p><a name="IX-1061"></a>Limited collections are subtypes
-	of <code>&lt;collection&gt;</code> that are constrained to have a particular size or
-	dimensions and that are constrained to hold elements of a particular type.</p>
+      <h1 class="section-title"><a name="XREF-1060"></a><a name="IX-1061">Limited Collection Types</a></h1>
+      <p>Limited collections are subtypes of <code>&lt;collection&gt;</code> that are constrained to
+	have a particular size or dimensions and that are constrained to hold elements of a
+	particular type.</p>
       <p>If <var>C</var> is a subclass of <code>&lt;collection&gt;</code> whose element type is
 	indefinite <code>&lArr;</code> <var>T<em><sub>1</sub></em></var>, then it is possible to
 	create any number of limited collection types that can be described
@@ -173,9 +173,9 @@
 	itself. There is nothing special about this class; it is simply a class known to the
 	applicable <code>limited</code> method and its creation is subject to all the usual sealing
 	restrictions.</p>
-      <p><a name="IX-1062"></a>An object <var>X</var> is an instance of a limited collection
-	type <code>limited(<var>C</var>, of: <var>T<em><sub>2</sub></em></var>,
-	  size: <var>S</var>)</code> if and only if all of the following are true:</p>
+      <p>An object <var>X</var> is an <a name="IX-1062">instance of a limited collection
+	type</a> <code>limited(<var>C</var>, of: <var>T<em><sub>2</sub></em></var>,
+	size: <var>S</var>)</code> if and only if all of the following are true:</p>
       <ul>
 	<li><code>object-class(<var>X</var>)</code> is a subclass of <var>C</var>.</li>
 	<li><var>X</var>'s size matches <var>S</var>, as described above.</li>
@@ -199,11 +199,11 @@
 	element type. Setting or initializing an element will check that the new element is an
 	instance of the element type and signal an error of type <code>&lt;type-error&gt;</code> if
 	it is not.</p>
-      <p><a name="IX-1064"></a>If <var>L<em><sub>1</sub></em></var> is a subtype
+      <p>If <var>L<em><sub>1</sub></em></var> is a <a name="IX-1064">subtype
 	of <var>L<em><sub>2</sub></em></var> and <var>L<em><sub>2</sub></em></var> is a limited
-	collection type, then <var>L<em><sub>1</sub></em></var> is either a singleton of an instance
-	of <var>L<em><sub>2</sub></em></var> or a limited collection type that satisfies one of the
-	following sets of rules:</p>
+	collection type</a>, then <var>L<em><sub>1</sub></em></var> is either a singleton of an
+	instance of <var>L<em><sub>2</sub></em></var> or a limited collection type that satisfies
+	one of the following sets of rules:</p>
       <ol>
 	<li>If neither <var>L<em><sub>1</sub></em></var> nor <var>L<em><sub>2</sub></em></var>
 	  specifies a <code>dimensions:</code> attribute, let <var>L<em><sub>1</sub></em></var>
@@ -252,10 +252,9 @@
 	type <code>limited(<var>C</var>, of: <var>T</var>, dimensions: <var>D</var>)</code> is a
 	subtype of <var>C</var>.<a name="IX-1065"></a></p>
       <a name="HEADING-69-31"></a>
-      <h3 class="sub-subsection-title">Element Type Subclassing</h3>
-      <p><a name="IX-1066"></a>The element type subclassing rules are generalized to limited
-	collection types as follows (this is implied by the preceding and is included here for
-	explanatory purposes only):</p>
+      <h3 class="sub-subsection-title"><a name="IX-1066">Element Type Subclassing</a></h3>
+      <p>The element type subclassing rules are generalized to limited collection types as follows
+	(this is implied by the preceding and is included here for explanatory purposes only):</p>
       <p>If the element type of a limited collection type <var>L<em><sub>1</sub></em></var>
 	is <var>T<em><sub>1</sub></em></var>, each instance of <var>L<em><sub>1</sub></em></var>
 	stores elements of type <var>T<em><sub>1</sub></em></var>. The <code>element</code> method
@@ -280,10 +279,10 @@
 	no <code>default:</code> keyword argument is specified.<a name="IX-1067"></a></p>
       <a name="HEADING-69-36"></a>
       <a name="UID-Collections-3838"></a>
-      <h2 class="subsection-title">Creating Limited Collection Types</h2>
-      <p><a name="IX-1068"></a>You obtain a type object for a limited collection type by
-	calling the <code>limited</code> generic function on a collection class. There are several
-	built-in methods for <code>limited</code> specialized for specific subclasses
+      <h2 class="subsection-title"><a name="IX-1068">Creating Limited Collection Types</a></h2>
+      <p>You obtain a type object for a limited collection type by calling the <code>limited</code>
+	generic function on a collection class. There are several built-in methods
+	for <code>limited</code> specialized for specific subclasses
 	of <code>&lt;collection&gt;</code>. Each of these methods accepts a required keyword
 	argument <code>of:</code> and also accepts an optional keyword argument <code>size:</code>
 	if the class is not stretchy. If the class is <code>&lt;array&gt;</code> the optional
@@ -293,9 +292,9 @@
       <p>Users cannot write portable methods for <code>limited</code>. There are no built-in methods
 	for <code>limited</code> applicable to user-defined classes.</p>
       <a name="HEADING-69-39"></a>
-      <h3 class="sub-subsection-title">Uninstantiable Limited Collection Types</h3>
-      <p><a name="IX-1069"></a>Methods on <code>limited</code> support the creation of
-	uninstantiable limited types for the following classes:</p>
+      <h3 class="sub-subsection-title"><a name="IX-1069">Uninstantiable Limited Collection Types</a></h3>
+      <p>Methods on <code>limited</code> support the creation of uninstantiable limited types for
+	the following classes:</p>
       <ul>
 	<li><code>&lt;collection&gt;</code></li>
 	<li><code>&lt;explicit-key-collection&gt;</code></li>
@@ -308,9 +307,9 @@
       <p>Although limited types created from these classes cannot be instantiated, they are still
 	useful as specializers.<a name="IX-1070"></a></p>
       <a name="HEADING-69-49"></a>
-      <h3 class="sub-subsection-title">Instantiable Limited Collection Types</h3>
-      <p><a name="IX-1071"></a>Methods on <code>limited</code> support the creation of
-	instantiable limited types for the following classes:</p>
+      <h3 class="sub-subsection-title"><a name="IX-1071">Instantiable Limited Collection Types</a></h3>
+      <p>Methods on <code>limited</code> support the creation of instantiable limited types for the
+	following classes:</p>
       <ul>
 	<li><code>&lt;table&gt;</code></li>
 	<li><code>&lt;object-table&gt;</code></li>

@@ -138,11 +138,10 @@
 
       <a name="HEADING-60-0"></a>
       <a name="UID-Collections-2757"></a>
-      <h1 class="section-title">Overview</h1>
-      <p><a name="IX-983"></a>Collections are aggregate <a name="IX-984"></a>data
-	structures that map from <dfn id="IX-985">keys</dfn>
-	to <dfn id="IX-986">elements</dfn>. All collections are instances of the
-	class <code id="IX-987">&lt;collection&gt;</code>.</p>
+      <h1 class="section-title"><a name="IX-983">Overview</a></h1>
+      <p>Collections are aggregate <a name="IX-984">data structures</a> that map
+	from <dfn id="IX-985">keys</dfn> to <dfn id="IX-986">elements</dfn>. All collections are
+	instances of the class <code id="IX-987">&lt;collection&gt;</code>.</p>
       <p><code>&lt;collection&gt;</code> has two covering
 	subclasses: <code id="IX-988">&lt;sequence&gt;</code>
 	and <code id="IX-989">&lt;explicit-key-collection&gt;</code>. Every concrete subclass
@@ -159,25 +158,25 @@
 	  294</a> for a complete description of these functions.</p>
       <a name="HEADING-60-4"></a>
       <a name="UID-Collections-6197"></a>
-      <h2 class="subsection-title">The Iteration Protocol</h2>
-      <p><a name="IX-992"></a>All collections implement an <dfn>iteration protocol</dfn> that
-	allows iteration to be specified abstractly. Many higher level operations on collections can
-	be defined in terms of only the iteration protocol. For many programs these higher level
-	operations are sufficient; they will not need to use the iteration protocol directly. The
-	iteration protocol is used by programs defining new collection types, and for certain types
-	of iteration that cannot be handled by the built-in higher level operations.</p>
-      <p>The iteration protocol centers on the notion of a <q><a name="IX-993"></a>state</q>
+      <h2 class="subsection-title"><a name="IX-992">The Iteration Protocol</a></h2>
+      <p>All collections implement an <dfn>iteration protocol</dfn> that allows iteration to be
+	specified abstractly. Many higher level operations on collections can be defined in terms of
+	only the iteration protocol. For many programs these higher level operations are sufficient;
+	they will not need to use the iteration protocol directly. The iteration protocol is used by
+	programs defining new collection types, and for certain types of iteration that cannot be
+	handled by the built-in higher level operations.</p>
+      <p>The iteration protocol centers on the notion of a <q><a name="IX-993">state</a></q>
 	object for an iteration. Each collection class chooses its own most appropriate
 	representation for an iteration state, and only the functions of the iteration protocol are
 	affected by this choice.</p>
-      <p><a name="IX-994"></a>Use of the iteration protocol is based on the assumption that
+      <p><a name="IX-994">Use of the iteration protocol is based on the assumption that
 	the collection over which iteration occurs remains static for the duration of the
-	iteration. That is, arbitrary changes to a mutable collection while an iteration is in
+	iteration.</a> That is, arbitrary changes to a mutable collection while an iteration is in
 	progress may cause the iteration to produce unpredictable results.</p>
       <p>With notable exceptions, two or more iterations over the same collection are not guaranteed
 	to produce the same values in the same order, even if the collection is unaltered. For
 	details, see <a href="Iteration_Stability_and_Natural_Order#XREF-1001"><q>Iteration
-	    Stability and Natural Order</q></a> as follows.</p>
+	Stability and Natural Order</q></a> as follows.</p>
       <p>The built-in collection functions are implemented in terms of the iteration protocol. When
 	defining a new collection class, a programmer need only define the iteration protocol for
 	the class. Once this is done, instances of the class can be used with all the built-in

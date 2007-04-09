@@ -134,23 +134,23 @@
 
       <a name="HEADING-67-0"></a>
       <a name="UID-Collections-2785"></a>
-      <h1 class="section-title"><a name="XREF-1036"></a>Tables</h1>
-      <p><a name="IX-1037"></a>Tables map arbitrary keys to elements. Table keys may be any
-	object, including complex objects such as strings. All tables are instances
+      <h1 class="section-title"><a name="XREF-1036"></a><a name="IX-1037">Tables</a></h1>
+      <p>Tables map arbitrary keys to elements. Table keys may be any object, including complex
+	objects such as strings. All tables are instances
 	of <code id="IX-1038">&lt;table&gt;</code>. <code>&lt;table&gt;</code> is the only
 	instantiable subclass of <code>&lt;explicit-key-collection&gt;</code> defined by
 	Dylan. Tables are unstable under iteration.</p>
-      <p><a name="IX-1039"></a>The iteration protocol for tables is implemented in terms of
-	the function <code id="IX-1040">table-protocol</code>. Every concrete subclass
+      <p>The <a name="IX-1039">iteration protocol for tables</a> is implemented in terms of the
+	function <code id="IX-1040">table-protocol</code>. Every concrete subclass
 	of <code>&lt;table&gt;</code> must provide or inherit a method
 	for <code>table-protocol</code>. This function accepts a table as an argument, and returns
 	an equivalence predicate and hash-function, as described below.</p>
-      <p>The <dfn id="IX-1041">equivalence predicate</dfn> of a table is used to compare
-	keys. (It is the table's <a name="IX-1042"></a>key test.)  The table maps keys that
-	are equivalent under the predicate to the same table element. An equivalence predicate is a
-	boolean function of two arguments that returns true if and only if the arguments are
-	considered to be the same according to some specified criteria. For a function to be used as
-	an equivalence predicate, it must be reflexive, commutative, and transitive. That is, for a
+      <p>The <dfn id="IX-1041">equivalence predicate</dfn> of a table is used to compare keys. (It
+	is the table's <a name="IX-1042">key test</a>.)  The table maps keys that are equivalent
+	under the predicate to the same table element. An equivalence predicate is a boolean
+	function of two arguments that returns true if and only if the arguments are considered to
+	be the same according to some specified criteria. For a function to be used as an
+	equivalence predicate, it must be reflexive, commutative, and transitive. That is, for a
 	function <var>F</var> and any arguments <var>X</var>, <var>Y</var>, and <var>Z</var> in the
 	domain of <var>F</var>, the following must be true:</p>
       <ul>

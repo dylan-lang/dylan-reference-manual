@@ -138,11 +138,11 @@
 
       <a name="HEADING-82-0"></a>
       <a name="UID-Macros-6305"></a>
-      <h1 class="section-title"><a name="XREF-1256"></a>Pattern Variable Constraints</h1>
-      <p><a name="IX-1257"></a>Each <var>pattern-variable</var> in the left-hand side of a
-	rule in a macro definition has a constraint associated with it. This prevents the pattern
-	from matching unless the fragment matched to the pattern-variable satisfies the
-	constraint. In most cases it also controls how the matching fragment is parsed.</p>
+      <h1 class="section-title"><a name="XREF-1256"></a><a name="IX-1257">Pattern Variable Constraints</a></h1>
+      <p>Each <var>pattern-variable</var> in the left-hand side of a rule in a macro definition has
+	a constraint associated with it. This prevents the pattern from matching unless the fragment
+	matched to the pattern-variable satisfies the constraint. In most cases it also controls how
+	the matching fragment is parsed.</p>
       <p>You specify a constraint in a <var>pattern-variable</var> by suffixing a colon and the
 	constraint name to the pattern variable name. Intervening whitespace is not allowed. As an
 	abbreviation, if a pattern variable has the same name as its constraint,
@@ -150,7 +150,7 @@
 	of <code>?<var>the-name</var>:<var>the-name</var></code>.</p>
       <p>The available constraints are listed in <a href="#XREF-1173">Table 10-1</a>.</p>
       <table class="numbered">
-	<caption><strong>Table 10-1</strong>  <a name="XREF-1173"></a>Available constraints</caption>
+	<caption><strong>Table 10-1</strong>  <a name="XREF-1173">Available constraints</a></caption>
 	<tr>
 	  <th><p>Constraint name</p></th>
 	  <th><p>Grammar accepted</p></th>
@@ -215,18 +215,18 @@
       <p>Some implementations and a future version of the Dylan language specification might add
 	more constraint choices to this table.</p>
       <p>When a pattern variable has the same name as an auxiliary rule-set, its constraint defaults
-	to <a name="IX-1258"></a>wildcard and can be omitted. Otherwise a constraint must be
+	to <a name="IX-1258">wildcard</a> and can be omitted. Otherwise a constraint must be
 	specified in every <var>pattern-variable</var> and <var>pattern-keyword</var>.</p>
       <p>A constraint applies only to the specific pattern variable occurrence to which it is
 	attached. It does not constrain other pattern variable occurrences with the same name.</p>
       <a name="HEADING-82-144"></a>
       <a name="UID-Macros-5860"></a>
-      <h2 class="subsection-title">Intermediate Words</h2>
-      <p><a name="IX-1259"></a>When a <var>pattern-variable </var> has a constraint
-	of <code>body</code> or <code>case-body</code>, its parsing of the fragment stops before any
-	token that is an intermediate word. This allows intermediate words to delimit clauses that
-	have separate bodies, like <code>else</code> and <code>elseif</code> in an <code>if</code>
-	statement. The intermediate words of a macro are identified as follows:</p>
+      <h2 class="subsection-title"><a name="IX-1259">Intermediate Words</a></h2>
+      <p>When a <var>pattern-variable </var> has a constraint of <code>body</code>
+	or <code>case-body</code>, its parsing of the fragment stops before any token that is an
+	intermediate word. This allows intermediate words to delimit clauses that have separate
+	bodies, like <code>else</code> and <code>elseif</code> in an <code>if</code> statement. The
+	intermediate words of a macro are identified as follows:</p>
       <ul>
 	<li>Define a body-variable to be a pattern variable that either has a constraint
 	  of <code>body</code> or <code>case-body</code>, or names an auxiliary rule-set where some

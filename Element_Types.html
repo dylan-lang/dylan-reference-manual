@@ -134,15 +134,15 @@
 
       <a name="HEADING-68-0"></a>
       <a name="UID-Collections-5050"></a>
-      <h1 class="section-title"><a name="XREF-1051"></a>Element Types</h1>
-      <p><a name="IX-1052"></a>Each instance <var>X</var> of <code>&lt;collection&gt;</code>
+      <h1 class="section-title"><a name="XREF-1051"></a><a name="IX-1052">Element Types</a></h1>
+      <p>Each instance <var>X</var> of <code>&lt;collection&gt;</code>
 	has a conceptual <dfn>element type</dfn> that is an instance
 	of <code>&lt;type&gt;</code>. If the element type of <var>X</var>
 	is <var>T</var>, <var>X</var> stores elements of
 	type <var>T</var>. The <code id="IX-1053">element</code> method will always return an
 	instance of <var>T</var> and the <code id="IX-1054">element-setter</code> method
 	(if <var>X</var> is mutable) will accept any instance of <var>T</var>. The analogous
-	functions returned by the <a name="IX-1055"></a>iteration protocol also return/accept
+	functions returned by the <a name="IX-1055">iteration protocol</a> also return/accept
 	any instance of <var>T</var>.</p>
       <p><a name="IX-1056"></a>Each subclass <var>C</var> of <code>&lt;collection&gt;</code>
 	has a conceptual element type that is either <var>T<em><sub>1</sub></em></var> or
@@ -279,7 +279,7 @@
 	the range is an instance of the element type.</p>
       <p>The preceding section describes the element type of every object that is created
 	by <code>make</code> of an instantiable built-in collection
-	class. <a name="IX-1058"></a>The element type of an instance of a user-defined
+	class. The <a name="IX-1058">element type</a> of an instance of a user-defined
 	collection class is unspecified, but should follow the rules given here in order to preserve
 	the property that any operation that works on an instance of a supertype must work on an
 	instance of a subtype.<a name="IX-1059"></a></p>

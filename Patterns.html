@@ -140,15 +140,14 @@
 
       <a name="HEADING-81-0"></a>
       <a name="UID-Macros-1648"></a>
-      <h1 class="section-title">Patterns</h1>
-      <p><a name="IX-1237"></a>Approximately speaking, a pattern looks like the construct that
-	it matches, but contains pattern variables that bind to portions of the construct. Hence, a
-	left-hand side in the <var>main-rule-set</var> looks like a macro call. However, the grammar
-	of patterns is not the same as the grammar of programs, but contains just what is required
-	to match the portions of the Dylan grammar that are extensible by macros. Patterns have a
-	simple nested grammar, with semicolons, commas, and brackets used to indicate levels of
-	nesting. See the definition of <var>pattern</var> in <a href="BNF">Appendix
-	  A, <q>BNF.</q></a></p>
+      <h1 class="section-title"><a name="IX-1237">Patterns</a></h1>
+      <p>Approximately speaking, a pattern looks like the construct that it matches, but contains
+	pattern variables that bind to portions of the construct. Hence, a left-hand side in
+	the <var>main-rule-set</var> looks like a macro call. However, the grammar of patterns is
+	not the same as the grammar of programs, but contains just what is required to match the
+	portions of the Dylan grammar that are extensible by macros. Patterns have a simple nested
+	grammar, with semicolons, commas, and brackets used to indicate levels of nesting. See the
+	definition of <var>pattern</var> in <a href="BNF">Appendix A, <q>BNF.</q></a></p>
       <p>A pattern matches a fragment (a sequence of elementary fragments) by executing the
 	following algorithm from left to right. It is easy to create patterns that are ambiguous
 	when considered as grammars. This ambiguity is resolved by the left to right processing
@@ -297,7 +296,7 @@
 		  Variable Constraints</q> on page 157</a>. If the <var>pattern-keyword</var> has a
 	      wildcard constraint, bind the pattern variable to the
 	      property's <var>value</var>.</li>
-	    <li>A double <a name="IX-1248"></a>question mark finds every property with a
+	    <li>A double <a name="IX-1248">question mark</a> finds every property with a
 	      matching <em class="BNFCaps">symbol</em>, processes each property's <var>value</var>
 	      as for a single question mark, and binds the pattern variable to a sequence of the
 	      values, preserving the order of properties in the input fragment. This sequence can
@@ -318,10 +317,9 @@
       </ul>
       <a name="HEADING-81-32"></a>
       <a name="UID-Macros-1752"></a>
-      <h2 class="subsection-title">Special Rules for Definitions</h2>
-      <p><a name="IX-1249"></a>A list-style definition parses as the core reserved
-	word <code>define</code>, an optional sequence of modifiers,
-	a <em class="BNFCaps">define-list-word</em>, and a
+      <h2 class="subsection-title"><a name="IX-1249">Special Rules for Definitions</a></h2>
+      <p>A list-style definition parses as the core reserved word <code>define</code>, an optional
+	sequence of modifiers, a <em class="BNFCaps">define-list-word</em>, and a
 	possibly-empty <var>list-fragment. </var>The left-hand side of
 	a <var>list-style-definition-rule </var> matches this by treating
 	the <var>definition-head</var> as a <var>pattern-sequence</var> and matching it to the
@@ -356,8 +354,8 @@
 	wildcard.<a name="IX-1250"></a></p>
       <a name="HEADING-81-36"></a>
       <a name="UID-Macros-1760"></a>
-      <h2 class="subsection-title">Special Rules for Statements</h2>
-      <p><a name="IX-1251"></a>A statement parses as a <em class="BNFCaps">begin-word</em>, a
+      <h2 class="subsection-title"><a name="IX-1251">Special Rules for Statements</a></h2>
+      <p>A statement parses as a <em class="BNFCaps">begin-word</em>, a
 	possibly-empty <var>body-fragment,</var> the core reserved word <code>end</code>, and an
 	optional repetition of the <em class="BNFCaps">begin-word</em>. The left-hand side of
 	a <var>statement-rule</var> matches this by matching the <var>pattern</var> to
@@ -369,20 +367,19 @@
 	because it was already used to identify the macro being called and because its spelling
 	might have been changed by renaming the macro during module importing. The
 	word <code>end</code> and the optional item following it in the macro call are checked
-	during parsing, and so do not participate in the pattern
-	match.<a name="IX-1252"></a></p>
+	during parsing, and so do not participate in the pattern match.<a name="IX-1252"></a></p>
       <a name="HEADING-81-38"></a>
       <a name="UID-Macros-1764"></a>
-      <h2 class="subsection-title">Special Rules for Function Macros</h2>
-      <p><a name="IX-1253"></a>A call to a function macro parses as
-	a <em class="BNFCaps">function-word</em> followed by a parenthesized,
-	possibly-empty <var>body-fragment</var>. The left-hand side of a <var>function-rule</var>
-	matches this by matching the <var>pattern</var> to the <var>body-fragment. </var>If the rule
-	does not contain a <var>pattern,</var> the <var>body-fragment</var> must be
-	empty. The <em class="BNFCaps">function-word</em> does not participate in the pattern match
-	because it was already used to identify the macro being called and because its spelling
-	might have been changed by renaming the macro during module importing. The parentheses in
-	the rule are just decoration and do not participate in the pattern match.</p>
+      <h2 class="subsection-title"><a name="IX-1253">Special Rules for Function Macros</a></h2>
+      <p>A call to a function macro parses as a <em class="BNFCaps">function-word</em> followed by a
+	parenthesized, possibly-empty <var>body-fragment</var>. The left-hand side of
+	a <var>function-rule</var> matches this by matching the <var>pattern</var> to
+	the <var>body-fragment. </var>If the rule does not contain a <var>pattern,</var>
+	the <var>body-fragment</var> must be empty. The <em class="BNFCaps">function-word</em> does
+	not participate in the pattern match because it was already used to identify the macro being
+	called and because its spelling might have been changed by renaming the macro during module
+	importing. The parentheses in the rule are just decoration and do not participate in the
+	pattern match.</p>
       <p>A function macro can also be invoked by any of the shorthand syntax constructs available
 	for invoking functions. In this case, the arguments are always parsed expression fragments,
 	as described on <a href="Macros_Overview#XREF-1199">page 146</a>. However, the left-hand

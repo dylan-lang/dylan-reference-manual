@@ -135,13 +135,13 @@
 
       <a name="HEADING-113-0"></a>
       <a name="UID-Built-In_Macros-7985"></a>
-      <h1 class="section-title">Local Declarations</h1>
-      <p><a name="IX-2029"></a>Local declarations are used to create bindings or install
-	handlers that are active for the remainder of the innermost body containing the
-	declaration. Bindings created by local declarations can be referenced only in the remaining
-	program text of the body. Handlers installed are active while the execution of the remainder
-	of the body is active, which includes the time during which any functions called from the
-	remainder of the body are active.</p>
+      <h1 class="section-title"><a name="IX-2029">Local Declarations</a></h1>
+      <p>Local declarations are used to create bindings or install handlers that are active for the
+	remainder of the innermost body containing the declaration. Bindings created by local
+	declarations can be referenced only in the remaining program text of the body. Handlers
+	installed are active while the execution of the remainder of the body is active, which
+	includes the time during which any functions called from the remainder of the body are
+	active.</p>
       <table class="numbered">
 	<caption><strong>Table 14-2</strong> Local Declarations</caption>
 	<tr>
@@ -169,8 +169,8 @@
       <a name="HEADING-113-63"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-2030">let</code> </span><span class="attributes-summary">[Local Declaration]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-2031"></a>Creates and initializes new local
-	bindings within the smallest enclosing implicit body.</p>
+      <p class="short-description"><a name="XREF-2031">Creates and initializes new local
+	bindings within the smallest enclosing implicit body.</a></p>
       <dl class="Cliche">
 	<dt><span>Macro Call:</span></dt>
 	<dd><p><code>let</code> <var>variables</var> <code>=</code> <var>init</var> <code>;</code></p></dd>
@@ -189,10 +189,10 @@
 	  <p><code>let</code> creates local bindings for the <var>variables</var>, and initializes
 	    them to the values returned by <var>init</var>. The bindings are visible for the remainder
 	    of the smallest enclosing implicit body.</p>
-	  <p><a name="IX-2032"></a>The first value returned by the <var>init</var> is bound to
-	    the first <var>variable</var>, the second value to the second <var>variable</var>,
-	    etc. The last <var>variable</var> may be preceded by <code>#rest</code>, in which case it
-	    is bound to a sequence containing all the remaining values.</p>
+	  <p><a name="IX-2032">The first value returned by the <var>init</var> is bound to the
+	    first <var>variable</var>, the second value to the second <var>variable</var>, etc.</a>
+	    The last <var>variable</var> may be preceded by <code>#rest</code>, in which case it is
+	    bound to a sequence containing all the remaining values.</p>
 	  <p>Each <var>variable</var> is a variable-name or a variable-name followed by a
 	    specializer.</p>
 	  <p>If more than one binding is defined, the <var>variables</var> are enclosed in
@@ -203,8 +203,8 @@ let start = 0;
 let (whole-part, remainder) = truncate(amount);
 
 let (first-value, #rest rest-values) = get-initial-values();</pre>
-	  <p><a name="IX-2033"></a>Local variables may be specialized. This ensures that their
-	    value will always be of a given type. An attempt to initialize or assign the variable to a
+	  <p><a name="IX-2033">Local variables may be specialized.</a> This ensures that their value
+	    will always be of a given type. An attempt to initialize or assign the variable to a
 	    value not of that type will signal an error of type <code>&lt;type-error&gt;</code>.</p>
 	  <pre class="code">
 let elapsed-time :: &lt;integer&gt; = 0;
@@ -217,9 +217,9 @@ let (whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount
       <a name="HEADING-113-79"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-2034">local</code> </span><span class="attributes-summary">[Local Declaration]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-2035"></a><a name="IX-2036"></a>Creates
-	new local bindings within the smallest enclosing implicit body and initializes them to local
-	methods that can be self-recursive and mutually recursive.</p>
+      <p class="short-description"><a name="IX-2036"></a><a name="XREF-2035">Creates new local
+	bindings within the smallest enclosing implicit body and initializes them to local methods
+	that can be self-recursive and mutually recursive.</a></p>
       <dl class="Cliche">
 	<dt><span>Macro Call:</span></dt>
 	<dd><p><code>local</code> <strong class="re">{ [</strong> <code>method</code> <strong class="re">]</strong> <var>name parameter-list</var> <strong class="re">[</strong> <var>body</var> <strong class="re">]</strong> <code>end</code> <strong class="re">[</strong> <code>method</code> <strong class="re">] [</strong> <var>name</var> <strong class="re">] }</strong> <code>,</code><strong class="re"><sup>+</sup></strong></p></dd>
@@ -251,9 +251,8 @@ let (whole-part :: &lt;integer&gt;, remainder :: &lt;real&gt;) = truncate(amount
       <a name="HEADING-113-89"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-2037">let handler</code> </span><span class="attributes-summary">[Local Declaration]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-2038"></a><a name="IX-2039"></a>Establishes
-	a condition handler for the duration of the execution of smallest enclosing implicit
-	body.</p>
+      <p class="short-description"><a name="IX-2039"></a><a name="XREF-2038">Establishes a condition
+	handler for the duration of the execution of smallest enclosing implicit body.</a></p>
       <dl class="Cliche">
 	<dt><span>Macro Call:</span></dt>
 	<dd><p><code>let handler</code> <var>condition</var> <code>=</code> <var>handler</var></p></dd>

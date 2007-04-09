@@ -135,16 +135,15 @@
 
       <a name="HEADING-97-0"></a>
       <a name="UID-Built-In_Functions-20433"></a>
-      <h1 class="section-title">Overview</h1>
-      <p><a name="IX-1528"></a>This chapter contains an entry for each function defined by
-	Dylan.</p>
-      <p><a name="IX-1529"></a>The functions described below are annotated either as
+      <h1 class="section-title"><a name="IX-1528">Overview</a></h1>
+      <p>This chapter contains an entry for each function defined by Dylan.</p>
+      <p>The functions described below are <a name="IX-1529">annotated</a> either as
 	an <q>open generic function</q> or as a <q>function.</q></p>
-      <p>A function specified as an <q><a name="IX-1530"></a>open generic function</q> can be
+      <p>A function specified as an <q><a name="IX-1530">open generic function</a></q> can be
 	extended through the addition of programmer defined methods. The signature of the generic
 	function constrains which methods can be added through the congruency rules described
 	on <a href="Parameter_Lists#XREF-837">page 93</a>. The signature does not imply a set
-	of <a name="IX-1531"></a>predefined methods. For example, the signature
+	of predefined <a name="IX-1531">methods</a>. For example, the signature
 	of <code>+</code> is <code>(&lt;object&gt;, &lt;object&gt;)</code>, but the predefined
 	methods on <code>+</code> only cover subtypes of <code>&lt;number&gt;</code>. Particular
 	behavior of the function is given in its description and in the description of its
@@ -152,7 +151,7 @@
       <p><a name="IX-1532"></a>A function specified as a <q>function</q> cannot portably be
 	extended through the addition of methods. Implementations are free to implement these
 	functions as open generic functions, but programs that take advantage of
-	such <a name="IX-1533"></a>liberality will not be portable. The signature of such a
+	such <a name="IX-1533">liberality</a> will not be portable. The signature of such a
 	function specifies the types of the arguments to which the function may be applicable, but
 	does not necessarily imply that the function is applicable to all instances of the
 	types. The exact behavior of the function is given in its description.</p>
@@ -161,7 +160,7 @@
 	this liberality will not be portable.</p>
       <p>When a method is specified, it describes the behavior of a generic function when applied to
 	arguments of particular types. It does not imply that this behavior is implemented by a
-	single method. A method described as <q><a name="IX-1534"></a>sealed</q> specifies a
+	single method. A method described as <q><a name="IX-1534">sealed</a></q> specifies a
 	sealed domain covering the generic function and specializers of the method.</p>
       <p>Where a sealed domain is specified, implementations are free to seal the domain or leave
 	the domain unsealed. Portable programs should not rely on the domain being

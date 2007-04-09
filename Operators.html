@@ -133,38 +133,38 @@
 
       <a name="HEADING-31-0"></a>
       <a name="UID-Program_Control-1279"></a>
-      <h1 class="section-title"><a name="IX-438"></a>Operators</h1>
+      <h1 class="section-title"><a name="IX-438">Operators</a></h1>
       <p>Dylan provides a small number of unary and binary operators. These are syntactic shorthand
 	for function calls or function-macro calls.</p>
-      <p>Because of the possibility of <a name="IX-439"></a>token blending, operators and
+      <p>Because of the possibility of <a name="IX-439">token blending</a>, operators and
 	their operands must often be separated by <a name="IX-440"></a>whitespace. For
 	example, <code>foo+bar</code> is a single named value reference, not an invocation of the
 	addition operator. The complete rules of tokenization are given in the lexical syntax
 	in <a href="BNF">Appendix A, <q>BNF.</q></a></p>
-      <p>All binary operators are <a name="IX-441"></a>left-associative, except for the
+      <p>All binary operators are <a name="IX-441">left-associative</a>, except for the
 	assignment operator, <code>:=</code>, and the exponentiation operator, <code>^</code>, which
-	are <a name="IX-442"></a>right-associative.</p>
-      <p><a name="IX-443"></a>Each operator corresponds to a binding name, given in the table
-	below. When an operator is called, the corresponding name is looked up in the environment of
-	the call. (It is not looked up in the <a name="IX-444"></a>Dylan module, and will only
+	are <a name="IX-442">right-associative</a>.</p>
+      <p><a name="IX-443">Each operator corresponds to a binding name, given in the table
+	below.</a> When an operator is called, the corresponding name is looked up in the environment of
+	the call. (It is not looked up in the <a name="IX-444">Dylan module</a>, and will only
 	refer to a binding in the Dylan module if that binding has been imported in the current
 	module and has not been shadowed by a lexical binding.)</p>
       <p>If the name given in the table has the same spelling as the operator, it must be escaped
-	with <a name="IX-445"></a>\ to be used as a named value reference. For example, to add
+	with <a name="IX-445">\</a> to be used as a named value reference. For example, to add
 	a method to <code>+</code> with <code>define method</code>, you use <code>\+</code>. To
 	use <code>&lt;</code> as an argument to <code>sort</code>, you write <code>\&lt;</code>.</p>
-      <p><a name="IX-446"></a>The operands of a binary operator call that is shorthand for a
-	function call are executed in left to right order. The operands of a binary operator call
+      <p><a name="IX-446">The operands of a binary operator call that is shorthand for a
+	function call are executed in left to right order.</a> The operands of a binary operator call
 	which is shorthand for a function macro call are passed to the macro. Their order of
 	execution depends on the definition of the macro. The built-in function macros are described
 	in <a href="Function_Macros#XREF-2068"><q>Function Macros</q> on page 409</a>.</p>
-      <p><a name="IX-447"></a><a name="IX-448"></a>The operators are listed
-	in <a href="#XREF-427">Table 4-1</a> in descending order of precedence. Operators within
-	a group share the same precedence. When a function call using slot reference syntax appears
-	as an operand, it has greater precedence than any of the binary operators.</p>
+      <p>The operators are listed in <a href="#XREF-427">Table 4-1</a> in
+	descending <a name="IX-447">order of precedence</a>. Operators within a group share the same
+	precedence. When a function call using <a name="IX-448">slot reference syntax</a> appears as
+	an operand, it has greater precedence than any of the binary operators.</p>
       <p><a name="IX-449"></a><a name="IX-450"></a></p>
       <table class="numbered grouped">
-	<caption><strong>Table 4-1</strong>  <a name="XREF-427"></a>Operators</caption>
+	<caption><strong>Table 4-1</strong>  <a name="XREF-427">Operators</a></caption>
 	<thead>
 	  <tr>
 	    <th>Operator</th>

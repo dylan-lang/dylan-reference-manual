@@ -177,9 +177,9 @@
 
       <a name="HEADING-99-0"></a>
       <a name="UID-Built-In_Functions-2295"></a>
-      <h1 class="section-title">Equality and Comparison</h1>
-      <p><a name="IX-1570"></a>Dylan provides an identity function, as well as a group of
-	equality and magnitude comparison functions that can be extended for user classes. The
+      <h1 class="section-title"><a name="IX-1570">Equality and Comparison</a></h1>
+      <p>Dylan provides an identity function, as well as a group of equality and magnitude
+	comparison functions that can be extended for user classes. The
 	functions <code>~=</code>, <code>~==</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>min</code>
 	and <code>max</code> are defined in terms of <code>==</code> or <code>=</code>
 	and <code>&lt;</code>. By extending the behavior of <code>=</code> and <code>&lt;</code>,
@@ -187,20 +187,20 @@
       <p>For the protocol to work, user-defined methods on <code>=</code> and <code>&lt;</code> must
 	preserve the following properties:</p>
       <dl>
-	<dt><a name="IX-1571"></a>Identity:</dt>
+	<dt><a name="IX-1571">Identity:</a></dt>
 	<dd><p>If (a <code>=</code> b), then (b <code>=</code> a).</p></dd>
-	<dt><a name="IX-1572"></a>Transitivity: </dt>
+	<dt><a name="IX-1572">Transitivity:</a></dt>
 	<dd><p>If (a <code>&lt;</code> b) and (b <code>&lt;</code> c),
 	    then (a <code>&lt;</code> c).</p></dd>
 	<dd><p>If (a <code>=</code> b) and (b <code>=</code> c), then (a <code>=</code> c).</p></dd>
-	<dt><a name="IX-1573"></a>Trichotomy:</dt>
+	<dt><a name="IX-1573">Trichotomy:</a></dt>
 	<dd>
 	  <p>Exactly one of: (a <code>&lt;</code> b), (a <code>=</code> b), (b <code>&lt;</code> a)
 	    always holds (on the assumption that these two operations are defined for the objects in
 	    question).</p>
 	  <p>In the general case, the behavior of comparison operators when applied to instances
 	    of <code>&lt;complex&gt;</code> is implementation defined. This is to allow
-	    implementations to support <a name="IX-1574"></a>IEEE floating point when
+	    implementations to support <a name="IX-1574">IEEE floating point</a> when
 	    comparing NaNs. However, when instances of <code>&lt;rational&gt;</code> and instances
 	    of <code>&lt;float&gt;</code> are compared, it is defined that the instance
 	    of <code>&lt;float&gt;</code> is first converted to a rational and then an exact
@@ -208,12 +208,12 @@
       </dl>
       <a name="HEADING-99-8"></a>
       <a name="UID-Built-In_Functions-2809"></a>
-      <h2 class="subsection-title"><a name="IX-1575"></a>Logical Negation</h2>
+      <h2 class="subsection-title"><a name="IX-1575">Logical Negation</a></h2>
       <a name="HEADING-99-9"></a>
       <h4 class="item-title"><span class="signature"><code>~</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1576"></a>Returns true if its argument is
-	false; otherwise returns false.</p>
+      <p class="short-description"><a name="XREF-1576">Returns true if its argument is
+	false; otherwise returns false.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -250,7 +250,7 @@
       <a name="HEADING-99-16"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1577">==</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1578"></a>Compares two objects for identity.</p>
+      <p class="short-description"><a name="XREF-1578">Compares two objects for identity.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -282,8 +282,8 @@
 	<dd>
 	  <p>Returns true if <var>object1</var> and <var>object2</var> are identical. Otherwise, it
 	    returns false.</p>
-	  <p><a name="IX-1579"></a><a name="IX-1580"></a>Objects are considered
-	    identical if they are computationally equivalent. That is, there is no way for any
+	  <p>Objects are considered <a name="IX-1579">identical</a> if they
+	    are <a name="IX-1580">computationally equivalent</a>. That is, there is no way for any
 	    possible Dylan program to distinguish them.</p>
 	  <p>At an implementation level, this will usually mean that the objects are pointers to the
 	    same storage or are the same immediate value. An extension is made for built-in number
@@ -295,7 +295,7 @@
       <a name="HEADING-99-25"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1581">~==</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1582"></a>Compares two objects for nonidentity.</p>
+      <p class="short-description"><a name="XREF-1582">Compares two objects for nonidentity.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -336,7 +336,7 @@
       <h4 class="item-title"><span class="signature"><code id="IX-1583">=</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
       <p class="short-description"><a name="XREF-1584"></a>Compares two objects
-	for <a name="IX-1585"></a>equality.</p>
+	for <a name="IX-1585">equality</a>.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -438,8 +438,7 @@
       <a name="HEADING-99-58"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1586">~=</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description">Compares two objects
-	for <a name="IX-1587"></a>inequality.</p>
+      <p class="short-description">Compares two objects for <a name="IX-1587">inequality</a>.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -483,7 +482,7 @@
       <h4 class="item-title"><span class="signature"><code id="IX-1588">&lt;</code> </span><span class="attributes-summary">[Open Generic Function]</span></h4>
       <hr class="item-title" />
       <p class="short-description"><a name="XREF-1589"></a>Returns true if its first operand
-	is <a name="IX-1590"></a>less than its second operand.</p>
+	is <a name="IX-1590">less than</a> its second operand.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -539,8 +538,8 @@
       <a name="HEADING-99-82"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1591">&gt;</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description">Returns true if its first operand
-	is <a name="IX-1592"></a>greater than its second operand.</p>
+      <p class="short-description">Returns true if its first operand is <a name="IX-1592">greater
+	than</a> its second operand.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -580,7 +579,7 @@
       <h4 class="item-title"><span class="signature"><code id="IX-1593">&lt;=</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
       <p class="short-description">Returns true if its first operand
-	is <a name="IX-1594"></a>less than or equal to its second operand.</p>
+	is <a name="IX-1594">less than or equal to</a> its second operand.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -620,7 +619,7 @@
       <h4 class="item-title"><span class="signature"><code id="IX-1595">&gt;=</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
       <p class="short-description">Returns true if its first operand
-	is <a name="IX-1596"></a>greater than or equal to its second operand.</p>
+	is <a name="IX-1596">greater than or equal to</a> its second operand.</p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -659,7 +658,7 @@
       <a name="HEADING-99-106"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1597">min</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1598"></a>Returns the least of its arguments.</p>
+      <p class="short-description"><a name="XREF-1598">Returns the least of its arguments.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>
@@ -697,8 +696,8 @@
       <a name="HEADING-99-114"></a>
       <h4 class="item-title"><span class="signature"><code id="IX-1599">max</code> </span><span class="attributes-summary">[Function]</span></h4>
       <hr class="item-title" />
-      <p class="short-description"><a name="XREF-1600"></a>Returns the greatest of its
-	arguments.</p>
+      <p class="short-description"><a name="XREF-1600">Returns the greatest of its
+	arguments.</a></p>
       <dl class="Cliche">
 	<dt><span>Signature:</span></dt>
 	<dd>

@@ -131,41 +131,38 @@
       <a name="HEADING-26-0"></a>
       <a name="UID-Program_Structure-2480"></a>
       <h1 class="section-title"><a name="IX-361"></a>Modules</h1>
-      <p>Modules are used for creating large-scale <a name="IX-362"></a>namespaces of
-	bindings. The bindings <a name="IX-363"></a>accessible in a module
-	are <a name="IX-364"></a>visible to all the code within the module (except where
-	shadowed by a local binding). Only the bindings
-	explicitly <a name="IX-365"></a>exported are visible from outside the module.</p>
+      <p>Modules are used for creating large-scale <a name="IX-362">namespaces of bindings</a>. The
+	bindings <a name="IX-363">accessible</a> in a module are <a name="IX-364">visible</a> to all
+	the code within the module (except where shadowed by a local binding). Only the bindings
+	explicitly <a name="IX-365">exported</a> are visible from outside the module.</p>
       <p id="FOOTNOTE-ANCHOR-1">Some languages have module systems with distinct support for
 	exporting variables, functions, types, and classes. Dylan modules operate only on
 	bindings. Because functions and classes are commonly named by bindings, access to them is
-	controlled by <a name="IX-366"></a>controlling access to the bindings that name
-	them. By exporting the binding naming a class or function, a program has effectively
-	exported the class or function. If the binding is not exported, then the class or function
-	is effectively
+	controlled by <a name="IX-366">controlling access to the bindings</a> that name them. By
+	exporting the binding naming a class or function, a program has effectively exported the
+	class or function. If the binding is not exported, then the class or function is effectively
 	private.<a rel="footnote" href="#FOOTNOTE-1" title="Footnote 1"><sup>*</sup></a></p>
-      <p><a name="IX-367"></a>A <a name="IX-368"></a>module definition defines the
-	imports and exports of a module, and may specify bindings owned by the module. A complete
-	description of module definitions is given on <a href="Definition_Macros#XREF-2016">page
-	  381</a>.</p>
+      <p><a name="IX-367"></a>A <a name="IX-368">module definition</a> defines the imports and
+	exports of a module, and may specify bindings owned by the module. A complete description of
+	module definitions is given on <a href="Definition_Macros#XREF-2016">page 381</a>.</p>
       <a name="HEADING-26-4"></a>
       <a name="UID-Program_Structure-1436"></a>
-      <h2 class="subsection-title"><a name="IX-369"></a>Defining Module Bindings</h2>
+      <h2 class="subsection-title"><a name="IX-369">Defining Module Bindings</a></h2>
       <p>A module consists of a set of bindings. A binding may be <dfn id="IX-370">owned</dfn>
 	by a module, or a module may <dfn id="IX-371">import</dfn> the binding from another
 	module by <dfn id="IX-372">using</dfn> the other
 	module. Modules <dfn id="IX-373">export</dfn> bindings to make them accessible to
 	other modules. Only exported bindings can be imported by other modules.</p>
-      <p>Module-use relationships may not be <a name="IX-374"></a>circular. To create a common
-	set of bindings for a group of modules, the modules can import the bindings from another
-	module or modules.</p>
-      <p>Within a given module, a <a name="IX-375"></a>name refers to at most one module
+      <p><a name="IX-374">Module-use relationships may not be circular.</a> To create a common set
+	of bindings for a group of modules, the modules can import the bindings from another module
+	or modules.</p>
+      <p>Within a given module, a <a name="IX-375">name refers to</a> at most one module
 	binding. It is an error to create or import two or more different bindings with the same
 	name in a single module. If a name does refer to a binding, the binding is said to
 	be <dfn id="IX-376">accessible</dfn> from the module. Each binding is owned by exactly
 	one module, but it can be accessible from many modules.</p>
-      <p>Module <a name="IX-377"></a>bindings are created
-	by <a name="IX-378"></a>definitions. <dfn id="IX-379">Explicit definitions</dfn>
+      <p>Module <a name="IX-377">bindings are created</a>
+	by <a name="IX-378">definitions</a>. <dfn id="IX-379">Explicit definitions</dfn>
 	are created by <code id="IX-380">define constant</code>,
 	<code id="IX-381">define variable</code>,
 	<code id="IX-382">define generic</code>,
@@ -177,11 +174,10 @@
 	explicit definition. It may not have more than one explicit definition. If a module binding
 	has no explicit definition, it must have one or more implicit definitions. If it does have
 	an explicit definition, it can have zero or more implicit definitions.</p>
-      <p>A binding may be <a name="IX-388"></a>declared by
-	the <code id="IX-389">create</code> clause of a module definition. This does not
-	define the binding, but instead declares that it is owned by the module. Other modules may
-	import the binding from that module. The binding must be defined by one of the modules that
-	imports it.</p>
+      <p>A binding may be <a name="IX-388">declared by</a> the <code id="IX-389">create</code>
+	clause of a module definition. This does not define the binding, but instead declares that
+	it is owned by the module. Other modules may import the binding from that module. The
+	binding must be defined by one of the modules that imports it.</p>
       <p>If a binding is not declared by the <code>create</code> clause of a module definition, it
 	is owned by the module in which its explicit definition appears. If it does not have an
 	explicit definition, it is owned by one of the modules in which at least one of its implicit

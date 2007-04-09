@@ -136,18 +136,17 @@
 
       <a name="HEADING-75-0"></a>
       <a name="UID-Sealing-2976"></a>
-      <h1 class="section-title"><a name="XREF-1123"></a>Define Sealed Domain</h1>
-      <p><code><a name="IX-1124"></a><a name="IX-1125"></a>define sealed domain</code>
-	is used to make specific portions of a generic function and of the class hierarchy invariant
-	without disallowing all future changes. The arguments to <code>define sealed domain</code>
-	are an explicitly known generic function and a series of types, one for each required
-	argument of the generic function.</p>
+      <h1 class="section-title"><a name="XREF-1123"></a><a name="IX-1124">Define Sealed Domain</a></h1>
+      <p><code><a name="IX-1125">define sealed domain</a></code> is used to make specific portions
+	of a generic function and of the class hierarchy invariant without disallowing all future
+	changes. The arguments to <code>define sealed domain</code> are an explicitly known generic
+	function and a series of types, one for each required argument of the generic function.</p>
       <p>The complete syntax of <code>define</code> <code>sealed domain</code> is given
 	on <a href="Definition_Macros#XREF-2024">page 388</a>.</p>
       <p>A <code>define sealed domain</code> definition in a library <var>L</var> for a generic
 	function <var>G</var> with
 	types <var>T<em><sub>1</sub></em>&hellip;T<em><sub>n</sub></em></var> imposes the
-	following <a name="IX-1126"></a>constraints on programs:</p>
+	following <a name="IX-1126">constraints on programs</a>:</p>
       <ol>
 	<li>A method <var>M</var> that is congruent to <var>G</var> and that is not an explicitly
 	  known method in <var>L</var> may be added to <var>G</var> only if at least one of the
@@ -255,8 +254,8 @@ define class &lt;c&gt; (&lt;s&gt;, &lt;t&gt;) end class &lt;c&gt;;
 	collection types with those element types.<a name="IX-1128"></a></p>
       <a name="HEADING-75-24"></a>
       <a name="UID-Sealing-2173"></a>
-      <h2 class="subsection-title">Pseudosubtype Examples</h2>
-      <p><a name="IX-1129"></a>Suppose <var>A</var> and <var>B</var> are disjoint subclasses
+      <h2 class="subsection-title"><a name="IX-1129">Pseudosubtype Examples</a></h2>
+      <p>Suppose <var>A</var> and <var>B</var> are disjoint subclasses
 	of <code>&lt;collection&gt;</code>, <var>S<em><sub>i</sub></em></var>
 	is <code>limited(<var>A</var>, of: <var>T</var>)</code>,
 	and <var>T<em><sub>i</sub></em></var> is <code>limited(<var>B</var>,
@@ -284,10 +283,10 @@ define class &lt;c&gt; (&lt;s&gt;, &lt;t&gt;) end class &lt;c&gt;;
 	  pseudosubtype.<a name="IX-1130"></a></p>
       <a name="HEADING-75-27"></a>
       <a name="UID-Sealing-1419"></a>
-      <h2 class="subsection-title"><a name="XREF-1131"></a>Abbreviations for Define Sealed Domain</h2>
-      <p><code><a name="IX-1132"></a><a name="IX-1133"></a>define sealed method</code>
-	defines a method on a generic function and also seals the generic function for the types
-	that are the specializers of the method.</p>
+      <h2 class="subsection-title"><a name="XREF-1131"></a><a name="IX-1133">Abbreviations for Define Sealed Domain</a></h2>
+      <p><code><a name="IX-1132">define sealed method</a></code> defines a method on a generic
+	function and also seals the generic function for the types that are the specializers of the
+	method.</p>
       <p>The following two program fragments are equivalent: </p>
       <pre>
 define sealed method insert (source :: &lt;list&gt;, i :: &lt;object&gt;)
@@ -321,10 +320,10 @@ define sealed domain sides-setter (&lt;integer&gt;, &lt;polygon&gt;);<a name="IX
 </pre>
       <a name="HEADING-75-38"></a>
       <a name="UID-Sealing-1853"></a>
-      <h2 class="subsection-title">Implied Restrictions on Method Definitions</h2>
-      <p><a name="IX-1136"></a>To avoid potential <a name="IX-1137"></a>sealing
-	violations among separately developed libraries, one of the following conditions should be
-	true for every method <var>M</var> defined in a library <var>L</var>:</p>
+      <h2 class="subsection-title"><a name="IX-1136">Implied Restrictions on Method Definitions</a></h2>
+      <p>To avoid potential <a name="IX-1137">sealing violations</a> among separately developed
+	libraries, one of the following conditions should be true for every method <var>M</var>
+	defined in a library <var>L</var>:</p>
       <ul>
 	<li>Either the generic function to which <var>M</var> is added should be defined in the
 	  library <var>L</var>, or</li>

@@ -133,12 +133,12 @@
       <h1 class="section-title">Signalers, Conditions, and Handlers</h1>
       <p>A condition is an object used to locate and provide information to a handler. A condition
 	represents a situation that needs to be handled. Examples
-	are <a name="IX-912"></a>errors, <a name="IX-913"></a>warnings, and attempts
-	to <a name="IX-914"></a>recover from errors. All conditions are instances
+	are <a name="IX-912">errors</a>, <a name="IX-913">warnings</a>, and attempts
+	to <a name="IX-914">recover</a> from errors. All conditions are instances
 	of <code id="IX-915">&lt;condition&gt;</code>. Several subclasses
 	of <code>&lt;condition&gt;</code> are provided for additional behavior. These are described
 	in <a href="Condition_Classes#XREF-1472"><q>Conditions</q> on page 244</a>.</p>
-      <p><a name="IX-916"></a>A handler is a function for handling conditions of a particular
+      <p>A <a name="IX-916">handler</a> is a function for handling conditions of a particular
 	type. Handlers may be installed dynamically with the local
 	declaration <code id="IX-917">let handler</code>, and with
 	the <code id="IX-918">exception</code> clause of the <code>block</code>
@@ -163,12 +163,12 @@
       <p>Like any function, the called handler either returns some values or takes a nonlocal
 	exit. Either way, the handler has handled the condition, and the act of signaling is
 	completed.</p>
-      <p><a name="IX-923"></a><a name="IX-924"></a>A handler also has the option of
-	declining to handle the condition by passing control to the next applicable handler. It does
-	this by tail recursively calling a next-handler function which it received as an
-	argument. The next-handler function calls the next most recently installed applicable
-	handler with appropriate arguments. This is analogous to the next-method function used in
-	methods of generic functions.</p>
+      <p>A handler also has the option of <a name="IX-923">declining to handle the condition</a> by
+	passing control to the next applicable handler. It does this by <a name="IX-924">tail
+	recursively calling a next-handler</a> function which it received as an argument. The
+	next-handler function calls the next most recently installed applicable handler with
+	appropriate arguments. This is analogous to the next-method function used in methods of
+	generic functions.</p>
       <p>(The call to next-handler is described as tail-recursive to ensure that all values returned
 	by the call are returned by the handler. Not returning all the values could interfere with
 	the condition's recovery protocol. A handler that really knows what it is doing could use a

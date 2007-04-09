@@ -134,11 +134,11 @@
 
       <a name="HEADING-64-0"></a>
       <a name="UID-Collections-3519"></a>
-      <h1 class="section-title"><a name="XREF-1013"></a>Collection Alteration and Allocation</h1>
-      <p><a name="IX-1014"></a>The contents of a collection are the key/value pairs stored in
-	the collection. The contents are said to be <dfn>altered</dfn> when:</p>
+      <h1 class="section-title"><a name="XREF-1013"></a><a name="IX-1014">Collection Alteration and Allocation</a></h1>
+      <p>The contents of a collection are the key/value pairs stored in the collection. The contents
+	are said to be <dfn>altered</dfn> when:</p>
       <ul>
-	<li><a name="IX-1015"></a>Keys are added or removed (according to the collection's key
+	<li><a name="IX-1015">Keys are added or removed</a> (according to the collection's key
 	  test).</li>
 	<li>The value of a key (according to the key test) changes (as tested
 	  by <code>==</code>).</li>
@@ -150,7 +150,7 @@
 	documented to do so, functions do not destructively modify their arguments.</p>
       <p>The <code>!</code> convention, described on <a href="Naming_Conventions#XREF-342">page
 	  24</a>, is used to indicate some destructive operations.</p>
-      <p><a name="IX-1017"></a>Unless explicity noted, destructive operations are not required
+      <p>Unless explicity noted, <a name="IX-1017">destructive operations</a> are not required
 	to leave their arguments in a well-defined state. More particularly, a destructive operation
 	does not in general turn the argument into the result. It may reuse components of the argument
 	or alter the argument in some unpredictable way in order to produce the result. As a general
@@ -158,7 +158,7 @@
       <p>A collection <var>C </var>is <dfn id="IX-1018">fresh</dfn> if modification of any
 	pre-existing collection's contents can never modify the contents of <var>C</var> and if
 	modifications to <var>C</var> can never modify the contents of any pre-existing
-	collection. <a name="IX-1019"></a>Immutable collections cannot be modified, so a fresh
+	collection. <a name="IX-1019">Immutable collections</a> cannot be modified, so a fresh
 	immutable collection can share structure with other immutable collections.</p>
       <p>For example, given that <code>&lt;pair&gt;</code> is mutable and the result of a call
 	to <code>list</code> is a fresh instance of <code>&lt;pair&gt;</code>, we can guarantee that

@@ -168,14 +168,14 @@
 
       <a name="HEADING-92-0"></a>
       <a name="UID-Built-In_Classes-395"></a>
-      <h1 class="section-title"><a name="IX-1381"></a>Numbers</h1>
+      <h1 class="section-title"><a name="IX-1381">Numbers</a></h1>
       <p>Dylan provides a variety of numeric classes. Classes under <code>&lt;complex&gt;</code> are
 	sealed, so that numeric operations on them can be highly optimized. User defined numeric
 	classes will be subclasses of <code>&lt;number&gt;</code>.</p>
       <p><a href="#XREF-1382">Figure 11-3</a> shows the built-in number classes and some of
 	their characteristics.</p>
       <p class="figure"><strong>Figure</strong> <strong>11-3</strong>
-	<a name="XREF-1382"></a>The Number Classes</p>
+	<a name="XREF-1382">The Number Classes</a></p>
       
       <div class="figure wide" style="min-width: 616px">
 	<!-- min-width is necessary to prevent the surrounding box from being layed out narrower
@@ -241,7 +241,7 @@
 	<dd>
 	  <p>The class of all numbers.</p>
 	  <p>The class <code>&lt;number&gt;</code> is open, to allow programmers to create
-	    additional numeric classes. <a name="IX-1384"></a>The built-in numeric operations
+	    additional numeric classes. <a name="IX-1384">The built-in numeric operations</a>
 	    do not provide default implementations for <code>&lt;number&gt;</code>, but
 	    for <code>&lt;complex&gt;</code>, a sealed subclass
 	    of <code>&lt;number&gt;</code>.</p></dd>
@@ -434,8 +434,8 @@
       </dl>
       <a name="HEADING-92-409"></a>
       <a name="UID-Built-In_Classes-9235"></a>
-      <h2 class="subsection-title">Floats</h2>
-      <p><a name="IX-1387"></a>The classes <code>&lt;single-float&gt;</code>
+      <h2 class="subsection-title"><a name="IX-1387">Floats</a></h2>
+      <p>The classes <code>&lt;single-float&gt;</code>
 	and <code>&lt;double-float&gt;</code> are intended but not required to be the corresponding
 	IEEE types. The class <code>&lt;extended-float&gt;</code> is intended but not required to
 	have more range and/or precision than <code>&lt;double-float&gt;</code>.</p>
@@ -534,12 +534,12 @@
 	<dt><span>Description:</span></dt>
 	<dd>
 	  <p>The class of integers.</p>
-	  <p><a name="IX-1395"></a>Implementations are required to support integers with at
-	    least 28 bits of precision. The overflow and underflow behavior is
+	  <p><a name="IX-1395">Implementations are required to support integers with at
+	    least 28 bits of precision.</a> The overflow and underflow behavior is
 	    implementation-defined. (Some implementations may choose to have integers of unlimited
 	    size, but this is not required.)</p>
-	  <p><a name="IX-1396"></a>The result of dividing two integers with / is
-	    implementation defined. Portable programs should
+	  <p><a name="IX-1396">The result of dividing two integers with / is
+	    implementation defined.</a> Portable programs should
 	    use <code>floor/</code>, <code>ceiling/</code>, <code>round/</code>,
 	    or <code>truncate/</code> to divide two integers.</p></dd>
 	<dt><span>Operations:</span></dt>

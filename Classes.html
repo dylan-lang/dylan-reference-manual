@@ -139,8 +139,8 @@
 
       <a name="HEADING-41-0"></a>
       <a name="UID-Types_and_Classes-361"></a>
-      <h1 class="section-title"><a name="IX-561"></a>Classes</h1>
-      <p><a name="IX-562"></a>Classes are used to define the inheritance, structure, and
+      <h1 class="section-title"><a name="IX-561">Classes</a></h1>
+      <p><a name="IX-562">Classes</a> are used to define the inheritance, structure, and
 	initialization of objects.</p>
       <p>Every object is a <dfn id="IX-563">direct instance</dfn> of exactly one class, and a
 	general instance of the <dfn id="IX-564">general superclasses</dfn> of that class.</p>
@@ -151,7 +151,7 @@
 	the <dfn id="IX-566">initialization protocol</dfn>.</p>
       <a name="HEADING-41-5"></a>
       <a name="UID-Types_and_Classes-5438"></a>
-      <h2 class="subsection-title"><a name="IX-567"></a>Features of Classes</h2>
+      <h2 class="subsection-title"><a name="IX-567">Features of Classes</a></h2>
       <p>There are four features of classes. These features relate to each other, but can be
 	declared independently.</p>
       <ul>
@@ -176,14 +176,14 @@
       </ul>
       <a name="HEADING-41-11"></a>
       <a name="UID-Types_and_Classes-2532"></a>
-      <h2 class="subsection-title"><a name="IX-577"></a>Creating Classes</h2>
+      <h2 class="subsection-title"><a name="IX-577">Creating Classes</a></h2>
       <p>New classes may be created by calling <code id="IX-578">make</code>
 	on <code>&lt;class&gt;</code>, or with the definition <code id="IX-579">define
 	class</code>. In most programs the latter is more commonly used.</p>
       <p>When a class is created with <code>make</code>, it is instantiated and returned just like
 	any other object. The options available when creating a class with <code>make</code> are
 	described on <a href="Type_Classes#XREF-1372">page 191</a>.</p>
-      <p><a name="IX-580"></a>When a class is created with <code>define class</code> it is
+      <p><a name="IX-580">When a class is created</a> with <code>define class</code> it is
 	used to initialize a new module binding. <code>define class</code> allows the specification
 	of superclasses, slots, initialization behavior, and options related to sealing. The
 	complete syntax of <code>define class</code> is given
@@ -203,7 +203,7 @@ end class &lt;color-window&gt;;<a name="IX-581"></a>
 </pre>
       <a name="HEADING-41-19"></a>
       <a name="UID-Types_and_Classes-5460"></a>
-      <h2 class="subsection-title"><a name="IX-582"></a><a name="XREF-583"></a>Class Inheritance</h2>
+      <h2 class="subsection-title"><a name="XREF-583"></a><a name="IX-582">Class Inheritance</a></h2>
       <p>When a class is created, its <dfn id="IX-584">direct superclasses</dfn> are
 	specified. The new class directly inherits from these classes; it is
 	a <dfn id="IX-585">direct subclass</dfn> of each of these classes. There can be no
@@ -215,14 +215,14 @@ end class &lt;color-window&gt;;<a name="IX-581"></a>
 	an <dfn id="IX-586">indirect subclass</dfn> of <var>C<em><sub>2</sub></em></var>
 	and <var>C<em><sub>3</sub></em></var>. A <dfn id="IX-587">general subclass</dfn> is a
 	direct or indirect subclass.</p>
-      <p>Inheritance cannot be <a name="IX-588"></a>circular. A class cannot be its own
+      <p>Inheritance cannot be <a name="IX-588">circular</a>. A class cannot be its own
 	general subclass.</p>
       <p>A class is a subtype of each of its general superclasses.</p>
       <p>Every class is a general subclass of <code>&lt;object&gt;</code>.<a name="IX-589"></a></p>
       <a name="HEADING-41-25"></a>
       <a name="UID-Types_and_Classes-7969"></a>
-      <h2 class="subsection-title"><a name="XREF-590"></a><a name="IX-591"></a>Computing the Class Precedence List</h2>
-      <p>The definition of a class specifies a <a name="IX-592"></a>total ordering on that
+      <h2 class="subsection-title"><a name="XREF-590"></a><a name="IX-591">Computing the Class Precedence List</a></h2>
+      <p>The definition of a class specifies a <a name="IX-592">total ordering</a> on that
 	class and its direct superclasses. This ordering is called the <dfn id="IX-593">local
 	precedence order</dfn>. In the local precedence order:</p>
       <ul>
@@ -255,11 +255,11 @@ end class &lt;color-window&gt;;<a name="IX-581"></a>
 	class. Computing the class precedence list for <var>C</var> requires computing the class
 	precedence lists for its superclasses. This does not lead to infinite recursion because
 	circular class inheritance is prohibited.</p>
-      <p><a name="IX-595"></a>Note that because the class precedence lists of the direct
-	superclasses are consistent with their local precedence orders and with the class precedence
-	lists of their direct superclasses, and so on, the class precedence list for <var>C</var> is
-	consistent with the local precedence orders and class precedence lists of all its superclasses
-	and not just the direct superclasses.</p>
+      <p>Note that because the class precedence lists of the direct superclasses
+	are <a name="IX-595">consistent</a> with their local precedence orders and with the class
+	precedence lists of their direct superclasses, and so on, the class precedence list
+	for <var>C</var> is consistent with the local precedence orders and class precedence lists
+	of all its superclasses and not just the direct superclasses.</p>
       <p>The merge of several sequences is a sequence that contains each of the elements of the
 	several input sequences. An element that appears in more than one of the input sequences
 	appears only once in the output sequence. If two elements appear in the same input sequence,

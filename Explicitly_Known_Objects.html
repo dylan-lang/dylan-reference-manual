@@ -129,22 +129,21 @@
 
       <a name="HEADING-72-0"></a>
       <a name="UID-Sealing-2500"></a>
-      <h1 class="section-title">Explicitly Known Objects</h1>
-      <p><a name="IX-1101"></a>A class, generic function, or method may or may not
-	be <dfn>explicitly known</dfn> to a given library. A sealing restriction may limit the set
-	of classes, generic functions, and methods to those that are explicitly known; others cannot
-	be added.</p>
+      <h1 class="section-title"><a name="IX-1101">Explicitly Known Objects</a></h1>
+      <p>A class, generic function, or method may or may not be <dfn>explicitly known</dfn> to a
+	given library. A sealing restriction may limit the set of classes, generic functions, and
+	methods to those that are explicitly known; others cannot be added.</p>
       <ul>
-	<li>A <a name="IX-1102"></a>class <var>C</var> is explicitly known in a
+	<li>A <a name="IX-1102">class</a> <var>C</var> is explicitly known in a
 	  library <var>L</var> if it is defined by <code>define class</code> in <var>L</var> or in a
 	  library used by <var>L</var>.</li>
-	<li>A <a name="IX-1103"></a>generic function <var>G</var> is explicitly known in a
+	<li>A <a name="IX-1103">generic function</a> <var>G</var> is explicitly known in a
 	  library <var>L</var> if <var>G</var> is defined by <code>define generic</code> in the
 	  library or in one of the libraries <var>L</var> uses, or if <var>G</var> is implicitly
 	  defined by the definition of a method explicitly known in <var>L</var> or if <var>G</var>
 	  is implicitly defined by a slot specification for a class explicitly known
 	  in <var>L</var>.</li>
-	<li>A <a name="IX-1104"></a>method <var>M</var> is explicitly known in a
+	<li>A <a name="IX-1104">method</a> <var>M</var> is explicitly known in a
 	  library <var>L</var> if <var>M</var> is defined by <code>define method</code>
 	  in <var>L</var> or in one of the libraries <var>L</var> uses, or if <var>M</var> is
 	  defined by a slot specification for a class explicitly known

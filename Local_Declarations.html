@@ -141,9 +141,8 @@
       <a name="UID-Syntax-1450"></a>
       <h1 class="section-title">Local Declarations</h1>
       <p>A <dfn id="IX-238">local declaration</dfn> is a construct that
-	establishes <a name="IX-239"></a>local bindings
-	or <a name="IX-240"></a>condition handlers whose scope is the remainder of the body
-	following the local declaration.</p>
+	establishes <a name="IX-239">local bindings</a> or <a name="IX-240">condition handlers</a>
+	whose scope is the remainder of the body following the local declaration.</p>
       <p>Unlike module bindings, local bindings are established during program execution, each time
 	the local declaration is executed. They persist for as long as code in their scope is
 	active. Local bindings persist after the body containing them returns if they are referenced
@@ -153,8 +152,8 @@
 	assignment within that scope, the local binding is effectively constant.</p>
       <p>A local binding shadows any module binding with the same name and any surrounding local
 	binding with the same name. The innermost binding is the one referenced.</p>
-      <p><a name="IX-241"></a>Macros cannot be shadowed. Hence, the name of a local binding
-	cannot be the name of a macro.</p>
+      <p><a name="IX-241">Macros cannot be shadowed.</a> Hence, the name of a local binding cannot
+	be the name of a macro.</p>
       <p>There are three kinds of local declaration: local value bindings (<code>let</code>), local
 	method bindings (<code>local</code>), and condition handler establishment (<code>let
 	  handler</code>).</p>

@@ -130,11 +130,10 @@
 
       <a name="HEADING-53-0"></a>
       <a name="UID-Conditions-2630"></a>
-      <h1 class="section-title">Background</h1>
-      <p><a name="IX-887"></a><a name="IX-888"></a>A long-standing problem of software
-	engineering is the need to develop an organized way to deal with exceptions, situations that
-	must be handled gracefully but that are not conceptually part of the normal operation of the
-	program.</p>
+      <h1 class="section-title"><a name="IX-887">Background</a></h1>
+      <p>A long-standing problem of software engineering is the need to develop an organized way to
+	deal with <a name="IX-888">exceptions</a>, situations that must be handled gracefully but
+	that are not conceptually part of the normal operation of the program.</p>
       <p>Of course it is possible to program exception handling without using special linguistic
 	features. For example, all functions could return an extra result that indicates whether
 	they succeeded or failed, functions could take an extra argument that they consult if an
@@ -149,48 +148,47 @@
 	programmer believed the error could never occur); the other is that program clarity is lost
 	because it isn't easy to think about the main flow of the program while temporarily ignoring
 	exceptions.</p>
-      <p>All exception systems involve the concept of <q><a name="IX-889"></a>signal</q>
-	(sometimes with a different name, such as <q><a name="IX-890"></a>raise</q>
-	or <q><a name="IX-891"></a>throw</q>) and the concept
-	of <q><a name="IX-892"></a>handle</q> (sometimes with a different name such
-	as <q><a name="IX-893"></a>on-unit</q>
-	or <q><a name="IX-894"></a>catch</q>). <a name="IX-895"></a>Most exception
-	systems dynamically match signalers with handlers, first invoking the most recently
-	established matching handler still active, and then, if that matching handler declines to
-	handle the exception, invoking the next most recent matching handler, and so on.</p>
+      <p>All exception systems involve the concept of <q><a name="IX-889">signal</a></q> (sometimes
+	with a different name, such as <q><a name="IX-890">raise</a></q>
+	or <q><a name="IX-891">throw</a></q>) and the concept of <q><a name="IX-892">handle</a></q>
+	(sometimes with a different name such as <q><a name="IX-893">on-unit</a></q>
+	or <q><a name="IX-894">catch</a></q>). Most exception systems <a name="IX-895">dynamically
+	match</a> signalers with handlers, first invoking the most recently established matching
+	handler still active, and then, if that matching handler declines to handle the exception,
+	invoking the next most recent matching handler, and so on.</p>
       <p>In addition, it is necessary to have a way to clean up when execution of a function is
 	terminated by a nonlocal exit initiated either by the function itself or by something it
 	explicitly or implicitly called.</p>
       <p>Exception systems may be name-based or object-based, they may be exiting or calling, and
 	they may or may not provide formal recovery mechanisms.</p>
-      <p>In a <a name="IX-896"></a>name-based exception system a program signals a name, and a
+      <p>In a <a name="IX-896">name-based exception system</a> a program signals a name, and a
 	handler matches if it handles the same name or <q>any.</q> The name is a constant in the
 	source text of the program, not the result of an expression.</p>
-      <p>In an <a name="IX-897"></a>object-based exception system a program signals an object,
+      <p>In an <a name="IX-897">object-based exception system</a> a program signals an object,
 	and a handler matches if it handles a type that object belongs to. Object-based exceptions
 	are more powerful, because the object can communicate additional information from the
 	signaler to the handler, because the object to be signaled can be chosen at run-time rather
 	than signaling a fixed name, and because type inheritance in the handler matching adds
 	abstraction and provides an organizing framework.</p>
-      <p>In an <a name="IX-898"></a>exiting exception system, all dynamic state between the
+      <p>In an <a name="IX-898">exiting exception system</a>, all dynamic state between the
 	handler and the signaler is unwound before the handler receives control, as if signaling
 	were a nonlocal goto from the signaler to the handler.</p>
-      <p><a name="IX-899"></a>In a <a name="IX-900"></a>calling exception system the
+      <p><a name="IX-899"></a>In a <a name="IX-900">calling exception system</a> the
 	signaler is still active when a handler receives control. Control can be returned to the
 	signaler, as if signaling were a function call from the signaler to the handler.</p>
       <p>Exiting exception systems are acceptable for errors. However, they do not work for an
 	exception that is not an error and doesn't require an exit, either because there is a
 	default way to handle it and recover or because it can safely be ignored by applications
-	that don't care about it. <a name="IX-901"></a>Non-error exceptions are quite common
+	that don't care about it. <a name="IX-901">Non-error exceptions</a> are quite common
 	in networked environments, in computers with gradually expiring resources (such as
 	batteries), in complex user interfaces, and as one approach for reflecting hardware
 	exceptions such as page protection violations or floating-point overflow to the
 	application.</p>
       <p>Most languages have not formalized how to recover from exceptions, leaving programmers to
-	invent ad hoc mechanisms. However, a <a name="IX-902"></a>formal recovery mechanism is
+	invent ad hoc mechanisms. However, a <a name="IX-902">formal recovery</a> mechanism is
 	useful for several reasons: it ensures that recovery is implemented correctly; it allows
 	options for recovery to be categorized just as exceptions are categorized; and it
-	allows <a name="IX-903"></a>introspection on the options for recovery, for example, by
+	allows <a name="IX-903">introspection</a> on the options for recovery, for example, by
 	a debugger.</p>
       <p>The Dylan exception facility is object-based. It uses calling semantics but also provides
 	exiting handlers. It provides formal recovery.<a name="IX-904"></a></p>
