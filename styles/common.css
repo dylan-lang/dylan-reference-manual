@@ -19,7 +19,7 @@
 
 /* Debugging: Uncomment these lines to see the page content bounds */
 /*
-body     { background-color: #EEE }
+body     { background-color: #eee }
 #content {
            margin-left: 1pc; margin-top: 1pc;
            background-color: white;
@@ -68,6 +68,16 @@ body     { background-color: #EEE }
 #content a:link:hover,
 #content a:visited:hover { text-decoration: underline }
 
+@media screen
+{
+    /* Highlight link targets that are within paragraph text, to help navigation. */
+    
+    p  *:target,
+    ol *:target,
+    ul *:target,
+    dl *:target { background-color: #def; color: black }
+    .errata-note:target { background-color: #ffa } /* Don't highlight errata notes. */
+}
 
 /* Quotes: Render as right/left double quotation marks */
 
@@ -317,6 +327,18 @@ p.colophon-name  {    margin-top: 0 }
 h4.item-title + hr { display: none }
 h4.item-title var  { font-family: sans-serif }
 
+/* "Here" links (aka "permalinks"). Display only when the mouse is over the parent. */
+
+a.here                  {
+                          visibility: hidden;
+                          color: silver;
+                          background-color: white;
+                          margin-left: 1em;
+                        }
+*:hover > a.here:before {
+                          visibility: visible;
+                          content: "\B6"; /* Pilcrow, &para; */
+                        }
 
 
 /*
