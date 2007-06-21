@@ -542,6 +542,19 @@ ul.page-TOC .attributes-summary { display: none }
 
 
 /*
+  Definition Lists
+
+  Terms and definitions are positioned side-by-side. Paragraphs within have less
+  vertical separation.
+*/
+
+dl.horizontal > dt     { float: left        }
+dl.horizontal > dd     { margin-left: 7em   }
+dl.horizontal > dd > p { margin: 0.5em auto }
+
+
+
+/*
   Definitions
 
   Definition labels (e.g., "Signature:") are bold and set off in the left
