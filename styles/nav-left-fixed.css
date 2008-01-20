@@ -257,6 +257,8 @@ ul.errata          {
 /* highlight the current page in the navigation area */
 li#current         { font-weight: bold   }
 li#current li      { font-weight: normal }
+/* display the link in black instead of link color, for contrast */
+li#current > a:visited { color: black }
 
 /* no space between wrapped lines; helps group them together visually */
 ul.page-TOC li ul li { line-height: 100% }
