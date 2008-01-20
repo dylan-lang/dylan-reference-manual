@@ -298,7 +298,7 @@ end method;<a name="IX-937"></a>
 	isn't allowed, and no particular restart handlers are provided. In this case only handling
 	by exiting is possible. (Exiting might be accomplished by signaling a restart whose
 	handler was established in the outside or middle stack and does a nonlocal exit back to
-	where it was established, or by an ordinary nonlocal exit.)  The recovery protocol for a
+	where it was established, or by an ordinary nonlocal exit.) The recovery protocol for a
 	subclass should be compatible with the recovery protocol of a superclass. That is, a
 	handler that applies a class's recovery protocol should operate correctly when the
 	condition is an instance of some subclass of that class.</p>
@@ -321,7 +321,7 @@ end method;<a name="IX-937"></a>
 	receives control if no program-provided handler handles a serious condition. (This is true
 	even if the debugger provided cannot analyze or intervene in the execution of programs but
 	can only abort or restart them. The debugger might be merely a <q>core dumper,</q> a <q>bomb
-	box,</q> or something similar.)  An interactive debugger ought to offer the user the ability
+	box,</q> or something similar.) An interactive debugger ought to offer the user the ability
 	to signal any restart for which a restart handler is applicable and to return if the
 	condition's recovery protocol allows it. This could, for example, be done with a menu
 	titled <q>Recovery.</q><a name="IX-950"></a></p>

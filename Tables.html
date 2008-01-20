@@ -146,7 +146,7 @@
 	for <code>table-protocol</code>. This function accepts a table as an argument, and returns
 	an equivalence predicate and hash-function, as described below.</p>
       <p>The <dfn id="IX-1041">equivalence predicate</dfn> of a table is used to compare keys. (It
-	is the table's <a name="IX-1042">key test</a>.)  The table maps keys that are equivalent
+	is the table's <a name="IX-1042">key test</a>.) The table maps keys that are equivalent
 	under the predicate to the same table element. An equivalence predicate is a boolean
 	function of two arguments that returns true if and only if the arguments are considered to
 	be the same according to some specified criteria. For a function to be used as an
@@ -186,7 +186,7 @@
 	function that relates table keys and table elements by
 	computing <dfn id="IX-1046">hash codes</dfn>. A hash code is a conceptual object
 	consisting of a <dfn id="IX-1047">hash id</dfn> and its
-	associated <dfn id="IX-1048">hash state</dfn>. (It is not an actual Dylan object.)  A
+	associated <dfn id="IX-1048">hash state</dfn>. (It is not an actual Dylan object.) A
 	hash id is an integer encoding of an object. A hash state is an object of
 	implementation-dependent type that is associated with a particular hash id and can be used
 	by the implementation to determine whether the hash id has been invalidated. A hash function

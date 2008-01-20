@@ -645,7 +645,7 @@ end select<a name="IX-2051"></a> </pre>
 	      collection for that clause. Fresh bindings are created each time through the loop
 	      (i.e., the binding is not assigned the new value). If the binding is typed and the
 	      value is not of the specified type, signal an error. </li>
-	    <li>If <var>end-test</var> is supplied, execute it.  If the value
+	    <li>If <var>end-test</var> is supplied, execute it. If the value
 	      of <var>end-test </var>is false and the symbol is <code>while:</code>, go to step
 	      9. If the value of <var>end-test </var>is true and the symbol is <code>until:</code>,
 	      go to step 9.</li>
@@ -865,7 +865,7 @@ end block </pre>
 	    with the values that were passed to the exit procedure.</p>
 	  <p>Note that a block statement may also be exited due to the execution of a handler
 	    clause. Before the exception clause is executed, intervening cleanup clauses are
-	    executed as described above (including any clause for the establishing block.)  The exit
+	    executed as described above (including any clause for the establishing block.) The exit
 	    procedure may be invoked during execution of exception clauses, in which case the
 	    argument values are immediately returned from the block (the cleanup clause already
 	    having been executed).</p>

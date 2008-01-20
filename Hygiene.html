@@ -151,7 +151,7 @@
       <p>(Sometimes the property that variable references copied from a macro call mean the same
 	thing in the expansion is called <q>hygiene</q> and the property that variable references
 	copied from a macro definition mean the same thing in the expansion is
-	called <q><a name="IX-1271">referential transparency.</a></q>  We include both
+	called <q><a name="IX-1271">referential transparency.</a></q> We include both
 	properties in the term <q>hygiene.</q>)</p>
       <p>Specifically, a macro can bind <a name="IX-1272">temporary variables in</a> its expansion
 	without the risk of accidentally capturing references in the macro call to another binding
@@ -184,7 +184,7 @@
 	named value reference and a binding connect if and only if the
 	original <em class="BNFCaps">names</em> and the specific macro call occurrences are both the
 	same. (In that case, the lexical contexts will also be the same, but this need not be
-	checked.)  A named value reference and a binding never connect if one originated in a
+	checked.) A named value reference and a binding never connect if one originated in a
 	template and the other originated in a macro call.</p>
       <p>References in a macro expansion to <code>element</code> or <code>aref</code> created by
 	using <a name="IX-1274">element reference syntax</a> must receive similar treatment so
