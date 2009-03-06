@@ -3339,7 +3339,7 @@ member? (#"banana", flavors)
 	<dt><span>Signature:</span></dt>
 	<dd>
 	  <p class="signature">
-	    <code>find-key <var>collection function</var> #key <var>skip failure</var> </code>
+	    <code>find-key <var>collection predicate</var> #key <var>skip failure</var> </code>
 	    &rArr;<code> <var>key</var></code>
 	  </p>
 	</dd>
@@ -3387,6 +3387,11 @@ find-key (flavors, has-nuts?)
 <code> &rArr;</code>  1
 flavors[1]
 <code> &rArr;</code>  #"pistachio" </pre>
+	  <p class="errata-note" id="errata-p335-1">
+	    <a class="note-tag" href="Errata#p335-1"><strong>Errata:</strong></a> In the published
+	    book, the argument <var>predicate</var> is incorrectly named <var>function</var> in the
+	    signature of <code>find-key</code>.
+	  </p>
 	</dd>
       </dl>
       <a name="HEADING-102-642"></a>
