@@ -333,11 +333,11 @@ end class;<a name="IX-678"></a>
 define class &lt;person&gt; (&lt;object&gt;)
   slot favorite-beverage, init-value: #"milk",
                     init-keyword: favorite-beverage:;
-  slot name required-init-keyword: name:;
+  slot name, required-init-keyword: name:;
 end class &lt;person&gt;;
 define class &lt;astronaut&gt; (&lt;person&gt;)
-  keyword favorite-beverage: init-value: #"tang";
-  keyword name: init-value: "Bud";
+  keyword favorite-beverage:, init-value: #"tang";
+  keyword name:, init-value: "Bud";
 end class &lt;astronaut&gt;;
 </pre>
       <p>In this example, the <code>&lt;astronaut&gt;</code> class provides default values for
@@ -348,7 +348,7 @@ end class &lt;astronaut&gt;;
 	a <code>name:</code>, the <code>name:</code> will be added to the defaulted initialization
 	arguments by the default <code>make</code> method before the defaulted initialization
 	arguments are checked for completeness.</p>
-      <p>More than one keyword initializable slot may be initialized from the same initialization
+     <p>More than one keyword initializable slot may be initialized from the same initialization
 	argument (that is, more than one keyword initializable slot may specify the same
 	init-keyword). However, an error is signaled if a single <code>define-class</code> form has
 	more than one initialization argument specification for the same keyword. An error will also
@@ -357,6 +357,13 @@ end class &lt;astronaut&gt;;
 	for the same keyword that is either required or provides a default value. These error
 	situations are all indications of code that can never be
 	reached.<a name="IX-686"></a></p>
+      <p class="errata-note" id="errata-p69-1">
+        <a class="note-tag" href="Errata#p69-1"><strong>Errata:</strong></a> In the published
+	  book, the definition of class <code>&lt;person&gt;</code> is missing a comma
+	  between <code>slot name</code> and <code>required-init-keyword:</code>. The definition
+	  of class <code>&lt;astronaut&gt;</code> is missing commas in its keyword descriptors,
+	  between the keyword and <code>init-value:</code>.
+      </p>
       <a name="HEADING-43-57"></a>
       <h3 class="sub-subsection-title"><a name="IX-687">Initialization Argument Inheritance</a></h3>
       <p>The inheritance of initialization argument specifications is defined as follows.</p>
