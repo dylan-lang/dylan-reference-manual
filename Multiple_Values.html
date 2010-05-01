@@ -185,7 +185,7 @@ end
 	  no rest-binding.
 	  <pre class="code">
  begin
-   let (one #rest nums) = return-three-values(1, 2, 3);
+   let (one, #rest nums) = return-three-values(1, 2, 3);
    nums;
  end
   &rArr;  #(2, 3)
@@ -194,6 +194,11 @@ end
 	<li>If there is a <a name="IX-482">rest-binding</a> but there are no excess values,
 	  rest-binding is initialized to an empty sequence.<a name="IX-483"></a></li>
       </ul>
+
+      <p class="errata-note" id="errata-p43-1">
+	<a class="note-tag" href="Errata#p43-1"><strong>Errata:</strong></a> In the published book,
+	 a comma is missing between <code>one</code> and <code>#rest</code>.
+      </p>
 
     </div>
 
