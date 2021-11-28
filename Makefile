@@ -180,9 +180,10 @@ simple/images: simple
 simple/styles: source/styles simple
 	ln -s ../source/styles simple/styles
 
-# process the files to remove headers and footers
-	awk -f tools/remove-nav.awk $< > $@
+# simplify the html documents
 simple/%.html: source/%.html simple
+	SGML_CATALOG_FILES=schema/xhtml1/catalog.xml \
+		xsltproc --catalogs --html tools/simple.xsl $< > $@
 
 # flatten all png images so that the background is white
 simple/images/%.png: source/images/%.png simple/images
