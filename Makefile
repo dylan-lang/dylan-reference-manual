@@ -9,8 +9,6 @@ SIMPLE_IMGS=$(patsubst source/images/%,simple/images/%,${SOURCE_IMGS})
 SOURCE_HTML=$(wildcard source/*.html)
 SIMPLE_HTML=$(patsubst source/%,simple/%,${SOURCE_HTML})
 
-SIMPLE=simple/images simple/styles ${SIMPLE_HTML}
-
 ORDERED_HTML = \
 simple/Cover.html \
 simple/Title.html \
