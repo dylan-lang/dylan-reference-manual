@@ -172,7 +172,7 @@ drm-a5.pdf: drm-a5.ps
 simple: ${SIMPLE}
 .PHONY: simple
 
-# link images
+# create image directory
 simple/images: simple
 	mkdir -p simple/images
 
