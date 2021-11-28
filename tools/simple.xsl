@@ -16,8 +16,6 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="meta"/>
-
 	<!-- Drop the header and footer -->
 	<xsl:template match="//div[@id='header' or @id='footer']"/>
 
