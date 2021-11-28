@@ -1,5 +1,6 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+	<!-- Define how our output should look -->
 	<xsl:output method="xml"
 		    encoding="iso-8859-1"
 		    indent="yes"
@@ -10,6 +11,7 @@
 	<!-- Strip extraneous whitespace -->
 	<xsl:strip-space elements="*"/>
 
+	<!-- Apply an identity transform -->
 	<xsl:template match="node()|@*">
 		<xsl:copy>
 			<xsl:apply-templates select="node()|@*"/>
