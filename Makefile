@@ -175,11 +175,11 @@ output/drm-simple-a4.pdf: output/drm-simple-a4.ps
 output/drm-simple-a5.pdf: output/drm-simple-a5.ps
 	ps2pdf -sPAPERSIZE=a5 $< $@
 
-# directory creation
+# create simple directory
 simple:
 	mkdir -p simple
 
-# create image directory
+# create images directory
 simple/images: simple
 	mkdir -p simple/images
 
