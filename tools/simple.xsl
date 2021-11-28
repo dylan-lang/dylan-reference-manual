@@ -4,17 +4,17 @@
 	<xsl:output method="xml"
 		    encoding="iso-8859-1"
 		    indent="yes"
-		    omit-xml-declaration="yes"
+		    omit-xml-declaration="no"
 		    doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
 		    doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
 
 	<!-- Strip extraneous whitespace -->
 	<xsl:strip-space elements="*"/>
 
-	<!-- Apply an identity transform -->
-	<xsl:template match="node()|@*">
+	<!-- Partial identity transform - leave processing instructions alone -->
+	<xsl:template match="@*|*|comment()">
 		<xsl:copy>
-			<xsl:apply-templates select="node()|@*"/>
+			<xsl:apply-templates select="@*|*|comment()"/>
 		</xsl:copy>
 	</xsl:template>
 
