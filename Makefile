@@ -1,4 +1,7 @@
 
+SOURCE_IMGS=$(wildcard source/images/*.png source/images/*.jpg)
+SIMPLE_IMGS=$(patsubst source/images/%,simple/images/%,${SOURCE_IMGS})
+
 SOURCE_HTML=$(wildcard source/*.html)
 SIMPLE_HTML=$(patsubst source/%,simple/%,${SOURCE_HTML})
 
@@ -154,9 +157,9 @@ xmllint: ${SOURCE_HTML}
 .PHONY: xmllint
 
 # generate postscript from html
-drm-a4.ps: config/drm-a4.rc simple/images ${ORDERED_HTML}
+drm-a4.ps: config/drm-a4.rc simple/images ${ORDERED_HTML} ${SIMPLE_IMGS}
 	html2ps -f config/drm-a4.rc -o $@ ${ORDERED_HTML}
-drm-a5.ps: config/drm-a5.rc simple/images ${ORDERED_HTML}
+drm-a5.ps: config/drm-a5.rc simple/images ${ORDERED_HTML} ${SIMPLE_IMGS}
 	html2ps -f config/drm-a5.rc -o $@ ${ORDERED_HTML}
 
 # generate a pdf from the postscript
@@ -170,9 +173,8 @@ simple: ${SIMPLE}
 .PHONY: simple
 
 # link images
-simple/images: source/images
-	@mkdir -p simple
-	ln -s ../source/images simple/images
+simple/images: simple
+	mkdir -p simple/images
 
 # link styles
 simple/styles: source/styles
@@ -183,6 +185,14 @@ simple/styles: source/styles
 simple/%.html: source/%.html
 	@mkdir -p simple
 	awk -f tools/remove-nav.awk $< > $@
+
+# flatten all png images so that the background is white
+simple/images/%.png: source/images/%.png simple/images
+	convert $< -background white -alpha remove -alpha off $@
+
+# the book cover is jpeg - copy it over
+simple/images/%.jpg: source/images/%.jpg simple/images
+	cp $< $@
 
 # cleanup rule
 clean:
