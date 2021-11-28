@@ -183,7 +183,7 @@ simple/styles: source/styles simple
 # simplify the html documents
 simple/%.html: source/%.html tools/simple.xsl simple
 	SGML_CATALOG_FILES=schema/xhtml1/catalog.xml \
-		xsltproc --catalogs --html tools/simple.xsl $< > $@
+		xsltproc --catalogs --html --encoding iso-8859-1 tools/simple.xsl $< > $@
 
 # flatten all png images so that the background is white
 simple/images/%.png: source/images/%.png simple/images
