@@ -12,9 +12,9 @@
 	<xsl:strip-space elements="*"/>
 
 	<!-- Partial identity transform - leave processing instructions alone -->
-	<xsl:template match="@*|*|comment()">
+	<xsl:template match="@*|*|comment()|text()">
 		<xsl:copy>
-			<xsl:apply-templates select="@*|*|comment()"/>
+			<xsl:apply-templates select="@*|*|comment()|text()"/>
 		</xsl:copy>
 	</xsl:template>
 
