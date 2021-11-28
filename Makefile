@@ -1,4 +1,8 @@
 
+CATALOGS?=schema/xhtml1/catalog.xml
+XMLLINT?=SGML_CATALOG_FILES="${CATALOGS}" xmllint --catalogs --nonet
+XSLTPROC?=STML_CATALOG_FILES="${CATALOGS}" xsltproc --catalogs --nonet
+
 SOURCE_IMGS=$(wildcard source/images/*.png source/images/*.jpg)
 SIMPLE_IMGS=$(patsubst source/images/%,simple/images/%,${SOURCE_IMGS})
 
@@ -152,8 +156,7 @@ default: drm-a5.pdf drm-a4.pdf
 
 # XML linting
 xmllint: ${SOURCE_HTML}
-	SGML_CATALOG_FILES=schema/xhtml1/catalog.xml \
-		xmllint --nonet --noout --catalogs --dtdattr $^
+	${XMLLINT} --noout --dtdattr $^
 .PHONY: xmllint
 
 # generate postscript from html
@@ -182,8 +185,7 @@ simple/styles: source/styles simple
 
 # simplify the html documents
 simple/%.html: source/%.html tools/simple.xsl simple
-	SGML_CATALOG_FILES=schema/xhtml1/catalog.xml \
-		xsltproc --catalogs --html --encoding iso-8859-1 tools/simple.xsl $< > $@
+	${XSLTPROC} --html --encoding utf-8 -o $@ tools/simple.xsl $<
 
 # flatten all png images so that the background is white
 simple/images/%.png: source/images/%.png simple/images
