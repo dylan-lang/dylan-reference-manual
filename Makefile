@@ -181,7 +181,7 @@ simple/styles: source/styles simple
 	ln -s ../source/styles simple/styles
 
 # simplify the html documents
-simple/%.html: source/%.html simple
+simple/%.html: source/%.html tools/simple.xsl simple
 	SGML_CATALOG_FILES=schema/xhtml1/catalog.xml \
 		xsltproc --catalogs --html tools/simple.xsl $< > $@
 
