@@ -42,7 +42,7 @@ body       { margin: 0; padding: 0; }
                    font-family: "Gill Sans", sans-serif;
                    white-space: nowrap;
                    overflow: hidden;
-                   background-image: url("../images/shadow-bottom");
+                   background-image: url("../images/shadow-bottom.png");
                    background-repeat: repeat-x;
                    background-position: left bottom;
                  }
@@ -50,7 +50,7 @@ body       { margin: 0; padding: 0; }
                    position: fixed; top: 0; left: 0; right: 0;
                    min-height: 2em;
                    margin: 0; padding: 0;
-                   background: white url("../images/nav-top-background") repeat-x center top;
+                   background: white url("../images/nav-top-background.png") repeat-x center top;
                    font-size: smaller;
                  }
 #navigation-top .background
@@ -146,23 +146,23 @@ body       { margin: 0; padding: 0; }
                                        background-repeat: no-repeat;
                                        background-position: center bottom;
                                      }
-#navigation-core a.contents          { background-image: url("../images/contents") }
-#navigation-core a.index             { background-image: url("../images/index")    }
-#navigation-core a.up                { background-image: url("../images/up")       }
-#navigation-core a.next              { background-image: url("../images/next")     }
-#navigation-core a.previous          { background-image: url("../images/previous") }
+#navigation-core a.contents          { background-image: url("../images/contents.png") }
+#navigation-core a.index             { background-image: url("../images/index.png")    }
+#navigation-core a.up                { background-image: url("../images/up.png")       }
+#navigation-core a.next              { background-image: url("../images/next.png")     }
+#navigation-core a.previous          { background-image: url("../images/previous.png") }
 
-#navigation-core a.contents:active   { background-image: url("../images/contents-active") }
-#navigation-core a.index:active      { background-image: url("../images/index-active")    }
-#navigation-core a.up:active         { background-image: url("../images/up-active")       }
-#navigation-core a.next:active       { background-image: url("../images/next-active")     }
-#navigation-core a.previous:active   { background-image: url("../images/previous-active") }
+#navigation-core a.contents:active   { background-image: url("../images/contents-active.png") }
+#navigation-core a.index:active      { background-image: url("../images/index-active.png")    }
+#navigation-core a.up:active         { background-image: url("../images/up-active.png")       }
+#navigation-core a.next:active       { background-image: url("../images/next-active.png")     }
+#navigation-core a.previous:active   { background-image: url("../images/previous-active.png") }
 
-#navigation-core span.contents       { background-image: url("../images/contents-disabled") }
-#navigation-core span.index          { background-image: url("../images/index-disabled")    }
-#navigation-core span.up             { background-image: url("../images/up-disabled")       }
-#navigation-core span.next           { background-image: url("../images/next-disabled")     }
-#navigation-core span.previous       { background-image: url("../images/previous-disabled") }
+#navigation-core span.contents       { background-image: url("../images/contents-disabled.png") }
+#navigation-core span.index          { background-image: url("../images/index-disabled.png")    }
+#navigation-core span.up             { background-image: url("../images/up-disabled.png")       }
+#navigation-core span.next           { background-image: url("../images/next-disabled.png")     }
+#navigation-core span.previous       { background-image: url("../images/previous-disabled.png") }
 
 /*
 #navigation-core a.contents:hover    { border-bottom: 1px solid #606    }
