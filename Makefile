@@ -168,23 +168,21 @@ drm-a4.pdf: drm-a4.ps
 drm-a5.pdf: drm-a5.ps
 	ps2pdf -sPAPERSIZE=a5 $< $@
 
-# target to create the simple HTML version
-simple: ${SIMPLE}
-.PHONY: simple
+# directory creation
+simple:
+	mkdir -p simple
 
 # create image directory
 simple/images: simple
 	mkdir -p simple/images
 
 # link styles
-simple/styles: source/styles
-	@mkdir -p simple
+simple/styles: source/styles simple
 	ln -s ../source/styles simple/styles
 
 # process the files to remove headers and footers
-simple/%.html: source/%.html
-	@mkdir -p simple
 	awk -f tools/remove-nav.awk $< > $@
+simple/%.html: source/%.html simple
 
 # flatten all png images so that the background is white
 simple/images/%.png: source/images/%.png simple/images
