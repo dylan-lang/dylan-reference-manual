@@ -9,6 +9,8 @@ SIMPLE_IMGS=$(patsubst source/images/%,simple/images/%,${SOURCE_IMGS})
 SOURCE_HTML=$(wildcard source/*.html)
 SIMPLE_HTML=$(patsubst source/%,simple/%,${SOURCE_HTML})
 
+SIMPLE_OUT=output/drm-simple-a5.pdf output/drm-simple-a4.pdf
+
 ORDERED_HTML = \
 simple/Cover.html \
 simple/Title.html \
@@ -150,23 +152,27 @@ simple/Errata.html
 
 
 # default target
-default: drm-a5.pdf drm-a4.pdf
+default: ${SIMPLE_OUT}
 
 # XML linting
-xmllint: ${SOURCE_HTML}
+xmllint: ${SOURCE_HTML} ${SIMPLE_HTML}
 	${XMLLINT} --noout --dtdattr $^
 .PHONY: xmllint
 
+# create output directory
+output:
+	mkdir -p output
+
 # generate postscript from html
-drm-a4.ps: config/drm-a4.rc simple/images ${ORDERED_HTML} ${SIMPLE_IMGS}
-	html2ps -f config/drm-a4.rc -o $@ ${ORDERED_HTML}
-drm-a5.ps: config/drm-a5.rc simple/images ${ORDERED_HTML} ${SIMPLE_IMGS}
-	html2ps -f config/drm-a5.rc -o $@ ${ORDERED_HTML}
+output/drm-simple-a4.ps: config/drm-simple-a4.rc output ${ORDERED_HTML} ${SIMPLE_IMGS}
+	html2ps -e iso-8859-1 -f config/drm-simple-a4.rc -o $@ ${ORDERED_HTML}
+output/drm-simple-a5.ps: config/drm-simple-a5.rc output ${ORDERED_HTML} ${SIMPLE_IMGS}
+	html2ps -e iso-8859-1 -f config/drm-simple-a5.rc -o $@ ${ORDERED_HTML}
 
 # generate a pdf from the postscript
-drm-a4.pdf: drm-a4.ps
+output/drm-simple-a4.pdf: output/drm-simple-a4.ps
 	ps2pdf -sPAPERSIZE=a4 $< $@
-drm-a5.pdf: drm-a5.ps
+output/drm-simple-a5.pdf: output/drm-simple-a5.ps
 	ps2pdf -sPAPERSIZE=a5 $< $@
 
 # directory creation
@@ -195,6 +201,5 @@ simple/images/%.jpg: source/images/%.jpg simple/images
 
 # cleanup rule
 clean:
-	rm -f drm-a4.ps drm-a4.pdf drm-a5.ps drm-a5.pdf
-	rm -rf simple
+	rm -rf output simple
 .PHONY: clean
