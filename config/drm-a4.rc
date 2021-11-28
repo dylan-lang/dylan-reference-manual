@@ -1,0 +1,23 @@
+
+@html2ps {
+  option {
+    colour: 1;
+    number: 1;
+  }
+  paper {
+    type: A4;
+  }
+}
+
+@page {
+  margin-left: 2.5cm;
+  margin-right: 2.5cm;
+  margin-top: 3cm;
+  margin-bottom: 3cm;
+}
+
+BODY {
+  font-size: 12pt;
+  font-family: Palatino;
+  text-align: justify;
+}
