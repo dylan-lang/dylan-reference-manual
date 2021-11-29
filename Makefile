@@ -1,28 +1,34 @@
 
+# XML catalog for all tools
 CATALOGS?=schema/xhtml1/catalog.xml
-XMLLINT?=SGML_CATALOG_FILES="${CATALOGS}" xmllint --catalogs --nonet
-XSLTPROC?=STML_CATALOG_FILES="${CATALOGS}" xsltproc --catalogs --nonet
+# common command line for xmllint
+XMLLINT?=SGML_CATALOG_FILES=${CATALOGS} xmllint --catalogs --nonet
+# common command line for xsltproc
+XSLTPROC?=STML_CATALOG_FILES=${CATALOGS} xsltproc --catalogs --nonet
 
-SOURCE_IMGS=$(wildcard source/images/*.png source/images/*.jpg)
-SIMPLE_IMGS=$(patsubst source/images/%,simple/images/%,${SOURCE_IMGS})
-
+# list of all source files
 SOURCE_HTML=$(wildcard source/*.html)
-SIMPLE_HTML=$(patsubst source/%,simple/%,${SOURCE_HTML})
-
+# list of all source images
+SOURCE_IMGS=$(wildcard source/images/*.png source/images/*.jpg)
+# list of all fixed images
+SIMPLE_IMGS=$(patsubst source/images/%,simple/images/%,${SOURCE_IMGS})
+# list of all output files
 SIMPLE_OUT=output/drm-simple-a5.pdf output/drm-simple-a4.pdf
+# stylesheet for simple html output
+SIMPLE_XSL=stylesheet/simple.xsl
 
 # extract section order from rewrite map
 ORDERED_NAMES=Cover $(shell awk -f tools/order.awk source/rewrite-map.txt)
 
 # lists of html files in source and simple form
 ORDERED_SOURCE_HTML=$(patsubst %,source/%.html,${ORDERED_NAMES})
-ORDERED_HTML=$(patsubst %,simple/%.html,${ORDERED_NAMES})
+ORDERED_SIMPLE_HTML=$(patsubst %,simple/%.html,${ORDERED_NAMES})
 
 # default target
 default: ${SIMPLE_OUT}
 
 # XML linting
-xmllint: ${SOURCE_HTML} ${SIMPLE_HTML}
+xmllint: ${SOURCE_HTML} ${ORDERED_SIMPLE_HTML}
 	${XMLLINT} --noout --dtdattr $^
 .PHONY: xmllint
 
@@ -31,10 +37,10 @@ output:
 	mkdir -p output
 
 # generate postscript from html
-output/drm-simple-a4.ps: config/drm-simple-a4.rc output ${ORDERED_HTML} ${SIMPLE_IMGS}
-	html2ps -e iso-8859-1 -f config/drm-simple-a4.rc -o $@ ${ORDERED_HTML}
-output/drm-simple-a5.ps: config/drm-simple-a5.rc output ${ORDERED_HTML} ${SIMPLE_IMGS}
-	html2ps -e iso-8859-1 -f config/drm-simple-a5.rc -o $@ ${ORDERED_HTML}
+output/drm-simple-a4.ps: config/drm-simple-a4.rc output ${ORDERED_SIMPLE_HTML} ${SIMPLE_IMGS}
+	html2ps -e iso-8859-1 -f config/drm-simple-a4.rc -o $@ ${ORDERED_SIMPLE_HTML}
+output/drm-simple-a5.ps: config/drm-simple-a5.rc output ${ORDERED_SIMPLE_HTML} ${SIMPLE_IMGS}
+	html2ps -e iso-8859-1 -f config/drm-simple-a5.rc -o $@ ${ORDERED_SIMPLE_HTML}
 
 # generate a pdf from the postscript
 output/drm-simple-a4.pdf: output/drm-simple-a4.ps
@@ -55,8 +61,8 @@ simple/styles: source/styles simple
 	ln -s ../source/styles simple/styles
 
 # simplify the html documents
-simple/%.html: source/%.html tools/simple.xsl simple
-	${XSLTPROC} --html --encoding utf-8 -o $@ tools/simple.xsl $<
+simple/%.html: source/%.html ${SIMPLE_XSL} simple
+	${XSLTPROC} --html --encoding utf-8 -o $@ ${SIMPLE_XSL} $<
 
 # flatten all png images so that the background is white
 simple/images/%.png: source/images/%.png simple/images
