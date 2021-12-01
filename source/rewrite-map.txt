@@ -10,162 +10,162 @@
 
 
 # Front matter
-drm_1 Title
-drm_2 Copyrights
-drm_3 Contents
-drm_4 Preface
+drm_1 special Title
+drm_2 special Copyrights
+drm_3 contents Contents
+drm_4 preface Preface
 
 # Chapter 1: Introduction
-drm_5 Introduction
-drm_6 Background_and_Goals
-drm_7 Language_Overview
-drm_8 Manual_Notation
+drm_5 chapter Introduction
+drm_6 section Background_and_Goals
+drm_7 section Language_Overview
+drm_8 section Manual_Notation
 
 # Chapter 2: Syntax
-drm_9 Syntax
-drm_10 Syntax_Overview
-drm_11 Libraries_and_Modules
-drm_12 Bindings
-drm_13 Macros_Syntax
-drm_14 Bodies
-drm_15 Definitions
-drm_16 Local_Declarations
-drm_17 Expressions
-drm_18 Statements
-drm_19 Parameter_Lists_Syntax
-drm_20 Lexical_Syntax
-drm_21 Special_Treatment_of_Names
-drm_22 Top-Level_Definitions
-drm_23 Dylan_Interchange_Format
-drm_24 Naming_Conventions
+drm_9  chapter Syntax
+drm_10 section Syntax_Overview
+drm_11 section Libraries_and_Modules
+drm_12 section Bindings
+drm_13 section Macros_Syntax
+drm_14 section Bodies
+drm_15 section Definitions
+drm_16 section Local_Declarations
+drm_17 section Expressions
+drm_18 section Statements
+drm_19 section Parameter_Lists_Syntax
+drm_20 section Lexical_Syntax
+drm_21 section Special_Treatment_of_Names
+drm_22 section Top-Level_Definitions
+drm_23 section Dylan_Interchange_Format
+drm_24 section Naming_Conventions
 
 # Chapter 3: Program Structure
-drm_25 Program_Structure
-drm_26 Modules
-drm_27 Libraries
+drm_25 chapter Program_Structure
+drm_26 section Modules
+drm_27 section Libraries
 
 # Chapter 4: Program Control
-drm_28 Program_Control
-drm_29 Program_Control_Overview
-drm_30 Function_Calls
-drm_31 Operators
-drm_32 Assignment
-drm_33 Conditional_Execution
-drm_34 Iteration
-drm_35 Nonlocal_Exits_and_Cleanup_Clauses
-drm_36 Multiple_Values
-drm_37 Order_of_Execution
+drm_28 chapter Program_Control
+drm_29 section Program_Control_Overview
+drm_30 section Function_Calls
+drm_31 section Operators
+drm_32 section Assignment
+drm_33 section Conditional_Execution
+drm_34 section Iteration
+drm_35 section Nonlocal_Exits_and_Cleanup_Clauses
+drm_36 section Multiple_Values
+drm_37 section Order_of_Execution
 
 # Chapter 5: Types and Classes
-drm_38 Types_and_Classes
-drm_39 Types_and_Classes_Overview
-drm_40 Type_Protocol
-drm_41 Classes
-drm_42 Slots
-drm_43 Instance_Creation_and_Initialization
-drm_44 Singletons
-drm_45 Union_Types
-drm_46 Limited_Types
+drm_38 chapter Types_and_Classes
+drm_39 section Types_and_Classes_Overview
+drm_40 section Type_Protocol
+drm_41 section Classes
+drm_42 section Slots
+drm_43 section Instance_Creation_and_Initialization
+drm_44 section Singletons
+drm_45 section Union_Types
+drm_46 section Limited_Types
 
 # Chapter 6: Functions
-drm_47 Functions
-drm_48 Functions_Overview
-drm_49 Parameter_Lists
-drm_50 Method_Dispatch
-drm_51 Operations_on_Functions
+drm_47 chapter Functions
+drm_48 section Functions_Overview
+drm_49 section Parameter_Lists
+drm_50 section Method_Dispatch
+drm_51 section Operations_on_Functions
 
 # Chapter 7: Conditions
-drm_52 Conditions
-drm_53 Conditions_Background
-drm_54 Conditions_Overview
-drm_55 Signalers_Conditions_and_Handlers
-drm_56 Exception_Handling
-drm_57 Condition_Messages
-drm_58 Introspective_Operations_on_Conditions
+drm_52 chapter Conditions
+drm_53 section Conditions_Background
+drm_54 section Conditions_Overview
+drm_55 section Signalers_Conditions_and_Handlers
+drm_56 section Exception_Handling
+drm_57 section Condition_Messages
+drm_58 section Introspective_Operations_on_Conditions
 
 # Chapter 8: Collections
-drm_59 Collections
-drm_60 Collections_Overview
-drm_61 Collection_Keys
-drm_62 Iteration_Stability_and_Natural_Order
-drm_63 Mutability
-drm_64 Collection_Alteration_and_Allocation
-drm_65 Collection_Alignment
-drm_66 Defining_a_New_Collection_Class
-drm_67 Tables
-drm_68 Element_Types
-drm_69 Limited_Collection_Types
+drm_59 chapter Collections
+drm_60 section Collections_Overview
+drm_61 section Collection_Keys
+drm_62 section Iteration_Stability_and_Natural_Order
+drm_63 section Mutability
+drm_64 section Collection_Alteration_and_Allocation
+drm_65 section Collection_Alignment
+drm_66 section Defining_a_New_Collection_Class
+drm_67 section Tables
+drm_68 section Element_Types
+drm_69 section Limited_Collection_Types
 
 # Chapter 9: Sealing
-drm_70 Sealing
-drm_71 Sealing_Overview
-drm_72 Explicitly_Known_Objects
-drm_73 Declaring_Characteristics_of_Classes
-drm_74 Declaring_Characteristics_of_Generic_Functions
-drm_75 Define_Sealed_Domain
+drm_70 chapter Sealing
+drm_71 section Sealing_Overview
+drm_72 section Explicitly_Known_Objects
+drm_73 section Declaring_Characteristics_of_Classes
+drm_74 section Declaring_Characteristics_of_Generic_Functions
+drm_75 section Define_Sealed_Domain
 
 # Chapter 10: Macros
-drm_76 Macros
-drm_77 Macros_Overview
-drm_78 Extensible_Grammar
-drm_79 Macro_Names
-drm_80 Rewrite_Rules
-drm_81 Patterns
-drm_82 Pattern_Variable_Constraints
-drm_83 Templates
-drm_84 Auxiliary_Rule_Sets
-drm_85 Hygiene
-drm_86 Rewrite_Rule_Examples
+drm_76 chapter Macros
+drm_77 section Macros_Overview
+drm_78 section Extensible_Grammar
+drm_79 section Macro_Names
+drm_80 section Rewrite_Rules
+drm_81 section Patterns
+drm_82 section Pattern_Variable_Constraints
+drm_83 section Templates
+drm_84 section Auxiliary_Rule_Sets
+drm_85 section Hygiene
+drm_86 section Rewrite_Rule_Examples
 
 # Chapter 11: The Built-In Classes
-drm_87 Built-In_Classes
-drm_88 Built-In_Classes_Overview
-drm_89 Object_Classes
-drm_90 Type_Classes
-drm_91 Simple_Object_Classes
-drm_92 Number_Classes
-drm_93 Collection_Classes
-drm_94 Function_Classes
-drm_95 Condition_Classes
+drm_87 chapter Built-In_Classes
+drm_88 section Built-In_Classes_Overview
+drm_89 section Object_Classes
+drm_90 section Type_Classes
+drm_91 section Simple_Object_Classes
+drm_92 section Number_Classes
+drm_93 section Collection_Classes
+drm_94 section Function_Classes
+drm_95 section Condition_Classes
 
 # Chapter 12: The Built-In Functions
-drm_96 Built-In_Functions
-drm_97 Built-In_Functions_Overview
-drm_98 Constructing_and_Initializing_Instances
-drm_99 Equality_and_Comparison
-drm_100 Arithmetic_Operations
-drm_101 Coercing_and_Copying_Objects
-drm_102 Collection_Operations
-drm_103 Reflective_Operations_on_Types
-drm_104 Functional_Operations
-drm_105 Function_Application
-drm_106 Reflective_Operations_on_Functions
-drm_107 Operations_on_Conditions
+drm_96 chapter Built-In_Functions
+drm_97 section Built-In_Functions_Overview
+drm_98 section Constructing_and_Initializing_Instances
+drm_99 section Equality_and_Comparison
+drm_100 section Arithmetic_Operations
+drm_101 section Coercing_and_Copying_Objects
+drm_102 section Collection_Operations
+drm_103 section Reflective_Operations_on_Types
+drm_104 section Functional_Operations
+drm_105 section Function_Application
+drm_106 section Reflective_Operations_on_Functions
+drm_107 section Operations_on_Conditions
 
 # Chapter 13: Other Built-In Objects
-drm_108 Other_Built-In_Objects
-drm_109 Other_Built-In_Objects_Defined
+drm_108 chapter Other_Built-In_Objects
+drm_109 section Other_Built-In_Objects_Defined
 
 # Chapter 14: The Built-In Macros and Special Definitions
-drm_110 Built-In_Macros_and_Special_Definitions
-drm_111 Built-In_Macros_and_Special_Definitions_Overview
-drm_112 Definition_Macros
-drm_113 Local_Declaration_Macros
-drm_114 Statement_Macros
-drm_115 Function_Macros
+drm_110 chapter Built-In_Macros_and_Special_Definitions
+drm_111 section Built-In_Macros_and_Special_Definitions_Overview
+drm_112 section Definition_Macros
+drm_113 section Local_Declaration_Macros
+drm_114 section Statement_Macros
+drm_115 section Function_Macros
 
 # Appendix A: BNF
-drm_116 BNF
-drm_117 Lexical_Grammar
-drm_118 Phrase_Grammar
+drm_116 appendix BNF
+drm_117 section  Lexical_Grammar
+drm_118 section  Phrase_Grammar
 
 # Appendix B: Exported Names
-drm_119 Exported_Names
+drm_119 appendix Exported_Names
 
 # Back matter
-drm_126 Glossary
-drm_127 Index
-drm_128 Colophon
+drm_126 special Glossary
+drm_127 special Index
+drm_128 colophon Colophon
 
 # Errata
-drm_errata Errata
+drm_errata special Errata
