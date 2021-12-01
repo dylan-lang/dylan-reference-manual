@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+	<info>
+		<title>Dylan Reference Manual</title>
+	</info>
+
+	<!-- Front matter -->
+	<xi:include href="docbook/Preface.dbk"/>
+
+	<!-- Chapters -->
+	<xi:include href="docbook/Introduction.dbk"/>
+	<xi:include href="docbook/Syntax.dbk"/>
+	<xi:include href="docbook/Program_Structure.dbk"/>
+	<xi:include href="docbook/Program_Control.dbk"/>
+	<xi:include href="docbook/Types_and_Classes.dbk"/>
+	<xi:include href="docbook/Functions.dbk"/>
+	<xi:include href="docbook/Conditions.dbk"/>
+	<xi:include href="docbook/Collections.dbk"/>
+	<xi:include href="docbook/Sealing.dbk"/>
+	<!--
+	<xi:include href="docbook/Macros.dbk"/>
+	<xi:include href="docbook/Built-In_Classes.dbk"/>
+	<xi:include href="docbook/Built-In_Functions.dbk"/>
+	<xi:include href="docbook/Other_Built-In_Objects.dbk"/>
+	<xi:include href="docbook/Built-In_Macros_and_Special_Definitions.dbk"/>
+	-->
+
+	<!-- Appendices -->
+	<!--
+	<xi:include href="docbook/BNF.dbk"/>
+	<xi:include href="docbook/Exported_Names.dbk"/>
+	-->
+
+	<!-- Back matter -->
+	<!--
+	<glossary/>
+	<index/>
+	-->
+	<xi:include href="docbook/Colophon.dbk"/>
+</book>
