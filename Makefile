@@ -24,8 +24,18 @@ ORDERED_NAMES=Cover $(shell awk -f tools/order.awk source/rewrite-map.txt)
 ORDERED_SOURCE_HTML=$(patsubst %,source/%.html,${ORDERED_NAMES})
 ORDERED_SIMPLE_HTML=$(patsubst %,simple/%.html,${ORDERED_NAMES})
 
+# query the map for the various docbook section types
+CHAPTER_NAMES=$(shell tools/getsections.sh chapter)
+APPENDIX_NAMES=$(shell tools/getsections.sh appendix)
+SECTION_NAMES=$(shell tools/getsections.sh section)
+SPECIAL_NAMES=Preface Colophon
+ALL_NAMES=${CHAPTER_NAMES} ${SECTION_NAMES} ${APPENDIX_NAMES} ${SPECIAL_NAMES}
+ORDERED_DBKS=$(patsubst %,docbook/%.dbk,${ALL_NAMES})
+
 # default target
 default: ${SIMPLE_OUT}
+
+db: ${ORDERED_DBKS}
 
 # XML linting
 xmllint: ${SOURCE_HTML} ${ORDERED_SIMPLE_HTML}
@@ -47,6 +57,18 @@ output/drm-simple-a4.pdf: output/drm-simple-a4.ps
 	ps2pdf -sPAPERSIZE=a4 $< $@
 output/drm-simple-a5.pdf: output/drm-simple-a5.ps
 	ps2pdf -sPAPERSIZE=a5 $< $@
+
+# create simple directory
+docbook:
+	mkdir -p docbook
+
+# simplify the html documents
+docbook/%.dbk: source/%.html stylesheet/docbook.xsl docbook
+	${XSLTPROC} --encoding utf-8 --html \
+		--stringparam toplevel "$$(tools/getclass.sh $$(basename $@ .dbk))" \
+		--stringparam children "$$(tools/getchildren.sh $$(basename $@ .dbk) | sed 's/\(.*\)/\1.dbk/' | tr '\n' ' ')" \
+		-o $@ stylesheet/docbook.xsl \
+		$<
 
 # create simple directory
 simple:
@@ -74,5 +96,5 @@ simple/images/%.jpg: source/images/%.jpg simple/images
 
 # cleanup rule
 clean:
-	rm -rf output simple
+	rm -rf output docbook simple
 .PHONY: clean
