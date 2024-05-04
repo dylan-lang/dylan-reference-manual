@@ -1,0 +1,9 @@
+{
+    "name": "dylan-reference-manual",
+    "description": "The Dylan Reference Manual (DRM)",
+    "version": "0.1.0",
+    "category": "documentation",
+    "contact": "dylan-lang@googlegroups.com",
+    "keywords": ["documentation"],
+    "url": "https://github.com/dylan-lang/dylan-reference-manual"
+}
